@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+User-agent: Scully
+Disallow: /belief-in-aliens
+Allow: /science
+
+User-agent: Mulder
+Disallow: /implants
+Allow: /i-want-to-believe
+
+Sitemap: https://www.justinribeiro.com/sitemap.xml

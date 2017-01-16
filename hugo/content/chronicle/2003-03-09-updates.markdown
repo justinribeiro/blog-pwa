@@ -1,0 +1,11 @@
+--- 
+categories:
+- personal
+date: 2003-03-09T10:02:00Z
+title: Updates
+url: /chronicle/2003/03/09/updates/
+---
+
+Added a new version of my Weblet replacement, complete with Mozilla sidebar, which is working very nicely.  I hope it will be of use to someone.
+
+I've also updated to the latest version of Rodin, although I went through and hacked it up pretty good, so I guess it's my custom version of Rodin.  I also decided "no" to the RSS xml feed for this little news page.  I really see no reason for it.  If I wanted to blog every day, maybe, I'm not in the mood.

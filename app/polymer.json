@@ -1,0 +1,21 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/blog-pwa.html",
+  "fragments": [
+    "src/blog-static.html",
+    "src/blog-chronicle.html",
+    "src/lazy-resources.html"
+  ],
+  "sourceGlobs": [
+    "src/**/*",
+    "images/**/*",
+    "data/**/*",
+    "helpers/**/*"
+  ],
+  "includeDependencies": [
+    "push_manifest.json",
+    "robots.txt",
+    "manifest.json",
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+  ]
+}

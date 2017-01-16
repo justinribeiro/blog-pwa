@@ -1,0 +1,23 @@
+baseurl = "https://www.justinribeiro.com/"
+languageCode = "en-us"
+title = "Justin Ribeiro"
+
+# specifcally for the PWA and GAE to load and parse
+publishdir = "../app/data"
+
+# This is a workaround for not generating taxonomies since I don't handle it
+# at all in the PWA side of life (and I don't want cruft in sitemap.xml)
+# ideally look at PR for https://github.com/spf13/hugo/issues/2534 
+[taxonomies]
+  category = ""
+  tags = ""
+
+[permalinks]
+  chronicle = "/chronicle/:year/:month/:day/:slug/"
+
+[params]
+  ISO8601 = "2006-01-02T15:04:05PST"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

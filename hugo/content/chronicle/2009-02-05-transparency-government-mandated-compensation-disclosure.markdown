@@ -1,0 +1,39 @@
+---
+categories:
+- business
+date: 2009-02-05T00:00:00Z
+description: "President Obama proposes to limit the amount of compensation that senior executives receive for bailout funds, and my ethical view point about the compensation disclosure debate which has gone on long before the financial crisis."
+title: 'Transparency: Government mandated compensation disclosure'
+url: /chronicle/2009/02/05/transparency-government-mandated-compensation-disclosure/
+---
+
+The Wall Street Journal ran an <a href="http://online.wsj.com/article/SB123375514020647787.html?mod=rss_whats_news_us" title="Obama Lays Out Limits on Executive Pay">interesting article</a> today on the initiative being set forth by President Obama that proposes to limit the amount of compensation that senior executives would earn at a cap of $500,000 when the company receives what's being termed "exceptional assistance".  The term senior executive will be further defined by the Treasury department when the initiative is implemented, and the term exceptional assistance would cover firms like Bank of America Corp., Citigroup Inc., and AIG.  For other firms seeking bailout funding and assistance on a smaller scale, the rules are a bit more loose such that the "salary cap can be waived with disclosure of compensation packages and a nonbinding shareholder vote".
+
+The unfortunate part of this plan is that it won't be retroactive for firms who have already received bailout funds, but will be implemented going forward.  In either case the grumblings from larger corporations has already started.  A choice quite from an executive who received :
+
+> "I understand the mood of the country right now," says S. Phillip Collins, president and chief executive of Sound Banking Co., Morehead City, N.C., which received $3 million in bailout funds. But if executives are making money for shareholders, "they should be rewarded for it."
+
+Being rewarded for making money for shareholders isn't up for debate. Rather it's the concept of being rewarded for failing, using tax payer funding as a crutch, then laying off 10% of a large workforce, and still receiving huge executive compensation. That is simply ludicrous by any standard. President Obama himself made the statement that "...we believe success should be rewarded. But what gets people upset -- and rightfully so -- are executives being rewarded for failure."
+
+All of this debate reminded me of a brief review I wrote in graduate school back in 2006 talking about the ethics of executive compensation disclosure.  It's largely based on the Wharton article "<a href="http://knowledge.wharton.upenn.edu/article.cfm?articleid=1374">SEC's Spotlight on Executive Pay: Will It Make a Difference?</a>" which is worth a read if you have a chance. I remember discussing this topic with David Gill (whose book "<a href="http://www.ethixbiz.com/book.html ">It€™s About Excellence: Building Ethically-Healthy Organizations</a>" is very good by the way) and so without further ado, I give you a glimpse into the past which again becomes relevant: "Transparency: Government mandated compensation disclosure"
+
+In the last decade, executive compensation has been on the rise on a pace that outstrips nearly all other types of workers in the economy.  While many companies struggle in the market place, all too often the men or women leading those companies make out well in either case.  With a social order on the level of 'the old CEO€™s club', breaking the spell of crippling compensation packages detrimental to the overall health of the company, its work force, and its stakeholders has been lacking.  Major scandals at Enron, WorldCom and the like litter the timelines of the past decade to only prove this reality.
+
+The Wharton School of Business recently released an article entitled 'SEC's Spotlight on Executive Pay: Will It Make a Difference?'  The article is an intriguing look at the economics, politics and the ethics behind the way top executives are paid today.
+
+The initial opening point of the article is that the Securities and Exchanges Commission is taking steps at implementing new rules to force companies to disclose pay levels and incentives for the top five executives and all directors.  This comes after years of non-transparency on the issue, and many see these rules as a welcome improvement to the system.  William C. Tyson, professor of legal studies and ethics at
+Wharton stated "when people are forced to undress in public, they pay attention to their figures."
+
+The rest of the article seeks to offer both a support and counter arguments to the claim that such transparency would help stockholders, or even go so far as to bring executive compensation down.
+
+In terms of bringing executive compensation down, the general consensus is that these new rules will not.  The article states several reasons why it will not, such as 'executive pay is not necessarily as excessive as the most extreme cases suggest' and that it is 'not that easy to establish a benchmark for determining whether executive pay is excessive.'  While the article backs the claim that executive pay has been rising, it does point out that many of that rise has come in the rise in the use of stock options.  
+
+The value of those options has been of increasing interest to many, because disclose on that valuation has not been required in the past.  This has recently changed, which would lead me to believe that instead of companies taking the ethical high road and disclosing them, they forced changes in accounting rules and regulations to make them do it first.
+
+Yet the article makes a fine point about the problem with stock options; with so much tied to the value of stock, higher initial salaries are often granted to executives to offset this risk.  Couple this with the often high amount of work that CEO€™s put in (12 hour days / 350 days a year according the to the article is not unusual) and the idea of high executive compensation seems logical.
+
+But while the math may all work out, the ethical debate is much more interesting.  The fact that many executives who head companies are also board members at other companies means they have a stake in continuing to force executive pay higher.  Couple this with the fact that many CEO€™s appoint board members (according to the article, these are often 'uncontested elections, as the directors only permit their own slate of candidates to appear on the ballot') and that directors too have a financial incentive to stay on the board and the good side of management (often making hundreds of thousands of dollars a year) means that there is a sort ethical black hole so to speak.  The people at the top continue to help themselves, with no interest in what is good for the company or the shareholders.  They bounce from company to company, creating supply and demand, seeking huge benefits that many shareholders have no idea about currently.
+
+This fact is further justified in the article by a study that stated CEO€™s with close ties to board members often make more, yet their companies perform at sub par levels compared to others.
+
+While the 'I€™ll help you if you help me' may exist at the top of companies, such un-ethical behavior has gotten the attention of the SEC, which now takes these new mandates forward towards a vote in the spring.  I am not a fan of government regulation, yet this is by no means regulation of executive pay.  It is merely forcing companies to elaborate on how much they are paying to the people who operate companies at the highest levels.  Will it fix some of the outrageous extremes of the CEO pay package?  Probably not (there will always be extreme cases), but it€™s a start to allow shareholders to make more clear comparisons and have a easier time deciding if they want to keep their interest in a given company.

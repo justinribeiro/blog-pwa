@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }} - Justin Ribeiro</title>
+  <meta name="description" content="{{ description }}" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <meta itemprop="name" content="{{ title }} - Justin Ribeiro">
+  <meta itemprop="headline" content="{{ title }} - Justin Ribeiro" />
+  <meta itemprop="description" content="{{ description }}">
+  {% if imagegplus %}
+  <meta itemprop="image" content="{{ imagegplus }}">
+  {% endif %}
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@justinribeiro">
+  <meta name="twitter:title" content="{{ title }} - Justin Ribeiro">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:creator" content="@justinribeiro">
+  {% if imagetwitter %}
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image:src" content="{{ imagetwitter }}">
+  {% endif %}
+
+  <meta property="og:type" content="article" />
+  <meta itemprop="og:headline" content="{{ title }}" />
+  <meta property="og:title" content="{{ title }} - Justin Ribeiro" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:site_name" content="Justin Ribeiro" />
+  <meta property="og:url" content="{{ permalink }}" />
+  <meta property="article:published_time" content="{{ datePublished }}" />
+  <meta property="article:modified_time" content="{{ dateModified }}" />
+  {% if imagefb %}
+  <meta property="og:image" content="{{ imagefb }}" />
+  {% endif %}
+
+  <style>
+    .hotpink { color: hotpink; }
+    .red { color: red; }
+    
+    a {
+      color: #03A9F4;
+      text-decoration: none;
+      border-bottom: 1px solid #03A9F4;
+    }
+
+    a:hover {
+      color: #CC5511;
+      text-decoration: none;
+      border-bottom: 1px solid #CC5511;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+        margin: 0;
+      }
+      p, li {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+        margin: 0;
+        color: var(--primary-text-color);
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-left: -1.75px;
+        line-height: 1.15;
+        letter-spacing: -.02em;
+        font-weight: 700;
+        font-style: normal;
+        margin-top: 16px;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-left: -1.75px;
+        line-height: 1.15;
+        letter-spacing: -.02em;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin-left: -1.75px;
+        line-height: 1.15;
+        letter-spacing: -.02em;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      p, li {
+        margin-top: 10px;
+        margin-bottom: 29px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 21px;
+        line-height: 1.58;
+        letter-spacing: -.003em;
+      }
+
+      li {
+        margin-bottom: 20px;
+      }
+
+      blockquote {
+        border-left: 5px solid #03A9F4;
+        padding-left: 10px;
+        margin-left: 10px;
+      }
+      
+      blockquote, blockquote p {
+        font-style: oblique;
+        font-weight: 400;
+        font-size: 20px;
+      }
+
+    header {
+      padding: 1em;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      border-bottom: 1px solid #cccccc;
+      background-color: #f1f1f1;
+    }
+
+    /*
+      Zone System gradient because I still love Adam's approach.
+      That, and I totally apporiated the look from Paul Lewis (his is cooler).
+    */
+    header:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      content: '';
+      background: linear-gradient(to right,
+        #000000 0,   #1a1a1a 10%, #333333 20%, #4d4d4d 30%, #666666 40%, #808080 50%,
+        #999999 60%, #b3b3b3 70%, #cccccc 80%, #e6e6e6 90%, #ffffff 100%);
+    }
+
+    header h1 {
+      font-weight: 100;
+      margin: 0 5px;
+      font-size: 32px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 5px;
+      font-size: 16px;
+      text-transform: uppercase;
+      line-height: 2em;
+      font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+    }
+
+    #me {
+      width: 100px;
+      height: 100px;
+      border-radius: 10%;
+      margin: 0 25px;
+    }
+
+    footer {
+      border-top: 1px solid #cccccc;
+      background-color: #f1f1f1;
+      display: block;
+    }
+
+    footer > div {
+      margin: auto;
+      padding: 40px 20px 0;
+      max-width: 800px;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
+
+    footer > div section {
+      -ms-flex: 1 1 0.000000001px;
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    #thanks {
+      padding: 0 0 40px;
+    }
+
+    #thanks p {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--secondary-text-color);
+      font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+    }
+
+    #thanks p a {
+      background-image: none;
+      background-repeat: initial;
+      background-position: initial;
+      color: var(--secondary-text-color);
+      border-bottom: 1px dotted;
+    }
+ 
+    #main {
+      max-width: 800px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    #main iframe, #main img {
+      max-width: 100%;
+    }
+
+    #posts {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .post-container {
+      height: 125px;
+      width: calc(50% - 5px);
+    }
+
+    .post-container a {
+      color: initial;
+      background-image: none;
+      background-repeat: initial;
+      background-position: initial;
+    }
+
+    .post-container a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .post-container a span {
+      font-size: 14px;
+      color: #CC5511;
+    }
+
+    .post-container a h2 {
+      font-weight: 400;
+    }
+
+    .post-container a h3 {
+      font-weight: 200;
+      text-transform: uppercase;
+      font-size: 16px;
+      color: #CC5511;
+    }
+      
+    code-block {
+      display: block;
+      unicode-bidi: embed;
+      font-family: monospace;
+      white-space: pre;
+      font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+      font-size: 16px;
+      line-height: 1.375;
+      direction: ltr;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+      background: #faf8f5;
+      color: #728fcb;
+      max-width: 100%;
+      overflow-x: scroll;
+      padding: 5px;
+    }
+
+    @media (max-width: 767px) {
+      header, footer > div {
+        flex-direction: column;
+      }
+      header h1 {
+        text-align: center;
+        margin: 0;
+      }
+      #me {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 10px;
+      }
+      p, li {
+        font-size: 18px;
+        line-height: 1.58;
+        letter-spacing: -.004em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <img id="me" src="/images/manifest/me-150.jpg" alt="Justin Ribeiro">
+    </div>
+    <div>
+      <h1>Justin Ribeiro</h1>
+        <nav role="navigation">
+          <a href="/?static=true">Home</a>
+          <a href="/chronicle/?static=true">Blog</a>
+          <a href="/talks/?static=true">Talks</a>
+          <a href="/about/?static=true">About</a>
+        </nav>
+    </div>
+  </header>
+  <div id="container">
+    <div id="main">
+      
+      {% if pagetype == "post" %}
+      <h1>{{ title|safe }}</h1>
+      <time datetime="{{ dataModified }}">{{ date }}</time>
+      {% endif %}
+      
+      {{ article|safe }}
+
+      {% if posts %}
+        <section id="posts">
+        {% for post in posts %}
+          <div class="post-container">
+            <a href="{{ post.permalink }}?static=true">
+              <h3 class="date">{{post.date}}</h3>
+              <h2 class="title">{{ post.title }}</h2>
+            </a>
+          </div>
+        {% endfor %}
+        </section>
+      {% endif %}
+      
+    </div>
+  </div>
+  <footer>
+    <div>
+      <section>
+        <h2>Hello, nice to meet you.</h2>
+        <p>I'm happy to talk. You can reach me via <a href="https://twitter.com/justinribeiro">Twitter</a>, <a href="https://plus.google.com/+JustinRibeiro">Google+</a>, and <a href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>.</p>
+
+        <p>Looking for some of my code? Check <a href="https://github.com/justinribeiro">Github</a> or <a href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
+      </section>
+      <section>
+        <h2>Meta Things</h2>
+        <p><a href="https://justinribeiro.com/chronicle/index.xml">RSS feed</a>. RIP Reader, give <a href="https://github.com/mjibson/goread">GoRead</a> a spin.</p>
+        <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa">file a ticket</a> so I can fix it.</p>
+      </section>
+    </div>
+    <div id="thanks">
+      <p>Made with <span class="hotpink">❤️</span> using <a href="https://www.polymer-project.org/">Polymer</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+application: justinribeiro-web
+version: 3-0-2
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+handlers:
+- url: /.well-known/acme-challenge/.*
+  script: well_known.app
+
+- url: /data/(.*)
+  static_files: dist/data/\1
+  upload: dist/data/(.*)
+  secure: always
+  application_readable: true
+
+- url: /helpers
+  static_dir: dist/helpers
+  secure: always
+  application_readable: true
+
+- url: /images/(.*)
+  static_files: dist/images/\1
+  upload: dist/images/(.*)
+  secure: always
+  expiration: "90d"
+
+- url: /bower_components
+  static_dir: dist/bower_components
+  secure: always
+
+- url: /src
+  static_dir: dist/src
+  secure: always
+
+- url: /robots.txt
+  static_files: dist/robots.txt
+  upload: dist/robots.txt
+  secure: always
+
+- url: /sitemap.xml
+  static_files: dist/data/sitemap.xml
+  upload: dist/data/data/sitemap.xml
+  secure: always
+
+- url: /blog/index.xml
+  static_files: dist/data/blog/index.xml
+  upload: dist/data/blog/index.xml
+  secure: always
+
+- url: /favicon.ico
+  static_files: dist/favicon.ico
+  upload: dist/favicon.ico
+
+- url: /service-worker.js
+  static_files: dist/service-worker.js
+  upload: dist/service-worker.js
+  secure: always
+
+- url: /manifest.json
+  static_files: dist/manifest.json
+  upload: dist/manifest.json
+  secure: always
+
+- url: .*
+  script: main.app
+  secure: always
+
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?bower\.json
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.bak$
+- ^(.*/)?node_modules/.*
+- ^(.*/)?hugo/.*
+- ^(.*/)?tests/.*
+- ^.*.md|markdown

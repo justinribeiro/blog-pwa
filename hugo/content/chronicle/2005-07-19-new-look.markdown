@@ -1,0 +1,19 @@
+--- 
+categories:
+- Uncategorized
+date: 2005-07-19T02:13:52Z
+
+title: New look
+url: /chronicle/2005/07/19/new-look/
+wordpress_id: 453
+wordpress_url: http://www.j5studios.com/chronicle/index.php/123
+---
+
+I decided to give the 'ol page a new look.  It's not very drastic, given that the format of the page didn't change. I simply gave it a color makeover.  The beauty of CSS and XHTML is that I only had to edit a couple files, and the look flowed down through the entire site.
+
+
+The new top logo is actually a piece of a picture I took of my dad's Ford 7600 tractor; as you can tell the tractor has seen its share of work.
+
+
+As always, the site continues to be a work in progress.  I'll probably continue tweaking for the next couple of days as I see fit (aka in case I find bugs :-).
+
