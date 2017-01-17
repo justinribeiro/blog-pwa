@@ -152,81 +152,81 @@ int main(int argc, char *argv[]) {
   std::string model_texture_file = argv[15];
 
   // Setup offscreen rendering
-  vtkSmartPointer<vtkGraphicsFactory> graphics_factory = vtkSmartPointer<vtkGraphicsFactory>::New();
-  graphics_factory->SetOffScreenOnlyMode(1);
-  graphics_factory->SetUseMesaClasses(1);
-  vtkSmartPointer<vtkImagingFactory> imaging_factory = vtkSmartPointer<vtkImagingFactory>::New();
-  imaging_factory->SetUseMesaClasses(1);
+  vtkSmartPointer&lt;vtkGraphicsFactory&gt; graphics_factory = vtkSmartPointer&lt;vtkGraphicsFactory&gt;::New();
+  graphics_factory-&gt;SetOffScreenOnlyMode(1);
+  graphics_factory-&gt;SetUseMesaClasses(1);
+  vtkSmartPointer&lt;vtkImagingFactory&gt; imaging_factory = vtkSmartPointer&lt;vtkImagingFactory&gt;::New();
+  imaging_factory-&gt;SetUseMesaClasses(1);
 
   // Set my poly mapper
-  vtkSmartPointer<vtkXMLPolyDataReader> reader = vtkSmartPointer<vtkXMLPolyDataReader>::New();
-    reader->SetFileName(filename.c_str());
-    reader->Update();
-    vtkPolyData* polydata = reader->GetOutput();
+  vtkSmartPointer&lt;vtkXMLPolyDataReader&gt; reader = vtkSmartPointer&lt;vtkXMLPolyDataReader&gt;::New();
+    reader-&gt;SetFileName(filename.c_str());
+    reader-&gt;Update();
+    vtkPolyData* polydata = reader-&gt;GetOutput();
 
-    vtkSmartPointer<vtkPolyDataMapper> mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-    mapper->SetInput(polydata);
+    vtkSmartPointer&lt;vtkPolyDataMapper&gt; mapper = vtkSmartPointer&lt;vtkPolyDataMapper&gt;::New();
+    mapper-&gt;SetInput(polydata);
 
   // Define the camera in scene
-  vtkSmartPointer<vtkCamera> camera = vtkSmartPointer<vtkCamera>::New();
-  camera->SetPosition(camera_pos_x, camera_pos_y, camera_pos_z);
-  camera->SetFocalPoint(camera_focal_x, camera_focal_y, camera_focal_z);
-  camera->Yaw(camera_yaw_y);
-  camera->Pitch(camera_pitch_x);
-  camera->Roll(camera_roll_z);
-  camera->SetViewAngle(camera_view_angle);
-  camera->SetClippingRange(1, 1000);
+  vtkSmartPointer&lt;vtkCamera&gt; camera = vtkSmartPointer&lt;vtkCamera&gt;::New();
+  camera-&gt;SetPosition(camera_pos_x, camera_pos_y, camera_pos_z);
+  camera-&gt;SetFocalPoint(camera_focal_x, camera_focal_y, camera_focal_z);
+  camera-&gt;Yaw(camera_yaw_y);
+  camera-&gt;Pitch(camera_pitch_x);
+  camera-&gt;Roll(camera_roll_z);
+  camera-&gt;SetViewAngle(camera_view_angle);
+  camera-&gt;SetClippingRange(1, 1000);
 
   // Put my model into the scene, kill the backface
-  vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
-  actor->SetMapper(mapper);
-  actor->SetScale(1);
-  actor->GetProperty()->BackfaceCullingOn();
+  vtkSmartPointer&lt;vtkActor&gt; actor = vtkSmartPointer&lt;vtkActor&gt;::New();
+  actor-&gt;SetMapper(mapper);
+  actor-&gt;SetScale(1);
+  actor-&gt;GetProperty()-&gt;BackfaceCullingOn();
 
   // Create a renderer, give it the camera
-  vtkSmartPointer<vtkRenderer> renderer = vtkSmartPointer<vtkRenderer>::New();
-  renderer->SetActiveCamera(camera);
+  vtkSmartPointer&lt;vtkRenderer&gt; renderer = vtkSmartPointer&lt;vtkRenderer&gt;::New();
+  renderer-&gt;SetActiveCamera(camera);
 
-  // Our render "window" (it's not really a window)
-  vtkSmartPointer<vtkRenderWindow> renderWindow = vtkSmartPointer<vtkRenderWindow>::New();
-  renderWindow->SetOffScreenRendering(1);
-  renderWindow->SetSize(canvas_width, canvas_height);
-  renderWindow->AddRenderer(renderer);
+  // Our render &quot;window&quot; (it&#039;s not really a window)
+  vtkSmartPointer&lt;vtkRenderWindow&gt; renderWindow = vtkSmartPointer&lt;vtkRenderWindow&gt;::New();
+  renderWindow-&gt;SetOffScreenRendering(1);
+  renderWindow-&gt;SetSize(canvas_width, canvas_height);
+  renderWindow-&gt;AddRenderer(renderer);
 
   // Add the actors to the scene
-  renderer->AddActor(actor);
-  renderer->SetBackground(0, 0, 0); // Background color black
+  renderer-&gt;AddActor(actor);
+  renderer-&gt;SetBackground(0, 0, 0); // Background color black
 
   // Get me a frame!
-  renderWindow->Render();
+  renderWindow-&gt;Render();
 
   // Dump that frame from the window
-  vtkSmartPointer<vtkWindowToImageFilter> windowToImageFilter = vtkSmartPointer<vtkWindowToImageFilter>::New();
-  windowToImageFilter->SetInput(renderWindow);
-  windowToImageFilter->Update();
+  vtkSmartPointer&lt;vtkWindowToImageFilter&gt; windowToImageFilter = vtkSmartPointer&lt;vtkWindowToImageFilter&gt;::New();
+  windowToImageFilter-&gt;SetInput(renderWindow);
+  windowToImageFilter-&gt;Update();
 
   // Damn it, there be something wrong with WriteToMemoryOn, do something to fill the gap
-  std::string fn = "/tmp/";
+  std::string fn = &quot;/tmp/&quot;;
   fn += randomString(24, true, true, false);
-  fn += ".jpg";
-  vtkSmartPointer<vtkJPEGWriter> writer = vtkSmartPointer<vtkJPEGWriter>::New();
-  //writer->WriteToMemoryOn();
-  writer->SetFileName(fn.c_str());
-  writer->SetQuality(65);
-  writer->SetInputConnection(windowToImageFilter->GetOutputPort());
-  writer->Write();
+  fn += &quot;.jpg&quot;;
+  vtkSmartPointer&lt;vtkJPEGWriter&gt; writer = vtkSmartPointer&lt;vtkJPEGWriter&gt;::New();
+  //writer-&gt;WriteToMemoryOn();
+  writer-&gt;SetFileName(fn.c_str());
+  writer-&gt;SetQuality(65);
+  writer-&gt;SetInputConnection(windowToImageFilter-&gt;GetOutputPort());
+  writer-&gt;Write();
 
-  std::string command64 = "base64 ";
+  std::string command64 = &quot;base64 &quot;;
   command64 += fn;
   char fc[100];
   strcpy(fc, command64.c_str());
 
-  std::string datauri = "data:image/jpeg;base64,";
+  std::string datauri = &quot;data:image/jpeg;base64,&quot;;
   std::string encoded = exec(fc);
   datauri += encoded;
 
   // return my data:uri
-  std::cout << "" << datauri << std::endl;
+  std::cout &lt;&lt; &quot;&quot; &lt;&lt; datauri &lt;&lt; std::endl;
 
   // remove the temp file
   remove(fn.c_str());
@@ -246,34 +246,34 @@ std::string randomString(int length, bool letters, bool numbers, bool symbols) {
   srand(time(NULL));
   std::string allPossible; // this will contain all necessary characters
   std::string str; // the random string
-  if (letters == true) { // if you passed true for letters, we'll add letters to the possibilities
-    for (int i = 65; i <= 90; i++) {
-      allPossible += static_cast<char>(i);
-      allPossible += static_cast<char>(i + 32); // add a lower case letter, too!
+  if (letters == true) { // if you passed true for letters, we&#039;ll add letters to the possibilities
+    for (int i = 65; i &lt;= 90; i++) {
+      allPossible += static_cast&lt;char&gt;(i);
+      allPossible += static_cast&lt;char&gt;(i + 32); // add a lower case letter, too!
     }
   }
-  if (numbers == true) { // if you wanted numbers, we'll add numbers
-    for (int i = 48; i <= 57; i++) {
-      allPossible += static_cast<char>(i);
+  if (numbers == true) { // if you wanted numbers, we&#039;ll add numbers
+    for (int i = 48; i &lt;= 57; i++) {
+      allPossible += static_cast&lt;char&gt;(i);
     }
   }
-  if (symbols == true) { // if you want symbols, we'll add symbols (note, their ASCII values are scattered)
-    for (int i = 33; i <= 47; i++) {
-      allPossible += static_cast<char>(i);
+  if (symbols == true) { // if you want symbols, we&#039;ll add symbols (note, their ASCII values are scattered)
+    for (int i = 33; i &lt;= 47; i++) {
+      allPossible += static_cast&lt;char&gt;(i);
     }
-    for (int i = 58; i <= 64; i++) {
-      allPossible += static_cast<char>(i);
+    for (int i = 58; i &lt;= 64; i++) {
+      allPossible += static_cast&lt;char&gt;(i);
     }
-    for (int i = 91; i <= 96; i++) {
-      allPossible += static_cast<char>(i);
+    for (int i = 91; i &lt;= 96; i++) {
+      allPossible += static_cast&lt;char&gt;(i);
     }
-    for (int i = 123; i <= 126; i++) {
-      allPossible += static_cast<char>(i);
+    for (int i = 123; i &lt;= 126; i++) {
+      allPossible += static_cast&lt;char&gt;(i);
     }
   }
   // get the number of characters to use (used for rand())
   int numberOfPossibilities = allPossible.length();
-  for (int i = 0; i < length; i++) {
+  for (int i = 0; i &lt; length; i++) {
     str += allPossible[rand() % numberOfPossibilities];
   }
 
@@ -281,11 +281,11 @@ std::string randomString(int length, bool letters, bool numbers, bool symbols) {
 }
 
 std::string exec(char* cmd) {
-  FILE* pipe = popen(cmd, "r");
+  FILE* pipe = popen(cmd, &quot;r&quot;);
   if (!pipe)
-    return "ERROR";
+    return &quot;ERROR&quot;;
   char buffer[128];
-  std::string result = "";
+  std::string result = &quot;&quot;;
   while (!feof(pipe)) {
     if (fgets(buffer, 128, pipe) != NULL)
       result += buffer;
@@ -330,9 +330,9 @@ You think that little 16GB workstation is going to be enough? Unlikely. The real
 #include &lt;vtkProperty.h&gt;
 #include &lt;string&gt;
 
-bool hasEnding (std::string const &fullString, std::string const &ending)
+bool hasEnding (std::string const &amp;fullString, std::string const &amp;ending)
 {
-    if (fullString.length() >= ending.length()) {
+    if (fullString.length() &gt;= ending.length()) {
         return (0 == fullString.compare (fullString.length() - ending.length(), ending.length(), ending));
     } else {
         return false;
@@ -345,46 +345,46 @@ int main(int argc, char *argv[])
   char* fnoutput = argv[2];
   double percReduce = atof(argv[3]);
 
-  vtkSmartPointer<vtkPLYReader> reader = vtkSmartPointer<vtkPLYReader>::New();
-  reader->SetFileName(filename.c_str());
-  reader->Update();
+  vtkSmartPointer&lt;vtkPLYReader&gt; reader = vtkSmartPointer&lt;vtkPLYReader&gt;::New();
+  reader-&gt;SetFileName(filename.c_str());
+  reader-&gt;Update();
 
-  vtkSmartPointer<vtkPolyData> inputPolyData = vtkSmartPointer<vtkPolyData>::New();
-  inputPolyData->ShallowCopy(reader->GetOutput());
+  vtkSmartPointer&lt;vtkPolyData&gt; inputPolyData = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+  inputPolyData-&gt;ShallowCopy(reader-&gt;GetOutput());
 
-  std::cout << "Before decimation" << std::endl << "------------" << std::endl;
-  std::cout << "There are "
-            << inputPolyData->GetNumberOfPoints() << " points." << std::endl;
-  std::cout << "There are "
-            << inputPolyData->GetNumberOfPolys() << " polygons." << std::endl;
+  std::cout &lt;&lt; &quot;Before decimation&quot; &lt;&lt; std::endl &lt;&lt; &quot;------------&quot; &lt;&lt; std::endl;
+  std::cout &lt;&lt; &quot;There are &quot;
+            &lt;&lt; inputPolyData-&gt;GetNumberOfPoints() &lt;&lt; &quot; points.&quot; &lt;&lt; std::endl;
+  std::cout &lt;&lt; &quot;There are &quot;
+            &lt;&lt; inputPolyData-&gt;GetNumberOfPolys() &lt;&lt; &quot; polygons.&quot; &lt;&lt; std::endl;
 
-  vtkSmartPointer<vtkQuadricDecimation> decimate =  vtkSmartPointer<vtkQuadricDecimation>::New();
-  decimate->SetTargetReduction(percReduce);
+  vtkSmartPointer&lt;vtkQuadricDecimation&gt; decimate =  vtkSmartPointer&lt;vtkQuadricDecimation&gt;::New();
+  decimate-&gt;SetTargetReduction(percReduce);
 
-  decimate->SetInputConnection(inputPolyData->GetProducerPort());
-  double test = decimate->GetTargetReduction();
-  decimate->Update();
+  decimate-&gt;SetInputConnection(inputPolyData-&gt;GetProducerPort());
+  double test = decimate-&gt;GetTargetReduction();
+  decimate-&gt;Update();
 
-  vtkSmartPointer<vtkPolyData> decimated = vtkSmartPointer<vtkPolyData>::New();
-  decimated->ShallowCopy(decimate->GetOutput());
+  vtkSmartPointer&lt;vtkPolyData&gt; decimated = vtkSmartPointer&lt;vtkPolyData&gt;::New();
+  decimated-&gt;ShallowCopy(decimate-&gt;GetOutput());
 
-  std::cout << "After decimation" << std::endl << "------------" << std::endl;
+  std::cout &lt;&lt; &quot;After decimation&quot; &lt;&lt; std::endl &lt;&lt; &quot;------------&quot; &lt;&lt; std::endl;
 
-  std::cout << "Entered % target: "
-            << argv[3] << " ." << std::endl;
+  std::cout &lt;&lt; &quot;Entered % target: &quot;
+            &lt;&lt; argv[3] &lt;&lt; &quot; .&quot; &lt;&lt; std::endl;
 
-  std::cout << "Decimate % target: "
-            << test << " ." << std::endl;
+  std::cout &lt;&lt; &quot;Decimate % target: &quot;
+            &lt;&lt; test &lt;&lt; &quot; .&quot; &lt;&lt; std::endl;
 
-  std::cout << "There are "
-            << decimated->GetNumberOfPoints() << " points." << std::endl;
-  std::cout << "There are "
-            << decimated->GetNumberOfPolys() << " polygons." << std::endl;
+  std::cout &lt;&lt; &quot;There are &quot;
+            &lt;&lt; decimated-&gt;GetNumberOfPoints() &lt;&lt; &quot; points.&quot; &lt;&lt; std::endl;
+  std::cout &lt;&lt; &quot;There are &quot;
+            &lt;&lt; decimated-&gt;GetNumberOfPolys() &lt;&lt; &quot; polygons.&quot; &lt;&lt; std::endl;
 
-  vtkSmartPointer<vtkPLYWriter> plyWriter = vtkSmartPointer<vtkPLYWriter>::New();
-  plyWriter->SetFileName(fnoutput);
-  plyWriter->SetInputConnection(decimate->GetOutputPort());
-  plyWriter->Write();
+  vtkSmartPointer&lt;vtkPLYWriter&gt; plyWriter = vtkSmartPointer&lt;vtkPLYWriter&gt;::New();
+  plyWriter-&gt;SetFileName(fnoutput);
+  plyWriter-&gt;SetInputConnection(decimate-&gt;GetOutputPort());
+  plyWriter-&gt;Write();
 
   return EXIT_SUCCESS;
 }
@@ -407,7 +407,7 @@ I'm not going to go into the basics of Three.js, there are already tutorials and
 // other classy things
 
 this.ajaxOut = function (camera, control, auto, polycount) {
-  console.group("Prepping to get RemoteFrame");
+  console.group(&quot;Prepping to get RemoteFrame&quot;);
   if (camera != null){
     var viewportCamera = camera;
   } else {
@@ -420,9 +420,9 @@ this.ajaxOut = function (camera, control, auto, polycount) {
     var viewportControl = this._controls;
   }
   
-  // let's initially be sane and only autorender 1M frames
+  // let&#039;s initially be sane and only autorender 1M frames
   if (auto){
-    clp = _loadModelPath + "1";
+    clp = _loadModelPath + &quot;1&quot;;
   } else {
     // burn those CPU cycles!
     clp = _loadModelPath + polycount;
@@ -439,33 +439,33 @@ this.ajaxOut = function (camera, control, auto, polycount) {
       controlsX : viewportControl.target.x,
       controlsY : viewportControl.target.y,
       controlsZ : viewportControl.target.z,
-      canvasW : document.getElementById("canvas_viewport").width,
-      canvasH : document.getElementById("canvas_viewport").height
+      canvasW : document.getElementById(&quot;canvas_viewport&quot;).width,
+      canvasH : document.getElementById(&quot;canvas_viewport&quot;).height
   };
-  console.info("Set up data array for POST", data);
+  console.info(&quot;Set up data array for POST&quot;, data);
   
   var postData = JSON.stringify(data);
-  console.info("Stringify JSON object", postData);
+  console.info(&quot;Stringify JSON object&quot;, postData);
   
   var httpRequest = new XMLHttpRequest();  
     httpRequest.onreadystatechange = function () {
       if (httpRequest.readyState === 4) {  
         if (httpRequest.status === 200) {  
-            console.info("Looking good, AJAX returned 200!");
+            console.info(&quot;Looking good, AJAX returned 200!&quot;);
             
-            var newDiv = document.createElement("div");
-            newDiv.setAttribute("data-img", httpRequest.responseText);
+            var newDiv = document.createElement(&quot;div&quot;);
+            newDiv.setAttribute(&quot;data-img&quot;, httpRequest.responseText);
         
         // meh
-            var content = "Rendered Frame <button class=remoterender-view>View</button> | <button class=remoterender-save>Save</button>";
+            var content = &quot;Rendered Frame &lt;button class=remoterender-view&gt;View&lt;/button&gt; | &lt;button class=remoterender-save&gt;Save&lt;/button&gt;&quot;;
             newDiv.innerHTML = content;
             _renderResponseBlock.appendChild(newDiv);         
-            _renderResponseText.innerHTML = "";
+            _renderResponseText.innerHTML = &quot;&quot;;
             
             if (auto) {
-                var myCanvas = document.getElementById('canvas_viewport_renderoutput');
+                var myCanvas = document.getElementById(&#039;canvas_viewport_renderoutput&#039;);
                             
-                var ctx = myCanvas.getContext('2d');
+                var ctx = myCanvas.getContext(&#039;2d&#039;);
                 ctx.canvas.width  = window.innerWidth;
                 ctx.canvas.height = window.innerHeight;
 
@@ -476,21 +476,21 @@ this.ajaxOut = function (camera, control, auto, polycount) {
                 
                 img.src = httpRequest.responseText;
                 
-                $("#canvas_viewport").hide();
-            $("#canvas_viewport_renderoutput").show();
-                console.debug("rendering automagically!");
+                $(&quot;#canvas_viewport&quot;).hide();
+            $(&quot;#canvas_viewport_renderoutput&quot;).show();
+                console.debug(&quot;rendering automagically!&quot;);
             } 
             
         } else {
-          _renderResponseText.innerHTML = "Could not get a remote frame at this time. Please try again later.";
+          _renderResponseText.innerHTML = &quot;Could not get a remote frame at this time. Please try again later.&quot;;
         }
       }
     };
     
-    httpRequest.open('POST', clp);  
-    httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');  
-    httpRequest.send('data=' + encodeURIComponent(postData) );
-    console.info("Fire in the hole");
+    httpRequest.open(&#039;POST&#039;, clp);  
+    httpRequest.setRequestHeader(&#039;Content-Type&#039;, &#039;application/x-www-form-urlencoded&#039;);  
+    httpRequest.send(&#039;data=&#039; + encodeURIComponent(postData) );
+    console.info(&quot;Fire in the hole&quot;);
   
   console.groupEnd();
 };
