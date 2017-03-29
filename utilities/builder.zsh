@@ -158,7 +158,7 @@ validate_tools() {
     echo "${BOLD_GREEN} YES ${RESET}"
   fi
 
-  if [[ good ]]; then
+  if [ good ]; then
     print "${BOLD_GREEN}Looks like you have all the tools!${RESET}"
   else
     print "${BOLD_RED}Oh no, tools missing! Install the missing tools before continuing.${RESET}"

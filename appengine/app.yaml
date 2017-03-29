@@ -44,7 +44,7 @@ handlers:
 
 - url: /sitemap.xml
   static_files: dist/data/sitemap.xml
-  upload: dist/data/data/sitemap.xml
+  upload: dist/data/sitemap.xml
   secure: always
 
 - url: /blog/index.xml
