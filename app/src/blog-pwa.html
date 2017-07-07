@@ -8,6 +8,7 @@
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 
+<link rel="import" href="../bower_components/neon-animation/web-animations.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
 <link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
 <link rel="import" href="../bower_components/neon-animation/animations/fade-in-animation.html">
@@ -173,9 +174,8 @@
 
     </style>
 
-    <!-- I implemented DNT; make sure to read source to understand  -->
-    <blog-analytics key="UA-96204-3"></blog-analytics>
-
+    <ga-dnt-analytics key="UA-96204-3"></ga-dnt-analytics>
+    
     <app-location route="{{route}}"></app-location>
 
     <app-route
@@ -489,7 +489,7 @@
         // number of ways; 4 attempts spaced at 500ms on 3G is more than
         // workable from what I found testing
         try {
-          this.$$('blog-analytics').send(payload);
+          this.shadowRoot.querySelector('ga-dnt-analytics').send(payload);
         }
         catch (e) {
           this.debounce('_analytics', this._analytics.bind(this, payload, attempt - 1), 500);
