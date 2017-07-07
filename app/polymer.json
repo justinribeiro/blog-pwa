@@ -6,13 +6,13 @@
     "src/blog-chronicle.html",
     "src/lazy-resources.html"
   ],
-  "sourceGlobs": [
+  "sources": [
     "src/**/*",
     "images/**/*",
     "data/**/*",
     "helpers/**/*"
   ],
-  "includeDependencies": [
+  "extraDependencies": [
     "push_manifest.json",
     "robots.txt",
     "manifest.json",
