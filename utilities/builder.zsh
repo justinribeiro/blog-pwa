@@ -1,37 +1,37 @@
 #!/bin/zsh
 #
 # builder.zsh - build our blog-pwa
-# 
+#
 # What you need:
 #   zsh
 #   polymer-cli
 #   hugo
 #   sed
 #   jq
-# 
+#
 # Basic usage:
-# ./utilities/builder.zsh -t [build target]     
-# 
+# ./utilities/builder.zsh -t [build target]
+#
 # Example:
 # ./utilities/builder.zsh -t dev
-# ./utilities/builder.zsh -t prod   
-# 
+# ./utilities/builder.zsh -t prod
+#
 # Targets:
-# 
-# dev 
+#
+# dev
 #   - will do some building and moving of files
 #   - runs polymer serve so you can edit on the fly
-# 
+#
 # prod
 #   - will do some building, will move files around, will vet files
-#   - will generate /ship with ready-to-roll H2 GAE setup 
-#   
+#   - will generate /ship with ready-to-roll H2 GAE setup
+#
 # check
 #   - validates if you have the needed tooling
-#   
+#
 # setup
 #   - runs npm and bower for support of the frontend
-# 
+#
 
 zmodload zsh/zutil
 autoload zmv
@@ -71,7 +71,7 @@ move_json() {
 clean_json() {
   # Optional: strip newline start in article
   sed -r -i -- 's/\"article\": \"\\n\\n/\"article\": \"/g' **/*.json(D.)
-  
+
   # Optional: strip newline double at ending <p>
   sed -r -i -- 's/\&lt;\/p\&gt;\\n\\n/\&lt;\/p\&gt;/g' **/*.json(D.)
 
@@ -188,16 +188,16 @@ case $target in
 
     # Step 3: shuffle html > json
     cd $project/app/data/;
-    
+
     move_json $*
 
     # Clean up some data with sed
     print "${BOLD_BLUE}STAGE 4: Clean JSON data ${RESET}"
     clean_json $*
-    
+
     print "${BOLD_BLUE}STAGE 5: Validate JSON files ${RESET}"
     validate_json $*
-    
+
     # back to top
     cd ../../;
 
@@ -233,10 +233,10 @@ case $target in
     # Clean up some data with sed
     print "${BOLD_BLUE}STAGE 4: Clean JSON data ${RESET}"
     clean_json $*
-    
+
     print "${BOLD_BLUE}STAGE 5: Validate JSON files ${RESET}"
     validate_json $*
-    
+
     # back to top
     cd ../../;
 
@@ -256,7 +256,7 @@ case $target in
 
     # Step 7: copy polymer build
     print "${BOLD_BLUE}STAGE 8: Build+copy polymer build /ship${RESET}"
-    cp -R app/build/unbundled ship/dist;
+    cp -R app/build/default ship/dist;
 
     # Step 8: run app engine dev server to test
     print "${BOLD_GREEN}/ship built and ready for deploy${RESET}"
@@ -269,10 +269,10 @@ case $target in
     print "${BOLD_BLUE}Searching for:${RESET}"
     validate_tools $*
 
-    cd $project/app; 
+    cd $project/app;
 
     print "${BOLD_BLUE}Running 'npm install' ${RESET}"
-    npm install; 
+    npm install;
 
     print "${BOLD_BLUE}Running 'bower install' ${RESET}"
     bower install;
