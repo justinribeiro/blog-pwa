@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <!--
-      Placeholder metadata; gets replaced on the fly by the PWA or in case of 
+      Placeholder metadata; gets replaced on the fly by the PWA or in case of
       static injected into the template on the fly.
     -->
     <title>Justin Ribeiro</title>
@@ -15,7 +15,7 @@
 
     <link rel="icon"     href="/images/manifest/me-192.png">
     <link rel="manifest" href="/manifest.json">
-    <link rel="import"   href="/src/blog-pwa.html" async> 
+    <link rel="import"   href="/src/blog-pwa.html" async>
 
     <style>
       body {
@@ -25,7 +25,7 @@
         min-height: 100vh;
         background-color: #fff;
       }
-      
+
       /*
         I inject a basic look-alike into my unresolved;
         it'll give you a rough skelton that fits and gives okay
@@ -61,22 +61,22 @@
         padding-top: 16px;
       }
     </style>
-    
+
     <link href="/data/chronicle/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro" />
     <link href="/data/chronicle/index.xml" rel="feed" type="application/rss+xml" title="Justin Ribeiro" />
   </head>
   <body>
-    <!-- 
+    <!--
       Special sauce; in the event that we simply don't have JS support or
       even if someone just prefers the static, this path is injected on the fly
       from the server to the static handler. The cool thing about this is that
-      from a shell standpoint, we don't care; the shell doesn't need to know and 
-      if the service worker is already active, no worries: we ignore ?static=true 
-      routes 
+      from a shell standpoint, we don't care; the shell doesn't need to know and
+      if the service worker is already active, no worries: we ignore ?static=true
+      routes
     -->
     <noscript>
-      <p>JavaScript appears to be turned off. 
-      No problem, this Progressive Web App is Progressive! 
+      <p>JavaScript appears to be turned off.
+      No problem, this Progressive Web App is Progressive!
       Redirecting to static page...</p>
       <meta http-equiv="refresh" content="0;url={{ noscript }}">
     </noscript>
@@ -86,24 +86,83 @@
       </header>
     </blog-pwa>
     <script>
-      window.Polymer = {
-        dom: 'shadow',
-        lazyRegister: true,
-      };
+      window.WebComponents = window.WebComponents || {};
+      window.WebComponents.root = '/bower_components/webcomponentsjs/';
 
       (function() {
-        'use strict';
-        if ('registerElement' in document
-            && 'import' in document.createElement('link')
-            && 'content' in document.createElement('template')) {
-          // platform is good!
+      'use strict';
+      // global for (1) existence means `WebComponentsReady` will file,
+      // (2) WebComponents.ready == true means event has fired.
+      window.WebComponents = window.WebComponents || {};
+      var name = 'webcomponents-loader.js';
+      // Feature detect which polyfill needs to be imported.
+      var polyfills = [];
+      if (!('import' in document.createElement('link'))) {
+        polyfills.push('hi');
+      }
+      if (!('attachShadow' in Element.prototype && 'getRootNode' in Element.prototype) ||
+        (window.ShadyDOM && window.ShadyDOM.force)) {
+        polyfills.push('sd');
+      }
+      if (!window.customElements || window.customElements.forcePolyfill) {
+        polyfills.push('ce');
+      }
+      // NOTE: any browser that does not have template or ES6 features
+      // must load the full suite (called `lite` for legacy reasons) of polyfills.
+      if (!('content' in document.createElement('template')) || !window.Promise || !Array.from ||
+        // Edge has broken fragment cloning which means you cannot clone template.content
+        !(document.createDocumentFragment().cloneNode() instanceof DocumentFragment)) {
+        polyfills = ['lite'];
+      }
+
+      if (polyfills.length) {
+        var url;
+        var polyfillFile = 'webcomponents-' + polyfills.join('-') + '.js';
+
+        if (window.WebComponents.root) {
+          url = window.WebComponents.root + polyfillFile;
         } else {
-          // polyfill the platform!
-          var e = document.createElement('script');
-          e.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
-          document.body.appendChild(e);
+          var script = document.querySelector('script[src*="' + name +'"]');
+          // Load it from the right place.
+          url = script.src.replace(name, polyfillFile);
         }
+
+        var newScript = document.createElement('script');
+        newScript.src = url;
+
+        // NOTE: this is required to ensure the polyfills are loaded before
+        // *native* html imports load on older Chrome versions. This *is* CSP
+        // compliant since CSP rules must have allowed this script to run.
+        // In all other cases, this can be async.
+        if (document.readyState === 'loading') {
+          document.write(newScript.outerHTML);
+        } else {
+          document.head.appendChild(newScript);
+        }
+      } else {
+        // Ensure `WebComponentsReady` is fired also when there are no polyfills loaded.
+        // however, we have to wait for the document to be in 'interactive' state,
+        // otherwise a rAF may fire before scripts in <body>
+
+        var fire = function() {
+          requestAnimationFrame(function() {
+            window.WebComponents.ready = true;
+            document.dispatchEvent(new CustomEvent('WebComponentsReady', {bubbles: true}));
+          });
+        };
+
+        if (document.readyState !== 'loading') {
+          fire();
+        } else {
+          document.addEventListener('readystatechange', function wait() {
+            fire();
+            document.removeEventListener('readystatechange', wait);
+          });
+        }
+      }
       })();
+      var Polymer = {};
+      Polymer.passiveTouchGestures = true;
     </script>
     <script type="application/ld+json">
       {
@@ -112,7 +171,7 @@
         "name": "Justin Ribeiro",
         "url": "https://justinribeiro.com/",
         "email": "justin@justinribeiro.com",
-        "image": "https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2017-512.jpg",
+        "image": "https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2018-512.jpg",
         "sameAs": [
           "https://twitter.com/justinribeiro",
           "https://www.linkedin.com/in/justinribeiro",

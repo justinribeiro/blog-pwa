@@ -175,7 +175,7 @@
     </style>
 
     <ga-dnt-analytics key="UA-96204-3"></ga-dnt-analytics>
-    
+
     <app-location route="{{route}}"></app-location>
 
     <app-route
@@ -189,8 +189,8 @@
     <!-- Why is header not a component? Could be, probably should be. -->
     <header small-screen$="[[smallScreen]]">
       <div>
-        <iron-image id="me" sizing="contain" preload fade 
-        src="/images/manifest/me-150.jpg" small-screen$="[[smallScreen]]" 
+        <iron-image id="me" sizing="contain" preload fade
+        src="/images/manifest/me-2018-150.jpg" small-screen$="[[smallScreen]]"
         alt="Justin Ribeiro"></iron-image>
       </div>
       <div>
@@ -221,16 +221,16 @@
         exit-animation="fade-out-animation">
 
       <blog-chronicle name="chronicle" offline="[[offline]]"></blog-chronicle>
-      
+
       <blog-entry name="entry" route="[[subRoute]]" offline="[[offline]]"></blog-entry>
-      
+
       <!-- Why not just swap the which prop? Because then they wouldn't animate -->
       <blog-static name="home" which="index" offline="[[offline]]"></blog-static>
 
       <blog-static name="about" which="about" offline="[[offline]]"></blog-static>
 
       <blog-static name="talks" which="talks" offline="[[offline]]"></blog-static>
-      
+
       <blog-missing name="missing" offline="[[offline]]"></blog-missing>
 
     </neon-animated-pages>
@@ -317,7 +317,7 @@
                   .then(function(registration) {
 
                     registration.onupdatefound = function() {
-                      
+
                       var installingWorker = registration.installing;
 
                       installingWorker.onstatechange = function() {
@@ -325,7 +325,7 @@
                         switch (installingWorker.state) {
                           case 'installed':
                             if (navigator.serviceWorker.controller) {
-                              
+
                               this._noticeBar.setText('Hi there! New and updated content is now available. Refresh page to view. <a href="javascript:window.location.reload(true);">Refresh</a>', true);
 
                             } else {
@@ -349,7 +349,7 @@
                   }.bind(this)).catch(function(e) {
 
                     console.error('SW error on install', e.toString());
-                  
+
                   }.bind(this));
               }
 
@@ -383,7 +383,7 @@
       },
 
       _routePageChanged: function(page) {
-        
+
         // This is a special case; after a lot of testing app-route can be slow
         // to process the tail, which results in a rendering blip on slower
         // devices. This is hard to duplicate, so to help prevent this, I check
@@ -399,7 +399,7 @@
           //if (this.page === 'entry') {
           //  return;
           //}
-          
+
           // TODO Humm skeleton re-create...don't like it.
           if (Polymer.dom(this.root).querySelector('blog-entry').constructor !== HTMLElement) {
             Polymer.dom(this.root).querySelector('blog-entry').resetView();
@@ -415,9 +415,9 @@
 
       _pageChanged: function(page, oldPage) {
 
-        // Dirty, horrible, ugly trick to handle iron-list with a scroll-target // that isn't quite right due to content on top and some other wacky 
+        // Dirty, horrible, ugly trick to handle iron-list with a scroll-target // that isn't quite right due to content on top and some other wacky
         // stunts
-        // 
+        //
         // Need to test https://github.com/PolymerElements/iron-list/issues/366
         // PR as this likely resolve issue and can remove this
         if (page === 'chronicle') {
@@ -494,7 +494,7 @@
         catch (e) {
           this.debounce('_analytics', this._analytics.bind(this, payload, attempt - 1), 500);
         }
-        
+
       }
 
     });

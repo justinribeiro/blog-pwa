@@ -1,4 +1,4 @@
-baseurl = "https://www.justinribeiro.com/"
+baseurl = "https://justinribeiro.com/"
 languageCode = "en-us"
 title = "Justin Ribeiro"
 
@@ -7,7 +7,7 @@ publishdir = "../app/data"
 
 # This is a workaround for not generating taxonomies since I don't handle it
 # at all in the PWA side of life (and I don't want cruft in sitemap.xml)
-# ideally look at PR for https://github.com/spf13/hugo/issues/2534 
+# ideally look at PR for https://github.com/spf13/hugo/issues/2534
 [taxonomies]
   category = ""
   tags = ""

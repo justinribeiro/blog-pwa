@@ -22,14 +22,14 @@ def unescape(s):
   return s
 
 class MainHandler(http2.PushHandler):
-  
+
   def get(self):
-    
-    bot_list_hunt = [ 
-          "Slackbot", 
-          "facebookexternalhit", 
-          "Facebot", 
-          "Twitterbot", 
+
+    bot_list_hunt = [
+          "Slackbot",
+          "facebookexternalhit",
+          "Facebot",
+          "Twitterbot",
           "developers\.google\.com\/\+\/web\/snippet\/",
           "LinkedInBot"
         ]
@@ -42,7 +42,7 @@ class MainHandler(http2.PushHandler):
       #
       # IMPORTANT NOTE: This does not generate for GoogleBot! Don't add it to
       # the list, this is a bad idea. GoogleBot will handle the PWA just fine.
-      name = os.path.join(os.path.dirname(__file__), 'dist/data/', 
+      name = os.path.join(os.path.dirname(__file__), 'dist/data/',
         self.request.path.lstrip("/").replace("index.html", "")
         .replace("index.php", ""), 'index.json')
       f = open(name, 'r');
@@ -53,7 +53,7 @@ class MainHandler(http2.PushHandler):
       data = json.loads(c)
 
       # Grab our template
-      bot_template = os.path.join(os.path.dirname(__file__), 
+      bot_template = os.path.join(os.path.dirname(__file__),
         'dist/helpers/bots.html')
 
       # Send down the wire
@@ -66,10 +66,10 @@ class MainHandler(http2.PushHandler):
         #
         logging.debug('should return the static render, no pwa')
 
-        # In this senario, I know that our root path data is always in 
-        # the index.json within the /data/ directory so it's only a 
+        # In this senario, I know that our root path data is always in
+        # the index.json within the /data/ directory so it's only a
         # matter of open-and-pass
-        name = os.path.join(os.path.dirname(__file__), 'dist/data/', 
+        name = os.path.join(os.path.dirname(__file__), 'dist/data/',
           self.request.path.lstrip("/").replace("index.html", "")
           .replace("index.php", ""), 'index.json')
         f = open(name, 'r');
@@ -83,7 +83,7 @@ class MainHandler(http2.PushHandler):
         data['article'] = unescape(data['article'])
 
         # Grab our template
-        static_template = os.path.join(os.path.dirname(__file__), 
+        static_template = os.path.join(os.path.dirname(__file__),
           'dist/helpers/static.html')
 
         # Send down the wire
@@ -91,17 +91,17 @@ class MainHandler(http2.PushHandler):
       else:
         #
         # All traffic initially starts here: ideally, they get the PWA
-        # but in the event they have no javascript enabled, we have a 
+        # but in the event they have no javascript enabled, we have a
         # failsafe by injecting the route into <noscript> and then push
         # to the static handler to generate a non-JavaScript page.
         #
-        
+
         # I make what's probably a untested assumption and only set the
         # push resources in the event the PWA comes into play
-        push = os.path.join(os.path.dirname(__file__), 'dist/push_manifest.json')
-        self.push_urls = http2.use_push_manifest(push)
-        header = self._generate_link_preload_headers()
-        self.response.headers.add_header('Link', header)
+        #push = os.path.join(os.path.dirname(__file__), 'dist/push_manifest.json')
+        #self.push_urls = http2.use_push_manifest(push)
+        #header = self._generate_link_preload_headers()
+        #self.response.headers.add_header('Link', header)
 
         # Retarget our noscript
         # We chop the URL params for safety and add static param
@@ -110,7 +110,7 @@ class MainHandler(http2.PushHandler):
             }
 
         # Grab our template
-        pwa_template = os.path.join(os.path.dirname(__file__), 
+        pwa_template = os.path.join(os.path.dirname(__file__),
           'dist/index.html')
 
         # Send down the wire

@@ -9,17 +9,18 @@ description = "All the slides and articles I've published."
 +++
 
 # Talks, Publications, and Podcasts
-This is something that should be better.
+Words, written or spoken, are at times the only tool I have to stay otherwise sane as I work through problems and build things.
 
 ## Request Speaking Engagement
 Looking for a speaker at your school, conference, or corporate event? Send me an email at justin@justinribeiro.com and let's try to make it happen!
 
 ## The Web Platform Podcast
-In December 2015, I became a regular host on The Web Platform Podcast with [Erik Isaksen](https://www.twitter.com/eisaksen) and [Danny Blue](https://www.twitter.com/dee_bloo). 
+In December 2015, I became a regular host on The Web Platform Podcast with [Erik Isaksen](https://www.twitter.com/eisaksen). Since mid-2017, I've been hosting the show with [Danny Blue](https://www.twitter.com/dee_bloo), [Amal Hussein](https://twitter.com/nomadtechie), and [Leon Revill](https://twitter.com/revillweb).
 
-For a full listing of episodes I've been on, see [http://thewebplatformpodcast.com/](http://thewebplatformpodcast.com/).
+For a full listing of episodes check out [https://thewebplatformpodcast.com/](https://thewebplatformpodcast.com/).
 
 ## Past Talks, Slidedecks and Publications
+_This list is generally always out of date. I am sorry. I give a lot of talks._
 
 <h3><em><a href="https://stickmanventures.com/blog/2016/11/21/demonstrating-web-performance-at-chrome-dev-summit-2016/">Demonstrating web performance at Chrome Dev Summit 2016</a></em></h3>
 November 2016. Google Chrome Dev Summit.

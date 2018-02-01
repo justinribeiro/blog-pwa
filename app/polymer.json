@@ -15,7 +15,17 @@
   "extraDependencies": [
     "push_manifest.json",
     "robots.txt",
-    "manifest.json",
-    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+    "manifest.json"
+  ],
+  "builds": [
+    {
+      "name": "default",
+      "bundle": false,
+      "js": { "compile": false, "minify": true },
+      "css": { "minify": true },
+      "html": { "minify": true },
+      "addServiceWorker": true,
+      "insertPrefetchLinks": true
+    }
   ]
 }
