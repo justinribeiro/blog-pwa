@@ -45,7 +45,7 @@ Armed with the knowledge that we would have to go to the county for an assessmen
 
 Right or wrong, we took action. We chose not to hide them from the world, but to shower them in what the world had to offer. Time will tell us if these were the right things to do.
 
-While I could write eleqant prose that such actions have resulted in a turnaround as they finish kindergarten, that everything is back to normal (whatever that term means), I cannot. The reality is very much different.
+While I could write eloquent prose that such actions have resulted in a turnaround as they finish kindergarten, that everything is back to normal (whatever that term means), I cannot. The reality is very much different.
 
 Most days are a struggle. The mornings are heartbreaking, knowing that the school drop off will be anything but simple. Have you ever had your children run off school grounds, dodging teachers and administrators because the morning transition was something they couldn’t handle? Now imagine that with twins going two different directions.
 
@@ -55,7 +55,7 @@ The struggle is worth it. They enjoy the challenge of learning and their Spanish
 
 ## Acceptance, no sorrow required
 
-Eve and Bell make me laugh and smile every day. I watch their big sister Alli teach them the piano and their joy explode through music. I see Monica teach them science though experiments and see their wonder looking through a microscope. I see their deep empathy for those in pain and I see their explosive anger when things in the world are not fair.
+Eve and Bell make me laugh and smile every day. I watch their big sister Alli teach them the piano and their joy explode through music. I see Monica teach them science through experiments and see their wonder looking through a microscope. I see their deep empathy for those in pain and I see their explosive anger when things in the world are not fair.
 
 My twins are on the autism spectrum. My silence is shattered, my denial long since past. I no longer fret on the term, but instead seek to understand their viewpoint in the world.
 
