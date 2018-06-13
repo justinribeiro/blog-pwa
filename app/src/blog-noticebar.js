@@ -1,4 +1,4 @@
-<!--
+/**
 @license
 Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -12,15 +12,16 @@ Justin Says:
 
 Style wise, this is spot on the SHOP snackbar; I did change it a bit so that I 
 could use it for other future things.
--->
+*/
+import '@polymer/polymer/polymer-legacy.js';
 
-<link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="shared-styles.html">
+import './shared-styles.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { flush } from '@polymer/polymer/lib/legacy/polymer.dom.js';
 
-<dom-module id="blog-noticebar">
-
-  <template>
-
+Polymer({
+  _template: html`
     <style include="shared-styles">
       :host {
         display: block;
@@ -69,33 +70,25 @@ could use it for other future things.
     </style>
 
     <span id="message"></span>
+`,
 
-  </template>
+  is: 'blog-noticebar',
 
-  <script>
+  setText: function(text, open) {
+    this.$.message.innerHTML = text;
 
-    Polymer({
-      is: 'blog-noticebar',
+    if (open) {
+      this.open();
+    }
+  },
 
-      setText: function(text, open) {
-        this.$.message.innerHTML = text;
+  open: function() {
+    flush();
+    this.offsetHeight && this.classList.add('opened');
+    this.debounce('_close', this.close, 6000);
+  },
 
-        if (open) {
-          this.open();
-        }
-      },
-
-      open: function() {
-        Polymer.dom.flush();
-        this.offsetHeight && this.classList.add('opened');
-        this.debounce('_close', this.close, 6000);
-      },
-
-      close: function() {
-        this.classList.remove('opened');
-      }
-    });
-
-  </script>
-
-</dom-module>
+  close: function() {
+    this.classList.remove('opened');
+  }
+});
