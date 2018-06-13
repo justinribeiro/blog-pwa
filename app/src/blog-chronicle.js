@@ -1,56 +1,27 @@
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import {BlogUtilsBehavior} from './blog-utils-behavior.js';
 import '@polymer/iron-list/iron-list.js';
-import './shared-styles.js';
-import './blog-utils-behavior.js';
+import {BlogUtils} from './blog-utils-mixin.js';
 import './blog-network-warning.js';
+import './shared-styles.js';
 
-
-class BlogChronicle extends BlogUtilsBehavior(PolymerElement) {
-  /**
-    * Object describing property-related metadata used by Polymer features
-    */
+class BlogChronicle extends BlogUtils(PolymerElement) {
   static get properties() {
     return {
       blog: Object,
-      offline: Boolean,
-      failure: Boolean,
-      showing: Boolean
     };
   }
 
-  /**
-    * Array of strings describing multi-property observer methods and their
-    * dependant properties
-    */
-  static get observers() {
-    return [
-      '_showChanged(showing)'
-    ];
-  }
-
-  /**
-    * Called every time the element is inserted into the DOM. Useful for
-    * running setup code, such as fetching resources or rendering.
-    * Generally, you should try to delay work until this time.
-    */
   connectedCallback() {
     super.connectedCallback();
-
     this.mount();
   }
 
-  _showChanged() {
-    if (this.showing) {
-      this.mount();
-      this._setPageMetaData({
-        title: 'Chronicle Archives',
-        description: 'An archive of blog posts, thoughts, and other musings from Justin Ribeiro. Pulling. It. Off.'
-      });
-    }
-  }
+  mount() {
+    this._setPageMetaData({
+      title: 'Chronicle Archives',
+      description: 'An archive of blog posts, thoughts, and other musings from Justin Ribeiro. Pulling. It. Off.',
+    });
 
-  mount(target) {
     // TODO year filter via route target match
     this._getResource({
       url: '/data/chronicle/index.json',
@@ -63,7 +34,7 @@ class BlogChronicle extends BlogUtilsBehavior(PolymerElement) {
       },
       onError: function(e) {
         this.set('failure', true);
-      }
+      },
     }, 3);
   }
 
@@ -129,8 +100,9 @@ class BlogChronicle extends BlogUtilsBehavior(PolymerElement) {
         </iron-list>
       </div>
 
-      <blog-network-warning hidden$="[[!failure]]" offline="[[offline]]"
-        on-try-reconnect="_tryConnect"></blog-network-warning>
+      <blog-network-warning hidden$="[[!failure]]"
+          on-try-reconnect="mount">
+      </blog-network-warning>
     `;
   }
 }

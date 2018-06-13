@@ -1,22 +1,13 @@
 import {mixinBehaviors} from '@polymer/polymer/lib/legacy/class.js';
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import {IronResizableBehavior} from '@polymer/iron-resizable-behavior/iron-resizable-behavior.js';
-import {IronSelectableBehavior} from '@polymer/iron-selector/iron-selectable.js';
+import {IronResizableBehavior} from
+  '@polymer/iron-resizable-behavior/iron-resizable-behavior.js';
+import {IronSelectableBehavior} from
+  '@polymer/iron-selector/iron-selectable.js';
 import '@polymer/iron-pages/iron-pages.js';
 
 /**
- * `sv-pages` is "mini neon-animation" without the bulk. Operates like
- * iron-pages. To select one of its children to show. One use is to cycle
- * through a list of children "pages".
- *
- * Example:
- * <sv-pages selected="0">
- *  <div>One</div>
- *  <div>Two</div>
- *  <div>Three</div>
- * </sv-pages>
- *
- * @summary Swap between pages with ease.
+ * Mini neon-pages
  * @customElement
  * @polymer
  * @extends {Polymer.Element}
@@ -27,7 +18,6 @@ const legacyMixinSupport = mixinBehaviors(
     PolymerElement);
 
 class BlogPages extends legacyMixinSupport {
-
   static get properties() {
     return {
       // as the selected page is the only one visible, activateEvent
@@ -70,14 +60,9 @@ class BlogPages extends legacyMixinSupport {
           };
         },
       },
-    }
+    };
   }
 
-  /**
-  * Called every time the element is inserted into the DOM. Useful for
-  * running setup code, such as fetching resources or rendering.
-  * Generally, you should try to delay work until this time.
-  */
   connectedCallback() {
     super.connectedCallback();
     document.addEventListener('iron-select', (e) => this._onIronSelect(e));

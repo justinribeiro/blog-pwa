@@ -1,6 +1,6 @@
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 import {afterNextRender} from '@polymer/polymer/lib/utils/render-status.js';
-import '@polymer/iron-media-query/iron-media-query.js';
+import '@polymer/iron-flex-layout/iron-flex-layout-classes.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-image/iron-image.js';
@@ -9,10 +9,6 @@ import './blog-entry.js';
 import './shared-styles.js';
 
 class BlogPwa extends PolymerElement {
-
-  /**
-   * Object describing property-related metadata used by Polymer features
-   */
   static get properties() {
     return {
       page: {
@@ -21,37 +17,31 @@ class BlogPwa extends PolymerElement {
         observer: '_pageChanged'
       },
       routeData: Object,
-      offline: Boolean,
-      _a11yLabel: String
+      offline: {
+        type: Boolean,
+        value: false
+      },
+      showSnackBar: {
+        type: Boolean,
+        value: false,
+      }
     };
   }
 
-  /**
-    * Array of strings describing multi-property observer methods and their
-    * dependant properties
-    */
   static get observers() {
     return [
       '_routePageChanged(routeData.page)'
     ];
   }
-  // listeners: {
-  //   'announce': '_onAnnounce',
-  //   'analytics': '_onAnalytics'
-  // },
 
-  /**
-   * Use for one-time configuration of your component after local DOM is
-   * initialized.
-   */
   ready() {
     super.ready();
 
     this.removeAttribute('unresolved');
 
     afterNextRender(this, (_) => {
-      window.addEventListener('online', () => _notifyNetworkStatus(false));
-      window.addEventListener('offline', () => _notifyNetworkStatus(true));
+      window.addEventListener('online', () => this._notifyNetworkStatus(false));
+      window.addEventListener('offline', () => this._notifyNetworkStatus(true));
     });
   }
 
@@ -59,7 +49,6 @@ class BlogPwa extends PolymerElement {
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
       afterNextRender(this, () => {
-
         import('./lazy-resources.js').then((_) => {
           // I have this notion that I'm going to use this for other things
           // so I load it up now after the resource load.
@@ -78,9 +67,9 @@ class BlogPwa extends PolymerElement {
                     switch (installingWorker.state) {
                       case 'installed':
                         if (navigator.serviceWorker.controller) {
-                          this._noticeBar.setText('Hi there! New and updated content is now available. Refresh page to view. <a href="javascript:window.location.reload(true);">Refresh</a>', true);
+                          this._setSnackBarText('Hi there! New and updated content is now available. Refresh page to view. <a href="javascript:window.location.reload(true);">Refresh</a>', true);
                         } else {
-                          this._noticeBar.setText('Good news: I used some cutting edge web tech to make some content available offline!', true);
+                          this._setSnackBarText('Good news: I used some cutting edge web tech to make some content available offline!', true);
                         }
                         break;
                       case 'redundant':
@@ -94,12 +83,19 @@ class BlogPwa extends PolymerElement {
                 console.error('SW error on install', e.toString());
               });
           }
-
           this._notifyNetworkStatus();
           this.loadComplete = true;
         }, this._pageNotFound.bind(this));
       });
     }
+  }
+
+  _setSnackBarText(text, timeout = 6000) {
+    this.shadowRoot.querySelector('snack-bar').innerHTML = text;
+    this.showSnackBar = true;
+    setTimeout(() => {
+      this.showSnackBar = false;
+    }, timeout)
   }
 
   // This is nearly one for one out of the Polymer Shop demo with some minor
@@ -109,7 +105,6 @@ class BlogPwa extends PolymerElement {
     this.offline =  !navigator.onLine;
 
     if (this.offline || (!this.offline && oldOffline === true)) {
-
       // Why do this if _noticeBar is lazy loaded and called after that
       // completes? Because there is a case that the listener is setup first
       // which means if the state changes it may not be done..
@@ -119,8 +114,8 @@ class BlogPwa extends PolymerElement {
         this._noticeBar = document.createElement('blog-noticebar');
         this.shadowRoot.appendChild(this._noticeBar);
       }
-      var offlineState = this.offline ? 'You are offline.' : 'You are online.';
-      this._noticeBar.setText(offlineState, true);
+      let offlineState = this.offline ? 'You appear to have gone offline.' : 'You appear to now be back online.';
+      this._setSnackBarText(offlineState);
     }
   }
 
@@ -134,14 +129,6 @@ class BlogPwa extends PolymerElement {
     // structure, but I find this case isn't the end of the world.
     var fastCheck = new RegExp('\/chronicle/[0-9]*\/[0-9]*\/[0-9]*\/[\w\-]*', 'g');
     if (fastCheck.test(this.route.path)){
-
-      // TODO dangerous assumption for cross-post movement, but since I'm
-      // not using related yet, leave for now
-      //if (this.page === 'entry') {
-      //  return;
-      //}
-
-      // TODO Humm skeleton re-create...don't like it.
       if (this.shadowRoot.querySelector('blog-entry').constructor !== HTMLElement) {
         this.shadowRoot.querySelector('blog-entry').resetView();
       }
@@ -185,46 +172,6 @@ class BlogPwa extends PolymerElement {
     this.page = 'missing';
   }
 
-  // Elements in the app can notify a change to be a11y announced.
-  _onAnnounce(e) {
-    this._announce(e.detail);
-  }
-
-  // A11y announce the given message.
-  _announce(message) {
-    this._a11yLabel = '';
-    this.debounce('_a11yAnnouncer', function() {
-      this._a11yLabel = message;
-    }, 100);
-  }
-
-  // Listen for things to send to GA
-  _onAnalytics(e) {
-    this._analytics(e.detail, 4);
-  }
-
-  // blog-implements ga('send'), so send it an object ala
-  // {
-  //  hitType: 'pageview',
-  //  page: window.location.pathname,
-  //  location: window.location.href,
-  //  title: page.title
-  // }
-  // See documentation:
-  // https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
-  // https://developers.google.com/analytics/devguides/collection/analyticsjs/user-timings
-  _analytics(payload, attempt) {
-    // In the event that blog-analytics isn't yet lazy loaded, we don't push
-    // the subject; we just set the retry and wait for it. You can do this a
-    // number of ways; 4 attempts spaced at 500ms on 3G is more than
-    // workable from what I found testing
-    try {
-      this.shadowRoot.querySelector('ga-dnt-analytics').send(payload);
-    }
-    catch (e) {
-      this.debounce('_analytics', this._analytics.bind(this, payload, attempt - 1), 500);
-    }
-  }
   static get template() {
     return html`
       <style include="shared-styles">
@@ -242,10 +189,6 @@ class BlogPwa extends PolymerElement {
           width: 100%;
           z-index: 100;
           height: 135px;
-        }
-
-        header[small-screen] {
-          height: 100px;
         }
 
         /*
@@ -274,14 +217,6 @@ class BlogPwa extends PolymerElement {
           font-size: 32px;
         }
 
-        header[small-screen] h1 {
-          margin: 0;
-          font-size: 24px;
-        }
-
-        header[small-screen] div:first-child {
-          display: flex;
-        }
 
         nav {
           margin-top: 10px;
@@ -294,21 +229,11 @@ class BlogPwa extends PolymerElement {
           line-height: 2em;
         }
 
-        header[small-screen] nav a:first-child {
-          margin: 0 5px 0 0;
-        }
-
         #me {
           width: 100px;
           height: 100px;
           border-radius: 10%;
           margin: 0 25px;
-        }
-
-        #me[small-screen] {
-          width: 75px;
-          height: 75px;
-          margin: 0 15px 0 0;
         }
 
         footer {
@@ -323,12 +248,6 @@ class BlogPwa extends PolymerElement {
           max-width: 800px;
           @apply(--layout-horizontal);
           @apply(--layout-center-justified);
-        }
-
-        /* mobile safari with a column layout won't calc, add min-height */
-        footer > div[small-screen] {
-          @apply(--layout-vertical);
-          min-height: 500px;
         }
 
         footer > div section {
@@ -360,6 +279,37 @@ class BlogPwa extends PolymerElement {
           overflow: hidden;
         }
 
+        @media (max-width: 767px) {
+          header {
+            height: 100px;
+          }
+
+          header h1 {
+            margin: 0;
+            font-size: 24px;
+          }
+
+          header div:first-child {
+            display: flex;
+          }
+
+          header nav a:first-child {
+            margin: 0 5px 0 0;
+          }
+
+          #me {
+            width: 75px;
+            height: 75px;
+            margin: 0 15px 0 0;
+          }
+
+          /* mobile safari with a column layout won't calc, add min-height */
+          footer > div {
+            @apply(--layout-vertical);
+            min-height: 500px;
+          }
+        }
+
         @media (max-width: 320px) {
           header {
             text-align: center;
@@ -370,7 +320,6 @@ class BlogPwa extends PolymerElement {
             display: none !important;
           }
         }
-
       </style>
 
       <ga-dnt-analytics key="UA-96204-3"></ga-dnt-analytics>
@@ -382,12 +331,12 @@ class BlogPwa extends PolymerElement {
           data="{{routeData}}"
           tail="{{subRoute}}"></app-route>
 
-      <iron-media-query query="max-width: 767px" query-matches="{{smallScreen}}"></iron-media-query>
-
       <!-- Why is header not a component? Could be, probably should be. -->
-      <header small-screen\$="[[smallScreen]]">
+      <header>
         <div>
-          <iron-image id="me" sizing="contain" preload="" fade="" src="/images/manifest/me-2018-150.jpg" small-screen\$="[[smallScreen]]" alt="Justin Ribeiro"></iron-image>
+          <iron-image id="me" sizing="contain" preload fade
+              src="/images/manifest/me-2018-150.jpg" alt="Justin Ribeiro">
+          </iron-image>
         </div>
         <div>
           <h1>Justin Ribeiro</h1>
@@ -422,9 +371,8 @@ class BlogPwa extends PolymerElement {
         <blog-missing name="missing" offline="[[offline]]"></blog-missing>
       </blog-pages>
 
-      <!-- Why is footer not a component? Could be, probably should be. -->
       <footer>
-        <div small-screen\$="[[smallScreen]]">
+        <div>
           <section>
             <h2>Hello, nice to meet you.</h2>
             <p>I'm happy to talk. You can reach me via <a href="https://twitter.com/justinribeiro">Twitter</a>, <a href="https://plus.google.com/+JustinRibeiro">Google+</a>, and <a href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>.</p>
@@ -442,8 +390,7 @@ class BlogPwa extends PolymerElement {
         </div>
       </footer>
 
-      <!-- a11y announcer, via Polymer SHOP demo -->
-      <div class="announcer" aria-live="assertive">[[_a11yLabel]]</div>
+      <snack-bar active$="{{showSnackBar}}"></snack-bar>
       `;
   }
 }

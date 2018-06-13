@@ -1,7 +1,8 @@
 {
   "name": "Justin Ribeiro",
   "short_name": "Justin R.",
-  "start_url": "/index.html?utm_source=homescreen",
+  "description": "Software Engineer. Speaker. Writer. Dad. Coach. Occasionally funny",
+  "start_url": "/",
   "theme_color": "#f1f1f1",
   "background_color": "#f1f1f1",
   "icons": [{

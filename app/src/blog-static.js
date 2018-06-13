@@ -1,19 +1,16 @@
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import './shared-styles.js';
-import {BlogUtilsBehavior} from './blog-utils-behavior.js';
+import {BlogUtils} from './blog-utils-mixin.js';
 import './blog-network-warning.js';
+import './shared-styles.js';
 
-class BlogStatic extends BlogUtilsBehavior(PolymerElement) {
-
+class BlogStatic extends BlogUtils(PolymerElement) {
   static get properties() {
     return {
       metadata: Object,
-      failure: Boolean,
       loaded: Boolean,
-      offline: Boolean,
       which: String,
-      render: Boolean
-    }
+      render: Boolean,
+    };
   }
 
   resetView() {
@@ -35,8 +32,7 @@ class BlogStatic extends BlogUtilsBehavior(PolymerElement) {
   mount() {
     window.scroll(0, 0);
     if (this.which && this.render) {
-
-      var targetUrl = '';
+      let targetUrl = '';
       if (this.which == 'index') {
         targetUrl = '/data/index.json';
       } else {
@@ -49,9 +45,11 @@ class BlogStatic extends BlogUtilsBehavior(PolymerElement) {
             this._processMetaData(JSON.parse(e.target.responseText));
           },
           onError: (e) => {
-            this.set('loaded', false);
             this.set('failure', true);
-          }
+            if (!this.loaded) {
+              this.set('loaded', false);
+            }
+          },
         }, 3);
       }
     }
@@ -123,8 +121,9 @@ class BlogStatic extends BlogUtilsBehavior(PolymerElement) {
         <p><hr><hr><hr><hr class="short"></p>
       </section>
 
-      <blog-network-warning hidden$="[[!failure]]" offline$="[[offline]]"
-          on-try-reconnect="_routeChanged"></blog-network-warning>
+      <blog-network-warning hidden$="[[!failure]]"
+          on-try-reconnect="mount">
+      </blog-network-warning>
     `;
   }
 }

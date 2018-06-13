@@ -1,35 +1,19 @@
+import {PolymerElement} from '@polymer/polymer/polymer-element.js';
+
 const styleElement = document.createElement('dom-module');
 styleElement.innerHTML =
  `<template>
    <style>
-    :root {
-      --primary-text-color:       #212121;
-      --secondary-text-color:     #757575;
-
-      --accent-color-primary:     #03A9F4;
-      --accent-color-secondary:   #CC5511;
-      --accent-color-highlight:   #e6e6e6;
-
-      --section-color:            #e6e6e6;
-
-      --structs-bg:               #f1f1f1;
-      --structs-border:           #cccccc;
-
-      --notice-color-bg:          #333333;
-      --notice-color-text:        #ffffff;
-      --notice-color-link:        #f1f900;
-    }
-
     :host {
       display: block;
     }
 
-    .hotpink { color: hotpink; }
-    .red { color: red; }
+    .hotpink { color: var(--hotpink); }
+    .red { color: var(--red); }
 
     iron-image {
       --iron-image-placeholder: {
-        background: lightgray;
+        background: var(--img-background);
       };
     }
 
@@ -45,17 +29,13 @@ styleElement.innerHTML =
       border-bottom: 1px solid var(--accent-color-secondary);
     }
 
-    /**
-     * Poor mans font defs
-     * Based on Medium really. You should read:;
-     * Marcin Wichary https://medium.design/@mwichary
-     */
     h1, h2, h3, h4, h5, h6 {
-      font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-      margin: 0;
+      font-family:
+      "DejaVu Sans", "Bitstream Vera Sans", "Segoe UI", "Lucida Grande", Verdana, Tahoma, Arial, sans-serif;      margin: 0;
     }
+
     p, li {
-      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
       margin: 0;
       color: var(--primary-text-color);
     }
@@ -104,9 +84,9 @@ styleElement.innerHTML =
 
     /* Don't like this; special case. TODO extract */
     p code, li code {
-      background-color: #faf8f5;
+      background-color: var(--code-background);
       font-size: 19px;
-      color: #DD4A68;
+      color: var(--code-color);
       padding: 5px;
     }
 
@@ -133,7 +113,7 @@ styleElement.innerHTML =
     /* Use these to generate skeleton blocks before content loads */
     hr {
       height: 20px;
-      background-color: #ccc;
+      background-color: var(--structs-border);
       border: 0;
     }
     hr.short {

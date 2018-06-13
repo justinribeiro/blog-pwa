@@ -1,13 +1,12 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/blog-pwa.html",
-  "fragments": [
-    "src/blog-static.html",
-    "src/blog-chronicle.html",
-    "src/lazy-resources.html"
+  "shell": "src/blog-pwa.js",
+  "fragments":[
+    "src/blog-static.js",
+    "src/blog-chronicle.js",
+    "src/lazy-resources.js"
   ],
   "sources": [
-    "src/**/*",
     "images/**/*",
     "data/**/*",
     "helpers/**/*"
@@ -15,17 +14,30 @@
   "extraDependencies": [
     "push_manifest.json",
     "robots.txt",
-    "manifest.json"
+    "manifest.json",
+    "node_modules/@webcomponents/webcomponentsjs/**",
+    "node_modules/web-animations-js/web-animations-next-lite.min.js"
   ],
   "builds": [
     {
       "name": "default",
-      "bundle": false,
-      "js": { "compile": false, "minify": true },
-      "css": { "minify": true },
-      "html": { "minify": true },
-      "addServiceWorker": true,
-      "insertPrefetchLinks": true
+      "browserCapabilities": [
+        "es2015",
+        "modules"
+      ],
+      "js": {
+        "minify": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
     }
-  ]
+  ],
+  "moduleResolution": "node",
+  "npm": true
 }
