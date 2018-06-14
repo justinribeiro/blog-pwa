@@ -21,10 +21,6 @@ class BlogPwa extends PolymerElement {
         type: Boolean,
         value: false
       },
-      showSnackBar: {
-        type: Boolean,
-        value: false,
-      }
     };
   }
 
@@ -50,38 +46,14 @@ class BlogPwa extends PolymerElement {
     if (!this.loadComplete) {
       afterNextRender(this, () => {
         import('./lazy-resources.js').then((_) => {
-          // I have this notion that I'm going to use this for other things
-          // so I load it up now after the resource load.
-          if (!this._noticeBar) {
-            this._noticeBar = document.createElement('blog-noticebar');
-            this.shadowRoot.appendChild(this._noticeBar);
-          }
-
           if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js')
-              .then((registration) => {
-                registration.onupdatefound = () => {
-                  const installingWorker = registration.installing;
-
-                  installingWorker.onstatechange = () => {
-                    switch (installingWorker.state) {
-                      case 'installed':
-                        if (navigator.serviceWorker.controller) {
-                          this._setSnackBarText('Hi there! New and updated content is now available. Refresh page to view. <a href="javascript:window.location.reload(true);">Refresh</a>', true);
-                        } else {
-                          this._setSnackBarText('Good news: I used some cutting edge web tech to make some content available offline!', true);
-                        }
-                        break;
-                      case 'redundant':
-                        // Error! Bad! No!
-                        break;
-                    }
-                  }
-                }
-              })
-              .catch((e) => {
-                console.error('SW error on install', e.toString());
-              });
+            navigator.serviceWorker.register('service-worker.js', {
+              scope: './'
+            })
+            .then(registration => {
+              registration.addEventListener('updatefound',
+                () => this._onUpdateFound(registration));
+            });
           }
           this._notifyNetworkStatus();
           this.loadComplete = true;
@@ -90,30 +62,46 @@ class BlogPwa extends PolymerElement {
     }
   }
 
-  _setSnackBarText(text, timeout = 6000) {
-    this.shadowRoot.querySelector('snack-bar').innerHTML = text;
-    this.showSnackBar = true;
-    setTimeout(() => {
-      this.showSnackBar = false;
-    }, timeout)
+  _onUpdateFound(registration) {
+    const newWorker = registration.installing;
+
+    registration.installing.addEventListener('statechange', async () => {
+      if (newWorker.state == 'activated' && !navigator.serviceWorker.controller) {
+        this._setSnackBarText('Ready to work offline.');
+        return;
+      }
+
+      if (newWorker.state == 'activated' && navigator.serviceWorker.controller) {
+        this._setSnackBarText('New and updated content is available. <a href="javascript:window.location.reload(true);">Refresh</a>', 0, true);
+      }
+    });
   }
 
-  // This is nearly one for one out of the Polymer Shop demo with some minor
-  // changes that don't affect it's function.
-  _notifyNetworkStatus() {
+  _setSnackBarText(text, duration, hold) {
+    const timeout = duration || 5000;
+
+    const snackBar = this.shadowRoot.querySelector('snack-bar');
+
+    // Strange bug where the bar blips on some initial loads
+    // workaround by hidding at load and then removing as needed one time
+    if (snackBar.hasAttribute('hidden')) {
+      snackBar.removeAttribute('hidden');
+    }
+    snackBar.innerHTML = text;
+    snackBar.setAttribute('active', true);
+
+    setTimeout(() => {
+      if (!hold) {
+        snackBar.removeAttribute('active');
+      }
+    }, timeout);
+  }
+
+  _notifyNetworkStatus(status) {
     const oldOffline = this.offline;
-    this.offline =  !navigator.onLine;
+    this.offline =  status;
 
     if (this.offline || (!this.offline && oldOffline === true)) {
-      // Why do this if _noticeBar is lazy loaded and called after that
-      // completes? Because there is a case that the listener is setup first
-      // which means if the state changes it may not be done..
-      // Mind you, that's a larger issue than it seems, but this suffices in
-      // most cases.
-      if (!this._noticeBar) {
-        this._noticeBar = document.createElement('blog-noticebar');
-        this.shadowRoot.appendChild(this._noticeBar);
-      }
       let offlineState = this.offline ? 'You appear to have gone offline.' : 'You appear to now be back online.';
       this._setSnackBarText(offlineState);
     }
@@ -242,6 +230,10 @@ class BlogPwa extends PolymerElement {
           display: block;
         }
 
+        footer section h2 {
+          font-weight: 400;
+        }
+
         footer > div {
           margin: auto;
           padding: 40px 20px 0;
@@ -306,7 +298,10 @@ class BlogPwa extends PolymerElement {
           /* mobile safari with a column layout won't calc, add min-height */
           footer > div {
             @apply(--layout-vertical);
-            min-height: 500px;
+          }
+
+          #thanks  {
+            text-align: center;
           }
         }
 
@@ -390,7 +385,7 @@ class BlogPwa extends PolymerElement {
         </div>
       </footer>
 
-      <snack-bar active$="{{showSnackBar}}"></snack-bar>
+      <snack-bar hidden></snack-bar>
       `;
   }
 }

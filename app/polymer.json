@@ -22,11 +22,11 @@
     {
       "name": "default",
       "browserCapabilities": [
-        "es2015",
-        "modules"
+        "es2015"
       ],
       "js": {
-        "minify": true
+        "minify": true,
+        "transformModulesToAmd": true
       },
       "css": {
         "minify": true

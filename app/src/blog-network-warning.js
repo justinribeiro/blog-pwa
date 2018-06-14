@@ -11,7 +11,7 @@ class BlogNetworkWarning extends LitElement {
   _tryReconnect() {
     this.dispatchEvent(new CustomEvent('try-reconnect', {
       bubbles: false,
-      composed: false,
+      composed: true,
     }));
   }
 

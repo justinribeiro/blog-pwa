@@ -25,6 +25,12 @@ class BlogEntry extends BlogUtils(PolymerElement) {
     ];
   }
 
+  ready() {
+    super.ready();
+    this.shadowRoot.querySelector('blog-network-warning')
+      .addEventListener('try-reconnect', () => this._routeChanged());
+  }
+
   resetView() {
     this.set('loaded', null);
     this.set('metadata', {});
@@ -35,11 +41,7 @@ class BlogEntry extends BlogUtils(PolymerElement) {
     // Meh.
     window.scroll(0, 0);
 
-    // Failsafe measure
-    let oldRoute = this.oldRoute;
-    this.oldRoute = this.route;
-
-    if (this.route && (this.route !== oldRoute)) {
+    if (this.route) {
       // Technically, I would just build the string which at this point
       // with the chopping off extra things from the path might be more
       // useful in the long haul
@@ -53,10 +55,10 @@ class BlogEntry extends BlogUtils(PolymerElement) {
 
       this._getResource({
         url: targetUrl,
-        onLoad: function(e) {
+        onLoad: (e) => {
           this.set('metadata', JSON.parse(e.target.responseText));
         },
-        onError: function(e) {
+        onError: (e) => {
           this.set('loaded', false);
           this.set('failure', true);
         },
@@ -65,11 +67,6 @@ class BlogEntry extends BlogUtils(PolymerElement) {
   }
 
   _generatedShareLinks() {
-    if (navigator.share) {
-      this.shadowRoot.querySelector('#webShareApiSupported')
-        .removeClass('hidden');
-      this.shadowRoot.querySelector('#share').addClass('hidden');
-    } else {
       this.set('twitterShare', 'https://twitter.com/intent/tweet?url=' +
       this.metadata.prmalink + '&text=' + this.metadata.title +
       ' via @justinribeiro');
@@ -87,16 +84,6 @@ class BlogEntry extends BlogUtils(PolymerElement) {
 
       this.set('emailShare', 'mailto:?subject=Article: ' + this.metadata.title +
         '&body=Article from Justin Ribeiro: "' + this.metadata.permalink + '"');
-    }
-  }
-
-  _share() {
-    navigator.share({
-      title: `${this.metadata.title} - Justin Ribeiro`,
-      text: this.metadata.description,
-      url: document.location.href,
-    }).then(() => console.log('Successful share'))
-      .catch((error) => console.log('Error sharing', error));
   }
 
   _metaDataChanged() {
@@ -149,6 +136,10 @@ class BlogEntry extends BlogUtils(PolymerElement) {
         #share > a {
           margin-right: 0.5em;
         }
+
+        .hidden {
+          display: none !important;
+        }
       </style>
 
       <!-- :chopchop is there because there is a chance that you end up with
@@ -173,9 +164,6 @@ class BlogEntry extends BlogUtils(PolymerElement) {
       <footer>
         <div>
           <h3>Share this piece</h3>
-          <button id="webShareApiSupported" class="hidden" on-click="_share">
-            Share this Story
-          </button>
           <p id="share"><a href\$="[[twitterShare]]">Twitter</a> <a href\$="[[facebookShare]]">Facebook</a> <a href\$="[[gplusShare]]">G+</a> <a href\$="[[linkedinShare]]">LinkedIn</a> <a href\$="[[emailShare]]">Email</a></p>
           <p>Author Justin Ribeiro wrote [[metadata.words]] words for this piece and hopes you enjoyed it. Find an issue? <a href="https://github.com/justinribeiro/blog-pwa/issues">File a ticket</a> or <a href\$="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/[[metadata.filename]]">edit this on Github.</a></p>
         </div>
@@ -188,8 +176,7 @@ class BlogEntry extends BlogUtils(PolymerElement) {
       <p></p><hr><hr><hr><hr class="short"><p></p>
       </section>
 
-      <blog-network-warning hidden$="[[!failure]]"
-          on-try-reconnect="mount">
+      <blog-network-warning hidden$="[[!failure]]">
       </blog-network-warning>
     `;
   }

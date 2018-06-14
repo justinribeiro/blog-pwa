@@ -11,6 +11,12 @@ class BlogChronicle extends BlogUtils(PolymerElement) {
     };
   }
 
+  ready() {
+    super.ready();
+    this.shadowRoot.querySelector('blog-network-warning')
+      .addEventListener('try-reconnect', () => this.mount());
+  }
+
   connectedCallback() {
     super.connectedCallback();
     this.mount();
@@ -25,14 +31,17 @@ class BlogChronicle extends BlogUtils(PolymerElement) {
     // TODO year filter via route target match
     this._getResource({
       url: '/data/chronicle/index.json',
-      onLoad: function(e) {
+      onLoad: (e) => {
         this.set('blog', JSON.parse(e.target.responseText));
 
         // failsafe
-        this.shadowRoot.querySelector('iron-list').notifyResize();
+        setTimeout(() => {
+          this.shadowRoot.querySelector('iron-list').notifyResize();
+        }, 2000);
+
         this.set('failure', false);
       },
-      onError: function(e) {
+      onError: (e) => {
         this.set('failure', true);
       },
     }, 3);
@@ -46,9 +55,7 @@ class BlogChronicle extends BlogUtils(PolymerElement) {
           max-width: initial;
           padding-right: 0;
           padding-left: 0;
-
           display: block;
-          overflow-y: scroll;
           width: 100%;
         }
 
@@ -73,6 +80,7 @@ class BlogChronicle extends BlogUtils(PolymerElement) {
             position: absolute;
             padding-top: 125px;
             height: 100vh;
+            overflow-y: scroll;
           }
           #main > iron-list {
             width: initial;
@@ -92,7 +100,7 @@ class BlogChronicle extends BlogUtils(PolymerElement) {
           <template>
             <div class="post-container">
               <a href="[[post.permalink]]">
-                <h3 class="date">[[post.date]]</h3>
+                <h3 class="date">🗒️ [[post.date]]</h3>
                 <h2 class="title">[[post.title]]</h2>
               </a>
             </div>
@@ -100,9 +108,7 @@ class BlogChronicle extends BlogUtils(PolymerElement) {
         </iron-list>
       </div>
 
-      <blog-network-warning hidden$="[[!failure]]"
-          on-try-reconnect="mount">
-      </blog-network-warning>
+      <blog-network-warning hidden$="[[!failure]]"></blog-network-warning>
     `;
   }
 }

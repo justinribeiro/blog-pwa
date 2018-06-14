@@ -13,20 +13,21 @@ class BlogStatic extends BlogUtils(PolymerElement) {
     };
   }
 
+  ready() {
+    super.ready();
+    this.shadowRoot.querySelector('blog-network-warning')
+      .addEventListener('try-reconnect', () => this.mount());
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.mount();
+  }
+
   resetView() {
     this.set('loaded', null);
     this.set('metadata', {});
     this.shadowRoot.querySelector('#main').innerHTML = '';
-  }
-
-  /**
-    * Called every time the element is inserted into the DOM. Useful for
-    * running setup code, such as fetching resources or rendering.
-    * Generally, you should try to delay work until this time.
-    */
-  connectedCallback() {
-    super.connectedCallback();
-    this.mount();
   }
 
   mount() {
@@ -56,8 +57,7 @@ class BlogStatic extends BlogUtils(PolymerElement) {
   }
 
   _processMetaData(data) {
-    if (data.article !== undefined && data.article !== ''
-        && this.render) {
+    if (data.article !== undefined && data.article !== '' && this.render) {
       this._setPageMetaData(data);
       this.shadowRoot.querySelector('#main').innerHTML = this._unescapeHtml(
         data.article);
@@ -107,7 +107,7 @@ class BlogStatic extends BlogUtils(PolymerElement) {
           <template is="dom-repeat" items="[[metadata.posts]]" as="post">
             <div class="post-container">
               <a href="[[post.permalink]]">
-                <h3 class="date">[[post.date]]</h3>
+                <h3 class="date">🗒️ [[post.date]]</h3>
                 <h2 class="title">[[post.title]]</h2>
               </a>
             </div>
@@ -121,8 +121,7 @@ class BlogStatic extends BlogUtils(PolymerElement) {
         <p><hr><hr><hr><hr class="short"></p>
       </section>
 
-      <blog-network-warning hidden$="[[!failure]]"
-          on-try-reconnect="mount">
+      <blog-network-warning hidden$="[[!failure]]">
       </blog-network-warning>
     `;
   }

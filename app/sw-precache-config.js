@@ -15,7 +15,8 @@ module.exports = {
   staticFileGlobs: [
     '/index.html',
     '/manifest.json',
-    '/bower_components/webcomponentsjs/webcomponents-loader.js',
+    '/node_modules/@webcomponents/webcomponentsjs/**',
+    '/node_modules/web-animations-js/web-animations-next-lite.min.js',
   ],
   navigateFallback: '/index.html',
   navigateFallbackWhitelist: [/^(?!.*\.html|.\/data\/).*/],
@@ -33,6 +34,16 @@ module.exports = {
         cache: {
           maxEntries: 200,
           name: 'image-cache',
+        },
+      },
+    },
+    {
+      urlPattern: /https:\/\/storage.googleapis\.com\/.*/,
+      handler: 'cacheFirst',
+      options: {
+        cache: {
+          maxEntries: 200,
+          name: 'cdn-cache',
         },
       },
     },
