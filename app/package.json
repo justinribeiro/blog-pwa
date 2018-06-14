@@ -1,25 +1,44 @@
 {
-  "name": "blog-pwa",
-  "version": "1.0.0",
   "description": "An experiment in mixing Hugo and Polymer PRPL into a progressive web app blog.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:justinribeiro/blog-pwa.git"
+  },
+  "name": "blog-pwa",
+  "version": "3.0.0",
   "author": "Justin Ribeiro <justin@justinribeiro.com>",
   "devDependencies": {
     "eslint": "^3.12.0",
     "eslint-config-google": "^0.7.1",
     "eslint-plugin-html": "^1.7.0",
-    "http2-push-manifest": "^1.0.1"
+    "http2-push-manifest": "^1.0.1",
+    "wct-browser-legacy": "^0.0.1-pre.11"
   },
   "scripts": {
     "lint": "eslint . --ext js,html; exit 0;",
     "test": "npm run lint && polymer test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:justinribeiro/blog-pwa.git"
-  },
   "bugs": {
     "url": "https://github.com/justinribeiro/blog-pwa/issues"
   },
   "license": "Apache2",
-  "private": true
+  "dependencies": {
+    "@polymer/app-layout": "^3.0.0-pre.18",
+    "@polymer/app-route": "^3.0.0-pre.18",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.18",
+    "@polymer/iron-icon": "^3.0.0-pre.18",
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.18",
+    "@polymer/iron-image": "^3.0.0-pre.18",
+    "@polymer/iron-list": "^3.0.0-pre.19",
+    "@polymer/iron-localstorage": "^3.0.0-pre.18",
+    "@polymer/iron-media-query": "^3.0.0-pre.18",
+    "@polymer/iron-pages": "^3.0.0-pre.18",
+    "@polymer/iron-selector": "^3.0.0-pre.18",
+    "@polymer/lit-element": "^0.5.1",
+    "@polymer/paper-icon-button": "^3.0.0-pre.18",
+    "@polymer/polymer": "^3.0.0",
+    "@polymer/prism-element": "^3.0.0-pre.18",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "web-animations-js": "^2.3.1"
+  }
 }

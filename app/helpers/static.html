@@ -37,7 +37,7 @@
   <style>
     .hotpink { color: hotpink; }
     .red { color: red; }
-    
+
     a {
       color: #03A9F4;
       text-decoration: none;
@@ -107,7 +107,7 @@
         padding-left: 10px;
         margin-left: 10px;
       }
-      
+
       blockquote, blockquote p {
         font-style: oblique;
         font-weight: 400;
@@ -224,7 +224,7 @@
       color: var(--secondary-text-color);
       border-bottom: 1px dotted;
     }
- 
+
     #main {
       max-width: 800px;
       margin: auto;
@@ -270,7 +270,7 @@
       font-size: 16px;
       color: #CC5511;
     }
-      
+
     code-block {
       display: block;
       unicode-bidi: embed;
@@ -322,7 +322,7 @@
 <body>
   <header>
     <div>
-      <img id="me" src="/images/manifest/me-150.jpg" alt="Justin Ribeiro">
+      <img id="me" src="/images/manifest/me-2018-150.jpg" alt="Justin Ribeiro">
     </div>
     <div>
       <h1>Justin Ribeiro</h1>
@@ -336,12 +336,12 @@
   </header>
   <div id="container">
     <div id="main">
-      
+
       {% if pagetype == "post" %}
       <h1>{{ title|safe }}</h1>
       <time datetime="{{ dataModified }}">{{ date }}</time>
       {% endif %}
-      
+
       {{ article|safe }}
 
       {% if posts %}
@@ -356,7 +356,7 @@
         {% endfor %}
         </section>
       {% endif %}
-      
+
     </div>
   </div>
   <footer>

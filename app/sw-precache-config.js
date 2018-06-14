@@ -15,12 +15,17 @@ module.exports = {
   staticFileGlobs: [
     '/index.html',
     '/manifest.json',
-    '/bower_components/webcomponentsjs/webcomponents-loader.js',
+    '/src/**/*',
+    '/node_modules/web-animations-js/web-animations-next-lite.min.js',
   ],
   navigateFallback: '/index.html',
   navigateFallbackWhitelist: [/^(?!.*\.html|.\/data\/).*/],
   ignoreUrlParametersMatching: [/^utm_/],
   runtimeCaching: [
+    {
+      urlPattern: /\/node_modules\/@webcomponents\/webcomponentsjs\//,
+      handler: 'fastest',
+    },
     {
       urlPattern: /.*\?static\=true/,
       handler: 'networkOnly',
@@ -33,6 +38,16 @@ module.exports = {
         cache: {
           maxEntries: 200,
           name: 'image-cache',
+        },
+      },
+    },
+    {
+      urlPattern: /https:\/\/storage.googleapis\.com\/.*/,
+      handler: 'cacheFirst',
+      options: {
+        cache: {
+          maxEntries: 200,
+          name: 'cdn-cache',
         },
       },
     },

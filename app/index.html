@@ -3,44 +3,63 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-
-    <!--
-      Placeholder metadata; gets replaced on the fly by the PWA or in case of
-      static injected into the template on the fly.
-    -->
     <title>Justin Ribeiro</title>
     <meta name="description" content="Software Engineer. Speaker. Writer. Dad. Coach. Occasionally funny.">
-
     <meta name="theme-color" content="#f1f1f1">
 
-    <link rel="icon"     href="/images/manifest/me-192.png">
+    <link rel="icon" href="/images/manifest/me-2018-192.png">
     <link rel="manifest" href="/manifest.json">
-    <link rel="import"   href="/src/blog-pwa.html" async>
+    <base href="/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@justinribeiro">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="JustinRibeiro.com">
+    <meta property="og:image" content="/images/manifest/me-2018-192.png" />
 
     <style>
+      html {
+        --page-background: #ffffff;
+        --primary-text-color: #212121;
+        --secondary-text-color: #757575;
+        --accent-color-primary: #03A9F4;
+        --accent-color-secondary: #CC5511;
+        --accent-color-highlight: #e6e6e6;
+        --section-color: #e6e6e6;
+        --structs-bg: #f1f1f1;
+        --structs-border: #cccccc;
+        --notice-color-bg: #333333;
+        --notice-color-text: #ffffff;
+        --notice-color-link: #f1f900;
+        --hotpink: hotpink;
+        --red: red;
+
+        --code-background: #faf8f5;
+        --code-color: #DD4A68;
+
+        --img-background: #faf8f5;
+      }
+
       body {
-        font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+        font-family: "DejaVu Sans", "Bitstream Vera Sans", "Segoe UI", "Lucida Grande", Verdana, Tahoma, Arial, sans-serif;
         margin: 0;
         line-height: 1.5;
         min-height: 100vh;
-        background-color: #fff;
+        background-color: var(--page-background);
       }
 
-      /*
-        I inject a basic look-alike into my unresolved;
-        it'll give you a rough skelton that fits and gives okay
-        indication of what's to come.
-       */
       blog-pwa[unresolved] {
         display: block;
         min-height: 101vh;
         overflow: visible;
       }
+
       blog-pwa[unresolved] > header {
-       border-bottom: 1px solid #cccccc;
-       background-color: #f1f1f1;
+       border-bottom: 1px solid var(--structs-border);
+       background-color: var(--structs-bg);
        height: 100px;
       }
+
       /* Zone system line? Sure, why not! */
       blog-pwa[unresolved] > header:after {
         position: absolute;
@@ -53,6 +72,7 @@
           #000000 0,   #1a1a1a 10%, #333333 20%, #4d4d4d 30%, #666666 40%, #808080 50%,
           #999999 60%, #b3b3b3 70%, #cccccc 80%, #e6e6e6 90%, #ffffff 100%);
       }
+
       blog-pwa[unresolved] > header h1 {
         font-weight: 100;
         margin: 0 5px;
@@ -85,85 +105,6 @@
         <h1>Justin Ribeiro</h1>
       </header>
     </blog-pwa>
-    <script>
-      window.WebComponents = window.WebComponents || {};
-      window.WebComponents.root = '/bower_components/webcomponentsjs/';
-
-      (function() {
-      'use strict';
-      // global for (1) existence means `WebComponentsReady` will file,
-      // (2) WebComponents.ready == true means event has fired.
-      window.WebComponents = window.WebComponents || {};
-      var name = 'webcomponents-loader.js';
-      // Feature detect which polyfill needs to be imported.
-      var polyfills = [];
-      if (!('import' in document.createElement('link'))) {
-        polyfills.push('hi');
-      }
-      if (!('attachShadow' in Element.prototype && 'getRootNode' in Element.prototype) ||
-        (window.ShadyDOM && window.ShadyDOM.force)) {
-        polyfills.push('sd');
-      }
-      if (!window.customElements || window.customElements.forcePolyfill) {
-        polyfills.push('ce');
-      }
-      // NOTE: any browser that does not have template or ES6 features
-      // must load the full suite (called `lite` for legacy reasons) of polyfills.
-      if (!('content' in document.createElement('template')) || !window.Promise || !Array.from ||
-        // Edge has broken fragment cloning which means you cannot clone template.content
-        !(document.createDocumentFragment().cloneNode() instanceof DocumentFragment)) {
-        polyfills = ['lite'];
-      }
-
-      if (polyfills.length) {
-        var url;
-        var polyfillFile = 'webcomponents-' + polyfills.join('-') + '.js';
-
-        if (window.WebComponents.root) {
-          url = window.WebComponents.root + polyfillFile;
-        } else {
-          var script = document.querySelector('script[src*="' + name +'"]');
-          // Load it from the right place.
-          url = script.src.replace(name, polyfillFile);
-        }
-
-        var newScript = document.createElement('script');
-        newScript.src = url;
-
-        // NOTE: this is required to ensure the polyfills are loaded before
-        // *native* html imports load on older Chrome versions. This *is* CSP
-        // compliant since CSP rules must have allowed this script to run.
-        // In all other cases, this can be async.
-        if (document.readyState === 'loading') {
-          document.write(newScript.outerHTML);
-        } else {
-          document.head.appendChild(newScript);
-        }
-      } else {
-        // Ensure `WebComponentsReady` is fired also when there are no polyfills loaded.
-        // however, we have to wait for the document to be in 'interactive' state,
-        // otherwise a rAF may fire before scripts in <body>
-
-        var fire = function() {
-          requestAnimationFrame(function() {
-            window.WebComponents.ready = true;
-            document.dispatchEvent(new CustomEvent('WebComponentsReady', {bubbles: true}));
-          });
-        };
-
-        if (document.readyState !== 'loading') {
-          fire();
-        } else {
-          document.addEventListener('readystatechange', function wait() {
-            fire();
-            document.removeEventListener('readystatechange', wait);
-          });
-        }
-      }
-      })();
-      var Polymer = {};
-      Polymer.passiveTouchGestures = true;
-    </script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -181,5 +122,8 @@
         ]
       }
     </script>
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="node_modules/web-animations-js/web-animations-next-lite.min.js" defer></script>
+    <script type="module" src="src/blog-pwa.js"></script>
   </body>
 </html>

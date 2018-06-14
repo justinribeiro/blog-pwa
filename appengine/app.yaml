@@ -7,9 +7,6 @@ libraries:
   version: "2.5.2"
 
 handlers:
-- url: /.well-known/acme-challenge/.*
-  script: well_known.app
-
 - url: /data/(.*)
   static_files: dist/data/\1
   upload: dist/data/(.*)
@@ -29,6 +26,10 @@ handlers:
 
 - url: /bower_components
   static_dir: dist/bower_components
+  secure: always
+
+- url: /node_modules
+  static_dir: dist/node_modules
   secure: always
 
 - url: /src
@@ -80,7 +81,6 @@ skip_files:
 - ^(.*/)?.*/RCS/.*
 - ^(.*/)?\..*
 - ^(.*/)?.*\.bak$
-- ^(.*/)?node_modules/.*
 - ^(.*/)?hugo/.*
 - ^(.*/)?tests/.*
 - ^.*.md|markdown
