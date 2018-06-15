@@ -11,12 +11,6 @@ styleElement.innerHTML =
     .hotpink { color: var(--hotpink); }
     .red { color: var(--red); }
 
-    iron-image {
-      --iron-image-placeholder: {
-        background: var(--img-background);
-      };
-    }
-
     a {
       color: var(--accent-color-primary);
       text-decoration: none;
@@ -102,18 +96,14 @@ styleElement.innerHTML =
       font-size: 20px;
     }
 
-    /* this is because of the offline loop */
     [hidden] {
-      display: none !important;
-    }
-    [network-failed] {
       display: none !important;
     }
 
     /* Use these to generate skeleton blocks before content loads */
     hr {
       height: 20px;
-      background-color: var(--structs-border);
+      background-color: var(--skelaton-background);
       border: 0;
     }
     hr.short {
@@ -132,7 +122,7 @@ styleElement.innerHTML =
     }
 
     #skeleton {
-      min-height: 100vh;
+      min-height: 102vh;
     }
 
     /*
@@ -141,9 +131,6 @@ styleElement.innerHTML =
     .post-container {
       height: 125px;
       width: calc(50% - 1rem);
-    }
-
-    .post-container:hover {
     }
 
     .post-container a {
@@ -169,7 +156,6 @@ styleElement.innerHTML =
     .post-container a:hover h3 {
       color: #fff !important;
     }
-
 
     .post-container a span {
       font-size: 14px;

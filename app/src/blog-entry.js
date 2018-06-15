@@ -108,7 +108,6 @@ class BlogEntry extends BlogUtils(PolymerElement) {
         #main img {
           margin: auto;
           display: block;
-          background-color: var(--img-background);
         }
 
         time {
@@ -142,12 +141,16 @@ class BlogEntry extends BlogUtils(PolymerElement) {
         }
       </style>
 
-      <!-- :chopchop is there because there is a chance that you end up with
-      cruft, ala index.* something. In my analytics, even with redirection, I
-      still see index.php for instance from when I was running Wordpress years
-      ago. This resolves this potential issue. -->
-      <app-route route="[[route]]" pattern="/:year/:month/:day/:title/:chopchop"
+      <app-route
+        route="[[route]]"
+        pattern="/:year/:month/:day/:title/:chopchop"
         data="{{entryRoute}}"></app-route>
+
+      <section id="skeleton" hidden\$="{{_checkViewState(failure, loaded)}}">
+      <p></p><hr><hr><hr><hr class="short"><p></p>
+      <p></p><hr><hr><hr><hr class="short"><p></p>
+      <p></p><hr><hr><hr><hr class="short"><p></p>
+      </section>
 
       <article itemprop="blogPost" id="main" hidden\$="[[!loaded]]" itemscope=""
         itemtype="http://schema.org/BlogPosting">
@@ -170,14 +173,7 @@ class BlogEntry extends BlogUtils(PolymerElement) {
       </footer>
       </article>
 
-      <section id="skeleton" hidden\$="{{_checkViewState(failure, loaded)}}">
-      <p></p><hr><hr><hr><hr class="short"><p></p>
-      <p></p><hr><hr><hr><hr class="short"><p></p>
-      <p></p><hr><hr><hr><hr class="short"><p></p>
-      </section>
-
-      <blog-network-warning hidden$="[[!failure]]">
-      </blog-network-warning>
+      <blog-network-warning hidden$="[[!failure]]"></blog-network-warning>
     `;
   }
 
