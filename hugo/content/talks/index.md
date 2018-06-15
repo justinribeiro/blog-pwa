@@ -15,7 +15,7 @@ Words, written or spoken, are at times the only tool I have to stay otherwise sa
 Looking for a speaker at your school, conference, or corporate event? Send me an email at justin@justinribeiro.com and let's try to make it happen!
 
 ## The Web Platform Podcast
-In December 2015, I became a regular host on The Web Platform Podcast with [Erik Isaksen](https://www.twitter.com/eisaksen). Since mid-2017, I've been hosting the show with [Danny Blue](https://www.twitter.com/dee_bloo), [Amal Hussein](https://twitter.com/nomadtechie), and [Leon Revill](https://twitter.com/revillweb).
+In December 2015, I became a regular host on [The Web Platform Podcast](https://thewebplatformpodcast.com/) with [Erik Isaksen](https://www.twitter.com/eisaksen). Since mid-2017, I've been hosting the show with [Danny Blue](https://www.twitter.com/dee_bloo), [Amal Hussein](https://twitter.com/nomadtechie), and [Leon Revill](https://twitter.com/revillweb).
 
 For a full listing of episodes check out [https://thewebplatformpodcast.com/](https://thewebplatformpodcast.com/).
 
