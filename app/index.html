@@ -17,17 +17,22 @@
     <meta property="og:site_name" content="JustinRibeiro.com">
     <meta property="og:image" content="/images/manifest/me-2018-192.png" />
 
+    <link rel="preconnect" href="https://storage.googleapis.com/" crossorigin>
+    <link rel="preload" href="/src/blog-pwa.js" as="script">
+    <link rel="preload" href="/src/blog-static.js" as="script">
     <style>
       html {
         --page-background: #ffffff;
         --primary-text-color: #212121;
         --secondary-text-color: #757575;
-        --accent-color-primary: #03A9F4;
+        --accent-color-primary: #0049A3;
         --accent-color-secondary: #CC5511;
         --accent-color-highlight: #e6e6e6;
         --section-color: #e6e6e6;
         --structs-bg: #f1f1f1;
+        --structs-hi: #940088;
         --structs-border: #cccccc;
+        --skelaton-background: #e6e6e6;
         --notice-color-bg: #333333;
         --notice-color-text: #ffffff;
         --notice-color-link: #f1f900;
@@ -48,20 +53,37 @@
         background-color: var(--page-background);
       }
 
-      blog-pwa[unresolved] {
-        display: block;
-        min-height: 101vh;
-        overflow: visible;
+      a {
+        color: var(--accent-color-primary);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent-color-primary);
       }
 
-      blog-pwa[unresolved] > header {
-       border-bottom: 1px solid var(--structs-border);
-       background-color: var(--structs-bg);
-       height: 100px;
+      a:hover {
+        color: var(--accent-color-secondary);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent-color-secondary);
       }
 
-      /* Zone system line? Sure, why not! */
-      blog-pwa[unresolved] > header:after {
+      #pageHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid var(--structs-border);
+        background-color: var(--structs-bg);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        height: 135px;
+      }
+
+      /*
+        Zone System gradient because I still love Adam's approach.
+        That, and I totally apporiated the look from Paul Lewis (his is cooler).
+      */
+      #pageHeader:after {
         position: absolute;
         top: 0;
         left: 0;
@@ -73,12 +95,153 @@
           #999999 60%, #b3b3b3 70%, #cccccc 80%, #e6e6e6 90%, #ffffff 100%);
       }
 
-      blog-pwa[unresolved] > header h1 {
+      #pageHeader div {
+        margin-top: 5px;
+      }
+
+      #pageHeader h1 {
         font-weight: 100;
         margin: 0 5px;
         font-size: 32px;
-        text-align: center;
-        padding-top: 16px;
+      }
+
+      #pageHeader nav {
+        margin-top: 10px;
+      }
+
+      #pageHeader nav a {
+        margin: 0 5px;
+        font-size: 16px;
+        text-transform: uppercase;
+        line-height: 2em;
+      }
+
+      #me {
+        width: 100px;
+        height: 100px;
+        border-radius: 10%;
+        margin: 0 25px;
+      }
+
+      footer {
+        border-top: 1px solid var(--structs-border);
+        background-color: var(--structs-bg);
+        display: block;
+        margin-top: 2rem;
+      }
+
+      footer section h2 {
+        font-weight: 400;
+      }
+
+      footer > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: auto;
+        max-width: 800px;
+      }
+
+      footer > div section {
+        flex: 1;
+      }
+
+      #thanks {
+        padding: 0 0 40px;
+      }
+
+      #thanks p {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: var(--structs-hi);
+      }
+
+      #thanks p a {
+        background-image: none;
+        background-repeat: initial;
+        background-position: initial;
+        color: var(--structs-hi);
+        border-bottom: 1px dotted;
+      }
+
+      #skeleton, #placeholder {
+        margin: auto;
+        padding: 0 20px;
+        max-width: 800px;
+      }
+
+      #skeleton {
+        padding-top: 135px;
+        min-height: 102vh;
+      }
+
+      #skeleton p {
+        margin-top: 10px;
+        margin-bottom: 29px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 21px;
+        line-height: 1.58;
+        letter-spacing: -.003em;
+      }
+
+      hr {
+        height: 20px;
+        background-color: var(--skelaton-background);
+        border: 0;
+      }
+
+      hr.short {
+        width: 65%;
+        margin-left: 0;
+      }
+
+      @media (max-width: 767px) {
+        #pageHeader {
+          height: 100px;
+        }
+
+        #pageHeader h1 {
+          margin: 0;
+          font-size: 24px;
+        }
+
+        #pageHeader div:first-child {
+          display: flex;
+        }
+
+        #pageHeader nav a:first-child {
+          margin: 0 5px 0 0;
+        }
+
+        #me {
+          width: 75px;
+          height: 75px;
+          margin: 0 15px 0 0;
+        }
+
+        #skeleton {
+          padding-top: 100px;
+        }
+
+        footer {
+          padding: 0 20px;
+        }
+
+        footer > div {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 320px) {
+        #pageHeader {
+          text-align: center;
+        }
+
+        /* No room on smaller screens */
+        #pageHeader > div:first-child {
+          display: none !important;
+        }
       }
     </style>
 
@@ -86,14 +249,6 @@
     <link href="/data/chronicle/index.xml" rel="feed" type="application/rss+xml" title="Justin Ribeiro" />
   </head>
   <body>
-    <!--
-      Special sauce; in the event that we simply don't have JS support or
-      even if someone just prefers the static, this path is injected on the fly
-      from the server to the static handler. The cool thing about this is that
-      from a shell standpoint, we don't care; the shell doesn't need to know and
-      if the service worker is already active, no worries: we ignore ?static=true
-      routes
-    -->
     <noscript>
       <p>JavaScript appears to be turned off.
       No problem, this Progressive Web App is Progressive!
@@ -101,9 +256,42 @@
       <meta http-equiv="refresh" content="0;url={{ noscript }}">
     </noscript>
     <blog-pwa unresolved>
-      <header>
-        <h1>Justin Ribeiro</h1>
+      <header id="pageHeader" slot="header">
+        <div>
+          <img id="me" src="/images/manifest/me-2018-150.jpg" alt="Justin Ribeiro">
+        </div>
+        <div>
+          <h1>Justin Ribeiro</h1>
+            <nav>
+              <a href="/">Home</a>
+              <a href="/chronicle/">Blog</a>
+              <a href="/talks/">Talks</a>
+              <a href="/about/">About</a>
+            </nav>
+        </div>
       </header>
+      <section id="skeleton">
+        <p><hr><hr><hr><hr class="short"></p>
+        <p><hr><hr><hr><hr class="short"></p>
+        <p><hr><hr><hr><hr class="short"></p>
+      </section>
+      <footer slot="footer">
+        <div>
+          <section>
+            <h2>Hello, nice to meet you.</h2>
+            <p>I'm happy to talk. You can reach me via <a href="https://twitter.com/justinribeiro">Twitter</a>, <a href="https://plus.google.com/+JustinRibeiro">Google+</a>, and <a href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>.</p>
+            <p>Looking for some of my code? Check <a href="https://github.com/justinribeiro">Github</a> or <a href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
+          </section>
+          <section>
+            <h2>Meta Things</h2>
+            <p><a href="https://justinribeiro.com/data/chronicle/index.xml">RSS feed</a>. RIP Reader, give <a href="https://github.com/mjibson/goread">GoRead</a> a spin.</p>
+            <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="">file a ticket</a> so I can fix it.</p>
+          </section>
+        </div>
+        <div id="thanks">
+          <p>Made with ❤️ using <a href="https://www.polymer-project.org/">Polymer</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
+        </div>
+      </footer>
     </blog-pwa>
     <script type="application/ld+json">
       {
@@ -118,7 +306,7 @@
           "https://www.linkedin.com/in/justinribeiro",
           "https://plus.google.com/+justinribeiro",
           "https://github.com/justinribeiro",
-          "https://faceboo.com/justinribeiro"
+          "https://facebook.com/justinribeiro"
         ]
       }
     </script>

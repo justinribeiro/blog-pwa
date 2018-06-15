@@ -98,6 +98,12 @@ class BlogStatic extends BlogUtils(PolymerElement) {
         }
       </style>
 
+      <section id="skeleton" hidden$="{{_checkViewState(failure, loaded)}}">
+        <p><hr><hr><hr><hr class="short"></p>
+        <p><hr><hr><hr><hr class="short"></p>
+        <p><hr><hr><hr><hr class="short"></p>
+      </section>
+
       <div id="main" hidden$="[[!loaded]]">
         {{article}}
       </div>
@@ -114,15 +120,7 @@ class BlogStatic extends BlogUtils(PolymerElement) {
           </template>
         </div>
       </template>
-
-      <section id="skeleton" hidden$="{{_checkViewState(failure, loaded)}}">
-        <p><hr><hr><hr><hr class="short"></p>
-        <p><hr><hr><hr><hr class="short"></p>
-        <p><hr><hr><hr><hr class="short"></p>
-      </section>
-
-      <blog-network-warning hidden$="[[!failure]]">
-      </blog-network-warning>
+      <blog-network-warning hidden$="[[!failure]]"></blog-network-warning>
     `;
   }
 }
