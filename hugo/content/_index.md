@@ -9,5 +9,5 @@ description = "Justin Ribeiro. Software Engineer. Speaker. Writer. Dad. Occasion
 +++
 
 <section id="shoutout">
-  <p>Hi. I'm Justin. I <span class="red">❤️</span> the open web, am ☕ powered, and 👪 driven. Each day I try to make the world a better place.</p>
+  <p>Hi. I'm Justin. I <span class="red">❤️</span> the open web and try each day to make the world a better place. ☕ powered, 👪 driven.</p>
 </section>

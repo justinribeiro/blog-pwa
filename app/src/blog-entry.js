@@ -103,6 +103,7 @@ class BlogEntry extends BlogUtils(PolymerElement) {
       <style include="shared-styles">
         #main iframe, #main img {
           max-width: 100%;
+          width: 100%;
         }
 
         #main img {
