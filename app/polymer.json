@@ -4,7 +4,8 @@
   "fragments":[
     "src/blog-static.js",
     "src/blog-chronicle.js",
-    "src/lazy-resources.js"
+    "src/lazy-resources.js",
+    "src/3d-utils.js"
   ],
   "sources": [
     "images/**/*",
@@ -16,7 +17,8 @@
     "robots.txt",
     "manifest.json",
     "node_modules/@webcomponents/webcomponentsjs/**",
-    "node_modules/web-animations-js/web-animations-next-lite.min.js"
+    "node_modules/web-animations-js/web-animations-next-lite.min.js",
+    "node_modules/intersection-observer/intersection-observer.js"
   ],
   "builds": [
     {

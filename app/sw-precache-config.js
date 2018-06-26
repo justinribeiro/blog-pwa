@@ -17,6 +17,7 @@ module.exports = {
     '/manifest.json',
     '/src/**/*',
     '/node_modules/web-animations-js/web-animations-next-lite.min.js',
+    '/node_modules/intersection-observer/intersection-observer.js',
   ],
   navigateFallback: '/index.html',
   navigateFallbackWhitelist: [/^(?!.*\.html|.\/data\/).*/],
@@ -53,7 +54,7 @@ module.exports = {
     },
     {
       urlPattern: /\/data\/.*/,
-      handler: 'fastest',
+      handler: 'networkFirst',
       options: {
         cache: {
           maxEntries: 200,

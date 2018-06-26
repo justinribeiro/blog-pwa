@@ -39,6 +39,7 @@ class SnackBar extends LitElement {
       div ::slotted(a) {
         color: var(--notice-color-link) !important;
         border-bottom: 1px solid var(--notice-color-link) !important;
+        text-decoration: none;
       }
 
       @media (min-width: 460px) {

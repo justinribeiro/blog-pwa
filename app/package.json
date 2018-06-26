@@ -39,6 +39,7 @@
     "@polymer/polymer": "^3.0.0",
     "@polymer/prism-element": "^3.0.0-pre.18",
     "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@justinribeiro/stl-part-viewer": "^0.2.2",
     "web-animations-js": "^2.3.1"
   }
 }

@@ -90,7 +90,14 @@ class BlogEntry extends BlogUtils(PolymerElement) {
     if (this.metadata.article !== undefined && this.metadata.article !== '') {
       this._setPageMetaData(this.metadata);
 
-      this.$.metadataArticle.innerHTML = this._unescapeHtml(this.metadata.article);
+      let parseHTML = this._unescapeHtml(this.metadata.article);
+
+      let ViewerRequired = new RegExp('(<\/stl\-part\-viewer>)', 'g');
+      if(ViewerRequired.test(parseHTML)) {
+        import('./3d-utils.js');
+      }
+
+      this.$.metadataArticle.innerHTML = parseHTML;
       this._generatedShareLinks();
 
       this.set('failure', false);

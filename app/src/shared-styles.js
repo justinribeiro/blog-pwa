@@ -24,8 +24,8 @@ styleElement.innerHTML =
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family:
-      "DejaVu Sans", "Bitstream Vera Sans", "Segoe UI", "Lucida Grande", Verdana, Tahoma, Arial, sans-serif;      margin: 0;
+      font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
     }
 
     p, li {
