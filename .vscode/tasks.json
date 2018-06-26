@@ -1,0 +1,92 @@
+{
+  // Some basic lighthouse testing using docker, lighthouse-cli, jq, tr Note,
+  // you must search/replace the test url (no var support in tasks.json
+  // currently)
+  "version": "2.0.0",
+  "tasks": [
+    // NOTE: you don't have to run the container to make this work, you can
+    // simply change the lighthouse commands as required below to work with your
+    // setup (I find the container easier)
+    {
+      "label": "Start chrome-headless docker container",
+      "type": "shell",
+      "command": "docker run -p 9222:9222 --security-opt seccomp=$HOME/chrome.json --name chrome-headless justinribeiro/chrome-headless",
+      "presentation": {
+        "reveal": "never"
+      }
+    },
+    {
+      "label": "lighthouse:FMP score",
+      "type": "shell",
+      "command": "lighthouse --quiet --port=9222 --preset=perf --output=json  https://xxxxxxxx.justinribeiro.com.com | jq 'if .audits.\"first-meaningful-paint\".score < 100 then \"FAIL: FMP score too low!\", .audits.\"first-meaningful-paint\".score else \"SUCCESS: FMP looks good!\", .audits.\"first-meaningful-paint\".score end' | tr -d '\"' ",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "lighthouse:FMP timings",
+      "type": "shell",
+      "command": "lighthouse --quiet --port=9222 --preset=perf --output=json  https://xxxxxxxx.justinribeiro.com.com | jq '.audits.\"first-meaningful-paint\".extendedInfo.value.timings' | tr -d '\"' ",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "lighthouse:FirstInteractive score",
+      "type": "shell",
+      "command": "lighthouse --quiet --port=9222 --preset=perf --output=json  https://xxxxxxxx.justinribeiro.com.com | jq 'if .audits.\"first-interactive\".score < 100 then \"FAIL: FirstInteractive score too low!\", .audits.\"first-interactive\".score else \"SUCCESS: FirstInteractive looks good!\", .audits.\"first-interactive\".score end' | tr -d '\"' ",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "lighthouse:FirstInteractive timings",
+      "type": "shell",
+      "command": "lighthouse --quiet --port=9222 --preset=perf --output=json  https://xxxxxxxx.justinribeiro.com.com | jq '.audits.\"first-interactive\".extendedInfo.value' | tr -d '\"' ",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "lighthouse:ConsistentlyInteractive score",
+      "type": "shell",
+      "command": "lighthouse --quiet --port=9222 --preset=perf --output=json  https://xxxxxxxx.justinribeiro.com.com | jq 'if .audits.\"consistently-interactive\".score < 100 then \"FAIL: ConsistentlyInteractive score too low!\", .audits.\"consistently-interactive\".score else \"SUCCESS: ConsistentlyInteractive looks good!\", .audits.\"consistently-interactive\".score end' | tr -d '\"' ",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "lighthouse:ConsistentlyInteractive timings",
+      "type": "shell",
+      "command": "lighthouse --quiet --port=9222 --preset=perf --output=json  https://xxxxxxxx.justinribeiro.com.com | jq '.audits.\"consistently-interactive\".extendedInfo.value' | tr -d '\"' ",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "lighthouse:SpeedIndex score",
+      "type": "shell",
+      "command": "lighthouse --quiet --port=9222 --preset=perf --output=json  https://xxxxxxxx.justinribeiro.com.com | jq 'if .audits.\"speed-index-metric\".score < 100 then \"FAIL: SpeedIndex score too low!\", .audits.\"speed-index-metric\".score else \"SUCCESS: SpeedIndex looks good!\", .audits.\"speed-index-metric\".score end' | tr -d '\"' ",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "lighthouse:SpeedIndex timings",
+      "type": "shell",
+      "command": "lighthouse --quiet --port=9222 --preset=perf --output=json  https://xxxxxxxx.justinribeiro.com.com | jq '.audits.\"speed-index-metric\".extendedInfo.value.timings' | tr -d '\"' ",
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "lighthouse:MainThread breakdown",
+      "type": "shell",
+      "command": "lighthouse --quiet --port=9222 --preset=perf --output=json  https://xxxxxxxx.justinribeiro.com.com | jq '.audits.\"mainthread-work-breakdown\".displayValue, .audits.\"mainthread-work-breakdown\".extendedInfo.value' | tr -d '\"' ",
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}
