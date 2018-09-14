@@ -142,7 +142,7 @@ class BlogEntry extends BlogUtils(PolymerElement) {
           margin-top: 10px;
         }
 
-        footer {
+        #metaShare {
           display: block;
           background-color: var(--section-color);
           padding: 1em;
@@ -180,7 +180,7 @@ class BlogEntry extends BlogUtils(PolymerElement) {
         </div>
       </header>
       <div id="metadataArticle" itemprop="articleBody"></div>
-      <footer>
+      <footer id="metaShare">
         <div>
           <h3>Share this piece</h3>
           <p id="share"><a href\$="[[twitterShare]]">Twitter</a> <a href\$="[[facebookShare]]">Facebook</a> <a href\$="[[gplusShare]]">G+</a> <a href\$="[[linkedinShare]]">LinkedIn</a> <a href\$="[[emailShare]]">Email</a></p>
