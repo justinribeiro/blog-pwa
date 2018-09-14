@@ -2,7 +2,6 @@ import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 import '@polymer/app-route/app-route.js';
 import {BlogUtils} from './blog-utils-mixin.js';
 import './blog-network-warning.js';
-import './code-block.js';
 import './shared-styles.js';
 
 class BlogEntry extends BlogUtils(PolymerElement) {
@@ -46,12 +45,12 @@ class BlogEntry extends BlogUtils(PolymerElement) {
       // with the chopping off extra things from the path might be more
       // useful in the long haul
       let getPath = this.route.path;
-      let checkEnding = new RegExp('index\.php|index\.html', 'g');
+      const checkEnding = new RegExp('index\.php|index\.html', 'g');
       if(checkEnding.test(this.route.path)) {
          getPath = this.route.path.replace(/index\.php|index\.html/g, '');
       }
 
-      let targetUrl = '/data/chronicle' + getPath + 'index.json';
+      const targetUrl = '/data/chronicle' + getPath + 'index.json';
 
       this._getResource({
         url: targetUrl,
@@ -88,16 +87,21 @@ class BlogEntry extends BlogUtils(PolymerElement) {
 
   _metaDataChanged() {
     if (this.metadata.article !== undefined && this.metadata.article !== '') {
-      this._setPageMetaData(this.metadata);
+      const parseHTML = this._unescapeHtml(this.metadata.article);
 
-      let parseHTML = this._unescapeHtml(this.metadata.article);
-
-      let ViewerRequired = new RegExp('(<\/stl\-part\-viewer>)', 'g');
+      const ViewerRequired = new RegExp('(<\/stl\-part\-viewer>)', 'g');
       if(ViewerRequired.test(parseHTML)) {
         import('./3d-utils.js');
       }
 
+      const CodeBlockRequired = new RegExp('(<\/code\-block>)', 'g');
+      if(CodeBlockRequired.test(parseHTML)) {
+        import('./code-block.js');
+      }
+
       this.$.metadataArticle.innerHTML = parseHTML;
+
+      this._setPageMetaData(this.metadata);
       this._generatedShareLinks();
 
       this.set('failure', false);
@@ -118,6 +122,10 @@ class BlogEntry extends BlogUtils(PolymerElement) {
           display: block;
         }
 
+        #main video {
+          max-width: 100%;
+        }
+
         time {
           text-transform: uppercase;
         }
@@ -134,7 +142,7 @@ class BlogEntry extends BlogUtils(PolymerElement) {
           margin-top: 10px;
         }
 
-        footer {
+        #metaShare {
           display: block;
           background-color: var(--section-color);
           padding: 1em;
@@ -172,7 +180,7 @@ class BlogEntry extends BlogUtils(PolymerElement) {
         </div>
       </header>
       <div id="metadataArticle" itemprop="articleBody"></div>
-      <footer>
+      <footer id="metaShare">
         <div>
           <h3>Share this piece</h3>
           <p id="share"><a href\$="[[twitterShare]]">Twitter</a> <a href\$="[[facebookShare]]">Facebook</a> <a href\$="[[gplusShare]]">G+</a> <a href\$="[[linkedinShare]]">LinkedIn</a> <a href\$="[[emailShare]]">Email</a></p>

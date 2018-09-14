@@ -78,7 +78,7 @@ class BlogChronicle extends BlogUtils(PolymerElement) {
         @media (max-width: 767px) {
           #main {
             position: absolute;
-            padding-top: 100px;
+            padding-top: var(--header-height-mobile);
             height: 100vh;
             overflow-y: scroll;
           }

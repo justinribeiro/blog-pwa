@@ -204,7 +204,7 @@ case $target in
     print "${BOLD_BLUE}STAGE 6: polymer serve ${RESET}"
 
     # Step 4: build polymer frontend
-    cd $project/app/; polymer serve;
+    cd $project/app/; polymer serve --hostname 0.0.0.0;
 
     ;;
   (prod)
@@ -243,7 +243,7 @@ case $target in
     # Step 4: build polymer frontend + push manifest
     print "${BOLD_BLUE}STAGE 6: Generate H2 push manifest ${RESET}"
     cd $project/app/;
-    node_modules/http2-push-manifest/bin/http2-push-manifest -f $PWD/index.html;
+    # node_modules/http2-push-manifest/bin/http2-push-manifest -f $PWD/index.html;
     polymer build;
     cd ..;
 

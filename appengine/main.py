@@ -96,18 +96,20 @@ class MainHandler(http2.PushHandler):
         # to the static handler to generate a non-JavaScript page.
         #
 
-        # I make what's probably a untested assumption and only set the
-        # push resources in the event the PWA comes into play
-        #push = os.path.join(os.path.dirname(__file__), 'dist/push_manifest.json')
-        #self.push_urls = http2.use_push_manifest(push)
-        #header = self._generate_link_preload_headers()
-        #self.response.headers.add_header('Link', header)
+        # we set self.name so we can push the needed json faster
+        self.name = os.path.join('/data/',
+          self.request.path.lstrip("/").replace("index.html", "")
+          .replace("index.php", ""), 'index.json')
+        push = os.path.join(os.path.dirname(__file__), 'dist/push_manifest.json')
+        self.push_urls = http2.use_push_manifest(push)
+        header = self._generate_link_preload_headers()
+        self.response.headers.add_header('Link', header)
 
         # Retarget our noscript
         # We chop the URL params for safety and add static param
         data = {
             'noscript': self.request.path + '?static=true',
-            }
+          }
 
         # Grab our template
         pwa_template = os.path.join(os.path.dirname(__file__),

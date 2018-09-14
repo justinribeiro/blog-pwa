@@ -177,7 +177,7 @@ styleElement.innerHTML =
     }
 
     #main, #skeleton, blog-network-warning {
-      padding-top: 135px;
+      padding-top: var(--header-height-desktop);
     }
 
     @media (max-width: 767px) {
@@ -188,7 +188,7 @@ styleElement.innerHTML =
       }
 
       #main, #skeleton, blog-network-warning {
-        padding-top: 100px;
+        padding-top: var(--header-height-mobile);
       }
 
       p, li {

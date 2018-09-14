@@ -22,7 +22,7 @@ handlers:
   static_files: dist/images/\1
   upload: dist/images/(.*)
   secure: always
-  expiration: "90d"
+  expiration: "180d"
 
 - url: /bower_components
   static_dir: dist/bower_components

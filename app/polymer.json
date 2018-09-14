@@ -3,9 +3,11 @@
   "shell": "src/blog-pwa.js",
   "fragments":[
     "src/blog-static.js",
+    "src/blog-entry.js",
     "src/blog-chronicle.js",
     "src/lazy-resources.js",
-    "src/3d-utils.js"
+    "src/3d-utils.js",
+    "src/code-block.js"
   ],
   "sources": [
     "images/**/*",
@@ -23,9 +25,6 @@
   "builds": [
     {
       "name": "default",
-      "browserCapabilities": [
-        "es2015"
-      ],
       "js": {
         "minify": true,
         "transformModulesToAmd": true
