@@ -204,7 +204,7 @@ case $target in
     print "${BOLD_BLUE}STAGE 6: polymer serve ${RESET}"
 
     # Step 4: build polymer frontend
-    cd $project/app/; polymer serve;
+    cd $project/app/; polymer serve --hostname 0.0.0.0;
 
     ;;
   (prod)
