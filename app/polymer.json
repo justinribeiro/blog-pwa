@@ -25,9 +25,6 @@
   "builds": [
     {
       "name": "default",
-      "browserCapabilities": [
-        "es2015"
-      ],
       "js": {
         "minify": true,
         "transformModulesToAmd": true
