@@ -96,40 +96,27 @@ class MainHandler(http2.PushHandler):
         # to the static handler to generate a non-JavaScript page.
         #
 
-        # we check to make sure we're not the pushed json record otherwise
-        # things go south very fast
-        if bool(re.search(r'(\.json)', self.request.path)) is not True:
-          # we set self.name so we can push the needed json faster
-          self.name = os.path.join('/dist/data/',
-            self.request.path.lstrip("/").replace("index.html", "")
-            .replace("index.php", ""), 'index.json')
-          push = os.path.join(os.path.dirname(__file__), 'dist/push_manifest.json')
-          self.push_urls = http2.use_push_manifest(push)
-          header = self._generate_link_preload_headers()
-          self.response.headers.add_header('Link', header)
+        # we set self.name so we can push the needed json faster
+        self.name = os.path.join('/data/',
+          self.request.path.lstrip("/").replace("index.html", "")
+          .replace("index.php", ""), 'index.json')
+        push = os.path.join(os.path.dirname(__file__), 'dist/push_manifest.json')
+        self.push_urls = http2.use_push_manifest(push)
+        header = self._generate_link_preload_headers()
+        self.response.headers.add_header('Link', header)
 
-          # Retarget our noscript
-          # We chop the URL params for safety and add static param
-          data = {
-              'noscript': self.request.path + '?static=true',
-            }
+        # Retarget our noscript
+        # We chop the URL params for safety and add static param
+        data = {
+            'noscript': self.request.path + '?static=true',
+          }
 
-          # Grab our template
-          pwa_template = os.path.join(os.path.dirname(__file__),
-            'dist/index.html')
+        # Grab our template
+        pwa_template = os.path.join(os.path.dirname(__file__),
+          'dist/index.html')
 
-          # Send down the wire
-          return self.response.write(template.render(pwa_template, data))
-        else:
-          # the fallthrough because http2push won't go through the app.yaml
-          name = os.path.join(os.path.dirname(__file__),
-            self.request.path.lstrip("/"))
-          f = open(name, 'r');
-          c = f.read()
-          f.close()
-
-          self.response.headers['Content-Type'] = 'application/json'
-          return self.response.write(c)
+        # Send down the wire
+        return self.response.write(template.render(pwa_template, data))
 
 app = webapp2.WSGIApplication([
     ('/.*', MainHandler)
