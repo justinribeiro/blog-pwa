@@ -119,6 +119,10 @@ class PushHandler(webapp2.RequestHandler):
     host = self.request.host_url
 
     preload_links = []
+    json_target = '%s%s' % (host, str(self.name))
+    # print('<%s>; rel=preload; as=script' % json_target)
+    preload_links.append('<%s>; rel=preload; as=script' % json_target)
+
     for url,v in urls.iteritems():
       # Construct absolute URLs. Not really needed, but spec only contains full URLs.
       url = '%s%s' % (host, str(url))
