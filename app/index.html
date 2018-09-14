@@ -41,14 +41,21 @@
         --code-color: #DD4A68;
 
         --img-background: #faf8f5;
+
+        --header-height-desktop: 100px;
+        --header-height-mobile: 85px;
+
+        --font-family-serif: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
+        --font-family-sans-serif: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif
       }
 
       body {
-        font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: ;
         margin: 0;
         line-height: 1.5;
         min-height: 100vh;
         background-color: var(--page-background);
+        font-family: var(--font-family-sans-serif);
       }
 
       a {
@@ -74,7 +81,7 @@
         top: 0;
         width: 100%;
         z-index: 100;
-        height: 135px;
+        height: var(--header-height-desktop);
       }
 
       /*
@@ -94,17 +101,17 @@
       }
 
       #pageHeader div {
-        margin-top: 5px;
+        margin-top: 10px;
+      }
+
+      #pageHeader > div:last-child {
+        margin-top: 0;
       }
 
       #pageHeader h1 {
         font-weight: 100;
         margin: 0 5px;
-        font-size: 32px;
-      }
-
-      #pageHeader nav {
-        margin-top: 10px;
+        font-family: var(--font-family-serif);
       }
 
       #pageHeader nav a {
@@ -115,24 +122,24 @@
       }
 
       #me {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
         border-radius: 10%;
         margin: 0 25px;
       }
 
-      footer {
+      #pageFooter {
         border-top: 1px solid var(--structs-border);
         background-color: var(--structs-bg);
         display: block;
         margin-top: 2rem;
       }
 
-      footer section h2 {
+      #pageFooter section h2 {
         font-weight: 400;
       }
 
-      footer > div {
+      #pageFooter > div {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -140,8 +147,9 @@
         max-width: 800px;
       }
 
-      footer > div section {
+      #pageFooter > div section {
         flex: 1;
+        padding-right: 1em;
       }
 
       #thanks {
@@ -170,7 +178,7 @@
       }
 
       #skeleton {
-        padding-top: 135px;
+        padding-top: var(--header-height-desktop);
         min-height: 102vh;
       }
 
@@ -197,19 +205,20 @@
 
       @media (max-width: 767px) {
         #pageHeader {
-          height: 80px;
+          height: var(--header-height-mobile);
         }
 
         #pageHeader h1 {
           margin: 0;
           font-size: 22px;
         }
-        #pageHeader nav {
-          margin-top: 0;
-        }
 
         #pageHeader div:first-child {
           display: flex;
+        }
+
+        #pageHeader div, #pageHeader > div:last-child {
+          margin-top: 5px;
         }
 
         #pageHeader nav a:first-child {
@@ -223,14 +232,14 @@
         }
 
         #skeleton {
-          padding-top: 80px;
+          padding-top: var(--header-height-mobile);
         }
 
-        footer {
+        #pageFooter {
           padding: 0 20px;
         }
 
-        footer > div {
+        #pageFooter > div {
           flex-direction: column;
         }
       }
@@ -257,7 +266,7 @@
       Redirecting to static page...</p>
       <meta http-equiv="refresh" content="0;url={{ noscript }}">
     </noscript>
-    <blog-pwa unresolved>
+    <blog-pwa>
       <header id="pageHeader" slot="header">
         <div>
           <img id="me" src="/images/manifest/me-2018-150.jpg" alt="Justin Ribeiro">
@@ -277,7 +286,7 @@
         <p><hr><hr><hr><hr class="short"></p>
         <p><hr><hr><hr><hr class="short"></p>
       </section>
-      <footer slot="footer">
+      <footer id="pageFooter" slot="footer">
         <div>
           <section>
             <h2>Hello, nice to meet you.</h2>
@@ -312,9 +321,55 @@
         ]
       }
     </script>
+    <script>
+      // Significatly smaller shim as opposed to loading WA poly
+      // https://gist.github.com/simevidas/2e721c8e6d67f04b5e1a0083c542a767
+      function shimWebAnimateFinished() {
+        if (typeof Animation === 'undefined') {
+          window.Animation = document.body.animate({}).constructor;
+        }
+
+        if (Animation.prototype.finished === undefined) {
+          Object.defineProperty(Animation.prototype, 'finished', {
+            get() {
+              if (!this._finished) {
+                this._finished = this.playState === 'finished' ?
+                  Promise.resolve() :
+                  new Promise((resolve, reject) => {
+                    this.addEventListener('finish', resolve, {once: true});
+                    this.addEventListener('cancel', reject, {once: true});
+                  });
+              }
+              return this._finished;
+            },
+          });
+        }
+      }
+
+      // We can't use the shim if we don't have the base level of support
+      if (!document.body.animate) {
+        // Safari doesn't like the above shim with base wa.min, so we just feed
+        // it next-lite to make it happy for now
+        const waScript = document.createElement('script');
+          waScript.async = true;
+          waScript.src = 'node_modules/web-animations-js/web-animations-next-lite.min.js';
+          document.head.appendChild(waScript);
+      } else {
+        shimWebAnimateFinished();
+      }
+
+      // Only load IO if we don't have it
+      if (!('IntersectionObserver' in window) &&
+        !('IntersectionObserverEntry' in window)) {
+          console.log('intersect!');
+          const ioScript = document.createElement('script');
+          ioScript.async = true;
+          ioScript.src = 'node_modules/intersection-observer/intersection-observer.js';
+          document.head.appendChild(ioScript);
+      }
+    </script>
+
     <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script src="node_modules/web-animations-js/web-animations-next-lite.min.js" defer></script>
-    <script src="node_modules/intersection-observer/intersection-observer.js" defer></script>
     <script type="module" src="src/blog-pwa.js"></script>
   </body>
 </html>
