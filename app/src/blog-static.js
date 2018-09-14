@@ -71,10 +71,6 @@ class BlogStatic extends BlogUtils(PolymerElement) {
   static get template() {
     return html`
       <style include="shared-styles">
-        :host {
-          display: block;
-        }
-
         #shoutout {
           margin-bottom: 30px;
         }

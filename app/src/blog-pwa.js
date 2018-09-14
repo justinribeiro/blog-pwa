@@ -3,7 +3,6 @@ import {afterNextRender} from '@polymer/polymer/lib/utils/render-status.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import './blog-pages.js';
-import './blog-entry.js';
 
 class BlogPwa extends PolymerElement {
   static get properties() {
@@ -121,21 +120,15 @@ class BlogPwa extends PolymerElement {
   }
 
   _pageChanged(page, oldPage) {
-    if (page === 'entry') {
-      // According to Analytics, this is my most trafficed start point for
-      // users. We load this at the start, lazy load the rest.
-      this._ensureLazyLoaded();
-    } else {
-      // Certain pages use the static loader and since I'd like them to
-      // animate, we have multiple instances.
-      if (page === 'about' || page === 'talks' || page === 'home') {
-        page = 'static';
-      }
-
-      var callback = this._ensureLazyLoaded.bind(this);
-      var resolvedPageUrl = './blog-' + page + '.js';
-      import(resolvedPageUrl).then(callback, this._pageNotFound.bind(this));
+    // Certain pages use the static loader and since I'd like them to
+    // animate, we have multiple instances.
+    if (page === 'about' || page === 'talks' || page === 'home') {
+      page = 'static';
     }
+
+    var callback = this._ensureLazyLoaded.bind(this);
+    var resolvedPageUrl = './blog-' + page + '.js';
+    import(resolvedPageUrl).then(callback, this._pageNotFound.bind(this));
   }
 
   _pageNotFound(e) {

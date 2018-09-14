@@ -1,10 +1,7 @@
 import {mixinBehaviors} from '@polymer/polymer/lib/legacy/class.js';
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import {IronResizableBehavior} from
-  '@polymer/iron-resizable-behavior/iron-resizable-behavior.js';
 import {IronSelectableBehavior} from
   '@polymer/iron-selector/iron-selectable.js';
-import '@polymer/iron-pages/iron-pages.js';
 
 /**
  * Mini neon-pages
@@ -12,24 +9,17 @@ import '@polymer/iron-pages/iron-pages.js';
  * @polymer
  * @extends {Polymer.Element}
  */
-
-const legacyMixinSupport = mixinBehaviors(
-    [IronResizableBehavior, IronSelectableBehavior],
-    PolymerElement);
+const legacyMixinSupport = mixinBehaviors([IronSelectableBehavior],
+  PolymerElement);
 
 class BlogPages extends legacyMixinSupport {
   static get properties() {
     return {
-      // as the selected page is the only one visible, activateEvent
-      // is both non-sensical and problematic; e.g. in cases where a user
-      // handler attempts to change the page and the activateEvent
-      // handler immediately changes it back
-      activateEvent: {
-        type: String,
-        value: null,
-      },
       selected: {
-        observer: '_selectedPageChanged',
+        type: String,
+      },
+      _prevSelected: {
+        type: String,
       },
       animationKeyFramesIn: {
         type: Array,
@@ -68,15 +58,11 @@ class BlogPages extends legacyMixinSupport {
     document.addEventListener('iron-select', (e) => this._onIronSelect(e));
   }
 
-  _selectedPageChanged(selected, old) {
-    this.async(this.notifyResize);
-  }
-
   _onIronSelect(event) {
     this.triggerMount();
 
-    let selectedPage = event.detail.item;
-    let oldPage = this._valueToItem(this._prevSelected) || null;
+    const selectedPage = event.detail.item;
+    const oldPage = this._valueToItem(this._prevSelected) || null;
     this._prevSelected = this.selected;
     // On page change, we don't want to be at the bottom if the last page
     // was scrolled to the bottom. This may flicker but we need to keep body
@@ -88,7 +74,7 @@ class BlogPages extends legacyMixinSupport {
       // Animate the blocks in and out. The previous page gets an animation
       // for a move out while the new page gets a move in animation.
       oldPage.animate(this.animationKeyFramesOut, this.animationTiming);
-      let inPageAnimation = selectedPage.animate(
+      const inPageAnimation = selectedPage.animate(
         this.animationKeyFramesIn,
         this.animationTiming);
       // Remove the animating classes once animation is complete so the pages
@@ -103,7 +89,7 @@ class BlogPages extends legacyMixinSupport {
         selectedPage.classList.remove('animating');
       });
     } else {
-      let inPageAnimation = selectedPage.animate(
+      const inPageAnimation = selectedPage.animate(
         this.animationKeyFramesIn,
         this.animationTiming);
       inPageAnimation.finished.then(() => {
@@ -117,20 +103,6 @@ class BlogPages extends legacyMixinSupport {
     if (element && typeof element.mount === 'function') {
       element.mount();
     }
-  }
-
-  /**
-   * Fail safe for when Service Worker doesn't want to show the SSR because
-   * of a path mismatch
-   * @param {HTMLElement} page The gr-page element to transition into view
-   */
-  forceTransition(page) {
-    let inPageAnimation = page.animate(
-      this.animationKeyFramesIn,
-      this.animationTiming);
-    inPageAnimation.finished.then(() => {
-      // nada
-    });
   }
 
   static get template() {

@@ -188,7 +188,7 @@ styleElement.innerHTML =
       }
 
       #main, #skeleton, blog-network-warning {
-        padding-top: 100px;
+        padding-top: 80px;
       }
 
       p, li {
