@@ -35,111 +35,63 @@
   {% endif %}
 
   <style>
-    .hotpink { color: hotpink; }
-    .red { color: red; }
+    html {
+      --page-background: #ffffff;
+      --primary-text-color: #212121;
+      --secondary-text-color: #757575;
+      --accent-color-primary: #0049A3;
+      --accent-color-secondary: #CC5511;
+      --accent-color-highlight: #e6e6e6;
+      --section-color: #e6e6e6;
+      --structs-bg: #f1f1f1;
+      --structs-hi: #940088;
+      --structs-border: #cccccc;
+      --skelaton-background: #e6e6e6;
+      --notice-color-bg: #333333;
+      --notice-color-text: #ffffff;
+      --notice-color-link: #f1f900;
+      --hotpink: hotpink;
+      --red: red;
 
-    a {
-      color: #03A9F4;
-      text-decoration: none;
-      border-bottom: 1px solid #03A9F4;
+      --code-background: #faf8f5;
+      --code-color: #DD4A68;
+
+      --img-background: #faf8f5;
+
+      --header-height-desktop: 100px;
+      --header-height-mobile: 85px;
+
+      --font-family-serif: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
+      --font-family-sans-serif: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif
     }
 
-    a:hover {
-      color: #CC5511;
-      text-decoration: none;
-      border-bottom: 1px solid #CC5511;
+    body {
+      margin: 0;
+      line-height: 1.5;
+      min-height: 100vh;
+      background-color: #ffffff;
+      font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-        margin: 0;
-      }
-      p, li {
-        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-        margin: 0;
-        color: var(--primary-text-color);
-      }
-
-      h1 {
-        font-size: 28px;
-        margin-left: -1.75px;
-        line-height: 1.15;
-        letter-spacing: -.02em;
-        font-weight: 700;
-        font-style: normal;
-        margin-top: 16px;
-      }
-
-      h2 {
-        font-size: 24px;
-        margin-left: -1.75px;
-        line-height: 1.15;
-        letter-spacing: -.02em;
-        font-weight: 700;
-        font-style: normal;
-      }
-
-      h3 {
-        font-size: 20px;
-        margin-left: -1.75px;
-        line-height: 1.15;
-        letter-spacing: -.02em;
-        font-weight: 400;
-        font-style: normal;
-      }
-
-      p, li {
-        margin-top: 10px;
-        margin-bottom: 29px;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 21px;
-        line-height: 1.58;
-        letter-spacing: -.003em;
-      }
-
-      li {
-        margin-bottom: 20px;
-      }
-
-      blockquote {
-        border-left: 5px solid #03A9F4;
-        padding-left: 10px;
-        margin-left: 10px;
-      }
-
-      blockquote, blockquote p {
-        font-style: oblique;
-        font-weight: 400;
-        font-size: 20px;
-      }
-
-    header {
-      padding: 1em;
-      display: -ms-flexbox;
-      display: -webkit-flex;
+    #pageHeader {
       display: flex;
-      -ms-flex-direction: row;
-      -webkit-flex-direction: row;
       flex-direction: row;
-      -ms-flex-wrap: wrap;
-      -webkit-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
       align-items: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
       justify-content: center;
-      border-bottom: 1px solid #cccccc;
+      border-bottom: 1px solid var(--structs-border);
       background-color: #f1f1f1;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      height: var(--header-height-desktop);
     }
 
     /*
       Zone System gradient because I still love Adam's approach.
       That, and I totally apporiated the look from Paul Lewis (his is cooler).
     */
-    header:after {
+    #pageHeader:after {
       position: absolute;
       top: 0;
       left: 0;
@@ -151,59 +103,57 @@
         #999999 60%, #b3b3b3 70%, #cccccc 80%, #e6e6e6 90%, #ffffff 100%);
     }
 
-    header h1 {
-      font-weight: 100;
-      margin: 0 5px;
-      font-size: 32px;
-    }
-
-    nav {
+    #pageHeader div {
       margin-top: 10px;
     }
 
-    nav a {
+    #pageHeader > div:last-child {
+      margin-top: 0;
+    }
+
+    #pageHeader h1 {
+      font-weight: 100;
+      margin: 0 5px;
+      font-family: var(--font-family-serif);
+    }
+
+    #pageHeader nav a {
       margin: 0 5px;
       font-size: 16px;
       text-transform: uppercase;
       line-height: 2em;
-      font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
     }
 
     #me {
-      width: 100px;
-      height: 100px;
+      width: 75px;
+      height: 75px;
       border-radius: 10%;
       margin: 0 25px;
     }
 
-    footer {
-      border-top: 1px solid #cccccc;
+    #pageFooter {
+      border-top: 1px solid var(--structs-border);
       background-color: #f1f1f1;
       display: block;
+      margin-top: 2rem;
     }
 
-    footer > div {
-      margin: auto;
-      padding: 40px 20px 0;
-      max-width: 800px;
-      display: -ms-flexbox;
-      display: -webkit-flex;
+    #pageFooter section h2 {
+      font-weight: 400;
+      margin: 1em 0;
+    }
+
+    #pageFooter > div {
       display: flex;
-      -ms-flex-direction: row;
-      -webkit-flex-direction: row;
       flex-direction: row;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
       justify-content: center;
+      margin: auto;
+      max-width: 800px;
     }
 
-    footer > div section {
-      -ms-flex: 1 1 0.000000001px;
-      -webkit-flex: 1;
+    #pageFooter > div section {
       flex: 1;
+      padding-right: 1em;
     }
 
     #thanks {
@@ -213,62 +163,48 @@
     #thanks p {
       font-size: 14px;
       text-transform: uppercase;
-      color: var(--secondary-text-color);
-      font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+      color: var(--structs-hi);
+      text-align: center;
     }
 
     #thanks p a {
       background-image: none;
       background-repeat: initial;
       background-position: initial;
-      color: var(--secondary-text-color);
+      color: var(--structs-hi);
       border-bottom: 1px dotted;
     }
 
-    #main {
-      max-width: 800px;
+    #skeleton, #placeholder {
       margin: auto;
       padding: 0 20px;
-    }
-    #main iframe, #main img {
-      max-width: 100%;
+      max-width: 800px;
     }
 
-    #posts {
-      display: flex;
-      flex-wrap: wrap;
+    #skeleton {
+      padding-top: var(--header-height-desktop);
+      min-height: 102vh;
     }
 
-    .post-container {
-      height: 125px;
-      width: calc(50% - 5px);
-    }
-
-    .post-container a {
-      color: initial;
-      background-image: none;
-      background-repeat: initial;
-      background-position: initial;
-    }
-
-    .post-container a:hover {
-      background-color: #f1f1f1;
-    }
-
-    .post-container a span {
-      font-size: 14px;
-      color: #CC5511;
-    }
-
-    .post-container a h2 {
+    #skeleton p {
+      margin-top: 10px;
+      margin-bottom: 29px;
       font-weight: 400;
+      font-style: normal;
+      font-size: 21px;
+      line-height: 1.58;
+      letter-spacing: -.003em;
     }
 
-    .post-container a h3 {
-      font-weight: 200;
-      text-transform: uppercase;
-      font-size: 16px;
-      color: #CC5511;
+    hr {
+      height: 20px;
+      background-color: var(--skelaton-background);
+      border: 0;
+    }
+
+    hr.short {
+      width: 65%;
+      margin-left: 0;
     }
 
     code-block {
@@ -298,39 +234,281 @@
       padding: 5px;
     }
 
+    a {
+      color: #0049A3;
+      text-decoration: none;
+      border-bottom: 1px solid #0049A3;
+    }
+
+    a:hover {
+      color: #CC5511;
+      text-decoration: none;
+      border-bottom: 1px solid #CC5511;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+    }
+
+    p, li {
+      font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
+      margin: 0;
+      color: var(--primary-text-color);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-left: -1.75px;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      font-weight: 700;
+      font-style: normal;
+      margin-top: 16px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-left: -1.75px;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-left: -1.75px;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    p, li {
+      margin-top: 10px;
+      margin-bottom: 29px;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 21px;
+      line-height: 1.58;
+      letter-spacing: -.003em;
+    }
+
+    li {
+      margin-bottom: 20px;
+    }
+
+    /* Don't like this; special case. TODO extract */
+    p code, li code {
+      background-color: var(--code-background);
+      font-size: 19px;
+      color: var(--code-color);
+      padding: 5px;
+    }
+
+    blockquote {
+      border-left: 5px solid #0049A3;
+      padding-left: 10px;
+      margin-left: 10px;
+    }
+
+    blockquote, blockquote p {
+      font-style: oblique;
+      font-weight: 400;
+      font-size: 20px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    /* Use these to generate skeleton blocks before content loads */
+    hr {
+      height: 20px;
+      background-color: var(--skelaton-background);
+      border: 0;
+    }
+    hr.short {
+      width: 65%;
+      margin-left: 0;
+    }
+
+    /*
+      Design choice: in my components, I always have a #main as a container
+      in my web components. Why isn't named container? No idea. LOL.
+    */
+    #main, #skeleton {
+      margin: auto;
+      padding: 0 20px;
+      max-width: 800px;
+    }
+
+    #skeleton {
+      min-height: 102vh;
+    }
+
+    #shoutout {
+      margin-bottom: 30px;
+    }
+    #shoutout p {
+      font-size: 28px;
+    }
+
+    #posts > h2 {
+      margin-bottom: 10px;
+    }
+
+    #posts {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /*
+      This gets used a couple of places (iron-list, simple related dom-repeat)
+    */
+    .post-container {
+      height: 125px;
+      width: calc(50% - 1rem);
+    }
+
+    .post-container a {
+      min-height: 100px;
+      color: initial;
+      background-image: none;
+      background-repeat: initial;
+      background-position: initial;
+      display: block;
+      padding: 1rem;
+      border-bottom: none;
+      transition-property: background-color;
+      transition-duration: 0.3s;
+      will-change: background-color;
+    }
+
+    .post-container a:hover {
+      text-decoration: none;
+      background-color: var(--hotpink);
+    }
+
+    .post-container a:hover h2,
+    .post-container a:hover h3 {
+      color: #fff !important;
+    }
+
+    .post-container a span {
+      font-size: 14px;
+      color: #0049A3;
+    }
+
+    .post-container a h2 {
+      color: #0049A3;
+      font-weight: 400;
+      font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
+    }
+
+    .post-container a h3 {
+      font-weight: 200;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+      color: #CC5511;
+    }
+
+    #main, #skeleton, blog-network-warning {
+      padding-top: var(--header-height-desktop);
+    }
+
     @media (max-width: 767px) {
-      header, footer > div {
-        flex-direction: column;
+      #main, #skeleton {
+        margin: auto;
+        padding: 0 20px;
+        max-width: 800px;
       }
-      header h1 {
-        text-align: center;
-        margin: 0;
+
+      #main, #skeleton, blog-network-warning {
+        padding-top: var(--header-height-mobile);
       }
-      #me {
-        width: 75px;
-        height: 75px;
-        margin-bottom: 10px;
-      }
+
       p, li {
         font-size: 18px;
         line-height: 1.58;
         letter-spacing: -.004em;
       }
+
+      #shoutout p {
+        font-size: 24px;
+      }
+
+      .post-container {
+        width: 100%;
+      }
+
+      #pageHeader {
+        height: var(--header-height-mobile);
+      }
+
+      #pageHeader h1 {
+        margin: 0 0;
+        font-size: 22px;
+        line-height: inherit;
+      }
+
+      #pageHeader div:first-child {
+        display: flex;
+      }
+
+      #pageHeader div, #pageHeader > div:last-child {
+        margin-top: 5px;
+      }
+
+      #pageHeader nav a:first-child {
+        margin: 0 5px 0 0;
+      }
+
+      #me {
+        width: 55px;
+        height: 55px;
+        margin: 0 15px 0 0;
+      }
+
+      #skeleton {
+        padding-top: var(--header-height-mobile);
+      }
+
+      #pageFooter {
+        padding: 0 20px;
+      }
+
+      #pageFooter > div {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 320px) {
+      #pageHeader {
+        text-align: center;
+      }
+
+      /* No room on smaller screens */
+      #pageHeader > div:first-child {
+        display: none !important;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+  <header id="pageHeader">
     <div>
       <img id="me" src="/images/manifest/me-2018-150.jpg" alt="Justin Ribeiro">
     </div>
     <div>
       <h1>Justin Ribeiro</h1>
-        <nav role="navigation">
-          <a href="/?static=true">Home</a>
-          <a href="/chronicle/?static=true">Blog</a>
-          <a href="/talks/?static=true">Talks</a>
-          <a href="/about/?static=true">About</a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/chronicle/">Blog</a>
+          <a href="/talks/">Talks</a>
+          <a href="/about/">About</a>
         </nav>
     </div>
   </header>
@@ -349,7 +527,7 @@
         {% for post in posts %}
           <div class="post-container">
             <a href="{{ post.permalink }}?static=true">
-              <h3 class="date">{{post.date}}</h3>
+              <h3 class="date">🗒️ {{post.date}}</h3>
               <h2 class="title">{{ post.title }}</h2>
             </a>
           </div>
@@ -359,23 +537,39 @@
 
     </div>
   </div>
-  <footer>
+  <footer id="pageFooter">
     <div>
       <section>
         <h2>Hello, nice to meet you.</h2>
         <p>I'm happy to talk. You can reach me via <a href="https://twitter.com/justinribeiro">Twitter</a>, <a href="https://plus.google.com/+JustinRibeiro">Google+</a>, and <a href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>.</p>
-
         <p>Looking for some of my code? Check <a href="https://github.com/justinribeiro">Github</a> or <a href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
       </section>
       <section>
         <h2>Meta Things</h2>
-        <p><a href="https://justinribeiro.com/chronicle/index.xml">RSS feed</a>. RIP Reader, give <a href="https://github.com/mjibson/goread">GoRead</a> a spin.</p>
-        <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa">file a ticket</a> so I can fix it.</p>
+        <p><a href="https://justinribeiro.com/data/chronicle/index.xml">RSS feed</a>. RIP Reader, give <a href="https://github.com/mjibson/goread">GoRead</a> a spin.</p>
+        <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="">file a ticket</a> so I can fix it.</p>
       </section>
     </div>
     <div id="thanks">
-      <p>Made with <span class="hotpink">❤️</span> using <a href="https://www.polymer-project.org/">Polymer</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
+      <p>Made with ❤️ using <a href="https://www.polymer-project.org/">Polymer</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
     </div>
   </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Justin Ribeiro",
+      "url": "https://justinribeiro.com/",
+      "email": "justin@justinribeiro.com",
+      "image": "https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2018-512.jpg",
+      "sameAs": [
+        "https://twitter.com/justinribeiro",
+        "https://www.linkedin.com/in/justinribeiro",
+        "https://plus.google.com/+justinribeiro",
+        "https://github.com/justinribeiro",
+        "https://facebook.com/justinribeiro"
+      ]
+    }
+  </script>
 </body>
 </html>
