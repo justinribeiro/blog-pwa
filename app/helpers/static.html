@@ -35,36 +35,6 @@
   {% endif %}
 
   <style>
-    html {
-      --page-background: #ffffff;
-      --primary-text-color: #212121;
-      --secondary-text-color: #757575;
-      --accent-color-primary: #0049A3;
-      --accent-color-secondary: #CC5511;
-      --accent-color-highlight: #e6e6e6;
-      --section-color: #e6e6e6;
-      --structs-bg: #f1f1f1;
-      --structs-hi: #940088;
-      --structs-border: #cccccc;
-      --skelaton-background: #e6e6e6;
-      --notice-color-bg: #333333;
-      --notice-color-text: #ffffff;
-      --notice-color-link: #f1f900;
-      --hotpink: hotpink;
-      --red: red;
-
-      --code-background: #faf8f5;
-      --code-color: #DD4A68;
-
-      --img-background: #faf8f5;
-
-      --header-height-desktop: 100px;
-      --header-height-mobile: 85px;
-
-      --font-family-serif: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
-      --font-family-sans-serif: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif
-    }
-
     body {
       margin: 0;
       line-height: 1.5;
@@ -78,13 +48,13 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      border-bottom: 1px solid var(--structs-border);
+      border-bottom: 1px solid #cccccc;
       background-color: #f1f1f1;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 100;
-      height: var(--header-height-desktop);
+      height: 100px;
     }
 
     /*
@@ -114,7 +84,7 @@
     #pageHeader h1 {
       font-weight: 100;
       margin: 0 5px;
-      font-family: var(--font-family-serif);
+      font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
     }
 
     #pageHeader nav a {
@@ -132,7 +102,7 @@
     }
 
     #pageFooter {
-      border-top: 1px solid var(--structs-border);
+      border-top: 1px solid #cccccc;
       background-color: #f1f1f1;
       display: block;
       margin-top: 2rem;
@@ -182,7 +152,7 @@
     }
 
     #skeleton {
-      padding-top: var(--header-height-desktop);
+      padding-top: 100px;
       min-height: 102vh;
     }
 
@@ -198,7 +168,7 @@
 
     hr {
       height: 20px;
-      background-color: var(--skelaton-background);
+      background-color: #e6e6e6;
       border: 0;
     }
 
@@ -301,9 +271,9 @@
 
     /* Don't like this; special case. TODO extract */
     p code, li code {
-      background-color: var(--code-background);
+      background-color: #faf8f5;
       font-size: 19px;
-      color: var(--code-color);
+      color: #dd4a68;
       padding: 5px;
     }
 
@@ -326,7 +296,7 @@
     /* Use these to generate skeleton blocks before content loads */
     hr {
       height: 20px;
-      background-color: var(--skelaton-background);
+      background-color: #e6e6e6;
       border: 0;
     }
     hr.short {
@@ -388,7 +358,7 @@
 
     .post-container a:hover {
       text-decoration: none;
-      background-color: var(--hotpink);
+      background-color: hotpink;
     }
 
     .post-container a:hover h2,
@@ -416,7 +386,7 @@
     }
 
     #main, #skeleton, blog-network-warning {
-      padding-top: var(--header-height-desktop);
+      padding-top: 100px;
     }
 
     @media (max-width: 767px) {
@@ -427,7 +397,7 @@
       }
 
       #main, #skeleton, blog-network-warning {
-        padding-top: var(--header-height-mobile);
+        padding-top: 85px;
       }
 
       p, li {
@@ -445,7 +415,7 @@
       }
 
       #pageHeader {
-        height: var(--header-height-mobile);
+        height: 85px;
       }
 
       #pageHeader h1 {
@@ -473,7 +443,7 @@
       }
 
       #skeleton {
-        padding-top: var(--header-height-mobile);
+        padding-top: 85px;
       }
 
       #pageFooter {
