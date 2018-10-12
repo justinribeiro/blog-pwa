@@ -117,7 +117,12 @@ class BlogPwa extends PolymerElement {
     var fastCheck = new RegExp('\/chronicle/[0-9]*\/[0-9]*\/[0-9]*\/[\w\-]*', 'g');
     if (fastCheck.test(this.route.path)){
       if (this.shadowRoot.querySelector('blog-entry').constructor !== HTMLElement) {
-        this.shadowRoot.querySelector('blog-entry').resetView();
+        try {
+          this.shadowRoot.querySelector('blog-entry').resetView();
+        } catch(e) {
+          // This currently falls through only on Edge (?); no other browser
+          // triggers this.
+        }
       }
       this.page = 'entry';
       return;
