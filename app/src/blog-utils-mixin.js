@@ -70,6 +70,13 @@ export const BlogUtils = (superClass) => class extends superClass {
     url = url || document.location.href;
     this._setMeta('property', 'og:url', url);
     this._setMeta('property', 'twitter:url', url);
+
+    ga('send', {
+      hitType: 'pageview',
+      page: window.location.pathname,
+      location: url,
+      title: title,
+    });
   }
 
   _setMeta(attrName, attrValue, content) {

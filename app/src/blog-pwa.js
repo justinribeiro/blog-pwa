@@ -15,6 +15,10 @@ class BlogPwa extends PolymerElement {
         type: Boolean,
         value: false
       },
+      analyticsId: {
+        type: String,
+        value: 'UA-96204-3'
+      }
     };
   }
 
@@ -38,6 +42,9 @@ class BlogPwa extends PolymerElement {
     if (!this.loadComplete) {
       afterNextRender(this, () => {
         import('./lazy-resources.js').then((_) => {
+
+          this.__initAnalytics();
+
           if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js', {
               scope: './'
@@ -133,6 +140,37 @@ class BlogPwa extends PolymerElement {
 
   _pageNotFound(e) {
     this.page = 'missing';
+  }
+
+  __initAnalytics() {
+    window.ga = window.ga || ((...args) => (ga.q = ga.q || []).push(args));
+
+    ga('create', this.analyticsId, 'auto');
+    ga('set', 'transport', 'beacon');
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+
+    const loadErrorEvents = window.__e && window.__e.q || [];
+    const fieldsObj = {eventAction: 'uncaught error'};
+
+    // Replay any stored load error events.
+    for (let event of loadErrorEvents) {
+      trackError(event.error, fieldsObj);
+    }
+
+    // Add a new listener to track event immediately.
+    window.addEventListener('error', (event) => {
+      this.__trackError(event.error, fieldsObj);
+    });
+  }
+
+  __trackError(error, fieldsObj = {}) {
+    ga('send', 'event', Object.assign({
+      eventCategory: 'Script',
+      eventAction: 'error',
+      eventLabel: (error && error.stack) || '(not set)',
+      nonInteraction: true,
+    }, fieldsObj));
   }
 
   static get template() {

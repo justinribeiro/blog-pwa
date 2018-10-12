@@ -52,6 +52,10 @@ class BlogStatic extends BlogUtils(PolymerElement) {
             }
           },
         }, 3);
+      } else {
+        // We already have the data for our target static page, so just set the
+        // proper metadata
+        this._setPageMetaData(this.metadata);
       }
     }
   }
