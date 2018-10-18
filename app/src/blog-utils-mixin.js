@@ -71,12 +71,14 @@ export const BlogUtils = (superClass) => class extends superClass {
     this._setMeta('property', 'og:url', url);
     this._setMeta('property', 'twitter:url', url);
 
-    ga('send', {
-      hitType: 'pageview',
-      page: window.location.pathname,
-      location: url,
-      title: title,
-    });
+    if (window.ga) {
+       ga('send', {
+        hitType: 'pageview',
+        page: window.location.pathname,
+        location: url,
+        title: title,
+      });
+    }
   }
 
   _setMeta(attrName, attrValue, content) {
