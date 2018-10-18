@@ -160,7 +160,7 @@ class BlogPwa extends PolymerElement {
 
     // Replay any stored load error events.
     for (let event of loadErrorEvents) {
-      trackError(event.error, fieldsObj);
+      this.__trackError(event.error, fieldsObj);
     }
 
     // Add a new listener to track event immediately.
