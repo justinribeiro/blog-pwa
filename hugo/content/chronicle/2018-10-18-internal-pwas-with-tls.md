@@ -63,6 +63,8 @@ This is the portion of the post where I explain counterpoints to the approach.
 
 5. _My intranet apps don't need security._ This one makes me sad. Security should not be optional when running applications, regardless of whether it's the web or not.
 
+6. _This is an old technique, consumer routers/firewalls used to do this for setup._ Again, not claiming I'm the first, just hoping to help developers and their users reach their potential.
+
 ## Try it at home!
 Make no mistake, I've rolled this out for corps with nary a hiccup. I also run this sort of setup at home (albiet with some additional layers outside the topic of this post). My home network has a fair amount of devices on it, many of which have one-off Android or iOS applications that haven't seen an update since 2012. The devices don't live on the internet and I don't want them to (oh, the carnage that would be).
 
