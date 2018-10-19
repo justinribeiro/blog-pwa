@@ -7,13 +7,13 @@ imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/20181018-tls-pwa-
 imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/20181018-tls-pwa-gplus-800x360.jpg"
 +++
 
-In a world where every web application or service appears to be a cli command away from being infinitly scaled across the globe on your cloud providers of choice, we sometimes forget that not everything wants or can live in the cloud. The irony of me making this statement is not lost on me, given no lack of internal-external bridging talks and samples I've done over the years.
+In a world where every web application or service appears to be a cli command away from being infinitely scaled across the globe on your cloud provider(s) of choice, we sometimes forget that not everything wants or can live in the cloud. The irony of me making this statement is not lost on me, given no lack of internal-external bridging talks and samples I've done over the years.
 
-When we think of the web we often think of the outside, global, I-can-go-anywhere web, ignoring the plethra of web applications hidden on internal networks, doing their job for folks without fan fair. Having spoken to many of these developers I often here the sad tail of "I want to use Progressive Web Application features, but we can't support that internally."
+When we think of the web we often think of the outside, global, I-can-go-anywhere web, ignoring the plethra of web applications hidden on internal networks (remember the intranet), doing their job for folks without fanfare. Having spoken to many of these developers I often hear the sad tale of "I want to use Progressive Web Application features, but we can't support that internally."
 
 This can mean a lot of things, and by no means am I going to cover the internal dynamics of all organizations. The claim I most hear however in a lot of mid-size companies is that they can't handle the requirement of TLS. "We don't run an internal CA" or "no one understands how to handle the certs" and finally "the warning message scares our users (eg, the mismatch warning)."
 
-TLS is important; service worker in particular will not operate without it, we lose background sync,and nor will the add to homescreen actions we might want to control for our end users.
+TLS is important; service worker in particular will not operate without it, we lose background sync,push notification, and add to homescreen actions. We lack control.
 
 How to bridge the gap? Let's Encrypt, DNS, and a domain service we can automate.
 
@@ -62,6 +62,8 @@ This is the portion of the post where I explain counterpoints to the approach.
 4. _Seems like a lot of work for just progressive web features._ So are OS updates and security patches, but you do those (right? right??? please do those. please).
 
 5. _My intranet apps don't need security._ This one makes me sad. Security should not be optional when running applications, regardless of whether it's the web or not.
+
+6. _This is an old technique, consumer routers/firewalls used to do this for setup._ Again, not claiming I'm the first, just hoping to help developers and their users reach their potential.
 
 ## Try it at home!
 Make no mistake, I've rolled this out for corps with nary a hiccup. I also run this sort of setup at home (albiet with some additional layers outside the topic of this post). My home network has a fair amount of devices on it, many of which have one-off Android or iOS applications that haven't seen an update since 2012. The devices don't live on the internet and I don't want them to (oh, the carnage that would be).
