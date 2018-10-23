@@ -26,22 +26,35 @@ class MainHandler(http2.PushHandler):
   def get(self):
 
     bot_list_hunt = [
-          "Slackbot",
-          "facebookexternalhit",
-          "Facebot",
-          "Twitterbot",
-          "developers\.google\.com\/\+\/web\/snippet\/",
-          "LinkedInBot"
-        ]
+              'W3C_Validator',
+              'baiduspider',
+              'bingbot',
+              'embedly',
+              'facebookexternalhit',
+              'linkedinbot',
+              'outbrain',
+              'pinterest',
+              'quora\ link\ preview',
+              'rogerbot',
+              'showyoubot',
+              'slackbot',
+              'twitterbot',
+              'vkShare',
+              'googlebot',
+              'google-structured-data-testing-tool',
+              'bingbot',
+              'linkedinbot',
+              'mediapartners-google',
+          ]
     bot_list_search = '(?:%s)' % '|'.join(bot_list_hunt)
 
-    if re.search(bot_list_search, self.request.headers.get('User-Agent')):
+    if re.search(bot_list_search, self.request.headers.get('User-Agent').lower()):
       #
-      # Are you a link bot? You don't need much, so I return you only the basics.
-      # of the page metadata
+      # Are you a bot that doesn't handle JavaScript well? Good news! I have
+      # dynamic rendering just for you!
       #
-      # IMPORTANT NOTE: This does not generate for GoogleBot! Don't add it to
-      # the list, this is a bad idea. GoogleBot will handle the PWA just fine.
+      # More info: https://developers.google.com/search/docs/guides/dynamic-rendering
+      #
       name = os.path.join(os.path.dirname(__file__), 'dist/data/',
         self.request.path.lstrip("/").replace("index.html", "")
         .replace("index.php", ""), 'index.json')
@@ -52,12 +65,15 @@ class MainHandler(http2.PushHandler):
       # parse the read
       data = json.loads(c)
 
+      # save our html
+      data['article'] = unescape(data['article'])
+
       # Grab our template
-      bot_template = os.path.join(os.path.dirname(__file__),
-        'dist/helpers/bots.html')
+      static_template = os.path.join(os.path.dirname(__file__),
+        'dist/helpers/static.html')
 
       # Send down the wire
-      return self.response.write(template.render(bot_template, data))
+      return self.response.write(template.render(static_template, data))
     else:
       if self.request.get('static', default_value=False) is not False:
         #
