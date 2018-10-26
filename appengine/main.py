@@ -24,6 +24,12 @@ def unescape(s):
 class MainHandler(http2.PushHandler):
 
   def get(self):
+    self.response.headers['Strict-Transport-Security'] = 'max-age=63072000; includeSubDomains; preload'
+    self.response.headers['X-Frame-Options'] = 'DENY'
+    self.response.headers['X-XSS-Protection'] = '1; mode=block'
+    self.response.headers['X-Content-Type-Options'] = 'nosniff'
+    self.response.headers['Referrer-Policy'] = 'no-referrer, strct-origin-when-cross-origin'
+    self.response.headers['Content-Security-Policy'] = 'default-src \'none\'; base-uri \'self\'; script-src \'self\' \'unsafe-inline\' https://www.google-analytics.com; style-src \'self\' \'unsafe-inline\'; connect-src \'self\' https://www.google-analytics.com; img-src \'self\' https://storage.googleapis.com; media-src \'self\' https://storage.googleapis.com; form-action \'none\'; object-src \'none\'; font-src \'none\'; frame-ancestors \'none\';'
 
     bot_list_hunt = [
               'W3C_Validator',
