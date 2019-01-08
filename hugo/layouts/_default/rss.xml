@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ with .Title }}{{.}} from {{ end }}{{ .Site.Title }}</title>
-    <link>{{ .Permalink }}</link>
-    <description>Recent content {{ with .Title }}in {{.}} {{ end }}from {{ .Site.Title }}</description>
+    <title>{{ .Site.Title }}</title>
+    <link>https://justinribeiro.com/</link>
+    <description>Software Engineer. Speaker. Writer. Photographer. Coach. Dad. Husband. Occasionally funny.</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
     <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}
