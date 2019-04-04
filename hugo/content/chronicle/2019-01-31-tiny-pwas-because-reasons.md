@@ -66,7 +66,7 @@ const startAmbientSensor = () => {
 }
 {{< /codeblock >}}
 
-The end result, smoothly switching based on our lumens, is quite pleasent:
+The end result, smoothly switching based on our lumens, is quite pleasant:
 
 <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20190131-day-night-mode.png" alt="Day/night mode via the AmbientLightSensor API">
 
