@@ -16,14 +16,14 @@ Said project required some streaming data to handle a couple of offline function
 
 So, over the course of a code sprint, Duvall and I hashed out an ApiController that would do server-sent events. I've stripped everything down to the barebones class:
 
-{{< codeblock lang="csharp" >}}
+{{< codeblock lang="c" >}}
 public class SseListenerController : System.Web.Http.ApiController
 {
   [HttpGet]
   public System.Net.Http.HttpResponseMessage SubscribeToListener(HttpRequestMessage request)
   {
     System.Net.Http.HttpResponseMessage response = request.CreateResponse();
-    response.Content = new System.Net.Http.PushStreamContent((Action<Stream, HttpContent, TransportContext>)WriteToStream, new MediaTypeHeaderValue("text/event-stream"));
+    response.Content = new System.Net.Http.PushStreamContent((Action&lt;Stream, HttpContent, TransportContext&gt;)WriteToStream, new MediaTypeHeaderValue("text/event-stream"));
     return response;
   }
 
@@ -32,25 +32,25 @@ public class SseListenerController : System.Web.Http.ApiController
     MessageCallback(thing);
   }
 
-  private static readonly ConcurrentDictionary<StreamWriter, StreamWriter> _streammessage = new ConcurrentDictionary<StreamWriter, StreamWriter>();
+  private static readonly ConcurrentDictionary&lt;StreamWriter, StreamWriter&gt; _streammessage = new ConcurrentDictionary&lt;StreamWriter, StreamWriter&gt;();
   public void WriteToStream(Stream outputStream, HttpContent content, TransportContext context)
   {
     StreamWriter streamwriter = new StreamWriter(outputStream);
     _streammessage.TryAdd(streamwriter, streamwriter);
   }
- 
+
   private static void MessageCallback(MyThing thing)
   {
     foreach (var subscriber in _streammessage.ToArray())
     {
       try
       {
-        subscriber.Value.WriteLine(string.Format("id: {0}\n", thing.MyThingId));
-        subscriber.Value.WriteLine("data: " + JsonConvert.SerializeObject(thing) + "\n\n");
+        subscriber.Value.WriteLine(string.Format("id: {0}&bsol;n", thing.MyThingId));
+        subscriber.Value.WriteLine("data: " + JsonConvert.SerializeObject(thing) + "&bsol;n&bsol;n");
         subscriber.Value.Flush();
 
-        subscriber.Value.WriteLine(string.Format("id: {0}\n", thing.MyThingId));
-        subscriber.Value.WriteLine("data: " + JsonConvert.SerializeObject(thing) + "\n\n");
+        subscriber.Value.WriteLine(string.Format("id: {0}&bsol;n", thing.MyThingId));
+        subscriber.Value.WriteLine("data: " + JsonConvert.SerializeObject(thing) + "&bsol;n&bsol;n");
         subscriber.Value.Flush();
       }
       catch
