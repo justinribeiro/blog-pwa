@@ -1,5 +1,4 @@
 import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import '@polymer/app-route/app-route.js';
 import {BlogUtils} from './blog-utils-mixin.js';
 import './blog-network-warning.js';
 import './shared-styles.js';
@@ -36,33 +35,30 @@ class BlogEntry extends BlogUtils(PolymerElement) {
     this.$.metadataArticle.innerHTML = '';
   }
 
-  _routeChanged() {
+  mount() {
     // Meh.
     window.scroll(0, 0);
 
-    if (this.route) {
-      // Technically, I would just build the string which at this point
-      // with the chopping off extra things from the path might be more
-      // useful in the long haul
-      let getPath = this.route.path;
-      const checkEnding = new RegExp('index\.php|index\.html', 'g');
-      if(checkEnding.test(this.route.path)) {
-         getPath = this.route.path.replace(/index\.php|index\.html/g, '');
-      }
-
-      const targetUrl = '/data/chronicle' + getPath + 'index.json';
-
-      this._getResource({
-        url: targetUrl,
-        onLoad: (e) => {
-          this.set('metadata', JSON.parse(e.target.responseText));
-        },
-        onError: (e) => {
-          this.set('loaded', false);
-          this.set('failure', true);
-        },
-      }, 3);
+    // Technically, I would just build the string which at this point
+    // with the chopping off extra things from the path might be more
+    // useful in the long haul
+    let getPath = location.pathname;
+    const checkEnding = new RegExp('index\.php|index\.html', 'g');
+    if(checkEnding.test(location.pathname)) {
+        getPath = location.pathname.replace(/index\.php|index\.html/g, '');
     }
+    const targetUrl = `/data${getPath}index.json`;
+
+    this._getResource({
+      url: targetUrl,
+      onLoad: (e) => {
+        this.set('metadata', JSON.parse(e.target.responseText));
+      },
+      onError: (e) => {
+        this.set('loaded', false);
+        this.set('failure', true);
+      },
+    }, 3);
   }
 
   _generatedShareLinks() {
@@ -156,11 +152,6 @@ class BlogEntry extends BlogUtils(PolymerElement) {
           display: none !important;
         }
       </style>
-
-      <app-route
-        route="[[route]]"
-        pattern="/:year/:month/:day/:title/:chopchop"
-        data="{{entryRoute}}"></app-route>
 
       <section id="skeleton" hidden\$="{{_checkViewState(failure, loaded)}}">
       <p></p><hr><hr><hr><hr class="short"><p></p>

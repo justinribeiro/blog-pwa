@@ -8,7 +8,6 @@ class BlogStatic extends BlogUtils(PolymerElement) {
     return {
       metadata: Object,
       loaded: Boolean,
-      which: String,
       render: Boolean,
     };
   }
@@ -19,31 +18,27 @@ class BlogStatic extends BlogUtils(PolymerElement) {
       .addEventListener('try-reconnect', () => this.mount());
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.mount();
-  }
-
   resetView() {
     this.set('loaded', null);
     this.set('metadata', {});
     this.shadowRoot.querySelector('#main').innerHTML = '';
   }
 
-  mount() {
-    window.scroll(0, 0);
-    if (this.which && this.render) {
+  mount(which) {
+    if (which) {
+      window.scroll(0, 0);
       let targetUrl = '';
-      if (this.which == 'index') {
+      if (which == 'index') {
         targetUrl = '/data/index.json';
       } else {
-        targetUrl = '/data/' + this.which + '/index.json';
+        targetUrl = '/data/' + which + '/index.json';
       }
-      if (!this.metadata) {
+      debugger;
+      if (!this.metadata || this.metadata.view !== which) {
         this._getResource({
           url: targetUrl,
           onLoad: (e) => {
-            this._processMetaData(JSON.parse(e.target.responseText));
+            this._processMetaData(JSON.parse(e.target.responseText), which);
           },
           onError: (e) => {
             this.set('failure', true);
@@ -60,15 +55,16 @@ class BlogStatic extends BlogUtils(PolymerElement) {
     }
   }
 
-  _processMetaData(data) {
-    if (data.article !== undefined && data.article !== '' && this.render) {
+  _processMetaData(data, view) {
+    if (data.article !== undefined && data.article !== '') {
+      data.view = view;
       this._setPageMetaData(data);
       this.shadowRoot.querySelector('#main').innerHTML = this._unescapeHtml(
         data.article);
 
       this.set('metadata', data);
-      this.set('loaded', true);
-      this.set('failure', false);
+      this.shadowRoot.querySelector('#skeleton').setAttribute('hidden', '');
+      this.shadowRoot.querySelector('#main').removeAttribute('hidden');
     }
   }
 
@@ -98,15 +94,13 @@ class BlogStatic extends BlogUtils(PolymerElement) {
         }
       </style>
 
-      <section id="skeleton" hidden$="{{_checkViewState(failure, loaded)}}">
+      <section id="skeleton">
         <p><hr><hr><hr><hr class="short"></p>
         <p><hr><hr><hr><hr class="short"></p>
         <p><hr><hr><hr><hr class="short"></p>
       </section>
 
-      <div id="main" hidden$="[[!loaded]]">
-        {{article}}
-      </div>
+      <div id="main" hidden></div>
 
       <template is="dom-if" if="{{metadata.posts}}">
         <div id="posts">

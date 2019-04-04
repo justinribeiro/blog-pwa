@@ -1,62 +1,109 @@
-import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import {afterNextRender} from '@polymer/polymer/lib/utils/render-status.js';
-import '@polymer/app-route/app-location.js';
-import '@polymer/app-route/app-route.js';
-import './blog-pages.js';
+import {LitElement, html, css} from 'lit-element';
+import {Router} from '@vaadin/router';
 
-class BlogPwa extends PolymerElement {
+class BlogPwa extends LitElement {
   static get properties() {
     return {
-      page: {
-        type: String,
-        observer: '_pageChanged'
-      },
       offline: {
         type: Boolean,
-        value: false
+        value: false,
+        attribute: false
       },
       analyticsId: {
         type: String,
-        value: 'UA-96204-3'
+        value: 'UA-96204-3',
+        attribute: false
       }
     };
   }
 
-  static get observers() {
-    return [
-      '_routePageChanged(routeData.page)'
-    ];
+  updated() {
+    this._initRouter();
+    this._ensureLazyLoaded();
+
+    // afterNextRender(this, (_) => {
+    //   window.addEventListener('online', () => this._notifyNetworkStatus(false));
+    //   window.addEventListener('offline', () => this._notifyNetworkStatus(true));
+    // });
   }
 
-  ready() {
-    super.ready();
+  _initRouter() {
+    const outlet = this.shadowRoot.querySelector('main');
+    const router = new Router(outlet);
+    router.setRoutes([{
+      path: '/',
+      children: [
+        {
+          path: '',
+          component: 'blog-static',
+          action: () => {
+            import('./blog-static').then(() => {
+              const check = this.shadowRoot.querySelector('blog-static');
+              check.mount('index');
+            });
 
-    afterNextRender(this, (_) => {
-      window.addEventListener('online', () => this._notifyNetworkStatus(false));
-      window.addEventListener('offline', () => this._notifyNetworkStatus(true));
-    });
+          }
+        },
+        {
+          path: '/chronicle/',
+          component: 'blog-chronicle',
+          action: () => {
+            import('./blog-chronicle');
+          }
+        },
+        {
+          path: '/chronicle/(.*)',
+          component: 'blog-entry',
+          action: () => {
+            import('./blog-entry').then(() => {
+              const check = this.shadowRoot.querySelector('blog-entry');
+              check.resetView();
+              check.mount();
+            });
+          }
+        },
+        {
+          path: '/about',
+          component: 'blog-static',
+          action: () => {
+            import('./blog-static').then(() => {
+              const check = this.shadowRoot.querySelector('blog-static');
+              check.mount('about');
+            });
+
+          }
+        },
+        {
+          path: '/talks',
+          component: 'blog-static',
+          action: () => {
+            import('./blog-static').then(() => {
+              const check = this.shadowRoot.querySelector('blog-static');
+              check.mount('talks');
+            });
+          }
+        },
+      ]
+    }]);
   }
 
   // PRPL all the things.
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
-      afterNextRender(this, () => {
-        import('./lazy-resources.js').then((_) => {
+      import('./lazy-resources.js').then((_) => {
+        this.__initAnalytics();
 
-          this.__initAnalytics();
-
-          if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js', {
-              scope: './'
-            })
-            .then(registration => {
-              registration.addEventListener('updatefound',
-                () => this._onUpdateFound(registration));
-            });
-          }
-          this._notifyNetworkStatus();
-          this.loadComplete = true;
-        }, this._pageNotFound.bind(this));
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js', {
+            scope: './'
+          })
+          .then(registration => {
+            registration.addEventListener('updatefound',
+              () => this._onUpdateFound(registration));
+          });
+        }
+        this._notifyNetworkStatus();
+        this.loadComplete = true;
       });
     }
   }
@@ -106,47 +153,6 @@ class BlogPwa extends PolymerElement {
     }
   }
 
-  _routePageChanged(page) {
-    // This is a special case; after a lot of testing app-route can be slow
-    // to process the tail, which results in a rendering blip on slower
-    // devices. This is hard to duplicate, so to help prevent this, I check
-    // app-location route early and process it to point to the right entry
-    //
-    // This would reasonably be faster if I wanted to change my permalink
-    // structure, but I find this case isn't the end of the world.
-    var fastCheck = new RegExp('\/chronicle/[0-9]*\/[0-9]*\/[0-9]*\/[\w\-]*', 'g');
-    if (fastCheck.test(this.route.path)){
-      if (this.shadowRoot.querySelector('blog-entry').constructor !== HTMLElement) {
-        try {
-          this.shadowRoot.querySelector('blog-entry').resetView();
-        } catch(e) {
-          // This currently falls through only on Edge (?); no other browser
-          // triggers this.
-        }
-      }
-      this.page = 'entry';
-      return;
-    }
-
-    this.page = page || 'home';
-  }
-
-  _pageChanged(page, oldPage) {
-    // Certain pages use the static loader and since I'd like them to
-    // animate, we have multiple instances.
-    if (page === 'about' || page === 'talks' || page === 'home') {
-      page = 'static';
-    }
-
-    var callback = this._ensureLazyLoaded.bind(this);
-    var resolvedPageUrl = './blog-' + page + '.js';
-    import(resolvedPageUrl).then(callback, this._pageNotFound.bind(this));
-  }
-
-  _pageNotFound(e) {
-    this.page = 'missing';
-  }
-
   __initAnalytics() {
     window.ga = window.ga || ((...args) => (ga.q = ga.q || []).push(args));
 
@@ -178,44 +184,18 @@ class BlogPwa extends PolymerElement {
     }, fieldsObj));
   }
 
-  static get template() {
+  static get styles() {
+    return css`
+      main {
+        min-height: 100vh;
+      }`;
+  }
+
+  render() {
     return html`
-      <style>
-        blog-pages {
-          min-height: 100vh;
-        }
-      </style>
-
-      <app-location route="{{route}}"></app-location>
-      <app-route
-          route="{{route}}"
-          pattern="/:page"
-          data="{{routeData}}"
-          tail="{{subRoute}}"></app-route>
-
       <slot name="header"></slot>
-
-      <blog-pages selected="[[page]]"
-          attr-for-selected="name"
-          fallback-selection="404"
-          selected-class="view"
-          selected-attribute="render">
-
-        <blog-chronicle name="chronicle" offline="[[offline]]"></blog-chronicle>
-
-        <blog-entry name="entry" route="[[subRoute]]" offline="[[offline]]"></blog-entry>
-
-        <blog-static name="home" which="index" offline="[[offline]]"></blog-static>
-
-        <blog-static name="about" which="about" offline="[[offline]]"></blog-static>
-
-        <blog-static name="talks" which="talks" offline="[[offline]]"></blog-static>
-
-        <blog-missing name="missing" offline="[[offline]]"></blog-missing>
-      </blog-pages>
-
+      <main></main>
       <slot name="footer"></slot>
-
       <snack-bar hidden></snack-bar>
       `;
   }
