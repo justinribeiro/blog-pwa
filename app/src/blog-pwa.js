@@ -87,7 +87,7 @@ class BlogPwa extends PolymerElement {
     }
 
     snackBar.innerHTML = text;
-    snackBar.setAttribute('active', true);
+    snackBar.setAttribute('active', '');
 
     setTimeout(() => {
       if (!hold) {
