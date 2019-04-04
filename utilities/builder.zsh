@@ -245,7 +245,9 @@ case $target in
     cd $project/app/;
     # node_modules/http2-push-manifest/bin/http2-push-manifest -f $PWD/index.html;
     polymer build;
-    cd ..;
+    cd build/default;
+    workbox generateSW $project/app/workbox-config.js
+    cd ../../../;
 
     # Step 5: make a ship dir
     mkdir ship;
