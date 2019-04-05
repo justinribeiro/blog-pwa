@@ -29,7 +29,7 @@ class BlogPwa extends LitElement {
 
   _initRouter() {
     const outlet = this.shadowRoot.querySelector('main');
-    const router = new Router(outlet);
+    const router = new Router(outlet, null);
     router.setRoutes([{
       path: '/',
       children: [
@@ -37,7 +37,7 @@ class BlogPwa extends LitElement {
           path: '',
           component: 'blog-static',
           action: () => {
-            import('./blog-static').then(() => {
+            __import('blog-static.js').then(() => {
               const check = this.shadowRoot.querySelector('blog-static');
               check.mount('index');
             });
@@ -48,14 +48,14 @@ class BlogPwa extends LitElement {
           path: '/chronicle/',
           component: 'blog-chronicle',
           action: () => {
-            import('./blog-chronicle');
+            __import('blog-chronicle.js');
           }
         },
         {
           path: '/chronicle/(.*)',
           component: 'blog-entry',
           action: () => {
-            import('./blog-entry').then(() => {
+            __import('blog-entry.js').then(() => {
               const check = this.shadowRoot.querySelector('blog-entry');
               check.resetView();
               check.mount();
@@ -66,7 +66,7 @@ class BlogPwa extends LitElement {
           path: '/about',
           component: 'blog-static',
           action: () => {
-            import('./blog-static').then(() => {
+            __import('blog-static.js').then(() => {
               const check = this.shadowRoot.querySelector('blog-static');
               check.mount('about');
             });
@@ -77,7 +77,7 @@ class BlogPwa extends LitElement {
           path: '/talks',
           component: 'blog-static',
           action: () => {
-            import('./blog-static').then(() => {
+            __import('blog-static.js').then(() => {
               const check = this.shadowRoot.querySelector('blog-static');
               check.mount('talks');
             });
@@ -90,7 +90,7 @@ class BlogPwa extends LitElement {
   // PRPL all the things.
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
-      import('./lazy-resources.js').then((_) => {
+      __import('lazy-resources.js').then((_) => {
         this.__initAnalytics();
 
         if ('serviceWorker' in navigator) {

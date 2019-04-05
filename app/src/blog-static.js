@@ -33,7 +33,6 @@ class BlogStatic extends BlogUtils(PolymerElement) {
       } else {
         targetUrl = '/data/' + which + '/index.json';
       }
-      debugger;
       if (!this.metadata || this.metadata.view !== which) {
         this._getResource({
           url: targetUrl,

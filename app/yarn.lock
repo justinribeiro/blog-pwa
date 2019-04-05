@@ -1761,6 +1761,11 @@ shelljs@^0.7.5:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
+shimport@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/shimport/-/shimport-0.0.14.tgz#ca8f80381fadf1b1cc88e776c5294df247607287"
+  integrity sha512-JfzpHhyZ6CYuPYUSitFNw2/IxWEABLN1chs9xDHnn4tPXXCmfIn1METCmIl8Vwvm2FZGW7b8WB4zMCKaJEhY6A==
+
 sinon-chai@^2.10.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-2.14.0.tgz#da7dd4cc83cd6a260b67cca0f7a9fdae26a1205d"

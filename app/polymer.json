@@ -19,16 +19,16 @@
     "robots.txt",
     "manifest.json",
     "node_modules/@webcomponents/webcomponentsjs/**",
-    "node_modules/web-animations-js/web-animations-next-lite.min.js",
-    "node_modules/intersection-observer/intersection-observer.js"
+    "node_modules/intersection-observer/intersection-observer.js",
+    "src/polyfill-dynamicimport.js"
   ],
   "builds": [
     {
       "name": "default",
       "js": {
         "minify": true,
-        "compile": "es2017",
-        "transformModulesToAmd": true,
+        "compile": "es2018",
+        "transformModulesToAmd": false,
         "transformImportMeta": true
       },
       "css": {

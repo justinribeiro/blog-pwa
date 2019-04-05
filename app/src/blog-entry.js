@@ -86,13 +86,13 @@ class BlogEntry extends BlogUtils(PolymerElement) {
       const parseHTML = this._unescapeHtml(this.metadata.article);
 
       const ViewerRequired = new RegExp('(<\/stl\-part\-viewer>)', 'g');
-      if(ViewerRequired.test(parseHTML)) {
-        import('./3d-utils.js');
+      if (ViewerRequired.test(parseHTML)) {
+        __import('3d-utils.js');
       }
 
       const CodeBlockRequired = new RegExp('(<\/code\-block>)', 'g');
-      if(CodeBlockRequired.test(parseHTML)) {
-        import('./code-block.js');
+      if (CodeBlockRequired.test(parseHTML)) {
+        __import('code-block.js');
       }
 
       this.$.metadataArticle.innerHTML = parseHTML;
