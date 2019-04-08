@@ -16,7 +16,7 @@ Said project required some streaming data to handle a couple of offline function
 
 So, over the course of a code sprint, Duvall and I hashed out an ApiController that would do server-sent events. I've stripped everything down to the barebones class:
 
-{{< codeblock lang="c" >}}
+{{< codeblock lang="csharp" >}}
 public class SseListenerController : System.Web.Http.ApiController
 {
   [HttpGet]

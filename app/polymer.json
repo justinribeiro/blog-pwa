@@ -20,6 +20,7 @@
     "manifest.json",
     "node_modules/@webcomponents/webcomponentsjs/**",
     "node_modules/intersection-observer/intersection-observer.js",
+    "node_modules/prismjs/components/**",
     "src/polyfill-dynamicimport.js"
   ],
   "builds": [

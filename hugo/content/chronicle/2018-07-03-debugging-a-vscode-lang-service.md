@@ -38,7 +38,7 @@ $ yarn
 $ jake local
 {{< /codeblock >}}
 6. You're doing great! Now in the VS Code instance you built, edit the user settings to point at the version of TypeScript your just built:
-{{< codeblock lang="js" >}}
+{{< codeblock lang="javascript" >}}
 {
    "typescript.tsdk": "/path/to/TypeScript-build/built/local"
 }
@@ -49,7 +49,7 @@ $ export TSS_DEBUG = 5888
 $ ./scripts/code.sh
 {{< /codeblock >}}
 8. You're so close now. In stable VS Code, open your language server project. You need a `launch.json` that can attach to the TypeScript server that your built that is now running in the version of VS Code you built. So we add one:
-{{< codeblock lang="js" >}}
+{{< codeblock lang="javascript" >}}
 {
     "version": "0.1.0",
     "configurations": [
@@ -71,7 +71,7 @@ $ ./scripts/code.sh
 This will now let us bind and debug!
 9. In the version of VS Code you built open a folder with a typescript file or other code that you want to debug against. You can now set breakpoints, attach to the TypeScript server through Debug [F5], and walk your code.
 10. Note, in the case of the `typescript-lit-html-plugin`, I tell VS Code that is should be using the plugin by defining it within `tsconfig.json`:
-{{< codeblock lang="js" >}}
+{{< codeblock lang="javascript" >}}
 {
     "compilerOptions": {
         "noImplicitAny": true,

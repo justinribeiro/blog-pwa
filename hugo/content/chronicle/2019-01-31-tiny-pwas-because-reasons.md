@@ -27,7 +27,7 @@ That said, both the speedometer and the reading light have a problem; how do we 
 
 The [WakeLock API](https://www.w3.org/TR/wake-lock/) allows us to prevent our device from going into power saving mode and generally prevent the screen from turning off using a simple bit of code:
 
-{{< codeblock lang="js" >}}
+{{< codeblock lang="javascript" >}}
 const startWakeLock = () => {
   try {
     navigator.getWakeLock("screen").then((wakeLock) => {
@@ -44,7 +44,7 @@ I’m Awake! Stay Awake with the WakeLock API](https://developers.google.com/web
 
 Along those lines, the experimental [AmbientLightSensor API](https://developer.mozilla.org/en-US/docs/Web/API/AmbientLightSensor) behind the chrome://flags#enable-generic-sensor-extra-classes also allows me to detect when it's dark outside, allowing me to have a proper low-light style with very little code effort:
 
-{{< codeblock lang="js" >}}
+{{< codeblock lang="javascript" >}}
 const startAmbientSensor = () => {
   if ('AmbientLightSensor' in window) {
     navigator.permissions.query({ name: 'ambient-light-sensor' })

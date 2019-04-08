@@ -10,7 +10,7 @@
     "node": true
   },
   "plugins": [
-    "html",
+    "html"
   ],
   "rules": {
     "max-len": ["error", {
