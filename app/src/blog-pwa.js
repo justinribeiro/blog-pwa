@@ -18,8 +18,8 @@ class BlogPwa extends LitElement {
   }
 
   firstUpdated() {
-    this._initRouter();
     this._ensureLazyLoaded();
+    this._initRouter();
 
     window.addEventListener('online', () => this._notifyNetworkStatus(false));
     window.addEventListener('offline', () => this._notifyNetworkStatus(true));
@@ -81,6 +81,10 @@ class BlogPwa extends LitElement {
             });
           }
         },
+        {
+          path: '(.*)',
+          component: 'blog-missing'
+        }
       ]
     }]);
   }

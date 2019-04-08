@@ -39,6 +39,7 @@
   "globals": {
     "customElements": false,
     "Polymer": false,
-    "ga": false
+    "ga": false,
+    "__import": false
   }
 }
