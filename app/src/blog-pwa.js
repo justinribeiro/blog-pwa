@@ -17,14 +17,12 @@ class BlogPwa extends LitElement {
     };
   }
 
-  updated() {
+  firstUpdated() {
     this._initRouter();
     this._ensureLazyLoaded();
 
-    // afterNextRender(this, (_) => {
-    //   window.addEventListener('online', () => this._notifyNetworkStatus(false));
-    //   window.addEventListener('offline', () => this._notifyNetworkStatus(true));
-    // });
+    window.addEventListener('online', () => this._notifyNetworkStatus(false));
+    window.addEventListener('offline', () => this._notifyNetworkStatus(true));
   }
 
   _initRouter() {
