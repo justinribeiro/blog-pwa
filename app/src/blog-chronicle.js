@@ -1,48 +1,34 @@
-import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import {BlogUtils} from './blog-utils-mixin.js';
-import './blog-network-warning.js';
-import './shared-styles.js';
+import BlogElement from './blog-element.js';
+import {css, html} from 'lit-element';
 
-class BlogChronicle extends BlogUtils(PolymerElement) {
-  static get properties() {
-    return {
-      blog: Object,
-    };
-  }
-
-  ready() {
-    super.ready();
-    this.shadowRoot.querySelector('blog-network-warning')
-      .addEventListener('try-reconnect', () => this.mount());
-  }
-
+class BlogChronicle extends BlogElement {
   connectedCallback() {
     super.connectedCallback();
     this.mount();
   }
 
-  mount() {
+  async mount() {
     this._setPageMetaData({
       title: 'Chronicle Archives',
       description: 'An archive of blog posts, thoughts, and other musings from Justin Ribeiro. Pulling. It. Off.',
     });
 
-    // TODO year filter via route target match
-    this._getResource({
-      url: '/data/chronicle/index.json',
-      onLoad: (e) => {
-        this.set('blog', JSON.parse(e.target.responseText));
-        this.set('failure', false);
-      },
-      onError: (e) => {
-        this.set('failure', true);
-      },
-    }, 3);
+    try {
+      const response = await fetch('/data/chronicle/index.json');
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      this.metadata = await response.json();
+      this.failure = false;
+    } catch (error) {
+      this.failure = true;
+    }
   }
 
-  static get template() {
-    return html`
-      <style include="shared-styles">
+  static get styles() {
+    return [
+      super.styles,
+      css`
         #posts > h2 {
           margin-bottom: 10px;
         }
@@ -51,8 +37,12 @@ class BlogChronicle extends BlogUtils(PolymerElement) {
           display: flex;
           flex-wrap: wrap;
         }
-      </style>
+      `
+    ];
+  }
 
+  render() {
+    return html`
       <div id="main">
         <div>
           <h1>Chronicle Archives</h1>
@@ -61,18 +51,17 @@ class BlogChronicle extends BlogUtils(PolymerElement) {
           <p>My chronicles aren’t exactly without analysis, but they are listing of events and happenings. The latest events are listed on the home page and the archives are presented below.</p>
         </div>
         <div id="posts">
-          <template is="dom-repeat" items="[[blog.posts]]" as="post">
-            <div class="post-container">
-              <a href="[[post.permalink]]">
-                <h3 class="date">🗒️ [[post.date]]</h3>
-                <h2 class="title">[[post.title]]</h2>
+          ${this.metadata.posts.map(post =>
+             html`<div class="post-container">
+              <a href="${post.permalink}">
+                <h3 class="date">🗒️ ${post.date}</h3>
+                <h2 class="title">${post.title}</h2>
               </a>
-            </div>
-          </template>
+            </div>`)}
         </div>
       </div>
 
-      <blog-network-warning hidden$="[[!failure]]"></blog-network-warning>
+      <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
     `;
   }
 }

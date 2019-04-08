@@ -77,10 +77,7 @@
         justify-content: center;
         border-bottom: 1px solid var(--structs-border);
         background-color: var(--structs-bg);
-        position: fixed;
-        top: 0;
         width: 100%;
-        z-index: 100;
         height: var(--header-height-desktop);
       }
 
@@ -178,7 +175,6 @@
       }
 
       #skeleton {
-        padding-top: var(--header-height-desktop);
         min-height: 102vh;
       }
 
@@ -229,10 +225,6 @@
           width: 55px;
           height: 55px;
           margin: 0 15px 0 0;
-        }
-
-        #skeleton {
-          padding-top: var(--header-height-mobile);
         }
 
         #pageFooter {
@@ -325,43 +317,8 @@
         ]
       }
     </script>
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script>
-      // Significatly smaller shim as opposed to loading WA poly
-      // https://gist.github.com/simevidas/2e721c8e6d67f04b5e1a0083c542a767
-      function shimWebAnimateFinished() {
-        if (typeof Animation === 'undefined') {
-          window.Animation = document.body.animate({}).constructor;
-        }
-
-        if (Animation.prototype.finished === undefined) {
-          Object.defineProperty(Animation.prototype, 'finished', {
-            get() {
-              if (!this._finished) {
-                this._finished = this.playState === 'finished' ?
-                  Promise.resolve() :
-                  new Promise((resolve, reject) => {
-                    this.addEventListener('finish', resolve, {once: true});
-                    this.addEventListener('cancel', reject, {once: true});
-                  });
-              }
-              return this._finished;
-            },
-          });
-        }
-      }
-
-      // We can't use the shim if we don't have the base level of support
-      if (!document.body.animate) {
-        // Safari doesn't like the above shim with base wa.min, so we just feed
-        // it next-lite to make it happy for now
-        const waScript = document.createElement('script');
-          waScript.async = true;
-          waScript.src = 'node_modules/web-animations-js/web-animations-next-lite.min.js';
-          document.head.appendChild(waScript);
-      } else {
-        shimWebAnimateFinished();
-      }
-
       // Only load IO if we don't have it
       if (!('IntersectionObserver' in window) &&
         !('IntersectionObserverEntry' in window)) {
@@ -371,10 +328,35 @@
           ioScript.src = 'node_modules/intersection-observer/intersection-observer.js';
           document.head.appendChild(ioScript);
       }
-    </script>
+      // Only load the dynamic import polyfill if we need it
+      function __loadDynamicImportCheck(src) {
+        window.polyfillDynamicImport = false;
+        try {
+          new Function('import("' + src + '")')();
+        } catch (e) {
+          var s = document.createElement('script');
+          s.src = './src/polyfill-dynamicimport.js';
+          s.dataset.main = src;
+          document.head.appendChild(s);
+          window.polyfillDynamicImport = true;
 
-    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script type="module" src="src/blog-pwa.js"></script>
+          s.onload = () => {
+            importModule(src);
+          }
+        }
+      }
+      __loadDynamicImportCheck('./src/blog-pwa.js');
+
+      // shim dynamic import() to workaround Firefox throwing parse error for
+      // dynamic import() in FF65
+      function __import(src) {
+        if (window.polyfillDynamicImport) {
+          return importModule(`./src/${src}`);
+        } else {
+          return new Function('return import("./src/' + src + '")')();
+        }
+      }
+    </script>
     <script async src="https://www.google-analytics.com/analytics.js"></script>
   </body>
 </html>

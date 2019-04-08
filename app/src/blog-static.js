@@ -1,57 +1,39 @@
-import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import {BlogUtils} from './blog-utils-mixin.js';
-import './blog-network-warning.js';
-import './shared-styles.js';
+import BlogElement from './blog-element.js';
+import {css, html} from 'lit-element';
 
-class BlogStatic extends BlogUtils(PolymerElement) {
-  static get properties() {
-    return {
-      metadata: Object,
-      loaded: Boolean,
-      which: String,
-      render: Boolean,
-    };
-  }
+class BlogStatic extends BlogElement {
+  /**
+   * @param {string} which
+   */
+  async mount(which) {
+    if (which || this.which !== '') {
 
-  ready() {
-    super.ready();
-    this.shadowRoot.querySelector('blog-network-warning')
-      .addEventListener('try-reconnect', () => this.mount());
-  }
+      if (which !== '') {
+        this.which = which;
+      }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.mount();
-  }
-
-  resetView() {
-    this.set('loaded', null);
-    this.set('metadata', {});
-    this.shadowRoot.querySelector('#main').innerHTML = '';
-  }
-
-  mount() {
-    window.scroll(0, 0);
-    if (this.which && this.render) {
+      window.scroll(0, 0);
       let targetUrl = '';
-      if (this.which == 'index') {
+      if (this.which === 'index' || this.which === '') {
         targetUrl = '/data/index.json';
       } else {
         targetUrl = '/data/' + this.which + '/index.json';
       }
-      if (!this.metadata) {
-        this._getResource({
-          url: targetUrl,
-          onLoad: (e) => {
-            this._processMetaData(JSON.parse(e.target.responseText));
-          },
-          onError: (e) => {
-            this.set('failure', true);
-            if (!this.loaded) {
-              this.set('loaded', false);
-            }
-          },
-        }, 3);
+      if (!this.metadata || this.metadata.view !== this.which) {
+        try {
+          const response = await fetch(targetUrl);
+          if (!response.ok) {
+            throw new Error(response.statusText);
+          }
+          const data = await response.json();
+          this._processMetaData(data, this.which);
+          this.failure = false;
+        } catch (error) {
+          this.failure = true;
+          if (!this.loaded) {
+            this.loaded = false;
+          }
+        }
       } else {
         // We already have the data for our target static page, so just set the
         // proper metadata
@@ -60,21 +42,27 @@ class BlogStatic extends BlogUtils(PolymerElement) {
     }
   }
 
-  _processMetaData(data) {
-    if (data.article !== undefined && data.article !== '' && this.render) {
+  /**
+   * @param {{ posts: array; article: string; view: string; }} data
+   * @param {string} view
+   */
+  _processMetaData(data, view) {
+    if (data.article !== undefined && data.article !== '') {
+      data.view = view;
       this._setPageMetaData(data);
       this.shadowRoot.querySelector('#main').innerHTML = this._unescapeHtml(
         data.article);
 
-      this.set('metadata', data);
-      this.set('loaded', true);
-      this.set('failure', false);
+      this.metadata = data;
+      this.shadowRoot.querySelector('#skeleton').setAttribute('hidden', '');
+      this.shadowRoot.querySelector('#main').removeAttribute('hidden');
     }
   }
 
-  static get template() {
-    return html`
-      <style include="shared-styles">
+  static get styles() {
+    return [
+      super.styles,
+      css`
         #shoutout {
           margin-bottom: 30px;
         }
@@ -96,31 +84,33 @@ class BlogStatic extends BlogUtils(PolymerElement) {
             font-size: 24px;
           }
         }
-      </style>
+      `
+    ];
+  }
 
-      <section id="skeleton" hidden$="{{_checkViewState(failure, loaded)}}">
+  render() {
+    return html`
+      <section id="skeleton" ?hidden="${this.__checkViewState(this.failure, this.loaded)}">
         <p><hr><hr><hr><hr class="short"></p>
         <p><hr><hr><hr><hr class="short"></p>
         <p><hr><hr><hr><hr class="short"></p>
       </section>
 
-      <div id="main" hidden$="[[!loaded]]">
-        {{article}}
-      </div>
+      <div id="main" hidden></div>
 
-      <template is="dom-if" if="{{metadata.posts}}">
-        <div id="posts">
-          <template is="dom-repeat" items="[[metadata.posts]]" as="post">
-            <div class="post-container">
-              <a href="[[post.permalink]]">
-                <h3 class="date">🗒️ [[post.date]]</h3>
-                <h2 class="title">[[post.title]]</h2>
+      ${this.metadata.posts?
+        html`<div id="posts">
+          ${this.metadata.posts.map(post =>
+             html`<div class="post-container">
+              <a href="${post.permalink}">
+                <h3 class="date">🗒️ ${post.date}</h3>
+                <h2 class="title">${post.title}</h2>
               </a>
-            </div>
-          </template>
-        </div>
-      </template>
-      <blog-network-warning hidden$="[[!failure]]"></blog-network-warning>
+          </div>`)}
+        </div>`:
+        html``}
+
+      <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
     `;
   }
 }

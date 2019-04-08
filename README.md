@@ -1,5 +1,5 @@
 # blog-pwa
-An experiment in mixing Hugo and Polymer PRPL into a progressive web app blog.
+What started as an experiment in mixing Hugo, Polymer, and the PRPL pattern to build a progressive web app blog that turned into my actual blog.
 
 ## Features
 
@@ -9,10 +9,11 @@ An experiment in mixing Hugo and Polymer PRPL into a progressive web app blog.
 
 ## The basics
 
+* [lit-element](https://lit-element.polymer-project.org/) app shell and web components
 * [Hugo](https://gohugo.io/) to manage posts and metadata
-* [Polymer and web components](https://www.polymer-project.org) app shell based on PRPL and the [SHOP](https://shop.polymer-project.org/) demo
+* [workbox](https://developers.google.com/web/tools/workbox/) for generating precache and runtime caching service worker
 * h2-push via [http2push-gae](https://github.com/GoogleChrome/http2push-gae) for Google App Engine for serving
-* [letsencrypt-nosudo](https://github.com/arkarkark/letsencrypt-nosudo) for Let's Encrypt generation on Google App Engine
+* Polyfills only load on need; no extra bytes shipped.
 
 ## The not-so-basics
 
@@ -21,9 +22,10 @@ I wrote a couple `zsh` utility scripts to power most of the shuffle and build of
 The gist of the tools employed and their uses include.
 
 * `sed` is amazing and helps rangle some of the JSON output from Hugo (years of old posts + multiple times moved = fun!)
-* `zmv` is the thing you don't know about but probably should. Renames files fast to proper type (Hugo won't output pure JSON at moment)
+* `zmv` is the thing you've probably never heard of about but might want to try. Renames files fast to proper type (Hugo won't output pure JSON at moment)
 * `jq` is blazing fast over lots of files; validates my json output so I know things will load in the PWA and Python
 * `polymer-cli` works without a lot of fuss and handles the frontend generation
+* `workbox-cli` works without a lot of fuss and handles the service worker generation
 * `http2-push-manifest` is super useful and works out of the box with http2push-gae
 
 ## Setup
@@ -53,7 +55,3 @@ Just want the timelines json files? Download via links below:
 
 * [Download - First load](https://storage.googleapis.com/jdr-public-traces/TimelineRawData-20170112-LG-VS450PP-regular3G-justinribeiro-com-firstrun.json)
 * [Download - Second load](https://storage.googleapis.com/jdr-public-traces/TimelineRawData-20170112-LG-VS450PP-regular3G-justinribeiro-com-secondrun.json)
-
-## Additional thoughts and words
-
-You can read a blog post and see the site in action: [some post](https://example.com).

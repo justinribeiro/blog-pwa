@@ -39,7 +39,11 @@
     "@polymer/paper-icon-button": "^3.0.0",
     "@polymer/polymer": "^3.0.0",
     "@polymer/prism-element": "^3.0.0",
+    "@vaadin/router": "^1.2.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
+    "lit-element": "^2.1.0",
+    "prismjs": "^1.16.0",
+    "shimport": "^0.0.14",
     "web-animations-js": "^2.3.1"
   }
 }

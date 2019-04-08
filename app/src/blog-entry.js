@@ -1,117 +1,89 @@
-import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
-import '@polymer/app-route/app-route.js';
-import {BlogUtils} from './blog-utils-mixin.js';
-import './blog-network-warning.js';
-import './shared-styles.js';
+import BlogElement from './blog-element.js';
+import {css, html} from 'lit-element';
 
-class BlogEntry extends BlogUtils(PolymerElement) {
-  static get properties() {
-    return {
-      metadata: {
-        type: Object,
-        notify: true,
-      },
-      loaded: Boolean,
-      route: Object,
-      entryRoute: Object,
-    };
-  }
+class BlogEntry extends BlogElement {
+  async mount() {
+    window.scroll(0, 0);
 
-  static get observers() {
-    return [
-      '_routeChanged(entryRoute.title)',
-      '_metaDataChanged(metadata.article)',
-    ];
-  }
+    // Technically, I would just build the string which at this point
+    // with the chopping off extra things from the path might be more
+    // useful in the long haul
+    let getPath = location.pathname;
+    const checkEnding = new RegExp('index\.php|index\.html', 'g');
+    if(checkEnding.test(location.pathname)) {
+        getPath = location.pathname.replace(/index\.php|index\.html/g, '');
+    }
+    const targetUrl = `/data${getPath}index.json`;
 
-  ready() {
-    super.ready();
-    this.shadowRoot.querySelector('blog-network-warning')
-      .addEventListener('try-reconnect', () => this._routeChanged());
+    try {
+      const response = await fetch(targetUrl);
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      this.metadata = await response.json();
+      this._processMetaData();
+      this.failure = false;
+    } catch (error) {
+      this.failure = true;
+      this.loaded = false;
+    }
   }
 
   resetView() {
-    this.set('loaded', null);
-    this.set('metadata', {});
-    this.$.metadataArticle.innerHTML = '';
-  }
+    this.loaded = null;
+    this.metadata = {
+      posts: null,
+      article: '',
+      title: '',
+      dataModified: '',
+      date: '',
+      readingtime: '',
+      permalink: '',
+      description: '',
+      filename: '',
+    };
 
-  _routeChanged() {
-    // Meh.
-    window.scroll(0, 0);
-
-    if (this.route) {
-      // Technically, I would just build the string which at this point
-      // with the chopping off extra things from the path might be more
-      // useful in the long haul
-      let getPath = this.route.path;
-      const checkEnding = new RegExp('index\.php|index\.html', 'g');
-      if(checkEnding.test(this.route.path)) {
-         getPath = this.route.path.replace(/index\.php|index\.html/g, '');
-      }
-
-      const targetUrl = '/data/chronicle' + getPath + 'index.json';
-
-      this._getResource({
-        url: targetUrl,
-        onLoad: (e) => {
-          this.set('metadata', JSON.parse(e.target.responseText));
-        },
-        onError: (e) => {
-          this.set('loaded', false);
-          this.set('failure', true);
-        },
-      }, 3);
+    const dom = this.shadowRoot.querySelector('#metadataArticle');
+    if (dom && dom.innerHTML !== '') {
+      dom.innerHTML = '';
     }
   }
 
   _generatedShareLinks() {
-      this.set('twitterShare', 'https://twitter.com/intent/tweet?url=' +
-      this.metadata.prmalink + '&text=' + this.metadata.title +
-      ' via @justinribeiro');
-
-      this.set('facebookShare', 'https://www.facebook.com/sharer.php?u=' +
-        this.metadata.permalink);
-
-      this.set('gplusShare', 'https://plus.google.com/share?url=' +
-        this.metadata.permalink);
-
-      this.set('linkedinShare',
-        'https://www.linkedin.com/shareArticle?mini=true&url=' +
-        this.metadata.permalink + '&title=' + this.metadata.title +
-        '&source=&summary=' + this.metadata.description);
-
-      this.set('emailShare', 'mailto:?subject=Article: ' + this.metadata.title +
-        '&body=Article from Justin Ribeiro: "' + this.metadata.permalink + '"');
+    this.share.twitter = `https://twitter.com/intent/tweet?url=${this.metadata.permalink}&text=${this.metadata.title} via @justinribeiro`;
+    this.share.facebook = `https://www.facebook.com/sharer.php?u=${this.metadata.permalink}`;
+    this.share.linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=${this.metadata.permalink}&title=${this.metadata.title}&source=&summary=${this.metadata.description}`;
+    this.share.email = `mailto:?subject=Article: ${this.metadata.title}&body=Article from Justin Ribeiro: ${this.metadata.permalink}`;
   }
 
-  _metaDataChanged() {
+  _processMetaData() {
     if (this.metadata.article !== undefined && this.metadata.article !== '') {
       const parseHTML = this._unescapeHtml(this.metadata.article);
 
       const ViewerRequired = new RegExp('(<\/stl\-part\-viewer>)', 'g');
-      if(ViewerRequired.test(parseHTML)) {
-        import('./3d-utils.js');
+      if (ViewerRequired.test(parseHTML)) {
+        __import('3d-utils.js');
       }
 
       const CodeBlockRequired = new RegExp('(<\/code\-block>)', 'g');
-      if(CodeBlockRequired.test(parseHTML)) {
-        import('./code-block.js');
+      if (CodeBlockRequired.test(parseHTML)) {
+        __import('code-block.js');
       }
 
-      this.$.metadataArticle.innerHTML = parseHTML;
+      this.shadowRoot.querySelector('#metadataArticle').innerHTML = parseHTML;
 
       this._setPageMetaData(this.metadata);
       this._generatedShareLinks();
 
-      this.set('failure', false);
-      this.set('loaded', true);
+      this.failure = false;
+      this.loaded = true;
     }
   }
 
-  static get template() {
-    return html`
-      <style include="shared-styles">
+  static get styles() {
+    return [
+      super.styles,
+      css`
         #main iframe, #main img {
           max-width: 100%;
           width: 100%;
@@ -155,43 +127,46 @@ class BlogEntry extends BlogUtils(PolymerElement) {
         .hidden {
           display: none !important;
         }
-      </style>
+      `
+    ];
+  }
 
-      <app-route
-        route="[[route]]"
-        pattern="/:year/:month/:day/:title/:chopchop"
-        data="{{entryRoute}}"></app-route>
-
-      <section id="skeleton" hidden\$="{{_checkViewState(failure, loaded)}}">
+  render() {
+    return html`
+      <section id="skeleton" ?hidden="${this.__checkViewState(this.failure, this.loaded)}">
       <p></p><hr><hr><hr><hr class="short"><p></p>
       <p></p><hr><hr><hr><hr class="short"><p></p>
       <p></p><hr><hr><hr><hr class="short"><p></p>
       </section>
 
-      <article itemprop="blogPost" id="main" hidden\$="[[!loaded]]" itemscope=""
-        itemtype="http://schema.org/BlogPosting">
+      <article itemprop="blogPost" id="main" itemscope=""
+        itemtype="http://schema.org/BlogPosting" ?hidden="${!this.loaded}">
       <header>
-        <h1 itemprop="headline">[[metadata.title]]</h1>
+        <h1 itemprop="headline">${this.metadata.title}</h1>
         <div class="reads">
-          <time datetime\$="[[metadata.dataModified]]" itemprop="datePublished">
-            [[metadata.date]]
+          <time datetime="${this.metadata.dataModified}" itemprop="datePublished">
+            ${this.metadata.date}
           </time>
-          <span class="dotDivider"></span> [[metadata.readingtime]] min read
+          <span class="dotDivider"></span> ${this.metadata.readingtime} min read
         </div>
       </header>
       <div id="metadataArticle" itemprop="articleBody"></div>
       <footer id="metaShare">
         <div>
           <h3>Share this piece</h3>
-          <p id="share"><a href\$="[[twitterShare]]">Twitter</a> <a href\$="[[facebookShare]]">Facebook</a> <a href\$="[[gplusShare]]">G+</a> <a href\$="[[linkedinShare]]">LinkedIn</a> <a href\$="[[emailShare]]">Email</a></p>
-          <p>Author Justin Ribeiro wrote [[metadata.words]] words for this piece and hopes you enjoyed it. Find an issue? <a href="https://github.com/justinribeiro/blog-pwa/issues">File a ticket</a> or <a href\$="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/[[metadata.filename]]">edit this on Github.</a></p>
+          <p id="share">
+            <a href="${this.share.twitter}">Twitter</a>
+            <a href="${this.share.facebook}">Facebook</a>
+            <a href="${this.share.linkedin}">LinkedIn</a>
+            <a href="${this.share.email}">Email</a>
+          </p>
+          <p>Author Justin Ribeiro wrote ${this.metadata.words} words for this piece and hopes you enjoyed it. Find an issue? <a href="https://github.com/justinribeiro/blog-pwa/issues">File a ticket</a> or <a href="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/${this.metadata.filename}">edit this on Github.</a></p>
         </div>
       </footer>
       </article>
 
-      <blog-network-warning hidden$="[[!failure]]"></blog-network-warning>
+      <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
     `;
   }
-
 }
 customElements.define('blog-entry', BlogEntry);

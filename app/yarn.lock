@@ -272,6 +272,26 @@
   dependencies:
     "@types/node" "6.0.*"
 
+"@vaadin/router@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vaadin/router/-/router-1.2.0.tgz#10143f496104b4b7d7c030c211b0a085a66a20d9"
+  integrity sha512-QUL6OlwIlvMTaSIJr06zdUdCIycmKqWnVL2lATkie7ZEoHfFqVcN4FZ7do3CBEtAQy9+rS2IKTllcR7+YntNcg==
+  dependencies:
+    "@vaadin/vaadin-usage-statistics" "^2.0.1"
+    path-to-regexp "2.2.1"
+
+"@vaadin/vaadin-development-mode-detector@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-development-mode-detector/-/vaadin-development-mode-detector-2.0.0.tgz#69417cbf4a9f7427ec7b70b7dc8e0605a2f900b3"
+  integrity sha512-pzSaUqn+lJbTL2ZC6NCAfhyMymMYg2p4DzeUXdyInJISwSWmgh9RlRVpAGhi6MIUOKC7kGeKPAiB4vyWsEhzDg==
+
+"@vaadin/vaadin-usage-statistics@^2.0.1":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-usage-statistics/-/vaadin-usage-statistics-2.0.2.tgz#7034b673e396efba174a590846d057025f601120"
+  integrity sha512-emu6IttPhlfH7chc3tvvZyztULtrMhNi6SK6BPXe7hN9PvF3XZfLLtVHxQMbJid85yYDcynKSyKznlhDkyrc7Q==
+  dependencies:
+    "@vaadin/vaadin-development-mode-detector" "^2.0.0"
+
 "@webcomponents/shadycss@^1.5.2":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.7.0.tgz#91cbd98f6ecbc62e213f0f6175b961403e1ff09c"
@@ -1260,6 +1280,13 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+lit-element@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.1.0.tgz#85bc3f1da0227f4b13de8a1be978229b9fa327e9"
+  integrity sha512-0z/KHm1xZweivfOVRr8AKR06+D3k02u15m9s4jkuRdnGe5wfmEwePzrQQBsSZNILdnfJvfo3TJOeGhBCVZaPbw==
+  dependencies:
+    lit-html "^1.0.0"
+
 lit-html@^0.10.0:
   version "0.10.2"
   resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.10.2.tgz#53c846afcf91bb1e6623179ef22e327ab8ac0e0e"
@@ -1269,6 +1296,11 @@ lit-html@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.14.0.tgz#d6830e8f55fb923b0f5824decf7da082a1d22997"
   integrity sha512-+xqUPzzJGEDqb0F5DOnMXvL0jxpkKebAMlXycKZxFtzlmD+qePEmYrEUPF9XVXcc5eYBzYXTCOUcjSCod4YvgQ==
+
+lit-html@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.0.0.tgz#3dc3781a8ca68a9b5c2ff2a61e263662b9b2267b"
+  integrity sha512-oeWlpLmBW3gFl7979Wol2LKITpmKTUFNn7PnFbh6YNynF61W74l6x5WhwItAwPRSATpexaX1egNnRzlN4GOtfQ==
 
 lodash._baseassign@^3.0.0:
   version "3.2.0"
@@ -1512,6 +1544,11 @@ path-posix@^1.0.0:
   resolved "https://registry.yarnpkg.com/path-posix/-/path-posix-1.0.0.tgz#06b26113f56beab042545a23bfa88003ccac260f"
   integrity sha1-BrJhE/Vr6rBCVFojv6iAA8ysJg8=
 
+path-to-regexp@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-2.2.1.tgz#90b617025a16381a879bc82a38d4e8bdeb2bcf45"
+  integrity sha512-gu9bD6Ta5bwGrrU8muHzVOBFFREpp2iRkVfhBJahwJ6p6Xw20SjT0MxLnwkjOibQmGSYhiUnf2FLe7k+jcFmGQ==
+
 pinkie-promise@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/pinkie-promise/-/pinkie-promise-2.0.1.tgz#2135d6dfa7a358c069ac9b178776288228450ffa"
@@ -1543,6 +1580,13 @@ prismjs@^1.11.0:
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.15.0.tgz#8801d332e472091ba8def94976c8877ad60398d9"
   integrity sha512-Lf2JrFYx8FanHrjoV5oL8YHCclLQgbJcVZR+gikGGMqz6ub5QVWDTM6YIwm3BuPxM/LOV+rKns3LssXNLIf+DA==
+  optionalDependencies:
+    clipboard "^2.0.0"
+
+prismjs@^1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.16.0.tgz#406eb2c8aacb0f5f0f1167930cb83835d10a4308"
+  integrity sha512-OA4MKxjFZHSvZcisLGe14THYsug/nF6O1f0pAJc0KN0wTyAcLqmsbE+lTGKSpyh+9pEW57+k6pg2AfYR+coyHA==
   optionalDependencies:
     clipboard "^2.0.0"
 
@@ -1723,6 +1767,11 @@ shelljs@^0.7.5:
     glob "^7.0.0"
     interpret "^1.0.0"
     rechoir "^0.6.2"
+
+shimport@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/shimport/-/shimport-0.0.14.tgz#ca8f80381fadf1b1cc88e776c5294df247607287"
+  integrity sha512-JfzpHhyZ6CYuPYUSitFNw2/IxWEABLN1chs9xDHnn4tPXXCmfIn1METCmIl8Vwvm2FZGW7b8WB4zMCKaJEhY6A==
 
 sinon-chai@^2.10.0:
   version "2.14.0"
