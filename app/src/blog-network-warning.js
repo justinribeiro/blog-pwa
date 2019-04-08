@@ -1,4 +1,4 @@
-import {LitElement, html} from '@polymer/lit-element';
+import {LitElement, html} from 'lit-element';
 
 class BlogNetworkWarning extends LitElement {
   _tryReconnect() {
@@ -37,7 +37,7 @@ class BlogNetworkWarning extends LitElement {
           <h1>No internet connection.</h1>
           <p>Argh! Is the wifi lying to you? Are you in a tunnel? Now would be the time to check if your device is still connected to WiFi or your mobile network.</p>
         </div>
-        <button @click="${this._tryReconnect()}">Try Again</button>
+        <button @click="${this._tryReconnect}">Try Again</button>
       </div>
     `;
   }

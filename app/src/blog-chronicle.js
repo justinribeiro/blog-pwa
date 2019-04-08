@@ -25,11 +25,6 @@ class BlogChronicle extends BlogElement {
     }
   }
 
-  firstUpdated() {
-    this.shadowRoot.querySelector('blog-network-warning')
-      .addEventListener('try-reconnect', () => this.mount());
-  }
-
   static get styles() {
     return [
       super.styles,

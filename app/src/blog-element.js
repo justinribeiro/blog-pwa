@@ -24,6 +24,10 @@ export default class BlogElement extends LitElement {
         type: Boolean,
         attribute: false,
       },
+      which: {
+        type: String,
+        attribute: false,
+      }
     };
   }
 
@@ -40,6 +44,7 @@ export default class BlogElement extends LitElement {
       permalink: '',
       description: '',
       filename: '',
+      view: '',
     };
 
     this.share = {
@@ -49,8 +54,15 @@ export default class BlogElement extends LitElement {
       email: '',
     }
 
+    this.which = '';
+
     this.failure = false;
     this.loaded = false;
+  }
+
+  firstUpdated() {
+    this.shadowRoot.querySelector('blog-network-warning')
+      .addEventListener('try-reconnect', () => this.mount());
   }
 
   static get styles() {
@@ -227,19 +239,11 @@ export default class BlogElement extends LitElement {
         color: var(--accent-color-secondary);
       }
 
-      #main, #skeleton, blog-network-warning {
-        padding-top: var(--header-height-desktop);
-      }
-
       @media (max-width: 767px) {
         #main, #skeleton, #posts {
           margin: auto;
           padding: 0 20px;
           max-width: 800px;
-        }
-
-        #main, #skeleton, blog-network-warning {
-          padding-top: var(--header-height-mobile);
         }
 
         p, li {

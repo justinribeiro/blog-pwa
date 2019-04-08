@@ -6,22 +6,27 @@ class BlogStatic extends BlogElement {
    * @param {string} which
    */
   async mount(which) {
-    if (which) {
+    if (which || this.which !== '') {
+
+      if (which !== '') {
+        this.which = which;
+      }
+
       window.scroll(0, 0);
       let targetUrl = '';
-      if (which == 'index') {
+      if (this.which === 'index' || this.which === '') {
         targetUrl = '/data/index.json';
       } else {
-        targetUrl = '/data/' + which + '/index.json';
+        targetUrl = '/data/' + this.which + '/index.json';
       }
-      if (!this.metadata || this.metadata.view !== which) {
+      if (!this.metadata || this.metadata.view !== this.which) {
         try {
           const response = await fetch(targetUrl);
           if (!response.ok) {
             throw new Error(response.statusText);
           }
           const data = await response.json();
-          this._processMetaData(data, which);
+          this._processMetaData(data, this.which);
           this.failure = false;
         } catch (error) {
           this.failure = true;
@@ -52,11 +57,6 @@ class BlogStatic extends BlogElement {
       this.shadowRoot.querySelector('#skeleton').setAttribute('hidden', '');
       this.shadowRoot.querySelector('#main').removeAttribute('hidden');
     }
-  }
-
-  firstUpdated() {
-    this.shadowRoot.querySelector('blog-network-warning')
-      .addEventListener('try-reconnect', () => this.mount());
   }
 
   static get styles() {
