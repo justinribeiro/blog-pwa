@@ -128,7 +128,7 @@ class PushHandler(webapp2.RequestHandler):
       url = '%s%s' % (host, str(url))
       t = str(v.get('type', ''))
       if len(t):
-        preload_links.append('<%s>; rel=preload; as=%s' % (url, t))
+        preload_links.append('<%s>; rel=preload; crossorigin as=%s' % (url, t))
       else:
         preload_links.append('<%s>; rel=preload' % url)
 
