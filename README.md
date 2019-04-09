@@ -1,4 +1,5 @@
 # blog-pwa
+
 What started as an experiment in mixing Hugo, Polymer, and the PRPL pattern to build a progressive web app blog that turned into my actual blog.
 
 ## Features
@@ -30,7 +31,7 @@ The gist of the tools employed and their uses include.
 
 ## Setup
 
-```
+```bash
 ➜ git clone git@github.com:justinribeiro/blog-pwa.git
 ➜ cd blog-pwa
 ➜ chmod +x utilities/builder.zsh
