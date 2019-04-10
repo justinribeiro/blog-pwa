@@ -12,10 +12,14 @@ class BlogPwa extends LitElement {
       },
       analyticsId: {
         type: String,
-        value: 'UA-96204-3',
         attribute: false
       }
     };
+  }
+
+  constructor() {
+    super();
+    this.analyticsId = 'UA-96204-3';
   }
 
   firstUpdated() {
@@ -130,6 +134,12 @@ class BlogPwa extends LitElement {
           });
 
           wb.register();
+
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(this.__sendPerfData, { timeout: 2000 });
+          } else {
+            this.__sendPerfData();
+          }
         }
         this._notifyNetworkStatus();
         this.loadComplete = true;
@@ -142,7 +152,7 @@ class BlogPwa extends LitElement {
     const snackBar = this.shadowRoot.querySelector('snack-bar');
 
     // Strange bug where the bar blips on some initial loads
-    // workaround by hidding at load and then removing as needed one time
+    // workaround by hiding at load and then removing as needed one time
     if (snackBar.hasAttribute('hidden')) {
       snackBar.removeAttribute('hidden');
     }
@@ -201,6 +211,28 @@ class BlogPwa extends LitElement {
       eventLabel: (error && error.stack) || '(not set)',
       nonInteraction: true,
     }, fieldsObj));
+  }
+
+  __sendPerfData() {
+    perfMetrics.onFirstInputDelay((delay, evt) => {
+      ga('send', 'event', {
+        eventCategory: 'Perf Metrics',
+        eventAction: 'first-input-delay',
+        eventLabel: evt.type,
+        eventValue: Math.round(delay),
+        nonInteraction: true,
+      });
+    });
+
+    performance.getEntriesByType('paint').forEach((entry) => {
+      ga('send', 'event', {
+        eventCategory: 'Perf Metrics',
+        eventAction: entry.name,
+        eventLabel: entry.entryType,
+        eventValue: Math.round(entry.startTime),
+        nonInteraction: true,
+      });
+    });
   }
 
   static get styles() {
