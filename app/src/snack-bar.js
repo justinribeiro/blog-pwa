@@ -26,10 +26,13 @@ class SnackBar extends LitElement {
         transform: translate3d(0, 0, 0);
       }
 
-      div ::slotted(a) {
-        color: var(--notice-color-link) !important;
-        border-bottom: 1px solid var(--notice-color-link) !important;
-        text-decoration: none;
+      div button {
+        color: var(--notice-color-link);
+        border: 0;
+        border-bottom: 1px solid var(--notice-color-link);
+        background: transparent;
+        font-size: 1em;
+        padding: 0;
       }
 
       @media (min-width: 460px) {
@@ -41,6 +44,9 @@ class SnackBar extends LitElement {
     </style>
     <div>
       <slot></slot>
+      ${this.action?
+        html`<button @click="${this.__reload}">Refresh</a>`:
+        html``}
     </div>
     `;
   }
@@ -48,7 +54,13 @@ class SnackBar extends LitElement {
   static get properties() {
     return {
       active: Boolean,
+      action: Boolean,
+      trigger: Function,
     };
+  }
+
+  __reload() {
+    this.trigger();
   }
 }
 

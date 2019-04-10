@@ -1,5 +1,6 @@
 import {LitElement, html, css} from 'lit-element';
 import {Router} from '@vaadin/router';
+import {Workbox} from 'workbox-window';
 
 class BlogPwa extends LitElement {
   static get properties() {
@@ -96,13 +97,28 @@ class BlogPwa extends LitElement {
         this.__initAnalytics();
 
         if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('service-worker.js', {
-            scope: './'
-          })
-          .then(registration => {
-            registration.addEventListener('updatefound',
-              () => this._onUpdateFound(registration));
+          const wb = new Workbox('/service-worker.js');
+
+          wb.addEventListener('activated', (event) => {
+            if (!event.isUpdate) {
+              this._setSnackBarText('Ready to work offline.');
+            }
           });
+
+          wb.addEventListener('waiting', (event) => {
+            this._setSnackBarText(
+              'New and updated content is available.',
+              0,
+              true,
+              async () => {
+                wb.addEventListener('controlling', (event) => {
+                  window.location.reload();
+                });
+                wb.messageSW({type: 'SKIP_WAITING'});
+              });
+          });
+
+          wb.register();
         }
         this._notifyNetworkStatus();
         this.loadComplete = true;
@@ -110,22 +126,7 @@ class BlogPwa extends LitElement {
     }
   }
 
-  _onUpdateFound(registration) {
-    const newWorker = registration.installing;
-
-    registration.installing.addEventListener('statechange', async () => {
-      if (newWorker.state == 'activated' && !navigator.serviceWorker.controller) {
-        this._setSnackBarText('Ready to work offline.');
-        return;
-      }
-
-      if (newWorker.state == 'activated' && navigator.serviceWorker.controller) {
-        this._setSnackBarText('New and updated content is available. <a href="javascript:window.location.reload(true);">Refresh</a>', 0, true);
-      }
-    });
-  }
-
-  _setSnackBarText(text, duration, hold) {
+  _setSnackBarText(text, duration, hold, callback) {
     const timeout = duration || 5000;
     const snackBar = this.shadowRoot.querySelector('snack-bar');
 
@@ -133,6 +134,11 @@ class BlogPwa extends LitElement {
     // workaround by hidding at load and then removing as needed one time
     if (snackBar.hasAttribute('hidden')) {
       snackBar.removeAttribute('hidden');
+    }
+
+    if (callback) {
+      snackBar.trigger = callback;
+      snackBar.action = true;
     }
 
     snackBar.innerHTML = text;
