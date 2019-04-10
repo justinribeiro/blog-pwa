@@ -5,6 +5,7 @@ What started as an experiment in mixing Hugo, Polymer, and the PRPL pattern to b
 ## Features
 
 * It's a progressive web app with all the fixin's (service worker, PRPL pattern, H2, et cetera)
+* The base PWA component and it's bundle weight just *17.1KB* gzip'ed.
 * Renders if there is no JavaScript via `<noscript>` injected fallback to static generation
 * Renders metadata to linkbots when sharing without the need for client JavaScript via server side detection and alternative render path
 
@@ -13,8 +14,9 @@ What started as an experiment in mixing Hugo, Polymer, and the PRPL pattern to b
 * [lit-element](https://lit-element.polymer-project.org/) app shell and web components
 * [Hugo](https://gohugo.io/) to manage posts and metadata
 * [workbox](https://developers.google.com/web/tools/workbox/) for generating precache and runtime caching service worker
-* h2-push via [http2push-gae](https://github.com/GoogleChrome/http2push-gae) for Google App Engine for serving
-* Polyfills only load on need; no extra bytes shipped.
+* [rollup](https://rollupjs.org) for component bundles and splitting for our PRPL loading
+* [h2-push via http2push-gae](https://github.com/GoogleChrome/http2push-gae) for Google App Engine for serving
+* Polyfills only load on need; no extra bytes shipped (including for dynamic imports).
 
 ## The not-so-basics
 
@@ -22,11 +24,12 @@ I wrote a couple `zsh` utility scripts to power most of the shuffle and build of
 
 The gist of the tools employed and their uses include.
 
-* `sed` is amazing and helps rangle some of the JSON output from Hugo (years of old posts + multiple times moved = fun!)
+* `sed` is amazing and helps wrangle some of the JSON output from Hugo (years of old posts + multiple times moved = fun!)
 * `zmv` is the thing you've probably never heard of about but might want to try. Renames files fast to proper type (Hugo won't output pure JSON at moment)
 * `jq` is blazing fast over lots of files; validates my json output so I know things will load in the PWA and Python
-* `polymer-cli` works without a lot of fuss and handles the frontend generation
-* `workbox-cli` works without a lot of fuss and handles the service worker generation
+* `polymer-cli` handles the dev serving
+* `workbox-cli` handles the service worker generation
+* `rollup cli` handles the es modules and bundles splitting for prod builds
 * `http2-push-manifest` is super useful and works out of the box with http2push-gae
 
 ## Setup
