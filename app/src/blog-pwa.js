@@ -103,6 +103,17 @@ class BlogPwa extends LitElement {
             if (!event.isUpdate) {
               this._setSnackBarText('Ready to work offline.');
             }
+
+            // Get the current page URL + all resources the page loaded.
+            const urlsToCache = [
+              location.href,
+              ...performance.getEntriesByType('resource').map((r) => r.name),
+            ];
+            // Send that list of URLs to your router in the service worker.
+            wb.messageSW({
+              type: 'CACHE_URLS',
+              payload: {urlsToCache},
+            });
           });
 
           wb.addEventListener('waiting', (event) => {

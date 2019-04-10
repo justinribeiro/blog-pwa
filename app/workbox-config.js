@@ -11,6 +11,7 @@ module.exports = {
   globPatterns: [
     'index.html',
     'manifest.json',
+    'src/app.js',
     'src/blog-pwa.js',
     'src/blog-static.js',
     'src/blog-entry.js',
