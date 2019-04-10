@@ -7,7 +7,7 @@
     <meta name="description" content="Software Engineer. Speaker. Writer. Dad. Coach. Occasionally funny.">
     <meta name="theme-color" content="#f1f1f1">
 
-    <link rel="icon" href="/images/manifest/me-2018-192.png">
+    <link rel="icon" href="/images/manifest/me-2018-150.jpg">
     <link rel="manifest" href="/manifest.json">
     <base href="/">
 
@@ -83,7 +83,7 @@
 
       /*
         Zone System gradient because I still love Adam's approach.
-        That, and I totally apporiated the look from Paul Lewis (his is cooler).
+        That, and I totally appropriated the look from Paul Lewis (his is cooler).
       */
       #pageHeader:after {
         position: absolute;
@@ -293,70 +293,13 @@
           </section>
         </div>
         <div id="thanks">
-          <p>Made with ❤️ using <a href="https://www.polymer-project.org/">Polymer</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p>Made with ❤️ using <a href="https://lit-element.polymer-project.org/">Web Components</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
         </div>
       </footer>
     </blog-pwa>
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "Justin Ribeiro",
-        "url": "https://justinribeiro.com/",
-        "email": "justin@justinribeiro.com",
-        "image": "https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2018-512.jpg",
-        "sameAs": [
-          "https://twitter.com/justinribeiro",
-          "https://www.linkedin.com/in/justinribeiro",
-          "https://plus.google.com/+justinribeiro",
-          "https://github.com/justinribeiro",
-          "https://facebook.com/justinribeiro",
-          "https://mastodon.social/@justinribeiro",
-          "https://hub.docker.com/r/justinribeiro/",
-          "https://developers.google.com/experts/people/justin-ribeiro"
-        ]
-      }
-    </script>
-    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script>
-      // Only load IO if we don't have it
-      if (!('IntersectionObserver' in window) &&
-        !('IntersectionObserverEntry' in window)) {
-          console.log('intersect!');
-          const ioScript = document.createElement('script');
-          ioScript.async = true;
-          ioScript.src = 'node_modules/intersection-observer/intersection-observer.js';
-          document.head.appendChild(ioScript);
-      }
-      // Only load the dynamic import polyfill if we need it
-      function __loadDynamicImportCheck(src) {
-        window.polyfillDynamicImport = false;
-        try {
-          new Function('import("' + src + '")')();
-        } catch (e) {
-          var s = document.createElement('script');
-          s.src = './src/polyfill-dynamicimport.js';
-          s.dataset.main = src;
-          document.head.appendChild(s);
-          window.polyfillDynamicImport = true;
-
-          s.onload = () => {
-            importModule(src);
-          }
-        }
-      }
-      __loadDynamicImportCheck('./src/blog-pwa.js');
-
-      // shim dynamic import() to workaround Firefox throwing parse error for
-      // dynamic import() in FF65
-      function __import(src) {
-        if (window.polyfillDynamicImport) {
-          return importModule(`./src/${src}`);
-        } else {
-          return new Function('return import("./src/' + src + '")')();
-        }
-      }
-    </script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"Person","name":"Justin Ribeiro","url":"https://justinribeiro.com/","email":"justin@justinribeiro.com","image":"https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2018-512.jpg","sameAs":["https://twitter.com/justinribeiro","https://www.linkedin.com/in/justinribeiro","https://plus.google.com/+justinribeiro","https://github.com/justinribeiro","https://facebook.com/justinribeiro","https://mastodon.social/@justinribeiro","https://hub.docker.com/r/justinribeiro/","https://developers.google.com/experts/people/justin-ribeiro"]}</script>
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="./src/app.js"></script>
     <script async src="https://www.google-analytics.com/analytics.js"></script>
   </body>
 </html>
