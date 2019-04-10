@@ -8,43 +8,36 @@
   "version": "3.0.0",
   "author": "Justin Ribeiro <justin@justinribeiro.com>",
   "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^3.12.0",
     "eslint-config-google": "^0.7.1",
     "eslint-plugin-html": "^1.7.0",
+    "html-minifier": "^4.0.0",
     "http2-push-manifest": "^1.0.1",
+    "rollup-plugin-babel-minify": "^8.0.0",
+    "rollup-plugin-node-resolve": "^4.2.2",
     "wct-browser-legacy": "^0.0.1-pre.11"
   },
   "scripts": {
     "lint": "eslint . --ext js,html; exit 0;",
-    "test": "npm run lint && polymer test"
+    "build:clean": "rm -rf build && mkdir -p build/default/src && mkdir build/default/node_modules",
+    "build:copyDeps": "cp -r node_modules/@webcomponents/ build/default/node_modules  && cp -r node_modules/intersection-observer/ build/default/node_modules && cp -r node_modules/prismjs/ build/default/node_modules && cp -r src/polyfill-dynamicimport.js build/default/src",
+    "build:copyRoot": "cp index.html build/default && cp robots.txt build/default && cp manifest.json build/default && cp push_manifest.json build/default",
+    "build:copyData": "cp -r images/ build/default && cp -r data/ build/default && cp -r helpers/ build/default",
+    "build:minify": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output build/default/index.html build/default/index.html",
+    "build:modules": "rollup -c",
+    "build:dist": "yarn build:clean && yarn build:copyDeps && yarn build:copyRoot && yarn build:copyData && yarn build:minify && yarn build:modules"
   },
   "bugs": {
     "url": "https://github.com/justinribeiro/blog-pwa/issues"
   },
-  "license": "Apache2",
+  "license": "Apache-2.0",
   "dependencies": {
     "@justinribeiro/stl-part-viewer": "^0.2.2",
-    "@polymer/app-layout": "^3.0.0",
-    "@polymer/app-route": "^3.0.0",
-    "@polymer/iron-flex-layout": "^3.0.0",
-    "@polymer/iron-icon": "^3.0.0",
-    "@polymer/iron-iconset-svg": "^3.0.0",
-    "@polymer/iron-image": "^3.0.0",
-    "@polymer/iron-list": "^3.0.0",
-    "@polymer/iron-localstorage": "^3.0.0",
-    "@polymer/iron-media-query": "^3.0.0",
-    "@polymer/iron-pages": "^3.0.0",
-    "@polymer/iron-selector": "^3.0.0",
-    "@polymer/lit-element": "^0.6.4",
-    "@polymer/paper-icon-button": "^3.0.0",
-    "@polymer/polymer": "^3.0.0",
-    "@polymer/prism-element": "^3.0.0",
     "@vaadin/router": "^1.2.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "lit-element": "^2.1.0",
     "prismjs": "^1.16.0",
-    "shimport": "^0.0.14",
-    "web-animations-js": "^2.3.1",
     "workbox-window": "^4.2.0"
   }
 }

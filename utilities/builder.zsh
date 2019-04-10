@@ -243,8 +243,7 @@ case $target in
     # Step 4: build polymer frontend + push manifest
     print "${BOLD_BLUE}STAGE 6: Generate H2 push manifest ${RESET}"
     cd $project/app/;
-    # node_modules/http2-push-manifest/bin/http2-push-manifest -f $PWD/index.html;
-    polymer build;
+    yarn build:dist;
     cd build/default;
     workbox generateSW $project/app/workbox-config.js
     cd ../../../;
