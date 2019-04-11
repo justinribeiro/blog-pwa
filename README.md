@@ -3,7 +3,7 @@
 What started as an experiment in mixing Hugo, Polymer, and the PRPL pattern to build a progressive web app blog that turned into my actual blog.
 
 ## Features
-
+web
 * It's a progressive web app with all the fixin's (service worker, PRPL pattern, H2, et cetera)
 * The base PWA component and it's bundle weight just *17.1KB* gzip'ed.
 * Renders if there is no JavaScript via `<noscript>` injected fallback to static generation
@@ -51,11 +51,10 @@ The gist of the tools employed and their uses include.
 
 ## By the web perf numbers
 
-A progressive web app is only as good as the web performance it offers. I mean, who wants to sit around waiting 10 seconds for a blog post to initially load? No one. So I pulled out my trusty [LG Optimus Exceed 2](http://www.lg.com/us/cell-phones/lg-VS450PP-optimus-exceed-2) to test on. Never heard of it? It's because it was a new middle of the road powered device from about 2.5 years ago. The device could be had pre-paid at your local market for between $15-$35 USD (I bought it for $21 on Amazon a while back), and away you go.
+A progressive web app is only as good as the web performance it offers. I mean, who wants to sit around waiting 10 seconds for a blog post to initially load? No one.
 
-How does that device fair on regular 3G for a first and second load? [View the chrome timeline comparison](https://chromedevtools.github.io/timeline-viewer/?loadTimelineFromURL=https://storage.googleapis.com/jdr-public-traces/TimelineRawData-20170112-LG-VS450PP-regular3G-justinribeiro-com-firstrun.json?dl=0,https://storage.googleapis.com/jdr-public-traces/TimelineRawData-20170112-LG-VS450PP-regular3G-justinribeiro-com-secondrun.json?dl=0).
+Pulling up a trusty Moto G4 on 3G over on WebPageTest, we can see just how fast we are:
 
-Just want the timelines json files? Download via links below:
+![image](https://user-images.githubusercontent.com/643503/55971657-c1beb100-5c36-11e9-83d6-7029fc27670a.png)
 
-* [Download - First load](https://storage.googleapis.com/jdr-public-traces/TimelineRawData-20170112-LG-VS450PP-regular3G-justinribeiro-com-firstrun.json)
-* [Download - Second load](https://storage.googleapis.com/jdr-public-traces/TimelineRawData-20170112-LG-VS450PP-regular3G-justinribeiro-com-secondrun.json)
+Just want the traces and the raw numbers? Check out the [results on WebPageTest](https://www.webpagetest.org/result/190411_T6_d96d381edba4bfb2726642074cb7e136/).
