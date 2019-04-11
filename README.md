@@ -3,7 +3,7 @@
 What started as an experiment in mixing Hugo, Polymer, and the PRPL pattern to build a progressive web app blog that turned into my actual blog.
 
 ## Features
-web
+
 * It's a progressive web app with all the fixin's (service worker, PRPL pattern, H2, et cetera)
 * The base PWA component and it's bundle weight just *17.1KB* gzip'ed.
 * Renders if there is no JavaScript via `<noscript>` injected fallback to static generation
