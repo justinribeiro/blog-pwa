@@ -21,7 +21,7 @@ All that, and it has to be fast. On a Moto G4. On 3G. Seems simple enough right?
 
 Make no mistake: I still very much love Polymer 3 and the tooling. I use it in a number of other projects and you can build it small and fast. My problem wasn't even really with Polymer 3, but rather the fact I was carrying legacy Polymer dependencies that were causing my build to bloat (I'm looking at you prism-element).
 
-That said, LitElement is the future and for good reason. It's very tiny, takes some of the good parts from Polymer, and is fast. Making the move required a little re-think in terms of how blog-pwa should function:
+That said, [LitElement](https://lit-element.polymer-project.org/) from the Polymer team is the future and for good reason. It's tiny, takes some of the good parts from Polymer, and is fast. Making the move required a little re-think in terms of how blog-pwa should function:
 
 1. I wanted the same dynamic route loading to keep the PRPL pattern and ditch weight in my app shell and base bundles, but I didn't want `app-route` for this.
 2. I wanted to ditch any of the observers I was using to do any sort of rendering data work.
