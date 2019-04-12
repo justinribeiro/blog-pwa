@@ -1,12 +1,12 @@
-+++
-date = "2016-12-29T15:00:00-08:00"
+---
+date: 2016-12-29T15:00:00-08:00
 pagetype = "page"
-title = "Talks, Publications, and Podcasts"
-description = "All the slides and articles I've published."
+title: "Talks, Publications, and Podcasts"
+description: "All the slides and articles I've published."
 [sitemap]
   changefreq = "weekly"
   priority = 0.8
-+++
+---
 
 # Talks, Publications, and Podcasts
 Words, written or spoken, are at times the only tool I have to stay otherwise sane as I work through problems and build things.

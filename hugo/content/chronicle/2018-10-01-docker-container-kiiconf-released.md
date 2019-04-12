@@ -1,11 +1,11 @@
-+++
-date = "2018-10-01T08:00:00-08:00"
-title = "Kiiconf web configurator docker container released"
-description = "I dig the web config for my Whitefox keyboard, but I really want it contained locally. Docker to the rescue!"
-imagetwitter = "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-twitter-1024x535.jpg"
-imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-fb-1200x630.jpg"
-imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-gplus-800x360.jpg"
-+++
+---
+date: 2018-10-01T08:00:00-08:00
+title: "Kiiconf web configurator docker container released"
+description: "I dig the web config for my Whitefox keyboard, but I really want it contained locally. Docker to the rescue!"
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-twitter-1024x535.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-fb-1200x630.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-gplus-800x360.jpg"
+---
 
 I did not need another mechnical keyboard. That's what I kept telling myself while clicking the complete order button on Kono's website. The [Whitefox](https://kono.store/products/whitefox-mechanical-keyboard), with it's open source design and firmware, was just too much for my curious heart to take. _Think of the configurations, Justin...think of the bug fixes._
 

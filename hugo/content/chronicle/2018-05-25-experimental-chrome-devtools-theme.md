@@ -1,11 +1,11 @@
-+++
-date = "2018-05-25T08:00:00-08:00"
-title = "Experimental Chrome DevTools theme released, green block cursor edition"
-description = "Because sometimes you want that big green block on your DevTools command line too."
-imagetwitter = "https://storage.googleapis.com/jdr-public-imgs/blog/20180525-devtools-theme-twitter-1024x535.jpg"
-imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/20180525-devtools-theme-fb-1200x630.jpg"
-imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/20180525-devtools-theme-gplus-800x360.jpg"
-+++
+---
+date: 2018-05-25T08:00:00-08:00
+title: "Experimental Chrome DevTools theme released, green block cursor edition"
+description: "Because sometimes you want that big green block on your DevTools command line too."
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180525-devtools-theme-twitter-1024x535.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180525-devtools-theme-fb-1200x630.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180525-devtools-theme-gplus-800x360.jpg"
+---
 
 _Just looking for the theme? Get it from the [Chrome Web Store](https://chrome.google.com/webstore/detail/devtools-theme-atom-dark/iocojmginfolhoaalkgabkmilfepnejc?hl=en-US) or grab the source from [Github](https://github.com/justinribeiro/chrome-devtools-theme-atom-dark-green-cursor)._
 

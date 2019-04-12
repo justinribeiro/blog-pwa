@@ -1,11 +1,11 @@
-+++
-date = "2018-06-24T08:00:00-08:00"
-title = "stl-part-viewer web component released"
-description = "A Polymer 3/LitElement web component that uses Three.js to display an STL model file."
-imagetwitter = "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-twitter-1024x535.jpg"
-imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-fb-1200x630.jpg"
-imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-gplus-800x360.jpg"
-+++
+---
+date: 2018-06-24T08:00:00-08:00
+title: "stl-part-viewer web component released"
+description: "A Polymer 3/LitElement web component that uses Three.js to display an STL model file."
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-twitter-1024x535.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-fb-1200x630.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-gplus-800x360.jpg"
+---
 
 I find myself working with STL files on a fairly regular basis. It's a fairly
 simple format, pretty easy to output, and usually my go-to when exporting out of

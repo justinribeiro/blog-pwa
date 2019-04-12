@@ -1,8 +1,8 @@
-+++
-date = "2019-01-04T08:00:00-08:00"
-title = "Exhaustion creeps into view"
-description = "I didn't write a single line of code over the holidays mostly due to destruction that exhaustion brings."
-+++
+---
+date: 2019-01-04T08:00:00-08:00
+title: "Exhaustion creeps into view"
+description: "I didn't write a single line of code over the holidays mostly due to destruction that exhaustion brings."
+---
 
 The holiday was in full swing, my family jovially conversing as my children played. The ring of cheer did not prevent my collapse. As I stammered up stairs, the crisp winter sunlight piercing through the shutters as I opened the bedroom door did not prevent the fall of my eyelids. Boots still on, the clock ticking towards 3:07pm, I fell face first into darkness as the pillow enveloped my face.
 
