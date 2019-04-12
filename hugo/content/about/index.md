@@ -1,11 +1,11 @@
 ---
 date: 2016-12-29T15:00:00-08:00
 title: "About"
-pagetype = "page"
+pagetype: "page"
 description: "All about Justin Ribeiro."
-[sitemap]
-  changefreq = "monthly"
-  priority = 0.5
+sitemap:
+  changefreq: "monthly"
+  priority: 0.5
 ---
 
 # Hi.

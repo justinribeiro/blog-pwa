@@ -1,11 +1,11 @@
 ---
 date: 2016-12-29T15:00:00-08:00
-pagetype = "page"
+pagetype: "page"
 title: "Talks, Publications, and Podcasts"
 description: "All the slides and articles I've published."
-[sitemap]
-  changefreq = "weekly"
-  priority = 0.8
+sitemap:
+  changefreq: "weekly"
+  priority: 0.8
 ---
 
 # Talks, Publications, and Podcasts
