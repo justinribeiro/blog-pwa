@@ -1,11 +1,11 @@
-+++
-date = "2019-04-08T08:00:00-08:00"
-title = "Developing 4x5 Kodak Super-XX film pack with an SP-445"
-description = "I wasn't about to let a pack of found film just sit around, so why not explore what else the SP-445 development tank could do."
-imagetwitter = "https://storage.googleapis.com/jdr-public-imgs/blog/20190408-kodak-super-xx-pack-film.jpg"
-imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/20190408-kodak-super-xx-pack-film.jpg"
-imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/20190408-kodak-super-xx-pack-film.jpg"
-+++
+---
+date: 2019-04-08T08:00:00-08:00
+title: "Developing 4x5 Kodak Super-XX film pack with an SP-445"
+description: "I wasn't about to let a pack of found film just sit around, so why not explore what else the SP-445 development tank could do."
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190408-kodak-super-xx-pack-film.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190408-kodak-super-xx-pack-film.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190408-kodak-super-xx-pack-film.jpg"
+---
 
 To say I've fallen in love with the [Stearman SP-445 compact 4x5 development tank](https://shop.stearmanpress.com/products/sp-445-compact-4x5-film-processing-system) is probably an understatement. I was late to the party to be sure; I had missed the KickStarter back in late 2015 thinking I'd still want to be doing tray development in my darkroom.
 

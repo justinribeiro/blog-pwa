@@ -1,8 +1,8 @@
-+++
-date = "2017-02-01T14:03:11-08:00"
-title = "Your framework preaching offends my developer religon"
-description = "I get it. You want me to use your fancy framework. Stop screaming at me."
-+++
+---
+date: 2017-02-01T14:03:11-08:00
+title: "Your framework preaching offends my developer religon"
+description: "I get it. You want me to use your fancy framework. Stop screaming at me."
+---
 
 I get tired of frameworks. Doesn’t particularly matter what the platform the framework is used for. Web, native, set top box.
 

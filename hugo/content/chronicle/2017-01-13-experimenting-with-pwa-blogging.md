@@ -1,11 +1,11 @@
-+++
-date = "2017-01-13T15:59:02-08:00"
-title = "Experimenting with a progressive web app blog"
-description = "An experiment in mixing Hugo and Polymer PRPL into a progressive web app blog."
-imagetwitter = "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-twitter-1024x535.jpg"
-imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-fb-1200x630.jpg"
-imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-gplus-800x360.jpg"
-+++
+---
+date: 2017-01-13T15:59:02-08:00
+title: "Experimenting with a progressive web app blog"
+description: "An experiment in mixing Hugo and Polymer PRPL into a progressive web app blog."
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-twitter-1024x535.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-fb-1200x630.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-gplus-800x360.jpg"
+---
 
 The holidays can lead to many things: too many cookies, lacking motivation to read email, a reminder that instructions that come with toys are a user experience nightmare, and that you're pretty sure the build server is on fire since you left the office.
 
@@ -49,7 +49,7 @@ With stucture defined, let's piece this together.
 
 ## Stage One: build an app engine config
 
-I consider the App Engine side to be the smaller bit of this puzzle. 
+I consider the App Engine side to be the smaller bit of this puzzle.
 
 First, we're going to build on top of [http2push-gae](https://github.com/GoogleChrome/http2push-gae), which will give us HTTP2 push for App Engine. This also allows us to use [http2-push-manifest](https://github.com/GoogleChrome/http2-push-manifest) to generate our static resources to push from the frontend.
 
@@ -83,7 +83,7 @@ class MainHandler(http2.PushHandler):
       else:
         #
         # All traffic initially starts here: ideally, they get the PWA
-        # but in the event they have no javascript enabled, we have a 
+        # but in the event they have no javascript enabled, we have a
         # failsafe by injecting the route into &lt;noscript&gt; and then push
         # to the static handler to generate a non-JavaScript page.
         #
@@ -94,7 +94,7 @@ The key thing to key in mind is that we're going to take some data and throw it 
 
 {{< codeblock lang="python" >}}
 # Strip some cruft from the old old days just in case
-name = os.path.join(os.path.dirname(__file__), &#039;dist/data/&#039;, 
+name = os.path.join(os.path.dirname(__file__), &#039;dist/data/&#039;,
   self.request.path.lstrip(&quot;/&quot;).replace(&quot;index.html&quot;, &quot;&quot;)
   .replace(&quot;index.php&quot;, &quot;&quot;), &#039;index.json&#039;)
 
@@ -110,7 +110,7 @@ data = json.loads(c)
 data[&#039;article&#039;] = unescape(data[&#039;article&#039;])
 
 # Grab our template
-static_template = os.path.join(os.path.dirname(__file__), 
+static_template = os.path.join(os.path.dirname(__file__),
   &#039;dist/helpers/static.html&#039;)
 
 # Send down the wire
@@ -134,7 +134,7 @@ data = {
     }
 
 # Grab our template
-pwa_template = os.path.join(os.path.dirname(__file__), 
+pwa_template = os.path.join(os.path.dirname(__file__),
   &#039;dist/index.html&#039;)
 
 # Send down the wire
@@ -182,7 +182,7 @@ _getResource: function(request, attempts) {
   xhr.addEventListener('error', function(e) {
     // Flaky connections might fail fetching resources
     if (attempts > 1) {
-      this.debounce('_getResource', 
+      this.debounce('_getResource',
         this._getResource.bind(this, request, attempts - 1), 200);
     } else {
       request.onError.call(this, e);
@@ -243,7 +243,7 @@ Piece by piece, our components come together to form a working blog. Now, for so
 
 Generating a service worker with the `polymer-cli` is pretty straight forward. `sw-precache-config.js` is going to define what you want, between the `polymer.json` config and the dependencies, you'll end up with some things for service worker to precache.
 
-What we can't ignore is our runtime cache however. One, we have to think about our users connection, two we have to think about our users device, and three web perf web perf web perf. For me, I'm fine with the runtime cache always serving images from the cache and I'm fine with `fastest` for my JSON data. 
+What we can't ignore is our runtime cache however. One, we have to think about our users connection, two we have to think about our users device, and three web perf web perf web perf. For me, I'm fine with the runtime cache always serving images from the cache and I'm fine with `fastest` for my JSON data.
 
 The main thing I add to `sw-precache-config.js` is runtime caching for our static route:
 
@@ -263,8 +263,8 @@ Speaking of static, how does our shell handle that? Recall above that our python
 
 {{< codeblock lang="html" >}}
 &lt;noscript&gt;
-  &lt;p&gt;JavaScript appears to be turned off. 
-  No problem, this Progressive Web App is Progressive! 
+  &lt;p&gt;JavaScript appears to be turned off.
+  No problem, this Progressive Web App is Progressive!
   Redirecting to static page...&lt;/p&gt;
   &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url={{ noscript }}&quot;&gt;
 &lt;/noscript&gt;
@@ -293,7 +293,7 @@ Similarly, I know that a class of bot out there are not terribly into the JavaSc
 _setPageMetaData: function(page) {
   // Flip the metadata on load
   // Note, Google Search will index this
-  document.title = page.title + ' - Justin Ribeiro';
+  document.title: page.title + ' - Justin Ribeiro';
   document.querySelector('meta[name=\'description\']')
     .setAttribute('content', page.description);
 
@@ -349,10 +349,10 @@ We can resolve this however. Since we have seperation of our views and data, we 
 
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;!-- 
+  &lt;!--
     Why is this empty? Turns out, link bots don&#039;t care much about
     the body of a document, just &lt;head&gt; metadata.
-  --&gt;  
+  --&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 {{< /codeblock >}}
@@ -396,12 +396,12 @@ Looks strange, but I've used this a few times in different places with hugo and 
 Normally, this is enough. But in the case of years and years of blog posts and frankly a lot of content management moves (Perl thing I wrote, to something else I wrote, to Wordpress, to Jeykll, to Hugo), I ended up with a lot of cruft. To keep my sanity, I use `sed` to clean things up a bit:
 
 {{< codeblock lang="bash" >}}
-# Note: You could technically group these sed commands into one. 
+# Note: You could technically group these sed commands into one.
 # I chose not to for my own memory sake.
 
 # Optional: strip newline start in article
 &#x279c; sed -r -i -- &#039;s/\&quot;article\&quot;: \&quot;\\n\\n/\&quot;article\&quot;: \&quot;/g&#039; **/*.json(D.)
-  
+
 # Optional: strip newline double at ending &lt;p&gt;
 &#x279c; sed -r -i -- &#039;s/\&amp;lt;\/p\&amp;gt;\\n\\n/\&amp;lt;\/p\&amp;gt;/g&#039; **/*.json(D.)
 
@@ -428,7 +428,7 @@ Easy right? Well, easy is relative. If only we had some way to automate all this
 
 ## Stage Five: building a builder
 
-To handle all the various things that need to happen to make stable happen, I wrote a couple `zsh` utility scripts to power most of the shuffle and build of the site. 
+To handle all the various things that need to happen to make stable happen, I wrote a couple `zsh` utility scripts to power most of the shuffle and build of the site.
 
 Why not an `npm` script or a `gulp` or `grunt` task you ask? Frankly, because I just felt like writing some shell scripts. Don't you sometimes just want to write some shell scripts? Is that just me?
 
@@ -467,7 +467,7 @@ Just want the timelines json files? Download via links below:
 
 I'm okay-happy with the results; I'm of the opinion I can make it faster. The SHOP demo runs at about the same clip on that device, but longer frames are common (the device just doesn't have the power).
 
-"But Justin, no one is using that device or devices like it." Here's the thing. You're wrong. One reason I bought this phone to test on was because I saw actual people, normal human beings out in the world who don't have $650 USD to drop on a phone, using that device. 
+"But Justin, no one is using that device or devices like it." Here's the thing. You're wrong. One reason I bought this phone to test on was because I saw actual people, normal human beings out in the world who don't have $650 USD to drop on a phone, using that device.
 
 The web should be fast for everyone. Testing experiments like this informs our designs and architectures so we can make the web faster.
 

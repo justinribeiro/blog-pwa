@@ -1,12 +1,12 @@
-+++
-date = "2016-12-29T15:00:00-08:00"
+---
+date: 2016-12-29T15:00:00-08:00
 draft = false
-title = "Chronicle Archives"
-description = "All the things Justin Ribeiro has written about. Code, thoughts, words."
+title: "Chronicle Archives"
+description: "All the things Justin Ribeiro has written about. Code, thoughts, words."
 [sitemap]
   changefreq = "weekly"
   priority = 0.8
-+++
+---
 
 # Chronicle Archives
 

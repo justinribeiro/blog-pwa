@@ -1,8 +1,8 @@
-+++
-date = "2017-01-21T19:01:32-08:00"
-title = "Endangered desert tortoises and IoT Devfest Arizona"
-description = "Need a Google Analytics custom element with Do Not Track and debug support? This is the one for you."
-+++
+---
+date: 2017-01-21T19:01:32-08:00
+title: "Endangered desert tortoises and IoT Devfest Arizona"
+description: "Need a Google Analytics custom element with Do Not Track and debug support? This is the one for you."
+---
 
 For the second year I found myself in Arizona to speak on internet of things at [Iot Devfest Arizona](https://www.iotdevfest.com/)  The weather in California had been harsh with pounding rains and flooding so a trip to Arizona sunshine sounded lovely. I battled the storm and caught my flight, only to find myself in buckets of water upon arriving in Phoenix.
 

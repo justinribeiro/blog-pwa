@@ -1,11 +1,11 @@
-+++
-date = "2018-07-03T08:00:00-08:00"
-title = "How to debug a custom language service plugin for VS Code"
-description = "10 steps, three builds, and a cup of coffee later and we're debugging some language server action in VS Code."
-imagetwitter = "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-twitter-1024x535.jpg"
-imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-fb-1200x630.jpg"
-imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-gplus-800x360.jpg"
-+++
+---
+date: 2018-07-03T08:00:00-08:00
+title: "How to debug a custom language service plugin for VS Code"
+description: "10 steps, three builds, and a cup of coffee later and we're debugging some language server action in VS Code."
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-twitter-1024x535.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-fb-1200x630.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-gplus-800x360.jpg"
+---
 
 With a little time on my hands before the next project started, I was certain I could implemenet a few features like CSS quickfix and intellisense into [typescript-lit-html-plugin](https://github.com/Microsoft/typescript-lit-html-plugin). This was going to require debugging the language service, and given the issue ticket title ["Debugging Language Service in VS Code" documentation is weird](https://github.com/Microsoft/TypeScript/issues/19254), I didn't have the highest of hopes for a smooth experience, but in reality I was up and running with very little hiccup.
 

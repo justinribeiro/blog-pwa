@@ -1,11 +1,11 @@
-+++
-date = "2017-01-16T16:06:47-08:00"
-title = "Published ga-dnt-analytics to webcomponents.org"
-description = "Need a Google Analytics custom element with Do Not Track and debug support? This is the one for you."
-imagetwitter = "https://storage.googleapis.com/jdr-public-imgs/blog/20170116-gadntanalytics-twitter-1024x535.jpg"
-imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/20170116-gadntanalytics-fb-1200x630.jpg"
-imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/20170116-gadntanalytics-gplus-800x360.jpg"
-+++
+---
+date: 2017-01-16T16:06:47-08:00
+title: "Published ga-dnt-analytics to webcomponents.org"
+description: "Need a Google Analytics custom element with Do Not Track and debug support? This is the one for you."
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20170116-gadntanalytics-twitter-1024x535.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20170116-gadntanalytics-fb-1200x630.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20170116-gadntanalytics-gplus-800x360.jpg"
+---
 
 If you happen to have read my [last piece](/chronicle/2017/01/13/experimenting-with-a-progressive-web-app-blog/) on building the progressive nature of this blog, you'll note I made mention of `blog-analytics`. This was something I made specifically to handle a few cases around the routing of the site (listening to things from `app-route`).
 
