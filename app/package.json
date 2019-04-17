@@ -33,7 +33,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@justinribeiro/stl-part-viewer": "^0.2.2",
+    "@justinribeiro/stl-part-viewer": "^1.0.0",
     "@vaadin/router": "^1.2.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "lit-element": "^2.1.0",
