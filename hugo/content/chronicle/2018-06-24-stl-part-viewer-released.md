@@ -53,7 +53,7 @@ I've published the web component on npm as
 [@justinribeiro/stl-part-viewer](https://www.npmjs.com/package/@justinribeiro/stl-part-viewer),
 so installing and using in your project is just an npm or yarn command away:
 
-{{< codeblock lang="shell" >}}
+{{< codeblock lang="bash" >}}
 npm i @justinribeiro/stl-part-viewer
 # or
 yarn add @justinribeiro/stl-part-viewer
