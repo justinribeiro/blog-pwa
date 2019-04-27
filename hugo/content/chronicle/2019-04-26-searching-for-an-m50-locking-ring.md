@@ -1,5 +1,5 @@
 ---
-title: "Finding an M50 lock ring for a Schnieder enlarger lens in Portugal"
+title: "Finding an M50 lock ring for a Schneider Kreuznach enlarger lens in Portugal"
 description: "After exhausting outlets to find a difficult part, I turned to photographer and maker José Meneses and his Custom Photo Tools with great success."
 date: 2019-04-26T17:32:53-07:00
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-schneider-lens-with-customphototoolsring.jpg"
@@ -7,7 +7,7 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-s
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-schneider-lens-with-customphototoolsring.jpg"
 ---
 
-I didn't need the Schneider 150mm/5.6 Componon-S. I don't lack enlarger lens, I can enlarge pretty much everything I have, from  4x5 on down. That lens held a certain place in my head though; it was a Componon-S and I have wanted one for close to 15 years. A deal came up on one of the various auction sites and I snagged it.
+I didn't need the Schneider-Kreuznach 150mm/5.6 Componon-S. I don't lack enlarger lens, I can enlarge pretty much everything I have, from  4x5 on down. That lens held a certain place in my head though; it was a Componon-S and I have wanted one for close to 15 years. A deal came up on one of the various auction sites and I snagged it.
 
 As with most deals, there's always a catch. The first catch was they decided to send said lens in a plastic bag with no padding, which left me in a near shock. The second problem was that it lacked it's locking ring.
 
