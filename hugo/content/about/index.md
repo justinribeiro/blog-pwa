@@ -2,26 +2,45 @@
 date: 2016-12-29T15:00:00-08:00
 title: "About"
 pagetype: "page"
-description: "All about Justin Ribeiro."
+description: "All about Justin Ribeiro: Dad, Husband, Software Engineer, Coach, Mentor, Voiceover actor, photographer, executive. Ordinary."
 sitemap:
   changefreq: "monthly"
   priority: 0.5
 ---
 
-# Hi.
+# 🎉 Hi.
 
-I'm Justin Ribeiro. I'm a software engineer working on the open web, internet of things, and a wide range of applications. You may also know me for my goalkeeping coaching or my photography. I try to keep it interesting.
+I'm Justin Ribeiro. I hold some pretty awesome titles: Dad, Husband, Software Engineer, Coach, Mentor, Voiceover actor, photographer, executive, ordinary person. Sometimes I can be funny, but overall I try to keep it interesting.
 
-I am [Google Developer Expert](https://developers.google.com/experts/people/justin-ribeiro) in Web Technologies, Internet of Things, Wearables, and Assistant. I travel and speak at conferences, companies, and schools. I also write code samples and help make the developer experience better.
+On most days you can find me working on the open web, focused on web performance and utilizing the web platform to bring users a better experience. I also work on a wide variety of other software, from internet of things to containers.
 
-You can find me discussing the latest in web platform news and topcis on the weekly [The Web Platform Podcast](https://thewebplatformpodcast.com/) with [Danny Blue](https://www.twitter.com/dee_bloo), [Amal Hussein](https://twitter.com/nomadtechie), and [Leon Revill](https://twitter.com/revillweb).
+I am [Google Developer Expert](https://developers.google.com/experts/people/justin-ribeiro) in Web Technologies, Internet of Things, Wearables, and Assistant.  I also write code samples and help make the developer experience better.
 
-For the last 11 years, I've run a company I co-founded called [Stickman Ventures Inc](https://www.stickmanventures.com). Stickman Ventures is a global company focused on helping companies and organizations build custom software that offers lasting improvements to the way they work.
+I ❤️ the open web. You can find me discussing the latest in web platform news and topics on the weekly [The Web Platform Podcast](https://thewebplatformpodcast.com/) with [Danny Blue](https://www.twitter.com/dee_bloo), [Amal Hussein](https://twitter.com/nomadtechie), and [Leon Revill](https://twitter.com/revillweb).
 
-I do as much outreach as I can. I've been doing my best to bring internet to those who can't afford it by starting and operating the [Oakdale OpenMesh](https://www.oakdaleopenmesh.org). I have served as President and on the board at the [Oakdale Chamber of Commerce](https://www.oakdalechamber.com) and sit on the [City of Oakdale](http://www.oakdalegov.com/) Economic Development Committee. I have worked with children through Hour of Code and other science and maker related intiatives.
+## 👷 Profession
 
-## Hello, nice to meet you.
+I have been building and managing software projects since the mid-1990's. I hold a Bachelor of Arts, Business Administration from Seattle University as well as a Master of Business Administration from University of San Francisco. The reasons behind my lack of computer science degree are quite specific and to many folks, somewhat funny (but that's a conversation over drinks, not for the internet).
 
-I'm happy to talk. You can reach me on places like [Twitter](https://twitter.com/justinribeiro), [Google+](https://plus.google.com/+JustinRibeiro), and [LinkedIn](https://www.linkedin.com/in/justinribeiro).
+I have worked for 100's of companies and organizations. Today, I work with the phenomenal [Tracy Lee](https://mobile.twitter.com/ladyleet) and her firm [ThisDot](https://www.thisdot.co) as well as a firm I helped co-found, [Stickman Ventures Inc](https://www.stickmanventures.com).
 
-You can also send me an email (justin@justinribeiro.com) if that's more you thing.
+Looking for my curriculum vitae? It is available by request only. See the Contact section below to send me an email. I respond to all legitimate offers.
+
+## 💁 Outreach
+
+I do as much public outreach as I can. I travel and speak at conferences, companies, and schools as well as mentor on a variety of topics. Things I'm either doing or have done lately include:
+
+1. I was a mentor in Pacific Region for Google Developer Groups North America.
+2. I sometimes mentor for Google for Entrepreneurs.
+3. I've been doing my best to bring internet to those who can't afford it by starting and operating the [Oakdale OpenMesh](https://www.oakdaleopenmesh.org).
+4. I have served as President and on the board at the [Oakdale Chamber of Commerce](https://www.oakdalechamber.com).
+5. I have sat on the [City of Oakdale](http://www.oakdalegov.com/) Economic Development Committee.
+6. I have worked with children through Hour of Code and other science and maker related initiatives.
+
+Want me to speak at your upcoming event? See the Contact section below to send me an email.
+
+## ✉️ Contact
+
+You can reach me on places like <a rel="me" href="https://twitter.com/justinribeiro">Twitter</a> or <a rel="me" href="https://mastodon.social/@justinribeiro">Mastodon</a>. Note, I am on  <a rel="me" href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>, but the spam has become too much and I no longer read messages there.
+
+You can also send me an email ([justin@justinribeiro.com](mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)) if that's more you thing.
