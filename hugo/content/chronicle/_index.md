@@ -7,7 +7,7 @@ sitemap:
   priority: 0.8
 ---
 
-# Chronicle Archives
+# 📰 Chronicle Archives
 
 The definition of a chronicle, as defined by Merriam-Webster is:
 
