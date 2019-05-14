@@ -5,12 +5,7 @@ title = "Justin Ribeiro"
 # specifcally for the PWA and GAE to load and parse
 publishdir = "../app/data"
 
-# This is a workaround for not generating taxonomies since I don't handle it
-# at all in the PWA side of life (and I don't want cruft in sitemap.xml)
-# ideally look at PR for https://github.com/spf13/hugo/issues/2534
-[taxonomies]
-  category = ""
-  tags = ""
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [permalinks]
   chronicle = "/chronicle/:year/:month/:day/:slug/"
