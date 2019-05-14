@@ -385,8 +385,22 @@
       color: #CC5511;
     }
 
-    #main, #skeleton, blog-network-warning {
+    #main, #skeleton {
       padding-top: 100px;
+    }
+
+    #main iframe, #main img {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    #main img {
+      margin: auto;
+      display: block;
+    }
+
+    #main video {
+      max-width: 100%;
     }
 
     @media (max-width: 767px) {
@@ -396,7 +410,7 @@
         max-width: 800px;
       }
 
-      #main, #skeleton, blog-network-warning {
+      #main, #skeleton {
         padding-top: 85px;
       }
 
