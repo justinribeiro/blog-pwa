@@ -14,7 +14,7 @@ I'm Justin Ribeiro. I hold some pretty awesome titles: Dad, Husband, Software En
 
 On most days you can find me working on the open web, focused on web performance and utilizing the web platform to bring users a better experience. I also work on a wide variety of other software, from internet of things to containers.
 
-I am [Google Developer Expert](https://developers.google.com/experts/people/justin-ribeiro) in Web Technologies, Internet of Things, Wearables, and Assistant.  I also write code samples and help make the developer experience better.
+I am [Google Developer Expert](https://developers.google.com/experts/people/justin-ribeiro) in Web Technologies, Internet of Things, and Wearables.  I also write code samples and help make the developer experience better.
 
 I ❤️ the open web. You can find me discussing the latest in web platform news and topics on the weekly [The Web Platform Podcast](https://thewebplatformpodcast.com/) with [Danny Blue](https://www.twitter.com/dee_bloo), [Amal Hussein](https://twitter.com/nomadtechie), and [Leon Revill](https://twitter.com/revillweb).
 
