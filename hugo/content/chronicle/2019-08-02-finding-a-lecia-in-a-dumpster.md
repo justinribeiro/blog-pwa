@@ -1,5 +1,6 @@
 ---
 title: "That time I found a Leica IIIc in a dumpster"
+description: "I've done my share of hunting for cameras, but I never thought I'd find myself in a skip in the middle of nowhere looking for a Leica."
 date: 2019-08-02T13:17:28-07:00
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190802-the-leica-box-04.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190802-the-leica-box-04.jpg"
