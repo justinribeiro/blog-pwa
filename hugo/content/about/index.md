@@ -41,6 +41,6 @@ Want me to speak at your upcoming event? See the Contact section below to send m
 
 ## ✉️ Contact
 
-You can reach me on places like <a rel="me" href="https://twitter.com/justinribeiro">Twitter</a> or <a rel="me" href="https://mastodon.social/@justinribeiro">Mastodon</a>. Note, I am on  <a rel="me" href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>, but the spam has become too much and I no longer read messages there.
+You can reach me on places like <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or <a rel="me" href="https://twitter.com/justinribeiro">Twitter</a>. Note, I am on  <a rel="me" href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>, but the spam has become too much and I no longer read messages there.
 
 You can also send me an email ([justin@justinribeiro.com](mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)) if that's more you thing.
