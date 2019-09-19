@@ -1,6 +1,4 @@
-app/push_manifest.json
 app/data/
-app/bower_components/
 app/build/
 app/node_modules/
 ship/

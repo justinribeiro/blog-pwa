@@ -10,21 +10,21 @@ export default {
     'src/blog-chronicle.js',
     'src/lazy-resources.js',
     'src/3d-utils.js',
-    'src/code-block.js'
+    'src/code-block.js',
   ],
   output: {
     dir: 'build/default/src',
     format: 'es',
-    sourcemap: true
+    sourcemap: true,
   },
   plugins: [
     resolve(),
     minify({
       mangle: {
-        exclude: { "__import": true }
+        exclude: {'__import': true},
       },
       comments: false,
-      plugins: ['transform-remove-console']
-    })
-  ]
+      plugins: ['transform-remove-console'],
+    }),
+  ],
 };

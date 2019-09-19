@@ -1,32 +1,21 @@
-runtime: python27
-api_version: 1
-threadsafe: yes
-
-libraries:
-- name: webapp2
-  version: "2.5.2"
+runtime: python37
+entrypoint: gunicorn -b :$PORT main:app
 
 handlers:
 - url: /data/(.*)
   static_files: dist/data/\1
   upload: dist/data/(.*)
   secure: always
-  application_readable: true
 
 - url: /helpers
   static_dir: dist/helpers
   secure: always
-  application_readable: true
 
 - url: /images/(.*)
   static_files: dist/images/\1
   upload: dist/images/(.*)
   secure: always
   expiration: "180d"
-
-- url: /bower_components
-  static_dir: dist/bower_components
-  secure: always
 
 - url: /node_modules
   static_dir: dist/node_modules
@@ -66,21 +55,5 @@ handlers:
   secure: always
 
 - url: .*
-  script: main.app
   secure: always
-
-skip_files:
-- ^(.*/)?app\.yaml
-- ^(.*/)?app\.yml
-- ^(.*/)?index\.yaml
-- ^(.*/)?index\.yml
-- ^(.*/)?bower\.json
-- ^(.*/)?#.*#
-- ^(.*/)?.*~
-- ^(.*/)?.*\.py[co]
-- ^(.*/)?.*/RCS/.*
-- ^(.*/)?\..*
-- ^(.*/)?.*\.bak$
-- ^(.*/)?hugo/.*
-- ^(.*/)?tests/.*
-- ^.*.md|markdown
+  script: auto

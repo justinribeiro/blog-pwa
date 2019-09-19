@@ -3,15 +3,16 @@
 __author__ = 'Justin Ribeiro <justin@justinribeiro.com>'
 
 import os
-import sys
 import webapp2
-import logging
 import json
 import re
-
-from google.appengine.ext.webapp import template
-
+import jinja2
 import http2push as http2
+
+JINJA_ENVIRONMENT = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
 
 
 def unescape(s):
@@ -80,20 +81,17 @@ class MainHandler(http2.PushHandler):
             data['article'] = unescape(data['article'])
 
             # Grab our template
-            static_template = os.path.join(os.path.dirname(__file__),
-                                           'dist/helpers/static.html')
+            static_template = JINJA_ENVIRONMENT.get_template(
+                'dist/helpers/static.html')
 
             # Send down the wire
-            return self.response.write(template.render(static_template, data))
+            return self.response.write(static_template.render(data))
         else:
             if self.request.get('static', default_value=False) is not False:
-                #
                 # Any URL with ?static=true passes through here and generates no
                 # JavaScript for an end user PROGRESSIVE ALL THE THINGS
                 #
-                logging.debug('should return the static render, no pwa')
-
-                # In this senario, I know that our root path data is always in
+                # In this scenario, I know that our root path data is always in
                 # the index.json within the /data/ directory so it's only a
                 # matter of open-and-pass
                 name = os.path.join(os.path.dirname(__file__), 'dist/data/',
@@ -111,11 +109,11 @@ class MainHandler(http2.PushHandler):
                 data['article'] = unescape(data['article'])
 
                 # Grab our template
-                static_template = os.path.join(os.path.dirname(__file__),
-                                               'dist/helpers/static.html')
+                static_template = JINJA_ENVIRONMENT.get_template(
+                    'dist/helpers/static.html')
 
                 # Send down the wire
-                return self.response.write(template.render(static_template, data))
+                return self.response.write(static_template.render(data))
             else:
                 #
                 # All traffic initially starts here: ideally, they get the PWA
@@ -142,11 +140,11 @@ class MainHandler(http2.PushHandler):
                 }
 
                 # Grab our template
-                pwa_template = os.path.join(os.path.dirname(__file__),
-                                            'dist/index.html')
+                pwa_template = JINJA_ENVIRONMENT.get_template(
+                    'dist/index.html')
 
                 # Send down the wire
-                return self.response.write(template.render(pwa_template, data))
+                return self.response.write(pwa_template.render(data))
 
 
 app = webapp2.WSGIApplication([
