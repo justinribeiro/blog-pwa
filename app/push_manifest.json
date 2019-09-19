@@ -1,0 +1,18 @@
+{
+  "/src/blog-pwa.js": {
+    "weight": 1,
+    "type": "script"
+  },
+  "/src/blog-static.js": {
+    "weight": 1,
+    "type": "script"
+  },
+  "/src/blog-entry.js": {
+    "weight": 1,
+    "type": "script"
+  },
+  "/src/lazy-resources.js": {
+    "weight": 1,
+    "type": "script"
+  }
+}

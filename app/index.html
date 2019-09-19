@@ -8,6 +8,7 @@
     <meta name="theme-color" content="#f1f1f1">
 
     <link rel="icon" href="/images/manifest/me-2018-150.jpg">
+    <link rel="apple-touch-icon" href="/images/manifest/me-2018-192.png">
     <link rel="manifest" href="/manifest.json">
     <base href="/">
 
@@ -19,6 +20,8 @@
 
     <link rel="preconnect" href="https://storage.googleapis.com/" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin>
+    <link rel="preconnect" href="https://firebaseinstallations.googleapis.com" crossorigin>
+    {% raw %}
     <style>
       html {
         --page-background: #ffffff;
@@ -247,6 +250,7 @@
         }
       }
     </style>
+    {% endraw %}
 
     <link href="/data/chronicle/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro" />
     <link href="/data/chronicle/index.xml" rel="feed" type="application/rss+xml" title="Justin Ribeiro" />
@@ -301,7 +305,6 @@
       </footer>
     </blog-pwa>
     <script type="application/ld+json">{"@context":"http://schema.org","@type":"Person","name":"Justin Ribeiro","url":"https://justinribeiro.com/","email":"justin@justinribeiro.com","image":"https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2018-512.jpg","sameAs":["https://twitter.com/justinribeiro","https://www.linkedin.com/in/justinribeiro","https://plus.google.com/+justinribeiro","https://github.com/justinribeiro","https://facebook.com/justinribeiro","https://ribeiro.social/@justin","https://hub.docker.com/r/justinribeiro/","https://developers.google.com/experts/people/justin-ribeiro"]}</script>
-    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="./src/app.js"></script>
     <script>
     (function(sa,fbc){function load(f,c){var a=document.createElement('script');
