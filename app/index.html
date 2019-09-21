@@ -275,7 +275,11 @@
     <blog-pwa>
       <header id="pageHeader" slot="header">
         <div>
-          <img id="me" src="/images/manifest/me-2018-150.jpg" alt="Justin Ribeiro">
+          <picture>
+            <source srcset="/images/manifest/me-2018-150.webp" type="image/webp">
+            <source srcset="/images/manifest/me-2018-150.jpg" type="image/jpeg">
+            <img id="me" src="/images/manifest/me-2018-150.jpg" alt="Justin Ribeiro">
+          </picture>
         </div>
         <div>
           <h1>Justin Ribeiro</h1>

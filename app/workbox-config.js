@@ -15,6 +15,7 @@ module.exports = {
     'src/blog-pwa.js',
     'src/blog-static.js',
     'src/blog-entry.js',
+    'images/manifest/me-2018-150.webp',
     'images/manifest/me-2018-150.jpg',
   ],
   navigateFallback: '/index.html',
@@ -37,7 +38,7 @@ module.exports = {
       },
     },
     {
-      urlPattern: /\.(?:png|gif|jpg|jpeg|svg)$/,
+      urlPattern: /\.(?:png|gif|jpg|jpeg|svg|webp)$/,
       handler: 'CacheFirst',
       options: {
         cacheName: 'img-cache',
