@@ -10,16 +10,11 @@ class BlogPwa extends LitElement {
         value: false,
         attribute: false,
       },
-      analyticsId: {
-        type: String,
-        attribute: false,
-      },
     };
   }
 
   constructor() {
     super();
-    this.analyticsId = 'UA-96204-3';
   }
 
   firstUpdated() {
@@ -98,8 +93,6 @@ class BlogPwa extends LitElement {
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
       import('lazy-resources.js').then(_ => {
-        this.__initAnalytics();
-
         if ('serviceWorker' in navigator) {
           const wb = new Workbox('/service-worker.js');
 
@@ -136,10 +129,29 @@ class BlogPwa extends LitElement {
 
           wb.register();
         }
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(
+            () => {
+              this.__importAnalytics();
+            },
+            {
+              timeout: 5000,
+            },
+          );
+        } else {
+          this.__importAnalytics();
+        }
+
         this._notifyNetworkStatus();
         this.loadComplete = true;
       });
     }
+  }
+
+  async __importAnalytics() {
+    const module = await import('analytics.js');
+    module.initAnalytics();
+    module.initPerformance();
   }
 
   _setSnackBarText(text, duration, hold, callback) {
@@ -177,44 +189,6 @@ class BlogPwa extends LitElement {
         : 'You appear to now be back online.';
       this._setSnackBarText(offlineState);
     }
-  }
-
-  __initAnalytics() {
-    window.ga = window.ga || ((...args) => (ga.q = ga.q || []).push(args));
-
-    ga('create', this.analyticsId, 'auto');
-    ga('set', 'transport', 'beacon');
-    ga('set', 'anonymizeIp', true);
-    ga('send', 'pageview');
-
-    const loadErrorEvents = (window.__e && window.__e.q) || [];
-    const fieldsObj = {eventAction: 'uncaught error'};
-
-    // Replay any stored load error events.
-    for (const event of loadErrorEvents) {
-      this.__trackError(event.error, fieldsObj);
-    }
-
-    // Add a new listener to track event immediately.
-    window.addEventListener('error', event => {
-      this.__trackError(event.error, fieldsObj);
-    });
-  }
-
-  __trackError(error, fieldsObj = {}) {
-    ga(
-      'send',
-      'event',
-      Object.assign(
-        {
-          eventCategory: 'Script',
-          eventAction: 'error',
-          eventLabel: (error && error.stack) || '(not set)',
-          nonInteraction: true,
-        },
-        fieldsObj,
-      ),
-    );
   }
 
   static get styles() {
