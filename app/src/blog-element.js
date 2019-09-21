@@ -35,7 +35,7 @@ export default class BlogElement extends LitElement {
     super();
 
     this.metadata = {
-      posts: null,
+      posts: [],
       article: '',
       title: '',
       dataModified: '',

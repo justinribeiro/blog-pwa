@@ -50,9 +50,15 @@ async function __loadDynamicImportCheck(src) {
 
 (async () => {
   if (window.polyfillWebComponents) {
-    document.addEventListener('WebComponentsReady', async () => {
+    // This pretty much all deals with Edge loading behavior when it comes to
+    // the polyfill
+    if (!window.WebComponents || !window.WebComponents.ready) {
+      document.addEventListener('WebComponentsReady', async () => {
+        await __loadDynamicImportCheck('blog-pwa.js');
+      });
+    } else {
       await __loadDynamicImportCheck('blog-pwa.js');
-    });
+    }
   } else {
     await __loadDynamicImportCheck('blog-pwa.js');
   }
