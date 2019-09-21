@@ -8,12 +8,12 @@ class BlogPwa extends LitElement {
       offline: {
         type: Boolean,
         value: false,
-        attribute: false
+        attribute: false,
       },
       analyticsId: {
         type: String,
-        attribute: false
-      }
+        attribute: false,
+      },
     };
   }
 
@@ -33,77 +33,77 @@ class BlogPwa extends LitElement {
   _initRouter() {
     const outlet = this.shadowRoot.querySelector('main');
     const router = new Router(outlet, null);
-    router.setRoutes([{
-      path: '/',
-      children: [
-        {
-          path: '',
-          component: 'blog-static',
-          action: () => {
-            __import('blog-static.js').then(() => {
-              const check = this.shadowRoot.querySelector('blog-static');
-              check.mount('index');
-            });
-
-          }
-        },
-        {
-          path: '/chronicle/',
-          component: 'blog-chronicle',
-          action: () => {
-            __import('blog-chronicle.js');
-          }
-        },
-        {
-          path: '/chronicle/(.*)',
-          component: 'blog-entry',
-          action: () => {
-            __import('blog-entry.js').then(() => {
-              const check = this.shadowRoot.querySelector('blog-entry');
-              check.resetView();
-              check.mount();
-            });
-          }
-        },
-        {
-          path: '/about',
-          component: 'blog-static',
-          action: () => {
-            __import('blog-static.js').then(() => {
-              const check = this.shadowRoot.querySelector('blog-static');
-              check.mount('about');
-            });
-
-          }
-        },
-        {
-          path: '/talks',
-          component: 'blog-static',
-          action: () => {
-            __import('blog-static.js').then(() => {
-              const check = this.shadowRoot.querySelector('blog-static');
-              check.mount('talks');
-            });
-          }
-        },
-        {
-          path: '(.*)',
-          component: 'blog-missing'
-        }
-      ]
-    }]);
+    router.setRoutes([
+      {
+        path: '/',
+        children: [
+          {
+            path: '',
+            component: 'blog-static',
+            action: () => {
+              __import('blog-static.js').then(() => {
+                const check = this.shadowRoot.querySelector('blog-static');
+                check.mount('index');
+              });
+            },
+          },
+          {
+            path: '/chronicle/',
+            component: 'blog-chronicle',
+            action: () => {
+              __import('blog-chronicle.js');
+            },
+          },
+          {
+            path: '/chronicle/(.*)',
+            component: 'blog-entry',
+            action: () => {
+              __import('blog-entry.js').then(() => {
+                const check = this.shadowRoot.querySelector('blog-entry');
+                check.resetView();
+                check.mount();
+              });
+            },
+          },
+          {
+            path: '/about',
+            component: 'blog-static',
+            action: () => {
+              __import('blog-static.js').then(() => {
+                const check = this.shadowRoot.querySelector('blog-static');
+                check.mount('about');
+              });
+            },
+          },
+          {
+            path: '/talks',
+            component: 'blog-static',
+            action: () => {
+              __import('blog-static.js').then(() => {
+                const check = this.shadowRoot.querySelector('blog-static');
+                check.mount('talks');
+              });
+            },
+          },
+          {
+            path: '(.*)',
+            component: 'blog-missing',
+          },
+        ],
+      },
+    ]);
   }
 
   // PRPL all the things.
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
-      __import('lazy-resources.js').then((_) => {
+      __import('lazy-resources.js').then(_ => {
         this.__initAnalytics();
 
         if ('serviceWorker' in navigator) {
           const wb = new Workbox('/service-worker.js');
 
-          wb.addEventListener('activated', (event) => {
+          wb.addEventListener('activated', event => {
             if (!event.isUpdate) {
               this._setSnackBarText('Ready to work offline.');
             }
@@ -111,7 +111,7 @@ class BlogPwa extends LitElement {
             // Get the current page URL + all resources the page loaded.
             const urlsToCache = [
               location.href,
-              ...performance.getEntriesByType('resource').map((r) => r.name),
+              ...performance.getEntriesByType('resource').map(r => r.name),
             ];
             // Send that list of URLs to your router in the service worker.
             wb.messageSW({
@@ -120,17 +120,18 @@ class BlogPwa extends LitElement {
             });
           });
 
-          wb.addEventListener('waiting', (event) => {
+          wb.addEventListener('waiting', event => {
             this._setSnackBarText(
               'New and updated content is available.',
               0,
               true,
               async () => {
-                wb.addEventListener('controlling', (event) => {
+                wb.addEventListener('controlling', event => {
                   window.location.reload();
                 });
                 wb.messageSW({type: 'SKIP_WAITING'});
-              });
+              },
+            );
           });
 
           wb.register();
@@ -168,10 +169,12 @@ class BlogPwa extends LitElement {
 
   _notifyNetworkStatus(status) {
     const oldOffline = this.offline;
-    this.offline =  status;
+    this.offline = status;
 
     if (this.offline || (!this.offline && oldOffline === true)) {
-      let offlineState = this.offline ? 'You appear to have gone offline.' : 'You appear to now be back online.';
+      const offlineState = this.offline
+        ? 'You appear to have gone offline.'
+        : 'You appear to now be back online.';
       this._setSnackBarText(offlineState);
     }
   }
@@ -184,34 +187,42 @@ class BlogPwa extends LitElement {
     ga('set', 'anonymizeIp', true);
     ga('send', 'pageview');
 
-    const loadErrorEvents = window.__e && window.__e.q || [];
+    const loadErrorEvents = (window.__e && window.__e.q) || [];
     const fieldsObj = {eventAction: 'uncaught error'};
 
     // Replay any stored load error events.
-    for (let event of loadErrorEvents) {
+    for (const event of loadErrorEvents) {
       this.__trackError(event.error, fieldsObj);
     }
 
     // Add a new listener to track event immediately.
-    window.addEventListener('error', (event) => {
+    window.addEventListener('error', event => {
       this.__trackError(event.error, fieldsObj);
     });
   }
 
   __trackError(error, fieldsObj = {}) {
-    ga('send', 'event', Object.assign({
-      eventCategory: 'Script',
-      eventAction: 'error',
-      eventLabel: (error && error.stack) || '(not set)',
-      nonInteraction: true,
-    }, fieldsObj));
+    ga(
+      'send',
+      'event',
+      Object.assign(
+        {
+          eventCategory: 'Script',
+          eventAction: 'error',
+          eventLabel: (error && error.stack) || '(not set)',
+          nonInteraction: true,
+        },
+        fieldsObj,
+      ),
+    );
   }
 
   static get styles() {
     return css`
       main {
         min-height: 100vh;
-      }`;
+      }
+    `;
   }
 
   render() {
@@ -220,7 +231,7 @@ class BlogPwa extends LitElement {
       <main></main>
       <slot name="footer"></slot>
       <snack-bar hidden></snack-bar>
-      `;
+    `;
   }
 }
 customElements.define('blog-pwa', BlogPwa);

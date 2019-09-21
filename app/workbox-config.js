@@ -23,7 +23,7 @@ module.exports = {
   ignoreURLParametersMatching: [/^utm_/],
   runtimeCaching: [
     {
-      urlPattern: /.*\?static\=true/,
+      urlPattern: /.*\?static=true/,
       handler: 'NetworkOnly',
     },
     {

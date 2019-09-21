@@ -2,3 +2,4 @@ app/data/
 app/build/
 app/node_modules/
 ship/
+node_modules

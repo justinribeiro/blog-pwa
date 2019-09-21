@@ -1,13 +1,19 @@
 // Very few things actually require this now
-if (!('attachShadow' in Element.prototype) || !('getRootNode' in Element.prototype)) {
+if (
+  !('attachShadow' in Element.prototype) ||
+  !('getRootNode' in Element.prototype)
+) {
   const wcScript = document.createElement('script');
-  wcScript.src = '/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js';
+  wcScript.src =
+    '/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js';
   document.head.appendChild(wcScript);
 }
 
 // Only load IO if we don't have it
-if (!('IntersectionObserver' in window) &&
-  !('IntersectionObserverEntry' in window)) {
+if (
+  !('IntersectionObserver' in window) &&
+  !('IntersectionObserverEntry' in window)
+) {
   const ioScript = document.createElement('script');
   ioScript.async = true;
   ioScript.src = '/node_modules/intersection-observer/intersection-observer.js';
@@ -19,7 +25,7 @@ function __loadDynamicImportCheck(src) {
   try {
     new Function('import("./' + src + '")')();
   } catch (e) {
-    let s = document.createElement('script');
+    const s = document.createElement('script');
     s.src = '/src/polyfill-dynamicimport.js';
     s.dataset.main = src;
     document.head.appendChild(s);
