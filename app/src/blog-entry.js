@@ -62,12 +62,12 @@ class BlogEntry extends BlogElement {
 
       const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
       if (ViewerRequired.test(parseHTML)) {
-        __import('3d-utils.js');
+        import('3d-utils.js');
       }
 
       const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
       if (CodeBlockRequired.test(parseHTML)) {
-        __import('code-block.js');
+        import('code-block.js');
       }
 
       this.shadowRoot.querySelector('#metadataArticle').innerHTML = parseHTML;

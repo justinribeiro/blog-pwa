@@ -8,6 +8,9 @@
   "version": "3.0.0",
   "author": "Justin Ribeiro <justin@justinribeiro.com>",
   "devDependencies": {
+    "@open-wc/building-utils": "^2.8.2",
+    "babel-plugin-bundled-import-meta": "^0.3.1",
+    "babel-plugin-template-html-minifier": "^3.1.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "es-dev-server": "^1.5.0",
     "eslint": "^6.4.0",
@@ -18,8 +21,11 @@
     "html-minifier": "^4.0.0",
     "http2-push-manifest": "^1.0.1",
     "prettier": "^1.18.2",
+    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-babel-minify": "^8.0.0",
+    "rollup-plugin-filesize": "^6.2.0",
     "rollup-plugin-node-resolve": "^4.2.2",
+    "rollup-plugin-terser": "^5.1.2",
     "stylelint": "^11.0.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
@@ -36,7 +42,7 @@
     "lint": "yarn lint:eslint && yarn lint:prettier && yarn lint:css",
     "format": "yarn format:prettier",
     "build:clean": "rm -rf build && mkdir -p build/default/src && mkdir build/default/node_modules",
-    "build:copyDeps": "cp -r node_modules/@webcomponents/ build/default/node_modules  && cp -r node_modules/intersection-observer/ build/default/node_modules && cp -r node_modules/prismjs/ build/default/node_modules && cp -r src/polyfill-dynamicimport.js build/default/src",
+    "build:copyDeps": "cp -r node_modules/intersection-observer/ build/default/node_modules && cp -r node_modules/prismjs/ build/default/node_modules && cp -r src/polyfill-dynamicimport.js build/default/src && cp -r src/polyfill-webcomponents.js build/default/src",
     "build:copyRoot": "cp index.html build/default && cp robots.txt build/default && cp manifest.json build/default && cp push_manifest.json build/default",
     "build:copyData": "cp -r images/ build/default && cp -r data/ build/default && cp -r helpers/ build/default",
     "build:minify": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output build/default/index.html build/default/index.html",
@@ -50,7 +56,6 @@
   "dependencies": {
     "@justinribeiro/stl-part-viewer": "^1.0.0",
     "@vaadin/router": "^1.2.0",
-    "@webcomponents/webcomponentsjs": "^2.0.0",
     "lit-element": "^2.1.0",
     "prismjs": "^1.16.0",
     "workbox-window": "^4.2.0"
