@@ -1,13 +1,13 @@
-import { LitElement, html, css } from 'lit-element';
+import {LitElement, html, css} from 'lit-element';
 import 'prismjs/prism.js';
 
 class CodeBlock extends LitElement {
   static get properties() {
-     return {
+    return {
       lang: {
         type: String,
-      }
-    }
+      },
+    };
   }
 
   constructor() {
@@ -26,15 +26,20 @@ class CodeBlock extends LitElement {
 
     // strip the lead/end newlines so we don't look horrible
     const codeClean = codeCombined.replace(/^\s+|\s+$/g, '');
-    const highlight = Prism.highlight(codeClean, Prism.languages[this.lang],
-      this.lang);
+    const highlight = Prism.highlight(
+      codeClean,
+      Prism.languages[this.lang],
+      this.lang,
+    );
 
     // Set to our styled block
     this.shadowRoot.querySelector('#output').innerHTML = highlight;
   }
 
   async __loadLanguage() {
-    await __import(`../node_modules/prismjs/components/prism-${this.lang}.min.js`);
+    await __import(
+      `../node_modules/prismjs/components/prism-${this.lang}.min.js`,
+    );
   }
 
   static get styles() {
@@ -45,66 +50,67 @@ class CodeBlock extends LitElement {
       * @author Lea Verou
       */
 
-      code[class*="language-"],
-      pre[class*="language-"] {
-        color: black;
-        background: none;
-        text-shadow: 0 1px white;
-        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-        font-size: 1em;
+      code[class*='language-'],
+      pre[class*='language-'] {
+        font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+          'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+          'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+          'Courier New', Courier, monospace;
+        font-size: 16px;
+        line-height: 1.375;
+        direction: ltr;
         text-align: left;
         white-space: pre;
         word-spacing: normal;
         word-break: normal;
         word-wrap: normal;
-        line-height: 1.5;
-
-        -moz-tab-size: 4;
-        -o-tab-size: 4;
         tab-size: 4;
 
-        -webkit-hyphens: none;
-        -moz-hyphens: none;
-        -ms-hyphens: none;
         hyphens: none;
+        background: #faf8f5;
+        color: #222222;
       }
 
-      pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-      code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-        text-shadow: none;
-        background: #b3d4fc;
-      }
-
-      pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-      code[class*="language-"]::selection, code[class*="language-"] ::selection {
-        text-shadow: none;
-        background: #b3d4fc;
+      /* Code blocks */
+      pre[class*='language-'] {
+        padding: 1em;
+        margin: 0.5em 0;
+        overflow: auto;
       }
 
       @media print {
-        code[class*="language-"],
-        pre[class*="language-"] {
+        code[class*='language-'],
+        pre[class*='language-'] {
           text-shadow: none;
         }
       }
 
-      /* Code blocks */
-      pre[class*="language-"] {
-        padding: 1em;
-        margin: .5em 0;
-        overflow: auto;
-      }
-
-      :not(pre) > code[class*="language-"],
-      pre[class*="language-"] {
+      :not(pre) > code[class*='language-'],
+      pre[class*='language-'] {
         background: #f5f2f0;
       }
 
       /* Inline code */
-      :not(pre) > code[class*="language-"] {
-        padding: .1em;
-        border-radius: .3em;
+      :not(pre) > code[class*='language-'] {
+        padding: 0.1em;
+        border-radius: 0.3em;
         white-space: normal;
+      }
+
+      pre[class*='language-']::-moz-selection,
+      pre[class*='language-'] ::-moz-selection,
+      code[class*='language-']::-moz-selection,
+      code[class*='language-'] ::-moz-selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      pre[class*='language-']::selection,
+      pre[class*='language-'] ::selection,
+      code[class*='language-']::selection,
+      code[class*='language-'] ::selection {
+        text-shadow: none;
+        background: #b3d4fc;
       }
 
       .token.comment,
@@ -119,7 +125,7 @@ class CodeBlock extends LitElement {
       }
 
       .namespace {
-        opacity: .7;
+        opacity: 0.7;
       }
 
       .token.property,
@@ -147,7 +153,7 @@ class CodeBlock extends LitElement {
       .language-css .token.string,
       .style .token.string {
         color: #9a6e3a;
-        background: hsla(0, 0%, 100%, .5);
+        background: hsla(0, 0%, 100%, 0.5);
       }
 
       .token.atrule,
@@ -158,7 +164,7 @@ class CodeBlock extends LitElement {
 
       .token.function,
       .token.class-name {
-        color: #DD4A68;
+        color: #dd4a68;
       }
 
       .token.regex,
@@ -184,29 +190,6 @@ class CodeBlock extends LitElement {
         margin: 0;
       }
 
-      code[class*="language-"],
-      pre[class*="language-"] {
-        font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-        font-size: 16px;
-        line-height: 1.375;
-        direction: ltr;
-        text-align: left;
-        white-space: pre;
-        word-spacing: normal;
-        word-break: normal;
-
-        -moz-tab-size: 4;
-        -o-tab-size: 4;
-        tab-size: 4;
-
-        -webkit-hyphens: none;
-        -moz-hyphens: none;
-        -ms-hyphens: none;
-        hyphens: none;
-        background: #faf8f5;
-        color: #222222;
-      }
-
       #hide {
         display: none !important;
       }
@@ -215,11 +198,11 @@ class CodeBlock extends LitElement {
 
   render() {
     return html`
-    <pre class="language-base"><code id="output"></code></pre>
+      <pre class="language-base"><code id="output"></code></pre>
 
-    <div id="hide">
-      <slot id="code"></slot>
-    </div>
+      <div id="hide">
+        <slot id="code"></slot>
+      </div>
     `;
   }
 }

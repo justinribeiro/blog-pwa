@@ -29,8 +29,10 @@ The gist of the tools employed and their uses include.
 * `jq` is blazing fast over lots of files; validates my json output so I know things will load in the PWA and Python
 * `polymer-cli` handles the dev serving
 * `workbox-cli` handles the service worker generation
-* `rollup cli` handles the es modules and bundles splitting for prod builds
+* `rollup-cli` handles the es modules and bundles splitting for prod builds
 * `http2-push-manifest` is super useful and works out of the box with http2push-gae
+* `make` has a basic set of commands that alias the zsh script for easy use
+* Okay, so there is `app/package.json` with prettier linting and some build commands in the yarn for rollup and what not. It's mix and match. :-)
 
 ## Setup
 
@@ -40,13 +42,13 @@ The gist of the tools employed and their uses include.
 ➜ chmod +x utilities/builder.zsh
 
 # check for tooling
-➜ ./utilities/builder.zsh -t check
-
-# get deps
-➜ ./utilities/builder.zsh -t setup
+➜ make setup
 
 # run dev env
-➜ ./utilities/builder.zsh -t dev
+➜ make dev
+
+# run GAE deploy silently
+➜ make deploy-no-promote
 ```
 
 ## By the web perf numbers

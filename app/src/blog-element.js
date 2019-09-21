@@ -27,7 +27,7 @@ export default class BlogElement extends LitElement {
       which: {
         type: String,
         attribute: false,
-      }
+      },
     };
   }
 
@@ -52,7 +52,7 @@ export default class BlogElement extends LitElement {
       facebook: '',
       linkedin: '',
       email: '',
-    }
+    };
 
     this.which = '';
 
@@ -61,7 +61,8 @@ export default class BlogElement extends LitElement {
   }
 
   firstUpdated() {
-    this.shadowRoot.querySelector('blog-network-warning')
+    this.shadowRoot
+      .querySelector('blog-network-warning')
       .addEventListener('try-reconnect', () => this.mount());
   }
 
@@ -71,8 +72,12 @@ export default class BlogElement extends LitElement {
         display: block;
       }
 
-      .hotpink { color: var(--hotpink); }
-      .red { color: var(--red); }
+      .hotpink {
+        color: var(--hotpink);
+      }
+      .red {
+        color: var(--red);
+      }
 
       a {
         color: var(--accent-color-primary);
@@ -86,22 +91,39 @@ export default class BlogElement extends LitElement {
         border-bottom: 1px solid var(--accent-color-secondary);
       }
 
-      h1, h2, h3, h4, h5, h6 {
-        font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri,
+          'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad,
+          'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma,
+          Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;
         margin: 0;
       }
 
-      p, li {
-        font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
+      p,
+      li {
+        font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
+          'Times New Roman', serif;
         margin: 0;
         color: var(--primary-text-color);
+        margin-top: 10px;
+        margin-bottom: 29px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 21px;
+        line-height: 1.58;
+        letter-spacing: -0.003em;
       }
 
       h1 {
         font-size: 28px;
         margin-left: -1.75px;
         line-height: 1.15;
-        letter-spacing: -.02em;
+        letter-spacing: -0.02em;
         font-weight: 700;
         font-style: normal;
         margin-top: 16px;
@@ -111,7 +133,7 @@ export default class BlogElement extends LitElement {
         font-size: 24px;
         margin-left: -1.75px;
         line-height: 1.15;
-        letter-spacing: -.02em;
+        letter-spacing: -0.02em;
         font-weight: 700;
         font-style: normal;
       }
@@ -120,19 +142,9 @@ export default class BlogElement extends LitElement {
         font-size: 20px;
         margin-left: -1.75px;
         line-height: 1.15;
-        letter-spacing: -.02em;
+        letter-spacing: -0.02em;
         font-weight: 400;
         font-style: normal;
-      }
-
-      p, li {
-        margin-top: 10px;
-        margin-bottom: 29px;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 21px;
-        line-height: 1.58;
-        letter-spacing: -.003em;
       }
 
       li {
@@ -140,7 +152,8 @@ export default class BlogElement extends LitElement {
       }
 
       /* Don't like this; special case. TODO extract */
-      p code, li code {
+      p code,
+      li code {
         background-color: var(--code-background);
         font-size: 19px;
         color: var(--code-color);
@@ -153,7 +166,8 @@ export default class BlogElement extends LitElement {
         margin-left: 10px;
       }
 
-      blockquote, blockquote p {
+      blockquote,
+      blockquote p {
         font-style: oblique;
         font-weight: 400;
         font-size: 20px;
@@ -178,7 +192,9 @@ export default class BlogElement extends LitElement {
         Design choice: in my components, I always have a #main as a container
         in my web components. Why isn't named container? No idea. LOL.
       */
-      #main, #skeleton, #posts {
+      #main,
+      #skeleton,
+      #posts {
         margin: auto;
         padding: 0 20px;
         max-width: 800px;
@@ -210,6 +226,21 @@ export default class BlogElement extends LitElement {
         will-change: background-color;
       }
 
+      .post-container a h2 {
+        color: var(--accent-color-primary);
+        font-weight: 400;
+        font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
+          'Times New Roman', serif;
+      }
+
+      .post-container a h3 {
+        font-weight: 200;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-bottom: 0.5rem;
+        color: var(--accent-color-secondary);
+      }
+
       .post-container a:hover {
         text-decoration: none;
         background-color: var(--hotpink);
@@ -225,31 +256,20 @@ export default class BlogElement extends LitElement {
         color: var(--accent-color-primary);
       }
 
-      .post-container a h2 {
-        color: var(--accent-color-primary);
-        font-weight: 400;
-        font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
-      }
-
-      .post-container a h3 {
-        font-weight: 200;
-        text-transform: uppercase;
-        font-size: 14px;
-        margin-bottom: 0.5rem;
-        color: var(--accent-color-secondary);
-      }
-
       @media (max-width: 767px) {
-        #main, #skeleton, #posts {
+        #main,
+        #skeleton,
+        #posts {
           margin: auto;
           padding: 0 20px;
           max-width: 800px;
         }
 
-        p, li {
+        p,
+        li {
           font-size: 18px;
           line-height: 1.58;
-          letter-spacing: -.004em;
+          letter-spacing: -0.004em;
         }
 
         .post-container {
@@ -267,7 +287,8 @@ export default class BlogElement extends LitElement {
     // Flip the metadata on load
     // Note, Google Search will index this
     document.title = `${title} - Justin Ribeiro`;
-    document.head.querySelector('meta[name=\'description\']')
+    document.head
+      .querySelector("meta[name='description']")
       .setAttribute('content', description);
 
     this._setMeta('property', 'og:title', document.title);
@@ -291,7 +312,7 @@ export default class BlogElement extends LitElement {
     this._setMeta('property', 'twitter:url', url);
 
     if (window.ga) {
-       ga('send', {
+      ga('send', {
         hitType: 'pageview',
         page: window.location.pathname,
         location: url,
@@ -307,8 +328,9 @@ export default class BlogElement extends LitElement {
    * @param {string} content
    */
   _setMeta(attrName, attrValue, content) {
-    let element = document.head
-      .querySelector(`meta[${attrName}="${attrValue}"]`);
+    let element = document.head.querySelector(
+      `meta[${attrName}="${attrValue}"]`,
+    );
     if (!element) {
       element = document.createElement('meta');
       element.setAttribute(attrName, attrValue);
@@ -340,10 +362,10 @@ export default class BlogElement extends LitElement {
     // hide the skeleton
     // In the event the network doesn't fail and we get a load,
     // hide the skeleton
-    if (failed && !loaded || !failed && loaded) {
+    if ((failed && !loaded) || (!failed && loaded)) {
       return true;
     } else {
       return false;
     }
   }
-};
+}

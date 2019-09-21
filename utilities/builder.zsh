@@ -94,32 +94,8 @@ validate_json() {
 validate_tools() {
   local good=true;
 
-  echo -n "npm ... "
-  if ! type "npm" > /dev/null; then
-    echo "${BOLD_RED} NO ${RESET}"
-    good=false;
-  else
-    echo "${BOLD_GREEN} YES ${RESET}"
-  fi
-
   echo -n "yarn ... "
   if ! type "yarn" > /dev/null; then
-    echo "${BOLD_RED} NO ${RESET}"
-    good=false;
-  else
-    echo "${BOLD_GREEN} YES ${RESET}"
-  fi
-
-  echo -n "bower ... "
-  if ! type "bower" > /dev/null; then
-    echo "${BOLD_RED} NO ${RESET}"
-    good=false;
-  else
-    echo "${BOLD_GREEN} YES ${RESET}"
-  fi
-
-  echo -n "polymer-cli ... "
-  if ! type "polymer" > /dev/null; then
     echo "${BOLD_RED} NO ${RESET}"
     good=false;
   else
@@ -201,10 +177,10 @@ case $target in
     # back to top
     cd ../../;
 
-    print "${BOLD_BLUE}STAGE 6: polymer serve ${RESET}"
+    print "${BOLD_BLUE}STAGE 6: es-dev-server serve ${RESET}"
 
     # Step 4: build polymer frontend
-    cd $project/app/; polymer serve --hostname 0.0.0.0 --compile never;
+    cd $project/app/; yarn dev;
 
     ;;
   (prod)
@@ -241,7 +217,7 @@ case $target in
     cd ../../;
 
     # Step 4: build polymer frontend + push manifest
-    print "${BOLD_BLUE}STAGE 6: Generate H2 push manifest ${RESET}"
+    print "${BOLD_BLUE}STAGE 6: Generate Frontend Build and Service Worker ${RESET}"
     cd $project/app/;
     yarn build:dist;
     cd build/default;
@@ -256,7 +232,7 @@ case $target in
     cp -R appengine/* ship/;
 
     # Step 7: copy polymer build
-    print "${BOLD_BLUE}STAGE 8: Build+copy polymer build /ship${RESET}"
+    print "${BOLD_BLUE}STAGE 8: Copy frontend build /ship${RESET}"
     cp -R app/build/default ship/dist;
 
     # Step 8: run app engine dev server to test
@@ -272,11 +248,8 @@ case $target in
 
     cd $project/app;
 
-    print "${BOLD_BLUE}Running 'npm install' ${RESET}"
-    npm install;
-
-    print "${BOLD_BLUE}Running 'bower install' ${RESET}"
-    bower install;
+    print "${BOLD_BLUE}Running 'yarn install' ${RESET}"
+    yarn;
 
     ;;
   (check)

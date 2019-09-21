@@ -7,7 +7,6 @@ class BlogStatic extends BlogElement {
    */
   async mount(which) {
     if (which || this.which !== '') {
-
       if (which !== '') {
         this.which = which;
       }
@@ -43,7 +42,8 @@ class BlogStatic extends BlogElement {
   }
 
   /**
-   * @param {{ posts: array; article: string; view: string; }} data
+   * Process and set static content for view
+   * @param {object} data
    * @param {string} view
    */
   _processMetaData(data, view) {
@@ -51,7 +51,8 @@ class BlogStatic extends BlogElement {
       data.view = view;
       this._setPageMetaData(data);
       this.shadowRoot.querySelector('#main').innerHTML = this._unescapeHtml(
-        data.article);
+        data.article,
+      );
 
       this.metadata = data;
       this.shadowRoot.querySelector('#skeleton').setAttribute('hidden', '');
@@ -84,31 +85,40 @@ class BlogStatic extends BlogElement {
             font-size: 24px;
           }
         }
-      `
+      `,
     ];
   }
 
   render() {
     return html`
-      <section id="skeleton" ?hidden="${this.__checkViewState(this.failure, this.loaded)}">
+      <section id="skeleton" ?hidden="${this.__checkViewState(
+        this.failure,
+        this.loaded,
+      )}">
         <p><hr><hr><hr><hr class="short"></p>
         <p><hr><hr><hr><hr class="short"></p>
         <p><hr><hr><hr><hr class="short"></p>
       </section>
 
       <div id="main" hidden></div>
-
-      ${this.metadata.posts?
-        html`<div id="posts">
-          ${this.metadata.posts.map(post =>
-             html`<div class="post-container">
-              <a href="${post.permalink}">
-                <h3 class="date">🗒️ ${post.date}</h3>
-                <h2 class="title">${post.title}</h2>
-              </a>
-          </div>`)}
-        </div>`:
-        html``}
+      ${
+        this.metadata.posts
+          ? html`
+              <div id="posts">
+                ${this.metadata.posts.map(
+                  post => html`
+                    <div class="post-container">
+                      <a href="${post.permalink}">
+                        <h3 class="date">🗒️ ${post.date}</h3>
+                        <h2 class="title">${post.title}</h2>
+                      </a>
+                    </div>
+                  `,
+                )}
+              </div>
+            `
+          : html``
+      }
 
       <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
     `;

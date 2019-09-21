@@ -21,7 +21,7 @@ export default {
     resolve(),
     minify({
       mangle: {
-        exclude: {'__import': true},
+        exclude: {__import: true},
       },
       comments: false,
       plugins: ['transform-remove-console'],

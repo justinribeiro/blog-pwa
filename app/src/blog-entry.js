@@ -9,9 +9,9 @@ class BlogEntry extends BlogElement {
     // with the chopping off extra things from the path might be more
     // useful in the long haul
     let getPath = location.pathname;
-    const checkEnding = new RegExp('index\.php|index\.html', 'g');
-    if(checkEnding.test(location.pathname)) {
-        getPath = location.pathname.replace(/index\.php|index\.html/g, '');
+    const checkEnding = new RegExp('index.php|index.html', 'g');
+    if (checkEnding.test(location.pathname)) {
+      getPath = location.pathname.replace(/index\.php|index\.html/g, '');
     }
     const targetUrl = `/data${getPath}index.json`;
 
@@ -60,12 +60,12 @@ class BlogEntry extends BlogElement {
     if (this.metadata.article !== undefined && this.metadata.article !== '') {
       const parseHTML = this._unescapeHtml(this.metadata.article);
 
-      const ViewerRequired = new RegExp('(<\/stl\-part\-viewer>)', 'g');
+      const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
       if (ViewerRequired.test(parseHTML)) {
         __import('3d-utils.js');
       }
 
-      const CodeBlockRequired = new RegExp('(<\/code\-block>)', 'g');
+      const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
       if (CodeBlockRequired.test(parseHTML)) {
         __import('code-block.js');
       }
@@ -84,7 +84,8 @@ class BlogEntry extends BlogElement {
     return [
       super.styles,
       css`
-        #main iframe, #main img {
+        #main iframe,
+        #main img {
           max-width: 100%;
           width: 100%;
         }
@@ -103,8 +104,8 @@ class BlogEntry extends BlogElement {
         }
 
         .dotDivider {
-          padding-right: .45em;
-          padding-left: .45em;
+          padding-right: 0.45em;
+          padding-left: 0.45em;
         }
         .dotDivider:after {
           content: '·';
@@ -127,42 +128,81 @@ class BlogEntry extends BlogElement {
         .hidden {
           display: none !important;
         }
-      `
+      `,
     ];
   }
 
   render() {
     return html`
-      <section id="skeleton" ?hidden="${this.__checkViewState(this.failure, this.loaded)}">
-      <p></p><hr><hr><hr><hr class="short"><p></p>
-      <p></p><hr><hr><hr><hr class="short"><p></p>
-      <p></p><hr><hr><hr><hr class="short"><p></p>
+      <section
+        id="skeleton"
+        ?hidden="${this.__checkViewState(this.failure, this.loaded)}"
+      >
+        <p></p>
+        <hr />
+        <hr />
+        <hr />
+        <hr class="short" />
+        <p></p>
+        <p></p>
+        <hr />
+        <hr />
+        <hr />
+        <hr class="short" />
+        <p></p>
+        <p></p>
+        <hr />
+        <hr />
+        <hr />
+        <hr class="short" />
+        <p></p>
       </section>
 
-      <article itemprop="blogPost" id="main" itemscope=""
-        itemtype="http://schema.org/BlogPosting" ?hidden="${!this.loaded}">
-      <header>
-        <h1 itemprop="headline">${this.metadata.title}</h1>
-        <div class="reads">
-          <time datetime="${this.metadata.dataModified}" itemprop="datePublished">
-            ${this.metadata.date}
-          </time>
-          <span class="dotDivider"></span> ${this.metadata.readingtime} min read
-        </div>
-      </header>
-      <div id="metadataArticle" itemprop="articleBody"></div>
-      <footer id="metaShare">
-        <div>
-          <h3>Share this piece</h3>
-          <p id="share">
-            <a href="${this.share.twitter}">Twitter</a>
-            <a href="${this.share.facebook}">Facebook</a>
-            <a href="${this.share.linkedin}">LinkedIn</a>
-            <a href="${this.share.email}">Email</a>
-          </p>
-          <p>Author Justin Ribeiro wrote ${this.metadata.words} words for this piece and hopes you enjoyed it. Find an issue? <a href="https://github.com/justinribeiro/blog-pwa/issues">File a ticket</a> or <a href="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/${this.metadata.filename}">edit this on Github.</a></p>
-        </div>
-      </footer>
+      <article
+        itemprop="blogPost"
+        id="main"
+        itemscope=""
+        itemtype="http://schema.org/BlogPosting"
+        ?hidden="${!this.loaded}"
+      >
+        <header>
+          <h1 itemprop="headline">${this.metadata.title}</h1>
+          <div class="reads">
+            <time
+              datetime="${this.metadata.dataModified}"
+              itemprop="datePublished"
+            >
+              ${this.metadata.date}
+            </time>
+            <span class="dotDivider"></span> ${this.metadata.readingtime} min
+            read
+          </div>
+        </header>
+        <div id="metadataArticle" itemprop="articleBody"></div>
+        <footer id="metaShare">
+          <div>
+            <h3>Share this piece</h3>
+            <p id="share">
+              <a href="${this.share.twitter}">Twitter</a>
+              <a href="${this.share.facebook}">Facebook</a>
+              <a href="${this.share.linkedin}">LinkedIn</a>
+              <a href="${this.share.email}">Email</a>
+            </p>
+            <p>
+              Author Justin Ribeiro wrote ${this.metadata.words} words for this
+              piece and hopes you enjoyed it. Find an issue?
+              <a href="https://github.com/justinribeiro/blog-pwa/issues"
+                >File a ticket</a
+              >
+              or
+              <a
+                href="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/${this
+                  .metadata.filename}"
+                >edit this on Github.</a
+              >
+            </p>
+          </div>
+        </footer>
       </article>
 
       <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
