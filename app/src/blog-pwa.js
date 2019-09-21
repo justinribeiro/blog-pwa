@@ -41,7 +41,7 @@ class BlogPwa extends LitElement {
             path: '',
             component: 'blog-static',
             action: () => {
-              __import('blog-static.js').then(() => {
+              import('blog-static.js').then(() => {
                 const check = this.shadowRoot.querySelector('blog-static');
                 check.mount('index');
               });
@@ -51,14 +51,14 @@ class BlogPwa extends LitElement {
             path: '/chronicle/',
             component: 'blog-chronicle',
             action: () => {
-              __import('blog-chronicle.js');
+              import('blog-chronicle.js');
             },
           },
           {
             path: '/chronicle/(.*)',
             component: 'blog-entry',
             action: () => {
-              __import('blog-entry.js').then(() => {
+              import('blog-entry.js').then(() => {
                 const check = this.shadowRoot.querySelector('blog-entry');
                 check.resetView();
                 check.mount();
@@ -69,7 +69,7 @@ class BlogPwa extends LitElement {
             path: '/about',
             component: 'blog-static',
             action: () => {
-              __import('blog-static.js').then(() => {
+              import('blog-static.js').then(() => {
                 const check = this.shadowRoot.querySelector('blog-static');
                 check.mount('about');
               });
@@ -79,7 +79,7 @@ class BlogPwa extends LitElement {
             path: '/talks',
             component: 'blog-static',
             action: () => {
-              __import('blog-static.js').then(() => {
+              import('blog-static.js').then(() => {
                 const check = this.shadowRoot.querySelector('blog-static');
                 check.mount('talks');
               });
@@ -97,7 +97,7 @@ class BlogPwa extends LitElement {
   // PRPL all the things.
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
-      __import('lazy-resources.js').then(_ => {
+      import('lazy-resources.js').then(_ => {
         this.__initAnalytics();
 
         if ('serviceWorker' in navigator) {

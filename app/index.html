@@ -267,6 +267,11 @@
       Redirecting to static page...</p>
       <meta http-equiv="refresh" content="0;url={{ noscript }}">
     </noscript>
+    <script nomodule>
+      // IE11 and anything that doesn't support ES Modules gets the no-JS
+      // version of the site
+      location.href = '{{ noscript }}';
+    </script>
     <blog-pwa>
       <header id="pageHeader" slot="header">
         <div>
