@@ -161,7 +161,7 @@ class BlogEntry extends BlogElement {
       <article
         itemprop="blogPost"
         id="main"
-        itemscope=""
+        itemscope
         itemtype="http://schema.org/BlogPosting"
         ?hidden="${!this.loaded}"
       >

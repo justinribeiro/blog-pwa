@@ -46,8 +46,9 @@
     "build:copyRoot": "cp index.html build/default && cp robots.txt build/default && cp manifest.json build/default && cp push_manifest.json build/default",
     "build:copyData": "cp -r images/ build/default && cp -r data/ build/default && cp -r helpers/ build/default",
     "build:minify": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output build/default/index.html build/default/index.html",
+    "build:minify:static": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output build/default/helpers/static.html build/default/helpers/static.html",
     "build:modules": "rollup -c",
-    "build:dist": "yarn build:clean && yarn build:copyDeps && yarn build:copyRoot && yarn build:copyData && yarn build:minify && yarn build:modules"
+    "build:dist": "yarn build:clean && yarn build:copyDeps && yarn build:copyRoot && yarn build:copyData && yarn build:minify && yarn build:minify:static && yarn build:modules"
   },
   "bugs": {
     "url": "https://github.com/justinribeiro/blog-pwa/issues"

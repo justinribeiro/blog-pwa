@@ -1,562 +1,719 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ title }} - Justin Ribeiro</title>
-  <meta name="description" content="{{ description }}" />
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
-  <link rel="canonical" href="{{ permalink }}">
-  <meta itemprop="name" content="{{ title }} - Justin Ribeiro">
-  <meta itemprop="headline" content="{{ title }} - Justin Ribeiro" />
-  <meta itemprop="description" content="{{ description }}">
-  {% if imagegplus %}
-  <meta itemprop="image" content="{{ imagegplus }}">
-  {% endif %}
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }} - Justin Ribeiro</title>
+    <meta name="description" content="{{ description }}" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no"
+    />
+    <link rel="canonical" href="{{ permalink }}" />
+    <meta itemprop="name" content="{{ title }} - Justin Ribeiro" />
+    <meta itemprop="headline" content="{{ title }} - Justin Ribeiro" />
+    <meta itemprop="description" content="{{ description }}" />
+    {% if imagegplus %}
+    <meta itemprop="image" content="{{ imagegplus }}" />
+    {% endif %}
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@justinribeiro">
-  <meta name="twitter:title" content="{{ title }} - Justin Ribeiro">
-  <meta name="twitter:description" content="{{ description }}">
-  <meta name="twitter:creator" content="@justinribeiro">
-  {% if imagetwitter %}
-  <meta name="twitter:image:src" content="{{ imagetwitter }}">
-  {% endif %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@justinribeiro" />
+    <meta name="twitter:title" content="{{ title }} - Justin Ribeiro" />
+    <meta name="twitter:description" content="{{ description }}" />
+    <meta name="twitter:creator" content="@justinribeiro" />
+    {% if imagetwitter %}
+    <meta name="twitter:image:src" content="{{ imagetwitter }}" />
+    {% endif %}
 
-  <meta property="og:type" content="article" />
-  <meta itemprop="og:headline" content="{{ title }}" />
-  <meta property="og:title" content="{{ title }} - Justin Ribeiro" />
-  <meta property="og:description" content="{{ description }}" />
-  <meta property="og:site_name" content="Justin Ribeiro" />
-  <meta property="og:url" content="{{ permalink }}" />
-  <meta property="article:published_time" content="{{ datePublished }}" />
-  <meta property="article:modified_time" content="{{ dateModified }}" />
-  {% if imagefb %}
-  <meta property="og:image" content="{{ imagefb }}" />
-  {% endif %}
+    <meta property="og:type" content="article" />
+    <meta itemprop="og:headline" content="{{ title }}" />
+    <meta property="og:title" content="{{ title }} - Justin Ribeiro" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:site_name" content="Justin Ribeiro" />
+    <meta property="og:url" content="{{ permalink }}" />
+    <meta property="article:published_time" content="{{ datePublished }}" />
+    <meta property="article:modified_time" content="{{ dateModified }}" />
+    {% if imagefb %}
+    <meta property="og:image" content="{{ imagefb }}" />
+    {% endif %}
 
-  <style>
-    body {
-      margin: 0;
-      line-height: 1.5;
-      min-height: 100vh;
-      background-color: #ffffff;
-      font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
+    <link rel="preconnect" href="https://storage.googleapis.com/" crossorigin />
 
-    #pageHeader {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 1px solid #cccccc;
-      background-color: #f1f1f1;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      height: 100px;
-    }
+    {% raw %}
+    <style>
+      body {
+        margin: 0;
+        line-height: 1.5;
+        min-height: 100vh;
+        background-color: #ffffff;
+        font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri,
+          'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad,
+          'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma,
+          Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
 
-    /*
-      Zone System gradient because I still love Adam's approach.
-      That, and I totally apporiated the look from Paul Lewis (his is cooler).
-    */
-    #pageHeader:after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      content: '';
-      background: linear-gradient(to right,
-        #000000 0,   #1a1a1a 10%, #333333 20%, #4d4d4d 30%, #666666 40%, #808080 50%,
-        #999999 60%, #b3b3b3 70%, #cccccc 80%, #e6e6e6 90%, #ffffff 100%);
-    }
+      #pageHeader {
+        line-height: 1.5;
+        font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri,
+          'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad,
+          'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma,
+          Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #cccccc;
+        background-color: #f1f1f1;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        height: 100px;
+      }
 
-    #pageHeader div {
-      margin-top: 10px;
-    }
+      #pageHeader:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        content: '';
+        background: linear-gradient(
+          to right,
+          #000000 0,
+          #1a1a1a 10%,
+          #333333 20%,
+          #4d4d4d 30%,
+          #666666 40%,
+          #808080 50%,
+          #999999 60%,
+          #b3b3b3 70%,
+          #cccccc 80%,
+          #e6e6e6 90%,
+          #ffffff 100%
+        );
+      }
 
-    #pageHeader > div:last-child {
-      margin-top: 0;
-    }
+      #pageHeader div {
+        margin-top: 10px;
+      }
 
-    #pageHeader h1 {
-      font-weight: 100;
-      margin: 0 5px;
-      font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
-    }
+      #pageHeader > div:last-child {
+        margin-top: 0;
+      }
 
-    #pageHeader nav a {
-      margin: 0 5px;
-      font-size: 16px;
-      text-transform: uppercase;
-      line-height: 2em;
-    }
+      #pageHeader h1 {
+        font-weight: 100;
+        margin: 0 5px;
+        font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
+          'Times New Roman', serif;
+      }
 
-    #me {
-      width: 75px;
-      height: 75px;
-      border-radius: 10%;
-      margin: 0 25px;
-    }
+      #pageHeader nav a {
+        margin: 0 5px;
+        font-size: 16px;
+        text-transform: uppercase;
+        line-height: 2em;
+      }
 
-    #pageFooter {
-      border-top: 1px solid #cccccc;
-      background-color: #f1f1f1;
-      display: block;
-      margin-top: 2rem;
-    }
+      #me {
+        width: 75px;
+        height: 75px;
+        border-radius: 10%;
+        margin: 0 25px;
+      }
 
-    #pageFooter section h2 {
-      font-weight: 400;
-      margin: 1em 0;
-    }
+      #pageFooter {
+        border-top: 1px solid #cccccc;
+        background-color: #f1f1f1;
+        display: block;
+        margin-top: 2rem;
+      }
 
-    #pageFooter > div {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin: auto;
-      max-width: 800px;
-    }
+      #pageFooter section h2 {
+        font-weight: 400;
+        margin: 1em 0;
+      }
 
-    #pageFooter > div section {
-      flex: 1;
-      padding-right: 1em;
-    }
+      #pageFooter > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: auto;
+        max-width: 800px;
+      }
 
-    #thanks {
-      padding: 0 0 40px;
-    }
+      #pageFooter > div section {
+        flex: 1;
+        padding-right: 1em;
+      }
 
-    #thanks p {
-      font-size: 14px;
-      text-transform: uppercase;
-      color: var(--structs-hi);
-      text-align: center;
-    }
+      #thanks {
+        padding: 0 0 40px;
+      }
 
-    #thanks p a {
-      background-image: none;
-      background-repeat: initial;
-      background-position: initial;
-      color: var(--structs-hi);
-      border-bottom: 1px dotted;
-    }
+      #thanks p {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #940088;
+        text-align: center;
+      }
 
-    #skeleton, #placeholder {
-      margin: auto;
-      padding: 0 20px;
-      max-width: 800px;
-    }
+      #thanks p a {
+        background-image: none;
+        background-repeat: initial;
+        background-position: initial;
+        color: #940088;
+        border-bottom: 1px dotted;
+      }
 
-    #skeleton {
-      padding-top: 100px;
-      min-height: 102vh;
-    }
-
-    #skeleton p {
-      margin-top: 10px;
-      margin-bottom: 29px;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 21px;
-      line-height: 1.58;
-      letter-spacing: -.003em;
-    }
-
-    hr {
-      height: 20px;
-      background-color: #e6e6e6;
-      border: 0;
-    }
-
-    hr.short {
-      width: 65%;
-      margin-left: 0;
-    }
-
-    code-block {
-      display: block;
-      unicode-bidi: embed;
-      font-family: monospace;
-      white-space: pre;
-      font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-      font-size: 16px;
-      line-height: 1.375;
-      direction: ltr;
-      text-align: left;
-      white-space: pre;
-      word-spacing: normal;
-      word-break: normal;
-      -moz-tab-size: 4;
-      -o-tab-size: 4;
-      tab-size: 4;
-      -webkit-hyphens: none;
-      -moz-hyphens: none;
-      -ms-hyphens: none;
-      hyphens: none;
-      background: #faf8f5;
-      color: #728fcb;
-      max-width: 100%;
-      overflow-x: scroll;
-      padding: 5px;
-    }
-
-    a {
-      color: #0049A3;
-      text-decoration: none;
-      border-bottom: 1px solid #0049A3;
-    }
-
-    a:hover {
-      color: #CC5511;
-      text-decoration: none;
-      border-bottom: 1px solid #CC5511;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
-      margin: 0;
-    }
-
-    p, li {
-      font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
-      margin: 0;
-      color: var(--primary-text-color);
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-left: -1.75px;
-      line-height: 1.15;
-      letter-spacing: -.02em;
-      font-weight: 700;
-      font-style: normal;
-      margin-top: 16px;
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-left: -1.75px;
-      line-height: 1.15;
-      letter-spacing: -.02em;
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    h3 {
-      font-size: 20px;
-      margin-left: -1.75px;
-      line-height: 1.15;
-      letter-spacing: -.02em;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    p, li {
-      margin-top: 10px;
-      margin-bottom: 29px;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 21px;
-      line-height: 1.58;
-      letter-spacing: -.003em;
-    }
-
-    li {
-      margin-bottom: 20px;
-    }
-
-    /* Don't like this; special case. TODO extract */
-    p code, li code {
-      background-color: #faf8f5;
-      font-size: 19px;
-      color: #dd4a68;
-      padding: 5px;
-    }
-
-    blockquote {
-      border-left: 5px solid #0049A3;
-      padding-left: 10px;
-      margin-left: 10px;
-    }
-
-    blockquote, blockquote p {
-      font-style: oblique;
-      font-weight: 400;
-      font-size: 20px;
-    }
-
-    [hidden] {
-      display: none !important;
-    }
-
-    /* Use these to generate skeleton blocks before content loads */
-    hr {
-      height: 20px;
-      background-color: #e6e6e6;
-      border: 0;
-    }
-    hr.short {
-      width: 65%;
-      margin-left: 0;
-    }
-
-    /*
-      Design choice: in my components, I always have a #main as a container
-      in my web components. Why isn't named container? No idea. LOL.
-    */
-    #main, #skeleton {
-      margin: auto;
-      padding: 0 20px;
-      max-width: 800px;
-    }
-
-    #skeleton {
-      min-height: 102vh;
-    }
-
-    #shoutout {
-      margin-bottom: 30px;
-    }
-    #shoutout p {
-      font-size: 28px;
-    }
-
-    #posts > h2 {
-      margin-bottom: 10px;
-    }
-
-    #posts {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    /*
-      This gets used a couple of places (iron-list, simple related dom-repeat)
-    */
-    .post-container {
-      height: 125px;
-      width: calc(50% - 1rem);
-    }
-
-    .post-container a {
-      min-height: 100px;
-      color: initial;
-      background-image: none;
-      background-repeat: initial;
-      background-position: initial;
-      display: block;
-      padding: 1rem;
-      border-bottom: none;
-      transition-property: background-color;
-      transition-duration: 0.3s;
-      will-change: background-color;
-    }
-
-    .post-container a:hover {
-      text-decoration: none;
-      background-color: hotpink;
-    }
-
-    .post-container a:hover h2,
-    .post-container a:hover h3 {
-      color: #fff !important;
-    }
-
-    .post-container a span {
-      font-size: 14px;
-      color: #0049A3;
-    }
-
-    .post-container a h2 {
-      color: #0049A3;
-      font-weight: 400;
-      font-family: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
-    }
-
-    .post-container a h3 {
-      font-weight: 200;
-      text-transform: uppercase;
-      font-size: 14px;
-      margin-bottom: 0.5rem;
-      color: #CC5511;
-    }
-
-    #main, #skeleton {
-      padding-top: 100px;
-    }
-
-    #main iframe, #main img {
-      max-width: 100%;
-      width: 100%;
-    }
-
-    #main img {
-      margin: auto;
-      display: block;
-    }
-
-    #main video {
-      max-width: 100%;
-    }
-
-    @media (max-width: 767px) {
-      #main, #skeleton {
+      #skeleton,
+      #placeholder {
         margin: auto;
         padding: 0 20px;
         max-width: 800px;
       }
 
-      #main, #skeleton {
-        padding-top: 85px;
+      #skeleton {
+        padding-top: 100px;
+        min-height: 102vh;
       }
 
-      p, li {
-        font-size: 18px;
+      #skeleton p {
+        margin-top: 10px;
+        margin-bottom: 29px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 21px;
         line-height: 1.58;
-        letter-spacing: -.004em;
+        letter-spacing: -0.003em;
       }
 
-      #shoutout p {
+      hr {
+        height: 20px;
+        background-color: #e6e6e6;
+        border: 0;
+      }
+
+      hr.short {
+        width: 65%;
+        margin-left: 0;
+      }
+
+      code-block {
+        display: block;
+        unicode-bidi: embed;
+        max-width: 100%;
+        overflow-x: scroll;
+        font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+          'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+          'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+          'Courier New', Courier, monospace;
+        font-size: 16px;
+        line-height: 1.375;
+        direction: ltr;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        overflow-wrap: normal;
+        tab-size: 4;
+        hyphens: none;
+        color: rgb(34, 34, 34);
+        background: rgb(250, 248, 245);
+        padding: 1em;
+      }
+
+      a {
+        color: #0049a3;
+        text-decoration: none;
+        border-bottom: 1px solid #0049a3;
+      }
+
+      a:hover {
+        color: #cc5511;
+        text-decoration: none;
+        border-bottom: 1px solid #cc5511;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri,
+          'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad,
+          'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma,
+          Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 0;
+      }
+
+      p,
+      li {
+        font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
+          'Times New Roman', serif;
+        margin: 0;
+        color: var(--primary-text-color);
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-left: -1.75px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        font-style: normal;
+        margin-top: 16px;
+      }
+
+      h2 {
         font-size: 24px;
+        margin-left: -1.75px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+        font-style: normal;
       }
 
-      .post-container {
-        width: 100%;
+      h3 {
+        font-size: 20px;
+        margin-left: -1.75px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        font-weight: 400;
+        font-style: normal;
       }
 
-      #pageHeader {
-        height: 85px;
+      p,
+      li {
+        margin-top: 10px;
+        margin-bottom: 29px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 21px;
+        line-height: 1.58;
+        letter-spacing: -0.003em;
       }
 
-      #pageHeader h1 {
-        margin: 0 0;
-        font-size: 22px;
-        line-height: inherit;
+      li {
+        margin-bottom: 20px;
       }
 
-      #pageHeader div:first-child {
-        display: flex;
+      /* Don't like this; special case. TODO extract */
+      p code,
+      li code {
+        background-color: #faf8f5;
+        font-size: 19px;
+        color: #dd4a68;
+        padding: 5px;
       }
 
-      #pageHeader div, #pageHeader > div:last-child {
-        margin-top: 5px;
+      blockquote {
+        border-left: 5px solid #0049a3;
+        padding-left: 10px;
+        margin-left: 10px;
       }
 
-      #pageHeader nav a:first-child {
-        margin: 0 5px 0 0;
+      blockquote,
+      blockquote p {
+        font-style: oblique;
+        font-weight: 400;
+        font-size: 20px;
       }
 
-      #me {
-        width: 55px;
-        height: 55px;
-        margin: 0 15px 0 0;
+      [hidden] {
+        display: none !important;
+      }
+
+      /* Use these to generate skeleton blocks before content loads */
+      hr {
+        height: 20px;
+        background-color: #e6e6e6;
+        border: 0;
+      }
+      hr.short {
+        width: 65%;
+        margin-left: 0;
+      }
+
+      /*
+        Design choice: in my components, I always have a #main as a container
+        in my web components. Why isn't named container? No idea. LOL.
+      */
+      #main,
+      #skeleton {
+        margin: auto;
+        padding: 0 20px;
+        max-width: 800px;
       }
 
       #skeleton {
-        padding-top: 85px;
+        min-height: 102vh;
       }
 
-      #pageFooter {
-        padding: 0 20px;
+      #shoutout {
+        margin-bottom: 30px;
+      }
+      #shoutout p {
+        font-size: 28px;
       }
 
-      #pageFooter > div {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 320px) {
-      #pageHeader {
-        text-align: center;
+      #posts > h2 {
+        margin-bottom: 10px;
       }
 
-      /* No room on smaller screens */
-      #pageHeader > div:first-child {
-        display: none !important;
+      #posts {
+        display: flex;
+        flex-wrap: wrap;
       }
-    }
-  </style>
-</head>
-<body>
-  <header id="pageHeader">
-    <div>
-      <img id="me" src="/images/manifest/me-2018-150.jpg" alt="Justin Ribeiro">
-    </div>
-    <div>
-      <h1>Justin Ribeiro</h1>
+
+      /*
+        This gets used a couple of places (iron-list, simple related dom-repeat)
+      */
+      .post-container {
+        height: 125px;
+        width: calc(50% - 1rem);
+      }
+
+      .post-container a {
+        min-height: 100px;
+        color: initial;
+        background-image: none;
+        background-repeat: initial;
+        background-position: initial;
+        display: block;
+        padding: 1rem;
+        border-bottom: none;
+        transition-property: background-color;
+        transition-duration: 0.3s;
+        will-change: background-color;
+      }
+
+      .post-container a:hover {
+        text-decoration: none;
+        background-color: hotpink;
+      }
+
+      .post-container a:hover h2,
+      .post-container a:hover h3 {
+        color: #fff !important;
+      }
+
+      .post-container a span {
+        font-size: 14px;
+        color: #0049a3;
+      }
+
+      .post-container a h2 {
+        color: #0049a3;
+        font-weight: 400;
+        font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
+          'Times New Roman', serif;
+      }
+
+      .post-container a h3 {
+        font-weight: 200;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-bottom: 0.5rem;
+        color: #cc5511;
+      }
+
+      #main iframe,
+      #main img {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      #main img {
+        margin: auto;
+        display: block;
+      }
+
+      #main video {
+        max-width: 100%;
+      }
+
+      .reads {
+        margin-top: 10px;
+      }
+
+      time {
+        text-transform: uppercase;
+      }
+
+      #metaShare {
+        display: block;
+        background-color: #e6e6e6;
+        padding: 1em;
+      }
+
+      .dotDivider {
+        padding-right: 0.45em;
+        padding-left: 0.45em;
+      }
+
+      .dotDivider::after {
+        content: '·';
+      }
+
+      @media (max-width: 767px) {
+        #main,
+        #skeleton {
+          margin: auto;
+          padding: 0 20px;
+          max-width: 800px;
+        }
+
+        p,
+        li {
+          font-size: 18px;
+          line-height: 1.58;
+          letter-spacing: -0.004em;
+        }
+
+        #shoutout p {
+          font-size: 24px;
+        }
+
+        .post-container {
+          width: 100%;
+        }
+
+        #pageHeader {
+          height: 85px;
+        }
+
+        #pageHeader h1 {
+          margin: 0 0;
+          font-size: 22px;
+          line-height: inherit;
+        }
+
+        #pageHeader div:first-child {
+          display: flex;
+        }
+
+        #pageHeader div,
+        #pageHeader > div:last-child {
+          margin-top: 5px;
+        }
+
+        #pageHeader nav a:first-child {
+          margin: 0 5px 0 0;
+        }
+
+        #me {
+          width: 55px;
+          height: 55px;
+          margin: 0 15px 0 0;
+        }
+
+        #pageFooter {
+          padding: 0 20px;
+        }
+
+        #pageFooter > div {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 320px) {
+        #pageHeader {
+          text-align: center;
+        }
+
+        /* No room on smaller screens */
+        #pageHeader > div:first-child {
+          display: none !important;
+        }
+      }
+    </style>
+    {% endraw %}
+  </head>
+  <body>
+    <header id="pageHeader">
+      <div>
+        <img
+          id="me"
+          src="/images/manifest/me-2018-150.jpg"
+          alt="Justin Ribeiro"
+        />
+      </div>
+      <div>
+        <h1>Justin Ribeiro</h1>
         <nav>
           <a href="/">Home</a>
           <a href="/chronicle/">Blog</a>
           <a href="/talks/">Talks</a>
           <a href="/about/">About</a>
         </nav>
-    </div>
-  </header>
-  <div id="container">
-    <div id="main">
+      </div>
+    </header>
+    <div id="container">
+      <div id="main">
+        {% if pagetype == "post" %}
+        <article
+          itemprop="blogPost"
+          itemscope
+          itemtype="http://schema.org/BlogPosting"
+        >
+          <a href="/" hidden itemprop="mainEntityOfPage">Justin Ribeiro</a>
+          <header>
+            <h1 itemprop="headline">{{ title | safe }}</h1>
+            <div class="reads">
+              <time
+                datetime="{{ dataModified }}"
+                itemprop="datePublished dateModified"
+                content="{{ dateModified }}"
+              >
+                {{ date }}
+              </time>
+              <span class="dotDivider"></span> {{ readingtime }} min read
+              <span
+                itemprop="publisher author"
+                itemscope
+                itemtype="http://schema.org/Person"
+                hidden
+              >
+                <a href="/" itemprop="url">
+                  <span itemprop="name">Justin Ribeiro</span>
+                </a>
+              </span>
+            </div>
+          </header>
+          <div itemprop="articleBody">
+            {% endif %}
 
-      {% if pagetype == "post" %}
-      <h1>{{ title|safe }}</h1>
-      <time datetime="{{ dataModified }}">{{ date }}</time>
-      {% endif %}
+            {{ article | safe }}
 
-      {{ article|safe }}
-
-      {% if posts %}
+            {% if pagetype == "post" %}
+          </div>
+          <footer id="metaShare">
+            <div>
+              <h3>Share this piece</h3>
+              <p id="share">
+                <a
+                  href="https://twitter.com/intent/tweet?url={{
+                    permalink
+                  }}&text={{ title }} via @justinribeiro"
+                  >Twitter</a
+                >
+                <a href="https://www.facebook.com/sharer.php?u={{ permalink }}"
+                  >Facebook</a
+                >
+                <a
+                  href="https://www.linkedin.com/shareArticle?mini=true&url={{
+                    permalink
+                  }}&title={{ title }}&source=&summary={{ description }}"
+                  >LinkedIn</a
+                >
+                <a
+                  href="mailto:?subject=Article:
+              {{ title }}&body=Article from Justin Ribeiro:
+              {{ permalink }}"
+                  >Email</a
+                >
+              </p>
+              <p>
+                Author Justin Ribeiro wrote {{ words }} words for this piece and
+                hopes you enjoyed it. Find an issue?
+                <a href="https://github.com/justinribeiro/blog-pwa/issues"
+                  >File a ticket</a
+                >
+                or
+                <a
+                  href="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/{{
+                    filename
+                  }}"
+                  >edit this on Github.</a
+                >
+              </p>
+            </div>
+          </footer>
+        </article>
+        {% endif %} {% if posts %}
         <section id="posts">
-        {% for post in posts %}
+          {% for post in posts %}
           <div class="post-container">
             <a href="{{ post.permalink }}">
-              <h3 class="date">🗒️ {{post.date}}</h3>
+              <h3 class="date">🗒️ {{ post.date }}</h3>
               <h2 class="title">{{ post.title }}</h2>
             </a>
           </div>
-        {% endfor %}
+          {% endfor %}
         </section>
-      {% endif %}
-
+        {% endif %}
+      </div>
     </div>
-  </div>
-  <footer id="pageFooter">
-    <div>
-      <section>
-        <h2>Hello, nice to meet you.</h2>
-          <p>I'm happy to talk. You can reach me via <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a>, <a rel="me" href="https://twitter.com/justinribeiro">Twitter</a>, and <a rel="me" href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>.</p>
-          <p>Looking for some of my code? Check <a rel="me" href="https://github.com/justinribeiro">Github</a> or <a rel="me" href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
-      </section>
-      <section>
-        <h2>Meta Things</h2>
-        <p><a href="https://justinribeiro.com/data/chronicle/index.xml">RSS feed</a>. RIP Reader, follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml' target='blank'>Feedly</a>.</p>
-        <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="">file a ticket</a> so I can fix it.</p>
-      </section>
-    </div>
-    <div id="thanks">
-      <p>Made with ❤️ using <a href="https://www.polymer-project.org/">Polymer</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
-    </div>
-  </footer>
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Person",
-      "name": "Justin Ribeiro",
-      "url": "https://justinribeiro.com/",
-      "email": "justin@justinribeiro.com",
-      "image": "https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2018-512.jpg",
-      "sameAs": [
-        "https://twitter.com/justinribeiro",
-        "https://www.linkedin.com/in/justinribeiro",
-        "https://plus.google.com/+justinribeiro",
-        "https://github.com/justinribeiro",
-        "https://facebook.com/justinribeiro",
-        "https://ribeiro.social/@justin",
-        "https://hub.docker.com/r/justinribeiro/",
-        "https://developers.google.com/experts/people/justin-ribeiro"
-      ]
-    }
-  </script>
-</body>
+    <footer id="pageFooter">
+      <div>
+        <section>
+          <h2>Hello, nice to meet you.</h2>
+          <p>
+            I'm happy to talk. You can reach me via
+            <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a>,
+            <a rel="me" href="https://twitter.com/justinribeiro">Twitter</a>,
+            and
+            <a rel="me" href="https://www.linkedin.com/in/justinribeiro"
+              >LinkedIn</a
+            >.
+          </p>
+          <p>
+            Looking for some of my code? Check
+            <a rel="me" href="https://github.com/justinribeiro">Github</a> or
+            <a rel="me" href="https://hub.docker.com/r/justinribeiro/"
+              >DockerHub</a
+            >.
+          </p>
+        </section>
+        <section>
+          <h2>Meta Things</h2>
+          <p>
+            <a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>.
+            RIP Reader, follow along on
+            <a
+              href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml"
+              target="blank"
+              >Feedly</a
+            >.
+          </p>
+          <p>
+            What, you found a bug on this site? Yikes. Please take a moment and
+            <a href="https://github.com/justinribeiro/blog-pwa/issues/new"
+              >file a ticket</a
+            >
+            so I can fix it.
+          </p>
+        </section>
+      </div>
+      <div id="thanks">
+        <p>
+          Made with ❤️ using
+          <a href="https://lit-element.polymer-project.org/">Web Components</a>
+          and <a href="https://gohugo.io/">Hugo</a>.
+        </p>
+      </div>
+    </footer>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Justin Ribeiro",
+        "url": "https://justinribeiro.com/",
+        "email": "justin@justinribeiro.com",
+        "image": "https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2018-512.jpg",
+        "sameAs": [
+          "https://twitter.com/justinribeiro",
+          "https://www.linkedin.com/in/justinribeiro",
+          "https://plus.google.com/+justinribeiro",
+          "https://github.com/justinribeiro",
+          "https://facebook.com/justinribeiro",
+          "https://ribeiro.social/@justin",
+          "https://hub.docker.com/r/justinribeiro/",
+          "https://developers.google.com/community/experts/directory/profile/profile-justin_ribeiro"
+        ]
+      }
+    </script>
+  </body>
 </html>
