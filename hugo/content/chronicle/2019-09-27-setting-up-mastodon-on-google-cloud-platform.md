@@ -1,20 +1,21 @@
 ---
 title: "Setting Up Mastodon on Google Cloud Platform"
+description: "Setting up Mastodon on Google Cloud Platform has been on my list of things to do for a while. Recent life events were a tipping point, so off I went into the wonderful world of my own social network."
 date: 2019-09-27T12:24:05-07:00
 ---
 
-Setting up Mastodon on Google Cloud Platform has been on my list of things to do for a while. Recent life events (which I will not get into here) were a tipping point, so off I went into the wonderful world of my own social network.
+Setting up Mastodon on Google Cloud Platform has been on my list of things to do for a while. Recent life events (which I will not get into here) were a tipping point, so off I went into the wonderful world of my own social network (which currently is live at [ribeiro.social/@justin](http://ribeiro.social/@justin)).
 
-> Note: this is what I consider the "friends and family" edition. If I wanted more scale, I'd do this in Kubernetes (which if any one wants me to write about, I could be persuaded I suppose)
+> Note: this is what I consider the "friends and family" edition. If I wanted more scale, I'd do this in Kubernetes (which I may do anyhow, just because).
 
-I wanted something a little more robust then a single server setup (which I find too brittle), so I settled on:
+I wanted something a little more robust then a single server setup which I find too brittle, so I settled on:
 
 1. Media stored on Google Cloud Storage.
 2. Database on Google Cloud SQL.
 3. DNS on Google DNS
 4. Email on Mailgun.
 
-Seemed reasonable enough. Let's build us a Mastodon instance!
+Seemed reasonable enough, and when I finally decide to wrap all this in Docker, I won't have to shuffle the large bits around. Let's build us a Mastodon instance!
 
 ## Setting up the DNS
 
@@ -111,21 +112,21 @@ Okay, so now you're staring at this command prompt. We have many things to insta
 
 1. Install Node.
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+jdr@rsms:~$ curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 {{< /codeblock >}}
 2. Install Yarn.
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-jdr@ribeiro-social-mastodon:~$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-jdr@ribeiro-social-mastodon:~$ sudo apt-get update && sudo apt-get install yarn
+jdr@rsms:~$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+jdr@rsms:~$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+jdr@rsms:~$ sudo apt-get update && sudo apt-get install yarn
 {{< /codeblock >}}
 3. Install a whole lot of dependencies. It took me a little digging to reconcile this list from various sources, but it works okay so we're going to roll with it.
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo apt install imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core g++ libprotobuf-dev protobuf-compiler pkg-config nodejs gcc autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev nginx redis-server redis-tools postgresql postgresql-contrib letsencrypt yarn libidn11-dev libicu-dev
+jdr@rsms:~$ sudo apt install imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core g++ libprotobuf-dev protobuf-compiler pkg-config nodejs gcc autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev nginx redis-server redis-tools postgresql postgresql-contrib letsencrypt yarn libidn11-dev libicu-dev
 {{< /codeblock >}}
 4. Now let's set up our user account where all this is going to live.
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo adduser mastodon
+jdr@rsms:~$ sudo adduser mastodon
 {{< /codeblock >}}
 
 Now let's switch over to our new user, and setup some more.
@@ -134,23 +135,23 @@ Now let's switch over to our new user, and setup some more.
 
 1. Switch over to the user.
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo su - mastodon
+jdr@rsms:~$ sudo su - mastodon
 {{< /codeblock >}}
 2. Setup the Ruby environment variables.
 {{< codeblock lang="bash" >}}
-mastodon@ribeiro-social-mastodon:~$ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-mastodon@ribeiro-social-mastodon:~$ cd ~/.rbenv && src/configure && make -C src
-mastodon@ribeiro-social-mastodon:~$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-mastodon@ribeiro-social-mastodon:~$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+mastodon@rsms:~$ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+mastodon@rsms:~$ cd ~/.rbenv && src/configure && make -C src
+mastodon@rsms:~$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+mastodon@rsms:~$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 {{< /codeblock >}}
 3. Log out of the user and log back in so our env variables can take effect.
 {{< codeblock lang="bash" >}}
-mastodon@ribeiro-social-mastodon:~$ exit
-jdr@ribeiro-social-mastodon:~$ sudo adduser mastodon
+mastodon@rsms:~$ exit
+jdr@rsms:~$ sudo adduser mastodon
 {{< /codeblock >}}
 4. Verify that rbenv is a function.
 {{< codeblock lang="bash" >}}
-mastodon@ribeiro-social-mastodon:~$ type rbenv
+mastodon@rsms:~$ type rbenv
 rbenv is a function
 rbenv ()
 {
@@ -171,9 +172,9 @@ rbenv ()
 {{< /codeblock >}}
 5. Now let's build Ruby.
 {{< codeblock lang="bash" >}}
-mastodon@ribeiro-social-mastodon:~$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-mastodon@ribeiro-social-mastodon:~$ rbenv install 2.6.1
-mastodon@ribeiro-social-mastodon:~$ rbenv global 2.6.1
+mastodon@rsms:~$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+mastodon@rsms:~$ rbenv install 2.6.1
+mastodon@rsms:~$ rbenv global 2.6.1
 {{< /codeblock >}}
 
 Once that finishes compiling, we move on to install Mastodon.
@@ -182,18 +183,18 @@ Once that finishes compiling, we move on to install Mastodon.
 
 1. Clone Mastodon via git into a folder we'll call `live`.
 {{< codeblock lang="bash" >}}
-mastodon@ribeiro-social-mastodon:~$ git clone https://github.com/tootsuite/mastodon.git live
-mastodon@ribeiro-social-mastodon:~$ cd live
+mastodon@rsms:~$ git clone https://github.com/tootsuite/mastodon.git live
+mastodon@rsms:~$ cd live
 {{< /codeblock >}}
 2. Get the latest stable tag:
 {{< codeblock lang="bash" >}}
-mastodon@ribeiro-social-mastodon:~$ git checkout $(git tag -l | grep -v 'rc[0-9]*$' | sort -V | tail -n 1)
+mastodon@rsms:~/live$ git checkout $(git tag -l | grep -v 'rc[0-9]*$' | sort -V | tail -n 1)
 {{< /codeblock >}}
-3. Install the required Mastodon depedencies.
+3. Install the required Mastodon dependencies.
 {{< codeblock lang="bash" >}}
-mastodon@ribeiro-social-mastodon:~$ gem install bundler
-mastodon@ribeiro-social-mastodon:~/live$ bundle install -j$(getconf _NPROCESSORS_ONLN) --deployment --without development test
-mastodon@ribeiro-social-mastodon:~/live$ yarn install --pure-lockfile
+mastodon@rsms:~/live$ gem install bundler
+mastodon@rsms:~/live$ bundle install -j$(getconf _NPROCESSORS_ONLN) --deployment --without development test
+mastodon@rsms:~/live$ yarn install --pure-lockfile
 {{< /codeblock >}}
 
 Go ahead and exit the mastodon user and let's head back to root and setup the web server.
@@ -204,16 +205,16 @@ Setting up nginx seems hard, but this pretty much a copy, replace-some-words, pa
 
 1. As the root user, we're going to copy the nginx.conf to example.com.conf (replacing the example.com portion):
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo cp /home/mastodon/live/dist/nginx.conf /etc/nginx/sites-available/example.com.conf
+jdr@rsms:~$ sudo cp /home/mastodon/live/dist/nginx.conf /etc/nginx/sites-available/example.com.conf
 {{< /codeblock >}}
 2. Now we have to edit this file, replacing example.com where appropriate:
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo sed -i 's/example.com/yourdomain.com/g' /etc/nginx/sites-available/example.com.conf
+jdr@rsms:~$ sudo sed -i 's/example.com/yourdomain.com/g' /etc/nginx/sites-available/example.com.conf
 {{< /codeblock >}}
 3. Enable the new configuration so the site will run:
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ cd /etc/nginx/sites-enabled
-jdr@ribeiro-social-mastodon:~$ sudo ln -s ../sites-available/example.com.conf
+jdr@rsms:~$ cd /etc/nginx/sites-enabled
+jdr@rsms:~$ sudo ln -s ../sites-available/example.com.conf
 {{< /codeblock >}}
 
 Now let's get some certs with Let's Encrypt.
@@ -224,24 +225,24 @@ The amount of joy I have for Let's Encrypt knows no bounds.
 
 1. With the previous setup, nginx will error out because it can't find the cert, so we need to sotp nginx for a second.
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo systemctl stop nginx
+jdr@rsms:~$ sudo systemctl stop nginx
 {{< /codeblock >}}
 2. Now, let's start the certbot up in standalone mode to get the cert:
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo letsencrypt certonly --standalone -d example.com
+jdr@rsms:~$ sudo letsencrypt certonly --standalone -d example.com
 {{< /codeblock >}}
 3. Once the bot finishes and generates the required certs, restart nginx:
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo systemctl start nginx
+jdr@rsms:~$ sudo systemctl start nginx
 {{< /codeblock >}}
 4. Now, this seems counterintuitive, but we need to get the cert again, this time with some additional settings, included pointing to our working directory for the challenge.
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo letsencrypt certonly --webroot -d example.com -w /home/mastodon/live/public/
+jdr@rsms:~$ sudo letsencrypt certonly --webroot -d example.com -w /home/mastodon/live/public/
 {{< /codeblock >}}
 5. You'll be prompted by certbot to either keep the cert or renew/replace. Select option 2.
 6. Boom, we have cert. Now let's make sure it always updates via cron. I'm a fan of the monthly run (though some folks like the weekly to be safer). User choice.
 {{< codeblock lang="bash" >}}
-jdr@ribeiro-social-mastodon:~$ sudo vim /etc/cron.monthly/renew-cert
+jdr@rsms:~$ sudo vim /etc/cron.monthly/renew-cert
 {{< /codeblock >}}
 7. Copy and paste the little snippet below into said file and save said file (:wq):
 {{< codeblock lang="bash" >}}
@@ -252,13 +253,99 @@ systemctl reload nginx
 8. Make sure it's got an exec attr on it so it'll run:
 {{< codeblock lang="bash" >}}
 #!/usr/bin/env bash
-jdr@ribeiro-social-mastodon:~$ sudo chmod +x /etc/cron.monthly/renew-cert
+jdr@rsms:~$ sudo chmod +x /etc/cron.monthly/renew-cert
 {{< /codeblock >}}
 9. Restart cron:
 {{< codeblock lang="bash" >}}
 #!/usr/bin/env bash
-jdr@ribeiro-social-mastodon:~$ sudo systemctl restart cron
+jdr@rsms:~$ sudo systemctl restart cron
 {{< /codeblock >}}
 
 ## Generating the .env.production file
 
+At this point, it's time to take all the above setup and put it to work.
+
+1. Login to the mastodon user.
+{{< codeblock lang="bash" >}}
+jdr@rsms:~$ sudo su - mastodon
+{{< /codeblock >}}
+2. Start the setup.
+{{< codeblock lang="bash" >}}
+mastodon@rsms:~$ cd live
+mastodon@rsms:~/live$ RAILS_ENV=production bundle exec rake mastodon:setup
+{{< /codeblock >}}
+3. Now we start answering questions.
+4. At some point, you'll be asked "PostgreSQL host": this is the IP address of your Cloud SQL Instance.
+{{< codeblock lang="bash" >}}
+PostgreSQL host: YOUR_CLOUD_SQL_IP_HERE
+PostgreSQL port: 5432
+Name of PostgreSQL database: postgres
+Name of PostgreSQL user: postgres
+Password of PostgreSQL user: YOUR_CLOUD_SQL_USER_PASSWORD_HERE
+Database configuration works! 🎆
+{{< /codeblock >}}
+5. The next step will ask for Redis; we're not hosting this ourselves, so just take the default values.
+6. Next, you'll come to the "Do you want to store uploaded files on the cloud?". Answer yes.
+7. For the provider, you're going to select "Minio".
+8. Next, it's time to enter in our Google Storage details:
+{{< codeblock lang="bash" >}}
+Minio endpoint URL: https://storage.googleapis.com
+Minio bucket name: YOUR_GOOGLE_CLOUD_BUCKET_NAME
+Minio access key: YOUR_GOOGLE_CLOUD_BUCKET_ACCESS_KEY
+Minio secret key: YOUR_GOOGLE_CLOUD_BUCKET_SECRET_KEY
+Do you want to access the uploaded files from your own domain? no
+{{< /codeblock >}}
+9. Next, it's time input our Mailgun information:
+{{< codeblock lang="bash" >}}
+SMTP server: smtp.mailgun.org
+SMTP port: 2525
+SMTP username: YOUR_MAILGUN_SMTP_USER
+SMTP password: YOUR_MAILGUN_SMTP_USER_PASSWORD
+SMTP authentication: plain
+SMTP OpenSSL verify mode: none
+E-mail address to send e-mails "from": mastodon@example.com
+Send a test e-mail with this configuration right now? Yes
+Send test e-mail to: YOUR_EMAIL_ADDRESS
+{{< /codeblock >}}
+10. Great! Continue answering questions until you finish the setup. Once complete, we have to add the following line to our `.env.production`:
+{{< codeblock lang="bash" >}}
+S3_SIGNATURE_VERSION=s3
+{{< /codeblock >}}
+11. Back up the .env.production for safe keeping!
+
+## Setup systemd
+
+1. Make sure you're the root user
+2. Copy the systemd service templates from the Mastodon directory:
+{{< codeblock lang="bash" >}}
+jdr@rsms:~$ sudo cp /home/mastodon/live/dist/mastodon-*.service /etc/systemd/system/
+{{< /codeblock >}}
+3. Three files will be copied; edit them to make sure all the paths are correct (they should be):
+{{< codeblock lang="bash" >}}
+/etc/systemd/system/mastodon-web.service
+/etc/systemd/system/mastodon-sidekiq.service
+/etc/systemd/system/mastodon-streaming.service
+{{< /codeblock >}}
+4. If everything looks good, start the services:
+{{< codeblock lang="bash" >}}
+jdr@rsms:~$ sudo systemctl start mastodon-web mastodon-sidekiq mastodon-streaming
+jdr@rsms:~$ sudo systemctl enable mastodon-*
+{{< /codeblock >}}
+
+## Your fancy new social network lives
+
+If everything went according to plan, you should be up and running live on your domain! If something went bump, crash, explosion, you'll have to dig into the [Mastodon Installation Guide](https://docs.joinmastodon.org/administration/installation/) (of which a lot of this is covered in there).
+
+## Tiny details
+
+1. You can do is stop the local PostgreSQL service on the Compute instance from running:
+{{< codeblock lang="bash" >}}
+jdr@rsms:~$ sudo systemctl stop postgresql.service
+jdr@rsms:~$ sudo systemctl disable postgresql.service
+{{< /codeblock >}}
+2. If you're only ever going to run production mode, you can make using `tootctl` easier by setting the rails env:
+{{< codeblock lang="bash" >}}
+jdr@rsms:~$ sudo su - mastodon
+mastodon@rsms:~$ echo "export RAILS_ENV=production" >> ~/.bashrc
+{{< /codeblock >}}
+3. "What about Redis?" Per the Mastodon docs, if you lose Redis on a crash, it's not the end of the world. As long as you back up the database, the .env.production file, and keep the cloud storage in ship-shape, we're golden.
