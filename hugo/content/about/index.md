@@ -14,7 +14,7 @@ I'm Justin Ribeiro. I hold some pretty awesome titles: Dad, Husband, Software En
 
 On most days you can find me working on the open web, focused on web performance and utilizing the web platform to bring users a better experience. I also work on a wide variety of other software, from internet of things to containers.
 
-I am [Google Developer Expert](https://developers.google.com/experts/people/justin-ribeiro) in Web Technologies, Internet of Things, and Wearables.  I also write code samples and help make the developer experience better.
+I am [Google Developer Expert](https://developers.google.com/community/experts/directory/profile/profile-justin_ribeiro) in Web Technologies, Internet of Things, and Wearables.  I also write code samples and help make the developer experience better.
 
 I ❤️ the open web. You can find me discussing the latest in web platform news and topics on the weekly [The Web Platform Podcast](https://thewebplatformpodcast.com/) with [Danny Blue](https://www.twitter.com/dee_bloo), [Amal Hussein](https://twitter.com/nomadtechie), and [Leon Revill](https://twitter.com/revillweb).
 
@@ -41,6 +41,6 @@ Want me to speak at your upcoming event? See the Contact section below to send m
 
 ## ✉️ Contact
 
-You can reach me on places like <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or <a rel="me" href="https://twitter.com/justinribeiro">Twitter</a>. Note, I am on  <a rel="me" href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>, but the spam has become too much and I no longer read messages there.
+You can reach me on places like <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a>. I am on many other social networks (<a rel="me" href="https://twitter.com/justinribeiro">Twitter</a>, <a rel="me" href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>, et cetera) but the spam has become too much and I no longer read messages there.
 
 You can also send me an email ([justin@justinribeiro.com](mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)) if that's more you thing.
