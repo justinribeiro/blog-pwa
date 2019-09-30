@@ -199,7 +199,8 @@
         margin-left: 0;
       }
 
-      code-block {
+      code-block,
+      pre {
         display: block;
         unicode-bidi: embed;
         max-width: 100%;
@@ -558,7 +559,6 @@
           itemscope
           itemtype="http://schema.org/BlogPosting"
         >
-          <a href="/" hidden itemprop="mainEntityOfPage">Justin Ribeiro</a>
           <header>
             <h1 itemprop="headline">{{ title | safe }}</h1>
             <div class="reads">
@@ -651,14 +651,16 @@
         <section>
           <h2>Hello, nice to meet you.</h2>
           <p>
-            I'm happy to talk. You can reach me via
-            <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a>,
-            <a rel="me" href="https://twitter.com/justinribeiro">Twitter</a>,
-            and
-            <a rel="me" href="https://www.linkedin.com/in/justinribeiro"
-              >LinkedIn</a
-            >.
+            I'm happy to talk. You can reach me on
+            <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or
+            via email at
+            <a
+              rel="me"
+              href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)"
+              >justin@justinribeiro.com</a
+            >
           </p>
+
           <p>
             Looking for some of my code? Check
             <a rel="me" href="https://github.com/justinribeiro">Github</a> or
