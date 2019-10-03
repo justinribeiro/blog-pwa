@@ -1,7 +1,7 @@
 ---
-title: "Fast Workaround for Running Karma and Chrome headless on Windows Subsystem for Linux (WSL)"
+title: "Workaround for Karma and Chrome headless on Windows Subsystem for Linux, ala WSL"
 description: "A quick workaround for running tests when Chrome doesn't want to play nice inside WSL."
-date: 2019-10-021T15:26:00-07:00
+date: 2019-10-02T15:26:00-07:00
 ---
 
 Windows Subsystem for Linux (WSL) is a vastly useful thing. When I do work on Windows for those certain projects, WSL has made my life significantly easier.
@@ -19,7 +19,7 @@ Doing this requires setting the `CHROME_BIN` env variable, which will allow chro
 
 yarn run v1.19.0
 $ karma start --coverage
-START:  <your-component>
+START:  &lt;your-component&gt;
 ✔ has a default property hello
 ✔ allows property hello to be overwritten
 
