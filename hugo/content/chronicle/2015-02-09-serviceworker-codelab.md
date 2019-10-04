@@ -1,13 +1,10 @@
 ---
-categories:
-- chrome
-- extension
-- codelab
-- serviceworker
 date: 2015-02-09T00:00:00Z
 description: A beginning codelab for building offline web apps with Service Worker.
 title: Getting started with Service Worker
 url: /chronicle/2015/02/09/serviceworker-codelab/
+tags:
+- Web
 ---
 
 The offline web is near and dear to my heart. Most people say it's not possible at scale, but I'd beg to differ. There are a significant amount of approaches I've used over the years, from index shells to the File and FileSystem API's, but all these approaches left much to be desired.

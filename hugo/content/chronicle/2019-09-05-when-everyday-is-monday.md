@@ -2,6 +2,10 @@
 title: "When Everyday Is Monday"
 date: 2019-09-05T13:28:37-07:00
 description: "School, autism, and twins are a potent combination."
+tags:
+- Personal
+- Autism
+- School
 ---
 
 The weather report state’s it’ll be 107 but the temperature in the house is already running hot. It’s August and school is in full swing. The summer’s never felt so short, but at least it’s a Friday, the start of the weekend should be a cause of celebration, a day of not too much school work.

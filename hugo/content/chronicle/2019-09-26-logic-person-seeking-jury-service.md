@@ -2,6 +2,8 @@
 title: "Measured Person Seeking Jury Service"
 description: "I may be one of the few people that actually would be fine sitting on a jury. There is probably something wrong with me."
 date: 2019-09-26T08:32:16-07:00
+tags:
+- Personal
 ---
 
 I don’t know anyone who likes to be called to jury service. The arguments I’ve heard for my entire life range from “it’s a waste of time” to more depressing “it’s a pointless endeavor in a broken legal system”. There are those who simply cannot afford to take time off, regardless of law and policy that says employers can’t act against you for said service. There is the existential dread of having to deliver a decision on someone’s actions.

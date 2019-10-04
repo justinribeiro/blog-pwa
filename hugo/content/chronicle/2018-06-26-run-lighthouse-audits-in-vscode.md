@@ -5,6 +5,10 @@ description: "Sometimes you want to write some code and perf test it without lea
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180626-vscode-lighthouse-twitter-1024x535.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180626-vscode-lighthouse-fb-1200x630.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180626-vscode-lighthouse-gplus-800x360.jpg"
+tags:
+- Web
+- VSCode
+- Lighthouse
 ---
 
 As fairly heavy user of

@@ -1,12 +1,11 @@
 ---
-categories:
-- gcp
-- rethinkdb
-- video
 date: 2015-03-12T00:00:00Z
 description: Video recording from my talk at RethinkDBs meetup in San Francisco.
 title: Deploying RethinkDB to Google Cloud Platform with Docker
 url: /chronicle/2015/03/12/rethinkdb-google-cloud-platform-docker-talk/
+tags:
+- Business
+- IoT
 ---
 
 Back in Feburary, I had the pleasure of speaking at RethinkDB's meetup, talking about Google Cloud Platform, and giving a basic rundown of how to deploy RethinkDB to GCP quickly with docker. Sound interesting? See the video below for my talk:

@@ -5,6 +5,9 @@ date: 2019-04-26T17:32:53-07:00
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-schneider-lens-with-customphototoolsring.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-schneider-lens-with-customphototoolsring.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-schneider-lens-with-customphototoolsring.jpg"
+tags:
+- Photography
+- Darkroom
 ---
 
 I didn't need the Schneider-Kreuznach 150mm/5.6 Componon-S. I don't lack enlarger lens, I can enlarge pretty much everything I have, from  4x5 on down. That lens held a certain place in my head though; it was a Componon-S and I have wanted one for close to 15 years. A deal came up on one of the various auction sites and I snagged it.

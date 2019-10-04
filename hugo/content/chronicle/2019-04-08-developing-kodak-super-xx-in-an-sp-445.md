@@ -5,6 +5,9 @@ description: "I wasn't about to let a pack of found film just sit around, so why
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190408-kodak-super-xx-pack-film.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190408-kodak-super-xx-pack-film.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190408-kodak-super-xx-pack-film.jpg"
+tags:
+- Photography
+- Film
 ---
 
 To say I've fallen in love with the [Stearman SP-445 compact 4x5 development tank](https://shop.stearmanpress.com/products/sp-445-compact-4x5-film-processing-system) is probably an understatement. I was late to the party to be sure; I had missed the KickStarter back in late 2015 thinking I'd still want to be doing tray development in my darkroom.

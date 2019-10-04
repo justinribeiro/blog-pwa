@@ -2,6 +2,9 @@
 title: "Setting Up Mastodon on Google Cloud Platform"
 description: "Setting up Mastodon on Google Cloud Platform has been on my list of things to do for a while. Recent life events were a tipping point, so off I went into the wonderful world of my own social network."
 date: 2019-09-27T12:24:05-07:00
+tags:
+- Development
+- Web
 ---
 
 Setting up Mastodon on Google Cloud Platform has been on my list of things to do for a while. Recent life events (which I will not get into here) were a tipping point, so off I went into the wonderful world of my own social network (which currently is live at [ribeiro.social/@justin](http://ribeiro.social/@justin)).

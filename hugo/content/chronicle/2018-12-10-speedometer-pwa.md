@@ -1,10 +1,11 @@
-+++
-date = "2018-12-10T08:00:00-08:00"
-title = "Building a tiny speedometer progressive web app"
-description = "With my Prius dashboard on the fritz, I turn not to an app store, but rather the GeoLocation API, AmbientLightSensor API, and to create tiny no-frills PWA."
-+++
-
-
+---
+date: "2018-12-10T08:00:00-08:00"
+title: "Building a tiny speedometer progressive web app"
+description: "With my Prius dashboard on the fritz, I turn not to an app store, but rather the GeoLocation API, AmbientLightSensor API, and to create tiny no-frills PWA."
+tags:
+- Web
+- PWA
+---
 
 ## Making DNS work for us
 DNS is the phonebook of the internet. A phonebook was a thing that telephone companies used to drop off at your house so you could look up people by name and find a phone number. When we type in a domain name, say justinribeiro.com, we're really be routed to an IP address, as seen with `dig`:

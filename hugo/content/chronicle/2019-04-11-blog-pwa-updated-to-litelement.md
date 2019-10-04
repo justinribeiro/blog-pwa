@@ -2,6 +2,9 @@
 title: "Updating blog-pwa from Polymer to LitElement, Workbox, and Rollup"
 date: 2019-04-11T10:12:03-07:00
 description: "On the quest for more web standards and more web performance, it was time to take the leap into converting blog-pwa into the latest tools and libraries."
+tags:
+- Web
+- Development
 ---
 
 After writing a post last month and running a build, I noticed a disturbing fact that my base web component `blog-pwa` was shocking large at 71.9K gzipped. This didn't seem right; I hadn't inherently changed any of the major underpinnings of the my core [blog-pwa](https://github.com/justinribeiro/blog-pwa) project I've used for a number of years. A quick peek at the build and some random TODOs I had left myself during the Polymer2-to-Polymer3 conversion and I quickly realized that I had sort pushed to the back burner some changes.

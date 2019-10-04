@@ -16,6 +16,7 @@ export default {
     'src/blog-static.js',
     'src/blog-entry.js',
     'src/blog-chronicle.js',
+    'src/blog-tags.js',
     'src/lazy-resources.js',
     'src/analytics.js',
     'src/3d-utils.js',

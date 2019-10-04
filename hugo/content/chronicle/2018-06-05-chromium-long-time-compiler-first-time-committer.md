@@ -5,6 +5,9 @@ description: "All those years building Chrome and WebKit and putting it places, 
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180605-chromium-first-commit-twitter-1024x535.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180605-chromium-first-commit-fb-1200x630.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180605-chromium-first-commit-gplus-800x360.jpg"
+tags:
+- Web
+- Chrome
 ---
 
 It's not really a secret that I've put web engines in some not-so-usual places. I've embedded it on devices in the manufacturing world, I've used it in place of terrible frameworks on consumer devices, I've put it into containers of various shapes and sizes to do all kinds of things that don't fit the standard I-want-to-look-at-cat-photos use case.

@@ -1,11 +1,10 @@
 ---
-categories:
-- beacons
-- physical web
 date: 2016-01-20T00:00:00Z
 description: In my ongoing saga of getting beacons in a solid working state, I find a solution in Accent Systems.
 title: Getting Blesh beacons to advertise Eddystone URL and UID
-url: /chronicle/2016/01/20/blesh-beacons-eddystone-url-uid/
+tags:
+- Web
+- IoT
 ---
 
 In my ongoing saga of sorting out Blesh beacons, let's talk about advertising. Advertising in the beacon game says that over some given interval, I am a particular frame type. I might be Eddystone-UID, I might be Eddystone-URL, I might be an iBeacon.

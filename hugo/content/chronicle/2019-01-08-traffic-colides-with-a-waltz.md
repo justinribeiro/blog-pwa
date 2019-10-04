@@ -5,6 +5,8 @@ description: "The crash into my driver side door was no match for the fear gener
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190108-my-poor-prius-twitter-1024x535.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190108-my-poor-prius-fb-1200x630.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190108-my-poor-prius-gplus-800x360.jpg"
+tags:
+- Personal
 ---
 
 I pick up the twins from school in the afternoon. It’s been this way for a couple years, always a waltz of precise timing; when to schedule the last meeting before pickup, the perfect time to leave the office to miss traffic through town and get to school earlier enough to make the two block walk to the classroom as the bell rings.

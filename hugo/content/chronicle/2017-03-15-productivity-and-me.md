@@ -2,6 +2,9 @@
 date: 2017-03-15T08:00:00-08:00
 title: "Three kids, two dogs, a chicken and an understanding spouse"
 description: "Having kids and getting older is not the death knell of all things productivity."
+tags:
+- Personal
+- Family
 ---
 
 >[This piece](https://superyesmore.com/three-kids-two-dogs-a-chicken-and-an-understanding-spouse-1463cf9dd8d3b7da9fdba9ea2943ce7c) originally appeared as part of “The Human In The Machine”, a publication about productivity. Published on <a href="https://twitter.com/superyesmore">@superyesmore</a>, by <a href="https://twitter.com/alexduloz">@alexduloz</a>. Many thanks to Alex for inviting me to be part of such an amazing project.

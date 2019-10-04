@@ -1,13 +1,11 @@
 ---
-categories:
-- firebase
-- polymer
-- snmp
-- python
 date: 2015-04-28T00:00:00Z
 description: Everyone needs realtime uplink traffic stats right?
 title: Tracking uplink network throughput with SNMP to Firebase to Polymer
 url: /chronicle/2015/04/28/snmp-firebase-polymer-wan-traffic-demo/
+tags:
+- Web
+- IoT
 ---
 
 With all the Firebase action this month, I couldn't just sit on the sidelines and write codelabs. I needed to write a little something something, something realtime. Why not network throughput from an uplink? Sure, I could swing that.

@@ -1,10 +1,9 @@
 ---
-categories:
-- nfc
 date: 2016-03-22T00:00:00Z
 description: You know I love Chrome and NFC...why not test the latest greatest?
 title: Testing WebNFC in Chromium
-url: /chronicle/2016/03/22/testing-chromium-webnfc/
+tags:
+- Web
 ---
 
 Some folks ask me if I still work on NFC related things. The short answer, yes.

@@ -2,6 +2,10 @@
 title: "Visual Studio Code extension update for LitElement snippets and new Pack available"
 description: "LitElement and Polymer Snippets gets a bump to v2.0.0 and the initial release of a LitElement Extension pack lands in the marketplace."
 date: 2019-09-26T08:31:54-07:00
+tags:
+- Development
+- Web
+- VSCode
 ---
 
 After some delay, I've gotten around to releasing v2.0.0 of [LitElement, Polymer v2 / v3, and Web Components Snippets for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=justinribeiro.Polymer2Snippets). This includes some significant retooling around the LitElement shortcuts which were painfully lacking. This now includes shortcuts like:

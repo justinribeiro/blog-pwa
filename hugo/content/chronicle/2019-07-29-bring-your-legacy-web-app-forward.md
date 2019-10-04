@@ -2,6 +2,9 @@
 title: "Bringing legacy web apps forward with three great web platform APIs"
 description: "While the popular web frameworks of the day may dominate the online conversation and with the pace of web platform expansion, it can be daunting to parse through a sea of information when you’re just trying to get work done in your legacy web application. We’ve all been there. Let’s talk about three web platform APIs you can start using today to bring your users and development experience a little more happiness."
 date: 2019-07-29T13:25:48-07:00
+tags:
+- Web
+- Business
 ---
 
 There was an audible sigh within the conference room, undeniable in its presence but seemingly out of place within its corporate context. The piercing silence that followed was broken with a single statement from one of the engineers.

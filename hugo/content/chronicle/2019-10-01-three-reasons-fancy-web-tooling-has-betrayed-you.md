@@ -2,6 +2,10 @@
 title: "Three Reasons You Betrayed Your Modern Web Tooling"
 description: "In the modern web development era, tools are held like swords in meeting rooms around the world, poking holes in coffee cups in the name of process. Let's discuss three reasons your tools aren't working for you and what to do to stave of that arrow to your project."
 date: 2019-10-01T09:46:54-07:00
+tags:
+- Development
+- Web
+- Business
 ---
 
 No one wants to believe the DevTools trace. I have many theories as to why, some proven others less so. One prevailing theory I have is that people don’t understand how to read said trace, so I do the only reasonable thing and teach them. Surely that’ll work I always think, knowledge is power.

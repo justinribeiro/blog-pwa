@@ -1,10 +1,11 @@
 ---
-categories:
-- talks
 date: 2016-02-02T00:00:00Z
 description: You know I am all over the place, how about more talks?
 title: More talking all over the place
-url: /chronicle/2016/02/02/upcoming-talks-and-things/
+tags:
+- Web
+- Business
+- IoT
 ---
 
 Nearly a month into the new year, and I feel like I'm on a sprint yet again? If you're wondering where I'm speaking in the next month or so, look no further.

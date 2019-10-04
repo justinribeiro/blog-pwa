@@ -1,10 +1,9 @@
 ---
-categories:
-- talks
 date: 2016-03-08T00:00:00Z
 description: What is in store for Polymer in 2016? Rob Dodson sits down to discuss.
 title: Interviewing Rob Dodson about Polymer roadmap 2016
-url: /chronicle/2016/03/08/rob-dodson-interview/
+tags:
+- Web
 ---
 I did a guest spot on the [Modern Web podcast](http://www.modern-web.org/#/modern-web-podcast) to interview the always awesome [Rob Dodson](https://twitter.com/rob_dodson) on the state of Polymer in 2016.
 

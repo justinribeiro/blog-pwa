@@ -49,7 +49,22 @@ class BlogPwa extends LitElement {
             path: '/chronicle/',
             component: 'blog-chronicle',
             action: () => {
-              import('./blog-chronicle.js');
+              import('./blog-chronicle.js').then(() => {
+                const check = this.shadowRoot.querySelector('blog-chronicle');
+                check.resetView();
+                check.mount();
+              });
+            },
+          },
+          {
+            path: '/tags/',
+            component: 'blog-chronicle',
+            action: () => {
+              import('./blog-chronicle.js').then(() => {
+                const check = this.shadowRoot.querySelector('blog-chronicle');
+                check.resetView();
+                check.mount();
+              });
             },
           },
           {
@@ -58,6 +73,17 @@ class BlogPwa extends LitElement {
             action: () => {
               import('./blog-entry.js').then(() => {
                 const check = this.shadowRoot.querySelector('blog-entry');
+                check.resetView();
+                check.mount();
+              });
+            },
+          },
+          {
+            path: '/tags/(.*)',
+            component: 'blog-chronicle',
+            action: () => {
+              import('./blog-chronicle.js').then(() => {
+                const check = this.shadowRoot.querySelector('blog-chronicle');
                 check.resetView();
                 check.mount();
               });
