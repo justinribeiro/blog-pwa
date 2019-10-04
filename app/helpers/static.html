@@ -544,11 +544,12 @@
   <body>
     <header id="pageHeader">
       <div>
-        <img
-          id="me"
-          src="/images/manifest/me-2018-150.jpg"
-          alt="Justin Ribeiro"
-        />
+          <img
+            id="me"
+            src="/images/manifest/me-2018-150.jpg"
+            alt="Justin Ribeiro"
+          />
+        </a>
       </div>
       <div>
         <h1>Justin Ribeiro</h1>
@@ -576,7 +577,6 @@
                 datetime="{{ dataModified }}"
                 itemprop="datePublished dateModified"
                 content="{{ dateModified }}"
-                class="dt-published"
               >
                 {{ date }}
               </time>
@@ -588,6 +588,11 @@
                 hidden
               >
                 <a class="p-author h-card" href="/" itemprop="url">
+                  <img
+                    src="/images/manifest/me-2018-150.jpg"
+                    class="u-photo"
+                    hidden
+                  />
                   <span itemprop="name">Justin Ribeiro</span>
                 </a>
               </span>
@@ -627,8 +632,12 @@
                 >
               </p>
               <p>
-                Author Justin Ribeiro wrote {{ words }} words for this piece and
-                hopes you enjoyed it. Find an issue?
+                Author Justin Ribeiro wrote {{ words }} words for
+                <a href="{{ permalink }}" class="u-url">this piece</a> on
+                <time class="dt-published" datetime="{{ dateModified }}">{{
+                  dateModified
+                }}</time>
+                and hopes you enjoyed it. Find an issue?
                 <a href="https://github.com/justinribeiro/blog-pwa/issues"
                   >File a ticket</a
                 >
@@ -641,8 +650,7 @@
                 >
               </p>
             </div>
-          </footer>
-        </article>
+          </footer>      </article>
         {% endif %} {% if posts %}
         <section id="posts">
           {% for post in posts %}
@@ -706,6 +714,17 @@
           <a href="https://lit-element.polymer-project.org/">Web Components</a>
           and <a href="https://gohugo.io/">Hugo</a>.
         </p>
+      </div>
+      <div class="h-card" hidden>
+        <a href="https://justinribeiro.com" class="p-name u-url u-uid" rel="me">Justin Ribeiro</a>
+        <a class="u-email" href="mailto:justin@justinribeiro.com">justin@justinribeiro.com</a>
+        <p class="p-note">A blog on web development, business, family, and a touch of photography by Justin Ribeiro.</p>
+        <img
+          id="me"
+          src="/images/manifest/me-2018-150.jpg"
+          alt="Justin Ribeiro"
+          class="u-photo"
+        />
       </div>
     </footer>
     <script type="application/ld+json">

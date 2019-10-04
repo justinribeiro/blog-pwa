@@ -169,7 +169,7 @@ class BlogEntry extends BlogElement {
           <h1 itemprop="headline">${this.metadata.title}</h1>
           <div class="reads">
             <time
-              datetime="${this.metadata.dataModified}"
+              .datetime="${this.metadata.dataModified}"
               itemprop="datePublished"
             >
               ${this.metadata.date}
