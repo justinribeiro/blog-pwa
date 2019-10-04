@@ -105,7 +105,8 @@ export default class BlogElement extends LitElement {
       }
 
       p,
-      li {
+      li,
+      label {
         font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
           'Times New Roman', serif;
         margin: 0;

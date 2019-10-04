@@ -23,6 +23,9 @@ class BlogPwa extends LitElement {
 
     window.addEventListener('online', () => this._notifyNetworkStatus(false));
     window.addEventListener('offline', () => this._notifyNetworkStatus(true));
+    window.addEventListener('display-snackbar', event => {
+      this._setSnackBarText(event.detail.message, 5000);
+    });
   }
 
   _initRouter() {
