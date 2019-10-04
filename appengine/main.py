@@ -59,10 +59,13 @@ class MainHandler(http2.PushHandler):
             'mediapartners-google',
             'mastodon',
             'lynx',
+            'webmention',
         ]
         bot_list_search = '(?:%s)' % '|'.join(bot_list_hunt)
 
-        if re.search(bot_list_search, self.request.headers.get('User-Agent').lower()):
+        # Fun fact: a lot of webmention tools don't set a user agent, which
+        # causes this to die hard, so let's just work around it for now
+        if self.request.headers.get('User-Agent') is None or re.search(bot_list_search, self.request.headers.get('User-Agent').lower()):
             #
             # Are you a bot that doesn't handle JavaScript well? Good news! I
             # have dynamic rendering just for you!
