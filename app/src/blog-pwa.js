@@ -36,7 +36,7 @@ class BlogPwa extends LitElement {
             path: '',
             component: 'blog-static',
             action: () => {
-              import('blog-static.js').then(() => {
+              import('./blog-static.js').then(() => {
                 const check = this.shadowRoot.querySelector('blog-static');
                 check.mount('index');
               });
@@ -46,14 +46,14 @@ class BlogPwa extends LitElement {
             path: '/chronicle/',
             component: 'blog-chronicle',
             action: () => {
-              import('blog-chronicle.js');
+              import('./blog-chronicle.js');
             },
           },
           {
             path: '/chronicle/(.*)',
             component: 'blog-entry',
             action: () => {
-              import('blog-entry.js').then(() => {
+              import('./blog-entry.js').then(() => {
                 const check = this.shadowRoot.querySelector('blog-entry');
                 check.resetView();
                 check.mount();
@@ -64,7 +64,7 @@ class BlogPwa extends LitElement {
             path: '/about',
             component: 'blog-static',
             action: () => {
-              import('blog-static.js').then(() => {
+              import('./blog-static.js').then(() => {
                 const check = this.shadowRoot.querySelector('blog-static');
                 check.mount('about');
               });
@@ -74,7 +74,7 @@ class BlogPwa extends LitElement {
             path: '/talks',
             component: 'blog-static',
             action: () => {
-              import('blog-static.js').then(() => {
+              import('./blog-static.js').then(() => {
                 const check = this.shadowRoot.querySelector('blog-static');
                 check.mount('talks');
               });
@@ -92,7 +92,7 @@ class BlogPwa extends LitElement {
   // PRPL all the things.
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
-      import('lazy-resources.js').then(_ => {
+      import('./lazy-resources.js').then(_ => {
         if ('serviceWorker' in navigator) {
           const wb = new Workbox('/service-worker.js');
 
@@ -149,7 +149,7 @@ class BlogPwa extends LitElement {
   }
 
   async __importAnalytics() {
-    const module = await import('analytics.js');
+    const module = await import('./analytics.js');
     module.initAnalytics();
     module.initPerformance();
   }

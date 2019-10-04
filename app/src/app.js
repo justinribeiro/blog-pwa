@@ -23,10 +23,11 @@ if (
 // shim dynamic import() to workaround Firefox throwing parse error for
 // dynamic import() in FF65
 async function __import(src) {
+  const cleanSrc = src.replace(/^\.\//, '');
   if (window.polyfillDynamicImport) {
-    return importModule(`./src/${src}`);
+    return importModule(`./src/${cleanSrc}`);
   } else {
-    return new Function('return import("./' + src + '")')();
+    return new Function('return import("./' + cleanSrc + '")')();
   }
 }
 
