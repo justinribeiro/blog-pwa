@@ -567,14 +567,16 @@
           itemprop="blogPost"
           itemscope
           itemtype="http://schema.org/BlogPosting"
+          class="h-entry"
         >
           <header>
-            <h1 itemprop="headline">{{ title | safe }}</h1>
+            <h1 itemprop="headline" class="p-name">{{ title | safe }}</h1>
             <div class="reads">
               <time
                 datetime="{{ dataModified }}"
                 itemprop="datePublished dateModified"
                 content="{{ dateModified }}"
+                class="dt-published"
               >
                 {{ date }}
               </time>
@@ -585,13 +587,13 @@
                 itemtype="http://schema.org/Person"
                 hidden
               >
-                <a href="/" itemprop="url">
+                <a class="p-author h-card" href="/" itemprop="url">
                   <span itemprop="name">Justin Ribeiro</span>
                 </a>
               </span>
             </div>
           </header>
-          <div itemprop="articleBody">
+          <div itemprop="articleBody" class="e-content">
             {% endif %}
 
             {{ article | safe }}
