@@ -52,14 +52,24 @@ class MainHandler(http2.PushHandler):
             'slackbot',
             'twitterbot',
             'vkShare',
-            'googlebot',
-            'google-structured-data-testing-tool',
             'bingbot',
             'linkedinbot',
             'mediapartners-google',
             'mastodon',
+
+            # why googlebot? Because the static representation is 1-to-1 and
+            # easier for even new M70+ GoogleBot to parse
+            'googlebot',
+            'google-structured-data-testing-tool',
+
+            # just because it's cool
             'lynx',
+
+            # web mentions handlers
             'webmention',
+            'node-fetch',
+            'guzzle',
+            'bridgy'
         ]
         bot_list_search = '(?:%s)' % '|'.join(bot_list_hunt)
 
