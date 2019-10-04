@@ -259,7 +259,8 @@
       }
 
       p,
-      li {
+      li,
+      label {
         font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
           'Times New Roman', serif;
         margin: 0;
@@ -295,7 +296,8 @@
       }
 
       p,
-      li {
+      li,
+      label {
         margin-top: 10px;
         margin-bottom: 29px;
         font-weight: 400;
@@ -329,6 +331,22 @@
         font-style: oblique;
         font-weight: 400;
         font-size: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5em;
+      }
+      input,
+      button {
+        padding: 0.5em;
+        font-size: 1em;
+      }
+      input {
+        width: 100%;
+        border: 1px solid #b0b0b0;
+        box-sizing: border-box;
+        margin-bottom: 0.5em;
       }
 
       [hidden] {
@@ -631,6 +649,35 @@
                   >Email</a
                 >
               </p>
+              <h3>Respond to this piece</h3>
+              <form
+                id="webMentionForm"
+                action="https://webmention.io/justinribeiro.com/webmention"
+                method="POST"
+                target="_blank"
+              >
+                <input
+                  type="hidden"
+                  name="target"
+                  value="{{ permalink }}"
+                />
+                <label
+                  >Written a response or comment to this post? Fantastic! I
+                  support
+                  <a href="https://indieweb.org/Webmention">WebMentions</a>. Paste
+                  and send your URL here:</label
+                >
+                <input
+                  type="url"
+                  name="source"
+                  placeholder="https://your-amazing-response-url-here/"
+                  id="webMentionSource"
+                />
+                <button type="submit">
+                  🚚 Send Webmention
+                </button>
+              </form>
+              <br />
               <p>
                 Author Justin Ribeiro wrote {{ words }} words for
                 <a href="{{ permalink }}" class="u-url">this piece</a> on

@@ -56,7 +56,7 @@ class BlogEntry extends BlogElement {
     this.share.email = `mailto:?subject=Article: ${this.metadata.title}&body=Article from Justin Ribeiro: ${this.metadata.permalink}`;
   }
 
-  _processMetaData() {
+  async _processMetaData() {
     if (this.metadata.article !== undefined && this.metadata.article !== '') {
       const parseHTML = this._unescapeHtml(this.metadata.article);
 
@@ -77,6 +77,46 @@ class BlogEntry extends BlogElement {
 
       this.failure = false;
       this.loaded = true;
+    }
+  }
+
+  async __submitWebMention(event) {
+    event.preventDefault();
+    let message =
+      'Thank you for sharing! Your Webmention has been received and is currently be processed.';
+    const action = this.shadowRoot.querySelector('#webMentionForm').action;
+    const target = this.metadata.permalink;
+    const source = this.shadowRoot.querySelector('#webMentionSource').value;
+
+    if (source !== '') {
+      // technically, we could get the location header and show them the ticket,
+      // but I'm not 100% sold on that as a user experience
+      const response = await fetch(action, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `target=${target}&source=${source}`,
+      });
+
+      if (!response.ok) {
+        message =
+          "Oh no, your Webmention didn't seem to make it through. Please try again.";
+      }
+
+      this.dispatchEvent(
+        new CustomEvent('display-snackbar', {
+          bubbles: true,
+          composed: true,
+          detail: {
+            message,
+          },
+        }),
+      );
+
+      this.shadowRoot.querySelector('#webMentionSource').value = '';
     }
   }
 
@@ -123,6 +163,22 @@ class BlogEntry extends BlogElement {
 
         #share > a {
           margin-right: 0.5em;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 0.5em;
+        }
+        input,
+        button {
+          padding: 0.5em;
+          font-size: 1em;
+        }
+        input {
+          width: 100%;
+          border: 1px solid #b0b0b0;
+          box-sizing: border-box;
+          margin-bottom: 0.5em;
         }
 
         .hidden {
@@ -188,6 +244,35 @@ class BlogEntry extends BlogElement {
               <a href="${this.share.linkedin}">LinkedIn</a>
               <a href="${this.share.email}">Email</a>
             </p>
+            <h3>Respond to this piece</h3>
+            <form
+              id="webMentionForm"
+              action="https://webmention.io/justinribeiro.com/webmention"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="target"
+                .value="${this.metadata.permalink}"
+              />
+              <label
+                >Written a response or comment to this post? Fantastic! I
+                support
+                <a href="https://indieweb.org/Webmention">WebMentions</a>. Paste
+                and send your URL here:</label
+              >
+              <input
+                type="url"
+                name="source"
+                placeholder="https://your-amazing-response-url-here/"
+                id="webMentionSource"
+              />
+              <button @click="${e => this.__submitWebMention(e)}">
+                🚚 Send Webmention
+              </button>
+            </form>
+            <br />
+            <h3>Metadata</h3>
             <p>
               Author Justin Ribeiro wrote ${this.metadata.words} words for this
               piece and hopes you enjoyed it. Find an issue?
