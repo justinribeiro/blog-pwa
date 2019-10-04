@@ -1,23 +1,36 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:webfeeds="http://webfeeds.org/rss/1.0">
   <channel>
     <title>{{ .Site.Title }}</title>
-    <link>https://justinribeiro.com/</link>
-    <description>Software Engineer. Speaker. Writer. Photographer. Coach. Dad. Husband. Occasionally funny.</description>
-    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
-    <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
-    <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}
-    <webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
-    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
-    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
-    <atom:link href="{{.URL}}" rel="self" type="application/rss+xml" />
-    {{ range first 15 .Data.Pages }}
+    <subtitle>A blog on web development, business, family, and a touch of photography by Justin Ribeiro.</subtitle>
+    <description>Software Engineer working on the Web. Speaker. Writer. Photographer. Coach. Dad. Husband. Occasionally funny.</description>
+    <link href="https://justinribeiro.com/data/chronicle/index.xml" rel="self"/>
+    <link href="https://justinribeiro.com/"/>
+    <language>en-us</language>
+    <id>https://justinribeiro.com/</id>
+    <author>
+      <name>Justin Ribeiro</name>
+      <email>justin@justinribeiro.com</email>
+    </author>
+    <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    <webfeeds:icon>https://justinribeiro.com/images/manifest/me-2018-192.png</webfeeds:icon>
+    <webfeeds:logo>https://justinribeiro.com/images/manifest/logo.svg</webfeeds:logo>
+    <webfeeds:accentColor>0049A3</webfeeds:accentColor>
+    <webfeeds:related layout="card" target="browser"/>
+    <webfeeds:analytics id="UA-96204-3" engine="GoogleAnalytics" />
+    <atom:link href="https://justinribeiro.com/data/chronicle/index.xml" rel="self" type="application/rss+xml" />
+    {{ range first 30 .Data.Pages }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Content | html }}</description>
+      {{$a := .Content }}
+      {{$a := replace $a "code-block " "pre "}}
+      {{$a := replace $a "/code-block" "/pre"}}
+      <description>{{ $a | html }}</description>
     </item>
     {{ end }}
   </channel>
