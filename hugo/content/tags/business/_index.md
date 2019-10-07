@@ -9,8 +9,6 @@ sitemap:
 
 # 👔 Management and Business Articles
 
-<a href="/tags/business/">View articles in /tags/business/</a>
-
 Two business degrees, a lot of talking and numbers and selling, and you have the wonderful world of articles that only the speak to a specific group of people. Covering management, marketing, creativity, and a touch of "you can do that?", follow along for all your business needs.
 
 There is a specific RSS feed available for only items tagged with "Business" available here: <a href="/data/tags/business/index.xml" target="_blank">RSS feed</a>. Follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Ftags%2Fbusiness%2Findex.xml' target='blank'>Feedly</a>

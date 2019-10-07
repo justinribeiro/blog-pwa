@@ -9,8 +9,6 @@ sitemap:
 
 # 👨 Personal Articles
 
-<a href="/tags/personal/">View articles in /tags/personal/</a>
-
 If life were simple. This is the nitty gritty of personal life. The challenges of parenting autistic kids, the trials of dealing with identical twins, the hilarious happenings that make life wonderful.
 
 There is a specific RSS feed available for only items tagged with "Personal" available here: <a href="/data/tags/personal/index.xml" target="_blank">RSS feed</a>. Follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Ftags%2Fpersonal%2Findex.xml' target='blank'>Feedly</a>.
