@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - ubiquity
 - vonage
 date: 2010-05-30T00:00:00Z

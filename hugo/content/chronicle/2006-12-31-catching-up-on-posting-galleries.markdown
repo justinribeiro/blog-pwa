@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2006-12-31T12:57:01Z
 title: Catching up on posting galleries

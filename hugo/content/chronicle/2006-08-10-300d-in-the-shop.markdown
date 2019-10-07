@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2006-08-10T05:44:05Z
 title: 300D in the shop

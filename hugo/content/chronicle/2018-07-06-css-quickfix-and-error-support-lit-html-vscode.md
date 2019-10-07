@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180706-vscode-cs
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180706-vscode-cssquick-gplus-800x360.jpg"
 tags:
 - Web
-- VSCode
 ---
 
 It took a little effort to get it just right, but I've been able add CSS quickfix and error reporting to the [typescript-lit-html-plugin](https://github.com/Microsoft/typescript-lit-html-plugin) language plugin for VS Code. In the video below, we can see css quickfix and error reporting working for the `<style>` block without any fancy user settings (albiet with a flame emoji that didn't make it into the pull request :-). It's also smart enough to understand the difference between the various other pieces of code that might be in your tagged template.

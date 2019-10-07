@@ -1,10 +1,10 @@
 ---
-categories:
-- domains
 date: 2014-08-15T00:00:00Z
 description: Initial thoughts and bugs with Google Domains
 title: 'Google Domains: a better experience'
 url: /chronicle/2014/08/15/google-domains-a-better-domain-experience/
+tags:
+- Web
 ---
 
 When you build web applications, at some point you'll find yourself dealing with domain names. Maybe you're not the person handling the day to day DNS, maybe you're not even the person buying the domain. But at some point, you've probably found yourself in a horrible panel filled with ads and more ads with confusing navigation promising you a brand new kitten if you just click this totally unrelated button.

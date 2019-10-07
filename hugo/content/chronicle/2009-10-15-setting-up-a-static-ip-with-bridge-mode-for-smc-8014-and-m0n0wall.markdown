@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - m0n0wall
 - Comcast
 - SMC8014

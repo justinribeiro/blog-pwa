@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - reporting
 - demodayfinder
 - PGA

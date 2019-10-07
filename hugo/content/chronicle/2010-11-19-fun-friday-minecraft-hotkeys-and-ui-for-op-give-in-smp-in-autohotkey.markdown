@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - script
 - autohotkey
 - minecraft

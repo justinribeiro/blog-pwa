@@ -3,7 +3,11 @@
 {
   "title": "{{ .Title }}",
   "description": "{{ .Description }}",
+  {{ if $content }}
   "article": "{{ $content }}",
+  {{ else }}
+  "article": "&lt;h1&gt;📰 Tag: {{ .Title }} &lt;/h1&gt;",
+  {{ end }}
   "date": "{{ .Date.Format "Mon Jan 2, 2006" }}",
   "datePublished": "{{ .Date.Format $.Site.Params.ISO8601 }}",
   "dateModified" : "{{ .Date.Format $.Site.Params.ISO8601 }}",

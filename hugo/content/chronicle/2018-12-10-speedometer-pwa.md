@@ -4,7 +4,6 @@ title: "Building a tiny speedometer progressive web app"
 description: "With my Prius dashboard on the fritz, I turn not to an app store, but rather the GeoLocation API, AmbientLightSensor API, and to create tiny no-frills PWA."
 tags:
 - Web
-- PWA
 ---
 
 ## Making DNS work for us

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - update
 date: 2010-05-13T00:00:00Z
 description: Where have I been?  I don't even know, so how can I tell you?

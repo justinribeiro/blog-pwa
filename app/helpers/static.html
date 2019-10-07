@@ -399,7 +399,7 @@
         This gets used a couple of places (iron-list, simple related dom-repeat)
       */
       .post-container {
-        height: 125px;
+        min-height: 125px;
         width: calc(50% - 1rem);
       }
 
@@ -485,6 +485,16 @@
         content: '·';
       }
 
+      #tags a {
+        display: inline-flex;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        padding: 0.25em 0.5em;
+        margin-top: 0.25em;
+        background: #f2f0f0;
+        line-height: auto;
+      }
+
       @media (max-width: 767px) {
         #main,
         #skeleton {
@@ -494,7 +504,8 @@
         }
 
         p,
-        li {
+        li,
+        label {
           font-size: 18px;
           line-height: 1.58;
           letter-spacing: -0.004em;
@@ -614,6 +625,12 @@
                   <span itemprop="name">Justin Ribeiro</span>
                 </a>
               </span>
+              <span class="dotDivider"></span>
+              Filed in
+              {% set tags = tags.split(',') %}
+              {% for tag in tags %}
+              <a href="/tags/{{ tag | lower }}/">{{ tag }}</a>
+              {% endfor %}
             </div>
           </header>
           <div itemprop="articleBody" class="e-content">

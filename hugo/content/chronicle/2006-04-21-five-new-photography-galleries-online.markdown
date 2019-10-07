@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2006-04-21T07:32:20Z
 title: Five new photography galleries online

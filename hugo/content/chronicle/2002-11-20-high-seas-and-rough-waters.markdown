@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2002-11-20T04:39:55Z
 title: High seas and rough waters

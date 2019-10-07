@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2005-07-21T09:07:51Z
 
@@ -9,7 +9,7 @@ wordpress_id: 454
 wordpress_url: http://www.j5studios.com/chronicle/index.php/124
 ---
 
-We have decided to sell our 1962 Ford F100 pickup truck.  I'll be placing it on Ebay in the next couple of days (I will update this post with said auction link), but if anyone wants to look at the truck before hand, I've placed the images in the <a href="photography/index.php/2005_07_21__1962_Ford_F100">Photography</a> section. 
+We have decided to sell our 1962 Ford F100 pickup truck.  I'll be placing it on Ebay in the next couple of days (I will update this post with said auction link), but if anyone wants to look at the truck before hand, I've placed the images in the <a href="photography/index.php/2005_07_21__1962_Ford_F100">Photography</a> section.
 
 
 The truck was used as a farm truck for a long time, but my Dad haven't used in the last couple years.  It's painted in primer gray and has some rust.  It's a step-side body style, with original decals.  It has a 223 cubic inch straight-6 pushing 137 horsepower, a 3-speed transmission on the column ("three on the tree"), a Holly carburetor and a very nice interior.  It has a crack in the windshield, and toolbox in the pickup bed.  The truck has not been licensed for some time (non-operational).

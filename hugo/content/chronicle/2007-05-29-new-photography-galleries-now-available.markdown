@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - photography
 date: 2007-05-29T21:14:09Z
 description: Get'em while they're hot!
@@ -9,9 +9,9 @@ url: /chronicle/2007/05/29/new-photography-galleries-now-available/
 
 I was asked the other day as to why I haven't been actively updating my Photography gallery section as often I have in the past.  There a few reasons for this:
 
-* A lot less time 
-* A lot of my shooting is done on film these days 
-* A lot less time to scan the film 
+* A lot less time
+* A lot of my shooting is done on film these days
+* A lot less time to scan the film
 
 Having less time is mostly due to work concerns, as I've been actively starting a funded start-up in Palo Alto the last few months.  It's more of a stealth project and I can't say much about it, but it's taken a lot of my time and energy.
 

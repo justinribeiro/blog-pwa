@@ -7,8 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180626-vscode-li
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180626-vscode-lighthouse-gplus-800x360.jpg"
 tags:
 - Web
-- VSCode
-- Lighthouse
 ---
 
 As fairly heavy user of

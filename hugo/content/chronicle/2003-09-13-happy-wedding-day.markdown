@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-09-13T07:35:23Z
 title: Happy Wedding Day!

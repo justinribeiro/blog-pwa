@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Make
 - Maker Faire
 date: 2012-07-18T00:00:00Z

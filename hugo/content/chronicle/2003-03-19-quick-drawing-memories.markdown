@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-03-19T10:38:25Z
 title: Quick Drawing Memories
@@ -14,6 +14,6 @@ Needless to say, the 1953 movie is beyond classic.  Alan Ladd should have reciev
 
 Seeing Shane (Ladd) showing Joey how to shoot, and the gun blazing out and the thundering booms of each shot as the white rock dances around the ground just leaves me in awe every time.  The sound really thunders, and to that point you hadn't actually heard a gun shot in the movie.  It just nails the point.
 
-While I don't know many people who've seen it these days (I'm only 22 and most people my age aren't into these older classics I guess) it's a great film, with wonderful acting, and lives up to the book with ease.  Client Eastwood 1985 movie Pale Rider is a tribute in those lines to the same story line, a fine movie itself.  
+While I don't know many people who've seen it these days (I'm only 22 and most people my age aren't into these older classics I guess) it's a great film, with wonderful acting, and lives up to the book with ease.  Client Eastwood 1985 movie Pale Rider is a tribute in those lines to the same story line, a fine movie itself.
 
 It just brings back the many times I read Shane as a kid.  Good times.

@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2004-05-26T08:04:26Z
 

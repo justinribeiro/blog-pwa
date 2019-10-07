@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-fb-
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-gplus-800x360.jpg"
 tags:
 - Web
-- PWA
 ---
 
 The holidays can lead to many things: too many cookies, lacking motivation to read email, a reminder that instructions that come with toys are a user experience nightmare, and that you're pretty sure the build server is on fire since you left the office.

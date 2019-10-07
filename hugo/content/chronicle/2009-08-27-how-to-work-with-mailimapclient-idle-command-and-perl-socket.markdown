@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - perl
 - Snarl
 - Scripting
@@ -40,14 +40,14 @@ my $client = Mail::IMAPClient-&gt;new(
 # Do something just to see that it's all ok
 if ($client-&gt;IsAuthenticated()) {
    print "Logged in.\n";
-   
+
    # open inbox folder
    $client-&gt;select("INBOX");
 
   my $idle = $client-&gt;idle or warn "Couldn't idle: $@\n";
   print "IMAP now idle....waiting for email\n";
 
-  while($bytes_read = $socket-&gt;sysread($buf, 4096)) 
+  while($bytes_read = $socket-&gt;sysread($buf, 4096))
   {
     print "Read $bytes_read bytes from the socket...\n";
     print "Data: \n" . $buf . "\n";
@@ -55,9 +55,9 @@ if ($client-&gt;IsAuthenticated()) {
     $client-&gt;done($idle) or warn "Error from done: $@\n";
     $client-&gt;idle or warn "Couldn't idle: $@\n";
   }
-  
+
   $client-&gt;done($idle) or warn "Error from done: $@\n";
-  
+
   # Say bye
   $client-&gt;logout();
  }
@@ -96,14 +96,14 @@ my $client = Mail::IMAPClient-&gt;new(
 if ($client-&gt;IsAuthenticated()) {
    my $winAuth = Win32::Snarl::ShowMessage('Gmail Authenticated', 'You are now logged into Gmail.', 5);
    print "Logged in.\n";
-   
+
    # open inbox folder
    $client-&gt;select("INBOX");
-   
+
   my $idle = $client-&gt;idle or warn "Couldn't idle: $@\n";
   print "IMAP now idle....waiting for email\n";
 
-  while($bytes_read = $socket-&gt;sysread($buf, 4096)) 
+  while($bytes_read = $socket-&gt;sysread($buf, 4096))
   {
     print "Read $bytes_read bytes from the socket...\n";
     print "Data: \n" . $buf . "\n";
@@ -112,9 +112,9 @@ if ($client-&gt;IsAuthenticated()) {
     $client-&gt;done($idle) or warn "Error from done: $@\n";
     $client-&gt;idle or warn "Couldn't idle: $@\n";
   }
-  
+
   $client-&gt;done($idle) or warn "Error from done: $@\n";
-  
+
   # Say bye
   $client-&gt;logout();
  }

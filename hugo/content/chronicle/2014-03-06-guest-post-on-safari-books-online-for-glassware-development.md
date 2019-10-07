@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - google-glass
 - writer
 date: 2014-03-06T00:00:00Z

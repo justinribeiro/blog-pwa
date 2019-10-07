@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190422-teardown-
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190422-teardown-copal-0.jpg"
 tags:
 - Photography
-- Repair
 ---
 
 I've never been one to shy away from trying to fix something I don't fully understand. There's a joy of slowing down and reading exploded views or listening to someone explain the inner workings of a fine working thing.

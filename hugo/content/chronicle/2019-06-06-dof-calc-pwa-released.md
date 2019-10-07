@@ -4,7 +4,6 @@ description: "Just because I shoot film doesn't mean I can't come up with anothe
 date: 2019-06-06T18:13:21-07:00
 tags:
 - Web
-- PWA
 ---
 
 My overall addiction to writing tiny progressive web apps only continues to grow. Since that addiction is growing I decided to mix it with another addiction of mine, film photography.

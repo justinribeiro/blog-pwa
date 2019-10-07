@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2005-01-21T08:20:15Z
 
@@ -16,10 +16,10 @@ Included on this single disk DVD are:
 
 
 
-  * Three audio commentaries, including a wonderful "drunk" track in homage to the Firefly DVD (although we were not drunk, and weren't trying to act drunk, it just sort of sounds that way) 
-* Actor and Crew biographies 
-* An inside the set look of the making of film 
-* A hidden menu, if you can find it 
+  * Three audio commentaries, including a wonderful "drunk" track in homage to the Firefly DVD (although we were not drunk, and weren't trying to act drunk, it just sort of sounds that way)
+* Actor and Crew biographies
+* An inside the set look of the making of film
+* A hidden menu, if you can find it
 
 
 Everything was done in house, from the artwork to the music.  The film runs a little over six minutes long, and has about 30 minutes of extra's.  I am quite pleased with the total product.

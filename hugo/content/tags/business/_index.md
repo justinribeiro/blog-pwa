@@ -1,5 +1,5 @@
 ---
-date: 2016-12-29T15:00:00-08:00
+date: 2019-10-07T00:00:00-08:00
 title: "Management and Business Articles"
 description: "Just when you thought there wasn't another MBA on the internet writing about stuff, enter an old MBA, one Justin Ribeiro."
 sitemap:

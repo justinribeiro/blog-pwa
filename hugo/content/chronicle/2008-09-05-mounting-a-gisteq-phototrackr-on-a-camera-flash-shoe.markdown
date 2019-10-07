@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - photography
 - hacking
 - gps

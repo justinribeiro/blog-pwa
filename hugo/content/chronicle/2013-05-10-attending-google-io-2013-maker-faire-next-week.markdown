@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Maker Faire
 - Google I/O
 date: 2013-05-10T00:00:00Z

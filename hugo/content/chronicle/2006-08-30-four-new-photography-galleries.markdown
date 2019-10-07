@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2006-08-30T11:14:53Z
 title: Four new photography galleries

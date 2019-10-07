@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180525-devtools-
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180525-devtools-theme-gplus-800x360.jpg"
 tags:
 - Web
-- DevTools
 ---
 
 _Just looking for the theme? Get it from the [Chrome Web Store](https://chrome.google.com/webstore/detail/devtools-theme-atom-dark/iocojmginfolhoaalkgabkmilfepnejc?hl=en-US) or grab the source from [Github](https://github.com/justinribeiro/chrome-devtools-theme-atom-dark-green-cursor)._

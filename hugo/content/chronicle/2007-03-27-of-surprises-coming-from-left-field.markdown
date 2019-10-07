@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - surprises
 date: 2007-03-27T21:17:56Z
 description: I don't like surprises...except when they are surprising.

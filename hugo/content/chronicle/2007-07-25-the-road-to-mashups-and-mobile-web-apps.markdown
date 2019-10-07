@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - iPhone
 - Web Apps
 - browsers

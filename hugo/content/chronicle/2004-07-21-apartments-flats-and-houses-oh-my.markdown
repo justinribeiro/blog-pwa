@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2004-07-21T10:09:40Z
 
@@ -19,8 +19,8 @@ Even at the advanced age of 24, I learned several things that I probably at one 
 
 
 
-* Never make a left going east onto a street which is one way going west 
-* Mom will always find better, cheaper places to live then I ever will :-)  
+* Never make a left going east onto a street which is one way going west
+* Mom will always find better, cheaper places to live then I ever will :-)
 
 
 Thanks Mom!

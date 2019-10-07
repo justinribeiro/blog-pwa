@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - photography
 - polaroid
 date: 2007-06-19T00:00:00Z

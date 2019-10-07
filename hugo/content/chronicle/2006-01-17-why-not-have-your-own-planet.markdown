@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2006-01-17T06:27:04Z
 title: Why not have your own planet?

@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 - house
 date: 2008-04-22T09:24:59Z

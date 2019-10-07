@@ -1,5 +1,5 @@
 ---
-date: 2016-12-29T15:00:00-08:00
+date: 2019-10-07T00:00:00-08:00
 title: "Photography Articles and Prints"
 description: "From film and darkroom to modern digital, explore photography with photographs and thoughts from Justin Ribeiro."
 sitemap:

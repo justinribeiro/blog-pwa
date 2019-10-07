@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Epic Fail
 date: 2007-05-02T21:15:18Z
 description: How could you possibly ditch kittens?

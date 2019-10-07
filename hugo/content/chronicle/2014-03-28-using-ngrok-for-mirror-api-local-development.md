@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - ngrok
 - mirror-api
 - google-glass

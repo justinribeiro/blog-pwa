@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - personal
 - update
 - self

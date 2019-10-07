@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-04-18T00:11:57Z
 title: Read and write and someday get it right
@@ -10,9 +10,9 @@ Well, I love the spring time.  But I'm in Seattle, were spring isn't really like
 
 I've been working a lot of hours across several projects, hence the lack of updates, new photography and lack of general commentary on my part.  This very sad lack of time has left several things I like to do in mid-air:
 
-* I've got a storyboard and script to finish for not one, but count them two film projects, and have been lacking time to do either of them 
-* I haven't gone a photography type weekend in a while 
-* Don't even start with me about lack of pitch time 
+* I've got a storyboard and script to finish for not one, but count them two film projects, and have been lacking time to do either of them
+* I haven't gone a photography type weekend in a while
+* Don't even start with me about lack of pitch time
 
 Needless to say, I wish I was doing these things.
 

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - development
 - software
 - Web Apps
@@ -37,10 +37,10 @@ Needless to say, lets look at an example. You can't take this and run wild; you 
 
 &lt;!--- Only one session should login at a time. ---&gt;
 &lt;CFLOCK timeout=&quot;10&quot; scope=&quot;Application&quot; throwOnTimeout=&quot;no&quot; type=&quot;exclusive&quot;&gt;
-  
+
   &lt;!--- The SFDC login session should remain active for 30 minutes ---&gt;
   &lt;CFIF NOT IsDefined(&quot;Application.sfdc&quot;) OR Application.sfdc EQ &quot;&quot; OR NOT IsDefined(&quot;Application.lastLogin&quot;) OR (IsDefined(&quot;Application.lastLogin&quot;) AND Abs(DateDiff(&quot;n&quot;, Application.lastLogin, Now())) GT 30)&gt;
-    
+
     &lt;!--- Create web service objects ---&gt;
     &lt;CFSET Application.sfdc = createObject(&quot;webservice&quot;,&quot;https://someurl.to.partner.wsdl/&quot;) /&gt;
     &lt;CFSET Application.sfdcyourservice = createObject(&quot;webservice&quot;,&quot;https://someurl.to.yourservice.wsdl&quot;) /&gt;
@@ -48,7 +48,7 @@ Needless to say, lets look at an example. You can't take this and run wild; you 
 
     &lt;!--- Create the SOAP Header that will contain the Session ID ---&gt;
     &lt;CFSET authHeader = createObject(&quot;java&quot;,&quot;org.apache.axis.message.SOAPHeaderElement&quot;).init(&quot;YourServicesService&quot;, &quot;SessionHeader&quot;) /&gt;
-    
+
     &lt;CFSET Application.sfdcyourservice.setHeader(authHeader) /&gt;
 
     &lt;!--- Add (and populate) a text node called sessionId: ---&gt;
@@ -62,15 +62,15 @@ Needless to say, lets look at an example. You can't take this and run wild; you 
 &lt;CFTRY&gt;
   &lt;!--- Only one session at a time should call this method ---&gt;
   &lt;CFLOCK timeout=&quot;10&quot; scope=&quot;Application&quot; throwOnTimeout=&quot;no&quot; type=&quot;readOnly&quot;&gt;
-    
+
     &lt;CFSET sfdcResponse = Application.sfdcyourservice.createSomething(mySentStruct) /&gt;
   &lt;/CFLOCK&gt;
-  
+
   &lt;cfoutput&gt;My SF Response: #sfdcResponse#&lt;/cfoutput&gt;
 
   &lt;!--- Catch any errors ---&gt;
   &lt;CFCATCH type=&quot;ANY&quot;&gt;
-    
+
     &lt;!--- Reset the sfdc session ---&gt;
     &lt;CFSET Application.sfdc = &quot;&quot; /&gt;
     &lt;CFIF NOT IsDefined(&quot;Application.isError&quot;) OR Application.isError NEQ &quot;true&quot;&gt;

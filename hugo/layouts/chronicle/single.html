@@ -11,6 +11,7 @@
   "words": "{{ .FuzzyWordCount }}",
   "readingtime": "{{ .ReadingTime }}",
   "permalink": "{{ .Permalink }}",
+  "tags": "{{ delimit .Params.tags "," }}",
   "filename": "{{ .File.Path }}",
   "imagetwitter": "{{ $.Params.imagetwitter }}",
   "imagefb": "{{ $.Params.imagefb }}",

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - yardsale
 - tips
 date: 2010-06-23T00:00:00Z
@@ -35,39 +35,39 @@ The last day of a given sale is usually lets-make-a-deal day regardless of type.
 ## Let's make a deal tips
 So you've lined out what sales to hit.  Let's talk strategy.
 
-* Know your stuff.  Single most important thing you can do and oddly, some people don't plan or research ahead. Every time we go out to these things, we see people overpaying in a bidding war and people who think something is valuable because of age.  Know what you're looking for, know what the going rate is, understand the market otherwise you'll end up burned. 
+* Know your stuff.  Single most important thing you can do and oddly, some people don't plan or research ahead. Every time we go out to these things, we see people overpaying in a bidding war and people who think something is valuable because of age.  Know what you're looking for, know what the going rate is, understand the market otherwise you'll end up burned.
 
-* Every price is a starting point.  When we started out, I remember getting yelled at for asking for to buy a broken light meter for $3 (down from $10). The pro running the sale thought I would cave to the hostility for the smashed item which I wanted for parts.  She was incorrect.  Every price is a starting point, no matter how cheap.  Connected to the above point, know your shit, and don't overpay.  Not working with you?  Walk.  There are other fish in the sea. 
+* Every price is a starting point.  When we started out, I remember getting yelled at for asking for to buy a broken light meter for $3 (down from $10). The pro running the sale thought I would cave to the hostility for the smashed item which I wanted for parts.  She was incorrect.  Every price is a starting point, no matter how cheap.  Connected to the above point, know your shit, and don't overpay.  Not working with you?  Walk.  There are other fish in the sea.
 
-* Don't be a super low ball offer person.  It's annoying for sellers.  This isn't haggling or dealing, it's a bush league move.  If you're looking at a piece of antique furniture that's priced at $400, don't offer $10 (seen it happen folks, no joke).  You'll turn the seller off (you're sort of insulting their intelligence) and then they won't deal with you at all. 
+* Don't be a super low ball offer person.  It's annoying for sellers.  This isn't haggling or dealing, it's a bush league move.  If you're looking at a piece of antique furniture that's priced at $400, don't offer $10 (seen it happen folks, no joke).  You'll turn the seller off (you're sort of insulting their intelligence) and then they won't deal with you at all.
 
-* Work the chaos to your favor.  Often times at the larger sales which are professional run, there are too many items to price, and they don't do it in advance.  This is your chance to score deals on smaller items.  Case in point, we found a stack of 1960's Disney records.  The guy working the area wanted $3 a pop firm (way too much...we never pay more than a $1.00 a record unless it's something really special).  We picked them up and wandered for a while, then went to checkout.  The person running the checkout didn't know the price the guy had set, an offered us 40 records for $40 bucks.  Done deal, and we didn't even have to haggle. 
+* Work the chaos to your favor.  Often times at the larger sales which are professional run, there are too many items to price, and they don't do it in advance.  This is your chance to score deals on smaller items.  Case in point, we found a stack of 1960's Disney records.  The guy working the area wanted $3 a pop firm (way too much...we never pay more than a $1.00 a record unless it's something really special).  We picked them up and wandered for a while, then went to checkout.  The person running the checkout didn't know the price the guy had set, an offered us 40 records for $40 bucks.  Done deal, and we didn't even have to haggle.
 
-* Be nice.  You will meet people who are not nice, either buyers or sellers.  We've been shoved, yelled at, pushed...don't let it get to you.  Keep a cool head, especially at the family estate sales.  It can be very hard for some sellers (estate sales are generally when someone died), and we despise the people who don't respect that fact.  In the end, you'll get better deals if you're nice. 
+* Be nice.  You will meet people who are not nice, either buyers or sellers.  We've been shoved, yelled at, pushed...don't let it get to you.  Keep a cool head, especially at the family estate sales.  It can be very hard for some sellers (estate sales are generally when someone died), and we despise the people who don't respect that fact.  In the end, you'll get better deals if you're nice.
 
-* Some sellers are very attached to things.  They will price them to extreme's and will not haggle.  Doesn't matter if the piece of vintage americana isn't worth $500...some people can't let go. 
+* Some sellers are very attached to things.  They will price them to extreme's and will not haggle.  Doesn't matter if the piece of vintage americana isn't worth $500...some people can't let go.
 
 ## Seller tips
 Oh that's right, I'm giving you sellers some tips, namely because some of you people need it.
 
-* Don't follow me around.  At one of the worst professional sales ever, we were inundated with sellers trying to get us to literally buy everything.  There were five people just following us around on what was the last day of this particular sale.  They pushed hard to get us to buy everything from linens to furniture.  Do not do this.  We finally got fed up, put down the two items we had and said, see ya.  Don't bug your customers. 
+* Don't follow me around.  At one of the worst professional sales ever, we were inundated with sellers trying to get us to literally buy everything.  There were five people just following us around on what was the last day of this particular sale.  They pushed hard to get us to buy everything from linens to furniture.  Do not do this.  We finally got fed up, put down the two items we had and said, see ya.  Don't bug your customers.
 
-* Be nice.  Why are sellers sometimes such jerks?  Could be because the aforementioned cling factor, or it could be because they're just a pain in the ass to be around.  Pro sellers, this goes out for you too.  We understand you get some very unreasonable requests from folks...but that's no reason to take it out on us common folk. 
+* Be nice.  Why are sellers sometimes such jerks?  Could be because the aforementioned cling factor, or it could be because they're just a pain in the ass to be around.  Pro sellers, this goes out for you too.  We understand you get some very unreasonable requests from folks...but that's no reason to take it out on us common folk.
 
-* Price your stuff.  Spend $4 bucks on stickers that don't leave a mark.  Don't make me ask every three seconds what something is priced. 
+* Price your stuff.  Spend $4 bucks on stickers that don't leave a mark.  Don't make me ask every three seconds what something is priced.
 
-* Have a sell price in mind and then mark it up 20%.  Really.  This works best often on high ticket items.  Someone who really wants it will either pay straight (yippe!) or someone will want to haggle.  They'll offer, you can counter with the sell price you had in mind.  Usually works out or you get close to the mark, the person walks away with a "deal", you end up getting the price you wanted. 
+* Have a sell price in mind and then mark it up 20%.  Really.  This works best often on high ticket items.  Someone who really wants it will either pay straight (yippe!) or someone will want to haggle.  They'll offer, you can counter with the sell price you had in mind.  Usually works out or you get close to the mark, the person walks away with a "deal", you end up getting the price you wanted.
 
 ## Rules, oh the rules
 We have very simple rules when it comes to getting ready to rock a weekend and what we're buying.  We stick to them, and it just keeps us generally happier because decisions are easier.
 
-* Clear the car.  Everything in the car but the required seating goes. 
-* If it don't fit in the Prius, we don't buy it.  Unless it's some really super special (which has only happened once in three years). 
-* Wear running shoes.  No sandals. 
-* Water, GPS, paper, pen, camera. 
-* If it's broke, it must be fixed within a week otherwise it's resold. 
-* For every item we buy, two items must leave the house one way or the other. 
-* Don't get attached to things. They're things, not love. 
+* Clear the car.  Everything in the car but the required seating goes.
+* If it don't fit in the Prius, we don't buy it.  Unless it's some really super special (which has only happened once in three years).
+* Wear running shoes.  No sandals.
+* Water, GPS, paper, pen, camera.
+* If it's broke, it must be fixed within a week otherwise it's resold.
+* For every item we buy, two items must leave the house one way or the other.
+* Don't get attached to things. They're things, not love.
 
 ## Random games
 One of the most random games we play is the theme game.  Some people will take offense, but the reality is every one had a hobby, and at the estate sales we try to guess what that hobby was.  Sometimes it's rather obvious (dolls) other times not so much (why is there a pile of socks stacked to the ceiling?).

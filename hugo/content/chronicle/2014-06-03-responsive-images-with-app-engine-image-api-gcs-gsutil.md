@@ -1,11 +1,10 @@
 ---
-categories:
-- resp-img
-- app-engine
 date: 2014-06-03T00:00:00Z
 description: Picture tag on the horizen and responsive images the Google Cloud Storage way with Python. Sample code included.
 title: Serving Responsive Images via Google Cloud Storage and Images Python API
 url: /chronicle/2014/06/03/responsive-images-with-app-engine-image-api-gcs-gsutil/
+tags:
+- Web
 ---
 
 Ah responsive images. Love'em, but hate the flame war.

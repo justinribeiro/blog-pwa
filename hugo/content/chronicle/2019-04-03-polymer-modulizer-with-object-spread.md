@@ -4,7 +4,6 @@ title: "Working around polymer modulizer errors with object rest spread properti
 description: "Turns out converting from Polymer 2 to Polymer 3 or lit-element when you use object rest spread properties is harder than it should be. How to work around the problem."
 tags:
 - Web
-- Polymer
 ---
 
 With Firefox 67 landing in mid-May with dynamic import() support, now is as good of time as any to start thinking about moving those PRPL'ed Polymer 2 components into Polymer 3 (and eventually, lit-element).

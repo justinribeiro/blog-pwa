@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - siteupdate
 date: 2002-11-09T06:40:32Z
 title: "Yikes!  What happened around here?"

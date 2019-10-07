@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2006-09-27T09:57:02Z
 title: Classic cameras abound

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - wordpress
 - sftp
 - jail
@@ -62,7 +62,7 @@ Match Group sftponly
 server {
   server_name my.awesome.domain.something;
   access_log logs/my.awesome.domain.something.access.log main;
- 
+
   root home/$USER/my.awesome.domain.something;
 }
 {{< /codeblock >}}

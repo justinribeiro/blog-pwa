@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190215-ergotron-
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190215-ergotron-lx-custom-bracket-twins-room.jpg"
 tags:
 - IoT
-- Project
 - Personal
 ---
 

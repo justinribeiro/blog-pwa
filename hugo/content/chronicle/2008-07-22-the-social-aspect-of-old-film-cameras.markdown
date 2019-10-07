@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - photography
 - film cameras
 - social

@@ -2,6 +2,8 @@
 title: "App Engine task queue and ngrok, with a splash of commenting out ModuleDoesNotExistError exception"
 description: ""
 date: 2014-03-27T16:00:00-07:00
+tags:
+- Web
 ---
 
 Ever try to use a task queue for App Engine but you find yourself using ngrok for local routing from say a Mirror API subscription ping and it's giving you a ModuleDoesNotExistError because the push queue expects a relative path?

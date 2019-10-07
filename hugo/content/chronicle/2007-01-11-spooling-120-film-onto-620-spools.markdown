@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - film cameras
 - film
 date: 2007-01-11T21:21:36Z

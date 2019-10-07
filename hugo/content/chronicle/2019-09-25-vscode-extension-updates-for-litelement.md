@@ -3,7 +3,6 @@ title: "Visual Studio Code extension update for LitElement snippets and new Pack
 description: "LitElement and Polymer Snippets gets a bump to v2.0.0 and the initial release of a LitElement Extension pack lands in the marketplace."
 date: 2019-09-26T08:31:54-07:00
 tags:
-- Development
 - Web
 - VSCode
 ---

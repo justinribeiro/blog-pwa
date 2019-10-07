@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - demodayfinder
 - Web Apps
 date: 2007-09-12T20:58:01Z

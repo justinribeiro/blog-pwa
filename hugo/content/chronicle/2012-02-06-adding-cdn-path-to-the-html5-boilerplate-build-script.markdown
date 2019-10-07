@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - webdev
 date: 2012-02-06T00:00:00Z
 description: "A simply update that will add CDN paths to your H5BP build."
@@ -57,7 +57,7 @@ In addition to the existing rewrites, I've added two additional replaceregexp ca
 Seriously, that's it.  Once you run a new build, your newfangled CDN path will be in your files. As I stated earlier, it's not too hard once you walk through it.
 
 ## Notes and tidbits
-This is a pretty basic example, and there are things to note. 
+This is a pretty basic example, and there are things to note.
 
 One, if you're working on a project by project basis where the CDN root changes, you probably want to make the cdn.root var in the project.properties file. You still should add a cdn.root to your default.properties file (it could be empty for instance) so if you don't use the path, it won't bust the build.
 

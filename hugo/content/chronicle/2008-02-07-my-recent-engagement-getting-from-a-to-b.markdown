@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - personal
 - engagement
 date: 2008-02-07T00:00:00Z

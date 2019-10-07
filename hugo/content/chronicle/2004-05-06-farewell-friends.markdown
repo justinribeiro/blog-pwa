@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2004-05-06T09:47:27Z
 
@@ -25,12 +25,12 @@ Why did I watch Friends?  Why did lots of people my age watch and love the show?
 
 
 
-I think a lot of people who bad mouth the show just took it way too seriously; it was a sitcom.  If you don't like it, great, just don't try to convince me that me watching the last 10 years was some sort of horrible wrong that should be righted.  I'm not trying to convice you to like it am I?   
+I think a lot of people who bad mouth the show just took it way too seriously; it was a sitcom.  If you don't like it, great, just don't try to convince me that me watching the last 10 years was some sort of horrible wrong that should be righted.  I'm not trying to convice you to like it am I?
 
 
 
 
-As for the finale, I must say that the show started a little slow for me.  I wasn't sure how they were going to wrap it up.  The theme ws clever though; twins baby coming into the world, new baby chick and duck, new jobs and lives.  Out with the old in with the new.  Change.  But with change the one thing never did change; they all remained friends.  So simple, yet so hard to do in real life. It was well written from the beginning, but the ending was written to pure perfection.  The laughs generated at the end, I mean was I supposed to be crying or laughing?  I was doing both, and it was great. They invoked a lot of emotion, and stayed true to the show by keeping you in that off balance state.  
+As for the finale, I must say that the show started a little slow for me.  I wasn't sure how they were going to wrap it up.  The theme ws clever though; twins baby coming into the world, new baby chick and duck, new jobs and lives.  Out with the old in with the new.  Change.  But with change the one thing never did change; they all remained friends.  So simple, yet so hard to do in real life. It was well written from the beginning, but the ending was written to pure perfection.  The laughs generated at the end, I mean was I supposed to be crying or laughing?  I was doing both, and it was great. They invoked a lot of emotion, and stayed true to the show by keeping you in that off balance state.
 
 
 

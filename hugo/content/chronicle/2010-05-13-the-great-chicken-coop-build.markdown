@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - build
 - chickens
 - coop

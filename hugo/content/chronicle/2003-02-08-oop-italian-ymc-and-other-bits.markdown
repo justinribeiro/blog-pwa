@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-02-08T11:15:47Z
 title: OOP, Italian, YMC, and other bits

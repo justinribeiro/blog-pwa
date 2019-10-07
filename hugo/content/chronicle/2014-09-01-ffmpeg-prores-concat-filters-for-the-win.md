@@ -1,12 +1,10 @@
 ---
-categories:
-- ffmpeg
-- prores
-- concat
 date: 2014-09-01T00:00:00Z
 description: Sometimes you need to do some very custom stuff with video. ffmpeg, ProRest and concat oh my!
 title: ffmpeg, ProRes and concat filters for the win
 url: /chronicle/2014/09/01/ffmpeg-prores-concat-filters-for-the-win/
+tags:
+- Dev
 ---
 
 So you have the need to process a whole lot of video masters, but they all need to be converted to ProRes HQ. Sure, you could open said video file and queue it up in the video editing suite of your choice, or you could go command line style with a whole load of wonderful compute instances on your favorite cloud provider. I like that latter option.

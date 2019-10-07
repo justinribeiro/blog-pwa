@@ -1,5 +1,5 @@
 ---
-date: 2016-12-29T15:00:00-08:00
+date: 2019-10-07T00:00:00-08:00
 title: "Personal Articles"
 description: "Discussing matters such as parenting, the trials and tribulations of autism, and a range of other hilarious personal topics."
 sitemap:

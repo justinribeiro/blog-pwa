@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - CrunchBang
 - Linux
 - Eee PC 901
@@ -104,16 +104,16 @@ Once you are running the latest greatest, you could skip everything I'm about to
 
 What do I do?  I start by stripping the chrome.  Oddly, I generally do this to all my Firefox installs, mostly because I am not a heavy browser button guy. Keyboard shortcuts and mouse gestures. But back to the stripping of the chrome, all of which can be accomplished without a single line of code hacking (right click on a tool bar and choose Customize to start moving things around):
 
-* Remove all buttons from the navigation bar. 
-* Move the address bar and the the search bar to the top menu bar. 
-* Hide the navigation and bookmarks bars. 
-* Hide the status bar. 
+* Remove all buttons from the navigation bar.
+* Move the address bar and the the search bar to the top menu bar.
+* Hide the navigation and bookmarks bars.
+* Hide the status bar.
 
 Once the chrome is down to basically only the bare minimum, I install three primary add-ons:
 
-* <a href="https://addons.mozilla.org/en-US/firefox/addon/1455">Tiny Menu</a>: Combines all the top menu items into flyout submenus of a single entity called menu.  A must have. 
-* <a href="https://addons.mozilla.org/en-US/firefox/addon/1865">Adblock Plus</a>: Netbooks screens are small, and most ads are big. You do the math. 
-* <a href="https://addons.mozilla.org/en-US/firefox/addon/1368">Colorful Tabs</a>: I found the tabs hard to separate from one another, so I added color. 
+* <a href="https://addons.mozilla.org/en-US/firefox/addon/1455">Tiny Menu</a>: Combines all the top menu items into flyout submenus of a single entity called menu.  A must have.
+* <a href="https://addons.mozilla.org/en-US/firefox/addon/1865">Adblock Plus</a>: Netbooks screens are small, and most ads are big. You do the math.
+* <a href="https://addons.mozilla.org/en-US/firefox/addon/1368">Colorful Tabs</a>: I found the tabs hard to separate from one another, so I added color.
 
 With these three add-ons, I gain quite a bit of real estate.  If you're like me and always have a few permanent windows open, I highly recommend the Gina Trapani's <a href="http://smarterware.org/2962/twig-tip-icon-only-perma-tabs-for-gmail-and-google-reader">Icon-Only Perma-Tabs for Gmail and Google Reader collection</a> (which I have running in the screenshot above).
 

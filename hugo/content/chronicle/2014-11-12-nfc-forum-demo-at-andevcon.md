@@ -1,12 +1,10 @@
 ---
-categories:
-- android
-- nfc
-- chrome
 date: 2014-11-12T00:00:00Z
 description: Demo time for some NFC awesomeness.
 title: NFC Forum demo at AnDevCon
 url: /chronicle/2014/11/12/nfc-forum-demo-at-andevcon/
+tags:
+- IoT
 ---
 
 Going to be at AnDevCon? Come see me at the NFC Forum booth we're I'll be demoing Android host-based card emulation and Chrome-NFC App integration. There is a small write up and mention available on the [TapIntoNFC](http://tapintonfc.org/2014/11/android-developers-meet-us-at-andevcon/) site.

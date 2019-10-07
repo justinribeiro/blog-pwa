@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-gplus-800x360.jpg"
 tags:
 - Web
-- WC
 ---
 
 I find myself working with STL files on a fairly regular basis. It's a fairly

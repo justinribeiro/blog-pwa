@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - hacking
 - build
 - business

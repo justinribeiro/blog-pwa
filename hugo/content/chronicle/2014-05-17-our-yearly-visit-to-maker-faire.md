@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - maker-faire
 date: 2014-05-17T00:00:00Z
 title: Our yearly visit to Maker Faire Bay Area

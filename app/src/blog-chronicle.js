@@ -14,6 +14,8 @@ class BlogChronicle extends BlogElement {
       permalink: '',
       description: '',
       filename: '',
+      tags: '',
+      view: '',
     };
 
     const dom = this.shadowRoot.querySelector('#metadataArticle');

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Pidgin
 - theme
 - xml

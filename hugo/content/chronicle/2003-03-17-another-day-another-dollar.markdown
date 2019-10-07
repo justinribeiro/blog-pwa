@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-03-17T03:35:50Z
 title: Another day, another dollar

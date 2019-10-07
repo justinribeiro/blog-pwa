@@ -4,7 +4,6 @@ title: "Running Web Components Remote Conference"
 description: "If you didn't like web components, this conference probably changed your mind."
 tags:
 - Web
-- Event
 ---
 
 For the seventh time in as many times, I find myself staring at [Leon Revill](https://blog.revillweb.com/) though yet another video screen.

@@ -4,7 +4,6 @@ description: As the world of mobile progressive web apps grows, are we leaving t
 title: Thoughts on progressive web apps on the desktop
 tags:
 - Web
-- PWA
 ---
 
 "Who here has built an offline web app?"

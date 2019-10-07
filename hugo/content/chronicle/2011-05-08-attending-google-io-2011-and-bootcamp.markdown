@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Android
 - GoogleIO
 - Chrome

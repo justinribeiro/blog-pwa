@@ -3,7 +3,6 @@ title: "blog-pwa Moves to GAE Python 3.7 Runtime and Other Updates"
 description: "With Python 2.7 soon walking into the sunset, it was time to move my trusty blog-pwa app to the new App Engine runtime and fix a few issues along the way."
 date: 2019-09-19T16:11:06-07:00
 tags:
-- Development
 - Web
 ---
 

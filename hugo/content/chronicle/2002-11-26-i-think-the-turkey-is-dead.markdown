@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2002-11-26T07:28:07Z
 title: "I think the turkey is dead..."

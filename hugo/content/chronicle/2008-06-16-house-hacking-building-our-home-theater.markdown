@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - house
 - hacking
 - home theater
@@ -39,12 +39,12 @@ With the entertainment center coming together, after careful research we decided
 
 
 
-	* Mitsubishi Diamond Series 65" DLP WD65833 (<a title="GO TO: Mitsubishi TV" href="http://www.mitsubishi-tv.com/j/i/18326/TelevisionDetails/WD65833.html?cid=5469">link</a>) 
-	* Marantz SR5002 A/V Receiver (<a title="GO TO: Marantz" href="http://us.marantz.com/Products/2207.asp">link</a>) 
-	* (2) SpeakerCraft AIM8 Three (<a title="GO TO: SpeakerCraft" href="http://www.speakercraft.com/#Products:16:AIM8%20Three">link</a>) 
-	* (2) SpeakCraft AIM Wide Three (<a title="GO TO: SpeakerCraft" href="http://www.speakercraft.com/#Products:409:AIM%20Wide%20Three">link</a>) 
-	* (1) SpeakerCraft AIM LCR Three (<a title="GO TO: SpeakerCraft" href="http://www.speakercraft.com/#Products:409:AIM%20Wide%20Three">link</a>) 
-	* (1) Velodyne DLS-4000R Subwoofer (<a title="GO TO: Velodyne" href="http://www.velodyne.com/products/product.aspx?ID=12&amp;sid=252v155g">link</a>) 
+	* Mitsubishi Diamond Series 65" DLP WD65833 (<a title="GO TO: Mitsubishi TV" href="http://www.mitsubishi-tv.com/j/i/18326/TelevisionDetails/WD65833.html?cid=5469">link</a>)
+	* Marantz SR5002 A/V Receiver (<a title="GO TO: Marantz" href="http://us.marantz.com/Products/2207.asp">link</a>)
+	* (2) SpeakerCraft AIM8 Three (<a title="GO TO: SpeakerCraft" href="http://www.speakercraft.com/#Products:16:AIM8%20Three">link</a>)
+	* (2) SpeakCraft AIM Wide Three (<a title="GO TO: SpeakerCraft" href="http://www.speakercraft.com/#Products:409:AIM%20Wide%20Three">link</a>)
+	* (1) SpeakerCraft AIM LCR Three (<a title="GO TO: SpeakerCraft" href="http://www.speakercraft.com/#Products:409:AIM%20Wide%20Three">link</a>)
+	* (1) Velodyne DLS-4000R Subwoofer (<a title="GO TO: Velodyne" href="http://www.velodyne.com/products/product.aspx?ID=12&amp;sid=252v155g">link</a>)
 
 
 <img src="/images/blog/2008/06/install_ceiling.jpg" alt="Putting the finishing touches on a speaker install" title="Putting the finishing touches on a speaker install" width="233" height="350" class="imgleft size-full wp-image-21" />

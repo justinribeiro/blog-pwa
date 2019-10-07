@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2006-03-24T01:14:32Z
 title: A word about presentation pitches

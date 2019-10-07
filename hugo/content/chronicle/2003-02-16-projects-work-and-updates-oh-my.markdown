@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-02-16T10:49:16Z
 title: Projects, Work and Updates oh my!

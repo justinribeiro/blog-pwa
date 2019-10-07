@@ -6,7 +6,6 @@ imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-go
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi.jpg"
 tags:
-- Coffee
 - Personal
 ---
 

@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-08-26T06:21:24Z
 title: Busy busy busy

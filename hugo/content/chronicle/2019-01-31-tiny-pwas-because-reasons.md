@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190131-car-dashb
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190131-car-dashboard-pwa.jpg"
 tags:
 - Web
-- PWA
 ---
 
 I did not set out to build tiny progressive web apps. Well, that’s not true; I set out to build PWAs that solve particular problems in my life, which ended up being tiny. Then it just became fun.

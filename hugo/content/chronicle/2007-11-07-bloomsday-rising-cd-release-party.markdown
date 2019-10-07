@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - music
 date: 2007-11-07T20:48:17Z
 description: My buddy Fernando and his band Bloomsday Rising are releasing their debut
@@ -20,5 +20,5 @@ My buddy Fernando and his band <a href="http://profile.myspace.com/index.cfm?fus
 Tickets are just $5 in advance and $7 at the door.  The party begins at 8pm with drink specials.
 
 
-I've liked their music for a while (I've seen them play quite a few times) and I still listen to the CD Fernando gave me in grad school.  If you haven't hear of them, I hope to see you at the Rock It Room on November 17th! 
+I've liked their music for a while (I've seen them play quite a few times) and I still listen to the CD Fernando gave me in grad school.  If you haven't hear of them, I hope to see you at the Rock It Room on November 17th!
 

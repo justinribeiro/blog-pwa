@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - travel
 date: 2007-06-05T00:00:00Z
 title: Turn up the heat, Las Vegas is near
@@ -33,5 +33,5 @@ The aquarium at Mandalay Bay was pretty amazing.  The amount of sharks they have
 The Excalibur was an interesting if underwhelming hotel.  The room was wonderful, brand new with a great view.  The casino left something to be desired, and the food in the hotel itself is nothing to write home about.
 
 
-Overall, not a bad trip.  You can see some of the very interesting pictures as always in the <a href="/photography/">Photography section</a>. 
+Overall, not a bad trip.  You can see some of the very interesting pictures as always in the <a href="/photography/">Photography section</a>.
 

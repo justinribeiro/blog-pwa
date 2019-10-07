@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Uncategorized
 date: 2004-07-23T00:00:00Z
 status: publish

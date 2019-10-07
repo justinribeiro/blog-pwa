@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - creativity
 - art
 - music

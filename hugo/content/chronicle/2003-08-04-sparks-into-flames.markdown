@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-08-04T05:29:22Z
 title: Sparks into flames
@@ -12,9 +12,9 @@ But it comes and goes.
 
 What's going on lately?  Well lets do a recap of the events that have been going on:
 
-* Grad school aplications abound, as I track down transcipts, write essays and find kind people to write letters of recommendation. 
-* Auditions:  the silver screen keeps calling my name, and I keep answering. 
-* Consulting is running hot these days, I've added two additional companies in the last week. 
-* Evan W. sent me an email, informing me on his efforts to get USB CameraSync working on FreeBSD 5.1.  The script works, but the mount procedure is different (of which you're probably fimilar if you've looked at 5.1...different devfs)  He's working hard, and I think it's way cool!  Gotta love the hacker spirt.  Got some insight?  Let me know, and I'll pass it on to him! 
+* Grad school aplications abound, as I track down transcipts, write essays and find kind people to write letters of recommendation.
+* Auditions:  the silver screen keeps calling my name, and I keep answering.
+* Consulting is running hot these days, I've added two additional companies in the last week.
+* Evan W. sent me an email, informing me on his efforts to get USB CameraSync working on FreeBSD 5.1.  The script works, but the mount procedure is different (of which you're probably fimilar if you've looked at 5.1...different devfs)  He's working hard, and I think it's way cool!  Gotta love the hacker spirt.  Got some insight?  Let me know, and I'll pass it on to him!
 
 Otherwise, back to the grind, to pay the 'ol bills.

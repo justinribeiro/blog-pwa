@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - personal
 - update
 date: 2002-10-30T06:52:59Z

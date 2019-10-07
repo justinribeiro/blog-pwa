@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - shameless
 date: 2010-10-01T00:00:00Z
 description: Donate and help Alli learn.
@@ -7,7 +7,7 @@ title: A special message from me
 url: /chronicle/2010/10/01/a-special-message-from-me/
 ---
 
-It's a jogathon people.  You know your school is having one soon.  And I'm trying to help Alli collect $2, yes that's right, just $2 from you.  Send it via PayPal to justin@justinribeiro.com that way you don't get my cold.  She's collecting donations accepting money until October 4th.  
+It's a jogathon people.  You know your school is having one soon.  And I'm trying to help Alli collect $2, yes that's right, just $2 from you.  Send it via PayPal to justin@justinribeiro.com that way you don't get my cold.  She's collecting donations accepting money until October 4th.
 
 You know you want to.  The children will treat you as a conquering hero for helping them learn.  Look, there's even a really easy button to press.  And a promotional video.
 

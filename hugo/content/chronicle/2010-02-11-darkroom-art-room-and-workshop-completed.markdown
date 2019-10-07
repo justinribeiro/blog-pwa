@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - house
 - build
 - creativity
@@ -46,23 +46,23 @@ Getting light tight can be difficult to do in any darkroom, and we didn't want t
 <img src="/images/blog/2010/02/new-darkroom-07.jpg" alt="Blackout cloth covering the window, seam detail.">
 
 ## The finer details
-There are a massive amount of details to this build out that I'm not going to cover in this first article.  I can tell you that all in I spent about $600 on lumber, nails and screws to build the benches and cabinets (of which some it went to <a href="http://justinribeiro.com/chronicle/2010/02/05/building-an-indoor-tree-house-part-1-the-structure/">Alli's tree house</a>).  
+There are a massive amount of details to this build out that I'm not going to cover in this first article.  I can tell you that all in I spent about $600 on lumber, nails and screws to build the benches and cabinets (of which some it went to <a href="http://justinribeiro.com/chronicle/2010/02/05/building-an-indoor-tree-house-part-1-the-structure/">Alli's tree house</a>).
 
 Indeed, there is no sink or running water even though we're using it as a darkroom (gasp!).  This might seem shocking to some, but given we've had two past darkrooms with no running water, we've never had a problem with washing or cleaning up.  While getting water into the room would not be a problem, the drain required was a problem (and we simply couldn't justify the cost to have it completed).
 
 ## Many thanks
 While Monica and I designed the room and I built a significant portion, that doesn't mean we didn't have help. At the risk of forgetting people, many thanks to:
 
-* My wife Monica, whom was patient, helped put the benches and cabinets into place, was my rock and ever vigilant in making sure I didn't kill myself 
-* My four year old daughter Alli, who learned to chew and spit sunflower seeds and helped build the work benches 
-* Our parents, Dave, Darlene, Manuel, and Arcelia, whom let us borrow trucks and tools on many occasions 
-* My Dad for giving me tips and tricks when I was stuck (you could have your own show Dad) 
-* My sister-in-law Lety for swinging a hammer in the wall building cause 
-* My brother Jim and sister Katie, whom helped lift the wall into place 
-* My buddy James Smith, for helping me haul and move lumber and drywall 
-* My buddy James Duvall, who helped me build and lift some of the cabinets into place 
-* My grandfathers Les and Ray, my uncles Lance and Rich for their expert advice 
-* Everyone else I forgot, of which I know there are many 
+* My wife Monica, whom was patient, helped put the benches and cabinets into place, was my rock and ever vigilant in making sure I didn't kill myself
+* My four year old daughter Alli, who learned to chew and spit sunflower seeds and helped build the work benches
+* Our parents, Dave, Darlene, Manuel, and Arcelia, whom let us borrow trucks and tools on many occasions
+* My Dad for giving me tips and tricks when I was stuck (you could have your own show Dad)
+* My sister-in-law Lety for swinging a hammer in the wall building cause
+* My brother Jim and sister Katie, whom helped lift the wall into place
+* My buddy James Smith, for helping me haul and move lumber and drywall
+* My buddy James Duvall, who helped me build and lift some of the cabinets into place
+* My grandfathers Les and Ray, my uncles Lance and Rich for their expert advice
+* Everyone else I forgot, of which I know there are many
 
 ## Next time...
 I'll get into the nitty gritty details of just how this build was completed, and the tricks I used to save money and time.  Until next time, keep those creative ideas flowing!

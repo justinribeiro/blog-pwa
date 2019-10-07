@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - sql
 - wordpress
 date: 2014-03-04T00:00:00Z

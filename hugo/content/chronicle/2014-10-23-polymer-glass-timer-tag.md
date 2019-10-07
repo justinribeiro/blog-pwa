@@ -1,11 +1,11 @@
 ---
-categories:
-- polymer
-- google-glass
 date: 2014-10-23T00:00:00Z
 description: "Developing a connected Google Glass web tag has never been easier with Polymer."
 title: glass-timer implementation in polymer
 url: /chronicle/2014/10/23/polymer-glass-timer-tag/
+tags:
+- Web
+- IoT
 ---
 
 In preperation for my talks at DevFest, I decided to change my implementation of my onscreen timer. Originally, I had it built directly into the slides and I had a fairly pieced together solution. I wanted to simplify it as much as I could and re-use as needed.
@@ -71,7 +71,7 @@ Templates are nice. It's even nicer when I don't have to wire them with 27 libra
       overflow: hidden;
       position: absolute;
     }
-    
+
     #glass-status {
       position: relative;
       vertical-align: top;
@@ -180,11 +180,11 @@ Polymer('glass-timer', {
 
     var secs = rawMs % 60;
     rawMs = (rawMs - secs) / 60;
-    
+
     var mins = rawMs % 60;
 
     return mins + 'm ' + secs + 's ' + ms + 'ms ';
-  } 
+  }
 });
 {{< /codeblock >}}
 
@@ -236,7 +236,7 @@ Everything else is simply the callbacks we need to listen for to handle the conn
 Once the tag is up and running, it's only a matter of importing and using it as needed:
 
 {{< codeblock lang="html" >}}
-&lt;glass-timer title=&quot;Justin&#039;s Glass Timer&quot; host=&quot;MY_HOST&quot; port=&quot;9001&quot; 
+&lt;glass-timer title=&quot;Justin&#039;s Glass Timer&quot; host=&quot;MY_HOST&quot; port=&quot;9001&quot;
   topic=&quot;justin/device/glass&quot; debug=&quot;true&quot;&gt;&lt;/glass-timer&gt;
 {{< /codeblock >}}
 

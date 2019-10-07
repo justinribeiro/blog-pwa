@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-05-12T11:16:12Z
 title: A writer's delight

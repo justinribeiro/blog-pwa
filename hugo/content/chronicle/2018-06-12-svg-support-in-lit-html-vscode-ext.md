@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180608-pr-vscode
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180608-pr-vscode-lithtml-gplus-800x360.jpg"
 tags:
 - Web
-- VSCode
 ---
 
 I found myself wanting to do some of the cooler

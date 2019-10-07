@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - fail
 date: 2009-07-29T00:00:00Z
 description: "How a Targus DEFCON CL laptop lock failed the basic task of unlocking, and why you shouldn't buy it."
@@ -21,8 +21,8 @@ I wasn't totally convinced; I had only had this lock a total of three days and i
 
 Targus confirmed for me on the phone that this is a known issue with the lock, that it will indeed set to a random combination.  Reasons it could have happened included that the tumblers were randomly spun too much, or that it just sometimes happens after heavy use.  Their solutions document, emailed to me by the customer service representative, is labeled "Extremely Confidential".  Solutions include:
 
-* Manual Decoding of the lock: start at 0000 and work your way down. 
-* Sawing off the DEFCON CL: using a vise and a hacksaw, remove said lock. 
+* Manual Decoding of the lock: start at 0000 and work your way down.
+* Sawing off the DEFCON CL: using a vise and a hacksaw, remove said lock.
 
 You probably don't believe such an absurd claim.  That's why I've uploaded the document: <a href="http://www.arcane.org/wp-content/uploads/2007/02/DEFCON_Removal_Instructions.pdf">DEFCON CL Removal Instructions</a>.  But it's "Extremely Confidential" isn't it?  Sorry, but taking a hacksaw to a lock isn't rocket science.
 

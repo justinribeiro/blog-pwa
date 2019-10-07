@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - EclipseCon
 - speaking
 date: 2012-12-08T00:00:00Z

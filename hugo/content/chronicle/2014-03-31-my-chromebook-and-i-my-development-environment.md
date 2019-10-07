@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - chrome-os
 - chromebook
 - development

@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190416-code-bloc
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190416-code-block-custom.jpg"
 tags:
 - Web
-- WC
 ---
 
 Over the last couple of months I've gotten a few emails asking how exactly I make my code samples on this blog work. In the past that would have been a harder question to answer (my original web component for this was less than ideal) but with my recent spring updates, I thought it would be nice to break out that very feature.

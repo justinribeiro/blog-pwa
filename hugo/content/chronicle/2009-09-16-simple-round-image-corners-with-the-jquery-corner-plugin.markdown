@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - jQuery
 - webdev
 date: 2009-09-16T00:00:00Z
@@ -33,7 +33,7 @@ Wouldn't it be nice if you could apply that to an image?  Unfortunately, it's no
 $("#testmeA").corner();
 {{< /codeblock >}}
 
-The result?  The very cool image to the left, with nice rounded corners with not a photo editing program in sight.  If you want to verify that I'm not pulling a fast one, my sample image is <a href="http://justinribeiro.com/projects/jquery/sample.jpg">here</a>. For you photography folks, that's a 135/2.8 Vivitar in an m42 mount with Automatic (A) and Manuel (M) lever that allows use with the Pentax Spotmatic F's bright field focusing feature (oddly, I don't have a Spotmatic F to use it with).  
+The result?  The very cool image to the left, with nice rounded corners with not a photo editing program in sight.  If you want to verify that I'm not pulling a fast one, my sample image is <a href="http://justinribeiro.com/projects/jquery/sample.jpg">here</a>. For you photography folks, that's a 135/2.8 Vivitar in an m42 mount with Automatic (A) and Manuel (M) lever that allows use with the Pentax Spotmatic F's bright field focusing feature (oddly, I don't have a Spotmatic F to use it with).
 
 But Justin you say, this must be obvious to anyone that has used this plug-in.  You may well be correct, but it wasn't obvious to me until I found a need for said rounded corner image and I can't find anyone who is using it for this sort of case.  But it works so well I just can't help but love it.
 

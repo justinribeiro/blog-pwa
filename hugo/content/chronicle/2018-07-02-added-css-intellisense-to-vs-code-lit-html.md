@@ -7,7 +7,6 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180702-vscode-cs
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180702-vscode-css-gplus-800x360.jpg"
 tags:
 - Web
-- VSCode
 ---
 
 After a little bit of digging and some debugging, I was able to complete the addition of CSS intellisense into the [typescript-lit-html-plugin](https://github.com/Microsoft/typescript-lit-html-plugin) language plugin for VS Code. In the video below, we can see css intellisene working for the `<style>` block without any fancy user settings. It just works, and gives a nice clean developer experience that one would expect when authoring lit-html or Polymer/lit-element based web components.

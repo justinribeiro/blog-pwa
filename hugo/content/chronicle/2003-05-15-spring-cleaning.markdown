@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-05-15T08:24:13Z
 title: Spring Cleaning
