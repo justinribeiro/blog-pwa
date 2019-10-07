@@ -45,6 +45,7 @@ export default class BlogElement extends LitElement {
       description: '',
       filename: '',
       view: '',
+      tags: '',
     };
 
     this.share = {
@@ -194,10 +195,14 @@ export default class BlogElement extends LitElement {
         in my web components. Why isn't named container? No idea. LOL.
       */
       #main,
-      #skeleton,
-      #posts {
+      #skeleton {
         margin: auto;
         padding: 0 20px;
+        max-width: 800px;
+      }
+
+      #posts {
+        margin: auto;
         max-width: 800px;
       }
 
@@ -209,7 +214,7 @@ export default class BlogElement extends LitElement {
         This gets used a couple of places (iron-list, simple related dom-repeat)
       */
       .post-container {
-        height: 125px;
+        min-height: 125px;
         width: calc(50% - 1rem);
       }
 
@@ -257,17 +262,27 @@ export default class BlogElement extends LitElement {
         color: var(--accent-color-primary);
       }
 
+      #tags a {
+        display: inline-flex;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        padding: 0.25em 0.5em;
+        margin-top: 0.25em;
+        background: #f2f0f0;
+        line-height: auto;
+      }
+
       @media (max-width: 767px) {
         #main,
         #skeleton,
         #posts {
           margin: auto;
-          padding: 0 20px;
           max-width: 800px;
         }
 
         p,
-        li {
+        li,
+        label {
           font-size: 18px;
           line-height: 1.58;
           letter-spacing: -0.004em;

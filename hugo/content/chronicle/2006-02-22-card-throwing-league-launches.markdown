@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2006-02-22T07:41:13Z
 title: Card Throwing League launches!

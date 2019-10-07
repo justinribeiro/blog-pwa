@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-01-27T06:51:41Z
 title: The emulation of characters

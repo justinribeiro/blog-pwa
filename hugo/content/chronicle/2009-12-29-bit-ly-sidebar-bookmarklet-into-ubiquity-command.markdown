@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - ubiquity
 - script
 date: 2009-12-29T12:57:43Z

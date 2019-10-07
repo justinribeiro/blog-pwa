@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-10-06T10:26:39Z
 title: Absent from action

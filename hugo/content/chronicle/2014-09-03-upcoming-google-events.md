@@ -1,10 +1,10 @@
 ---
-categories:
-- gdg
 date: 2014-09-03T00:00:00Z
 description: A busy time ahead this fall with lots of talks and events to attend.
 title: Upcoming Google Developer events and talks
 url: /chronicle/2014/09/03/upcoming-google-events/
+tags:
+- Business
 ---
 
 Moving into fall, I'll be preparing to make the rounds to a few of Google's developer events:

@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2005-06-09T00:25:19Z
 
@@ -28,11 +28,11 @@ remove the built in ROM applications or use the ROM (I'm a long time user of <a 
 
 <b>Lets talk applications.</b>  While I love using, hacking and releasing open source software, I don't mind buying software
 that is worth the price.  Why reinvent the wheel?  For email, I purchased
-<a href="http://snappermail.com/wireless/email/">SnapperMail Enterprise Edition</a>. Worth every penny.  
+<a href="http://snappermail.com/wireless/email/">SnapperMail Enterprise Edition</a>. Worth every penny.
 For a launcher, I went with <a href="http://www.zztechs.com/">ZLauncher</a>.  The software works well.  For very clean, polished and
 free themes for ZLauncher check <a href="http://www.darrinsden.com/skins.htm">Darrin's Den</a>.  The Blazer web browser works okay in a pinch
 but probably is the most unstable application I've ever continued using.  I dislike it so much, I'm actively considered attempting to port <a href="http://www.mozilla.org/projects/minimo/">Minimo Mozilla</a> to Palm,
-which as I understand it would be a miracle to make work.   
+which as I understand it would be a miracle to make work.
 
 
 

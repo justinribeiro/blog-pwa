@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - perl
 - Snarl
 - releases

@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2005-08-04T08:46:08Z
 
@@ -24,5 +24,5 @@ Luckily the camera is fairly simple to use.  I tested everything out (shutter, a
 I haven't had time yet to run film through it (hopefully I'll be out and about with it next week), but am looking forward to it.  The feel of this camera compared to my 300D is just night and day.  The build quality is just magnificent.  I've never shot a film camera like this so I'm really looking forward to it!
 
 
-I've posted some images of the camera in the <a href="/photography/">photography</a> section. 
+I've posted some images of the camera in the <a href="/photography/">photography</a> section.
 

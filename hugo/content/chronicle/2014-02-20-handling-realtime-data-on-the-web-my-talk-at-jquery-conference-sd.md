@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - real-time
 - Glass
 - jQuery

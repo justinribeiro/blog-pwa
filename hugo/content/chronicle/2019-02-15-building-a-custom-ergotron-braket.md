@@ -5,6 +5,9 @@ description: "If you are not going to sell me the part, I will just make my own.
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190215-ergotron-lx-custom-bracket-twins-room.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190215-ergotron-lx-custom-bracket-twins-room.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190215-ergotron-lx-custom-bracket-twins-room.jpg"
+tags:
+- IoT
+- Personal
 ---
 
 I really like Ergotron LX monitor arms. I use them at the office for that perfect eye level on any monitor I'm having to work on. Having used them for over a decade it seems, you become reliant on that configuration and the savings it brings in the form of a stained neck when you're working a shift at the 'ol code mill.

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - development
 - software
 - perl
@@ -20,10 +20,10 @@ The code is very raw and could use a improvement.  It is very much a proof of co
 
 With that said, the script actually works fine in my limited testing.  I don't have a long term test record of it, but that will come with time. Before running the script you'll need a few things installed.
 
-* <a href="http://www.fullphat.net/">Snarl for Windows</a> 
-* Win32::Snarl 
-* IO::Socket::SSL 
-* Mail::IMAPClient 
+* <a href="http://www.fullphat.net/">Snarl for Windows</a>
+* Win32::Snarl
+* IO::Socket::SSL
+* Mail::IMAPClient
 
 You'll also need to set the IMAP server address (the IMAP server must support IDLE) as well as your username and password.  The path to the icon also needs to be set in the script.  It does output debug information on the command line, so if something goes wrong, check your terminal window.  I've had success running the script in Cygwin, but running the script within ActiveState's  ActivePerl should also be fine.
 
@@ -34,20 +34,20 @@ With that, I give you idlemailcheck v0.0.1, released under the GPL v2.  You can 
 #######################################
 #
 #  idlemailcheck - IMAP IDLE mail check with Snarl notification
-# 
+#
 #  Copyright (C) Justin Ribeiro <justin@justinribeiro.com>
-#  Project Page - http://www.justinribeiro.com/  
-#     
+#  Project Page - http://www.justinribeiro.com/
+#
 #   This program is free software; you can redistribute it and/or
 #   modify it under the terms of the GNU General Public License
 #   as published by the Free Software Foundation; either version 2 of
 #   the License or (at your option) any later version.
-#   
+#
 #   This program is distributed in the hope that it will be
 #   useful, but WITHOUT ANY WARRANTY; without even the implied warranty
 #   of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #   GNU General Public License for more details.
-#   
+#
 #   You should have received a copy of the GNU General Public License
 #   along with this program; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
@@ -56,11 +56,11 @@ With that, I give you idlemailcheck v0.0.1, released under the GPL v2.  You can 
 #   08/28/2009
 # JDR - Initial Concept Release 0.0.1
 #
-#  The script logs into an IMAP server of your  choice (which must support 
-#  the IDLE command), sits at IDLE until the mail server has a new email, and 
+#  The script logs into an IMAP server of your  choice (which must support
+#  the IDLE command), sits at IDLE until the mail server has a new email, and
 #  then returns a Snarl notification when new mail arrives.
 #
-#  This connect portion of the script is based on the Gmail connect script at Perl Monks 
+#  This connect portion of the script is based on the Gmail connect script at Perl Monks
 #  that was written by polettix and refined by markov: http://www.perlmonks.org/?node_id=649742
 #
 #  Requirements
@@ -74,13 +74,13 @@ With that, I give you idlemailcheck v0.0.1, released under the GPL v2.  You can 
 #
 #  Tested with:
 #
-#  * Gmail 
+#  * Gmail
 #  * Google Apps for Domain
 #
 #  Feel free to make changes and additions;  I'm open to suggestions, fixes, and just
 #  plain better ways to do things.
-#  
-#  Released under the GPL License.  Use at your own risk. 
+#
+#  Released under the GPL License.  Use at your own risk.
 #
 #######################################
 
@@ -133,72 +133,72 @@ my $my_ID;
 my $msg_count;
 
 # Do something just to see that it's all ok
-if ($client->IsAuthenticated()) 
+if ($client->IsAuthenticated())
 {
    my $winAuth = Win32::Snarl::ShowMessage('Gmail Authenticated', 'You are now logged into Gmail.', $SNARL_disptime, $use_icon);
    print "Log in successful.\n";
-   
+
    # open inbox folder
    $client->select("INBOX");
-  
-  # idle the connection 
+
+  # idle the connection
   my $idle = $client->idle or warn "Couldn't idle: $@\n";
   print "IMAP now idle....waiting for email\n";
-  
+
   # we sit an wait for the service to return some data
-  while($bytes_read = $socket->sysread($buf, 4096)) 
+  while($bytes_read = $socket->sysread($buf, 4096))
   {
     # looks like we have something
     print "Read $bytes_read bytes from the socket...\n";
-    
+
     # what's in the buffer
     print "Data: \n" . $buf . "\n";
-    
+
     # grab one line at a time from the buffer
     while ( $buf =~ s/^(.*?\R)//o )
         {
           # get the current buffer line
             my $current_line = $1;
-        
+
         # looking for a valid respone
-            if ( $current_line !~ s/\s*\{(\d+)\}\R$//o ) 
-            { 
+            if ( $current_line !~ s/\s*\{(\d+)\}\R$//o )
+            {
               # we only want "* XXX EXISTS" commands from the IMAP server, where XXX is the message sequence number
             # $last != 1 is to make sure this isn't the last EXISTS command after an EXPUNGE; not a new message senario
               if ( $current_line =~ s/EXISTS//g && $last != 1)
               {
-                
+
                 # we have to end the IDLE before we can get message information, otherwise the IMAP server will get angry
                 $client->done($idle) or warn "Error from done: $@\n";
-                
+
                 #check the unseen_count; this is a precaution, because for some reason Gmail at times responds with a new message notifcation, but's it's really not.
-                $msg_count = $client->unseen_count||0;        
-                
+                $msg_count = $client->unseen_count||0;
+
                 if ($msg_count > 0)
                 {
-                
+
                   # grab the message sequence number from the string
                   $current_line =~ s/\D//g;
                   $my_ID = $current_line;
                   print "MID = " . $my_ID . "\n";
-            
-            # Email Data: Sender's address 
+
+            # Email Data: Sender's address
               my $from = $client->get_header($my_ID, "From");
               $from =~ s/<[^>]*>//g; #strip the email, only display the sender's name
-              
+
               # Email Data: Subject
             my $subject = $client->get_header($my_ID, "Subject");
-              
+
               # Send event to Snarl
               my $winNM = Win32::Snarl::ShowMessage($from, $subject, $SNARL_disptime, $use_icon);
-            
+
             # make sure we keep the seen flag unset so the message stays unread
                 $client->unset_flag("Seen",$my_ID) or die "$0: Could not unset_flag: $@\n"; #
-                
+
                 # restart the IDLE
                 $idle = $client->idle or warn "Couldn't idle: $@\n";
             print "IMAP now idle....waiting for email\n";
-          
+
                 next;
                 }
                 else
@@ -216,10 +216,10 @@ if ($client->IsAuthenticated())
         }
         $last = 0;
   }
-  
+
   # kill the IDLE
   $client->done($idle) or warn "Error from done: $@\n";
-  
+
   # Say bye
   $client->logout();
  }

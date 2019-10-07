@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2006-01-15T10:56:57Z
 title: Changes to start the new year
@@ -12,5 +12,5 @@ Since it is a new year, I decided to change around the look of the stories you'r
 
 Since I haven't posted a photography gallery in a while, I've since added a new one that is semi-proofed.  Head over to the Photography section to see new black and white shots of various shop implements.  I'm learning the Ansel Adams zone system, so please bear with me.
 
-With this being my last year of school (I'll have my Master degree in business adminstration in May) and with a new film project in full swing, it looks to be an exciting year! 
+With this being my last year of school (I'll have my Master degree in business adminstration in May) and with a new film project in full swing, it looks to be an exciting year!
 

@@ -5,6 +5,8 @@ date: 2019-09-21T17:08:35-07:00
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi.jpg"
+tags:
+- Personal
 ---
 
 I find myself more on the road this year than of past years. My defacto travel standard is to find a local cafe to hang out in when I'm not working, a place that isn't a chain passing off sugary liquids as coffee. The traveler in me hopes they open early and stay open late to meet my lonesome demands for caffeine and company, but this is rarely the case in most places I've worked this year.

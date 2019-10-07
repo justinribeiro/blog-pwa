@@ -1,11 +1,10 @@
 ---
-categories:
-- projecttango
-- talk
 date: 2015-03-10T00:00:00Z
 description: Slides from talk on developing for Project Tango
 title: 'Developing for Project Tango: slides'
 url: /chronicle/2015/03/10/project-tango-slides-and-talk/
+tags:
+- IoT
 ---
 
 While not a secret, I haven't spoken much on working with Project Tango. A lot of the code I've worked in the last three months is still pretty raw, but exciting nonetheless. That excitment lead to a couple of talks this month to get people excited about developing for the platform; one at GDG Oakdale and one at GDG Fresno.

@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2005-02-01T10:47:58Z
 
@@ -21,7 +21,7 @@ On a brighter note, the misery season, best known as Christmas, New Years, and V
 I feel obligted to note:
 
 
-  * Yes, I have soccer pictures which have not been proofed yet.  Okay, one has been proofed, and sent to JPG Magazine, but that's it. 
-  * The script for our first full length feature film is coming along nicely.  Hoping to set a shooting schedule, and start pre-production planning this weekend. 
-  * I'm really, really tired. 
+  * Yes, I have soccer pictures which have not been proofed yet.  Okay, one has been proofed, and sent to JPG Magazine, but that's it.
+  * The script for our first full length feature film is coming along nicely.  Hoping to set a shooting schedule, and start pre-production planning this weekend.
+  * I'm really, really tired.
 

@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2005-02-02T02:25:10Z
 
@@ -9,7 +9,7 @@ wordpress_id: 438
 wordpress_url: http://www.j5studios.com/chronicle/index.php/108
 ---
 
-Having heard from my good fried Josh, it appears one of my recent wrestling photographs has been published by the local paper (which does not have a web site that I can find unfortunately).  The photo in question would be <a href="http://j5studios.com/photography/index.php/2005_01_10__Waterford_Wrestling_Match/123">"the switch"</a>, which I had made a quick print copy of for Josh.  
+Having heard from my good fried Josh, it appears one of my recent wrestling photographs has been published by the local paper (which does not have a web site that I can find unfortunately).  The photo in question would be <a href="http://j5studios.com/photography/index.php/2005_01_10__Waterford_Wrestling_Match/123">"the switch"</a>, which I had made a quick print copy of for Josh.
 
 
 Had I known that this was going to be published, I probably would have changed the white balance on the photo, since I was shooting in AUTO during the event.  I find that changing white balance is pretty easy with the digital negative (aka the RAW file).

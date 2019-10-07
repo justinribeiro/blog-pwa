@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-02-22T06:52:01Z
 title: Game Theory

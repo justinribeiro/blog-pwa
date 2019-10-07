@@ -1,13 +1,12 @@
 ---
-categories:
-- firebase
-- polymer
-- google-io
-- python
 date: 2015-06-06T00:00:00Z
 description: I spoke at Google I/O and lived to tell the tale.
 title: My talk at Google I/O on Polymer and Firebase
 url: /chronicle/2015/06/06/speaking-at-google-io/
+tags:
+- Web
+- Business
+- IoT
 ---
 
 May was a busy month though you wouldn't know it from looking over my online social activity. Pretty quiet on the Google+ and Twitter, not a lot of tickets or commits on Github. Not even a post on this blog. Generally, a whisper sort of silence.

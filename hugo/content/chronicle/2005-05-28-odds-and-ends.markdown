@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2005-05-28T10:01:13Z
 
@@ -16,12 +16,12 @@ I've finally finished with my finals, and have shifted focus to a few odds and e
 <b>Odd End #2</b>: Hacking the Zenith XBV343.  So, a few years ago I purchased for my folks a DVD/VHS player, the Zenith XBV343.  It's a very nice player, good feature set and has always worked.  However, low and behold, I go to place a VCD of some selected scenes that the crew and I had put together last night, and it doesn't work.  Search on Google and bam! One VCD hack coming right up.  Below is the hack reprinted from <a href="http://www.videohelp.com/dvdhacks.php?select=Zenith+XBV343">VideoHelp.com</a>:
 
 
-    * Using remote with no disc in player 
-    * Turn on power, wait until "disc" appears on display. Press "pause" 
-    * Enter the numbers 1,4,7,2. The "EEPROM" numbers should be on the tv screen. 
-    * Make note of the fourth pair of numbers. Mine was 45. 
-    * Using the right arrow, place the cursor under the '5' in the fourth pair. With the cursor under the 5, enter the number '6'. The numbers on the xbv343 display should now read "46". 
-    * Now press "pause", power off and back on and play your vcd. 
+    * Using remote with no disc in player
+    * Turn on power, wait until "disc" appears on display. Press "pause"
+    * Enter the numbers 1,4,7,2. The "EEPROM" numbers should be on the tv screen.
+    * Make note of the fourth pair of numbers. Mine was 45.
+    * Using the right arrow, place the cursor under the '5' in the fourth pair. With the cursor under the 5, enter the number '6'. The numbers on the xbv343 display should now read "46".
+    * Now press "pause", power off and back on and play your vcd.
 
 <b>Odd End #3</b>: My ankle, which I injured while when I slipped down a flight of stairs several weeks ago, is still not in the best shape.  It's a great many colors, and is still two sizes too big.
 

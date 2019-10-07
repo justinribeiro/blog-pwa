@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2006-02-07T07:23:10Z
 title: Site seeing, standup, and music on a Saturday

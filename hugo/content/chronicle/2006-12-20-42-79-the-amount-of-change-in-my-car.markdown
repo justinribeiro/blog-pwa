@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2006-12-20T04:49:04Z
 title: '$42.79: the amount of change in my car'

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - business
 - self
 - pumpkins
@@ -49,9 +49,9 @@ Trying to please everyone is a game you're going to lose.  You can't keep everyo
 I recall getting yelled at for pricing once by a customer.  I thought the world was crashing down around me.  I remember my grandfather coming over and telling the customer that I had made a mistake, and he proceeded to ring them up for $5 more. For the life of me I don't recall what that customer did mostly because I was just in awe of my grandfather. I'll never forget the lesson I learned: some things are just more important then making money, and family is tops on that list.
 
 ## In the past there are answers (and experience)
-I could have chosen to not let the experience of selling pumpkins offer insight into the way I should approach business. In college, I didn't meet many people who came from a farming family and was very hesitant to even mention this fact. As I got more into the classes, as I ventured more into business, I found that I had a valuable resource on my hands. They were more then just pumpkins, they were orange spheres of experience.  Ever single one I sold was one more bit of experience I had over the next person, one more learning step I had already mastered.  
+I could have chosen to not let the experience of selling pumpkins offer insight into the way I should approach business. In college, I didn't meet many people who came from a farming family and was very hesitant to even mention this fact. As I got more into the classes, as I ventured more into business, I found that I had a valuable resource on my hands. They were more then just pumpkins, they were orange spheres of experience.  Ever single one I sold was one more bit of experience I had over the next person, one more learning step I had already mastered.
 
-I look back with fond memories of not only the time I got to spend with my family, but the for the valuable lessons they taught me. Who knew a pumpkin stand could teach a kid so much. 
+I look back with fond memories of not only the time I got to spend with my family, but the for the valuable lessons they taught me. Who knew a pumpkin stand could teach a kid so much.
 
 
 

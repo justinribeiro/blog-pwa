@@ -1,11 +1,9 @@
 ---
-categories:
-- pwa
 date: 2016-09-10T00:00:00Z
 description: As the world of mobile progressive web apps grows, are we leaving those features behind on the desktop?
-tags: []
 title: Thoughts on progressive web apps on the desktop
-url: /chronicle/2016/09/10/desktop-pwa-bring-the-goodness/
+tags:
+- Web
 ---
 
 "Who here has built an offline web app?"
@@ -32,7 +30,7 @@ My job on a good day is to build applications for organizations and teams to mak
 
 This is often the _OMG-IE-undead-versions-are-in-use-here_ sort of locations. People will tell you the web is ancient in these organizations, in that it-belongs-in-a-museum kind of way.
 
-For some, that may very well be the case (and on my not-as-awesome days, I too have to fire up IE7/8 in a VM to work). But in my experience, more and more are converting to evergreen browsers in these organizations. 
+For some, that may very well be the case (and on my not-as-awesome days, I too have to fire up IE7/8 in a VM to work). But in my experience, more and more are converting to evergreen browsers in these organizations.
 
 The reasons are much more varied than you would expect in a business setting, from basic value propositions and investment to simply user preference of using something that is nicer and offers them the features they’re used to using outside of the office.
 
@@ -64,7 +62,7 @@ Even with best laid plans, problems will occur. Skips and pops and drops ruin pr
 If we as web developers have the means to use the latest web technologies that mitigate these issues then why not give your users a faster more resilient experience? As Alex Russell points out in his article [_Service Workers and PWAs: It’s About Reliable Performance, Not “Offline”_](https://infrequently.org/2016/05/service-workers-and-pwas-its-about-reliable-performance-not-offline/), "It’s hard to stress enough how much better reliable performance is." Why can't we do the same for the desktop?
 
 ## Don’t short change the progressive web feature set on desktop
-We can create reliable performance for our desktop web apps today using Service Worker given its offline and resilient nature, but that's only part of the progressive web application story. 
+We can create reliable performance for our desktop web apps today using Service Worker given its offline and resilient nature, but that's only part of the progressive web application story.
 
 Desktop web apps have in my experience suffered from three pain points that progressive web app features can help resolve today:
 
@@ -91,7 +89,7 @@ The definition of progressive is "happening or developing gradually or in stages
 
 This is true on any device form factor. Getting into the mindset of "only work when all is there" is not reasonable in my experience; you can dictate all you want but users will gravitate to what they want to use. In the example I explain at the beginning, it was progressive through and through; if you used Firefox without File API, the app still worked. If you used Safari on iOS, the app still worked.
 
-Further, focus on those gradual steps, desktop, mobile or wherever your platform may be. A great example of this during [Thao Tran’s segment in the Progressive Web App Summit keynote](https://youtu.be/9Jef9IluQw0?t=15m35s) where she speaks about differing and at times pain-point specific implementations that resolve user frustrations. 
+Further, focus on those gradual steps, desktop, mobile or wherever your platform may be. A great example of this during [Thao Tran’s segment in the Progressive Web App Summit keynote](https://youtu.be/9Jef9IluQw0?t=15m35s) where she speaks about differing and at times pain-point specific implementations that resolve user frustrations.
 
 You don’t have to replace your entire application tomorrow. Progressive requires forward thinking. Spend the time, do the engineering, develop your progressive implementation. Your clients, your users, and your fellow developers will thank you.
 
@@ -114,7 +112,7 @@ I wholeheartingly agree on that; some things make sense to have and icon and win
 "Maybe on desktop we want to be able to move between all states and just have the OS remember
 and maybe use the display: mode as the default for the icon", Kenneth wrote. "'standalone' and 'fullscreen' is about maximizing real estate; on desktop starting in a tab and be able to move to standalone or fullscreen easily and then remember that choice when launched from a desktop launcher seems okay to me."
 
-This seems to me a like a reasonable approach. The concept that you may start in a tab (as if typing an existing url by memory or address bar recall) gives the user a reasonable approach to the fictionless web that they know; they don't have to change their expection of what will happen when they hit enter, the progressive web app simply loads. 
+This seems to me a like a reasonable approach. The concept that you may start in a tab (as if typing an existing url by memory or address bar recall) gives the user a reasonable approach to the fictionless web that they know; they don't have to change their expection of what will happen when they hit enter, the progressive web app simply loads.
 
 The notion that the application display mode would hint or offer a state switch is intriguing. Consider a possible basic flow of what that might look like:
 
@@ -128,7 +126,7 @@ Further, a tab or PWA could be marked allowing the changing of display mode at a
 
 This is one such senario; Kenneth and I tossed around ideas like tab marking and the concept of a display: floating mode (which could very well be standalone). We both agree that the icon in launcher for PWAs in Chrome OS is particularly nice (if you haven't tried it, you should, it's a very clean and smooth integration that feels very natural).
 
-The careful reader might say "umm, Justin, why discuss this further? You just said that you didn't much care about the icon in the previous section." This is true; for me an icon is not the end all be all experience that defines the PWA experience. 
+The careful reader might say "umm, Justin, why discuss this further? You just said that you didn't much care about the icon in the previous section." This is true; for me an icon is not the end all be all experience that defines the PWA experience.
 
 However that's not the case for all users. For many an icon is how you start to work or play on the web. From emerging markets where the desktop is now just arriving after years of mobile only, to kids brought up on tablets, to people who simply don't recall URLs, icons and their OS launcher is a mainstay.
 

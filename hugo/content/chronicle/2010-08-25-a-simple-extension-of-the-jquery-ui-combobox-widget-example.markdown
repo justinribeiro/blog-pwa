@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - learning
 - jQuery
 date: 2010-08-25T09:00:53Z
@@ -28,10 +28,10 @@ destroy: function() {
   // ditch the combobox input
   this.element
      .next("input").remove();
-  
+
   // show the old select
   this.element.show();
-  
+
   // final kill
  $.Widget.prototype.destroy.apply(this);
 }
@@ -41,7 +41,7 @@ destroy: function() {
 
 
 ## Make me hide!
-I have a set of cases in the project I'm working on that call for not a destroy, but a show/hide.  It's not a straight toggle in my case, so I separated said methods: 
+I have a set of cases in the project I'm working on that call for not a destroy, but a show/hide.  It's not a straight toggle in my case, so I separated said methods:
 
 {{< codeblock lang="javascript" >}}
 hide: function() {

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - gdk
 - javascript
 - mqtt
@@ -21,28 +21,28 @@ if ((client != null) && client.isConnected()) {
   // no need to fire up our client, we're good
 } else {
   try {
-    
+
     // File persist not working on Glass
     MemoryPersistence persistence = new MemoryPersistence();
     client = new MqttClient("tcp://mybroker:1883", "Justin-Glass" persistence);
-  
+
   } catch (MqttException e1) {
     Log.e("JDR_GLASS_TIMER", "Client error", e1);
   }
-  
+
   try {
-    
+
     // Connect to the broker
     client.connect();
-  
+
   } catch (MqttSecurityException e) {
-    
+
     Log.e("JDR_GLASS_TIMER", "Client connect security error", e1);
-    
+
   } catch (MqttException e) {
-  
+
     Log.e("JDR_GLASS_TIMER", "Client connect general", e);
-  
+
   }
 }
 
@@ -50,21 +50,21 @@ if ((client != null) && client.isConnected()) {
 if ((client != null) && client.isConnected()) {
   MqttTopic topic         = client.getTopic("/justin/glass");
   String    sendtobroker  = String.valueOf(remainingTime);
-  
+
   MqttMessage message = new MqttMessage(sendtobroker.getBytes());
-  
+
   // F%^&* it, if it doesn't get there, we're cool with it
   message.setQos(0);
-  
+
   try {
-    
+
     // send the message to the broker
     topic.publish(message);
-  
+
   } catch (MqttException ex) {
-  
+
     Log.e("JDR_GLASS_TIMER", "That message did not send!", ex);
-  
+
   }
 }
 {{< /codeblock >}}
@@ -112,13 +112,13 @@ JDR = {
   utils: {
     // Let's just keep this simple, no fancy
     msToPretty: function( rawMs ) {
-                  
+
       var ms = rawMs % 1000;
       rawMs = (rawMs - ms) / 1000;
 
       var secs = rawMs % 60;
       rawMs = (rawMs - secs) / 60;
-      
+
       var mins = rawMs % 60;
 
       return mins + 'm ' + secs + 's ' + ms + 'ms ';

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Makerbot
 - replicator2
 date: 2012-10-24T00:00:00Z
@@ -14,8 +14,8 @@ We picked up a <a href="http://store.makerbot.com/replicator2.html">Replicator 2
 
 Some general overall thoughts:
 
-* The build quality is very nice; the metal frame gives it a bit more stability than the Rep1 (which we also have). The PVC foamy side panels are...lacking. Maybe they're there only for looks, but feels like we'll snap them if we grab it wrong. 
-* Initial test prints have been so-so. The acrylic build plate wobbles pretty bad, it just doesn't stay put very well. This has less to do with the three point spring level and more with the overall fit in the plate holder (this plate is removable unlike the heated build plate on the Rep1). 
-* Honestly, compared to our now Sailfish powered Rep1, it's slow. Very slow. Running accelerated has proven difficult. 
+* The build quality is very nice; the metal frame gives it a bit more stability than the Rep1 (which we also have). The PVC foamy side panels are...lacking. Maybe they're there only for looks, but feels like we'll snap them if we grab it wrong.
+* Initial test prints have been so-so. The acrylic build plate wobbles pretty bad, it just doesn't stay put very well. This has less to do with the three point spring level and more with the overall fit in the plate holder (this plate is removable unlike the heated build plate on the Rep1).
+* Honestly, compared to our now Sailfish powered Rep1, it's slow. Very slow. Running accelerated has proven difficult.
 
 The jury is still out of course; we've only had it a little while and it took us a couple weeks before we have the Rep1 printing solid. I have no doubt I'll sort the issues and have this thing printing fine in no time.

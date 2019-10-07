@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - kiosk
 - dev
 date: 2012-11-02T00:00:00Z

@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - Uncategorized
 date: 2007-09-13T20:55:30Z
 description: My experience with Mini 4 Beta 2 on the Palm Treo.

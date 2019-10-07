@@ -1,12 +1,10 @@
 ---
-categories:
-- mqtt
-- glassware
-- gdk
 date: 2014-06-10T00:00:00Z
 description: A new Google Glass code sample I wrote to display real time data in a low frequency card.
 title: "New Glassware GDK sample: low frequency mqtt live card"
 url: /chronicle/2014/06/10/glassware-low-freq-live-card-gdk-mqtt/
+tags:
+- IoT
 ---
 
 You know I heart the MQTT. A lot of my sensor stacks are built with MQTT and I've been known to use the protocal in some pretty harsh conditions.

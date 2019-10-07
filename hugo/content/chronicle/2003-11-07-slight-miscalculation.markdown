@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-11-07T10:09:55Z
 title: Slight Miscalculation

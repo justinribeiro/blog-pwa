@@ -2,6 +2,8 @@
 title: "blog-pwa Moves to GAE Python 3.7 Runtime and Other Updates"
 description: "With Python 2.7 soon walking into the sunset, it was time to move my trusty blog-pwa app to the new App Engine runtime and fix a few issues along the way."
 date: 2019-09-19T16:11:06-07:00
+tags:
+- Web
 ---
 
 `blog-pwa` has been my trusty site-runner for quite a while at this point. We've seen the frontend transformed a few times, from Polymer 2 to Polymer 3 and finally today's build of LitElement. What doesn't get a lot of fanfare is the backend that powers it, Google App Engine.

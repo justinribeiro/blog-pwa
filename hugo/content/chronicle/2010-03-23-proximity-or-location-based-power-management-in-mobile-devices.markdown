@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - context
 date: 2010-03-23T00:00:00Z
 description: Why does my device know where I'm at, but not power down when needed?
@@ -15,7 +15,7 @@ When I arrive home, the first thing I generally do is turn off my bluetooth, GPS
 
 This isn't a new idea; Muhammad Abdullah Adnan at UC San Diego wrote a project paper titled (warning, PDF) <a href="http://mesl.ucsd.edu/gupta/cse237b-f09/ProjectReports/ProximityPowerAdnan.pdf">Proximity Based Power Management in PC using Bluetooth Mobile</a>) that talks about using a mobile phone to signal to a PC when to go into power saving (and wake up).  I can think of a fair number of ways to carry out the same end game, from GPS locations, to bluetooth pairing, to wifi connected network, to tower triangulation, all of which could tell where you're located.
 
-How could you do this today?  Having been reading and playing with Android recently, most of the API's that are offered would make such an application easy to write (you can pretty much disable/enable anything you like, and the addition of background applications makes it an exercise more than a project). <a href="http://www.latedroid.com/2010/01/juicedefender.html">JuiceDefender</a> with the UltimateJuice add on offers some location based battery saving tips, and is currently the closest thing I've seen to the type of control I'm looking for. 
+How could you do this today?  Having been reading and playing with Android recently, most of the API's that are offered would make such an application easy to write (you can pretty much disable/enable anything you like, and the addition of background applications makes it an exercise more than a project). <a href="http://www.latedroid.com/2010/01/juicedefender.html">JuiceDefender</a> with the UltimateJuice add on offers some location based battery saving tips, and is currently the closest thing I've seen to the type of control I'm looking for.
 
 The iPhone stock just won't fly, but on my jailbroke 3G, you can almost get there with SBsettings and <a href="http://www.iclarified.com/entry/index.php?enid=7672">SBschedule</a>.  Note, SBsettings aren't proximity or location based, but it's not much of a jump to add feature to the scripting of toggles into those profiles. I have no doubt such an app could be written for the iPhone, but I have no want or need to play in their walled garden these days.
 

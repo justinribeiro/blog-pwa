@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Eclipse
 date: 2013-05-10T00:00:00Z
 title: Making Eclipse 4.2 a little darker with CSS and Eclipse Color Themes
@@ -14,7 +14,7 @@ Coming from the command line editors, I have a tenancy to like my code editors s
 ## The tools
 If you want a quick breakdown on how to style eclipse, look no further than Lars Vogel's article <a href="http://www.vogella.com/articles/Eclipse4CSS/article.html">Styling Eclipse</a>.
 
-I used <a href="http://marketplace.eclipse.org/content/eclipse-4-chrome-theme#.UMtcPGeWlhc">Eclipse Chrome Theme</a>, which gave me some quick rough rules. I then jumped to <a href="http://marketplace.eclipse.org/content/eclipse-4-tools-css-spy#.UMtbl2eWlhc">CSS Spy</a> and found the last pieces that I wanted to style out. Then I used Eclipse Color Themes for the main code editor itself (much quicker <a href="http://eclipsecolorthemes.org/?view=theme&id=12716">FoggyDay</a>). 
+I used <a href="http://marketplace.eclipse.org/content/eclipse-4-chrome-theme#.UMtcPGeWlhc">Eclipse Chrome Theme</a>, which gave me some quick rough rules. I then jumped to <a href="http://marketplace.eclipse.org/content/eclipse-4-tools-css-spy#.UMtbl2eWlhc">CSS Spy</a> and found the last pieces that I wanted to style out. Then I used Eclipse Color Themes for the main code editor itself (much quicker <a href="http://eclipsecolorthemes.org/?view=theme&id=12716">FoggyDay</a>).
 
 ## The code
 The following is the code. It's not perfect (you may lose some label text in places), but it works about 95% of the time.
@@ -39,18 +39,18 @@ The following is the code. It's not perfect (you may lose some label text in pla
   swt-outer-keyline-color: #252525;
   swt-unselected-tabs-color: #4d4d4d #4d4d4d #1e1e1e 99% 100%;
   swt-shadow-visible: false;
-  
+
   swt-selected-tab-fill: #1e1e1e;
   chrome-selected-tab-fill-highlight: #1e1e1e;
-  
+
   chrome-selected-tab-color: #c7dd0c;
   chrome-unselected-tab-color: #d0d0d0;
-  
+
   swt-shadow-color: #282828;
-  
+
   chrome-shiney-shadow: false;
   swt-mru-visible: true;
-  
+
   swt-corner-radius: 6px;
 }
 
@@ -59,10 +59,10 @@ The following is the code. It's not perfect (you may lose some label text in pla
   swt-tab-outline: #282828;
   swt-outer-keyline-color: #282828;
   swt-unselected-tabs-color: #484848 #484848 #1e1e1e 99% 100%;
-  
+
   swt-selected-tab-fill: #1e1e1e;
   chrome-selected-tab-fill-highlight: #1e1e1e;
-  
+
   chrome-selected-tab-color: #c7dd0c;
   chrome-unselected-tab-color: #d0d0d0;
   chrome-shiney-shadow: false;
@@ -117,7 +117,7 @@ CTabFolder Canvas {
 }
 
 .MToolControl.TrimStack {
-  
+
   handle-image: url(chrome://drag-handle?height=22&background-color=#595959&embossed=false);
 }
 

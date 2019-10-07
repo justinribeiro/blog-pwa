@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - frontend
 - conference
 date: 2014-04-23T00:00:00Z

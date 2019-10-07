@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - soccer
 - goalkeeping
 - coaching

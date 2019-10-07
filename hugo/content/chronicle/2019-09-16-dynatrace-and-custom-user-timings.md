@@ -2,6 +2,8 @@
 title: "Fighting with Dynatrace to Send Custom User Timings with Performance Observer"
 description: "Performance for the web is important. Tracking that web performance with Dynatrace however is not as easy at it seems."
 date: 2019-09-16T16:08:18-07:00
+tags:
+- Web
 ---
 
 I’ll track web performance anyway I can. It’s important for end users. It’s important for developers. You should do it. We as the web community and browser vendors have some amazing tools and APIs that have significantly made this easier, and they continue to get better every day.

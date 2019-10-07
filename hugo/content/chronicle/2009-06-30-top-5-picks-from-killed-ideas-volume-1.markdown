@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - business
 - creativity
 - review

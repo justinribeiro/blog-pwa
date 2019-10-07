@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Google Glass
 - Glassware
 date: 2013-10-15T00:00:00Z

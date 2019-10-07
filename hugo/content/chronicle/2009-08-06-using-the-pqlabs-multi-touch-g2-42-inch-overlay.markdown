@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - technology
 - business
 - multi-touch

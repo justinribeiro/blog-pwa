@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - oakdale
 - openmesh
 date: 2013-05-10T00:00:00Z
@@ -16,8 +16,8 @@ However, after repeated occurrences, it stops being frustrating and begins being
 
 So I drove around Oakdale, and I talked to local businesses. And their opinion of offering wifi to their customs was the following:
 
-* Customers ask for wifi, so we have it 
-* I'm not technical, and it's a pain to keep working 
+* Customers ask for wifi, so we have it
+* I'm not technical, and it's a pain to keep working
 
 Wifi it seemed was a pain point. So, myself and team at Stickman decided that we would attempt to address this problem on a wide scale. We decided to dive into building a wifi mesh.
 

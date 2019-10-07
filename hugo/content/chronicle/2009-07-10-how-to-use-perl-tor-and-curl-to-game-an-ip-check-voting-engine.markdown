@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - hacking
 - software
 - learning
@@ -27,14 +27,14 @@ Since we can now change our identity at will, lets work on the POST. How to do t
 
 {{< codeblock lang="bash" >}}curl -s --socks4a localhost:9050 -e {YOUR_REFERER} -d '{POST_VARS}' -A '{USER_AGENT}' {TARGET_SCRIPT}{{< /codeblock >}}
 
-What exactly is that piece of command line gold doing? Let's break it down.  
+What exactly is that piece of command line gold doing? Let's break it down.
 
-* "-s" is to make curl run in mute, with no error message or progress meter. 
-* "--socks4a localhost:9050" makes curl run through Tor (yes, you can do this a different way, it's just the way I chose to do it). 
-* "-e {YOUR_REFERER}" is URL where you want to be coming from, say the actual voting page URL (http://example.com/somepage). 
-* "-d '{POST_VARS}'" would be your actual data that you want to submit to the script (example data: "candidate=27&submit=1") 
-* -A '{USER_AGENT}' is the "browser" you're using 
-* {TARGET_SCRIPT} the actual script you're posting to 
+* "-s" is to make curl run in mute, with no error message or progress meter.
+* "--socks4a localhost:9050" makes curl run through Tor (yes, you can do this a different way, it's just the way I chose to do it).
+* "-e {YOUR_REFERER}" is URL where you want to be coming from, say the actual voting page URL (http://example.com/somepage).
+* "-d '{POST_VARS}'" would be your actual data that you want to submit to the script (example data: "candidate=27&submit=1")
+* -A '{USER_AGENT}' is the "browser" you're using
+* {TARGET_SCRIPT} the actual script you're posting to
 
 
 This simple command will submit a single vote to a target and return what ever the target script has to offer.  But that's a single vote, and it's not integrated with the Tor identity switcher.  That's where Perl comes in.
@@ -47,21 +47,21 @@ use WWW-UserAgent-Random;
 
 # my vote counter
  $votes = 0;
- 
+
  #infinite loop that makes the magic happen
  while(1)
  {
   print("Running.....");
-  
+
   # setup random user agent
   my $user_agent = rand_ua("windows");
-  
+
   # set new TOR route
   $setip = `./tor-ctrl.sh -c "signal NEWNYM"`;
-  
+
   # submit vote
   $reply = `curl -s --socks4a localhost:9050 -e {YOUR_REFER} -d '{POST_VARS}' -A '$user_agent' {TARGET_SCRIPT}`;
-        
+
         # check JSON reply
   if ($reply == '{"good":"yipee"}')
   {
@@ -72,12 +72,12 @@ use WWW-UserAgent-Random;
   {
     $message = "No vote!";
   }
-  
+
   # between 10-100 seconds; lower numbers, faster submits
   $sleeptime = int(rand(90)) + 10;
-  
+
   print("$message Total: $votes Sleeping for $sleeptime seconds. DEBUG: $reply \n");
-  
+
   # lets sleep for a bit
   sleep ($sleeptime);
  }

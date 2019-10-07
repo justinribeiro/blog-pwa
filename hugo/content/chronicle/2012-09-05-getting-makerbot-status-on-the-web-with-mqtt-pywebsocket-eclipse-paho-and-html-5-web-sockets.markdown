@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - mqtt
 - Makerbot
 date: 2012-09-05T00:00:00Z
@@ -17,7 +17,7 @@ The one thing I really wanted however, didn't seem to exist. I wanted the curren
 Since I'm not a fan of complaining and am a huge fan of open source, I decided to take on the challenge.
 
 ## Step 1: Getting intimate with ReplicatorG
-<a href="https://github.com/makerbot/ReplicatorG">ReplicatorG</a> is available on GitHub, so I cloned the repo and started digging through. It's written in Java, uses some available drivers for your various 3D printers, and has a number of Gcode generating engines in it. If you're new to Java, ReplicatorG's source might seem hard but I didn't find it not too bad. It's actually quite an old code base, and you can see a lot of todo notes and "do this better" sort of comments, but it works well. 
+<a href="https://github.com/makerbot/ReplicatorG">ReplicatorG</a> is available on GitHub, so I cloned the repo and started digging through. It's written in Java, uses some available drivers for your various 3D printers, and has a number of Gcode generating engines in it. If you're new to Java, ReplicatorG's source might seem hard but I didn't find it not too bad. It's actually quite an old code base, and you can see a lot of todo notes and "do this better" sort of comments, but it works well.
 
 My original whiteboard concept was that I'd try to stay out of core code and write a plugin. This turned out to be less than ideal given the existing code base. The three main status indicators I wanted had callbacks (build status, progress, tooling temps), but a lot of the logging was setup to use java.util.logging.Logger, which would require me to write a more code than I wanted initially.
 
@@ -30,7 +30,7 @@ I decided in the end to add an "extras" menu along with a new MQTT preferences s
 ## Step 2: Getting familiar with Eclipse Paho
 The <a href="http://www.eclipse.org/paho/">Eclipse Paho Project</a> has a fairly new Java client in their <a href="http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/">git repo</a> which I had never used. There are other Java libraries that can help you with MQTT communication, but I decided to jump into Paho in this case. I figured if I found some bugs, I can tack them to the tracker to help out.
 
-Implementing the library is pretty simple. Clone the repo, edit the Ant task file as needed and issue your ant build command. Honestly, first build worked without fail and I had a working jar to use with my ReplicatorG project. I then implemented a MQTT communication class as per the documentation. If the documentation isn't enough and you're looking for a wiz-bang example of it's usage to learn from look no further than the <a href="http://mobilave.info/blog/2012/Quick_start_guide_for_the_Eclipse_Paho_Plug-in.html">Eclipse Paho Plugin source</a>. 
+Implementing the library is pretty simple. Clone the repo, edit the Ant task file as needed and issue your ant build command. Honestly, first build worked without fail and I had a working jar to use with my ReplicatorG project. I then implemented a MQTT communication class as per the documentation. If the documentation isn't enough and you're looking for a wiz-bang example of it's usage to learn from look no further than the <a href="http://mobilave.info/blog/2012/Quick_start_guide_for_the_Eclipse_Paho_Plug-in.html">Eclipse Paho Plugin source</a>.
 
 ## Step 3: ReplicatorG + Eclipse Paho, with a dash of GSON = talking bot
 Once I had the form implemented, the prefs panels saving, and the bots status strings formatted into some slimline JSON via the ever awesome GSON library, we were good to go.
@@ -40,12 +40,12 @@ Except we weren't.
 So, building ReplicatorG is not exactly the easiest of things. They make note of <a href="http://replicat.org/building-from-source">how to build the source</a>, including from Eclipse. I did get it working but it was a classpath nightmare on Windows. These are my straight notes to myself on how to make the build work on Windows such that any additional jar files added (which get picked up in the ant build) also get found by Windows.
 
 
-* go into your source tree, head to build/windows/launcher 
-* install launch4j-3.0.0-win32.exe 
-* open build/windows/launcher/ReplicatorG.xml with Launch4j and add any additional jars to the classpath 
-* build the new ReplicatorG.exe, and then move it into build/windows/dist, replacing the old one 
-* build ReplicatorG from with ant dist-windows 
-* your golden 
+* go into your source tree, head to build/windows/launcher
+* install launch4j-3.0.0-win32.exe
+* open build/windows/launcher/ReplicatorG.xml with Launch4j and add any additional jars to the classpath
+* build the new ReplicatorG.exe, and then move it into build/windows/dist, replacing the old one
+* build ReplicatorG from with ant dist-windows
+* your golden
 
 
 I'm sure someone will say "well of course you have to do that" but that wasn't exactly clear to me at first glance. Once the build is sorted with have a ReplicatorG talking with MQTT (in this case, our beloved <a href="http://mosquitto.org/">Mosquitto</a> broker).
@@ -79,28 +79,28 @@ Let's just call it an alpha. Or a pre-release. Something something. :-)
 ## The roadmap
 This is an early release, something I've only been working on for maybe a week. It's useable, but I have some much grander plans:
 
-* Model upload to S3, WebGL rendering of current print status (it makes the office giddy with joy on that one, we heart the WebGL) 
-* Multiple 3D printer display (some of the code is implemented, but not in use yet) 
-* Better console logging support from ReplicatorG to the web 
-* 3DprintersUnite.com, a sort of live map of 3D printers printing (I'm excited to see such a visualization...if people will at least use my build or I get my patches upstream) 
+* Model upload to S3, WebGL rendering of current print status (it makes the office giddy with joy on that one, we heart the WebGL)
+* Multiple 3D printer display (some of the code is implemented, but not in use yet)
+* Better console logging support from ReplicatorG to the web
+* 3DprintersUnite.com, a sort of live map of 3D printers printing (I'm excited to see such a visualization...if people will at least use my build or I get my patches upstream)
 
 ## Set it up yourself
 
-* Clone my ReplicatorG repo and build it 
-* Setup a Mosquitto server or use an existing MQTT broker 
-* Clone my ReplicatorG websocket server, change the server vars at the top of the file, run it 
-* Clone my ReplicatorG web status page, change the server vars in main.js, add Google Analytics code if you so please, build it, change the index.html js references at the bottom (I didn't have time to change the build script, sorry) 
-* Run your fresh ReplicatorG build, go to Extras menu, add MQTT settings, test, and save. Close ReplicatorG, re-open it, verify everything is sticking. 
-* Open the web status panel, see some data. 
-* Start a build in ReplicatorG, check the web status panel to see updates 
+* Clone my ReplicatorG repo and build it
+* Setup a Mosquitto server or use an existing MQTT broker
+* Clone my ReplicatorG websocket server, change the server vars at the top of the file, run it
+* Clone my ReplicatorG web status page, change the server vars in main.js, add Google Analytics code if you so please, build it, change the index.html js references at the bottom (I didn't have time to change the build script, sorry)
+* Run your fresh ReplicatorG build, go to Extras menu, add MQTT settings, test, and save. Close ReplicatorG, re-open it, verify everything is sticking.
+* Open the web status panel, see some data.
+* Start a build in ReplicatorG, check the web status panel to see updates
 
 ## Questions, questions
 
-### Why not the Mosquitto JavaScript library and skip the bridge? 
+### Why not the Mosquitto JavaScript library and skip the bridge?
 It is true Mosquitto has a QoS 0 implementation of MQTT written in JavaScript and I initially looked into using it directly, but I found it faster (and a little more fun) to just write the bridge. It gives me a little more flexibility for the grandiose plans I have for even cooler ReplicatorG status page.
 
-### Why not Rachet and PHP SAM? 
+### Why not Rachet and PHP SAM?
 Bad fit. The implementation requires two running loops on separate threads, and doing that in PHP is a nightmare. Secondly, I simply haven't had to time to bring PHP SAM up to date, and it's lacking proper observers, so it really was a no go situation.
 
-### Why not just MQTT from the Makerbot directly? 
+### Why not just MQTT from the Makerbot directly?
 I'd like to add an ethernet shield onto that bad boy, but I suspect the office isn't going to let me do that for a while. But it's on my list.

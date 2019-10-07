@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - internal
 date: 2002-10-13T01:54:47Z
 title: Recent Changes to the Site

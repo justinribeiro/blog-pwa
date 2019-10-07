@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - business
 date: 2009-02-05T00:00:00Z
 description: "President Obama proposes to limit the amount of compensation that senior executives receive for bailout funds, and my ethical view point about the compensation disclosure debate which has gone on long before the financial crisis."
@@ -26,7 +26,7 @@ Wharton stated "when people are forced to undress in public, they pay attention 
 
 The rest of the article seeks to offer both a support and counter arguments to the claim that such transparency would help stockholders, or even go so far as to bring executive compensation down.
 
-In terms of bringing executive compensation down, the general consensus is that these new rules will not.  The article states several reasons why it will not, such as 'executive pay is not necessarily as excessive as the most extreme cases suggest' and that it is 'not that easy to establish a benchmark for determining whether executive pay is excessive.'  While the article backs the claim that executive pay has been rising, it does point out that many of that rise has come in the rise in the use of stock options.  
+In terms of bringing executive compensation down, the general consensus is that these new rules will not.  The article states several reasons why it will not, such as 'executive pay is not necessarily as excessive as the most extreme cases suggest' and that it is 'not that easy to establish a benchmark for determining whether executive pay is excessive.'  While the article backs the claim that executive pay has been rising, it does point out that many of that rise has come in the rise in the use of stock options.
 
 The value of those options has been of increasing interest to many, because disclose on that valuation has not been required in the past.  This has recently changed, which would lead me to believe that instead of companies taking the ethical high road and disclosing them, they forced changes in accounting rules and regulations to make them do it first.
 

@@ -5,7 +5,8 @@ title = "Justin Ribeiro"
 # specifcally for the PWA and GAE to load and parse
 publishdir = "../app/data"
 
-disableKinds = ["taxonomy", "taxonomyTerm"]
+[taxonomies]
+  tag = "tags"
 
 [permalinks]
   chronicle = "/chronicle/:year/:month/:day/:slug/"

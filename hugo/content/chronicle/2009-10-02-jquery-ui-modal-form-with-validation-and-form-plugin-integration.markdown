@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - learning
 - Web Apps
 - jQuery
@@ -29,9 +29,9 @@ What I like to do is always have a return message block that contains informatio
 
 Confused?  I was.  The block above is largely taken from the demos from the API documentation, with a few modifications for our return message.  Key things to take away from that code block:
 
-* Any class with "ui-" in front of it is part of the <a href="http://docs.jquery.com/UI/Theming/API#The_jQuery_UI_CSS_Framework">jQuery UI CSS Framework</a>.  If you haven't read that documentation, I highly suggest you do so, as it'll help make using UI much easier. 
-* The class "ui-helper-hidden" hides the div via display:none until we need it later (again, that's a stock jQuery UI CSS class) 
-* We set the main div block with an ID equal to "client-script-return-msg", and our return message is going into an added span element with the ID equal to "client-script-return-msg". 
+* Any class with "ui-" in front of it is part of the <a href="http://docs.jquery.com/UI/Theming/API#The_jQuery_UI_CSS_Framework">jQuery UI CSS Framework</a>.  If you haven't read that documentation, I highly suggest you do so, as it'll help make using UI much easier.
+* The class "ui-helper-hidden" hides the div via display:none until we need it later (again, that's a stock jQuery UI CSS class)
+* We set the main div block with an ID equal to "client-script-return-msg", and our return message is going into an added span element with the ID equal to "client-script-return-msg".
 
 We now have our return message block.  Let's now add a target for our form post return and a button we'll use to open the modal dialog:
 
@@ -56,10 +56,10 @@ Now let's add in our error block to catch error messages:
 {{< codeblock lang="html" >}}
 &lt;div id=&quot;my-modal-form&quot; title=&quot;Edit some data&quot;&gt;
   &lt;div class=&quot;ui-widget ui-helper-hidden&quot; id=&quot;errorblock-div1&quot;&gt;
-    &lt;div class=&quot;ui-state-error ui-corner-all&quot; style=&quot;padding: 0pt 0.7em;&quot; 
+    &lt;div class=&quot;ui-state-error ui-corner-all&quot; style=&quot;padding: 0pt 0.7em;&quot;
       id=&quot;errorblock-div2&quot; style=&quot;display:none;&quot;&gt;
       &lt;p&gt;
-        &lt;span class=&quot;ui-icon ui-icon-alert&quot; 
+        &lt;span class=&quot;ui-icon ui-icon-alert&quot;
           style=&quot;float: left; margin-right: 0.3em;&quot;&gt;&lt;/span&gt;
         &lt;strong&gt;Alert:&lt;/strong&gt; Errors detected!
       &lt;/p&gt;
@@ -70,32 +70,32 @@ Now let's add in our error block to catch error messages:
 
 You'll note this looks slightly different for our information block.  Key takeaways:
 
-* We keep the block hidden until the validation plugin needs to display it via the class ui-helper-hidden 
-* We give both the main div an ID of errorblock-form1 and the secondary content div the ID of errorblock-form2; you'll need both later 
-* There is an empty UL tag on purpose; it's going to hold our error messages 
+* We keep the block hidden until the validation plugin needs to display it via the class ui-helper-hidden
+* We give both the main div an ID of errorblock-form1 and the secondary content div the ID of errorblock-form2; you'll need both later
+* There is an empty UL tag on purpose; it's going to hold our error messages
 
 Now that we have our error block, lets toss in a form:
 
 {{< codeblock lang="html" >}}
 &lt;div id=&quot;my-modal-form&quot; title=&quot;Edit some data&quot;&gt;
   &lt;div class=&quot;ui-widget ui-helper-hidden&quot; id=&quot;errorblock-div1&quot;&gt;
-    &lt;div class=&quot;ui-state-error ui-corner-all&quot; style=&quot;padding: 0pt 0.7em;&quot; 
+    &lt;div class=&quot;ui-state-error ui-corner-all&quot; style=&quot;padding: 0pt 0.7em;&quot;
       id=&quot;errorblock-div2&quot; style=&quot;display:none;&quot;&gt;
       &lt;p&gt;
-        &lt;span class=&quot;ui-icon ui-icon-alert&quot; 
+        &lt;span class=&quot;ui-icon ui-icon-alert&quot;
           style=&quot;float: left; margin-right: 0.3em;&quot;&gt;&lt;/span&gt;
         &lt;strong&gt;Alert:&lt;/strong&gt; Errors detected!
       &lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-    &lt;form action=&quot;testme.php&quot; name=&quot;modal-form-test&quot; id=&quot;modal-form-test&quot; 
+    &lt;form action=&quot;testme.php&quot; name=&quot;modal-form-test&quot; id=&quot;modal-form-test&quot;
       method=&quot;POST&quot;&gt;
     &lt;fieldset&gt;
       &lt;label for=&quot;fullname&quot;&gt;Name&lt;/label&gt;
-      &lt;input type=&quot;text&quot; name=&quot;fullname&quot; id=&quot;fullname&quot; 
+      &lt;input type=&quot;text&quot; name=&quot;fullname&quot; id=&quot;fullname&quot;
         class=&quot;text ui-widget-content ui-corner-all&quot; /&gt;
       &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
-      &lt;input type=&quot;text&quot; name=&quot;email&quot; id=&quot;email&quot; 
+      &lt;input type=&quot;text&quot; name=&quot;email&quot; id=&quot;email&quot;
         class=&quot;text ui-widget-content ui-corner-all&quot; /&gt;
     &lt;/fieldset&gt;
     &lt;/form&gt;
@@ -122,8 +122,8 @@ var amodal = $("#my-modal-form").dialog({
 
 I'm not going explain the whole list of options that a dialog() call has (that's what the <a href="http://jqueryui.com/demos/dialog/">dialog documentation and demo</a> is for) but let's run down the important one's that make our example really work:
 
-* autoOpen: false keeps our dialog from automatically opening on page load 
-* modal: true makes our dialog modal, which basically means you aren't doing anything else with the underlying page until you dismiss the dialog box 
+* autoOpen: false keeps our dialog from automatically opening on page load
+* modal: true makes our dialog modal, which basically means you aren't doing anything else with the underlying page until you dismiss the dialog box
 * buttons: setups our buttons for our form action.
 
 Let's talk about the buttons for a second.  You will note that one button that we are calling "Update Data" has function defined that runs $("#modal-form-test").submit();  This does exactly what it says.  But Justin you say, I thought we were using the Validation and Form plugins?  We are...just not right there.  Only thing we want that button to do is submit the form (for the purposes of this example).
@@ -160,13 +160,13 @@ var aform = $("#modal-form-test").validate({
 
 A fair amount of code, but it's not too bad.  Lets break it down.
 
-* errorContainer: "#errorblock-div1, #errorblock-div2" - a lot of people wonder why you have to set both the parent errorblock-div1 its child errorblock-div2 as the errorContainer.  The reason is that if you do not, our error messages won't properly appear. errorblock-div1 is hidden, but we also need to be able to not only show errorblock-div2, but also reset it's message state when a submit or cancel happens. 
-* errorLabelContainer: "#errorblock-div2 ul" - remember that empty UL we put in?  This become our container for error messages. 
-* wrapper: "li" - by default, the Validation plugin puts error messages into LABEL containers, but since we're targeting a UL, we want to make sure we use LI 
-* rules: and messages: - these correspond to our form inputs and are for validation of the data.  If you use the metadata plugin, you can do this inline on the form elements, but for the sake of this example, I've left them in place to make the example a little easier to understand 
-* submitHandler: this does all the form posting work and is part of the Form plugin (using the ajaxSubmit(); ) 
-* target: - which block we want our return data to go into, in this case the previously setup div client-script-return-data 
-* success: - the function runs $('#my-modal-form').dialog('close'); to close the dialog on a successful submit, and then runs my custom function successEvents(); which I'll show you shortly. 
+* errorContainer: "#errorblock-div1, #errorblock-div2" - a lot of people wonder why you have to set both the parent errorblock-div1 its child errorblock-div2 as the errorContainer.  The reason is that if you do not, our error messages won't properly appear. errorblock-div1 is hidden, but we also need to be able to not only show errorblock-div2, but also reset it's message state when a submit or cancel happens.
+* errorLabelContainer: "#errorblock-div2 ul" - remember that empty UL we put in?  This become our container for error messages.
+* wrapper: "li" - by default, the Validation plugin puts error messages into LABEL containers, but since we're targeting a UL, we want to make sure we use LI
+* rules: and messages: - these correspond to our form inputs and are for validation of the data.  If you use the metadata plugin, you can do this inline on the form elements, but for the sake of this example, I've left them in place to make the example a little easier to understand
+* submitHandler: this does all the form posting work and is part of the Form plugin (using the ajaxSubmit(); )
+* target: - which block we want our return data to go into, in this case the previously setup div client-script-return-data
+* success: - the function runs $('#my-modal-form').dialog('close'); to close the dialog on a successful submit, and then runs my custom function successEvents(); which I'll show you shortly.
 
 The successEvents() function is something I came up with to make things pretty, but to also make return messages fade out and hide after a certain amount of time.  The function looks like:
 

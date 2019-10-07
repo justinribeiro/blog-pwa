@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2006-11-29T11:45:08Z
 title: Of classic cameras and shooting
@@ -11,6 +11,6 @@ I've been recently shooting old film (pre-1970 expiration date) in old cameras (
 
 I know what some people will say.  Film? Development?  Digital is so much easier.  It might be.  But give someone an old Imperial Debonair loaded with 620 film (think 120 size but on smaller diameter spools) and they love it.  I know this from experience; my friend just took the Debonair for a spin and had a blast.  Simple box style cameras, 6x6 negatives, frame it and shoot.  But with style!
 
-How many of the older cameras have I picked up with my camera partner Monica?  At current count we've picked up 20 different cameras from garage sales, estate sales and pretty much anywhere that has a dusty corner.  Our general rule of thumb when buying older cameras is that if it works and it's under $10, then it's coming home.  There are exceptions for things like the Rolleicord ($30) or a camera I think I can fix (low serial Kodak 35). 
+How many of the older cameras have I picked up with my camera partner Monica?  At current count we've picked up 20 different cameras from garage sales, estate sales and pretty much anywhere that has a dusty corner.  Our general rule of thumb when buying older cameras is that if it works and it's under $10, then it's coming home.  There are exceptions for things like the Rolleicord ($30) or a camera I think I can fix (low serial Kodak 35).
 
 Needless to say, I'll have a slew of new photographs from a variety of cameras in the next month.  It should be a blast!

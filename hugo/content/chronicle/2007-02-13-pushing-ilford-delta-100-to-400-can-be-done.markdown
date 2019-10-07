@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - photography
 - film
 date: 2007-02-13T21:20:21Z

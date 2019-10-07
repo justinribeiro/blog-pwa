@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - technology
 - business
 - Android
@@ -14,11 +14,11 @@ Things have been very busy. Yes, I was at CES 2011 for those who have asked.  I 
 
 Overall impressions:
 
-* Tablets everywhere, all running Android for the most part.  We threw a lot of our upcoming HTML5 and JavaScript heavy apps at them to test performance and they all performed quite well. 
-* I saw Android on pretty much everything, running all kinds of weird stuff. 
-* You really don't know how many ODM's there are until you've spent four days on the floor.  I'm pretty sure I could easily have a rocket built to take me to the moon. 
-* I never want to see an iAccessory again. 
-* I saw a lot of gear that I wish they'd let take home to hack on. 
+* Tablets everywhere, all running Android for the most part.  We threw a lot of our upcoming HTML5 and JavaScript heavy apps at them to test performance and they all performed quite well.
+* I saw Android on pretty much everything, running all kinds of weird stuff.
+* You really don't know how many ODM's there are until you've spent four days on the floor.  I'm pretty sure I could easily have a rocket built to take me to the moon.
+* I never want to see an iAccessory again.
+* I saw a lot of gear that I wish they'd let take home to hack on.
 
 It's going to be a fun build up as some of the deals begin to make there way public this year.  I can't speak to many of them (shhhhhhhh...shh), but they're coming.
 

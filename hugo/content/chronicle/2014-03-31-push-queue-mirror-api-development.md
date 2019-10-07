@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - push-queue
 - mirror-api
 - google-glass
@@ -66,7 +66,7 @@ def taskHandler():
     # Mirror things
     mirrorservice = authorizedmirrorservice(credentialsforuser(userid).get())
     attachmentItem = mirrorservice.timeline().get(id=timelineitemid).execute()
-    
+
     # Get attachment
     attachment = mirrorservice.timeline().attachments().get(
         itemId=timelineitemid, attachmentId=attachmentid).execute()
@@ -82,7 +82,7 @@ def taskHandler():
 
         filename = ('/mymagicalapp-or-some-bucket/ugi-' + userid + '-' +
                     timelineitemid + '.jpg')
-        
+
         # Write out to Google Cloud Storage
         picture = cloudstorage.open(filename, 'w', content_type='image/jpeg')
         picture.write(attachmentcontent)

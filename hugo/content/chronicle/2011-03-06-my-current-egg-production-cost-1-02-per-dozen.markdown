@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - house
 - chickens
 - cost breakdown
@@ -17,10 +17,10 @@ In my current chicken setup in our backyard, the last month has current costs of
 
 How it breaks down:
 
-* The two hens lay about 10-14 eggs per week and so far through their laying careers have been very consistent 
-* The chickens eat about 2 pounds of feed a week, and by using pellet based feed we've been able to cut down on feed waste (which is a plus).  
-* From our local feed store, on average it costs $15.00 for 50 pounds of feed. 
-* We don't use the antibiotics or any of that stuff; the only other costs are minimal and non-consequential 
+* The two hens lay about 10-14 eggs per week and so far through their laying careers have been very consistent
+* The chickens eat about 2 pounds of feed a week, and by using pellet based feed we've been able to cut down on feed waste (which is a plus).
+* From our local feed store, on average it costs $15.00 for 50 pounds of feed.
+* We don't use the antibiotics or any of that stuff; the only other costs are minimal and non-consequential
 
 
 If you do the math, it works out to be: ($15/50lbs)*(2lbs*2hens) = $1.20 per week.  On a good week, that's $1.02 per dozen on a bad week that's $1.44 a dozen.

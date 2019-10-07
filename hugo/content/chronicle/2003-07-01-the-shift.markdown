@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-07-01T06:55:51Z
 title: The Shift

@@ -77,7 +77,12 @@ class BlogStatic extends BlogElement {
 
         #posts {
           display: flex;
+          padding: 0 20px;
           flex-wrap: wrap;
+        }
+
+        #tags {
+          margin: 0.5em 0;
         }
 
         @media (max-width: 767px) {

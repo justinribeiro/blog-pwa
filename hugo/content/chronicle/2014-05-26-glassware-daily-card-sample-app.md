@@ -1,11 +1,11 @@
 ---
-categories:
-- google-glass
-- glassware
 date: 2014-05-26T00:00:00Z
 description: Sample code and write up on Google Glass glassware that sends daily cards with App Engine Cron and Mirror API.
 title: 'New sample Glassware: Daily Glass Card with App Engine Cron'
 url: /chronicle/2014/05/26/glassware-daily-card-sample-app/
+tags:
+- Web
+- IoT
 ---
 
 Having been doing a lot of Google Helpouts on developing applications with Glass the most common question I get by far is:

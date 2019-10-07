@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - learning
 - jQuery
 - quicksearch

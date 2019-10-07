@@ -5,6 +5,8 @@ description: "A Polymer 3/LitElement web component that uses Three.js to display
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-twitter-1024x535.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-fb-1200x630.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-gplus-800x360.jpg"
+tags:
+- Web
 ---
 
 I find myself working with STL files on a fairly regular basis. It's a fairly

@@ -5,6 +5,10 @@ date: 2019-09-23T16:52:49-07:00
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound.jpg"
+tags:
+- Personal
+- Web
+- Business
 ---
 
 The bustling conversation seemed to be rising to deafening levels, the beer flowing across hastily pulled together tables and bar stools. The division had taken over this bar, filling it to capacity on an otherwise uneventful evening and of them all, I was the only one who didn’t call this company home. Like so many times before, I was the only outsider at the table, brought in to crush any doubts that the product would ship on time. I sipped the local brew and exchanged pleasantries and congratulations when a hush fell over the table I was sitting at.

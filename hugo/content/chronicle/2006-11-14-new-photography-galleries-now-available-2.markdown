@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2006-11-14T02:44:27Z
 title: New photography galleries now available

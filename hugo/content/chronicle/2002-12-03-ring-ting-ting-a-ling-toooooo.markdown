@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2002-12-03T09:53:44Z
 title: Ring ting ting a ling toooooo

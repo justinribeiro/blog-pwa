@@ -5,6 +5,8 @@ date: 2019-08-02T13:17:28-07:00
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190802-the-leica-box-04.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190802-the-leica-box-04.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190802-the-leica-box-04.jpg"
+tags:
+- Photography
 ---
 
 Over the years, Monica and I have been fairly lucky in our hunt for classic cameras to shoot with. A vintage Rolleicord from a thrift shop, an old view camera from a barn, and pretty much everything in between.

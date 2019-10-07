@@ -1,4 +1,4 @@
----categories:
+---tags:
 - polaroid
 - film
 date: 2007-07-23T00:00:00Z

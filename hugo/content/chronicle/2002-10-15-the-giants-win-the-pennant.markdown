@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - baseball
 - sports
 date: 2002-10-15T05:23:04Z

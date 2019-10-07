@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-07-22T04:59:23Z
 title: Time is flying and I am too

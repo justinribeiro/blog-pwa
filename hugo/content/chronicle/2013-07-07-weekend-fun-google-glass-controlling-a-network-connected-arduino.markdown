@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - arduino
 - mqtt
 - mosquitto

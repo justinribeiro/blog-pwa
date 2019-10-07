@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-04-07T06:47:00Z
 title: Where you been Charlie Brown?
@@ -10,6 +10,6 @@ I've been all over the place it seems.  I've gotten quite a bit of email lately 
 
 I recently made a jaunt home for a brief couple days, and if I didn't catch you, I apologize.  It wasn't really a planned trip, something that just had to be done.
 
-Otherwise, my Giants are 6-0, and hey, you gotta love that.  Also, congrats to the San Jose CyberRays for taking their first game of the season 1-0.  For those of you not in the know, they are part of the <a href="http://www.wusa.com/">Women's United Soccer Association</a>. 
+Otherwise, my Giants are 6-0, and hey, you gotta love that.  Also, congrats to the San Jose CyberRays for taking their first game of the season 1-0.  For those of you not in the know, they are part of the <a href="http://www.wusa.com/">Women's United Soccer Association</a>.
 
 Oh, and go <a href="http://www.mcfc.co.uk/">Man City</a>!

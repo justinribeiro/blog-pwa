@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - EclipseCon
 date: 2013-03-26T00:00:00Z
 description: "EclipseCon 2013 is here, let's do this!"

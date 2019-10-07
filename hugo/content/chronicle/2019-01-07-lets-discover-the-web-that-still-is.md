@@ -2,6 +2,8 @@
 date: 2019-01-07T08:00:00-08:00
 title: "Discovering the websites that never went away"
 description: "The web has not been lost to walled gardens, it has just been hiding in the shadows waiting for you to knock down the wall."
+tags:
+- Web
 ---
 
 The ongoing debacle that is Facebook et al social media has (again) reinvigorated a set of web folks to lament the way the intertubes used to be (webrings!) as well as why it isn’t this way anymore (boo walled gardens and your constant advertisements). I too appear nostalgic when the so-called thought leaders in the industry are selling you down the river in front of Congress. Hard to not take a position on that.

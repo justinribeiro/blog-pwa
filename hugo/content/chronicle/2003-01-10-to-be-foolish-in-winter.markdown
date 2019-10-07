@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-01-10T06:58:43Z
 title: To be foolish in winter

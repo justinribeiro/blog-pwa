@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2004-11-07T10:54:36Z
 title: Truth in words, or words of truth?

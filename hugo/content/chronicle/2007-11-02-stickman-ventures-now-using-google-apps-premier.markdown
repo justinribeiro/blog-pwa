@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - Uncategorized
 date: 2007-11-02T20:51:20Z
 description: The big move to Google Apps has occurred...and it rocks.

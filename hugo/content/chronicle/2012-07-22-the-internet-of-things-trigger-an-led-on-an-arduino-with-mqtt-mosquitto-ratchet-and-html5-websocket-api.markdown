@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - build
 - arduino
 - mqtt
@@ -32,7 +32,7 @@ For the sake of simplicity, I'm going to use a t1.micro instance on Amazon Web S
 Let's start by setting up the broker server, <a href="http://mosquitto.org/">mosquitto</a>. Mosquitto is an open source MQTT broker and for my use case here works perfectly well. To install on our AMI, we'll need to add the repo first:
 
 {{< codeblock lang="bash" >}}
-sudo wget http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6/home:oojah:mqtt.repo -O /etc/yum.repos.d/home:oojah:mqtt.repo 
+sudo wget http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6/home:oojah:mqtt.repo -O /etc/yum.repos.d/home:oojah:mqtt.repo
 {{< /codeblock >}}
 
 Now, install mosquitto (and a few helpers) via yum:
@@ -121,7 +121,7 @@ require __DIR__ . ('/vendor/SAM/php_sam.php');
 
 /**
  * control.php
- * 
+ *
  * Send any incoming messages to all connected clients and broker.
  * Based on the sample chat application that comes with Rachet
  *
@@ -137,9 +137,9 @@ class Control implements MessageComponentInterface {
 
     public function onOpen(ConnectionInterface $conn) {
       $this->clients->attach($conn);
-    
+
       $this->broker->connect(SAM_MQTT, array(
-          SAM_HOST => "ec2-XXX-XXX-XXX-XXX.us-west-1.compute.amazonaws.com", 
+          SAM_HOST => "ec2-XXX-XXX-XXX-XXX.us-west-1.compute.amazonaws.com",
           SAM_PORT => 1883
         )
       );
@@ -218,7 +218,7 @@ With debugging turned on in the SAM lib, you'll see the connections and callouts
 {{< /codeblock >}}
 
 ## Step 4: Connect to the WebSocket service throught your web page
-Connecting to a websocket through a webpage is pretty straightforward from a JavaScript perspective. The <a href="http://dev.w3.org/html5/websockets/">API</a> is available, <a href="https://developer.mozilla.org/en-US/demostag/tech:websockets">Mozilla's May derby was all about the WebSocket API</a>, HTML5 Rocks has a <a href="http://www.html5rocks.com/en/features/connectivity">connectivity section</a> with websocket info. 
+Connecting to a websocket through a webpage is pretty straightforward from a JavaScript perspective. The <a href="http://dev.w3.org/html5/websockets/">API</a> is available, <a href="https://developer.mozilla.org/en-US/demostag/tech:websockets">Mozilla's May derby was all about the WebSocket API</a>, HTML5 Rocks has a <a href="http://www.html5rocks.com/en/features/connectivity">connectivity section</a> with websocket info.
 
 Since we have all this info and the only thing I needed as a send, I didn't take the time to write a specific send/recieve web page for this example. Instead I used the <a href="http://www.websocket.org/echo.html">WebSocket.org echo demo</a>, and simply pointed it to my websocket service url (which would be ws://ec2-XXX-XXX-XXX-XXX.us-west-1.compute.amazonaws.com/control in this case).
 
@@ -236,7 +236,7 @@ Once you have that wired up, you're going to need to add Nicholas O'Leary's exce
 
 // Set the MAC address
 byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x01 };
- 
+
 // Set fallback IP address if DHCP fails
 IPAddress ip(192,168,0,201);
 
@@ -244,7 +244,7 @@ IPAddress ip(192,168,0,201);
 byte server[] = { XXX, XXX, XXX, XXX };
 
 // Set what PINs our Led's are connected to
-int redPin = 5;                
+int redPin = 5;
 int greenPin = 6;
 int bluePin = 7;
 
@@ -254,16 +254,16 @@ byte triggerBlue[6] = "12345";
 
 // handles messages that are returned from the broker on our subscribed channel
 void callback(char* topic, byte* payload, unsigned int length) {
- 
+
   Serial.print("New message from broker on topic:");
   Serial.println(topic);
-  
+
   Serial.print("Payload:");
   Serial.write(payload, length);
-  
+
   // This will blink our green LED
   blink(greenPin);
-  
+
   // Check and see if our payload matches our simple trigger test
   if ((length == 5) & (memcmp(payload, triggerBlue, 5) == 0) )
   {
@@ -277,10 +277,10 @@ PubSubClient client(server, 1883, callback);
 
 void setup()
 {
-  
+
   // Open serial communications
   Serial.begin(9600);
-  
+
   // Setup our Leds
   pinMode(redPin, OUTPUT);
   pinMode(greenPin, OUTPUT);
@@ -288,29 +288,29 @@ void setup()
 
   // attempt a DHCP connection
   Serial.println("Attempting to get an IP address using DHCP:");
-  if (!Ethernet.begin(mac)) 
+  if (!Ethernet.begin(mac))
   {
     // if DHCP fails, start with a hard-coded address:
     Serial.println("failed to get an IP address using DHCP, trying manually");
     Ethernet.begin(mac, ip);
   }
-  
+
   Serial.print("My address:");
   Serial.println(Ethernet.localIP());
-  
+
   // Connect to Broker, give it arduino as the name
   if (client.connect("arduino")) {
-    
+
     // Good, we connected turn on the red led
     digitalWrite(redPin, HIGH);
-    
+
     // Publish a message to the status topic
     client.publish("status","Arduino is now online");
-    
+
     // Listen for messages on the control topic
     client.subscribe("control");
   }
-  
+
 }
 
 void loop()
@@ -319,33 +319,33 @@ void loop()
 }
 
 // Anything with flashing lights.
-void blink(int targetLed) 
+void blink(int targetLed)
 {
  static boolean led = HIGH;
  static int count = 0;
- 
+
  Serial.print("Starting to blink...");
- 
- while (count < 10) 
+
+ while (count < 10)
  {
    digitalWrite(targetLed, led);
-   
+
    count++;
-   
-   if (led == HIGH) 
+
+   if (led == HIGH)
    {
      led = LOW;
-   } 
-   else 
+   }
+   else
    {
      led = HIGH;
    }
-   
+
    delay(200);
  }
- 
+
  count = 0;
- 
+
  Serial.print("done.");
 }
 {{< /codeblock >}}

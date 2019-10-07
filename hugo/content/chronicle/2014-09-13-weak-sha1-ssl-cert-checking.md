@@ -1,12 +1,10 @@
 ---
-categories:
-- ssl
-- sha2
-- certs
 date: 2014-09-13T00:00:00Z
 description: Start testing today and start getting your certs up-to-date with this online testing toolset.
 title: Checking for weak SSL SHA-1 certificates
 url: /chronicle/2014/09/13/weak-sha1-ssl-cert-checking/
+tags:
+- Web
 ---
 
 Ah, SHA-1. We've known for a while that's it's been breakable (see [Schneier's write-up back in 2005](https://www.schneier.com/blog/archives/2005/02/cryptanalysis_o.html)) and even before that it was widely known that SHA-1 wasn't going to last forever. Machines get faster, attacks get refined, and we move to more secure operations.

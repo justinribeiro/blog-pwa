@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-03-16T03:11:50Z
 title: Oh what a mess

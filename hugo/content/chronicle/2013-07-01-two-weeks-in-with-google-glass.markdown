@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - Google Glass
 date: 2013-07-01T00:00:00Z
 description: My first two weeks with Google Glass.
@@ -43,7 +43,7 @@ On day two, I took it over to the farm house and asked my 90 year old grandfathe
 ## The overblown privacy debate
 The media, along with certain government folks, seem really hell bent on this whole Glass privacy issue. I thought it was funny before I had Glass and I think it's even more funny now.
 
-So, here's my method for putting down fears. I ask them to try them on. Of the 34 people who have tried on my pair of Glass, six have expressed privacy concerns (one angrily I might add). Of those six, all had seen "coverage" and were for the lack of a better term, scared. Five of the six, having taken them for a spin, pretty much instantly let go of their bias. 
+So, here's my method for putting down fears. I ask them to try them on. Of the 34 people who have tried on my pair of Glass, six have expressed privacy concerns (one angrily I might add). Of those six, all had seen "coverage" and were for the lack of a better term, scared. Five of the six, having taken them for a spin, pretty much instantly let go of their bias.
 
 A women in her early 40's, whom had voiced strong concerns before she tried them on, remarked after using them that "they [news media] must have never used them, it's pretty obvious when they're on." She then asked when she could buy a pair.
 

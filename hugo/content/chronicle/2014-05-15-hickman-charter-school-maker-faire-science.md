@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - make
 - digbuildlive
 - 3dprinter

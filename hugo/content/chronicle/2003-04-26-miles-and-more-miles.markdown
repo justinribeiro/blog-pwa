@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-04-26T09:52:51Z
 title: Miles and more miles

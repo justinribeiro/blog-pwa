@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2002-11-15T05:40:38Z
 title: The Holidays Near

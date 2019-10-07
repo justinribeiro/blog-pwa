@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - music
 - BAMM.TV
 - CHT
@@ -9,7 +9,7 @@ title: BAMM.TV launches in Taiwan, episodes now available
 url: /chronicle/2011/01/30/bamm-tv-launches-in-taiwan-episodes-now-available/
 ---
 
-In time for Chinese New Year, <a href="http://bamm.tv/">BAMM.TV</a> has launched on Chunghwa Telecom's <a href="http://mod.cht.com.tw/MOD/Web/content/">MOD set top box platform</a> in Taiwan. 
+In time for Chinese New Year, <a href="http://bamm.tv/">BAMM.TV</a> has launched on Chunghwa Telecom's <a href="http://mod.cht.com.tw/MOD/Web/content/">MOD set top box platform</a> in Taiwan.
 
 Many thanks to everyone who made this happen in such a short period of time, from the video team at BAMM.TV studios in San Francisco, to Chunghwa Telecom and our partners in Taiwan, <a href="http://taiclouds.com/">TaiClouds</a>.
 

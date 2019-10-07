@@ -1,11 +1,10 @@
 ---
-categories:
-- chrome
-- summit
 date: 2014-11-26T00:00:00Z
 description: Google may not own the web, but they sure are trying to make it better
 title: 'Chrome Dev Summit recap: ServiceWorker, Polymer, and TLS'
 url: /chronicle/2014/11/26/chrome-dev-summit-recap/
+tags:
+- Web
 ---
 
 This was the second year for Chrome Dev Summit. Last year there was a lot of talk about things that were in the pipe. This year, a lot of those very technologies came to the forefront in a very real way. A few of my favorites:

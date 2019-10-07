@@ -1,11 +1,11 @@
 ---
-categories:
-- google-glass
-- glassware
 date: 2014-06-01T00:00:00Z
 description: "Sample code and write up for Google Glass glassware task queue and future card sending in Mirror API and App Engine."
 title: "New sample Glassware: Using a Task Queue to send future cards"
 url: /chronicle/2014/06/01/glassware-future-card--task-sample-app/
+tags:
+- Web
+- IoT
 ---
 
 Both [Jason Salas](https://plus.google.com/116113014152499702246) and [Trish Whetzel](https://plus.google.com/115797992002431544380) asked interesting questions in relation to doing things with Glass that wouldn't fit the App Engine Cron use case very well in my last sample.

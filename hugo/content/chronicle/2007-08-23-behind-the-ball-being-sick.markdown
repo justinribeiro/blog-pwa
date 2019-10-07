@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - photography
 date: 2007-08-23T21:00:17Z
 description: Being sick. Blah.

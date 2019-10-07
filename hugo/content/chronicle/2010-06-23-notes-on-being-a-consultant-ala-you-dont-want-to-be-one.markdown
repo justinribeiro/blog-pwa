@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - business
 - consulting
 date: 2010-06-23T00:00:00Z
@@ -47,7 +47,7 @@ I can't tell you what to do.  I can tell you what I do. I check my emotions at t
 A lot of the time, that's enough to get to the point of sorting out the root cause of the anger/fear.  Then things can progress and everyone can be successful.
 
 ## One for the road
-I can't say this article is exhaustive of all my experience on client work and consulting (prepare for the book I'm calling "A life of juggling irrational requests into small money"...I'm kidding, there's no book, take a joke people it's okay to laugh).  
+I can't say this article is exhaustive of all my experience on client work and consulting (prepare for the book I'm calling "A life of juggling irrational requests into small money"...I'm kidding, there's no book, take a joke people it's okay to laugh).
 
 The long and short: most people I've met just don't understand what they're getting into with consulting, especially the points above. They hear about the flexible side of possibly working from home and the increased chance at doing what you love and other the good points...but they never hear about the bad side. When the bad hits, it hits them hard and sometimes knocks them out for good (I can sadly count 11 people I know who went into the consulting business....and quickly left).
 

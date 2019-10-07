@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - build
 - art
 - treehouse
@@ -11,7 +11,7 @@ url: /chronicle/2010/02/05/building-an-indoor-tree-house-part-1-the-structure/
 
 It all started with the <a href="http://kidtropolis.wordpress.com/2008/09/04/the-magic-tree-house-almost-finished/">magic tree house</a> that the very creative folks at Kidtropolis built.  I pondered if I could build something similar in our daughter Alli's playroom.  I put it on my list of things to explore and with most things on the list, the idea sort of simmered for six months.
 
-<img src="/images/blog/2010/02/treehouse-p1-primer.jpg" alt="Adding a bit of primer to the stud wall."> 
+<img src="/images/blog/2010/02/treehouse-p1-primer.jpg" alt="Adding a bit of primer to the stud wall.">
 
 Towards the end of summer, after having successfully built most of the new darkroom/artroom and workshop, the idea came up in a conversation with my wife Monica.  I figured I could swing something similar, though we didn't want it to be directly the same as the one Kidtropolis built (that just wouldn't be any fun).  After getting a resounding yes from our daughter Alli, we set out to build a tree house.
 

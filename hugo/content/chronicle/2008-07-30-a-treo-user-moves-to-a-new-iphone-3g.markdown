@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - development
 - hacking
 - technology

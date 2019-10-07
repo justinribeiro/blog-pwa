@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2004-03-21T06:23:08Z
 
@@ -10,7 +10,7 @@ wordpress_url: http://www.j5studios.com/chronicle/index.php/59
 ---
 
 
-The title is somewhat misleading; neither has anything to do with the other, but hey, I like adding a little mystery to my titles.  
+The title is somewhat misleading; neither has anything to do with the other, but hey, I like adding a little mystery to my titles.
 
 
 
@@ -18,7 +18,7 @@ I'm in the market for clay poker chips, which I find is much harder then it seem
 
 
 
-I then turned to the forums over at <a href="http://www.texasholdem-poker.com/forum/phpbb/phpBB2/index.php">TexasHoldem-Poker.com</a> for help.  The forum users had lots of first had experience with my problem, and lots of valid links (of which I will not list here) that I found helpful.  My hunt was fruitful; I found some cheap clay composites for about $0.10 a chip (9 gram super diamonds which I've used in card rooms before).  Not fancy, but I don't need fancy. 
+I then turned to the forums over at <a href="http://www.texasholdem-poker.com/forum/phpbb/phpBB2/index.php">TexasHoldem-Poker.com</a> for help.  The forum users had lots of first had experience with my problem, and lots of valid links (of which I will not list here) that I found helpful.  My hunt was fruitful; I found some cheap clay composites for about $0.10 a chip (9 gram super diamonds which I've used in card rooms before).  Not fancy, but I don't need fancy.
 
 
 

@@ -1,11 +1,10 @@
 ---
-categories:
-- mosquitto
-- google-compute-engine
 date: 2014-10-22T00:00:00Z
 description: Getting setup with Mosquitto on Google Compute Engine is suprising simple in this step-by-step setup.
 title: Setting up Mosquitto 1.4 with libwebsockets on CentOS 7 on Google Compute Engine
 url: /chronicle/2014/10/22/mosquitto-libwebsockets-google-compute-engine-setup/
+tags:
+- IoT
 ---
 
 I use mosquitto for a lot of projects; it's a great MQTT broker. However, I've also always had to spin my own middleware to meld it into my websocket implementations. This isn't the worst thing, as the approach allows a custom layer that can do heavy processing before being sent to clients.

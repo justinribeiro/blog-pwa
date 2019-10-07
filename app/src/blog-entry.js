@@ -41,6 +41,8 @@ class BlogEntry extends BlogElement {
       permalink: '',
       description: '',
       filename: '',
+      view: '',
+      tags: '',
     };
 
     const dom = this.shadowRoot.querySelector('#metadataArticle');
@@ -232,8 +234,16 @@ class BlogEntry extends BlogElement {
             </time>
             <span class="dotDivider"></span> ${this.metadata.readingtime} min
             read
+            <span class="dotDivider"></span>
+            Filed in
+            ${this.metadata.tags.split(',').map(
+              tag =>
+                html`
+                  <a href="/tags/${tag.toLowerCase()}/">${tag}</a>
+                `,
+            )}
           </div>
-        </header>
+
         <div id="metadataArticle" itemprop="articleBody"></div>
         <footer id="metaShare">
           <div>
@@ -281,8 +291,9 @@ class BlogEntry extends BlogElement {
               >
               or
               <a
-                href="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/${this
-                  .metadata.filename}"
+                href="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/${
+                  this.metadata.filename
+                }"
                 >edit this on Github.</a
               >
             </p>

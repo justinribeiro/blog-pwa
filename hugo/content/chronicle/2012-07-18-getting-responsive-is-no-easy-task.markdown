@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - build
 date: 2012-07-18T00:00:00Z
 title: "Getting responsive is no easy task"

@@ -2,6 +2,10 @@
 title: "My Kids Do Not Play That Sport and I Do Not Mind"
 date: 2019-09-06T13:38:13-07:00
 description: "My past experience playing a sport doesn't mean my kids have to follow suit, but you always as so now you get a think piece."
+tags:
+- Personal
+- Kids
+- Sports
 ---
 
 It’s the beginning of the school year and inevitably I run into someone who remembers me. I say remembers, because it’s not that they know me today, but remember me from a time that I likely don’t recall (concussions will do that your memory). This will quickly turn into the following question:

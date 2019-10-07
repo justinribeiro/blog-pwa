@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - personal
 - holiday
 date: 2008-12-25T00:00:00Z

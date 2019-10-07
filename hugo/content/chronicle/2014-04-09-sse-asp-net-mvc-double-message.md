@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - c-sharp
 - server-sent-events
 - asp-net-mvc

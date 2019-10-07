@@ -1,6 +1,6 @@
 ---
 author: Justin Ribeiro
-categories:
+tags:
 - Uncategorized
 date: 2007-07-06T00:00:00Z
 

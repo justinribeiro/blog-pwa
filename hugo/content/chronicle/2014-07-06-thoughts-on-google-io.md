@@ -1,10 +1,12 @@
 ---
-categories:
-- google-io
 date: 2014-07-06T00:00:00Z
 description: My thoughts after attending Google I/O; the good, the bad, the ugly.
 title: Thoughts on Google I/O
 url: /chronicle/2014/07/06/thoughts-on-google-io/
+tags:
+- Web
+- IoT
+- Business
 ---
 
 I had no intention of going to I/O this year. I put my name in the hat and didn't get picked. No big deal, life goes on. Then a few changing circumstances later, I had a ticket and off I was to I/O for year number three.

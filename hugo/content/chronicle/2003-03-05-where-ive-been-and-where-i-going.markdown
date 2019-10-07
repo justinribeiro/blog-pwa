@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-03-05T06:34:58Z
 title: Where I've been, and where I going

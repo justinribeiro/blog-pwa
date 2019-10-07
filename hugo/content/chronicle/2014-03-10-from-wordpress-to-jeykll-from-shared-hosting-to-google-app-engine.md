@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - app-engine
 - wordpress
 - jeykll

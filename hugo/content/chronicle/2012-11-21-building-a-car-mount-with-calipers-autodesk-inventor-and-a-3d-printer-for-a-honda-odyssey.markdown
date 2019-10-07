@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - CAD
 - 3D model
 - replicator1
@@ -22,9 +22,9 @@ I already had a Galaxy Nexus charger mount from ProClip (which is fantastic), bu
 ## Never a straight line
 The most logical place to put the mount was in a spot next to the steering wheel, above the vent, next to the center console. Problems however were immediately apparent:
 
-* There was no lip to create a hook 
-* The surface had an uneven curvy pitched surface 
-* The vent had not so even inner shape 
+* There was no lip to create a hook
+* The surface had an uneven curvy pitched surface
+* The vent had not so even inner shape
 
 There are ways around these problems however. I could have made a simple mold of that part of the dash and worked backwards. I probably could have used an angle finder or some such tool. Heck, if some one would have let me use a 3D scanner, could have used that too. But what I had was my ever trusty calipers and patience, so that would have to do.
 

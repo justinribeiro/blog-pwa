@@ -5,6 +5,8 @@ description: "Helping make Visual Studio code extensions better upstream."
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180608-pr-vscode-lithtml-twitter-1024x535.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180608-pr-vscode-lithtml-fb-1200x630.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180608-pr-vscode-lithtml-gplus-800x360.jpg"
+tags:
+- Web
 ---
 
 I found myself wanting to do some of the cooler

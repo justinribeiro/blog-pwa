@@ -1,11 +1,10 @@
 ---
-categories:
-- chrome
-- u2f
 date: 2014-10-25T00:00:00Z
 description: Setting up the Yubikey Neo takes a couple of additional steps before you can use it with Chrome two factor. Let's walk through the steps.
 title: Using a Yubikey Neo as a security key in Chrome for two factor auth
 url: /chronicle/2014/10/25/yubikey-neo-as-security-key-in-chrome/
+tags:
+- Web
 ---
 
 I'm a fan of [two factor authentication](https://en.wikipedia.org/wiki/Two-step_verification) as means to offer better security. Lots of services and sites now support the technique and more are adding the functionality every day. For a full list, see [twofactorauth.org](https://twofactorauth.org/).

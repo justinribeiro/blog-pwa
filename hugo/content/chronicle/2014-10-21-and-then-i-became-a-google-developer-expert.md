@@ -1,10 +1,10 @@
 ---
-categories:
-- gde
 date: 2014-10-21T00:00:00Z
 description: Hard work, hard interviews, and a lot of code later I'm a Google Developer Expert in Wearables!
 title: And then I became a Google Developer Expert
 url: /chronicle/2014/10/21/and-then-i-became-a-google-developer-expert/
+tags:
+- Business
 ---
 
 Way back in late May I got an cheerful email from Alex over at Google explaining that someone had nominated me to become a Google Developer Expert for my work on Google Glass. I admit I was rather flattered; I had no idea I had made an impression on anyone.

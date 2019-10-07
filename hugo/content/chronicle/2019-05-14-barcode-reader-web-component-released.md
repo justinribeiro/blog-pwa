@@ -2,6 +2,8 @@
 title: "Experimental barcode-reader web component released"
 date: 2019-05-14T08:21:30-07:00
 description: "barcode-reader is a web component that reads barcodes via the Shape Detection API via a Web Worker, but with LitElement."
+tags:
+- Web
 ---
 
 Some time ago, back in the Polymer 2 days, I had a very specific version of a `barcode-reader` web component that was pretty nifty. It was an early-days experiment based on the now-enabled Shape Detection API within Chrome. I even for a while worked to one of the better performing polyfills, [barcode-detector-polyfill](https://github.com/giladaya/barcode-detector-polyfill/pulls?q=is%3Apr+author%3Ajustinribeiro+is%3Aclosed), allowing that component to operate without worry of which was the right shim/polyfill to load.

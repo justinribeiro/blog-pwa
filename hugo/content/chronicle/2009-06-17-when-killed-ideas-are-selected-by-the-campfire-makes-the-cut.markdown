@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - business
 - creativity
 date: 2009-06-17T00:00:00Z

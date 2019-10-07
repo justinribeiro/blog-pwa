@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2006-05-24T08:09:45Z
 title: I've graduated to Mr. MBA

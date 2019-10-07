@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - house
 - creativity
 - network panel
@@ -14,7 +14,7 @@ When we purchased the house in 2008, one the major selling points was the fact t
 
 <img src="/images/blog/2009/09/network-panel-before.jpg" alt="network-panel-before">
 
-The panel is good in theory, but was poorly executed by the house builder. The cable runs of both the Cat5e and the coax aren't run in conduits but are rather free-run.  The problem with the free-run is that some of the cables are mighty short in that box and don't get me started on the kinks I've seen in the attic (no need for a max bend radius uh?).  
+The panel is good in theory, but was poorly executed by the house builder. The cable runs of both the Cat5e and the coax aren't run in conduits but are rather free-run.  The problem with the free-run is that some of the cables are mighty short in that box and don't get me started on the kinks I've seen in the attic (no need for a max bend radius uh?).
 
 The panel contained only one GE component: a naked 1x10 port telco board.  None of the nice looking integrated components on the website. From the prices I saw, retail price for the rough in box and the telco board: $80.  Trying to get those fancy nice components turned out to be either hard to find or down right expensive for dated gear.  Gigabit switch? Not available. 8 port 10/100 switch cost $150. Doesn't include universal box power supply.  All said and done, it was going to cost way too much money, and I wasn't going to end up with what I wanted.
 
@@ -25,10 +25,10 @@ As you can probably see from the first picture, I inherited a mess of cables.  T
 
 The connection drops from the router, the general chaos of the phone system not working half the time, it was enough to lead to the following plan: %^&* that original panel, and $%^& that wiring job. My more detailed plan was as follows:
 
-* Wire all the Cat5e cables into a single 24 port patch panel 
-* Re-wire the 10 port telco board to a 12 port patch panel 
-* Mount those patch panels to a wall mount 
-* Install new gigabit switch 
+* Wire all the Cat5e cables into a single 24 port patch panel
+* Re-wire the 10 port telco board to a 12 port patch panel
+* Mount those patch panels to a wall mount
+* Install new gigabit switch
 * Install new m0n0wall firewall
 
 ## Buying the pieces
@@ -41,7 +41,7 @@ Next, I picked up the patch panels, mount, and short cables from <a href="https:
 The last item I picked up was a NetGear JGS524 ProSafe 24 Port Gigabit Rackmount Switch for $120 on Ebay; new they run roughly $240, this one was a refurb unit with a 30 day warranty.  It's not a managed switch, but it'll do for the purpose at hand.
 
 ## The build out
-The first thing I needed to do was attach the wall mount bracket to the wall.  I went with a <a href="http://www.monoprice.com/products/product.asp?c_id=105&cp_id=10516&cs_id=1051602&p_id=1003&seq=1&format=2">7U unit</a> (which is very nice), but I needed a notch in the mount so I could run the cables to the patch panels.  So I took my trusty Makita jigsaw, used a 32tpi thin metal cutting blade on speed 4 position 1 and notched out a 5 inch by 3.5 inch hole (that blade cut through that metal like butter for those wondering). I'd then notch out a hole in the drywall and re-reroute the cables.  This was the plan, and that plan soon was thrown out the door.  
+The first thing I needed to do was attach the wall mount bracket to the wall.  I went with a <a href="http://www.monoprice.com/products/product.asp?c_id=105&cp_id=10516&cs_id=1051602&p_id=1003&seq=1&format=2">7U unit</a> (which is very nice), but I needed a notch in the mount so I could run the cables to the patch panels.  So I took my trusty Makita jigsaw, used a 32tpi thin metal cutting blade on speed 4 position 1 and notched out a 5 inch by 3.5 inch hole (that blade cut through that metal like butter for those wondering). I'd then notch out a hole in the drywall and re-reroute the cables.  This was the plan, and that plan soon was thrown out the door.
 
 As with most things when it comes to this house, interesting building choices give me a headache. Where there was supposed to be a stud, there was not. 16 inch on center, but the stud literally vanished about 3 inches above the original panel. Sure enough the stud had been cut in half some point before the drywall installed.  Why, I have not idea, but having cut into the drywall I could see that it was in fact cut (with no obstruction above it...I have no idea why they did it).  Lovely.
 
@@ -51,7 +51,7 @@ With no means to mount the 7U bracket above the original panel (I had not studs!
 
 So I marked out my holes, drilled using a 3/16 inch bit and using 1/4 inch by 3 inch lag screws with washers fastened the bracket to the studs. I then notched out the drywall slot in line with the previous notch I made in the bracket and pulled the Cat5e runs into the new bracket. Viola, bracket attached.
 
-I then went to work attaching the Cat5e cables to what I'm calling the master patch panel.  This panel allows to me to patch to either the phone system or the gigabit switch for any given port in the house. 
+I then went to work attaching the Cat5e cables to what I'm calling the master patch panel.  This panel allows to me to patch to either the phone system or the gigabit switch for any given port in the house.
 
 Monoprice includes a simple 110 punch tool with each patch panel, and I used it without issue.  No doubt if I'd do more of this sort of thing, I'd buy a nice impact punch tool, but the basic worked for me in this instance. I'm not going to get into the finer points of using a punch tool or how to wire a patch panel (this <a href="http://www.youtube.com/watch?v=3wdDRtGLiow">video</a> gives you an idea). I went with T568B termination since everything at the wall is terminated in T568B.
 

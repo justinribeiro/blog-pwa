@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2006-01-20T04:14:53Z
 title: 35mm depth of field on a DV camera

@@ -1,13 +1,11 @@
 ---
-categories:
-- mentoring
 date: 2016-06-20T00:00:00Z
 description: I have done a lot of speaking and mentoring over the years but this is
   the first time I can say the President of the United States will be hosting the
   event.
-tags: []
 title: Mentoring at Global Entrepreneurship Summit at Stanford
-url: /chronicle/2016/06/20/mentoring-at-ges2016/
+tags:
+- Business
 ---
 
 I've done a lot of speaking and mentoring over the years at many venues. This will be the first time I can say the President of the United States will be hosting the event.

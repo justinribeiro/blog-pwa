@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - house
 - build
 - creativity
@@ -14,7 +14,7 @@ Multifunctional space is all the rage these days and for good reason; why not ut
 <img src="/images/blog/2009/09/wall-step1.jpg" alt="The lumber cut and ready for hammering" title="The lumber cut and ready for hammering">
 
 ## The planning stage
-The garage was a prime candidate for this, mostly due to it's overwhelming space.  Designed as a three car tandem, it just so happened that tandem car space in the back was over 200 square feet (roughly a 19 x 12 foot room) and would make a very nice space.  
+The garage was a prime candidate for this, mostly due to it's overwhelming space.  Designed as a three car tandem, it just so happened that tandem car space in the back was over 200 square feet (roughly a 19 x 12 foot room) and would make a very nice space.
 
 The room would serve three purposes. Use #1 was as a wet/dry darkroom for both film development and printing.  The room didn't have any running water, and while it would have been nice it wasn't a necessity I was willing to put in myself or pay for (we did rather fine without running water in our last darkroom).  Use #2 was that it was going to be used as an art room, and house Monica's canvas and paper, as well as our matte cutter and heat press.  Use #3 was that I was going to use it as a shop, and house my tools and projects.
 
@@ -23,11 +23,11 @@ Since I had never built a partition wall before, I set out to ask friends and fa
 
 The wall itself was pretty basic:
 
-* Measures about 12 feet wide by 10 feet tall 
-* Wide 36 inch door placed in center so that I could get things in and out with ease 
-* Four (4) 20 amp plugs, plus two light switchs 
-* 16 inch on center studs 
-* Single header, single treated base plate for concrete  
+* Measures about 12 feet wide by 10 feet tall
+* Wide 36 inch door placed in center so that I could get things in and out with ease
+* Four (4) 20 amp plugs, plus two light switchs
+* 16 inch on center studs
+* Single header, single treated base plate for concrete
 
 Having defined what I was building, I ordered the lumber and had it delivered.  Total cost of the stud lumber was around $60.
 

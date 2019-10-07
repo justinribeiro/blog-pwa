@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - personal
 date: 2002-11-04T05:33:09Z
 title: Chasing the Past

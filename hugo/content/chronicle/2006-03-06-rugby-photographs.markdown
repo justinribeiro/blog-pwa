@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2006-03-06T01:19:11Z
 title: Rugby photographs

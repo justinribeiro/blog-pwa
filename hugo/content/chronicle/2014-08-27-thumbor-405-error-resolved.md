@@ -1,11 +1,10 @@
 ---
-categories:
-- thumbor
-- reponsive-images
 date: 2014-08-27T00:00:00Z
 description: Resolving Thumbors 405 method not allowed with a simple pull request (now in master).
 title: Thumbor and the case of the 405 method not allowed
 url: /chronicle/2014/08/27/thumbor-405-error-resolved/
+tags:
+- Web
 ---
 
 On my ongoing quest for better responsive images for use with picture, I've been trying different things. I've [previously written](https://www.justinribeiro.com/chronicle/2014/06/03/responsive-images-with-app-engine-image-api-gcs-gsutil/) about using the Image API service on App Engine and Google Cloud Storage to great gain. However, maybe you're not on that stack and maybe you want something more?

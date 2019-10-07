@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - film
 - art
 date: 2011-06-30T00:00:00Z
@@ -8,7 +8,7 @@ title: "New Kickstarter project: Facebook Stole My Soul"
 url: /chronicle/2011/06/30/new-kickstarter-project-facebook-stole-my-soul/
 ---
 
-In some spare time recently (of which I have little these days, but then again who does?) it was decided to do something fun and adventerous.  So the lads and I came up with the 1950's horror movie paraody, <a href="http://facebookstolemysoul.com">Facebook Stole My Soul</a>.  
+In some spare time recently (of which I have little these days, but then again who does?) it was decided to do something fun and adventerous.  So the lads and I came up with the 1950's horror movie paraody, <a href="http://facebookstolemysoul.com">Facebook Stole My Soul</a>.
 
 We cranked out a script for the film and decided we needed a trailer. We shot over the course of four days, we built the single set to start in a limited space in one day, and then we cut it together over the course of a week or so.  It was much fun, and the trailer made us laugh.
 

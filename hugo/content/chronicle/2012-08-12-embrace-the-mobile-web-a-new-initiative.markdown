@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - OakdaleChamber
 date: 2012-08-12T00:00:00Z
 title: "A New Initiative: Embrace the Mobile Web"
@@ -16,19 +16,19 @@ The question isn€™t will people find you on their phone; the reality is, the
 As the Oakdale Chamber of Commerce, we'll be able to give local businesses mobile ready web sites, help make sure they've verified their Google Places (Google+ Local) listings, and web hosting for a very low $39 a year cost to members. We want to take the pain out of the process and make their information (ala working hours or a menu) quickly available to not only local residents, but also the 8 million or so people who travel and stop in Oakdale each year.
 
 ## What does this program offer?
-The ability to get a simple, mobile-ready website up and running, without all the fuse. Let us take the headache out of the software so you can focus on content and reaching customers. 
+The ability to get a simple, mobile-ready website up and running, without all the fuse. Let us take the headache out of the software so you can focus on content and reaching customers.
 
-* 10 mobile and desktop ready themes installed, powered by our self hosted <a href="http://wordpress.org/">Wordpress</a>. 
-* Email provided by<a href="http://www.google.com/enterprise/apps/business/"> Google Apps for Business</a> free starter tier. 
-* Help setting up <a href=" http://www.google.com/placesforbusiness">Google Places for Business</a>. 
-* A monthly getting started / help course hosted at the Chamber. 
-* Empowerment. You control and edit the content from your web browser, no special tools required. 
+* 10 mobile and desktop ready themes installed, powered by our self hosted <a href="http://wordpress.org/">Wordpress</a>.
+* Email provided by<a href="http://www.google.com/enterprise/apps/business/"> Google Apps for Business</a> free starter tier.
+* Help setting up <a href=" http://www.google.com/placesforbusiness">Google Places for Business</a>.
+* A monthly getting started / help course hosted at the Chamber.
+* Empowerment. You control and edit the content from your web browser, no special tools required.
 
 ## Why it's important for local businesses
 The Oakdale Chamber of Commerce has always made strides to help expand economic growth in the community. We want this initiative to help foster that by:
 
-* Making businesses more available to local residents and surrounding communities 
-* Making businesses more available to the tourists who use Oakdale as a gateway to Yosemite 
+* Making businesses more available to local residents and surrounding communities
+* Making businesses more available to the tourists who use Oakdale as a gateway to Yosemite
 
 Too often I overhear "I wish [Local Business X] had a mobile website so I find out [insert need here]." We want to solve this issue as best we can in Oakdale.
 

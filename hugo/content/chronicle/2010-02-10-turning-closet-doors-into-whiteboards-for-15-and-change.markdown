@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - build
 - creativity
 - office
@@ -17,7 +17,7 @@ Unlike most of the articles I've read on the subject, my need for my whiteboards
 <img src="/images/blog/2010/02/15-closet-door-upgrade-1.jpg" alt="Closet doors into whiteboards. Sweet." title="Closet doors into whiteboards. Sweet.">
 
 ## The materials
-To construct whiteboards, we need some whiteboard like material.  You can go out and buy expensive custom-made pieces, but where is the fun in that.  Home Depot sells <a href="http://www.homedepot.com/h_d1/N-5yc1vZ1xgt/R-100541850/h_d2/ProductDisplay?catalogId=10053">Eucatex Thrifty White Tileboard</a> for a mere $11.87 that works perfectly for the job.  It comes in 4x8 sheets, so once cut down, it'll fit my closet doors nicely with a bit to spare.  
+To construct whiteboards, we need some whiteboard like material.  You can go out and buy expensive custom-made pieces, but where is the fun in that.  Home Depot sells <a href="http://www.homedepot.com/h_d1/N-5yc1vZ1xgt/R-100541850/h_d2/ProductDisplay?catalogId=10053">Eucatex Thrifty White Tileboard</a> for a mere $11.87 that works perfectly for the job.  It comes in 4x8 sheets, so once cut down, it'll fit my closet doors nicely with a bit to spare.
 
 I'm attaching these boards to closet doors that are less than 1.5 inches thick and are hollow core, so I decided to drill the appropriate holes and use hollow wall fasteners.  If you've never used these types of fasteners (often times called molly bolts), when inserted into your pre-drilled hole and the screw is removed, the "legs" expand and it grips the wall.  There are many different types with various max weight loads; I used two packs of a 1/4 inch version for a total cost of about $4, but you can also find <a href="http://www.containerstore.com/shop/elfa/components/installationHardware?productId=10009530&mybuyscid=8560592275">specific hollow wall anchors</a> designed for hollow core doors and closets.
 

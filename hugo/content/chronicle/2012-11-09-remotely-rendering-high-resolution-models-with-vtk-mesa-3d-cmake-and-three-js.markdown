@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - webgl
 - three.js
 - vtk
@@ -100,7 +100,7 @@ That little sphere on the white background...that's success!
 ## I'm going to need more than a sphere
 So what Justin, I don't need some low poly sphere. I need some high resolution action. So let's do that.
 
-The following is a basic example engine that takes command line parameters, loads a model file, and then renders a particular view. Now, before you start screaming "that won't scale!" and "you have C++ issues" I'm well aware (anyone who's written even a little C++ would be quick to note this). It's a pretty crappy example for reasons I'm not at liberaty to explain (read my memoirs after I die...the story is both sad and funny all at once). 
+The following is a basic example engine that takes command line parameters, loads a model file, and then renders a particular view. Now, before you start screaming "that won't scale!" and "you have C++ issues" I'm well aware (anyone who's written even a little C++ would be quick to note this). It's a pretty crappy example for reasons I'm not at liberaty to explain (read my memoirs after I die...the story is both sad and funny all at once).
 
 {{< codeblock lang="cpp" >}}
 #include &lt;vtkXMLPolyDataReader.h&gt;
@@ -413,13 +413,13 @@ this.ajaxOut = function (camera, control, auto, polycount) {
   } else {
     var viewportCamera = this._viewport.getCamera();
   }
-  
+
   if (control != null) {
     var viewportControl = control;
   } else {
     var viewportControl = this._controls;
   }
-  
+
   // let&#039;s initially be sane and only autorender 1M frames
   if (auto){
     clp = _loadModelPath + &quot;1&quot;;
@@ -427,7 +427,7 @@ this.ajaxOut = function (camera, control, auto, polycount) {
     // burn those CPU cycles!
     clp = _loadModelPath + polycount;
   }
-  
+
   var data = {
       cameraPositionX : viewportCamera.position.x,
       cameraPositionY : viewportCamera.position.y,
@@ -443,28 +443,28 @@ this.ajaxOut = function (camera, control, auto, polycount) {
       canvasH : document.getElementById(&quot;canvas_viewport&quot;).height
   };
   console.info(&quot;Set up data array for POST&quot;, data);
-  
+
   var postData = JSON.stringify(data);
   console.info(&quot;Stringify JSON object&quot;, postData);
-  
-  var httpRequest = new XMLHttpRequest();  
+
+  var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
-      if (httpRequest.readyState === 4) {  
-        if (httpRequest.status === 200) {  
+      if (httpRequest.readyState === 4) {
+        if (httpRequest.status === 200) {
             console.info(&quot;Looking good, AJAX returned 200!&quot;);
-            
+
             var newDiv = document.createElement(&quot;div&quot;);
             newDiv.setAttribute(&quot;data-img&quot;, httpRequest.responseText);
-        
+
         // meh
             var content = &quot;Rendered Frame &lt;button class=remoterender-view&gt;View&lt;/button&gt; | &lt;button class=remoterender-save&gt;Save&lt;/button&gt;&quot;;
             newDiv.innerHTML = content;
-            _renderResponseBlock.appendChild(newDiv);         
+            _renderResponseBlock.appendChild(newDiv);
             _renderResponseText.innerHTML = &quot;&quot;;
-            
+
             if (auto) {
                 var myCanvas = document.getElementById(&#039;canvas_viewport_renderoutput&#039;);
-                            
+
                 var ctx = myCanvas.getContext(&#039;2d&#039;);
                 ctx.canvas.width  = window.innerWidth;
                 ctx.canvas.height = window.innerHeight;
@@ -473,25 +473,25 @@ this.ajaxOut = function (camera, control, auto, polycount) {
                 img.onload = function() {
                   ctx.drawImage(img,0,0); // Or at whatever offset you like
                 };
-                
+
                 img.src = httpRequest.responseText;
-                
+
                 $(&quot;#canvas_viewport&quot;).hide();
             $(&quot;#canvas_viewport_renderoutput&quot;).show();
                 console.debug(&quot;rendering automagically!&quot;);
-            } 
-            
+            }
+
         } else {
           _renderResponseText.innerHTML = &quot;Could not get a remote frame at this time. Please try again later.&quot;;
         }
       }
     };
-    
-    httpRequest.open(&#039;POST&#039;, clp);  
-    httpRequest.setRequestHeader(&#039;Content-Type&#039;, &#039;application/x-www-form-urlencoded&#039;);  
+
+    httpRequest.open(&#039;POST&#039;, clp);
+    httpRequest.setRequestHeader(&#039;Content-Type&#039;, &#039;application/x-www-form-urlencoded&#039;);
     httpRequest.send(&#039;data=&#039; + encodeURIComponent(postData) );
     console.info(&quot;Fire in the hole&quot;);
-  
+
   console.groupEnd();
 };
 
@@ -512,14 +512,14 @@ At the moment, the demo is not online. Remote renderering large models on Amazon
 
 If you were to write use a proper C++ service that can be autoscaled on Amazon (which is what *cough* I would do), you have a number of things to handle beyond that. How do you get fast access to the files? Do you mount them off of S3? Do you shuffle them off of RAIDed EBS volumes? How do decrease latency across regions?
 
-Once you go down this road, things get complicated and performance can get pricey. 
+Once you go down this road, things get complicated and performance can get pricey.
 
 In real life, with a lot of testing, I've found that rendering 1M to 3M poly's using binary data and RAIDed EBS volumes will get you renders in the 0.3 to 1.1 second range. Taking into latency, you're looking at a 1.2 to 4 second round trip from request to response. This is why you'll note that the autorender flag in the JavaScript above was set to 1M; it's about as high as you can go for onCameraMovementStop based renderering. Beyond that, there is a noticable delay on frame return.
 
 When you start rendering the big files, anything above 10M polys really, you're going to get vastly different render times. 95M polys can run anywhere from 50-90 seconds (which if you start to think about it, is not terrible given its size...but for a user that is not used to big 3D assets, it's slower than dirt).  In these sorts of cases, you've got to job queue.
 
 ## Conclusion
-In a perfect world this would be a rather turn key process, but it really depends on the type of models and data you're dealing with. Open source tools such as <a href="http://www.paraview.org/">ParaView</a> have a similar set of functionality, including something more generally useful such as point cloud library support (see <a href="http://pointclouds.org/news/pcl-and-paraview-connecting-the-dots.html">PCL and ParaView -- Connecting the Dots</a>), but maybe you're only dealing with polys. If that's the case, then you can translate that to something workable on the web, using little more than the tools I've described above. 
+In a perfect world this would be a rather turn key process, but it really depends on the type of models and data you're dealing with. Open source tools such as <a href="http://www.paraview.org/">ParaView</a> have a similar set of functionality, including something more generally useful such as point cloud library support (see <a href="http://pointclouds.org/news/pcl-and-paraview-connecting-the-dots.html">PCL and ParaView -- Connecting the Dots</a>), but maybe you're only dealing with polys. If that's the case, then you can translate that to something workable on the web, using little more than the tools I've described above.
 
 _Note: I will make every effort to box up the entire tool set in some manner that makes it runnable, either locally or on your hosting of choice._
 

@@ -1,5 +1,5 @@
 ---
-categories:
+tags:
 - helpouts
 - mirror-api
 - google-glass

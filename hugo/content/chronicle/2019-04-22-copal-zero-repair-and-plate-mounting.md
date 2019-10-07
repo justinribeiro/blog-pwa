@@ -5,6 +5,8 @@ description: "I love building and fixing things, why should a large format shutt
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190422-teardown-copal-0.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190422-teardown-copal-0.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190422-teardown-copal-0.jpg"
+tags:
+- Photography
 ---
 
 I've never been one to shy away from trying to fix something I don't fully understand. There's a joy of slowing down and reading exploded views or listening to someone explain the inner workings of a fine working thing.

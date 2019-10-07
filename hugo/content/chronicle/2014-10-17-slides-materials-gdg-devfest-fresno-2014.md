@@ -1,11 +1,11 @@
 ---
-categories:
-- gdg
-- devfest
 date: 2014-10-17T00:00:00Z
 description: A list of resources from my talks at GDG DevFest Fresno.
 title: Slides and materials for GDG DevFest Fresno
 url: /chronicle/2014/10/17/slides-materials-gdg-devfest-fresno-2014/
+tags:
+- Web
+- IoT
 ---
 
 It's the night before [GDG DevFest Fresno 2014](http://devfest.gdgfresno.com) and I'm geared up and ready to roll. Some slides and materials you may want/need:

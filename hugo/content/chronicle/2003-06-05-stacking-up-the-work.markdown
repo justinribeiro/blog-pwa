@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - personal
 date: 2003-06-05T08:35:05Z
 title: Stacking up the work
@@ -10,9 +10,9 @@ It amazes me that I went from spring cleaning to summer stacks of additional wor
 
 Let's hit some notes:
 
-* Screenplay goes forward.  TV scripts are outlined. 
-* Photography expidention at the end of June, if all goes well to scope out sites to shoot movie. 
-* Been coaching a little youth soccer, mostly goalkeeping because it just sort of appeared one day. 
-* Scoping two businesses to buy. 
+* Screenplay goes forward.  TV scripts are outlined.
+* Photography expidention at the end of June, if all goes well to scope out sites to shoot movie.
+* Been coaching a little youth soccer, mostly goalkeeping because it just sort of appeared one day.
+* Scoping two businesses to buy.
 
 Summer Fun!

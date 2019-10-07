@@ -2,9 +2,11 @@
 date: 2018-09-10T08:00:00-08:00
 title: "Added release tags for chrome-headless docker container"
 description: "chrome-headless use continues to rise, so lets get some updates into this container."
+tags:
+- Web
 ---
 
-With over 314K worth of pull from DockerHub and after many requests, I finally got around to creating seperate tags for [chrome-headless](https://hub.docker.com/r/justinribeiro/chrome-headless/) that target each of the channels for Chrome (stable, beta, and dev for linux).
+With over 314K worth of pull from DockerHub and after many requests, I finally got around to creating separate tags for [chrome-headless](https://hub.docker.com/r/justinribeiro/chrome-headless/) that target each of the channels for Chrome (stable, beta, and dev for linux).
 
 On top of the addition of new release tags, I've also made some minor improvements to the docker image:
 

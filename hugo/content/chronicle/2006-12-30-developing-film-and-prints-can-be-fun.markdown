@@ -1,5 +1,5 @@
---- 
-categories:
+---
+tags:
 - Uncategorized
 date: 2006-12-30T08:40:00Z
 title: Developing film and prints can be fun

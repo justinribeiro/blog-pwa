@@ -2,6 +2,9 @@
 title: "Ghosting the Socials and Expanding My Open Web Existence"
 description: "When the social networks became a burden, I decided it was time to pull stakes and set off on a new content journey on the open web."
 date: 2019-09-30T08:16:40-07:00
+tags:
+- Web
+- Personal
 ---
 
 I haven't been on social media for a while. Twitter was really the last place I had any sort of daily interaction and that stopped nearly four months ago. I wasn't actually going to say anything (I didn't think it particularly mattered honestly), but given the humorous text from a friend who noted that my tweets on Twitter were being scheduled and automated ("You rye bastard and your robotos postings"), I might as well deliver at least some reasoning for such a departure.

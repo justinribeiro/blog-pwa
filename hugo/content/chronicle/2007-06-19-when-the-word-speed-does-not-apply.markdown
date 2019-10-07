@@ -1,6 +1,6 @@
 ---
 
-categories:
+tags:
 - photography
 date: 2007-06-19T21:10:31Z
 description: Talking classic Speed Graphic cameras.
