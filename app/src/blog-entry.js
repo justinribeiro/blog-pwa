@@ -2,6 +2,17 @@ import BlogElement from './blog-element.js';
 import {css, html} from 'lit-element';
 
 class BlogEntry extends BlogElement {
+  /**
+   * Declared properties and their corresponding attributes
+   */
+  static get properties() {
+    return {
+      interactions: {
+        type: String,
+      },
+    };
+  }
+
   async mount() {
     window.scroll(0, 0);
 
@@ -79,6 +90,27 @@ class BlogEntry extends BlogElement {
 
       this.failure = false;
       this.loaded = true;
+
+      this.__getInteractionCounts();
+    }
+  }
+
+  async __getInteractionCounts() {
+    const response = await fetch(
+      `https://webmention.io/api/count?target=${this.metadata.permalink}`,
+      {
+        method: 'GET',
+        mode: 'cors',
+      },
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.count > 0) {
+        this.interactions = `There are currently ${data.count} interactions with this piece on the open web.`;
+      } else {
+        this.interactions = `There are currently no interactions with this piece. Be the first!`;
+      }
     }
   }
 
@@ -255,6 +287,7 @@ class BlogEntry extends BlogElement {
               <a href="${this.share.email}">Email</a>
             </p>
             <h3>Respond to this piece</h3>
+            <p>${this.interactions}</p>
             <form
               id="webMentionForm"
               action="https://webmention.io/justinribeiro.com/webmention"
