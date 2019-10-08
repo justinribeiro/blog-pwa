@@ -40,7 +40,7 @@ With the this now in the head of my document, I decided to just roll the dice an
 
 With blog-pwa now rocking the proper setup, I went over to [Bridgy](https://brid.gy/), an open source connector that takes a look at your social media reactions and turns them into webmentions you can use on your site. After login and little timeline parsing, Bridgy had found some interactions, but was reporting that webmention support on my domain was not setup.
 
-A quick glance quickly revealed what I suspected: it was having trouble parsing the progressive web app output case. Bridgy wasn't the only one; [Telegraph](https://telegraph.p3k.io/), [Webmention.app](https://webmention.app/, [IndieWebify.me](https://indiewebify.me) all initially struggled to properly see the link references.
+A quick glance quickly revealed what I suspected: it was having trouble parsing the progressive web app output case. Bridgy wasn't the only one; [Telegraph](https://telegraph.p3k.io/), [Webmention.app](https://webmention.app/), [IndieWebify.me](https://indiewebify.me) all initially struggled to properly see the link references.
 
 I could have sat here and complained, but this stuff is open source so I got down to work. blog-pwa can render static output as needed; what I needed was User Agents to point them to the correct case.
 

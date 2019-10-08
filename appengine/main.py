@@ -56,6 +56,9 @@ class MainHandler(http2.PushHandler):
             'linkedinbot',
             'mediapartners-google',
             'mastodon',
+            'ahrefsbot',
+            'yandexbot',
+            'msnbot',
 
             # why googlebot? Because the static representation is 1-to-1 and
             # easier for even new M70+ GoogleBot to parse
@@ -69,7 +72,10 @@ class MainHandler(http2.PushHandler):
             'webmention',
             'node-fetch',
             'guzzle',
-            'bridgy'
+            'bridgy',
+            'go-http-client',
+            'ruby',
+            'appengine-google',
         ]
         bot_list_search = '(?:%s)' % '|'.join(bot_list_hunt)
 
