@@ -52,7 +52,11 @@ webmention_bot_hunt = [
   'webmention',
   'node-fetch',
   'guzzle',
-  'bridgy'
+  'bridgy',
+  'go-http-client',
+  'ruby',
+  'appengine-google',
+  'xray'
 ]
 {{< /codeblock >}}
 
