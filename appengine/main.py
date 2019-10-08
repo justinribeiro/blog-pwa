@@ -76,6 +76,7 @@ class MainHandler(http2.PushHandler):
             'go-http-client',
             'ruby',
             'appengine-google',
+            'xray'
         ]
         bot_list_search = '(?:%s)' % '|'.join(bot_list_hunt)
 
