@@ -1,6 +1,6 @@
 ---
 title: "Improving RSS Reader Support and Adding New Topic Feeds"
-description: "It's October which means RSS has risen from the grave and seeks feeeeeds. With new topic specific feeds and better code rendering support for RSS readers, you can now enjoy my articles in even more ways!"
+description: "October has arrived, which means RSS has risen from the grave and seeks feeeeeds. With new topic specific feeds and better code rendering support for RSS readers, you can now enjoy my articles in even more ways!"
 date: 2019-10-09T16:10:50-07:00
 tags:
 - Web
