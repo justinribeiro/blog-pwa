@@ -63,10 +63,24 @@ class BlogEntry extends BlogElement {
   }
 
   _generatedShareLinks() {
-    this.share.twitter = `https://twitter.com/intent/tweet?url=${this.metadata.permalink}&text=${this.metadata.title} via @justinribeiro`;
-    this.share.facebook = `https://www.facebook.com/sharer.php?u=${this.metadata.permalink}`;
-    this.share.linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=${this.metadata.permalink}&title=${this.metadata.title}&source=&summary=${this.metadata.description}`;
-    this.share.email = `mailto:?subject=Article: ${this.metadata.title}&body=Article from Justin Ribeiro: ${this.metadata.permalink}`;
+    if (!navigator.share) {
+      this.share.twitter = `https://twitter.com/intent/tweet?url=${this.metadata.permalink}&text=${this.metadata.title} via @justinribeiro`;
+      this.share.facebook = `https://www.facebook.com/sharer.php?u=${this.metadata.permalink}`;
+      this.share.linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=${this.metadata.permalink}&title=${this.metadata.title}&source=&summary=${this.metadata.description}`;
+      this.share.email = `mailto:?subject=Article: ${this.metadata.title}&body=Article from Justin Ribeiro: ${this.metadata.permalink}`;
+    }
+  }
+
+  async __webShare() {
+    try {
+      await navigator.share({
+        title: `"${this.metadata.title}" by Justin Ribeiro.`,
+        text: this.metadata.description,
+        url: this.metadata.permalink,
+      });
+    } catch (e) {
+      // ahh that did not work
+    }
   }
 
   async _processMetaData() {
@@ -199,15 +213,23 @@ class BlogEntry extends BlogElement {
           margin-right: 0.5em;
         }
 
+        button {
+          background: #d2ffe4;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 1em;
+        }
+
         label {
           display: block;
           margin-bottom: 0.5em;
         }
+
         input,
         button {
           padding: 0.5em;
-          font-size: 1em;
         }
+
         input {
           width: 100%;
           border: 1px solid #b0b0b0;
@@ -280,12 +302,28 @@ class BlogEntry extends BlogElement {
         <footer id="metaShare">
           <div>
             <h3>Share this piece</h3>
-            <p id="share">
-              <a href="${this.share.twitter}">Twitter</a>
-              <a href="${this.share.facebook}">Facebook</a>
-              <a href="${this.share.linkedin}">LinkedIn</a>
-              <a href="${this.share.email}">Email</a>
-            </p>
+            ${
+              navigator.share
+                ? html`
+                    <p>
+                      Your browser supports the
+                      <a href="https://w3c.github.io/web-share/"
+                        >Web Share API</a
+                      >! Whoo hoo! Click the button to use the native share on
+                      your device.<br />
+                      <button @click=${this.__webShare}>🚀 Share</button>
+                    </p>
+                  `
+                : html`
+                    <p id="share">
+                      <a href="${this.share.twitter}">Twitter</a>
+                      <a href="${this.share.facebook}">Facebook</a>
+                      <a href="${this.share.linkedin}">LinkedIn</a>
+                      <a href="${this.share.email}">Email</a>
+                    </p>
+                  `
+            }
+
             <h3>Respond to this piece</h3>
             <p>${this.interactions}</p>
             <form

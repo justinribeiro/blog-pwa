@@ -240,7 +240,7 @@ export default class BlogElement extends LitElement {
       }
 
       .post-container a h3 {
-        font-weight: 200;
+        font-weight: 400;
         text-transform: uppercase;
         font-size: 14px;
         margin-bottom: 0.5rem;
