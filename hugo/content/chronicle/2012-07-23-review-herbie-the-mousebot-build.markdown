@@ -19,7 +19,7 @@ Which brings me to the manual. The manual we had wasn't so good on the pictures.
 
 Other than the pictures, the text was quite good; Alli didn't have any trouble reading it and the jokes are good. I will note, that if you've working through the manual with your kids, they're going to want Oreo cookies (which are not included).
 
-<img src="/images/blog/2012/07/img-8591.jpg" alt="Alli and doing a little soldering on the kitchen table" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/07/img-8591.jpg" alt="Alli and doing a little soldering on the kitchen table" />
 
 ## Putting the thing together
 As the parts in the kit go, we weren't missing anything. The PCB was well made, nothing hacky about it.

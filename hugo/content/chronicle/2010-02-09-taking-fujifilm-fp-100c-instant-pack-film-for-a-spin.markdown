@@ -14,7 +14,7 @@ There is something about instant film that appeals to me.  Maybe it's the instan
 
 Say what you like, but shooting instant pack film is just a lot of fun.  My wife and I had used Polaroid for a lot of years and always found it enjoyable.  We'd give pictures to friends at parties, we'd fire from the hip on the streets of San Francisco, they were just endlessly fun.  When Polaroid went by the wayside due to a whole bunch of business reasons I won't go into, like many people it left us a little sad.  Would we ever get to shoot instant pack film again?
 
-<img src="/images/blog/2010/02/fp-100c-i1.jpg" alt="A smattering of FP-100c abounds.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/02/fp-100c-i1.jpg" alt="A smattering of FP-100c abounds.">
 
 With our stock of Polaroid film now nearing its last few sheets and boxes, we decided to order up some FujiFilm FP-100c instant pack film to try out in some of our Polaroid Land cameras.  We'd had heard good things but seeing is believing when it comes to photographic prints (especially in the case of instant film).  Let the testing begin!
 

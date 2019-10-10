@@ -13,4 +13,4 @@ Hope to see you there!
 
 UPDATE: I'm at Booth 401; come on down and let's talk about some code!
 
-<img src="/images/blog/2014/11/20141121_111603_188.jpg" alt="At the booth!">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/11/20141121_111603_188.jpg" alt="At the booth!">

@@ -93,7 +93,7 @@ $ make test
 So the build finished, hopefully error free. Now what?  We need to test to see if things are working. Just so happens, on the Cmake wiki, there is a <a href="http://www.cmake.org/Wiki/VTK/Examples/Cxx/Utilities/OffScreenRendering">example script</a> that does this very thing. Drop that into a file, build it, and then run from the command line.
 
 What you should end up with is something like this:
-<img src="/images/blog/2012/11/screenshot.png" alt="A sphere on white background, off screen rendered" title="screenshot" width="300" height="300" class="alignnone size-full wp-image-1177" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/11/screenshot.png" alt="A sphere on white background, off screen rendered" title="screenshot" width="300" height="300" class="alignnone size-full wp-image-1177" />
 
 That little sphere on the white background...that's success!
 
@@ -309,7 +309,7 @@ $ ./RenderObj somemodel.ply -3 21 39 0 0 0 0 0 0 30 600 600 true somemodel_textu
 
 That above command will result in a big dump of base64 data (which we'll use in a bit to send to a browser), but you'll note I kept the temp file so we can look at it now:
 
-<img src="/images/blog/2012/11/HJS6QlsM9h7Eqn4ULsH7hKx9.jpg" alt="Our off screen render...success!" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/11/HJS6QlsM9h7Eqn4ULsH7hKx9.jpg" alt="Our off screen render...success!" />
 
 We're cookin'. Let's prep for the browser.
 

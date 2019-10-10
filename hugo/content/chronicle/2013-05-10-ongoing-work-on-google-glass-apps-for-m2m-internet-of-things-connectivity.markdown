@@ -19,7 +19,7 @@ From there, deploy the app to App Engine it's only a matter of setting up in the
 ## So...what am I working on
 Couple of things (well, lots of things). Primarily on the Mirror API side, I'm working on an MQTT bridge that pushes data down to the device in as real time as I can get. The basic implementation looks like this (one of my older Arduino MQTT thermostat builds showing a temperature alert).
 
-<img src="/images/blog/2013/05/screenshot-20130502-mirror-to-home-auto-bridge.png" alt="MQTT to Mirror API bridge test" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2013/05/screenshot-20130502-mirror-to-home-auto-bridge.png" alt="MQTT to Mirror API bridge test" />
 
 On the hackable side (ala, native Glass apps) I'm working through my real time patient stats idea. The Mirror API could work for this, but it's not ideal. If you're looking for code on the native side right away, look no further than <a href="https://plus.google.com/116031914637788986927/posts">Mike DiGiovanni's</a> <a href="https://github.com/kaze0">Github projects</a>.
 

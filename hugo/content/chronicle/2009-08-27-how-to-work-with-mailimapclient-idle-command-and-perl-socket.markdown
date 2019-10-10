@@ -63,7 +63,7 @@ if ($client-&gt;IsAuthenticated()) {
  }
 {{< /codeblock >}}
 
-<img src="/images/blog/2009/08/screenshot-20090827-perlidletest.png" alt="A simple set of output from the test script">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/08/screenshot-20090827-perlidletest.png" alt="A simple set of output from the test script">
 
 The example above requires you change out the username and password, and presumes that you're connecting to Gmail (or in my case, Google Apps for Domain).  Since Google now offers the IDLE command, the output looks something like the screenshot to the left.  It's very basic output (this was only a quick test), but the connection sits in idle and waits for the IMAP server to return data to the open socket.  It's very quick in my limited tests (there's very little delay).  I haven't worked out all the kinks in this little test, but it gives you some idea on how to read the socket in conjunction with IDLE.
 

@@ -9,7 +9,7 @@ url: /chronicle/2013/05/10/making-eclipse-4-2-a-little-darker-with-css-and-eclip
 Coming from the command line editors, I have a tenancy to like my code editors somewhat dark. And while I'm sure you could show me other such editors or yell at me to keep using said command line editors, Eclipse is where I spend most of my development time (the tooling is solid). With the recent updates to Eclipse Juno I can now make things a little darker.
 
 ## What it looks like
-<img src="/images/blog/2012/12/screenshot-20121213-getfoggy-1024x768.jpg" alt="Eclipse 4.2 Windows, foggy" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/12/screenshot-20121213-getfoggy.jpg" alt="Eclipse 4.2 Windows, foggy" />
 
 ## The tools
 If you want a quick breakdown on how to style eclipse, look no further than Lars Vogel's article <a href="http://www.vogella.com/articles/Eclipse4CSS/article.html">Styling Eclipse</a>.

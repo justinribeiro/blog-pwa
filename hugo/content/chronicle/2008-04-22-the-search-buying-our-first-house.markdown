@@ -22,7 +22,7 @@ While we walked away from the first house we bid on after the builder wouldn€�
 Upon looking at the house, it was actually quite nice.  The house had it share of upgrades, including such things as granite countertops, dark hardwood floor, upgraded carpet, CAT5e wiring throughout and built in surround sound in the living room.  With a three car tandem garage and over 2600 square feet of space, it was worth the look.
 
 
-<img src="/images/blog/2008/04/speakers_gone.jpg" alt="The missing speaker left a sizable hole" title="The missing speaker hole" width="350" height="233" class="imgleft alignnone size-full wp-image-16" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/04/speakers_gone.jpg" alt="The missing speaker left a sizable hole" title="The missing speaker hole" width="350" height="233" class="imgleft alignnone size-full wp-image-16" />
 
 For it€™s strong points, the house had it€™s weaknesses.  The surround sound was wired, but the speakers had been removed, leaving gapping holes in the ceiling.  The house was wired with CAT5e, but wasn€™t networked; the main network panel containing networking, phone, and video wiring was a disaster.  The backyard was a barren landscape as were a few ceilings, as fixtures appeared to be missing.
 

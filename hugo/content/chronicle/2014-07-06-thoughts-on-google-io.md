@@ -21,7 +21,7 @@ This year, the develop sandboxes on the second floor had some great talks that s
 
 Many of the other sandboxes were equally deserving of everyone's time. The Go sandbox had some great content and the Cloud platform folks were deploying left and right on the fly. For myself, the sandboxes were the place to be.
 
-<img src="/images/blog/2014/07/20140625_123606_816.jpg" alt="throughtglass - Chrome sandbox at I/O" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/07/20140625_123606_816.jpg" alt="throughtglass - Chrome sandbox at I/O" />
 
 ## The tenacity: real time demos
 

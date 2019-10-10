@@ -22,7 +22,7 @@ For the popups to work, you have to install <a href="http://www.fullphat.net/ind
 
 My chosen way to use perl on Windows is via <a href="http://www.cygwin.com/">Cygwin</a>.  Download and run the installer, the installer will download the proper packages to setup the environment (which last time I checked, by default installs perl).  If you want to be sure that it is going to install perl, see screenshot below.
 
-<img src="/images/blog/2010/11/screenshot-20101119-cygwin-install.png" alt="Cygwin package install selection screen">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/11/screenshot-20101119-cygwin-install.png" alt="Cygwin package install selection screen">
 
 ## Step 2: Get to your command line
 Once Cygwin is finished installing, you'll have some new shortcuts in your Start Menu.  Open "Cygwin Bash Shell" and you'll end up with a command line window.  This is the shell we'll be using to install the rest of the needed modules and run our script.
@@ -45,7 +45,7 @@ perl -MCPAN -e 'install Mail::IMAPClient'
 
 This will install the three modules that you need to make the idlemailcheck work.  In the screenshot below, you can see what the commands look like after they run when the modules have been installed. Note, when you actually install a module for the first time, the output can be quite long as it builds.
 
-<img src="/images/blog/2010/11/screenshot-20101119-modules-install.png" alt="Install commands for perl modules">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/11/screenshot-20101119-modules-install.png" alt="Install commands for perl modules">
 
 ## Step 4: Edit Perl script
 
@@ -73,7 +73,7 @@ ps -as | grep perl
 
 See screenshot below for entire chain of events.
 
-<img src="/images/blog/2010/11/screenshot-20101119-runscript.png" alt="Running the script in various forms">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/11/screenshot-20101119-runscript.png" alt="Running the script in various forms">
 
 ## Step 5: All done
 That's pretty much it.  If you did all of the above steps without running into any trouble, you should be up and running.  Cheers!

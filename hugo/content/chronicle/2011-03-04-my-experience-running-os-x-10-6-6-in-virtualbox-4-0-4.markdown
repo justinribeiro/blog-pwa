@@ -26,6 +26,6 @@ The following isn't so much a guide as it is my general findings of what worked 
 
 And that's about it.  I can't speak to the ins and outs; as I mentioned before, it's not a daily use sort of thing for me.  Everything I need it to do (run a little Xcode, debug some apps) it does without fail.  Your mileage of course will vary.
 
-<img src="/images/blog/2011/03/screenshot-20110304-videomodes.png" alt="Video modes in Virtualbox">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2011/03/screenshot-20110304-videomodes.png" alt="Video modes in Virtualbox">
 
-<img src="/images/blog/2011/03/screenshot-20110304-videomodebooted.png" alt="Booted up, running at proper resolution.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2011/03/screenshot-20110304-videomodebooted.png" alt="Booted up, running at proper resolution.">

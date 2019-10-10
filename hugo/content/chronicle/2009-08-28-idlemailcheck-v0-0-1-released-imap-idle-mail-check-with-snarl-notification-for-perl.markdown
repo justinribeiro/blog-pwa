@@ -10,11 +10,11 @@ title: "idlemailcheck v0.0.1 released - IMAP IDLE mail check with Snarl notifica
 url: /chronicle/2009/08/28/idlemailcheck-v0-0-1-released-imap-idle-mail-check-with-snarl-notification-for-perl/
 ---
 
-<img src="/images/blog/2009/08/snarl-gmail-authenticated.png" alt="Initially logged into Gmail">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/08/snarl-gmail-authenticated.png" alt="Initially logged into Gmail">
 
 Since there has been some interest in using <a href="http://justinribeiro.com/chronicle/2009/08/27/how-to-work-with-mailimapclient-idle-command-and-perl-socket/">IMAP IDLE, Perl and Snarl</a>, I wrote a cleaner more useful proof of concept that I have named idlemailcheck.  Since I've never used Google Code, I decided to try it out and host the code there: <a href="http://code.google.com/p/idlemailcheck">idlemailcheck @ Google Code</a>.
 
-<img src="/images/blog/2009/08/snarl-email-received.png" alt="Email received and displayed as Snarl notification">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/08/snarl-email-received.png" alt="Email received and displayed as Snarl notification">
 
 The code is very raw and could use a improvement.  It is very much a proof of concept and run it at your own risk.  To see what it looks like in action, I've included a few screenshots of the Snarl notifications that appear over there on the left.  The very nice icon comes from a <a href="http://jonasraskdesign.com/">Jonas Rask Design</a>, and is free for personal use.  This version does not play a sound, but subsequent versions will make that an option.  I cannot stress enough that this is a proof of concept and that expectations should be low in this every version.
 

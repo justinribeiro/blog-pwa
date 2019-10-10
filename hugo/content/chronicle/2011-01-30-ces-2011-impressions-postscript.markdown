@@ -24,9 +24,9 @@ It's going to be a fun build up as some of the deals begin to make there way pub
 
 In the mean time, a few random snaps from the show that can't even begin to explain the magnitude.  We were often just too busy to take photos...and you they don't let you take pictures of stuff that hasn't come out yet. :-)
 
-<img src="/images/blog/2011/01/ces-01.jpg" alt="BAMM.TV booth at CES 2011. Chris Hansen at the helm." />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2011/01/ces-01.jpg" alt="BAMM.TV booth at CES 2011. Chris Hansen at the helm." />
 
-<img src="/images/blog/2011/01/ces-02.jpg" alt="Me talking to Logitech about Google TV. Image via James Duvall."" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2011/01/ces-02.jpg" alt="Me talking to Logitech about Google TV. Image via James Duvall."" />
 
-<img src="/images/blog/2011/01/ces-03.jpg" alt="BAMM.TV site on Blackberry Playbook. Image via James Duvall." />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2011/01/ces-03.jpg" alt="BAMM.TV site on Blackberry Playbook. Image via James Duvall." />
 

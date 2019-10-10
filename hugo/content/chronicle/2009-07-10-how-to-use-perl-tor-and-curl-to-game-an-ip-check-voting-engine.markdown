@@ -87,7 +87,7 @@ Could you run this right now on your system?  No.  You'd have to modify the coun
 
 So does this script actaully work?  See screenshot of script(s) in action:
 
-<img src="/images/blog/2009/07/example-run.jpg" alt="Example Run Script...keep voting!">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/07/example-run.jpg" alt="Example Run Script...keep voting!">
 
 As you can see, I've got the script running on three different servers. To really test it, between me and some folks I know, it was at one point running at least 20 instances of the script and submitted a grand total of over 460,000 votes to the target.
 

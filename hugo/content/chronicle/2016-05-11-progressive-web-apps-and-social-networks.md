@@ -90,7 +90,7 @@ return self.response.write(template.render(bot_template, data))
 
 Sweet simplicity. In testing it looks like this on the App Engine console:
 
-<img src="/images/blog/2016/05/bot-gae-testing.png" alt="App Engine console says we have a bot winner!">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2016/05/bot-gae-testing.png" alt="App Engine console says we have a bot winner!">
 
 We're on the right track. Now let's give that bot some data so our PWA can be in further awesome.
 
@@ -143,7 +143,7 @@ Testing the links themselves is fairly simple. Facebook has their [share debugge
 
 To test this working. I used my forked and hacked up clone of [Rob Dobson's](https://www.twitter.com/robdobson) zuperkulblog-progressive, [zuperkulblog-progressive-hugo](https://github.com/justinribeiro/zuperkulblog-progressive-hugo).
 
-<img src="/images/blog/2016/05/twitter-card-testing.png" alt="Twitter metadata for the win.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2016/05/twitter-card-testing.png" alt="Twitter metadata for the win.">
 
 As you can see Twitter now very much thinks our progressive web app is much happier as opposed to the non-bot version.
 
@@ -159,7 +159,7 @@ The short answer is that Googlebot will read and index our progressive web app j
 
 Skeptical this gets indexed? Yeah, we were to. That’s why we tested it:
 
-<img src="/images/blog/2016/05/search-results.png" alt="Testing corporate search.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2016/05/search-results.png" alt="Testing corporate search.">
 
 Tada! Magic! Googlebot happily sees our data changes and if we search for words in our injected pages, we can see Googlebot happily indexing our site. On our tiny production corporate page to boot.
 

@@ -25,7 +25,7 @@ Start simple, go from there.
 
 I decided in the end to add an "extras" menu along with a new MQTT preferences screen for setting your broker connection, a couple new classes to handle MQTT communications, and then place my hooks into the existing status update callbacks carefully.
 
-<img src="/images/blog/2012/09/screenshot-20120905-mqtt-prefs.jpg" alt="My ReplicatorG build, with MQTT broker preference screen" title="My ReplicatorG build, with MQTT broker preference screen" width="755" height="761" class="alignnone size-full wp-image-1141" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/09/screenshot-20120905-mqtt-prefs.jpg" alt="My ReplicatorG build, with MQTT broker preference screen" title="My ReplicatorG build, with MQTT broker preference screen" width="755" height="761" class="alignnone size-full wp-image-1141" />
 
 ## Step 2: Getting familiar with Eclipse Paho
 The <a href="http://www.eclipse.org/paho/">Eclipse Paho Project</a> has a fairly new Java client in their <a href="http://git.eclipse.org/c/paho/org.eclipse.paho.mqtt.java.git/">git repo</a> which I had never used. There are other Java libraries that can help you with MQTT communication, but I decided to jump into Paho in this case. I figured if I found some bugs, I can tack them to the tracker to help out.
@@ -60,7 +60,7 @@ Just to recap, we now have ReplicatorG sending and listening for messages from o
 
 First, we get the great HTML5 Boilerplate project. Since I wanted something responsive and ready for mobile out of the gate, I used href="http://www.initializr.com/">initializr</a> to create a specific package saving me a bit of time. I then went ahead and wrote a small broker web socket class in JavaScript, created a small Ui class to handle DOM updates, init'ed the whole thing, and viola, we have data being pumped to the web!
 
-<img src="/images/blog/2012/09/screenshot-20120905-matching.jpg" alt="Remote web frontend matching to the ReplicatorG build" title="Remote web frontend matching to the ReplicatorG build" width="897" height="873" class="alignnone size-full wp-image-1142" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/09/screenshot-20120905-matching.jpg" alt="Remote web frontend matching to the ReplicatorG build" title="Remote web frontend matching to the ReplicatorG build" width="897" height="873" class="alignnone size-full wp-image-1142" />
 
 If you're running Firefox, Chrome, or Safari (either desktop or mobile versions) you'll get a pretty decent experience.
 

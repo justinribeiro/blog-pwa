@@ -41,28 +41,28 @@ Where this coop is located gets a lot sun, and it will top out above 105 degrees
 ## The Build
 I could explain it, but you're probably tired of reading my rambling prose.  Photographs follow.
 
-<img src="/images/blog/2010/05/chicken-coop-04.jpg" alt="The base frame." title="chicken-coop-04" class="aligncenter size-full wp-image-837" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-04.jpg" alt="The base frame." title="chicken-coop-04" class="aligncenter size-full wp-image-837" height="400" width="600">
 
-<img src="/images/blog/2010/05/chicken-coop-11.jpg" alt="Inside the coop" title="chicken-coop-11" class="aligncenter size-full wp-image-833" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-11.jpg" alt="Inside the coop" title="chicken-coop-11" class="aligncenter size-full wp-image-833" height="400" width="600">
 
-<img src="/images/blog/2010/05/chicken-coop-06.jpg" alt="Nest box in place" title="chicken-coop-06" class="aligncenter size-full wp-image-839" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-06.jpg" alt="Nest box in place" title="chicken-coop-06" class="aligncenter size-full wp-image-839" height="400" width="600">
 
-<img src="/images/blog/2010/05/chicken-coop-07.jpg" alt="Inside the coop" title="chicken-coop-07" class="aligncenter size-full wp-image-840" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-07.jpg" alt="Inside the coop" title="chicken-coop-07" class="aligncenter size-full wp-image-840" height="400" width="600">
 
-<img src="/images/blog/2010/05/chicken-coop-02.jpg" alt="Monica painting the coop" title="chicken-coop-02" class="aligncenter size-full wp-image-835" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-02.jpg" alt="Monica painting the coop" title="chicken-coop-02" class="aligncenter size-full wp-image-835" height="400" width="600">
 
-<img src="/images/blog/2010/05/chicken-coop-08.jpg" alt="Installing hinges" title="chicken-coop-08" class="size-full wp-image-841" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-08.jpg" alt="Installing hinges" title="chicken-coop-08" class="size-full wp-image-841" height="400" width="600">
 
-<img src="/images/blog/2010/05/chicken-coop-09.jpg" alt="Bottom access door" title="chicken-coop-09" class="aligncenter size-full wp-image-842" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-09.jpg" alt="Bottom access door" title="chicken-coop-09" class="aligncenter size-full wp-image-842" height="400" width="600">
 
 ## The Finished Product
 The finished coop in all it's glory.
 
-<img src="/images/blog/2010/05/chicken-coop-01.jpg" alt="The finished coop" title="chicken-coop-01" class="aligncenter size-full wp-image-834" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-01.jpg" alt="The finished coop" title="chicken-coop-01" class="aligncenter size-full wp-image-834" height="400" width="600">
 
-<img src="/images/blog/2010/05/chicken-coop-10.jpg" alt="The finished run and coop" title="chicken-coop-10" class="aligncenter size-full wp-image-843" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-10.jpg" alt="The finished run and coop" title="chicken-coop-10" class="aligncenter size-full wp-image-843" height="400" width="600">
 
-<img src="/images/blog/2010/05/chicken-coop-05.jpg" alt="Allison, chicken wrangler." title="chicken-coop-05" class="aligncenter size-full wp-image-838" height="400" width="600">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/05/chicken-coop-05.jpg" alt="Allison, chicken wrangler." title="chicken-coop-05" class="aligncenter size-full wp-image-838" height="400" width="600">
 
 ## Final thoughts
 The finished coop functions as I think it should, and the chickens have no issues using it.

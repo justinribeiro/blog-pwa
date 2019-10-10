@@ -22,8 +22,8 @@ While myself or Monica are not experts on film history, we wasted no time purcha
 
 We haven't been able to find any information about them (yet), but if you have any information or old Kodak literature that might allow us to date these plates do let us know!  We'll post it here and give you the credit.  Below, photographs of one of the boxes.
 
-<img src="/images/blog/2008/09/eastman_kodak_glass_plates_01.jpg" alt="1890's Eastman Kodak Glass Dry Plates, unopened, top" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/09/eastman_kodak_glass_plates_01.jpg" alt="1890's Eastman Kodak Glass Dry Plates, unopened, top" />
 
-<img src="/images/blog/2008/09/eastman_kodak_glass_plates_02.jpg" alt="1890's Eastman Kodak Glass Dry Plates, unopened, label" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/09/eastman_kodak_glass_plates_02.jpg" alt="1890's Eastman Kodak Glass Dry Plates, unopened, label" />
 
-<img src="/images/blog/2008/09/eastman_kodak_glass_plates_03.jpg" alt="1890's Eastman Kodak Glass Dry Plates, unopened, back" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/09/eastman_kodak_glass_plates_03.jpg" alt="1890's Eastman Kodak Glass Dry Plates, unopened, back" />

@@ -26,7 +26,7 @@ Seems simple right? But Justin, I can't possibly have someone just running this 
 
 Since we don't want to wait around (and not to mention the dev server won't kick cron jobs locally) we can test by heading down to the cron jobs in the dev server:
 
-<img src="/images/blog/2014/05/screenshot-20140526-cron-job.png" alt="Kicking a cron job off locally for testing." />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/05/screenshot-20140526-cron-job.png" alt="Kicking a cron job off locally for testing." />
 
 ## Admin interface? Nah, we don't need one.
 
@@ -34,7 +34,7 @@ The application has no admin interface to create scheduled cards. How in the wor
 
 But Justin, I don't see this mystical CronCards kind you speak of! No, probably not. First things first, you need to insert a single record to create our particular kind within the datastore. To do so, you can run the /samplesforcron route and it'll insert a single entity record. From there, you can now see the CronCards kind in the datastore viewer and add/edit as needed.
 
-<img src="/images/blog/2014/05/screenshot-20140526-datastore-viewer-cron.png" alt="Admin panel? I'll just edit the datastore" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/05/screenshot-20140526-datastore-viewer-cron.png" alt="Admin panel? I'll just edit the datastore" />
 
 ## Google+ Sign In. It's way better.
 

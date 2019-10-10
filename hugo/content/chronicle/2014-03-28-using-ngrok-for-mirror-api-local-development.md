@@ -25,7 +25,7 @@ $ ngrok 8080
 
 At this point ngrok is going to display some status information including the randomly generated domain that we're going to use for our subscription callback.
 
-<img src="/images/blog/2014/03/screenshot-20140328-ngrok-mirror-callback.png" alt="ngrok and app engine doing their thing" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/03/screenshot-20140328-ngrok-mirror-callback.png" alt="ngrok and app engine doing their thing" />
 
 In the screenshot you can see that I've already been testing; ngrok is showing requests coming into an endpoint (/glassupload) and in the App Engine log console behind it, you can see that request is actually making its way to the endpoint.
 
@@ -63,6 +63,6 @@ The key line in above said code is out callbackUrl. This is where we set out ngr
 
 Now, when we share something through our magical contact on Glass, it'll handoff through out ngrok tunnel and back to our localhost. We can view these requests via the localhost:4040 server that ngrok sets up that looks something like this:
 
-<img src="/images/blog/2014/03/screenshot-20140328-ngrokpanel.png" alt="ngrok and app engine doing their thing" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/03/screenshot-20140328-ngrokpanel.png" alt="ngrok and app engine doing their thing" />
 
 Here we can see I've got some requests coming in, the json that Mirror API sent back, and the ability to replay that request with just a click of the button. Pretty nifty right? Now go forth and write some more Glassware!

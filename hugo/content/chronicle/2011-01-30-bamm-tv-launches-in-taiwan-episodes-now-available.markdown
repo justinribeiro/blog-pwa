@@ -15,4 +15,4 @@ Many thanks to everyone who made this happen in such a short period of time, fro
 
 We'll be sending more episodes of great, original BAMM.TV content to CHT in the coming months.  In the mean time, if happen to be in Taiwan, be sure to check us out!
 
-<img src="/images/blog/2011/01/cht-01.jpg" alt="BAMM.TV on the CHT MOD platform in Taiwan." width="600" height="400" class="alignnone size-full wp-image-1000" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2011/01/cht-01.jpg" alt="BAMM.TV on the CHT MOD platform in Taiwan." width="600" height="400" class="alignnone size-full wp-image-1000" />

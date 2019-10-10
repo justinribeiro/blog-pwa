@@ -11,7 +11,7 @@ url: /chronicle/2009/06/30/top-5-picks-from-killed-ideas-volume-1/
 
 Truth be told, my friends and I have a <a href="http://justinribeiro.com/chronicle/2009/06/17/when-killed-ideas-are-selected-by-the-campfire-makes-the-cut/">mention</a> in this book as one the top 50 ideas selected in this first volume of <a href="http://killedideas.com">Killed Ideas</a>.   Subsequently we have two different editions of the book: the special edition for finalists, and the soft cover copy that the general public can get their hands on.  As a matter of fact, I have some copies to give away...so keep on reading and you too could have one free of charge courtesy of myself, my friends, and the folks at <a href="http://www.blurb.com/">Blurb</a>!
 
-<img src="/images/blog/2009/07/killed-ideas-book.jpg" alt="killed-ideas-book">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/07/killed-ideas-book.jpg" alt="killed-ideas-book">
 
 ## Why choose your top 5?
 Truth be told, I love a good look at not only ideas that fell either through the cracks or by the wayside, but also creativity at it's finest.  Was <a href="http://www.youtube.com/watch?v=oUacDTaRNdU">our idea</a> the most creative in the book?  It's not an apples to apples comparison, everything was very good in it's own right.  There are of course those ideas that standout to me as having been very good, so why not highlight them for the world to see? On that note, I give you my top five.

@@ -166,4 +166,4 @@ With all the moving pieces, we now should have time being updated on our slides 
 
 My talk video isn't out yet from jQueryCon, but when it does I'll add the link to this post and you can see said demo in action. In the mean time, here's a quick #throughglass snap of me testing the slides just before I did my talk.
 
-<img src="/images/blog/2014/03/20140213_130207_496_x.jpg" alt="Glass to Slides for the win" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/03/20140213_130207_496_x.jpg" alt="Glass to Slides for the win" />

@@ -25,4 +25,4 @@ My job was to figure out a way to track our friend, a expert escape artist and h
 
 People seemed to like the talk. My friend [Macy Kuang](https://twitter.com/MacyKuang), a fellow Google Developer Expert and one of most amazing developers you'll ever meet was kind enough to grab this photograph at the beginning of my talk. I look horrible but the stage just lights up.
 
-<a href="https://twitter.com/MacyKuang/status/822900220400783360"><img src="/images/blog/2017/iot-devfest-az.jpg" alt="Justin Ribeiro is always charming on the stage #IotDevfest talking about finding a turtle with #iot technology. - Macy Kuang"></a>
+<a href="https://twitter.com/MacyKuang/status/822900220400783360"><img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2017/iot-devfest-az.jpg" alt="Justin Ribeiro is always charming on the stage #IotDevfest talking about finding a turtle with #iot technology. - Macy Kuang"></a>

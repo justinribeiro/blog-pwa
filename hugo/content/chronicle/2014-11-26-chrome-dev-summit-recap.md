@@ -19,4 +19,4 @@ All and all it was another well polished event with a long list of solid speaker
 
 Going to events where you can sit down and have direct conversations about implementations and approaches with the engineers is always a winner for me. The [https://developer.chrome.com/devsummit/](Chrome Dev Summit) website has all the talk videos online if you're looking to catch up on all the action.
 
-<img src="/images/blog/2014/11/IMG_20141121_100252.jpg" alt="Badged for Chrome Dev Summit.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/11/IMG_20141121_100252.jpg" alt="Badged for Chrome Dev Summit.">

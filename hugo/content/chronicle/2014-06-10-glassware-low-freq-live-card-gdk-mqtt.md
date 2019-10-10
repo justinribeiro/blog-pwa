@@ -11,6 +11,6 @@ You know I heart the MQTT. A lot of my sensor stacks are built with MQTT and I'v
 
 Given it's footprint and overall performance it seemed like a natural fit to use on Glass. I'd already created Mirror API bridges to MQTT and that fits most of my non-realtime use cases. However, sometime you just want something a little more frequent. So, I coded up the smallest example I could think of using the low frequency live card pattern for Glass using the Glass Developement Kit (GDK). Here's a shot from Glass of the action (and yes, it was a 104.5 outside...it's a little toasty :-)
 
-<img src="/images/blog/2014/06/screenshot-20140609-obs-throughglass.jpg" alt="throughtglass - testing the app">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/06/screenshot-20140609-obs-throughglass.jpg" alt="throughtglass - testing the app">
 
 For all the code, visit the sample on Github: [justinribeiro/glass-gdk-lowfreq-mqtt-live-card](https://github.com/justinribeiro/glass-gdk-lowfreq-mqtt-live-card)

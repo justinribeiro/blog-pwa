@@ -10,7 +10,7 @@ url: /chronicle/2008/12/25/in-the-spirit-of-christmas-things-i-am-thankful-for/
 
 The holidays have a special place in my heart.  Maybe it's the trimming, maybe it's the good cheer, but the spirit of the season usually puts me in a good mood.  I often use Christmas in particular as a time of reflection, and I often like to sit back and reflect on what I'm thankful for.  I'm not a deeply religious individual (I have read the Bible among other religous texts, so before anyone tries to convert me to XYZ awesome religion, and I have my own thoughts on things) but I don't think you have to be religous to grasp the concept of good will and being thankful for the gifts in your life.
 
-<img src="/images/blog/2008/12/thankful_1.jpg" alt="Monica and Alli making a gingerbread house." />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/12/thankful_1.jpg" alt="Monica and Alli making a gingerbread house." />
 
 On this very note of good will, I have not been at my best the last couple of days; I've been miserably sick and generally a grouch to boot.  For those close to me, I'm sorry.  My wife Monica deserves the most sorry however, as she's had to put up with me (and I am not a good sick person).  She has been gracious, and I have not.  I'm sorry love.  This brings me to thing-I-am-thankful-for #1: my wife Monica and little girl Allison.  Without them, I would have very little reason to be.  They give me a great deal of joy and ask for nothing but love in return.  It's easy to say that you love someone (many a high school boy/girl has probably uttered that phrase in return for something...), but it is much harder to prove it every day.  Some days I'm good at showing that love, other days I just plain miss the target.  I am thankful that Monica and Allison give me chances, and I'm grateful that I am allowed to call them not only my wife and daughter, but also my family.
 
@@ -18,7 +18,7 @@ Speaking of family, this brings me to  thing-I-am-thankful-for #2: my family.  
 
 Similarly in that "goes without saying" list,   thing-I-am-thankful-for #3: friends.  I'm thankful for the friends more so then ever.  You're the people that send me the often silly note, the folks who I drink with on a Saturday night (or Tuesday night, depending on the occasion).  We laugh at stupid jokes and we watch movies that make no sense.  We discuss the world and you keep me on my toes.  What more could a guy be thankful for?
 
-<img src="/images/blog/2008/12/thankful_2.jpg" alt="Alli peering through window of new doll house." />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/12/thankful_2.jpg" alt="Alli peering through window of new doll house." />
 
 But for every friend I have, I've done a pretty good number at losing friends over stupid things the last few years (including business, which like the old saying says: never do business with friends if you still wish to have them remain friends).  In the case of the friends I lost, to them I say I'm sorry.  No amount of apologizing will bring you back, and if I could do things different I would.  If you're reading, I wish you the best.
 

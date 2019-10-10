@@ -11,7 +11,7 @@ url: /chronicle/2009/08/06/using-the-pqlabs-multi-touch-g2-42-inch-overlay/
 
 Back in July, I talked about the fact I was working on a secret project that utilized 42 inch multi-touch overlays (see <a href="http://justinribeiro.com/chronicle/2009/07/12/mounting-a-laptop-on-a-chief-flat-panel-cart-using-a-6-99-document-holder/">here</a>).  While I didn't go into details as to what exactly those overlays were, I can now talk about it and review their functionality.  On the block today, <a href="http://multi-touch-screen.net/product.html">PQLabs Multi-Touch G²</a>.
 
-<img src="/images/blog/2009/08/pqlabs-overlay01.jpg" alt="pqlabs-overlay01">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/08/pqlabs-overlay01.jpg" alt="pqlabs-overlay01">
 ## An Introduction
 Before I started using the overlays I met with some of the PQ Labs team in their office in San Jose for a test run to validate that the product would meet a certain level of need (I wasn't the end user in this case). Yang Qi, who was an extreme help through out the development, walked me though demo's and let me play with a number of overlays on different screen sizes and angles in their demo room.  Beyond the demo's, I also was able to see what some of their partners were able to produce (some of the apps that <a href="http://22miles.com/">22 Miles</a> produced were simply spectacular).  The hardware and software was solid in the lab, but how would it play out in person?
 ## Setting up the hardware
@@ -19,7 +19,7 @@ About two weeks later, two brand new 42 inch units had arrived.  The units came 
 
 The hardware overlay itself is a not only a thing of beauty, but very well made.  Black brushed aluminum composes the frame (which holds the tiny IR cameras which you can't see) on top of a thick piece of tempered glass.  The unit has a good weight to it, but can be easily handled by one person. A single USB connection jettisons out of the black frame for connection to a PC or Mac; there is no need for an external power source.
 
-<img src="/images/blog/2009/08/pqlabs-overlay02.jpg" alt="pqlabs-overlay02">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/08/pqlabs-overlay02.jpg" alt="pqlabs-overlay02">
 
 Setting up the units was simple enough; included with each unit were three rolls of thin, gray, 3M double sided tape.  The width across this tape was 3/8 of an inch, and I had my doubts that this tape would hold a unit of this size.  I was proven wrong almost immediately to the point of it wasn't even funny; when you apply that tape and attach that unit, do not expect any wiggle room. That tape is amazingly sticky once it touches glass or plastic.  So much so that once that overlay glass touches it, it pretty much is not coming off without a fight.  More on how to remove the overlay later.
 
@@ -32,7 +32,7 @@ Running the demo's or playing with Google Earth really shows the overlays potent
 
 Now, the SDK has support for C, C++, C#, Flash, Flex, AIR, WPF and .NET.  The sample code and documentation is pretty basic but from a few tiny demo's I wrote, workable.  Having spoken with Yang, I know that they're working hard to make the SDK and supporting documentation better.  In the mean time, you can write some powerful stuff (<a href="http://22miles.com/">22 Miles</a> has written some truly stellar software for them).
 
-<img src="/images/blog/2009/08/pqlabs-overlay03.jpg" alt="pqlabs-overlay03">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/08/pqlabs-overlay03.jpg" alt="pqlabs-overlay03">
 
 ## In Use
 The overlays work at HD resolutions, and I had no problem pairing them with a LCD's running at 1920x1080.  There isn't much lag time, though I will say if you drag your non-use fingers, the screen reads it as multiple touches (any screen would mind you).  The five point multi-touch works great in applications that support it.
