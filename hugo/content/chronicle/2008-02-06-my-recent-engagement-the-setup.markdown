@@ -19,7 +19,7 @@ url: /chronicle/2008/02/06/my-recent-engagement-the-setup/
 
 <p align="left">I looked around for romantic places.  I toyed with remote locations requiring travel by air and sea.  I considered trained monkeys with jet packs.  Nothing seemed quite right, though most of my over the top ideas seemed inline with my typically over the top style of doing such romantic gestures.
 
-<img src="/images/blog/2008/02/story_ring.jpg" alt="The ring I purchased for Monica, the Tiffany and Co. Legacy" class="imgleft" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/02/story_ring.jpg" alt="The ring I purchased for Monica, the Tiffany and Co. Legacy" class="imgleft" />
 <p align="left">With my planning of the actual question popping location going nowhere, I switched gears and begin to explore the wonderful world of diamonds and rings.  I by no means am a connaisseur of all things sparkly. I traveled from jewelery store to store seeking out something that spoke to me.  While a lot of rings talked, I found the sales staff to be just as chatty.
 
 <p align="left">For the most part, the sales staff at most of the stores I visited attempted to be helpful.  Most stores had pretty much the same style and selection as other stores, and most of the styles to me personally looked generic.  One sales rep went so far as to inform me that if I didn't pick one of their somewhat standard styles, that my fiancÃ©e would probably be disappointed since that's what the current style is.  When I explained that I'd like something more classic, something Art Deco or Art Nouveau style, I was greeted with a blank stare.  This was not the jewelry store for me.

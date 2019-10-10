@@ -13,6 +13,6 @@ With that, I give you the pieces that allow emulating a NFC Forum Type-4 tag (IS
 
 The code base is young, but closely matches the commands as defined in the NFC Forum Type 4 Tag Operation Specification 3.0 (specifically, appendix E "Example of Mapping Version 2.0 Command Flow"). In the picture below, you can see the flow of commands from the NFC reader running on a Pixel to the Nexus 4 and back.
 
-<img src="/images/blog/2014/11/nfc-testing-hce-pixel-android.jpg" alt="NFC reader on Pixel talking to Android HCE">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/11/nfc-testing-hce-pixel-android.jpg" alt="NFC reader on Pixel talking to Android HCE">
 
 I'll be at AnDevCon on November 21st at the NFC Forum booth if you'd like to see a demo (along with other things).

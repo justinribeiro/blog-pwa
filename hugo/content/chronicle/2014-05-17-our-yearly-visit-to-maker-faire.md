@@ -10,7 +10,7 @@ I seem to be losing track as to how many time we've actually attended Maker Fair
 
 Monica and I decided we were going to take the twins this year (they're 2.5 years old...it's time to learn to solder kids!), but alas they were a bit under the weather (as was Monica), so for the first time ever, it was just Alli and myself roaming around looking for things to break, buy and fix.
 
-<img src="/images/blog/2014/05/20140517_122753_884.jpg" alt="Alli holding a cutout of Make's robot." />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/05/20140517_122753_884.jpg" alt="Alli holding a cutout of Make's robot." />
 
 Honestly...it was slightly disappointing this year. Yes, I said it. And yes, I know it's probably not normal to go five straight years. It's not that there wasn't great things to see, but it felt like there was a lot missing. I didn't have a lot of "ohhh I haven't heard about that" or "that is a fanastic design for XYZ! I must know more" sort of moments. Having spoke to a few people whom I expected would have been sitting in booths with new circuit or kit designs, most told me the cost for a booth was simply too high.
 

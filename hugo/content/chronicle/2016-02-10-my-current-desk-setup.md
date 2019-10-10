@@ -7,7 +7,7 @@ tags:
 ---
 Had a couple visitors who have commented on my desk setup lately. It's not terribly special honestly, but it has evolved over the years.
 
-<img src="/images/blog/2016/02/DSCF5717.jpg" alt="My uneventful desk at the office.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2016/02/DSCF5717.jpg" alt="My uneventful desk at the office.">
 
 My number one rule for desks is simple: the desk should be me. I keep pictures of my wife and kids, I have parts, old heatsinks as card holders, legos for device holding, and a hacked up hard drive I converted to a business card holder. The Japanese peace lily my wife bought me a couple years ago (a node to my love of the Corrneto Trilogy). It's odd bits and pieces and is usually a chaotic mess (I've removed the sensative bits in the attached photo), but works for me.
 

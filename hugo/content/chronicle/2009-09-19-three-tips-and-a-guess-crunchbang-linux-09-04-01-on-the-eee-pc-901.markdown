@@ -14,7 +14,7 @@ As we were prepping for our honeymoon to French Polynesia, we picked up an Asus 
 
 <a href="http://crunchbanglinux.org/">#! CrunchBang Linux</a> is based on Ubuntu, and "is highly customisable [sic] and provides a modern, full-featured GNU/Linux system without sacrificing performance."  Originally in the 08.x series, they had a version specific to the Eee pc called Cruncheee, but with the latest 09.x builds, you no longer need to use the Eee specific version (the 09.04.01 kernel supports the 901 hardware out of the box).  I had read so many good things about the speed that I couldn't resist giving it a go.
 
-<img src="/images/blog/2009/09/cb-desktop.png" alt="The stock #! CrunchBang Linux desktop, with a few modifications.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/09/cb-desktop.png" alt="The stock #! CrunchBang Linux desktop, with a few modifications.">
 
 Setting up 09.04.01 on the Eee 901 isn't terribly hard.  You'll need at least a 1GB USB key, or an equivalent SD card.  I used a 1GB Sandisk card without issue.  There are a lot of guides out, but <a href="http://crunchbanglinux.org/wiki/cruncheee_installation_guide">this article</a> offers the simplest instructions in my opinion. I used the 32-bit Lite version of 09.04.01 for my install (it offers a lot less preinstalled).  For a description of what is and isn't included in the various versions, have a look at the wiki's <a href="http://crunchbanglinux.org/wiki/applications">application</a> page.
 
@@ -30,7 +30,7 @@ The following tips I've sort of rounded up from various places so that you don't
 
 ## Tip #1: Better control with eee-control
 
-<img src="/images/blog/2009/09/cb-desktop-eee-control.png" alt="eee-control panel allows defining hotkeys and alerts (click for larger version)">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/09/cb-desktop-eee-control.png" alt="eee-control panel allows defining hotkeys and alerts (click for larger version)">
 
 <a href="http://greg.geekmind.org/eee-control/">eee-control</a> lets you control both the hardware toogles (for wifi, bluetooth, et cetera) as well as the function keys (for controlling things like brightness).  It also allows you to set the hard silver keys above the keyboard to whatever application launch or toggle you wish.  It's a very slick application and is a must have for the 901.
 
@@ -96,7 +96,7 @@ Conky offers a lot of customization.  If you're looking to do more, do have a re
 For prosperity (and a backup for me), you can download my <a href="http://www.justinribeiro.com/chronicle/downloads/rc.xml">rc.xml</a> and <a href="http://www.justinribeiro.com/chronicle/downloads/.conkyrc">.conkyrc</a> files for use or modification.
 
 ## Tip #3: Rev up Firefox
-<img src="/images/blog/2009/09/cb-desktop-firefox.png" title="Firefox running add-ons in Crunchbang Linux"></a>
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/09/cb-desktop-firefox.png" title="Firefox running add-ons in Crunchbang Linux"></a>
 
 Before you start hacking away on making Firefox fit more data on such a small screen, install <a href="http://sourceforge.net/apps/mediawiki/ubuntuzilla/index.php?title=Main_Page">Ubuntuzilla</a>.  Ubuntuzilla allows you to install the latest versions Firefox with ease on Ubuntu based installations.  The installation instructions are very good no the aforementioned linked wiki so I'm not going to rehash the details.  I upgraded to the latest 3.5 version before adding any extensions.
 

@@ -12,7 +12,7 @@ url: /chronicle/2009/09/07/installing-a-new-network-panel-in-a-pre-wired-house/
 
 When we purchased the house in 2008, one the major selling points was the fact that entire house was wired with Cat5e, available all in a <a href="http://www.gesecuritypro.com/NorthAmerica/GESmart/gesmart.cfm?PageID=10000">GE Smart ConnectionCenter</a> network panel in the master bedroom closet.  The panel also contained all of the coax for any cable or satellite hookups, as well as both phone line connections.  Great I thought, this will make things easier.  I was sort of right.
 
-<img src="/images/blog/2009/09/network-panel-before.jpg" alt="network-panel-before">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/09/network-panel-before.jpg" alt="network-panel-before">
 
 The panel is good in theory, but was poorly executed by the house builder. The cable runs of both the Cat5e and the coax aren't run in conduits but are rather free-run.  The problem with the free-run is that some of the cables are mighty short in that box and don't get me started on the kinks I've seen in the attic (no need for a max bend radius uh?).
 
@@ -34,7 +34,7 @@ The connection drops from the router, the general chaos of the phone system not 
 ## Buying the pieces
 I picked up a <a href="http://bit.ly/SFAZ0">Soekris Net4521</a> with wifi card and case for just $50 on Ebay to run <a href="http://bit.ly/lzYhT">m0n0wall</a> (which I think was a pretty good price). It even came with m0n0wall installed on a CF card.
 
-<img src="/images/blog/2009/09/network-panel-notched.jpg" alt="network-panel-notched">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/09/network-panel-notched.jpg" alt="network-panel-notched">
 
 Next, I picked up the patch panels, mount, and short cables from <a href="https://www.monoprice.com">Monoprice</a>.  I'm a big fan of Monoprice, because they sell really great solid components and cable cheap.  I spent under $90 for all the pieces.
 
@@ -45,7 +45,7 @@ The first thing I needed to do was attach the wall mount bracket to the wall.  I
 
 As with most things when it comes to this house, interesting building choices give me a headache. Where there was supposed to be a stud, there was not. 16 inch on center, but the stud literally vanished about 3 inches above the original panel. Sure enough the stud had been cut in half some point before the drywall installed.  Why, I have not idea, but having cut into the drywall I could see that it was in fact cut (with no obstruction above it...I have no idea why they did it).  Lovely.
 
-<img src="/images/blog/2009/09/network-panel-alli-install.jpg" alt="network-panel-alli-install">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/09/network-panel-alli-install.jpg" alt="network-panel-alli-install">
 
 With no means to mount the 7U bracket above the original panel (I had not studs!), I was left with only one option: mount the bracket on top of the original GE panel, or at least partially.  There were solid studs directly on each side, so this would work.  It would just be more interesting.
 
@@ -57,7 +57,7 @@ Monoprice includes a simple 110 punch tool with each patch panel, and I used it 
 
 I cut some new Cat5e, and wired up the 12 port patch panel to the telco board. Since the telco board was staying in the original GE panel, I moved it down so that I had access to it regardless of the new 7U bracket placement. I did the same with the DSL (which is isolated on the second incoming line...a little trick an AT&T tech helped me out with). You can actually see that panel being installed by my helper Alli.  She's now knows how to properly use a screw driver (besides making music with it). I expect toys to be torn apart soon.
 
-<img src="/images/blog/2009/09/network-panel-finished.jpg" alt="network-panel-finished">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/09/network-panel-finished.jpg" alt="network-panel-finished">
 
 With the patch panels wired, I added in the last few components; racked the switch, set up the new m0n0wall firewall and AT&T DSL modem, powered everything up with no issues.  I even added a hard wired phone to the wall, just because.
 

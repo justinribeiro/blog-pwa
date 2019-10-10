@@ -19,7 +19,7 @@ The Github hook doesn't do this (mind you it shouldn't...it's a post-hook). So i
 
 Then you might notice some red icons saying your deploy failed and you then see messages like in the screenshot below.
 
-<img src="/images/blog/2014/05/screenshot-20140505-appenginedeployerror.png" alt="Errr, that's not good." />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/05/screenshot-20140505-appenginedeployerror.png" alt="Errr, that's not good." />
 
 You then again check the documentation and note that humm, automatic_scaling is correct but App Engine seems very angry about this. So you fiddle with it, only in the end to learn that removing it completely solves the problem (at least in terms of deploying with git).
 

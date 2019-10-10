@@ -25,7 +25,7 @@ For instance, I want to debug:
 
 Great! Now I look at my console and low and behold:
 
-<img src="/images/blog/2017/e9e55dd8-dc03-11e6-8f3b-147be85ae76f.png" alt="ga-dnt-analytics in DevTools console">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2017/e9e55dd8-dc03-11e6-8f3b-147be85ae76f.png" alt="ga-dnt-analytics in DevTools console">
 
 Now I'd like to turn on production. Let's update our element:
 

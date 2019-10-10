@@ -13,7 +13,7 @@ For some time I've been shooting a series of what I have tentatively called "Wha
 
 My goal is fairly simple; when I see a structure, wait for some good light and capture it. I've been shooting the bulk of these images on 4x5 film (mostly HP5+, a little Tri-X and some expired Kodak commercial film) and so far the results have been good.  And example of a great structure is the fort below, though it's a terribly poor scan of the negative, my apologizes.  You'll have to take my word for it that the print from said negative is much more interesting.
 
-<img src="/images/blog/2011/04/MG_65941.jpg" alt="Fort, built in an empty developement lot">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2011/04/MG_65941.jpg" alt="Fort, built in an empty developement lot">
 
 That fort was built by a group of kids in an empty development lot not too far from our house.  It no longer exists, destroyed by weather and the city's need to try to keep the many empty lots clean and tidy.  It was a great structure, the kids who built played in that fort every day for a solid six months.  It started small, and they collected the throw away wood and bits from development projects and empty houses left unattended by the failing economy.  It was shaped by what they had and what game they were playing that day.
 

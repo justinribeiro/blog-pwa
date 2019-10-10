@@ -14,7 +14,7 @@ I put my idea in the hat of #ifihadglass and was selected (my plan: build a real
 ## If only stores had customer experiences like this
 I want to touch briefly on the pick up. The Guides were wonderful, all very enthusiastic, and it was a very laid back experience. It was busy with other explorers picking up their Glass as well, but no one appeared rushed. Alli got a nice tour of the campus (she'd never been), and it was all very smooth. Below, the first snap from Glass of Alli hanging out.
 
-<img src="/images/blog/2013/06/20130615_131728_504-1024x755.jpg" alt="Picking up Glass with my oldest daughter" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2013/06/20130615_131728_504-1024x755.jpg" alt="Picking up Glass with my oldest daughter" />
 
 Great customer experiences seem like they're in short supply. Maybe I'm going to the wrong places these days, but this was just wonderful.
 
@@ -38,7 +38,7 @@ The smiles are almost instantaneous and people take to them incredibly quickly w
 
 On day two, I took it over to the farm house and asked my 90 year old grandfather Les to try them out. This is a photograph through Glass right after he handed them back to me. That smile and his reaction are what I see in a lot of people. When I asked him what he thought, he said "Oh, I don't know anything about that stuff...but that's amazing (laughter)."
 
-<img src="/images/blog/2013/06/20130616_102950_013-1024x751.jpg" alt="20130616_102950_013" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2013/06/20130616_102950_013-1024x751.jpg" alt="20130616_102950_013" />
 
 ## The overblown privacy debate
 The media, along with certain government folks, seem really hell bent on this whole Glass privacy issue. I thought it was funny before I had Glass and I think it's even more funny now.

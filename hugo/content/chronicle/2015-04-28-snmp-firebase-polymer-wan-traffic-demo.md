@@ -28,6 +28,6 @@ If the office uplink is pushing a lot of data during the day, it'll peak out jus
 
 And just because I have it lying around, the obligatory screenshot:
 
-<img src="/images/blog/2015/04/snmp-to-firebase-to-polymer.jpeg" alt="SNMP to Firebase to Polymer ... smooth as silk.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2015/04/snmp-to-firebase-to-polymer.jpeg" alt="SNMP to Firebase to Polymer ... smooth as silk.">
 
 

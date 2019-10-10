@@ -13,7 +13,7 @@ Fun Friday is something that Alli does in kindergarten at the moment.  Generally
 
 I don't play Minecraft a lot, but when I do I go hard core (insert laugh track here).  Since I like to play multiplayer with friends on our little private island, I've got OP.  So I like to be able to give items to not only myself, but to others.  I of course can't be bothered with remembering item id's, so I came up with a little GUI to handle that.  Below is the screenshot of it in action.
 
-<img src="/images/blog/2010/11/screenshot-20101117-minecraft-goods-delivery-smp-autohotkey-update.png" alt="My Autohotkey GUI hotkeyed to F4">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2010/11/screenshot-20101117-minecraft-goods-delivery-smp-autohotkey-update.png" alt="My Autohotkey GUI hotkeyed to F4">
 
 Basically, you hit F4 while in the game, the GUI pops up, enter the item id, quantity (if needed for something like one door), and the loop number (how many times to give to the player).  Bam! Awesome action.
 

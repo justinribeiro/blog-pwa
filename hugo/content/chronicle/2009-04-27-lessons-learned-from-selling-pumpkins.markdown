@@ -16,7 +16,7 @@ During the early years I was a salesman at the lowest level.  People would walk 
 
 What I learned in those childhood years could probably fill a book, but I'll hit the lessons I took away from the experience.
 
-<img src="/images/blog/2009/04/1988-jim-katie-and-i.jpg" alt="1988-jim-katie-and-i" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2009/04/1988-jim-katie-and-i.jpg" alt="1988-jim-katie-and-i" />
 
 ## Hone your voice
 A lot of folks are going to tell you to hone your pitch as the key to selling. However, I would contend that having a great pitch doesn't mean much if you don't have an inner voice to make it fly.

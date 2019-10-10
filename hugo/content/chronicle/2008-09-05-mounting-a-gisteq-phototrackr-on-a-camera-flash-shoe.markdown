@@ -11,7 +11,7 @@ url: /chronicle/2008/09/05/mounting-a-gisteq-phototrackr-on-a-camera-flash-shoe/
 
 I've had a <a href="http://www.gisteq.com/PhotoTrackrProducts.php">GiSTEQ PhotoTrackr</a> since March (Monica bought it for me a birthday present) and I've been fond of it ever since.  The little GPS device fits in a pocket rather nicely, and tracks points as you walk around.
 
-<img src="/images/blog/2008/09/finished.jpg" alt="The finished product: The GiSTEQ PhotoTrackr mounted to the hot shoe of the Canon 40D." />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/09/finished.jpg" alt="The finished product: The GiSTEQ PhotoTrackr mounted to the hot shoe of the Canon 40D." />
 
 Sometimes however I've found that when it's in the pocket or in the backpack when hiking, it loses it's connection and we end up with gaps in the GPS coords.  It's not the end of the world, but a quick hack was in order.
 
@@ -27,10 +27,10 @@ __Total time:__ Takes 15 minutes to assemble, let glue dry for at least 24 hours
 
 __Step 1:__ You're going to need an old flash.  We happen to have quite a few of them (seems like every old camera comes with a shoe mounted flash), and low and behold a non-working Vivitar 51 became the object of slight re-configuration.  I took a jigsaw and cut off the flash foot, removed the old wired connection, leaving only a small plastic piece that if you didn't know what it was would end up in the trash.
 
-<div style="height: 245px!important;"><img src="/images/blog/2008/09/clamped_flash_foot.jpg" alt="The flash foot being attached to the battery cover of the PhotoTrackr." title="The flash foot being attached to the battery cover of the PhotoTrackr." width="350" height="233" class="imgleft size-full wp-image-51" />__Step 2: __Using a bit of Gorilla Glue and a clamp, I attached said foot to the base of the PhotoTrackr battery cover plate.  I positioned it such that the PhotoTrackr would be hover over the viewfinder box of our DSLR's.  I let this arrangement sit clamped overnight to make sure the glue was well set.
+<div style="height: 245px!important;"><img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/09/clamped_flash_foot.jpg" alt="The flash foot being attached to the battery cover of the PhotoTrackr." title="The flash foot being attached to the battery cover of the PhotoTrackr." width="350" height="233" class="imgleft size-full wp-image-51" />__Step 2: __Using a bit of Gorilla Glue and a clamp, I attached said foot to the base of the PhotoTrackr battery cover plate.  I positioned it such that the PhotoTrackr would be hover over the viewfinder box of our DSLR's.  I let this arrangement sit clamped overnight to make sure the glue was well set.
 </div>
 
-<img src="/images/blog/2008/09/quick_look.jpg" alt="The battery cover now features the flash foot to attach to our DSLR">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/09/quick_look.jpg" alt="The battery cover now features the flash foot to attach to our DSLR">
 
 __Step 3:__ Clean off a bit of excess glue, put battery cover back on the PhotoTrackr, put on DSLR, and you're ready to go!
 

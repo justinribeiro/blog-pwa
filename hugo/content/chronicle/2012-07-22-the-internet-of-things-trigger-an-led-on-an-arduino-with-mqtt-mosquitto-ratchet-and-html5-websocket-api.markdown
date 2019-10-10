@@ -225,7 +225,7 @@ Since we have all this info and the only thing I needed as a send, I didn't take
 ## Step 5: Make that Arduino blink!
 First thing: lets wire up that Arduino. Slap on your ethernet shield, and wire up three leds (in my case, red, green, blue) to pins 5, 6, 7. The overall basic design of this is from the wonderful tutorial series at Adafruit (<a href="http://www.ladyada.net/learn/arduino/lesson3.html">lesson 3</a> as a matter of fact; the ciruit layout below is modified from that tutorial).
 
-<img src="/images/blog/2012/07/basic-three-led-setup.jpg" alt="Modified from Adafruit Lesson 3" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/07/basic-three-led-setup.jpg" alt="Modified from Adafruit Lesson 3" />
 
 Once you have that wired up, you're going to need to add Nicholas O'Leary's excellent <a href="http://knolleary.net/arduino-client-for-mqtt/">pubsubclient</a> (which implements support for MQTT) to your Arduino environment.  Once you have that installed, let's have a look at the sketch:
 

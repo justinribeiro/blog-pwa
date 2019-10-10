@@ -15,9 +15,9 @@ The main reason was because I was due to speak at [Google I/O](https://events.go
 
 I couldn't say anything at the time (the schedule had not landed), but I was busy to say the least. :-) In the end, my talk went pretty well. I had a packed house and huge thank you to all that came out (cheers to my fellow GDE in Wearables Allen Firstenberg for the photo):
 
-<img src="/images/blog/2015/06/justin-ribeiro-speaking-at-google-io.jpg" alt="Justin Ribeiro speaking at Google I/O. Via Allen Firstenberg.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2015/06/justin-ribeiro-speaking-at-google-io.jpg" alt="Justin Ribeiro speaking at Google I/O. Via Allen Firstenberg.">
 
-<img src="/images/blog/2015/06/justin-ribeiro-schedule-google-io.jpg" alt="Justin Ribeiro on the schedule at Google I/O. Via Allen Firstenberg.">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2015/06/justin-ribeiro-schedule-google-io.jpg" alt="Justin Ribeiro on the schedule at Google I/O. Via Allen Firstenberg.">
 
 The slides for my talk aren't public yet (but should be in short order) and a few people recorded the talk (so I suspect it'll find itself online as well).
 

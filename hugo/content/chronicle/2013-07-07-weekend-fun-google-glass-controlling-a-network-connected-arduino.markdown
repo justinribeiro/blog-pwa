@@ -18,7 +18,7 @@ Since I always have my development thermostat on my desk (which is a clone of wh
 
 The software that runs on the Arduino is rather simple; using MQTT subscriptions from the local broker, it listens for commands and responds accordingly. The local server contains the rulesets that control temperature in the house, using the zone sensors in various rooms. If you're in the house, you can control the HVAC from any smartphone, tablet, TV or computer using the responsive web interface (though you shouldn't need to).
 
-<img src="/images/blog/2013/07/screenshot-20130603-thermocontrol-internal-aurora.jpg" alt="Development panel of Home Zone system" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2013/07/screenshot-20130603-thermocontrol-internal-aurora.jpg" alt="Development panel of Home Zone system" />
 
 For those interested, the web interface is powered by web sockets allowing you to see the current status of things quickly (in the snap above the panel running in devel mode; sensors in prod only update every 30 seconds).
 

@@ -13,7 +13,7 @@ The result: [Is Justin Talking?](https://is-justin-talking.appspot.com/), a prog
 
 As you can see, it's pretty minimal but gets the job done:
 
-<img src="/images/blog/2016/03/pwa-isjsutintalking.jpg" alt="Justin is talking, the PWA version">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2016/03/pwa-isjsutintalking.jpg" alt="Justin is talking, the PWA version">
 
 The building blocks are straight forward:
 

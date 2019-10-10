@@ -35,7 +35,7 @@ There are lots of tools out there. I honestly tried them all. Every single last 
 
 On recommendation, I tried Autodesk Inventor. Complex as all get out, but it seemed to make sense to me. In little less than an hour I had gone from drawing a 2D sketch to a 3D extruded part. No doubt someone with actual working knowledge could do it faster, but I had never used and was quite pleased.
 
-<img src="/images/blog/2012/11/screenshot-20121113-hondamount.jpg" alt="Working in Autodesk Inventor" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/11/screenshot-20121113-hondamount.jpg" alt="Working in Autodesk Inventor" />
 
 I'm not going to get into the finer details, but doing nothing more than taking a line drawing tools, entering in the measurements, and determining the angle based on those initial constraints is really that needed to be done. From there, I added fillets and and made sure the part met the depth I needed, and I export and STL.
 
@@ -49,7 +49,7 @@ I ended up printing the item with a 5% infill, 3 extra shells, build plate at 11
 ## Installing
 After testing the fit, I marked and drilled pilot holes for the ProClip charger and then used self tapping screws that came with said charger to attach the plate. I then applied PowerGrab tape from Loctite to the under lip that hooks on the vent, as well as double stacked that back flat edge that touches the dash. I knew that I'd have some wiggle going into the left corner because of the slope, but with the tape thickness and it's overall position, it was minimal.
 
-<img src="/images/blog/2012/11/IMG_20121103_111931-1024x767.jpg" alt="The final printed mount, put into place." />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/11/IMG_20121103_111931-1024x767.jpg" alt="The final printed mount, put into place." />
 
 The tape takes about 24 hours to really firm up. As with most things, if you pull hard enough you can rip it off the dash. In everyday use however, it's proven sturdy and works a treat.
 

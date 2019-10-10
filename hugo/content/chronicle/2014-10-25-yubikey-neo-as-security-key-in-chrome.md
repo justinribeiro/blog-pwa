@@ -23,7 +23,7 @@ However, you can't just use the Neo out of the package. A few steps to make it w
 
 2. After install, insert Neo and verify the version. You need a version 3.3 Neo device to use U2F; earlier versions of the Neo won't work and cannot be upgraded.
 
-<img src="/images/blog/2014/10/screenshot-20141024-connection-mode.jpg" alt="Neo Manager app showing status">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/10/screenshot-20141024-connection-mode.jpg" alt="Neo Manager app showing status">
 
 3. Change the connection mode to U2F (you can't use OTP and U2F at the same time).
 
@@ -31,7 +31,7 @@ However, you can't just use the Neo out of the package. A few steps to make it w
 
 5. Click add and walk through steps and you should have U2F rolling!﻿ See  screenshot below.
 
-<img src="/images/blog/2014/10/screenshot-20141024-security-key.jpg" alt="Security key setup for Google Account">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/10/screenshot-20141024-security-key.jpg" alt="Security key setup for Google Account">
 
 Since the $50 price tag for the Neo might put some folks off, there is a specific Yubico key preset to U2F only for $18 (see [FIDO U2F Security Key @ Amazon](http://www.amazon.com/Yubico-Y-123-FIDO-U2F-Security/dp/B00NLKA0D8/ref=lh_ni_t?ie=UTF8&psc=1&smid=A3PIGE6HBK2LA8#)). I have not tried this key but it is specifically linked in the Google Support documents.
 

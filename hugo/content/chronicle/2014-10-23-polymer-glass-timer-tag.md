@@ -242,7 +242,7 @@ Once the tag is up and running, it's only a matter of importing and using it as 
 
 And then the magic happens as seen in the screenshot below.
 
-<img src="/images/blog/2014/10/screenshot-20141020-glass-action.jpg" alt="it's the final countdown" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2014/10/screenshot-20141020-glass-action.jpg" alt="it's the final countdown" />
 
 ## All the code for your use
 

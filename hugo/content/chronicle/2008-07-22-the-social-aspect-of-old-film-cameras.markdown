@@ -26,7 +26,7 @@ While most people would pass at the opportunity to buy an old film camera, given
 
 On this thread, Monica and I started handing them to the cell phone camera addicted friends we had who had no concept of shooting film or manual cameras.  We loaded up everything from twin lens reflex style 620 point and shoots to basic 120 box cameras.  It doesn't take much to opperate one of these cameras, simply press the button or pull the shutter switch, and roll to the next number.  With no LCD to offer immediate satisfaction this experiment could have been the shortest attempt at getting the non-photographer interested in something old, manual, and forgotten.
 
-<img src="/images/blog/2008/07/imperial_deboniar.jpg" alt="Imperial Deboniar" title="Imperial Deboniar" width="350" height="233" class="imgright size-full wp-image-32" />
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2008/07/imperial_deboniar.jpg" alt="Imperial Deboniar" title="Imperial Deboniar" width="350" height="233" class="imgright size-full wp-image-32" />
 Instead, something interesting happened: people got into the process and started to like that old film camera in their hands.  People started telling us how much fun it was, and soon enough they were asking for more film on our outings.  Some even wanted to process their own film, which was something we did not expect.
 
 Given the response, we soon let people take the camera of their choice.  Many of them cost us next to nothing, and any old camera in service is okay by us.  We've given away everything from plastic 35mm toy cameras to SLR's.  If they want to develop the film at our place, we let them have at it.  We let people experiment and play, and we all have fun together.  It's a great atmosphere to be around.
