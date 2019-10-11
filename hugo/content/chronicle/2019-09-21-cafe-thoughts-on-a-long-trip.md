@@ -2,9 +2,9 @@
 title: "Long Days and Tall Cups: Why a Local Cafe Keeps My Sanity on the Road"
 description: "When I find myself hopping city to city, there's one constant in all those places: the local cafe where if I play my cards right, I get a decent cappuccino and some local color."
 date: 2019-09-21T17:08:35-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi.jpg"
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.jpg"
 tags:
 - Personal
 ---
@@ -33,4 +33,18 @@ Of course, a cafe isn't about coffee though, its about people coming together an
 
 A good cup of cappuccino of course never hurt.
 
-<img src="https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi.jpg" alt="A good cappuccino from a local cafe in Michigan on my last business trip">
+<picture>
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-640.webp 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.webp 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-1024.webp 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-1280.webp 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-1600.webp 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-640.jpg 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.jpg 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-1024.jpg 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-1280.jpg 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-1600.jpg 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
+  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.jpg" alt="A good cappuccino from a local cafe in Michigan on my last business trip">
+</picture>

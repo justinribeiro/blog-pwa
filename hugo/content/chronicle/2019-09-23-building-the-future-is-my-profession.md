@@ -2,9 +2,9 @@
 title: "The Difference Between Your Job and My Profession"
 description: "Sometimes a job is a more than a job. Sometimes it's the thing you've studied, you've learned, you've trained and so often failed. That ladies and gents is very much a profession, whether you like it or not."
 date: 2019-09-23T16:52:49-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound.jpg"
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg"
 tags:
 - Personal
 - Web
@@ -45,4 +45,18 @@ For those that might say “Justin, profession is an elitist attitude because wh
 
 I’m not striving to be the best I can be to meet some expectations of others, to meet some ungodly notion of perfection. The pursuit of my nameless profession makes me whole. Sure, there are stormy days and bumpy plane rides, but that's just part of the fun.
 
-<img src="https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound.jpg" alt="Flying back in a storm is always fun, yet I have no recollection of this flight. Too many trips lately.">
+<picture>
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-640.webp 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.webp 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-1024.webp 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-1280.webp 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-1600.webp 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-640.jpg 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-1024.jpg 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-1280.jpg 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-1600.jpg 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
+  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg" alt="Flying back in a storm is always fun, yet I have no recollection of this flight. Too many trips lately.">
+</picture>
