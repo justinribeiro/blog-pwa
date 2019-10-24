@@ -1,5 +1,5 @@
 ---
-title: "Just Work at the Grocery Store"
+title: "When Your Kids Just Want You To Work At The Grocery Store"
 description: "Long weeks on the road take a toll when you have kids."
 date: 2019-10-23T09:04:45-07:00
 tags:
@@ -30,4 +30,4 @@ Every call has this statement, the direct request by a broken hearted kid who ha
 
 “Okay Dad. When you come home and we go to the store, we’ll ask them if you can work there.”
 
-The call ends abruptly. Left holding an empty screen, motionless and dark, I put back on my hardhat and wipe away a stray tear. My plane leaves in a week, three stops and one long drive back. Until then, I do the work. That, and I probably won’t be to walk into a grocery store.
+The call ends abruptly. Left holding an empty screen, motionless and dark, I put back on my hardhat and wipe away a stray tear. My plane leaves in a week, three stops and one long drive back. Until then, I do the work. That, and I probably won’t be able to walk into a grocery store.
