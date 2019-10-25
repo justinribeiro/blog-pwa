@@ -37,7 +37,7 @@ devtool-to-video is a little cli tool written in node that utilizes ffmpeg to ge
 
 An [example of the video ouput](https://www.youtube.com/watch?v=guJLfqTFfIw):
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/guJLfqTFfIw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="400" src="https://www.youtube.com/embed/guJLfqTFfIw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This is similar in concept to WebPageTest though their output video timer is way cooler. This simply utilizes the presentation time (pts) within the ffmpeg to give us a quick means to create the video without a lot overhead via drawtext.
 
