@@ -182,12 +182,31 @@ export default class BlogElement extends LitElement {
       /* Use these to generate skeleton blocks before content loads */
       hr {
         height: 20px;
-        background-color: var(--skelaton-background);
+        background: linear-gradient(
+          -45deg,
+          var(--skeleton-background-start),
+          var(--skeleton-background-end)
+        );
+        background-size: 400% 400%;
+        animation: load 1.5s ease infinite;
         border: 0;
       }
+
       hr.short {
         width: 65%;
         margin-left: 0;
+      }
+
+      @keyframes load {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       /*

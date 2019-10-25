@@ -13,14 +13,9 @@ class BlogPwa extends LitElement {
     };
   }
 
-  constructor() {
-    super();
-  }
-
   firstUpdated() {
-    this._ensureLazyLoaded();
     this._initRouter();
-
+    this._ensureLazyLoaded();
     window.addEventListener('online', () => this._notifyNetworkStatus(false));
     window.addEventListener('offline', () => this._notifyNetworkStatus(true));
     window.addEventListener('display-snackbar', event => {
@@ -40,6 +35,7 @@ class BlogPwa extends LitElement {
             component: 'blog-static',
             action: () => {
               import('./blog-static.js').then(() => {
+                this.__checkAndRemoveSkeletonSlot();
                 const check = this.shadowRoot.querySelector('blog-static');
                 check.mount('index');
               });
@@ -50,6 +46,7 @@ class BlogPwa extends LitElement {
             component: 'blog-chronicle',
             action: () => {
               import('./blog-chronicle.js').then(() => {
+                this.__checkAndRemoveSkeletonSlot();
                 const check = this.shadowRoot.querySelector('blog-chronicle');
                 check.resetView();
                 check.mount();
@@ -61,6 +58,7 @@ class BlogPwa extends LitElement {
             component: 'blog-chronicle',
             action: () => {
               import('./blog-chronicle.js').then(() => {
+                this.__checkAndRemoveSkeletonSlot();
                 const check = this.shadowRoot.querySelector('blog-chronicle');
                 check.resetView();
                 check.mount();
@@ -72,6 +70,7 @@ class BlogPwa extends LitElement {
             component: 'blog-entry',
             action: () => {
               import('./blog-entry.js').then(() => {
+                this.__checkAndRemoveSkeletonSlot();
                 const check = this.shadowRoot.querySelector('blog-entry');
                 check.resetView();
                 check.mount();
@@ -83,6 +82,7 @@ class BlogPwa extends LitElement {
             component: 'blog-chronicle',
             action: () => {
               import('./blog-chronicle.js').then(() => {
+                this.__checkAndRemoveSkeletonSlot();
                 const check = this.shadowRoot.querySelector('blog-chronicle');
                 check.resetView();
                 check.mount();
@@ -94,6 +94,7 @@ class BlogPwa extends LitElement {
             component: 'blog-static',
             action: () => {
               import('./blog-static.js').then(() => {
+                this.__checkAndRemoveSkeletonSlot();
                 const check = this.shadowRoot.querySelector('blog-static');
                 check.mount('about');
               });
@@ -104,6 +105,7 @@ class BlogPwa extends LitElement {
             component: 'blog-static',
             action: () => {
               import('./blog-static.js').then(() => {
+                this.__checkAndRemoveSkeletonSlot();
                 const check = this.shadowRoot.querySelector('blog-static');
                 check.mount('talks');
               });
@@ -220,6 +222,13 @@ class BlogPwa extends LitElement {
     }
   }
 
+  __checkAndRemoveSkeletonSlot() {
+    const skeleton = this.shadowRoot.querySelector('#skeleton');
+    if (skeleton) {
+      skeleton.remove();
+    }
+  }
+
   static get styles() {
     return css`
       main {
@@ -231,7 +240,9 @@ class BlogPwa extends LitElement {
   render() {
     return html`
       <slot name="header"></slot>
-      <main></main>
+      <main>
+        <slot id="skeleton" name="skeleton"></slot>
+      </main>
       <slot name="footer"></slot>
       <snack-bar hidden></snack-bar>
     `;

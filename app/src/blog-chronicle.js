@@ -64,6 +64,8 @@ class BlogChronicle extends BlogElement {
 
       this.failure = false;
       this.loaded = true;
+      this.shadowRoot.querySelector('#skeleton').setAttribute('hidden', '');
+      this.shadowRoot.querySelector('#main').removeAttribute('hidden');
     }
   }
 
@@ -85,7 +87,16 @@ class BlogChronicle extends BlogElement {
 
   render() {
     return html`
-      <div id="main">
+      <section id="skeleton" ?hidden="${this.__checkViewState(
+        this.failure,
+        this.loaded,
+      )}">
+        <p><hr><hr><hr><hr class="short"></p>
+        <p><hr><hr><hr><hr class="short"></p>
+        <p><hr><hr><hr><hr class="short"></p>
+      </section>
+
+      <div id="main" hidden>
         <div id="metadataArticle"></div>
         <div id="posts">
           ${this.metadata.posts.map(
