@@ -39,7 +39,8 @@
         --structs-bg: #f1f1f1;
         --structs-hi: #940088;
         --structs-border: #cccccc;
-        --skelaton-background: #e6e6e6;
+        --skeleton-background-start: #cccccc;
+        --skeleton-background-end: #e6e6e6;
         --notice-color-bg: #333333;
         --notice-color-text: #ffffff;
         --notice-color-link: #f1f900;
@@ -198,13 +199,30 @@
 
       hr {
         height: 20px;
-        background-color: var(--skelaton-background);
+        background: linear-gradient(
+          -45deg,
+          var(--skeleton-background-start),
+          var(--skeleton-background-end)
+        );        background-size: 400% 400%;
+        animation: load 1.5s ease infinite;
         border: 0;
       }
 
       hr.short {
         width: 65%;
         margin-left: 0;
+      }
+
+      @keyframes load {
+        0% {
+          background-position: 0% 50%
+        }
+        50% {
+          background-position: 100% 50%
+        }
+        100% {
+          background-position: 0% 50%
+        }
       }
 
       @media (max-width: 767px) {
@@ -301,7 +319,7 @@
             </nav>
         </div>
       </header>
-      <section id="skeleton">
+      <section id="skeleton" slot="skeleton">
         <p>
           <hr /><hr /><hr /><hr class="short" />
         </p>
