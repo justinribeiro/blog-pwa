@@ -8,7 +8,7 @@
   "datePublished": "{{ .Date.Format $.Site.Params.ISO8601 }}",
   "dateModified" : "{{ .Date.Format $.Site.Params.ISO8601 }}",
   "pagetype": "post",
-  "words": "{{ .FuzzyWordCount }}",
+  "words": "{{ .WordCount }}",
   "readingtime": "{{ .ReadingTime }}",
   "permalink": "{{ .Permalink }}",
   "tags": "{{ delimit .Params.tags "," }}",
