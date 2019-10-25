@@ -2,6 +2,9 @@
 title: "From Broken 1930s Barn Radio to Google Assistant"
 description: "A broken and battered 1930s Grunow radio gets a make over with a gutted Google Home."
 date: 2019-10-25T07:36:03-07:00
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
 tags:
 - IoT
 ---
