@@ -7,11 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install System Deps
-        run: sudo apt install make jq zsh hugo sed && hugo --version
-
+        run: sudo apt install make jq zsh sed
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
       - uses: borales/actions-yarn@v2.0.0
+      - uses: peaceiris/actions-hugo@v2.2.2
+        with:
+          hugo-version: '0.52.0'
       - name: Run `make build`
         run: make build-ci
 
