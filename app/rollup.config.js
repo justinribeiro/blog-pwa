@@ -15,7 +15,6 @@ export default {
     'src/blog-pwa.js',
     'src/blog-static.js',
     'src/blog-entry.js',
-    'src/blog-chronicle.js',
     'src/lazy-resources.js',
     'src/analytics.js',
     'src/3d-utils.js',

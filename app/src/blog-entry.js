@@ -2,64 +2,12 @@ import BlogElement from './blog-element.js';
 import {css, html} from 'lit-element';
 
 class BlogEntry extends BlogElement {
-  /**
-   * Declared properties and their corresponding attributes
-   */
   static get properties() {
     return {
       interactions: {
         type: String,
       },
     };
-  }
-
-  async mount() {
-    window.scroll(0, 0);
-
-    // Technically, I would just build the string which at this point
-    // with the chopping off extra things from the path might be more
-    // useful in the long haul
-    let getPath = location.pathname;
-    const checkEnding = new RegExp('index.php|index.html', 'g');
-    if (checkEnding.test(location.pathname)) {
-      getPath = location.pathname.replace(/index\.php|index\.html/g, '');
-    }
-    const targetUrl = `/data${getPath}index.json`;
-
-    try {
-      const response = await fetch(targetUrl);
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-      this.metadata = await response.json();
-      this._processMetaData();
-      this.failure = false;
-    } catch (error) {
-      this.failure = true;
-      this.loaded = false;
-    }
-  }
-
-  resetView() {
-    this.loaded = null;
-    this.metadata = {
-      posts: null,
-      article: '',
-      title: '',
-      dataModified: '',
-      date: '',
-      readingtime: '',
-      permalink: '',
-      description: '',
-      filename: '',
-      view: '',
-      tags: '',
-    };
-
-    const dom = this.shadowRoot.querySelector('#metadataArticle');
-    if (dom && dom.innerHTML !== '') {
-      dom.innerHTML = '';
-    }
   }
 
   _generatedShareLinks() {
@@ -99,12 +47,9 @@ class BlogEntry extends BlogElement {
 
       this.shadowRoot.querySelector('#metadataArticle').innerHTML = parseHTML;
 
-      this._setPageMetaData(this.metadata);
+      super._processMetaData();
+
       this._generatedShareLinks();
-
-      this.failure = false;
-      this.loaded = true;
-
       this.__getInteractionCounts();
     }
   }
@@ -246,30 +191,6 @@ class BlogEntry extends BlogElement {
 
   render() {
     return html`
-      <section
-        id="skeleton"
-        ?hidden="${this.__checkViewState(this.failure, this.loaded)}"
-      >
-        <p></p>
-        <hr />
-        <hr />
-        <hr />
-        <hr class="short" />
-        <p></p>
-        <p></p>
-        <hr />
-        <hr />
-        <hr />
-        <hr class="short" />
-        <p></p>
-        <p></p>
-        <hr />
-        <hr />
-        <hr />
-        <hr class="short" />
-        <p></p>
-      </section>
-
       <article
         itemprop="blogPost"
         id="main"

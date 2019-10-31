@@ -2,64 +2,6 @@ import BlogElement from './blog-element.js';
 import {css, html} from 'lit-element';
 
 class BlogStatic extends BlogElement {
-  /**
-   * @param {string} which
-   */
-  async mount(which) {
-    if (which || this.which !== '') {
-      if (which !== '') {
-        this.which = which;
-      }
-
-      window.scroll(0, 0);
-      let targetUrl = '';
-      if (this.which === 'index' || this.which === '') {
-        targetUrl = '/data/index.json';
-      } else {
-        targetUrl = '/data/' + this.which + '/index.json';
-      }
-      if (!this.metadata || this.metadata.view !== this.which) {
-        try {
-          const response = await fetch(targetUrl);
-          if (!response.ok) {
-            throw new Error(response.statusText);
-          }
-          const data = await response.json();
-          this._processMetaData(data, this.which);
-          this.failure = false;
-        } catch (error) {
-          this.failure = true;
-          if (!this.loaded) {
-            this.loaded = false;
-          }
-        }
-      } else {
-        // We already have the data for our target static page, so just set the
-        // proper metadata
-        this._setPageMetaData(this.metadata);
-      }
-    }
-  }
-
-  /**
-   * Process and set static content for view
-   * @param {object} data
-   * @param {string} view
-   */
-  _processMetaData(data, view) {
-    if (data.article !== undefined && data.article !== '') {
-      data.view = view;
-      this._setPageMetaData(data);
-      this.shadowRoot.querySelector('#main').innerHTML = this._unescapeHtml(
-        data.article,
-      );
-
-      this.metadata = data;
-      this.shadowRoot.querySelector('#skeleton').setAttribute('hidden', '');
-      this.shadowRoot.querySelector('#main').removeAttribute('hidden');
-    }
-  }
-
   static get styles() {
     return [
       super.styles,
@@ -77,7 +19,6 @@ class BlogStatic extends BlogElement {
 
         #posts {
           display: flex;
-          padding: 0 20px;
           flex-wrap: wrap;
         }
 
@@ -96,18 +37,9 @@ class BlogStatic extends BlogElement {
 
   render() {
     return html`
-      <section id="skeleton" ?hidden="${this.__checkViewState(
-        this.failure,
-        this.loaded,
-      )}">
-        <p><hr><hr><hr><hr class="short"></p>
-        <p><hr><hr><hr><hr class="short"></p>
-        <p><hr><hr><hr><hr class="short"></p>
-      </section>
-
-      <div id="main" hidden></div>
-      ${
-        this.metadata.posts
+      <div id="main" ?hidden=${!this.loaded}>
+        <div id="metadataArticle"></div>
+        ${this.metadata.posts
           ? html`
               <div id="posts">
                 ${this.metadata.posts.map(
@@ -122,10 +54,9 @@ class BlogStatic extends BlogElement {
                 )}
               </div>
             `
-          : html``
-      }
-
-      <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
+          : html``}
+        <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
+      </div>
     `;
   }
 }

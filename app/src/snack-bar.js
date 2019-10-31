@@ -45,7 +45,7 @@ class SnackBar extends LitElement {
       <div>
         <slot></slot>
         ${this.action
-          ? html`<button @click="${this.__reload}">Refresh</a>`
+          ? html` <button @click="${this.__reload}">Refresh</a>`
           : html``}
       </div>
     `;
