@@ -1,0 +1,23 @@
+name: Test-Deploy-PR
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install System Deps
+        run: sudo apt install make jq zsh hugo sed
+
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      - uses: borales/actions-yarn@v2.0.0
+      - name: Run `make build`
+        run: make build-ci
+
+      - uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: ${{ secrets.GAE_PID }}
+          APPLICATION_CREDENTIALS: ${{ secrets.GAE_CREDENTIALS }}
+        with:
+          args: app deploy app.yaml --no-promote --version $GITHUB_SHA;
