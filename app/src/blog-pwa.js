@@ -7,10 +7,18 @@ class BlogPwa extends LitElement {
     return {
       offline: {
         type: Boolean,
-        value: false,
         attribute: false,
       },
+      __hideSkeleton: {
+        type: Boolean,
+      },
     };
+  }
+
+  constructor() {
+    super();
+    this.offline = false;
+    this.__hideSkeleton = false;
   }
 
   firstUpdated() {
@@ -21,11 +29,18 @@ class BlogPwa extends LitElement {
     window.addEventListener('display-snackbar', event => {
       this._setSnackBarText(event.detail.message, 5000);
     });
+    this.addEventListener('blog-pwa-toggle-skeleton', event => {
+      this.__hideSkeleton = event.detail.show;
+    });
   }
 
   _initRouter() {
     const outlet = this.shadowRoot.querySelector('main');
     const router = new Router(outlet, null);
+
+    // Don't be fooled; we don't set the routes async/await with the inner call
+    // because we don't want vaadin-router to wait; let it inject fast so we can
+    // stamp and load data
     router.setRoutes([
       {
         path: '/',
@@ -34,81 +49,28 @@ class BlogPwa extends LitElement {
             path: '',
             component: 'blog-static',
             action: () => {
-              import('./blog-static.js').then(() => {
-                this.__checkAndRemoveSkeletonSlot();
-                const check = this.shadowRoot.querySelector('blog-static');
-                check.mount('index');
-              });
+              this.__loadRoute('static');
             },
           },
           {
-            path: '/chronicle/',
-            component: 'blog-chronicle',
+            path: '/(talks|about|chronicle|tags)/',
+            component: 'blog-static',
             action: () => {
-              import('./blog-chronicle.js').then(() => {
-                this.__checkAndRemoveSkeletonSlot();
-                const check = this.shadowRoot.querySelector('blog-chronicle');
-                check.resetView();
-                check.mount();
-              });
+              this.__loadRoute('static');
             },
           },
           {
-            path: '/tags/',
-            component: 'blog-chronicle',
+            path: '/tags/(.*)',
+            component: 'blog-static',
             action: () => {
-              import('./blog-chronicle.js').then(() => {
-                this.__checkAndRemoveSkeletonSlot();
-                const check = this.shadowRoot.querySelector('blog-chronicle');
-                check.resetView();
-                check.mount();
-              });
+              this.__loadRoute('static');
             },
           },
           {
             path: '/chronicle/(.*)',
             component: 'blog-entry',
             action: () => {
-              import('./blog-entry.js').then(() => {
-                this.__checkAndRemoveSkeletonSlot();
-                const check = this.shadowRoot.querySelector('blog-entry');
-                check.resetView();
-                check.mount();
-              });
-            },
-          },
-          {
-            path: '/tags/(.*)',
-            component: 'blog-chronicle',
-            action: () => {
-              import('./blog-chronicle.js').then(() => {
-                this.__checkAndRemoveSkeletonSlot();
-                const check = this.shadowRoot.querySelector('blog-chronicle');
-                check.resetView();
-                check.mount();
-              });
-            },
-          },
-          {
-            path: '/about',
-            component: 'blog-static',
-            action: () => {
-              import('./blog-static.js').then(() => {
-                this.__checkAndRemoveSkeletonSlot();
-                const check = this.shadowRoot.querySelector('blog-static');
-                check.mount('about');
-              });
-            },
-          },
-          {
-            path: '/talks',
-            component: 'blog-static',
-            action: () => {
-              import('./blog-static.js').then(() => {
-                this.__checkAndRemoveSkeletonSlot();
-                const check = this.shadowRoot.querySelector('blog-static');
-                check.mount('talks');
-              });
+              this.__loadRoute('entry');
             },
           },
           {
@@ -118,6 +80,24 @@ class BlogPwa extends LitElement {
         ],
       },
     ]);
+  }
+
+  async __loadRoute(type) {
+    if (type === 'static') {
+      await import('./blog-static.js');
+    }
+    if (type === 'entry') {
+      await import('./blog-entry.js');
+    }
+    try {
+      const dom = this.shadowRoot.querySelector(`blog-${type}`);
+      await dom.mount();
+    } catch (error) {
+      // sometimes vaadin doesn't inject quickly, and their lifecycle doesn't
+      // always fire on swap when the inner component doesn't change, so we put
+      // a little fallback trigger in to be safe
+      setTimeout(() => this.__loadRoute(type), 100);
+    }
   }
 
   // PRPL all the things.
@@ -222,13 +202,6 @@ class BlogPwa extends LitElement {
     }
   }
 
-  __checkAndRemoveSkeletonSlot() {
-    const skeleton = this.shadowRoot.querySelector('#skeleton');
-    if (skeleton) {
-      skeleton.remove();
-    }
-  }
-
   static get styles() {
     return css`
       main {
@@ -241,7 +214,11 @@ class BlogPwa extends LitElement {
     return html`
       <slot name="header"></slot>
       <main>
-        <slot id="skeleton" name="skeleton"></slot>
+        <slot
+          id="skeleton"
+          name="skeleton"
+          ?hidden=${!this.__hideSkeleton}
+        ></slot>
       </main>
       <slot name="footer"></slot>
       <snack-bar hidden></snack-bar>

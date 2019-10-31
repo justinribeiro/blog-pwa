@@ -9,7 +9,6 @@ export default class BlogElement extends LitElement {
     return {
       failure: {
         type: Boolean,
-        value: false,
         attribute: false,
       },
       metadata: {
@@ -22,10 +21,6 @@ export default class BlogElement extends LitElement {
       },
       loaded: {
         type: Boolean,
-        attribute: false,
-      },
-      which: {
-        type: String,
         attribute: false,
       },
     };
@@ -55,8 +50,6 @@ export default class BlogElement extends LitElement {
       email: '',
     };
 
-    this.which = '';
-
     this.failure = false;
     this.loaded = false;
   }
@@ -65,6 +58,80 @@ export default class BlogElement extends LitElement {
     this.shadowRoot
       .querySelector('blog-network-warning')
       .addEventListener('try-reconnect', () => this.mount());
+  }
+
+  async mount() {
+    this.__showSkeleton(true);
+    window.scroll(0, 0);
+    this.resetView();
+    await this._fetchMetaData();
+  }
+
+  resetView() {
+    this.loaded = false;
+    this.metadata = {
+      posts: [],
+      article: '',
+      title: '',
+      dataModified: '',
+      date: '',
+      readingtime: '',
+      permalink: '',
+      description: '',
+      filename: '',
+      view: '',
+      tags: '',
+    };
+
+    const dom = this.shadowRoot.querySelector('#metadataArticle');
+    if (dom && dom.innerHTML !== '') {
+      dom.innerHTML = '';
+    }
+  }
+
+  async _fetchMetaData() {
+    let getPath = location.pathname;
+    const checkEnding = new RegExp('index.php|index.html', 'g');
+    if (checkEnding.test(location.pathname)) {
+      getPath = location.pathname.replace(/index\.php|index\.html/g, '');
+    }
+    const targetUrl = `/data${getPath}index.json`;
+
+    try {
+      const response = await fetch(targetUrl);
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      this.metadata = await response.json();
+      this._processMetaData();
+      this.failure = false;
+    } catch (error) {
+      this.failure = true;
+      this.loaded = false;
+    }
+  }
+
+  _processMetaData(data, view) {
+    if (this.metadata.article !== undefined && this.metadata.article !== '') {
+      const parseHTML = this._unescapeHtml(this.metadata.article);
+      this.shadowRoot.querySelector('#metadataArticle').innerHTML = parseHTML;
+    }
+    this._setPageMetaData(this.metadata);
+    this.__showSkeleton(false);
+    this.failure = false;
+    this.loaded = true;
+  }
+
+  __showSkeleton(bool) {
+    this.dispatchEvent(
+      new CustomEvent('blog-pwa-toggle-skeleton', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          show: bool,
+        },
+      }),
+    );
   }
 
   static get styles() {
@@ -98,18 +165,14 @@ export default class BlogElement extends LitElement {
       h4,
       h5,
       h6 {
-        font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri,
-          'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad,
-          'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma,
-          Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: var(--font-family-sans-serif);
         margin: 0;
       }
 
       p,
       li,
       label {
-        font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
-          'Times New Roman', serif;
+        font-family: var(--font-family-serif);
         margin: 0;
         color: var(--primary-text-color);
         margin-top: 10px;
@@ -179,36 +242,6 @@ export default class BlogElement extends LitElement {
         display: none !important;
       }
 
-      /* Use these to generate skeleton blocks before content loads */
-      hr {
-        height: 20px;
-        background: linear-gradient(
-          -45deg,
-          var(--skeleton-background-start),
-          var(--skeleton-background-end)
-        );
-        background-size: 400% 400%;
-        animation: load 1.5s ease infinite;
-        border: 0;
-      }
-
-      hr.short {
-        width: 65%;
-        margin-left: 0;
-      }
-
-      @keyframes load {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
       /*
         Design choice: in my components, I always have a #main as a container
         in my web components. Why isn't named container? No idea. LOL.
@@ -229,9 +262,6 @@ export default class BlogElement extends LitElement {
         min-height: 102vh;
       }
 
-      /*
-        This gets used a couple of places (iron-list, simple related dom-repeat)
-      */
       .post-container {
         min-height: 125px;
         width: calc(50% - 1rem);
@@ -254,8 +284,7 @@ export default class BlogElement extends LitElement {
       .post-container a h2 {
         color: var(--accent-color-primary);
         font-weight: 400;
-        font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
-          'Times New Roman', serif;
+        font-family: var(--font-family-serif);
       }
 
       .post-container a h3 {
