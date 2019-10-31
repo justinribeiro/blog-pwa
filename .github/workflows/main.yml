@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install System Deps
-        run: sudo apt install make jq zsh hugo sed
+        run: sudo apt install make jq zsh hugo sed && hugo --version
 
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -20,4 +20,4 @@ jobs:
           PROJECT_ID: ${{ secrets.GAE_PID }}
           APPLICATION_CREDENTIALS: ${{ secrets.GAE_CREDENTIALS }}
         with:
-          args: app deploy ./blog-pwa/ship/app.yaml --no-promote --version $GITHUB_SHA;
+          args: app deploy ${GITHUB_WORKSPACE}/ship/app.yaml --no-promote --version $GITHUB_SHA;

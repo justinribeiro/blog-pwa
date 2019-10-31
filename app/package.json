@@ -21,6 +21,7 @@
     "html-minifier": "^4.0.0",
     "http2-push-manifest": "^1.0.1",
     "prettier": "^1.18.2",
+    "rollup": "^1.26.2",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-babel-minify": "^8.0.0",
     "rollup-plugin-filesize": "^6.2.0",
@@ -47,7 +48,7 @@
     "build:copyData": "cp -r images/ build/default && cp -r data/ build/default && cp -r helpers/ build/default",
     "build:minify": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output build/default/index.html build/default/index.html",
     "build:minify:static": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output build/default/helpers/static.html build/default/helpers/static.html",
-    "build:modules": "rollup -c",
+    "build:modules": "yarn rollup -c",
     "build:dist": "yarn build:clean && yarn build:copyDeps && yarn build:copyRoot && yarn build:copyData && yarn build:minify && yarn build:minify:static && yarn build:modules"
   },
   "bugs": {
