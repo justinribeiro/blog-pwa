@@ -20,4 +20,4 @@ jobs:
           PROJECT_ID: ${{ secrets.GAE_PID }}
           APPLICATION_CREDENTIALS: ${{ secrets.GAE_CREDENTIALS }}
         with:
-          args: app deploy app.yaml --no-promote --version $GITHUB_SHA;
+          args: app deploy ./blog-pwa/ship/app.yaml --no-promote --version $GITHUB_SHA;

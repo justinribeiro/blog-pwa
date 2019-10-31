@@ -12,7 +12,7 @@ dev:
 
 .PHONY: build-ci
 build-ci:
-	zsh ./utilities/builder.zsh -t prod; cd ship;
+	zsh ./utilities/builder.zsh -t setup; zsh ./utilities/builder.zsh -t prod; cd ship;
 
 .PHONY: deploy-no-promote
 deploy-no-promote:
