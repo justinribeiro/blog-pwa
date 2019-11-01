@@ -30,14 +30,13 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v1
-        env:
-          SHA_SHORT: ${{ GITHUB_SHA::8 }}
       - run: mkdir /tmp/artifacts
+      - run: echo ::set-env name=URL::"https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com"
       - uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
           outputDirectory: /tmp/artifacts
-          urls: https://$SHA_SHORT-dot-justinribeiro-web.appspot.com
+          urls: $URL
       - uses: foo-software/lighthouse-check-status-action@master
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
