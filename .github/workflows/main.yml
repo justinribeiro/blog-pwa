@@ -28,20 +28,20 @@ jobs:
     name: Lighthouse Audits
     runs-on: ubuntu-latest
     needs: build
-      steps:
-        - uses: actions/checkout@v1
-        - run: mkdir /tmp/artifacts
-        - uses: foo-software/lighthouse-check-action@master
-          id: lighthouseCheck
-          with:
-            outputDirectory: /tmp/artifacts
-            urls: https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com
-        - name: Handle Lighthouse Check results
-          uses: foo-software/lighthouse-check-status-action
-          with:
-            lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-            minAccessibilityScore: "50"
-            minBestPracticesScore: "50"
-            minPerformanceScore: "95"
-            minProgressiveWebAppScore: "50"
-            minSeoScore: "50"
+    steps:
+      - uses: actions/checkout@v1
+      - run: mkdir /tmp/artifacts
+      - uses: foo-software/lighthouse-check-action@master
+        id: lighthouseCheck
+        with:
+          outputDirectory: /tmp/artifacts
+          urls: https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com
+      - name: Handle Lighthouse Check results
+        uses: foo-software/lighthouse-check-status-action
+        with:
+          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+          minAccessibilityScore: "50"
+          minBestPracticesScore: "50"
+          minPerformanceScore: "95"
+          minProgressiveWebAppScore: "50"
+          minSeoScore: "50"
