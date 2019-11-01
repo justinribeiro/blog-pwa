@@ -23,8 +23,8 @@ jobs:
       - name: Google Cloud App Engine Deploy
       - uses: actions/checkout@master
       - uses: actions-hub/gcloud@master
-      env:
-        PROJECT_ID: ${{ secrets.GAE_PID }}
-        APPLICATION_CREDENTIALS: ${{ secrets.GAE_CREDENTIALS }}
-      with:
-        args: app deploy ${GITHUB_WORKSPACE}/ship/app.yaml --no-promote --version ${GITHUB_SHA::8};
+        env:
+          PROJECT_ID: ${{ secrets.GAE_PID }}
+          APPLICATION_CREDENTIALS: ${{ secrets.GAE_CREDENTIALS }}
+        with:
+          args: app deploy ${GITHUB_WORKSPACE}/ship/app.yaml --no-promote --version ${GITHUB_SHA::8};
