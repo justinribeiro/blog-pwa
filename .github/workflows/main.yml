@@ -31,23 +31,12 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v1
-      - run: mkdir /tmp/artifacts
-      - name: Audit URLs with Lighthouse
-        uses: foo-software/lighthouse-check-action@master
+      - name: Audit with Lighthouse
+        uses: justinribeiro/lighthouse-ci-action@add-result-table
         with:
-          outputDirectory: /tmp/artifacts
-          urls: https://${{ github.sha }}-dot-justinribeiro-web.appspot.com
-      - name: Pass/Fail PR with Lighthouse results
-        uses: foo-software/lighthouse-check-status-action@master
-        with:
-          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-          minAccessibilityScore: "90"
-          minBestPracticesScore: "90"
-          minPerformanceScore: "90"
-          minProgressiveWebAppScore: "90"
-          minSeoScore: "90"
-      - name: Save Lighthouse results
+          url: https://${{ github.sha }}-dot-justinribeiro-web.appspot.com
+      - name: Save results
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-results
-          path: /tmp/artifacts
+          path: './results'
