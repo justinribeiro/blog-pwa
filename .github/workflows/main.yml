@@ -31,12 +31,23 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v1
-      - name: Audit URLs using Lighthouse and ensure performance budget
-        uses: treosh/lighthouse-ci-action@v1
+      - run: mkdir /tmp/artifacts
+      - name: Audit URLs with Lighthouse
+        uses: foo-software/lighthouse-check-action@master
         with:
-          url: https://${{ github.sha }}-dot-justinribeiro-web.appspot.com
-      - name: Save results
+          outputDirectory: /tmp/artifacts
+          urls: https://${{ github.sha }}-dot-justinribeiro-web.appspot.com
+      - name: Pass/Fail PR with Lighthouse results
+        uses: foo-software/lighthouse-check-status-action@master
+        with:
+          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+          minAccessibilityScore: "90"
+          minBestPracticesScore: "90"
+          minPerformanceScore: "90"
+          minProgressiveWebAppScore: "90"
+          minSeoScore: "90"
+      - name: Save Lighthouse results
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-results
-          path: './results'
+          path: /tmp/artifacts
