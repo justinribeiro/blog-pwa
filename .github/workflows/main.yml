@@ -35,7 +35,7 @@ jobs:
         with:
           outputDirectory: /tmp/artifacts
           urls: https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com
-      - uses: foo-software/lighthouse-check-status-action
+      - uses: foo-software/lighthouse-check-status-action@master
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
           minAccessibilityScore: "95"
