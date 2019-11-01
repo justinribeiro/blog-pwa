@@ -27,14 +27,17 @@ jobs:
   perf:
     name: Lighthouse Audits
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v1
+        env:
+          SHA_SHORT: ${{ GITHUB_SHA::8 }}
       - run: mkdir /tmp/artifacts
       - uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
           outputDirectory: /tmp/artifacts
-          urls: https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com
+          urls: https://$SHA_SHORT-dot-justinribeiro-web.appspot.com
       - uses: foo-software/lighthouse-check-status-action@master
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
