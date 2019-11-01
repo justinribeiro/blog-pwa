@@ -1,4 +1,4 @@
-name: Test-Deploy-PR
+name: Build > Deploy > Audit
 
 on: [push]
 
@@ -26,15 +26,15 @@ jobs:
         with:
           args: app deploy ${GITHUB_WORKSPACE}/ship/app.yaml --no-promote --version ${GITHUB_SHA};
   perf:
-    name: Lighthouse Audits
+    name: Audit Web Perf
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/checkout@v1
-      - name: Audit with Lighthouse
+      - name: Generate Lighthouse Report
         uses: justinribeiro/lighthouse-ci-action@add-result-table
         with:
-          url: https://${{ github.sha }}-dot-justinribeiro-web.appspot.com
+          url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
       - name: Save results
         uses: actions/upload-artifact@master
         with:
