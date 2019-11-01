@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   build:
+    name: Build + Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Install System Deps
@@ -15,7 +16,7 @@ jobs:
       - uses: peaceiris/actions-hugo@v2.2.2
         with:
           hugo-version: '0.59.1'
-      - name: Build PWA + Deploy
+      - name: Build PWA and Deploy to GAE
         run: make build-ci
       - uses: actions-hub/gcloud@master
         env:
@@ -23,3 +24,23 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GAE_CREDENTIALS }}
         with:
           args: app deploy ${GITHUB_WORKSPACE}/ship/app.yaml --no-promote --version ${GITHUB_SHA::8};
+  perf:
+    name: Lighthouse Audits
+    runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - run: mkdir /tmp/artifacts
+        - uses: foo-software/lighthouse-check-action@master
+          id: lighthouseCheck
+          with:
+            outputDirectory: /tmp/artifacts
+            urls: https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com
+        - name: Handle Lighthouse Check results
+          uses: foo-software/lighthouse-check-status-action
+          with:
+            lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+            minAccessibilityScore: "50"
+            minBestPracticesScore: "50"
+            minPerformanceScore: "95"
+            minProgressiveWebAppScore: "50"
+            minSeoScore: "50"
