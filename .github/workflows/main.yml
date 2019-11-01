@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-    name: Build + Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Install System Deps
@@ -16,10 +15,8 @@ jobs:
       - uses: peaceiris/actions-hugo@v2.2.2
         with:
           hugo-version: '0.59.1'
-      - name: Build PWA and Data
+      - name: Build PWA + Deploy
         run: make build-ci
-      - name: Deploy to Google Cloud App Engine
-
       - uses: actions-hub/gcloud@master
         env:
           PROJECT_ID: ${{ secrets.GAE_PID }}
