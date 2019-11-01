@@ -221,7 +221,7 @@ case $target in
     cd $project/app/;
     yarn build:dist;
     cd build/default;
-    workbox generateSW $project/app/workbox-config.js
+    yarn workbox generateSW $project/app/workbox-config.js
     cd ../../../;
 
     # Step 5: make a ship dir
