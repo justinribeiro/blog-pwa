@@ -7,15 +7,15 @@ jobs:
     name: Build + Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
       - name: Install System Deps
-        uses: actions/setup-node@v1
+        run: sudo apt install make jq zsh sed
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-        uses: peaceiris/actions-hugo@v2.2.2
+      - uses: peaceiris/actions-hugo@v2.2.2
         with:
           hugo-version: '0.59.1'
-        run: sudo apt install make jq zsh sed
       - name: Build PWA
         run: make build-ci
       - name: Deploy to Google App Engine
