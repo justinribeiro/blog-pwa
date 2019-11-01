@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v1
       - uses: actions-hub/gcloud@master
         env:
           PROJECT_ID: ${{ secrets.GAE_PID }}
