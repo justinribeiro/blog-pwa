@@ -30,12 +30,12 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v1
-      - name: Lighthouse audit
-      - uses: treosh/lighthouse-ci-action@v1
+      - name: Audit URLs using Lighthouse and ensure performance budget
+        uses: treosh/lighthouse-ci-action@v1
         with:
           url: https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com
       - name: Save results
-      - uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@master
         with:
           name: lighthouse-results
           path: './results'
