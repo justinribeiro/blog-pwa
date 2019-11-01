@@ -33,7 +33,7 @@ jobs:
       - name: Audit URLs using Lighthouse and ensure performance budget
         uses: treosh/lighthouse-ci-action@v1
         with:
-          url: https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com
+          url: https://${{ GITHUB_SHA::8 }}-dot-justinribeiro-web.appspot.com
       - name: Save results
         uses: actions/upload-artifact@master
         with:
