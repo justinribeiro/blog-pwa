@@ -35,7 +35,7 @@ jobs:
         with:
           url: https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com
       - name: Save results
-        uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@master
         with:
           name: lighthouse-results
           path: './results'
