@@ -16,7 +16,7 @@ jobs:
       - uses: peaceiris/actions-hugo@v2.2.2
         with:
           hugo-version: '0.59.1'
-      - name: Build PWA
+      - name: Build PWA and Data
         run: make build-ci
       - name: Deploy to Google App Engine
         uses: actions-hub/gcloud@master
@@ -35,7 +35,7 @@ jobs:
         uses: justinribeiro/lighthouse-ci-action@add-result-table
         with:
           url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
-      - name: Save results
+      - name: Save Lighthouse Artifacts
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-results
