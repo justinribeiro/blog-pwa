@@ -30,18 +30,12 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v1
-      - run: mkdir /tmp/artifacts
-      - run: echo ::set-env name=URL::"https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com"
-      - uses: foo-software/lighthouse-check-action@master
-        id: lighthouseCheck
+      - name: Lighthouse audit
+      - uses: treosh/lighthouse-ci-action@v1
         with:
-          outputDirectory: /tmp/artifacts
-          urls: $URL
-      - uses: foo-software/lighthouse-check-status-action@master
+          url: https://${GITHUB_SHA::8}-dot-justinribeiro-web.appspot.com
+      - name: Save results
+        uses: actions/upload-artifact@master
         with:
-          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-          minAccessibilityScore: "95"
-          minBestPracticesScore: "95"
-          minPerformanceScore: "95"
-          minProgressiveWebAppScore: "95"
-          minSeoScore: "95"
+          name: lighthouse-results
+          path: './results'
