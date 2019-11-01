@@ -14,7 +14,7 @@
   "imagetwitter": "{{ $.Params.imagetwitter }}",
   "imagefb": "{{ $.Params.imagefb }}",
   "imagegplus": "{{ $.Params.imagegplus }}",
-  "posts": [ {{ range $i, $e := first 16 (where .Data.Pages "Section" "chronicle") }}
+  "posts": [ {{ range $i, $e := first 16 (where .Site.RegularPages "Section" "chronicle") }}
   {{if $i}}, {{end}}{{ .Render "li"}}{{end}}
   ]
 }
