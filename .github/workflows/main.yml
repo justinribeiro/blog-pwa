@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Generate Lighthouse Report
-        uses: justinribeiro/lighthouse-action@test-puppeteer
+        uses: justinribeiro/lighthouse-action@master
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
           url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
