@@ -220,9 +220,7 @@ case $target in
     print "${BOLD_BLUE}STAGE 6: Generate Frontend Build and Service Worker ${RESET}"
     cd $project/app/;
     yarn build:dist;
-    cd build/default;
-    workbox generateSW $project/app/workbox-config.js
-    cd ../../../;
+    cd ../;
 
     # Step 5: make a ship dir
     mkdir ship;

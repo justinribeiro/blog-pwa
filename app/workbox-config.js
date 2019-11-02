@@ -1,13 +1,13 @@
 /* eslint-env node */
 module.exports = {
-  swDest: 'service-worker.js',
+  swDest: './build/default/service-worker.js',
   importWorkboxFrom: 'cdn',
   skipWaiting: false,
   clientsClaim: true,
   offlineGoogleAnalytics: true,
   cleanupOutdatedCaches: true,
   cacheId: 'BLOG-PWA',
-  globDirectory: '.',
+  globDirectory: './build/default/',
   globPatterns: [
     'index.html',
     'src/app.js',
