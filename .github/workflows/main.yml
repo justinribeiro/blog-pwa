@@ -1,6 +1,6 @@
 name: Build > Deploy > Audit
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
