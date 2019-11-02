@@ -1,6 +1,6 @@
 name: PR
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -36,6 +36,7 @@ jobs:
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
           url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
+          wptConnectionSpeed: threegfast
       - name: Save Lighthouse Audit Artifacts
         uses: actions/upload-artifact@master
         with:
