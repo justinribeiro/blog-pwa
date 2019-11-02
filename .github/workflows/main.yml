@@ -39,5 +39,5 @@ jobs:
       - name: Save Lighthouse Artifacts
         uses: actions/upload-artifact@master
         with:
-          name: lighthouse-results
+          name: lighthouse-artifacts
           path: './results'
