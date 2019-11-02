@@ -34,6 +34,7 @@ jobs:
       - name: Generate Lighthouse Report
         uses: justinribeiro/lighthouse-action@test-puppeteer
         with:
+          secret: ${{ secrets.GITHUB_TOKEN }}
           url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
       - name: Save Lighthouse Artifacts
         uses: actions/upload-artifact@master
