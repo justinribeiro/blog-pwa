@@ -36,8 +36,8 @@ jobs:
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
           url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
-          wptConnectionSpeed: fourg
-      - name: Save Lighthouse Audit Artifacts
+          wptConnectionSpeed: threegfast
+      - name: Saving Lighthouse Audit Artifacts
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-artifacts
