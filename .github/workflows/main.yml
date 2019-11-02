@@ -36,7 +36,7 @@ jobs:
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
           url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
-      - name: Save Lighthouse Artifacts
+      - name: Save Lighthouse Audit Artifacts
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-artifacts
