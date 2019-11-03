@@ -66,8 +66,10 @@ The full feature list includes:
 - Supports Lighthouse budget.json for failing PRs.
 - Posts results of audit run as a comment on your PR.
 
+If you want to see an example of this action in an actual Github workflow, you can see it in use in my [blog-pwa repo](https://github.com/justinribeiro/blog-pwa/blob/master/.github/workflows/main.yml) where I'm using it to test site changes on deployments of PRs to Google App Engine.
+
 You can get started using the action today via the [marketplace](https://github.com/marketplace/actions/web-performance-audits-with-lighthouse). The [repo is also available](https://github.com/justinribeiro/lighthouse-action) and happy to accept feature requests and pulls, so let me know what you're thinking. I've written this as simply and straight forward as I could think of, so if you're looking to understand a little how it all works, this example is a great way to dive in.
 
-If you want to see an example of this action in an actual Github workflow, you can see it in use in my [blog-pwa repo](https://github.com/justinribeiro/blog-pwa/blob/master/.github/workflows/main.yml) where I'm using it to test site changes on deployments of PRs to Google App Engine.
+If you happen to be at [Chrome Dev Summit](https://developer.chrome.com/devsummit/) this month, find me and we'll chat about all things Lighthouse, all things web performance.
 
 Now get out there and start testing even more of your deployments and let's make the web fast!
