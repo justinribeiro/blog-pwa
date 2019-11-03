@@ -1,7 +1,5 @@
 name: PR
-
 on: [pull_request]
-
 jobs:
   build:
     name: Build and Deploy
@@ -32,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Generate Lighthouse Report
-        uses: justinribeiro/lighthouse-action@master
+        uses: justinribeiro/lighthouse-action@v1.0.1
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
           url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com
