@@ -63,7 +63,7 @@
         line-height: 1.5;
         min-height: 100vh;
         background-color: #ffffff;
-        font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri,
+        font-family:  'Libre Franklin', Frutiger, 'Frutiger Linotype', Univers, Calibri,
           'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad,
           'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma,
           Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -71,7 +71,7 @@
 
       #pageHeader {
         line-height: 1.5;
-        font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri,
+        font-family:  'Libre Franklin', Frutiger, 'Frutiger Linotype', Univers, Calibri,
           'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad,
           'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma,
           Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -121,7 +121,7 @@
       #pageHeader h1 {
         font-weight: 100;
         margin: 0 5px;
-        font-family: Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
+        font-family: 'Literata', Georgia, Palatino, 'Palatino Linotype', Cambria, Times,
           'Times New Roman', serif;
       }
 
@@ -259,7 +259,7 @@
       h4,
       h5,
       h6 {
-        font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri,
+        font-family: 'Libre Franklin', Frutiger, 'Frutiger Linotype', Univers, Calibri,
           'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad,
           'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma,
           Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -283,6 +283,7 @@
         font-weight: 700;
         font-style: normal;
         margin-top: 16px;
+        font-family: 'Literata', Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;;
       }
 
       h2 {
@@ -292,6 +293,7 @@
         letter-spacing: -0.02em;
         font-weight: 700;
         font-style: normal;
+        font-family: 'Literata', Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;;
       }
 
       h3 {
@@ -418,7 +420,7 @@
         background-repeat: initial;
         background-position: initial;
         display: block;
-        padding: 1rem;
+        padding: 20px;
         border-bottom: none;
         transition-property: background-color;
         transition-duration: 0.3s;
@@ -474,6 +476,25 @@
         margin-top: 10px;
       }
 
+      figure {
+        margin: 1em 0;
+      }
+
+      figcaption {
+        color: #666;
+        font-size: 0.875rem;
+        line-height: 1.125rem;
+      }
+
+      figcaption .author {
+        display: inline-block;
+        color: #888;
+        font-family: var(--font-family-serif);
+        line-height: 1.125rem;
+        letter-spacing: 0.01em;
+        font-size: 0.75rem;
+      }
+
       time {
         text-transform: uppercase;
       }
@@ -501,6 +522,14 @@
         margin-top: 0.25em;
         background: #f2f0f0;
         line-height: auto;
+      }
+
+      .subheadline {
+        margin: 1em 0;
+        font-size: 21px;
+        font-family: 'Libre Franklin', sans-serif;
+        line-height: 1.55;
+        font-weight: 300;
       }
 
       @media (max-width: 767px) {
@@ -563,6 +592,25 @@
         #pageFooter > div {
           flex-direction: column;
         }
+
+        #main img {
+          margin: none;
+        }
+
+        #main iframe,
+        #main img {
+          max-width: initial;
+          width: 100vw;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+        }
+
+        .subheadline {
+          font-size: 18px;
+        }
       }
 
       @media (max-width: 320px) {
@@ -577,6 +625,8 @@
       }
     </style>
     {% endraw %}
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400|Literata:700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Literata&display=swap&text=JustinRibeiro" rel="stylesheet">
   </head>
   <body>
     <header id="pageHeader">
@@ -609,6 +659,9 @@
         >
           <header>
             <h1 itemprop="headline" class="p-name">{{ title | safe }}</h1>
+            <h2 class="subheadline">{{ description }}</h2>
+            <div id="featureImage">{{ featureimage | safe }}</div>
+
             <div class="reads">
               <time
                 datetime="{{ dataModified }}"

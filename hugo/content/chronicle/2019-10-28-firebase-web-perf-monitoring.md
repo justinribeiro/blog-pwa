@@ -5,6 +5,27 @@ date: 2019-10-28T07:46:28-07:00
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-02-800.png"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-02-800.png"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-02-800.png"
+featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+<picture>
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-640.webp 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-800.webp 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-1024.webp 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-1280.webp 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-1600.webp 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-640.png 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-800.png 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-1024.png 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-1280.png 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-1600.png 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/png">
+  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-800.png" alt="The Firebase Performance panel in the console for this blog.">
+</picture>
+<figcaption itemprop="caption description">
+<span aria-hidden="true">A screenshot of the performance panel within the Firebase console running for justinribeiro.com.</span>
+<span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+</figcaption>
+</figure>'
 tags:
 - Web
 ---

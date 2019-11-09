@@ -46,6 +46,13 @@ class BlogEntry extends BlogElement {
       }
 
       this.shadowRoot.querySelector('#metadataArticle').innerHTML = parseHTML;
+      let parseFeatureImage = '';
+      if (this.metadata.featureimage) {
+        parseFeatureImage = this._unescapeHtml(this.metadata.featureimage);
+        this.shadowRoot.querySelector(
+          '#featureImage',
+        ).innerHTML = parseFeatureImage;
+      }
 
       super._processMetaData();
 
@@ -121,6 +128,7 @@ class BlogEntry extends BlogElement {
         #main img {
           max-width: 100%;
           width: 100%;
+          padding-bottom: 10px;
         }
 
         #main img {
@@ -130,6 +138,25 @@ class BlogEntry extends BlogElement {
 
         #main video {
           max-width: 100%;
+        }
+
+        figure {
+          margin: 1em 0;
+        }
+
+        figcaption {
+          color: #666;
+          font-size: 0.875rem;
+          line-height: 1.125rem;
+        }
+
+        figcaption .author {
+          display: inline-block;
+          color: #888;
+          font-family: var(--font-family-serif);
+          line-height: 1.125rem;
+          letter-spacing: 0.01em;
+          font-size: 0.75rem;
         }
 
         time {
@@ -159,7 +186,7 @@ class BlogEntry extends BlogElement {
         }
 
         button {
-          background: #d2ffe4;
+          background: #f5ee00;
           border: 1px solid #ccc;
           border-radius: 4px;
           font-size: 1em;
@@ -182,8 +209,33 @@ class BlogEntry extends BlogElement {
           margin-bottom: 0.5em;
         }
 
-        .hidden {
-          display: none !important;
+        .subheadline {
+          margin: 1em 0;
+          font-size: 21px;
+          font-family: 'Libre Franklin', sans-serif;
+          line-height: 1.55;
+          font-weight: 300;
+        }
+
+        @media (max-width: 767px) {
+          #main img {
+            margin: none;
+          }
+
+          #main iframe,
+          #main img {
+            max-width: initial;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+          }
+
+          .subheadline {
+            font-size: 18px;
+          }
         }
       `,
     ];
@@ -200,6 +252,9 @@ class BlogEntry extends BlogElement {
       >
         <header>
           <h1 itemprop="headline">${this.metadata.title}</h1>
+          <h2 class="subheadline">${this.metadata.description}</h2>
+          <div id="featureImage"></div>
+
           <div class="reads">
             <time
               .datetime="${this.metadata.dataModified}"

@@ -1,7 +1,27 @@
 ---
 title: "Fail a PR based on any audit score with v1.1.0 of Web Performance Audits with Lighthouse Github Action"
-description: "With v1.1.0, scores.js enables support for a Lighthouse-based data model for failing PRs based on any audit score or category."
+description: "The latest release beings a new feature, scores.js, enabling support for a Lighthouse-based data model for failing PRs based on any audit score or category."
 date: 2019-11-06T10:09:03-08:00
+featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+<picture>
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-640.webp 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.webp 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-1024.webp 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-1280.webp 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-1600.webp 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-640.png 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-1024.png 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-1280.png 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-1600.png 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/png">
+  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png" alt="scores.js in action as a PR comment">
+<figcaption itemprop="caption description">
+<span aria-hidden="true">A screenshot of a pull request showing the new score.js feature.</span>
+<span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+</figcaption>
+</figure>'
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png"
@@ -49,7 +69,7 @@ No having to wait for me to add special parameters and easily comparable to the 
 $ lighthouse --output json --output-path=./sample.json --chrome-flags="--headless" https://YOUR_URL_HERE.com
 {{< /codeblock >}}
 
-Just pop open that JSON file, determine what audits or categories are important to you, and start failing those pull requests at will.g sb
+Just pop open that JSON file, determine what audits or categories are important to you, and start failing those pull requests at will.
 
 <picture>
   <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-640.webp 640w,

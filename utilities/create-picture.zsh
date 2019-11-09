@@ -104,19 +104,25 @@ fi
 finalFile="$cdnPath$basefilename"
 echo ${BOLD_RED}ACTION: Copy/Paste:${RESET}
 echo "
-<picture>
-  <source srcset=\"$finalFile-640.webp 640w,
-                  $finalFile-800.webp 800w,
-                  $finalFile-1024.webp 1024w,
-                  $finalFile-1280.webp 1280w,
-                  $finalFile-1600.webp 1600w\"
-          sizes=\"(min-width: 800px) 800px, 100vw\" type=\"image/webp\">
-  <source srcset=\"$finalFile-640.$fileType 640w,
-                  $finalFile-800.$fileType 800w,
-                  $finalFile-1024.$fileType 1024w,
-                  $finalFile-1280.$fileType 1280w,
-                  $finalFile-1600.$fileType 1600w\"
-          sizes=\"(min-width: 800px) 800px, 100vw\" type=\"image/$fileType\">
-  <img src=\"$finalFile-800.$fileType\" alt=\"\">
-</picture>
+<figure aria-label=\"media\" role=\"group\" itemscope=\"\" itemprop=\"associatedMedia\" itemtype=\"http://schema.org/ImageObject\">
+  <picture>
+    <source srcset=\"$finalFile-640.webp 640w,
+                    $finalFile-800.webp 800w,
+                    $finalFile-1024.webp 1024w,
+                    $finalFile-1280.webp 1280w,
+                    $finalFile-1600.webp 1600w\"
+            sizes=\"(min-width: 800px) 800px, 100vw\" type=\"image/webp\">
+    <source srcset=\"$finalFile-640.$fileType 640w,
+                    $finalFile-800.$fileType 800w,
+                    $finalFile-1024.$fileType 1024w,
+                    $finalFile-1280.$fileType 1280w,
+                    $finalFile-1600.$fileType 1600w\"
+            sizes=\"(min-width: 800px) 800px, 100vw\" type=\"image/$fileType\">
+    <img src=\"$finalFile-800.$fileType\" alt=\"\">
+  </picture>
+  <figcaption itemprop=\"caption description\">
+    <span aria-hidden=\"true\"></span>
+    <span class=\"author\" itemprop=\"copyrightHolder\"></span>
+  </figcaption>
+</figure>
 "

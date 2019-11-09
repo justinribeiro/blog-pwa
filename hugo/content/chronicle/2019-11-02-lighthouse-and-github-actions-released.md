@@ -1,22 +1,8 @@
 ---
 title: "Web Performance Audits with Lighthouse for Github Actions Released"
-description: "Sometimes, you just want those Lighthouse web performance numbers to pop onto a pull request. With my latest Github Action, you get just that."
+description: "Sometimes you just want those Lighthouse web performance numbers to pop onto a pull request. With my latest Github Action, that is now a simple workflow step away."
 date: 2019-11-02T16:37:27-07:00
-tags:
-- Web
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
----
-
-I'm just going to say it: I can pretty much integrate [Lighthouse](https://github.com/GoogleChrome/lighthouse) anywhere. I've put in [tests](https://github.com/justinribeiro/lighthouse-jest-example), I've written it into [Visual Studio code tasks](https://justinribeiro.com/chronicle/2018/06/26/running-lighthouse-audits-in-vs-code-via-tasks/), I've wired it into [docker](https://hub.docker.com/r/justinribeiro/lighthouse/), I made it dance at [Chrome Dev Summit on giant screens as a game](https://stickmanventures.com/blog/2016/11/21/demonstrating-web-performance-at-chrome-dev-summit-2016/), I've even made a [few commits here and there](https://github.com/GoogleChrome/lighthouse/pulls?q=is%3Apr+author%3Ajustinribeiro+is%3Aclosed).
-
-Which is to say, I _really_ like lighthouse. It's a useful tool that I wish more developers would use. It's one reason I keep writing integrations and examples, hoping that more buy-in for web performance is always just around the next corner.
-
-In today's case, I'm releasing [Web Performance Audits with Lighthouse](https://github.com/marketplace/actions/web-performance-audits-with-lighthouse), a new Github Action that has a number of nifty features that I hope folks will enjoy.
-
-The biggest feature takes a page from the [lighthousebot style for Travis](https://github.com/GoogleChromeLabs/lighthousebot) and injects a comment with the audit results right onto your pull request:
-
+featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
 <picture>
   <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-640.webp 640w,
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.webp 800w,
@@ -32,6 +18,47 @@ The biggest feature takes a page from the [lighthousebot style for Travis](https
           sizes="(min-width: 800px) 800px, 100vw" type="image/png">
   <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png" alt="Lighthouse audit results right on your pull request!">
 </picture>
+<figcaption itemprop="caption description">
+<span aria-hidden="true">A screenshot of a pull request comment from my latest Lighthouse tool,  Web Performance Audits with Lighthouse for Github Actions.</span>
+<span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+</figcaption>
+</figure>'
+tags:
+- Web
+imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
+imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
+imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
+---
+
+I'm just going to say it: I can pretty much integrate [Lighthouse](https://github.com/GoogleChrome/lighthouse) anywhere. I've put in [tests](https://github.com/justinribeiro/lighthouse-jest-example), I've written it into [Visual Studio code tasks](https://justinribeiro.com/chronicle/2018/06/26/running-lighthouse-audits-in-vs-code-via-tasks/), I've wired it into [docker](https://hub.docker.com/r/justinribeiro/lighthouse/), I made it dance at [Chrome Dev Summit on giant screens as a game](https://stickmanventures.com/blog/2016/11/21/demonstrating-web-performance-at-chrome-dev-summit-2016/), I've even made a [few commits here and there](https://github.com/GoogleChrome/lighthouse/pulls?q=is%3Apr+author%3Ajustinribeiro+is%3Aclosed).
+
+Which is to say, I _really_ like lighthouse. It's a useful tool that I wish more developers would use. It's one reason I keep writing integrations and examples, hoping that more buy-in for web performance is always just around the next corner.
+
+In today's case, I'm releasing [Web Performance Audits with Lighthouse](https://github.com/marketplace/actions/web-performance-audits-with-lighthouse), a new Github Action that has a number of nifty features that I hope folks will enjoy.
+
+The biggest feature takes a page from the [lighthousebot style for Travis](https://github.com/GoogleChromeLabs/lighthousebot) and injects a comment with the audit results right onto your pull request:
+
+<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+<picture>
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-640.webp 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.webp 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-1024.webp 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-1280.webp 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-1600.webp 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-640.png 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-1024.png 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-1280.png 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-1600.png 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/png">
+  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png" alt="Lighthouse audit results right on your pull request!">
+</picture>
+<figcaption itemprop="caption description">
+<span aria-hidden="true">A screenshot of a pull request comment from my latest Lighthouse tool,  Web Performance Audits with Lighthouse for Github Actions.</span>
+<span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+</figcaption>
+</figure>
 
 If you're looking at the screenshot and wondering "wait, budget.json fails?", you'd be correct. You can use your existing [budget.json for Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/budgets) (which you're already using on the CLI right?) right into your configuration:
 

@@ -1,6 +1,6 @@
 ---
 title: "When Your Kids Just Want You To Work At The Grocery Store"
-description: "Long weeks on the road take a toll when you have kids."
+description: "Long weeks on the road away from my children takes a deep toll."
 date: 2019-10-23T09:04:45-07:00
 tags:
 - Personal
