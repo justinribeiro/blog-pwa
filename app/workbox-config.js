@@ -41,6 +41,7 @@ module.exports = {
         cacheName: 'img-cache',
         expiration: {
           maxEntries: 200,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
         },
       },
     },
@@ -62,6 +63,27 @@ module.exports = {
         cacheName: 'cdn-cache',
         expiration: {
           maxEntries: 200,
+        },
+      },
+    },
+    {
+      urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+      handler: 'StaleWhileRevalidate',
+      options: {
+        cacheName: 'google-fonts-stylesheets',
+        expiration: {
+          maxEntries: 200,
+        },
+      },
+    },
+    {
+      urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'google-fonts-webfonts',
+        expiration: {
+          maxEntries: 200,
+          maxAgeSeconds: 60 * 60 * 24 * 365,
         },
       },
     },

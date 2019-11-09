@@ -185,16 +185,17 @@ export default class BlogElement extends LitElement {
       }
 
       h1 {
+        font-family: var(--font-family-headers);
         font-size: 28px;
         margin-left: -1.75px;
-        line-height: 1.15;
+        line-height: 1.25;
         letter-spacing: -0.02em;
         font-weight: 700;
-        font-style: normal;
         margin-top: 16px;
       }
 
       h2 {
+        font-family: var(--font-family-headers);
         font-size: 24px;
         margin-left: -1.75px;
         line-height: 1.15;
@@ -238,76 +239,14 @@ export default class BlogElement extends LitElement {
         font-size: 20px;
       }
 
-      [hidden] {
-        display: none !important;
-      }
-
       /*
         Design choice: in my components, I always have a #main as a container
         in my web components. Why isn't named container? No idea. LOL.
       */
-      #main,
-      #skeleton {
+      #main {
         margin: auto;
         padding: 0 20px;
         max-width: 800px;
-      }
-
-      #posts {
-        margin: auto;
-        max-width: 800px;
-      }
-
-      #skeleton {
-        min-height: 102vh;
-      }
-
-      .post-container {
-        min-height: 125px;
-        width: calc(50% - 1rem);
-      }
-
-      .post-container a {
-        min-height: 100px;
-        color: initial;
-        background-image: none;
-        background-repeat: initial;
-        background-position: initial;
-        display: block;
-        padding: 1rem;
-        border-bottom: none;
-        transition-property: background-color;
-        transition-duration: 0.3s;
-        will-change: background-color;
-      }
-
-      .post-container a h2 {
-        color: var(--accent-color-primary);
-        font-weight: 400;
-        font-family: var(--font-family-serif);
-      }
-
-      .post-container a h3 {
-        font-weight: 400;
-        text-transform: uppercase;
-        font-size: 14px;
-        margin-bottom: 0.5rem;
-        color: var(--accent-color-secondary);
-      }
-
-      .post-container a:hover {
-        text-decoration: none;
-        background-color: var(--hotpink);
-      }
-
-      .post-container a:hover h2,
-      .post-container a:hover h3 {
-        color: #fff !important;
-      }
-
-      .post-container a span {
-        font-size: 14px;
-        color: var(--accent-color-primary);
       }
 
       #tags a {
@@ -321,9 +260,7 @@ export default class BlogElement extends LitElement {
       }
 
       @media (max-width: 767px) {
-        #main,
-        #skeleton,
-        #posts {
+        #main {
           margin: auto;
           max-width: 800px;
         }
@@ -335,10 +272,10 @@ export default class BlogElement extends LitElement {
           line-height: 1.58;
           letter-spacing: -0.004em;
         }
+      }
 
-        .post-container {
-          width: 100%;
-        }
+      [hidden] {
+        display: none !important;
       }
     `;
   }

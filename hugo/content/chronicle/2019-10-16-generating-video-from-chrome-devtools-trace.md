@@ -1,7 +1,27 @@
 ---
 title: "Generating Video From a Chrome Devtools Trace With devtools-to-video"
-description: "Sometimes stakeholders need to quickly see their web performance. Luckily, we can turn those Chrome DevTools trace screenshots into a video with a little cli action."
+description: "Sometimes stakeholders need to quickly see their web performance. Luckily, we can turn those Chrome DevTools trace screenshots into a video with my latest command line tool."
 date: 2019-10-16T07:55:51-07:00
+featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+<picture>
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-640.webp 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-800.webp 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-1024.webp 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-1280.webp 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-1600.webp 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
+  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-640.png 640w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-800.png 800w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-1024.png 1024w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-1280.png 1280w,
+                  https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-1600.png 1600w"
+          sizes="(min-width: 800px) 800px, 100vw" type="image/png">
+  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-800.png" alt="devtools-to-video cli in action">
+<figcaption itemprop="caption description">
+<span aria-hidden="true">The command line tool makes generating video from your trace easy and quick.</span>
+<span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+</figcaption>
+</figure>'
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-800.png"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-800.png"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-800.png"
@@ -17,8 +37,7 @@ Pictures of traces speak a thousand words. Video of what a user is experiencing 
 
 In a perfect world, I'd have WebPageTest just rolling runs at my behest with video output, but in a lot of on many projects WebPageTest isn't running internally and testing externally is a non-starter. We need a method to generate some video with some feeling. Enter [devtools-to-video](https://github.com/justinribeiro/devtools-to-video).
 
-devtool-to-video is a little cli tool written in node that utilizes ffmpeg to generate a video from a Chrome DevTools trace and put a timer on the bottom that shows the time progression.
-
+<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
 <picture>
   <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-640.webp 640w,
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-800.webp 800w,
@@ -33,9 +52,13 @@ devtool-to-video is a little cli tool written in node that utilizes ffmpeg to ge
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-1600.png 1600w"
           sizes="(min-width: 800px) 800px, 100vw" type="image/png">
   <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-800.png" alt="devtools-to-video cli in action">
-</picture>
+<figcaption itemprop="caption description">
+<span aria-hidden="true">The command line tool makes generating video from your trace easy and quick.</span>
+<span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+</figcaption>
+</figure>
 
-An [example of the video ouput](https://www.youtube.com/watch?v=guJLfqTFfIw):
+devtool-to-video is a little cli tool written in node that utilizes ffmpeg to generate a video from a Chrome DevTools trace and put a timer on the bottom that shows the time progression. An [example of the video output](https://www.youtube.com/watch?v=guJLfqTFfIw):
 
 <iframe width="560" height="400" src="https://www.youtube.com/embed/guJLfqTFfIw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

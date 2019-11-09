@@ -1,6 +1,6 @@
 ---
 title: "Workaround for Karma and Chrome headless on Windows Subsystem for Linux, ala WSL"
-description: "A quick workaround for running tests when Chrome doesn't want to play nice inside WSL."
+description: "A quick workaround for running tests when Chrome do not want to play nice inside WSL."
 date: 2019-10-02T15:26:00-07:00
 tags:
 - Web

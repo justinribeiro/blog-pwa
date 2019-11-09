@@ -1,7 +1,27 @@
 ---
 title: "From Broken 1930s Barn Radio to Google Assistant"
-description: "A broken and battered 1930s Grunow radio gets a make over with a gutted Google Home."
+description: "A broken and battered Grunow radio discovered in a barn gets pulled into the shop for a make over with a dismantled Google Home."
 date: 2019-10-25T07:36:03-07:00
+featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+<picture>
+<source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-640.webp 640w,
+                https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.webp 800w,
+                https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1024.webp 1024w,
+                https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1280.webp 1280w,
+                https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1600.webp 1600w"
+        sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
+<source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-640.jpg 640w,
+                https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg 800w,
+                https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1024.jpg 1024w,
+                https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1280.jpg 1280w,
+                https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1600.jpg 1600w"
+        sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg" alt="The old radio label survived somehow">
+<figcaption itemprop="caption description">
+<span aria-hidden="true">While structurally in disrepair, the radio still contains the original labels.</span>
+<span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+</figcaption>
+</figure>'
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
@@ -12,22 +32,6 @@ tags:
 I enjoy old radios. Unlike today's streamline plastic devices with faux metal details, old radios were center pieces in many homes, the finer models made of hardwood and glass. They carry some weight and a touch of style from a time long since forgotten.
 
 I have a fair amount of old radios in our house in working order. For every working radio, I have also a number of part radios. Then, there's things like this 1930s Grunow Model No. 564. This wasn't a purchase, this was an old barn find, a radio in disrepair with no real working parts and on the verge of just crumbling.
-
-<picture>
-  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-640.webp 640w,
-                  https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.webp 800w,
-                  https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1024.webp 1024w,
-                  https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1280.webp 1280w,
-                  https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1600.webp 1600w"
-          sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
-  <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-640.jpg 640w,
-                  https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg 800w,
-                  https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1024.jpg 1024w,
-                  https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1280.jpg 1280w,
-                  https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1600.jpg 1600w"
-          sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg" alt="The old radio label survived somehow">
-</picture>
 
 This was a table top radio at one point, with a veneered swoop that I thought looked cool. So we dumped out the mice nest that was in it and I put it in my shop, where it has sat on one of my parts shelf for the better part of five years. As you can see in the photographs below, it was in pretty bad shape.
 

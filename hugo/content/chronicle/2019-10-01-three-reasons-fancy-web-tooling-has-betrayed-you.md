@@ -1,6 +1,6 @@
 ---
 title: "Three Reasons You Betrayed Your Modern Web Tooling"
-description: "In the modern web development era, tools are held like swords in meeting rooms around the world, poking holes in coffee cups in the name of process. Let's discuss three reasons your tools aren't working for you and what to do to stave of that arrow to your project."
+description: "In the modern web development era tools are held like swords in meeting rooms, poking holes in coffee cups in the name of process. From hard fought battles, here are three reasons your tools are not working for you and what to do to stave of that arrow to your project."
 date: 2019-10-01T09:46:54-07:00
 tags:
 - Web
