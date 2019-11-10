@@ -100,6 +100,7 @@ Your SSH broker command line will now show a pub connection:
 If you've got all that running, congrats, your broker is working smoothly.
 
 ## Step 3: Setting up a web socket server with an MQTT hook
+
 Web Socket implementations are aplenty at this point. Pick a language, someone has an implementation. In my case, I wanted to play with <a href="http://socketo.me/">Ratchet</a>, a PSR-0 compliant PHP websocket implementation I'd never used. This would also give me a chance to play with <a href="http://getcomposer.org/">Composer</a>, a PHP dependency manager, which I haven't used very extensively (one line review based on this experience: it's very nice).
 
 The nice thing about Rachet, is that for this small test, their chat example is just about all we need. However, we need an MQTT hook. Like a good protocol should, there are library's aplenty available that allow you to send and receive MQTT messages. In PHP's case, we have <a href="http://project-sam.awardspace.com/">SAM, Simple Asynchronous Messaging for PHP</a>.
@@ -108,8 +109,7 @@ You can install SAM from PECL, but that would require a compiler and the truth i
 
 I'm not going to go into the finer points of initializing Ratchet or installing Composer (they both have documentation on that, and it's a very simple two step and you're running procedure). So instead let's take a quick walk through our control.php websocket service:
 
-{{< codeblock lang="php" >}}
-<?php
+{{< codeblock lang="c" >}}
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 use Ratchet\Server\IoServer;
@@ -169,14 +169,14 @@ $server = IoServer::factory(new WsServer(new Control), 8899);
 $server->run();
 {{< /codeblock >}}
 
-Immediataly, you'll probably notice two things:
+Immediately, you'll probably notice two things:
 
 1. SAM isn't PSR-0 compliant, which means we have to include it outside the autoloader
 2. That's pretty easy, right?
 
 There really isn't much too this. The onMessage function simply waits for messages through the WebSocket protocol and when it gets one, sends it along to the broker under the topic control. How do you run this? Right on the command line:
 
-{{< codeblock lang="php" >}}
+{{< codeblock lang="bash" >}}
 [ec2-user@ip-10-XXX-XXX-XXX ~]$ php ./websocketservice/control.php
 
 -->SAMConnection()
@@ -185,7 +185,7 @@ There really isn't much too this. The onMessage function simply waits for messag
 
 With debugging turned on in the SAM lib, you'll see the connections and callouts the library makes as control.php tells it what to do.  When a client connects to the websocket and sends a message, you'll see something like this:
 
-{{< codeblock lang="php" >}}
+{{< codeblock lang="bash" >}}
 -->SAMConnection.Connect()
 -->SAMConnection.Create(proto=mqtt)
    SAMConnection.Create() get_cfg_var() ""
@@ -218,11 +218,13 @@ With debugging turned on in the SAM lib, you'll see the connections and callouts
 {{< /codeblock >}}
 
 ## Step 4: Connect to the WebSocket service throught your web page
+
 Connecting to a websocket through a webpage is pretty straightforward from a JavaScript perspective. The <a href="http://dev.w3.org/html5/websockets/">API</a> is available, <a href="https://developer.mozilla.org/en-US/demostag/tech:websockets">Mozilla's May derby was all about the WebSocket API</a>, HTML5 Rocks has a <a href="http://www.html5rocks.com/en/features/connectivity">connectivity section</a> with websocket info.
 
 Since we have all this info and the only thing I needed as a send, I didn't take the time to write a specific send/recieve web page for this example. Instead I used the <a href="http://www.websocket.org/echo.html">WebSocket.org echo demo</a>, and simply pointed it to my websocket service url (which would be ws://ec2-XXX-XXX-XXX-XXX.us-west-1.compute.amazonaws.com/control in this case).
 
 ## Step 5: Make that Arduino blink!
+
 First thing: lets wire up that Arduino. Slap on your ethernet shield, and wire up three leds (in my case, red, green, blue) to pins 5, 6, 7. The overall basic design of this is from the wonderful tutorial series at Adafruit (<a href="http://www.ladyada.net/learn/arduino/lesson3.html">lesson 3</a> as a matter of fact; the ciruit layout below is modified from that tutorial).
 
 <img src="https://storage.googleapis.com/jdr-public-imgs/blog-archive/2012/07/basic-three-led-setup.jpg" alt="Modified from Adafruit Lesson 3" />
@@ -230,9 +232,9 @@ First thing: lets wire up that Arduino. Slap on your ethernet shield, and wire u
 Once you have that wired up, you're going to need to add Nicholas O'Leary's excellent <a href="http://knolleary.net/arduino-client-for-mqtt/">pubsubclient</a> (which implements support for MQTT) to your Arduino environment.  Once you have that installed, let's have a look at the sketch:
 
 {{< codeblock lang="c" >}}
-#include <SPI.h>
-#include <Ethernet.h>
-#include <PubSubClient.h>
+#include &lt;SPI.h&gt;
+#include &lt;Ethernet.h&gt;
+#include &lt;PubSubClient.h&gt;
 
 // Set the MAC address
 byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x01 };
@@ -361,10 +363,13 @@ Once we start subscribing to the control topic, anything the broker broadcasts t
 So if we have our broker and websocket service running, and we open up the echo test page and connect to the websocket and send a message of 12345, our green led will blink first, than the blue led will blink second. If we send 32424324, the green led will blink but the blue led will not.
 
 ## Step 6: Amaze your friends, automate or report something
+
 Presuming all went well, you've just flashed a led by using all kinds of cool and interesting technology. It's a long setup for such a simple example, but once you have the server services setup, you can begin to see that you can automate anything (close the garage door), or report back information anywhere (how hot is the chicken coop). No firewalls to deal with. No port forwarding. The code doesn't require deep knowledge. It just works.
 
 ## Next time
+
 Since you probably don't want someone randomly opening your garage door, next time we'll have a look at some security, and maybe we'll build a dashboard. Everyone loves a good dashboard.
 
 ## Get the code
+
 All the code used here is available on my <a href="https://github.com/justinribeiro/justinribeiro.com-examples/tree/master/IOT-trigger-led-MQTT-WebSocket">github</a> account. Take it, fork it, do as you please. Remember, knowledge is as much about giving back as it taking.

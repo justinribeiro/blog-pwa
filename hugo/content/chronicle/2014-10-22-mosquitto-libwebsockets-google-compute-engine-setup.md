@@ -1,6 +1,6 @@
 ---
 date: 2014-10-22T00:00:00Z
-description: Getting setup with Mosquitto on Google Compute Engine is suprising simple in this step-by-step setup.
+description: Getting setup with Mosquitto on Google Compute Engine is surprisingly simple in this step-by-step setup.
 title: Setting up Mosquitto 1.4 with libwebsockets on CentOS 7 on Google Compute Engine
 url: /chronicle/2014/10/22/mosquitto-libwebsockets-google-compute-engine-setup/
 tags:
@@ -17,13 +17,13 @@ To accomplish this, we can build a custom version of the Mosquitto 1.4 branch wi
 
 There are two ways to start an instance on Compute Engine; the web panel or the command line. The command line is the easiest in my opinion. This assume you've already auth'ed (otherwise you may want to read up on the [managing authentication and credentials](https://cloud.google.com/sdk/gcloud/#gcloud.auth))
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ gcloud compute instances create my-instance-name --image centos-7 --zone us-central1-a
 {{< /codeblock >}}
 
 Once we're up and running, we can go ahead an ssh into that instance:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ gcloud compute ssh my-instance-name --zone us-central1-a
 {{< /codeblock >}}
 
@@ -31,19 +31,19 @@ Once we're up and running, we can go ahead an ssh into that instance:
 
 First things first: grab your development tools:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ sudo yum groupinstall "Development Tools"
 {{< /codeblock >}}
 
 Now, let's grab other pieces we'll need to build libwebsockets and mosquitto:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ sudo yum install wget mercurial cmake openssl-devel c-ares-devel libuuid-devel
 {{< /codeblock >}}
 
 Fantastic! Now, let's go get libwebsockets:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ wget https://github.com/warmcat/libwebsockets/archive/v1.3-chrome37-firefox30.tar.gz
 {{< /codeblock >}}
 
@@ -51,9 +51,9 @@ Fantastic! Now, let's go get libwebsockets:
 
 Presuming everything above went a-okay, we should have all we need to build.
 
-_Note: I've shorted the zsh command prompts without the path name below; obvisouly we're changing into a directory and in oh-my-zsh that would put the folder in the path...it just gets a little long on the cut and paste._
+_Note: I've shorted the zsh command prompts without the path name below; obviously we're changing into a directory and in oh-my-zsh that would put the folder in the path...it just gets a little long on the cut and paste._
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ tar zxvf v1.3-chrome37-firefox30.tar.gz
 ➜  ~ cd libwebsockets-1.3-chrome37-firefox30
 ➜  ~ mkdir build; cd build;
@@ -65,9 +65,9 @@ The cmake command above is important on CentOS 7; if we don't give it the lib su
 
 ## Building Mosquitto 1.4
 
-First, let's pull the code from the repo using mecurial:
+First, let's pull the code from the repo using mercurial:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~  hg clone https://bitbucket.org/oojah/mosquitto
 ➜  ~  cd mosquitto
 ➜  ~  hg pull && hg update 1.4
@@ -75,30 +75,30 @@ First, let's pull the code from the repo using mecurial:
 
 Okay, so you have some code. Now we need to tell Mosquitto to use libwebsockets by editing the config.mk file and enabling WITH_WEBSOCKETS:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 WITH_WEBSOCKETS:=yes
 {{< /codeblock >}}
 
 After we've done that, we can build mosquitto:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~  make binary
 ➜  ~  sudo make install
 {{< /codeblock >}}
 
-Why "make binary"? Because mosquitto really isn't very setup to build kindly on CentOS; we would have to change a lot of hardcoded paths to the docbook xsl dependinces. There is a bug marked WONTFIX that explains this (see [issue 1269967](https://bugs.launchpad.net/mosquitto/+bug/1269967)). Trust me, it's not worth the time. Just use make binary.
+Why "make binary"? Because mosquitto really isn't very setup to build kindly on CentOS; we would have to change a lot of hardcoded paths to the docbook xsl dependencies. There is a bug marked WONTFIX that explains this (see [issue 1269967](https://bugs.launchpad.net/mosquitto/+bug/1269967)). Trust me, it's not worth the time. Just use make binary.
 
 ## It all went well...or so I thought
 
 So everything builds, you install everything, you go to fire up mosquitto and it fails. Turns out, we need to symlink our libwebsockets lib:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ sudo ln -s /usr/local/lib64/libwebsockets.so.4.0.0 /usr/lib/libwebsockets.so.4.0.0
 {{< /codeblock >}}
 
 Well, and it would be helpful to have a very basic mosquitto.conf:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 autosave_interval 1800
 persistence true
 persistence_file mosquitto.db
@@ -112,23 +112,23 @@ listener 10001 127.0.0.1
 protocol websockets
 {{< /codeblock >}}
 
-Note the "protocol websockets" line. This is going to enable our implemenation.
+Note the "protocol websockets" line. This is going to enable our implementation.
 
 Now, we fire mosquitto up:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ /usr/local/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf -d
 {{< /codeblock >}}
 
 ## Open up some ports
 
 It would help if we told the instance to allow some traffic:
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ gcloud compute firewall-rules create allow-mqtt --allow tcp:1883
 {{< /codeblock >}}
 
 Let us not forget our websocket:
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 ➜  ~ gcloud compute firewall-rules create allow-websocket --allow tcp:10001
 {{< /codeblock >}}
 
@@ -165,4 +165,4 @@ Sure. The steps are roughly the same, but for a specific Mint 17/Ubuntu 14.04 ve
 
 ## Why all this?
 
-Primarly for use with my Polymer [polymer-glass-timer-mqtt](https://github.com/justinribeiro/polymer-glass-timer-mqtt) tag and my [GDK MQTT Glass Timer](https://github.com/justinribeiro/glass-gdk-timer-mqtt) application. Together, it let's me do some nifty demo's.
+Primarily for use with my Polymer [polymer-glass-timer-mqtt](https://github.com/justinribeiro/polymer-glass-timer-mqtt) tag and my [GDK MQTT Glass Timer](https://github.com/justinribeiro/glass-gdk-timer-mqtt) application. Together, it let's me do some nifty demo's.

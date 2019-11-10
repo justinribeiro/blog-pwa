@@ -61,7 +61,7 @@ Right click on the desktop and from the menu choose Preferences &raquo; Openbox 
 
 Next, find the ending &lt;/keyboard&gt; tag in the file (there is only one) and paste the following above it:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;keybind key=&quot;XF86AudioLowerVolume&quot;&gt;
   &lt;action name=&quot;Execute&quot;&gt;
   &lt;execute&gt;amixer -q set PCM 10- unmute&lt;/execute&gt;

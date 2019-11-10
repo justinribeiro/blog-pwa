@@ -269,7 +269,7 @@ class BlogEntry extends BlogElement {
             ${this.metadata.tags.split(',').map(
               tag =>
                 html`
-                  <a href="/tags/${tag.toLowerCase()}/">${tag}</a>
+                  <a href="/tags/${tag.toLowerCase()}/">${tag}</a>&nbsp;
                 `,
             )}
           </div>

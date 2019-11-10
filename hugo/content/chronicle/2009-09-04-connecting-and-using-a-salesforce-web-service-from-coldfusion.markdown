@@ -21,7 +21,7 @@ Needless to say, lets look at an example. You can't take this and run wild; you 
 2. If you ever see "Unable to create web service argument class" this is generally because the struct is also wrong.  Check your data and check the target types you should be sending.
 3. Coldfusion MX 7 tends to fight more then Coldfusion 8.
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;!--- A pretend struct to send to our web service ---&gt;
 &lt;cfscript&gt;
   mySentStruct = structNew();
@@ -87,7 +87,7 @@ Needless to say, lets look at an example. You can't take this and run wild; you 
 
 But just you say, what about "Cannot generate stubs errors"?  Truly a pain in the neck.  What I found that works the best in this situation is to use the CF admin API and reload the web service, which in turn usually regenerates the stubs without issue:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;cfset createObject(&quot;component&quot;,&quot;cfide.adminapi.administrator&quot;).login(&quot;yourCFadminpassword&quot;)&gt;
 
 &lt;cfset ws = createobject(&quot;component&quot;,&quot;CFIDE.adminapi.extensions&quot;)&gt;

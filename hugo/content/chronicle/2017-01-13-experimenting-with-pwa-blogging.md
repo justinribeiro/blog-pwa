@@ -233,7 +233,7 @@ Note this is likely to be resolved soon, as `importHref()` is being refactored a
 
 Finally, I needed to display some code in certain posts. So I built [&lt;code-block&gt;](https://github.com/justinribeiro/blog-pwa/blob/master/app/src/code-block.html), which extended [&lt;prism-highlighter&gt;](https://github.com/PolymerElements/prism-element). It's not terribly fancy and most notably extends to support some additional languages I've had on the blog over the years:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;code-block lang=&quot;javascript&quot;&gt;
   console.info(&#039;be fancy code block!&#039;);
 &lt;/code-block&gt;
@@ -263,7 +263,7 @@ This was a connundrum resolved easily with just letting the ever-awesome `sw-pre
 
 Speaking of static, how does our shell handle that? Recall above that our python actually injects into our index.html a static url to redirect to in the case of no JavaScript. From a shell standpoint, it's pretty straightforward:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;noscript&gt;
   &lt;p&gt;JavaScript appears to be turned off.
   No problem, this Progressive Web App is Progressive!
@@ -313,7 +313,7 @@ Your linkbots of the world (ala Twitterbot and the like) will have none of it. T
 
 We can resolve this however. Since we have seperation of our views and data, we can simply create views that work in those cases aided by the App Engine's use of `webapp2` and `Django` templating on the server. As noted in the section above, we simply open our JSON, load up a template (in the code below, our bot template) and we render:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;

@@ -1,7 +1,7 @@
 ---
 date: 2016-01-14T00:00:00Z
 description: Ginger gets a makeover into a progressive web app.
-title: Ginger WebGL as a Progressive Web Application
+title: Ginger WebGL as a Progressive Web App
 tags:
 - Web
 ---
