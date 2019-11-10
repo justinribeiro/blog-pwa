@@ -1,6 +1,6 @@
 ---
 title: "Using Lighthouse, Puppeteer, and Jest for Web Performance Testing"
-description: "Web performance testing is a must, so let's make some CLI magic with jest, lighthouse, and puppeteer."
+description: "Web performance testing has become a must have for most developers. We can start testing today on the command line with jest, lighthouse, and puppeteer."
 imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190412-lighthouse-jest-testing-cli.jpg"
 imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190412-lighthouse-jest-testing-cli.jpg"
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190412-lighthouse-jest-testing-cli.jpg"

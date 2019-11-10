@@ -39,7 +39,7 @@ want to print them. :-)
 
 From a code standpoint, the using the viewer is straight forward:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;stl-part-viewer src=&quot;example.stl&quot;&gt;&lt;/stl-part-viewer&gt;
 {{< /codeblock >}}
 

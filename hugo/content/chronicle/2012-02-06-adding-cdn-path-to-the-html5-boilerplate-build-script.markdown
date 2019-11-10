@@ -29,7 +29,7 @@ After you have the path setup, you can now use this variable to update the repla
 
 In addition to the existing rewrites, I've added two additional replaceregexp calls, one for the images that may be in the HTML itself, and one for additional JavaScript.
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;echo message=&quot;Update the HTML to reference our concatenated script file: ${cdn.root}${scripts.js}&quot;/&gt;
 &lt;!-- style.css replacement handled as a replacetoken above --&gt;
 &lt;replaceregexp match=&quot;&amp;lt;!-- scripts concatenated [\d\w\s\W]*?!-- end ((scripts)|(concatenated and minified scripts))--&amp;gt;&quot; replace=&quot;&amp;lt;script defer src=&#039;${cdn.root}${scripts.js}\&#039;&amp;gt;&amp;lt;/script&amp;gt;&quot; flags=&quot;m&quot;&gt;

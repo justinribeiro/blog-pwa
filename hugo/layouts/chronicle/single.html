@@ -2,7 +2,7 @@
 {{ $content := replace $content_to_string "\n" "\\n" }}
 {
   "title": "{{ .Title }}",
-  "description": "{{ .Description }}",
+  "description": "{{ .Description | safeHTML }}",
   "article": "{{ $content }}",
   "date": "{{ .Date.Format "Mon Jan 2, 2006" }}",
   "datePublished": "{{ .Date.Format $.Site.Params.ISO8601 }}",

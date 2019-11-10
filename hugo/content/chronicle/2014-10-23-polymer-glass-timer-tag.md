@@ -29,7 +29,7 @@ I knew that the tag needed to handle certain attributes:
 
 Doing this in Polymer is pretty simple:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;!-- Import Polymer --&gt;
 &lt;link rel=&quot;import&quot; href=&quot;../bower_components/polymer/polymer.html&quot;&gt;
 &lt;script src=&quot;mqttws31.js&quot;&gt;&lt;/script&gt;
@@ -59,7 +59,7 @@ And I was off for with flying start. Now there are a lot more attributes that I 
 
 Templates are nice. It's even nicer when I don't have to wire them with 27 libraries. I stuck to the basic format I had previsouly which was designed with a layout boundry and was supposed to live in a reveal.js presentation:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;template&gt;
   &lt;style&gt;
     /* Create a Layout Boundary */
@@ -235,7 +235,7 @@ Everything else is simply the callbacks we need to listen for to handle the conn
 
 Once the tag is up and running, it's only a matter of importing and using it as needed:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;glass-timer title=&quot;Justin&#039;s Glass Timer&quot; host=&quot;MY_HOST&quot; port=&quot;9001&quot;
   topic=&quot;justin/device/glass&quot; debug=&quot;true&quot;&gt;&lt;/glass-timer&gt;
 {{< /codeblock >}}

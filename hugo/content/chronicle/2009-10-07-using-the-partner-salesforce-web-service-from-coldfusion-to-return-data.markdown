@@ -13,7 +13,7 @@ My last article on the subject of <a href="https://www.justinribeiro.com/chronic
 
 The following is a very simple script that I compiled using a lot of older partial examples and documentation over at the <a href="http://developer.force.com/">DeveloperForce</a>.  The Coldfusion documentation and examples at DeveloperForce are lacking, but because there are so many Java based examples one can extrapolate them to ColdFusion.
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;CFAPPLICATION NAME=&quot;sdfasdfawe534534534jklsdf&quot;
   APPLICATIONTIMEOUT=&quot;#CreateTimeSpan(0, 2, 0, 0)#&quot;
   CLIENTMANAGEMENT=&quot;NO&quot;

@@ -14,6 +14,7 @@ url: /chronicle/2012/11/09/remotely-rendering-high-resolution-models-with-vtk-me
 The open source community is a wonderful thing. Punch in the right words into Google and you can find the open source tools and projects that can do amazing things when combined. Sure, it might be a stretch of what those tools do, but that's half the fun.
 
 ## The use case
+
 Let's say you have a 3D model. But it's not just any model, let's say it's a HUGE model, something with 100 million polys and more data than you can shake a stick at. WebGL can do some amazing things...but loading a multi-gigabyte model file and then rendering it...it's a bit on the taxing side.
 
 Now Justin you say, people don't make models that big. To that I would say, yes, yes we do. The big industrial 3D scanners do all kinds of crazy things, least of which is a meazly 100 million poly model (rendered and cleaned up from point cloud data likely). What are we to do?
@@ -23,6 +24,7 @@ I say let's remotely render a high resolution frame of that big, large 3D model 
 Sounds hard. Not going to lie; not the easiest thing in the world.
 
 ## It's all in the secret sauce...except it's not so secret
+
 Cheap cloud servers don't exactly have large amounts of cheap GPU power available, so we can't use fancy OpenCL or Cuda to do our dirty work. What we need is something that'll run on all those relatively cheap CPU cycles.  Welcome to the stage, VTK!
 
 The <a href="http://www.vtk.org/">Visualization Toolkit (VTK)</a> is an open source system that lets you do all kinds of 3D, imaging, and visualization. I can't even begin to scratch the surface of how much you can do with VTK, so I highly suggest that you read the <a href="http://www.vtk.org/Wiki/VTK_FAQ#What_is_the_Visualization_Toolkit.3F">FAQ</a>.
@@ -32,9 +34,11 @@ What we're going to use VTK for is its ability to render frames of 3D objects wi
 But Justin, VTK doesn't do off screen rendering. Ah, but it does! You just have to tie into <a href="http://http://mesa3d.org/">Mesa 3D</a>.
 
 ## I need a driver for a video card, but I don't have a video card
+
 Mesa 3D, like VTK, can do a lot of things ranging from emulation to hardware acceleration for modern GPU's. What we want it for is <a href="http://mesa3d.org/osmesa.html">off-screen rendering</a> support, which we can than utilize in VTK.
 
 ## I don't see an exe file, how do we do this?
+
 At this point, it _sounds_ like if we start piecing this together, it'll work. But how does one go about doing that? It's time to break out your compilers.
 
 You can do this a number of ways; you can compile and deploy to Amazon, or you can just compile on your AMI of choice. I compiled locally as statically as possible, and then moved over the build to Amazon. Your mileage may vary.
@@ -90,6 +94,7 @@ $ make test
 {{< /codeblock >}}
 
 ## We made it! Now what?
+
 So the build finished, hopefully error free. Now what?  We need to test to see if things are working. Just so happens, on the Cmake wiki, there is a <a href="http://www.cmake.org/Wiki/VTK/Examples/Cxx/Utilities/OffScreenRendering">example script</a> that does this very thing. Drop that into a file, build it, and then run from the command line.
 
 What you should end up with is something like this:
@@ -98,11 +103,12 @@ What you should end up with is something like this:
 That little sphere on the white background...that's success!
 
 ## I'm going to need more than a sphere
+
 So what Justin, I don't need some low poly sphere. I need some high resolution action. So let's do that.
 
 The following is a basic example engine that takes command line parameters, loads a model file, and then renders a particular view. Now, before you start screaming "that won't scale!" and "you have C++ issues" I'm well aware (anyone who's written even a little C++ would be quick to note this). It's a pretty crappy example for reasons I'm not at liberaty to explain (read my memoirs after I die...the story is both sad and funny all at once).
 
-{{< codeblock lang="cpp" >}}
+{{< codeblock lang="c" >}}
 #include &lt;vtkXMLPolyDataReader.h&gt;
 #include &lt;vtkPolyDataMapper.h&gt;
 #include &lt;vtkPolyData.h&gt;
@@ -314,13 +320,14 @@ That above command will result in a big dump of base64 data (which we'll use in 
 We're cookin'. Let's prep for the browser.
 
 ## Captain, I don't have the RAM
+
 So now we've got this huge model on our backend, sitting on some instance, waiting to be rendered and return frames. We need to load a smaller version of the model into the browser. These days, Three will support VTK ascii data, so that could be one way to go, or you could use some other object type. But before you get there you need a smaller version of the model and that requires decimation.
 
 Now, decimating models is as much art as science. Crush it too hard, and you end up with that horrible creature at the end of The Fly. You can do this a number of ways, with a number of programs (example: <a href="http://meshlab.sourceforge.net/">MeshLab</a>). When you deal with the big models that require decimation, you will run into a problem no matter which program you use: RAM.
 
 You think that little 16GB workstation is going to be enough? Unlikely. The reality is, big models take up lots of RAM, and when you're doing decimation, it's going to hurt. We have machines that do this sort of thing in our animation department, but let's say to nah, I have Amazon, show me some other way. Just so happens, VTK can do that too:
 
-{{< codeblock lang="cpp" >}}
+{{< codeblock lang="c" >}}
 #include &lt;vtkPolyData.h&gt;
 #include &lt;vtkQuadricDecimation.h&gt;
 #include &lt;vtkPLYWriter.h&gt;
@@ -498,9 +505,10 @@ this.ajaxOut = function (camera, control, auto, polycount) {
 // other classy things
 {{< /codeblock >}}
 
-Pretty staightforward right? We're polling the current viewport camera, controls, and field of view so that we can send that to our remote renderer. The remote renderer throws back some base64 data that we then use to draw on a secondary canvas that we then bring to the front (note, we don't draw on our WebGL context canvas, that will not do what you want it to).
+Pretty straightforward right? We're polling the current viewport camera, controls, and field of view so that we can send that to our remote renderer. The remote renderer throws back some base64 data that we then use to draw on a secondary canvas that we then bring to the front (note, we don't draw on our WebGL context canvas, that will not do what you want it to).
 
 ## The example, in action
+
 The following video shows the concept in action. Nifty.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TKZOJNA_ToI" frameborder="0" allowfullscreen></iframe>
@@ -508,18 +516,17 @@ The following video shows the concept in action. Nifty.
 And yes, that's a shorter clip from a video I authored for a conference.
 
 ## Where can I play with it?
-At the moment, the demo is not online. Remote renderering large models on Amazon or your cloud provider of choice can be expensive.
+
+At the moment, the demo is not online. Remote rendering large models on Amazon or your cloud provider of choice can be expensive.
 
 If you were to write use a proper C++ service that can be autoscaled on Amazon (which is what *cough* I would do), you have a number of things to handle beyond that. How do you get fast access to the files? Do you mount them off of S3? Do you shuffle them off of RAIDed EBS volumes? How do decrease latency across regions?
 
 Once you go down this road, things get complicated and performance can get pricey.
 
-In real life, with a lot of testing, I've found that rendering 1M to 3M poly's using binary data and RAIDed EBS volumes will get you renders in the 0.3 to 1.1 second range. Taking into latency, you're looking at a 1.2 to 4 second round trip from request to response. This is why you'll note that the autorender flag in the JavaScript above was set to 1M; it's about as high as you can go for onCameraMovementStop based renderering. Beyond that, there is a noticable delay on frame return.
+In real life, with a lot of testing, I've found that rendering 1M to 3M poly's using binary data and RAIDed EBS volumes will get you renders in the 0.3 to 1.1 second range. Taking into latency, you're looking at a 1.2 to 4 second round trip from request to response. This is why you'll note that the autorender flag in the JavaScript above was set to 1M; it's about as high as you can go for onCameraMovementStop based rendering. Beyond that, there is a noticeable delay on frame return.
 
 When you start rendering the big files, anything above 10M polys really, you're going to get vastly different render times. 95M polys can run anywhere from 50-90 seconds (which if you start to think about it, is not terrible given its size...but for a user that is not used to big 3D assets, it's slower than dirt).  In these sorts of cases, you've got to job queue.
 
 ## Conclusion
+
 In a perfect world this would be a rather turn key process, but it really depends on the type of models and data you're dealing with. Open source tools such as <a href="http://www.paraview.org/">ParaView</a> have a similar set of functionality, including something more generally useful such as point cloud library support (see <a href="http://pointclouds.org/news/pcl-and-paraview-connecting-the-dots.html">PCL and ParaView -- Connecting the Dots</a>), but maybe you're only dealing with polys. If that's the case, then you can translate that to something workable on the web, using little more than the tools I've described above.
-
-_Note: I will make every effort to box up the entire tool set in some manner that makes it runnable, either locally or on your hosting of choice._
-

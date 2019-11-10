@@ -1,8 +1,6 @@
 ---
 tags:
-- arduino
-- mqtt
-- mosquitto
+- IoT
 date: 2012-11-08T00:00:00Z
 description: Securing communications between my Arduinos and the outside world using MQTT and Mosquitto. Stop trying to open my garage door people.
 title: Securing MQTT communication between Ardruino and Mosquitto
@@ -26,7 +24,7 @@ Okay, so now our Audrinos are talking and listening the the local instance of Mo
 
 Bridging Mosquitto instances is fairly well documented (see <a href="http://mosquitto.org/man/mosquitto-conf-5.html">mosquitto.conf documentation</a>). Sticking with the sane defaults, creating the bridge is like so:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 #... previous things
 
 address ec2-somethingsomething.us-west-1.compute.amazonaws.com:8883
@@ -55,7 +53,7 @@ What to do? It really depends on how your overall information design. For me, I 
 ## Locking up the remote side
 So you've created this bridge, but your remote server needs some options set as well in it's own config to make all this work. For the sake of not being open at all on the remote end, let's not allow anonymous access, require password, and set the defaults to use SSL.
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 #... previous things
 
 acl_file /etc/mosquitto/accesscontrols

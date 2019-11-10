@@ -33,13 +33,13 @@ The problem was how to go about it. I could hard fork a lot of the submodules th
 
 The first chop was to remove the `pipenv` checks within controller build's `cmake.bash`. This would allow the script to no longer fail when attempting to setup the build. No need to replace, just a straight up chop:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 sed -i.bak -e '34,44d' /KiiConf/controller/Keyboards/cmake.bash
 {{< /codeblock >}}
 
 Having resolved that issue, the firmware now half built. Turns out some of the paths were bad specific to the `kll` build script cases for kiiconf. Not a problem, `sed` replacement to the rescue again.
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 sed -i.bak '163s|^.*$|set ( DefaultMap_Args ${DefaultMap_Args} ${PROJECT_BINARY_DIR}/${MAP}.kll )|' /KiiConf/controller/Lib/CMake/kll.cmake \
 sed -i.bak '192s|^.*$|set ( PartialMap_Args ${PartialMap_Args} ${PROJECT_BINARY_DIR}/${MAP_PART}.kll )|' /KiiConf/controller/Lib/CMake/kll.cmake
 {{< /codeblock >}}
@@ -49,7 +49,7 @@ If you ask me "Justin, are these good fixes", my answer is that they work but ar
 ## It's alive!
 Low and behold, patched build script lines and some creative installing later, our [kiiconf docker image](https://github.com/justinribeiro/dockerfiles/blob/master/kiiconf/Dockerfile) is up and running, complete with firmware builds and output. For the daring among you, you can grab the docker image from the repo and fire it up as such:
 
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 $ git clone git@github.com:justinribeiro/dockerfiles.git
 $ cd dockerfiles/kiiconf
 $ docker build -t justinribeiro/kiiconf .

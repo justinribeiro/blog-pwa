@@ -19,7 +19,7 @@ The one thing that I've never been a fan of is debugging Google Analytics. It's 
 
 For instance, I want to debug:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;ga-dnt-analytics debug=&quot;true&quot;&gt;&lt;/ga-dnt-analytics&gt;
 {{< /codeblock >}}
 
@@ -29,7 +29,7 @@ Great! Now I look at my console and low and behold:
 
 Now I'd like to turn on production. Let's update our element:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;ga-dnt-analytics key=&quot;UA-XXXXX-XX&quot;&gt;&lt;/ga-dnt-analytics&gt;
 {{< /codeblock >}}
 
@@ -46,7 +46,7 @@ document.querySelector(&#039;blog-analytics&#039;).send({
 
 Or, if I'm just stamping this on every page, I can just set it to ping on pageview:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;ga-dnt-analytics pageview=&quot;true&quot;&gt;&lt;/ga-dnt-analytics&gt;
 {{< /codeblock >}}
 

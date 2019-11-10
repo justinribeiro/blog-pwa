@@ -100,7 +100,7 @@ Linkbots want really one thing: metadata. Some want their specific thing (ala Fa
 
 We settled on this for the corp site (a more slim example can be found in my [zuperkulblog-progressive-hugo](https://github.com/justinribeiro/zuperkulblog-progressive-hugo) repo):
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;

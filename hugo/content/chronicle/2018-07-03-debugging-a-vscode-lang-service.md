@@ -15,11 +15,11 @@ Let's walk the steps shall we?
 
 1. Download stable VS Code for your platform. You're going to need this to do the debugging of your language service code.
 2. Clone the VS Code repo. You'll need this to run the language server in so that we can debug it from our stable VS Code.
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 $ git clone git@github.com:Microsoft/vscode.git
 {{< /codeblock >}}
 3. It's time to build VS Cod. You'll need a tools for the build chain. Some you likely already have (git, python 2.7x, yarn, node 8), some you may not (C/C++ compiler tool chain, libsecret). I'm running Ubuntu, so I've simplified from the [wiki](https://github.com/Microsoft/vscode/wiki/How-to-Contribute):
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 $ apt install build-essential libx11-dev libxkbfile-dev libsecret-1-dev
 $ cd vscode
 $ yarn
@@ -29,11 +29,11 @@ $ ./scripts/code.sh
 {{< /codeblock >}}
 At this point, you should have a build of VS Code running! If not, check for build errors.
 4. Clone the TypeScript repo.
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 $ git clone git@github.com:Microsoft/TypeScript.git
 {{< /codeblock >}}
 5. It's time to build TypeScript.
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 $ yarn global add jake
 $ cd TypeScript
 $ yarn
@@ -46,7 +46,7 @@ $ jake local
 }
 {{< /codeblock >}}
 7. Once you're updated the user settings with the path to the TypeScript server, shutdown your built copy of VS Code and head back to the command line where it was running. Now, we're going to set an env variable called `TSS_DEBUG` and restart our built of VS Code.
-{{< codeblock lang="sh" >}}
+{{< codeblock lang="bash" >}}
 $ export TSS_DEBUG = 5888
 $ ./scripts/code.sh
 {{< /codeblock >}}

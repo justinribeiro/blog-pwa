@@ -16,9 +16,10 @@ Since I haven't found a great deal of UI examples that integrate existing plugin
 Note: this is a basic example, really the bare minimum one could use to get any form up and running.  You could simplify this down further, but I'm trying to make it more understandable.  I added a bit of additional styling to the example that I've omitted below for simplicity sake.  The UI theme in use is called <a href="http://jqueryui.com/themeroller/#ffDefault=Trebuchet+MS,+Tahoma,+Verdana,+Arial,+sans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=f6a828&bgTextureHeader=12_gloss_wave.png&bgImgOpacityHeader=35&borderColorHeader=e78f08&fcHeader=ffffff&iconColorHeader=ffffff&bgColorContent=eeeeee&bgTextureContent=03_highlight_soft.png&bgImgOpacityContent=100&borderColorContent=dddddd&fcContent=333333&iconColorContent=222222&bgColorDefault=f6f6f6&bgTextureDefault=02_glass.png&bgImgOpacityDefault=100&borderColorDefault=cccccc&fcDefault=1c94c4&iconColorDefault=ef8c08&bgColorHover=fdf5ce&bgTextureHover=02_glass.png&bgImgOpacityHover=100&borderColorHover=fbcb09&fcHover=c77405&iconColorHover=ef8c08&bgColorActive=ffffff&bgTextureActive=02_glass.png&bgImgOpacityActive=65&borderColorActive=fbd850&fcActive=eb8f00&iconColorActive=ef8c08&bgColorHighlight=ffe45c&bgTextureHighlight=03_highlight_soft.png&bgImgOpacityHighlight=75&borderColorHighlight=fed22f&fcHighlight=363636&iconColorHighlight=228ef1&bgColorError=b81900&bgTextureError=08_diagonals_thick.png&bgImgOpacityError=18&borderColorError=cd0a0a&fcError=ffffff&iconColorError=ffd27a&bgColorOverlay=666666&bgTextureOverlay=08_diagonals_thick.png&bgImgOpacityOverlay=20&opacityOverlay=50&bgColorShadow=000000&bgTextureShadow=01_flat.png&bgImgOpacityShadow=10&opacityShadow=20&thicknessShadow=5px&offsetTopShadow=-5px&offsetLeftShadow=-5px&cornerRadiusShadow=5px">UI Lightness</a>.
 
 ## Step 1: Setup some div's
+
 What I like to do is always have a return message block that contains informational messages after the form post, as well as a target div for any data that needs to be loaded/refreshed/appended to.  Before jQuery UI, I used to style out my own message blocks and it works totally fine.  But the UI theming is just so darn good, lets put it to use.
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;div class=&quot;ui-widget ui-helper-hidden&quot; id=&quot;client-script-return-msg&quot;&gt;
   &lt;div class=&quot;ui-state-highlight ui-corner-all&quot; style=&quot;padding: 0pt 0.7em; margin-top: 20px;&quot;&gt;
     &lt;p&gt;&lt;span class=&quot;ui-icon ui-icon-circle-check&quot; style=&quot;float: left; margin-right: 0.3em;&quot;&gt;&lt;/span&gt;
@@ -35,7 +36,7 @@ Confused?  I was.  The block above is largely taken from the demos from the API 
 
 We now have our return message block.  Let's now add a target for our form post return and a button we'll use to open the modal dialog:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;button id=&quot;load-my-modal&quot; class=&quot;ui-button ui-state-default ui-corner-all&quot;&gt;Open Modal Form&lt;/button&gt;
 &lt;div id=&quot;client-script-return-data&quot; class=&quot;ui-widget ui-widget-content&quot;&gt;For our example, our form post from the modal will replace this text.&lt;/div&gt;
 {{< /codeblock >}}
@@ -43,9 +44,10 @@ We now have our return message block.  Let's now add a target for our form post 
 Pretty straight forward.  You will note that we've used more UI class elements to make things theme friendly and assigned some ID's which we'll be using in our JavaScript calls.
 
 ## Step 2: Setup the modal form html
+
 We now turn our attention to the actual form and the modal window that holds it.  First, let's setup the modal div block like so:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;div id=&quot;my-modal-form&quot; title=&quot;Edit some data&quot;&gt;&lt;/div&gt;
 {{< /codeblock >}}
 
@@ -53,7 +55,7 @@ We give it and ID that we'll use later and assign it a title with jQuery UI will
 
 Now let's add in our error block to catch error messages:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;div id=&quot;my-modal-form&quot; title=&quot;Edit some data&quot;&gt;
   &lt;div class=&quot;ui-widget ui-helper-hidden&quot; id=&quot;errorblock-div1&quot;&gt;
     &lt;div class=&quot;ui-state-error ui-corner-all&quot; style=&quot;padding: 0pt 0.7em;&quot;
@@ -76,7 +78,7 @@ You'll note this looks slightly different for our information block.  Key takeaw
 
 Now that we have our error block, lets toss in a form:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;div id=&quot;my-modal-form&quot; title=&quot;Edit some data&quot;&gt;
   &lt;div class=&quot;ui-widget ui-helper-hidden&quot; id=&quot;errorblock-div1&quot;&gt;
     &lt;div class=&quot;ui-state-error ui-corner-all&quot; style=&quot;padding: 0pt 0.7em;&quot;
@@ -105,6 +107,7 @@ Now that we have our error block, lets toss in a form:
 The only thing to note is that there are no buttons; jQuery UI's dialog takes care of that for use. Now let's write some JavaScript and jQuery code!
 
 ## Step 3: Wire things up with jQuery goodness
+
 First things first: let's make our div block with the ID of my-modal-form a modal dialog:
 
 {{< codeblock lang="javascript" >}}
@@ -187,9 +190,10 @@ function successEvents(msg, datatable) {
 As you can see, the function simply fades in our return message block (which we hide to start) and then fades it out after 10 seconds.
 
 ## Step 4: The backend AJAX call
+
 The backend form post script could do anything you want it to do.  The thing to remember that in this example we're just returning HTML to our return block (not JSON or XML).  The example is important however, as it has the last key piece to our return message block:
 
-{{< codeblock lang="html" >}}
+{{< codeblock lang="markup" >}}
 &lt;script type=&quot;text/javascript&quot;&gt;
     jQuery(function() {
         var stringMsg = &quot;&lt;strong&gt;Success!&lt;/strong&gt; Your information was updated.&quot;
@@ -206,6 +210,7 @@ The backend form post script could do anything you want it to do.  The thing to 
 The only major thing to note is that we had originally set up a span with the ID of client-script-return-msg-rtn to handle our return message. $("#client-script-return-msg-rtn").html(stringMsg); does the work of setting that message in that block (the var stringMsg is defined above it).  We don't we unhide it?  Because the successEvents() function takes care of that for us.
 
 ## Step 5: The last step
+
 The last step is a simple one: we have to tell our button to open the dialog box.  To do so, we attach a click event:
 
 {{< codeblock lang="javascript" >}}
@@ -234,6 +239,7 @@ var abuttonglow = $(".ui-button:not(.ui-state-disabled)")
 {{< /codeblock >}}
 
 ## Final Thoughts
+
 While it may look like a lot of code for what is a fairly simple procedure, this set of tools allows a robust and consistent experience to be displayed to the user.  The example above can styled with <a href="http://jqueryui.com/themeroller/">Themeroller</a> without so much as a single line of code changed. Using the Validation and Form plugins would also us even more possibilities without having to write a lot of supporting code (and I don't know about you, but I can't stand writing validation rules in JavaScript by hand...that's so 1997).
 
 Happy coding!
