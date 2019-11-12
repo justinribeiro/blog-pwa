@@ -8,6 +8,7 @@
   "version": "3.0.0",
   "author": "Justin Ribeiro <justin@justinribeiro.com>",
   "devDependencies": {
+    "@babel/preset-modules": "^0.1.0",
     "@open-wc/building-utils": "^2.8.2",
     "babel-plugin-bundled-import-meta": "^0.3.1",
     "babel-plugin-template-html-minifier": "^3.1.0",
