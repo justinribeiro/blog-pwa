@@ -1,4 +1,3 @@
-const {findSupportedBrowsers} = require('@open-wc/building-utils');
 const customMinifyCss = require('@open-wc/building-utils/custom-minify-css');
 const resolve = require('rollup-plugin-node-resolve');
 const {terser} = require('rollup-plugin-terser');
@@ -55,16 +54,9 @@ export default {
 
       presets: [
         [
-          '@babel/preset-env',
+          '@babel/preset-modules',
           {
-            targets: findSupportedBrowsers(),
-            // preset-env compiles template literals for safari 12 due to a
-            // small bug which doesn't affect most use cases. for example
-            // lit-html handles it:
-            // (https://github.com/Polymer/lit-html/issues/575)
-            exclude: ['@babel/plugin-transform-template-literals'],
-            useBuiltIns: false,
-            modules: false,
+            loose: true,
           },
         ],
       ],
@@ -76,6 +68,7 @@ export default {
         ecma: 8,
       },
       mangle: {
+        safari10: true,
         reserved: ['__import'],
       },
     }),

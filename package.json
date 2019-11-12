@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@babel/preset-modules": "^0.1.0"
+  }
+}
