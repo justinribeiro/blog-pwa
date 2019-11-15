@@ -701,9 +701,9 @@
     "@hapi/hoek" "^8.3.0"
 
 "@justinribeiro/lite-youtube@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@justinribeiro/lite-youtube/-/lite-youtube-0.1.0.tgz#023df23c89c6a1b0d2038d4dd8bf958b0fa48f69"
-  integrity sha512-gXy2rxhLqnrkrc5CnN7CHIA6lYTVG8LHwgjcB9WnSjrsaIAJs6ztY2YfK6yIHdgbSvGO4SgYkUmjPHEVs0wpUQ==
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@justinribeiro/lite-youtube/-/lite-youtube-0.1.1.tgz#7f7480c260586cdd83d145c72dc7bece99a36983"
+  integrity sha512-bFAWmdGKtO8THz6+DFixdbX315QBUhrzxmnPqsxqzbQnz5TRJ3JIGS2pDlumjUgrcP20Lppbkptuumpo7g7k1A==
 
 "@justinribeiro/stl-part-viewer@^1.0.0":
   version "1.0.2"
