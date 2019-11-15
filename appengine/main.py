@@ -37,12 +37,12 @@ class MainHandler(http2.PushHandler):
                                                             "worker-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.google-analytics.com https://www.gstatic.com; "
                                                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
                                                             "connect-src 'self' https://storage.googleapis.com https://www.google-analytics.com https://firebaseinstallations.googleapis.com https://firebaseremoteconfig.googleapis.com https://firebaselogging.googleapis.com https://webmention.io/; "
-                                                            "img-src 'self' https://storage.googleapis.com; https://i.ytimg.com/v; "
+                                                            "img-src 'self' data: https://storage.googleapis.com; https://i.ytimg.com; "
                                                             "media-src 'self' https://storage.googleapis.com; "
-                                                            "form-action 'self' https://webmention.io/; "
+                                                            "form-action 'self' https://webmention.io; "
                                                             "object-src 'none'; "
-                                                            "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com/; "
-                                                            "frame-src https://www.youtube.com/; "
+                                                            "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; "
+                                                            "frame-src https://www.youtube.com; "
                                                             "manifest-src 'self'; "
                                                             "frame-ancestors 'none';")
 
