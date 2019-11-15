@@ -16,7 +16,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
                 https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1280.jpg 1280w,
                 https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1600.jpg 1600w"
         sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-<img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg" alt="The old radio label survived somehow">
+<img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg" alt="While structurally in disrepair, the radio still contains the original labels.">
 <figcaption itemprop="caption description">
 <span aria-hidden="true">While structurally in disrepair, the radio still contains the original labels.</span>
 <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
@@ -35,6 +35,7 @@ I have a fair amount of old radios in our house in working order. For every work
 
 This was a table top radio at one point, with a veneered swoop that I thought looked cool. So we dumped out the mice nest that was in it and I put it in my shop, where it has sat on one of my parts shelf for the better part of five years. As you can see in the photographs below, it was in pretty bad shape.
 
+<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
 <picture>
   <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-02-640.webp 640w,
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-02-800.webp 800w,
@@ -50,6 +51,11 @@ This was a table top radio at one point, with a veneered swoop that I thought lo
           sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
   <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-02-800.jpg" alt="">
 </picture>
+<figcaption itemprop="caption description">
+<span aria-hidden="true">While structurally in disrepair, the radio still contains the original labels.</span>
+<span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+</figcaption>
+</figure>
 
 <picture>
   <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-03-640.webp 640w,
@@ -121,7 +127,7 @@ From there, it was really a matter of putting back in some radio parts to make t
 
 Which leads me to sticking a Google Assistant backed Google Home in it.
 
-<iframe width="560" height="400" src="https://www.youtube.com/embed/hvitpOwoETU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< liteyoutube videoid="hvitpOwoETU" >}}
 
 Under the hood, this is little more than my test of gutting and re-wiring an older Google Home so that it has a pretty LED light that matches the radio case (which was originally a dial for the power switch of the old radio per the schematic). Google gave me a lot of these Assistant devices over the years at various developer related events and meetings; the least I could do was rip them apart.
 

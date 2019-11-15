@@ -45,6 +45,11 @@ class BlogEntry extends BlogElement {
         import('./code-block.js');
       }
 
+      const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
+      if (CodeBlockRequired.test(parseHTML)) {
+        import('./lite-youtube.js');
+      }
+
       this.shadowRoot.querySelector('#metadataArticle').innerHTML = parseHTML;
       let parseFeatureImage = '';
       if (this.metadata.featureimage) {
@@ -125,7 +130,8 @@ class BlogEntry extends BlogElement {
       super.styles,
       css`
         #main iframe,
-        #main img {
+        #main img,
+        #main lite-youtube {
           max-width: 100%;
           width: 100%;
           padding-bottom: 10px;
@@ -223,7 +229,8 @@ class BlogEntry extends BlogElement {
           }
 
           #main iframe,
-          #main img {
+          #main img,
+          #main lite-youtube {
             max-width: initial;
             width: 100vw;
             position: relative;
@@ -231,6 +238,10 @@ class BlogEntry extends BlogElement {
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
+          }
+
+          #main lite-youtube {
+            padding-bottom: 0;
           }
 
           .subheadline {
