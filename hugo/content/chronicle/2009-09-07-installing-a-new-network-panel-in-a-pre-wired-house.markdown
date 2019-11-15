@@ -20,7 +20,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-04-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-04-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-04-800.jpg" alt="">
+    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-04-800.jpg" alt="The finished rack and panel, installed and running.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The finished rack and panel, installed and running.</span>
@@ -47,7 +47,7 @@ The panel is good in theory, but was poorly executed by the house builder. The c
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-01-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-01-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-01-800.jpg" alt="">
+    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-01-800.jpg" alt="The original GE security panel was a borderline disaster.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The original GE security panel was a borderline disaster.</span>
@@ -89,7 +89,7 @@ I picked up a <a href="http://bit.ly/SFAZ0">Soekris Net4521</a> with wifi card a
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-02-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-02-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-02-800.jpg" alt="">
+    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-02-800.jpg" alt="I cut a notch into the bottom edge of the panel to be able to run wiring through.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">I cut a notch into the bottom edge of the panel to be able to run wiring through.</span>
@@ -121,7 +121,7 @@ As with most things when it comes to this house, interesting building choices gi
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-03-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-03-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-03-800.jpg" alt="">
+    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-03-800.jpg" alt="My daughter Allison and I installing patch panels.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">My daughter Allison and I installing patch panels.</span>
@@ -153,7 +153,7 @@ I cut some new Cat5e, and wired up the 12 port patch panel to the telco board. S
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-04-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-04-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-04-800.jpg" alt="">
+    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20090907-wiring-house-04-800.jpg" alt="The finished rack and panel, installed and running.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The finished rack and panel, installed and running.</span>
@@ -168,4 +168,3 @@ The final hack to this was what to do with half of the original panel still open
 ## Final Thoughts
 
 The new 7U bracket and it's components are significantly more configurable and useful.  It's cleaner wiring, offers a solid 4U of additional space for my next project, and gives me back my much beloved and very missed m0n0wall.  Could I have used the original GE panel?  Sure.  Would it have cost me less?  From the price quotes I received not even close.  Is this system for everyone?  Probably not, but it cost me under $300 (your price will obviously vary) and it works very well for me.
-

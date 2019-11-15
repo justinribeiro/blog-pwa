@@ -60,7 +60,7 @@ In a perfect world, I'd have WebPageTest just rolling runs at my behest with vid
 
 devtool-to-video is a little cli tool written in node that utilizes ffmpeg to generate a video from a Chrome DevTools trace and put a timer on the bottom that shows the time progression. An [example of the video output](https://www.youtube.com/watch?v=guJLfqTFfIw):
 
-<iframe width="560" height="400" src="https://www.youtube.com/embed/guJLfqTFfIw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< liteyoutube videoid="guJLfqTFfIw" >}}
 
 This is similar in concept to WebPageTest though their output video timer is way cooler. This simply utilizes the presentation time (pts) within the ffmpeg to give us a quick means to create the video without a lot overhead via drawtext.
 

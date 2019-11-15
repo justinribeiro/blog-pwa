@@ -18,6 +18,7 @@ export default {
     'src/analytics.js',
     'src/3d-utils.js',
     'src/code-block.js',
+    'src/lite-youtube.js',
   ],
   treeshake: true,
   output: {
