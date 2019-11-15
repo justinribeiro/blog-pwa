@@ -32,7 +32,7 @@ class MainHandler(http2.PushHandler):
         self.response.headers['X-Frame-Options'] = 'DENY'
         self.response.headers['X-XSS-Protection'] = '1; mode=block'
         self.response.headers['X-Content-Type-Options'] = 'nosniff'
-        self.rsponse.headers['Referrer-Policy'] = 'no-referrer, strict-origin-when-cross-origin'
+        self.response.headers['Referrer-Policy'] = 'no-referrer, strict-origin-when-cross-origin'
         self.response.headers['Content-Security-Policy'] = ("default-src 'none'; base-uri 'self'; "
                                                             "worker-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.google-analytics.com https://www.gstatic.com; "
                                                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
