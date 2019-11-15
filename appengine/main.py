@@ -33,7 +33,18 @@ class MainHandler(http2.PushHandler):
         self.response.headers['X-XSS-Protection'] = '1; mode=block'
         self.response.headers['X-Content-Type-Options'] = 'nosniff'
         self.response.headers['Referrer-Policy'] = 'no-referrer, strct-origin-when-cross-origin'
-        self.response.headers['Content-Security-Policy'] = 'default-src \'none\'; base-uri \'self\'; worker-src \'self\'; script-src \'self\' \'unsafe-eval\' \'unsafe-inline\' blob: https://www.google-analytics.com https://www.gstatic.com; style-src \'self\' \'unsafe-inline\' https://fonts.googleapis.com; connect-src \'self\' https://storage.googleapis.com https://www.google-analytics.com https://firebaseinstallations.googleapis.com https://firebaseremoteconfig.googleapis.com https://firebaselogging.googleapis.com https://webmention.io/; img-src \'self\' https://storage.googleapis.com; media-src \'self\' https://storage.googleapis.com; form-action \'self\' https://webmention.io/; object-src \'none\'; font-src \'self\' https://fonts.gstatic.com https://fonts.googleapis.com/; frame-src https://www.youtube.com/; manifest-src \'self\'; frame-ancestors \'none\';'
+        self.response.headers['Content-Security-Policy'] = ("default-src 'none'; base-uri 'self'; "
+                                                            "worker-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.google-analytics.com https://www.gstatic.com; "
+                                                            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+                                                            "connect-src 'self' https://storage.googleapis.com https://www.google-analytics.com https://firebaseinstallations.googleapis.com https://firebaseremoteconfig.googleapis.com https://firebaselogging.googleapis.com https://webmention.io/; "
+                                                            "img-src 'self' https://storage.googleapis.com; https://i.ytimg.com/v; "
+                                                            "media-src 'self' https://storage.googleapis.com; "
+                                                            "form-action 'self' https://webmention.io/; "
+                                                            "object-src 'none'; "
+                                                            "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com/; "
+                                                            "frame-src https://www.youtube.com/; "
+                                                            "manifest-src 'self'; "
+                                                            "frame-ancestors 'none';")
 
         # this list is a little of a cross-mix of bots and a few browsers that
         # can just skip the progressive checks (ala lynx). I've done this to
