@@ -13,6 +13,8 @@ import logging
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
+    comment_start_string="/////////+",
+    comment_end_string="+/////////",
     autoescape=True)
 
 
@@ -34,7 +36,8 @@ class MainHandler(http2.PushHandler):
         self.response.headers['X-Content-Type-Options'] = 'nosniff'
         self.response.headers['Referrer-Policy'] = 'no-referrer, strict-origin-when-cross-origin'
         self.response.headers['Content-Security-Policy'] = ("default-src 'none'; base-uri 'self'; "
-                                                            "worker-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.google-analytics.com https://www.gstatic.com; "
+                                                            "worker-src 'self'; "
+                                                            "script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.google-analytics.com https://www.gstatic.com; "
                                                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
                                                             "connect-src 'self' https://storage.googleapis.com https://www.google-analytics.com https://firebaseinstallations.googleapis.com https://firebaseremoteconfig.googleapis.com https://firebaselogging.googleapis.com https://webmention.io/; "
                                                             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
@@ -45,6 +48,26 @@ class MainHandler(http2.PushHandler):
                                                             "frame-src https://www.youtube.com; "
                                                             "manifest-src 'self'; "
                                                             "frame-ancestors 'none';")
+        self.response.headers['Feature-Policy'] = ("accelerometer 'none'; "
+                                                   "ambient-light-sensor 'none'; "
+                                                   "autoplay 'self' https://www.youtube.com;"
+                                                   "camera 'none'; "
+                                                   "fullscreen 'self' https://www.youtube.com; "
+                                                   "geolocation 'none'; "
+                                                   "gyroscope 'none'; "
+                                                   "magnetometer 'none'; "
+                                                   "microphone 'none'; "
+                                                   "midi 'none'; "
+                                                   "payment 'none'; "
+                                                   "picture-in-picture 'self' https://www.youtube.com; "
+                                                   "speaker 'self'; "
+                                                   "sync-xhr 'none'; "
+                                                   "usb 'none'; "
+                                                   "vibrate 'none'; "
+                                                   "vr 'none';")
+        self.response.headers['Expect-CT'] = 'max-age=0, report-uri="https://justinribeiro.report-uri.com/r/d/ct/reportOnly"'
+        self.response.headers['Report-To'] = '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://justinribeiro.report-uri.com/a/d/g"}],"include_subdomains":true}'
+        self.response.headers['NEL'] = '{"report_to":"default","max_age":31536000,"include_subdomains":true}'
 
         # this list is a little of a cross-mix of bots and a few browsers that
         # can just skip the progressive checks (ala lynx). I've done this to
