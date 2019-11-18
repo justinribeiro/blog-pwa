@@ -130,11 +130,9 @@ class BlogEntry extends BlogElement {
       super.styles,
       css`
         #main iframe,
-        #main img,
-        #main lite-youtube {
+        #main img {
           max-width: 100%;
           width: 100%;
-          padding-bottom: 10px;
         }
 
         #main img {
@@ -238,10 +236,6 @@ class BlogEntry extends BlogElement {
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-          }
-
-          #main lite-youtube {
-            padding-bottom: 0;
           }
 
           .subheadline {
