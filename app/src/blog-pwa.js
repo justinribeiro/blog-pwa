@@ -214,11 +214,9 @@ class BlogPwa extends LitElement {
     return html`
       <slot name="header"></slot>
       <main>
-        <slot
-          id="skeleton"
-          name="skeleton"
-          ?hidden=${!this.__hideSkeleton}
-        ></slot>
+        <div ?hidden=${!this.__hideSkeleton}>
+          <slot id="skeleton" name="skeleton"></slot>
+        </div>
       </main>
       <slot name="footer"></slot>
       <snack-bar hidden></snack-bar>
