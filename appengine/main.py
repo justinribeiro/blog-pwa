@@ -37,7 +37,7 @@ class MainHandler(http2.PushHandler):
         self.response.headers['Referrer-Policy'] = 'no-referrer, strict-origin-when-cross-origin'
         self.response.headers['Content-Security-Policy'] = ("default-src 'none'; base-uri 'self'; "
                                                             "worker-src 'self'; "
-                                                            "script-src 'self' 'unsafe-eval' blob: 'sha256-1g3cTvISYCjv6M+fzu4LrLb/4BTEYkEMH8f8JjKMgt4=' https://www.google-analytics.com https://www.gstatic.com; "
+                                                            "script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.google-analytics.com https://www.gstatic.com; "
                                                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
                                                             "connect-src 'self' https://storage.googleapis.com https://www.google-analytics.com https://firebaseinstallations.googleapis.com https://firebaseremoteconfig.googleapis.com https://firebaselogging.googleapis.com https://webmention.io/; "
                                                             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
