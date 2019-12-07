@@ -1,6 +1,6 @@
 ---
 title: "Resolving slack and alignment in the Beseler 45MX enlarger"
-description: ""
+description: "When it comes to making prints in the darkroom, it all starts with making sure everything is aligned. My first winter prints from my workhorse Beseler 45MX were a bit soft on the left, so time for some maintenance."
 date: 2019-12-06T11:50:42-08:00
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>
