@@ -59,7 +59,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@justinribeiro/lite-youtube": "0.5.2",
+    "@justinribeiro/lite-youtube": "^0.6.2",
     "@justinribeiro/stl-part-viewer": "^1.0.0",
     "@vaadin/router": "^1.2.0",
     "lit-element": "^2.1.0",

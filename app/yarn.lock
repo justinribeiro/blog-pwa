@@ -700,10 +700,10 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@justinribeiro/lite-youtube@0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@justinribeiro/lite-youtube/-/lite-youtube-0.5.2.tgz#c2b39b31a9463c7e3cc163ee2ccd654e8dc31405"
-  integrity sha512-J+lZPX8QU/630nkVGFXkmP4hNfNKLS+DBmz/HBZkPCCi69wamTh3bN0fQ2Ae5Cc9oTeZZ16FMX01Xhx8btdH3Q==
+"@justinribeiro/lite-youtube@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@justinribeiro/lite-youtube/-/lite-youtube-0.6.2.tgz#305793f230070c1e653a697bfd2c6f4129c82a63"
+  integrity sha512-FIaZtGuwt9PPIyQHI1S+59kXvq8I/baGQe0A3z34avH3EuJXCsN7XrZdKk0kdJG58MuCDQjWZb1E/rxYVF8RRw==
 
 "@justinribeiro/stl-part-viewer@^1.0.0":
   version "1.0.2"
