@@ -63,7 +63,9 @@
     "@justinribeiro/stl-part-viewer": "^1.0.2",
     "@vaadin/router": "^1.5.2",
     "lit-element": "^2.2.1",
+    "page": "^1.11.5",
     "prismjs": "^1.17.1",
+    "pwa-helpers": "^0.9.1",
     "workbox-window": "^4.3.1"
   }
 }

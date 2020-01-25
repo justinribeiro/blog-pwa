@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'lit-element';
-import {Router} from '@vaadin/router';
+import {installRouter} from 'pwa-helpers/router.js';
 import {Workbox} from 'workbox-window';
 
 class BlogPwa extends LitElement {
@@ -22,7 +22,14 @@ class BlogPwa extends LitElement {
   }
 
   firstUpdated() {
-    this._initRouter();
+    this.__domRefRouter = this.shadowRoot.querySelector('#outlet');
+    this.__domEle = {
+      static: document.createElement(`blog-static`),
+      entry: document.createElement('blog-entry'),
+      missing: document.createElement('blog-missing'),
+    };
+
+    installRouter(location => this.__router(location));
     this._ensureLazyLoaded();
     window.addEventListener('online', () => this._notifyNetworkStatus(false));
     window.addEventListener('offline', () => this._notifyNetworkStatus(true));
@@ -34,52 +41,20 @@ class BlogPwa extends LitElement {
     });
   }
 
-  _initRouter() {
-    const outlet = this.shadowRoot.querySelector('main');
-    const router = new Router(outlet, null);
-
-    // Don't be fooled; we don't set the routes async/await with the inner call
-    // because we don't want vaadin-router to wait; let it inject fast so we can
-    // stamp and load data
-    router.setRoutes([
-      {
-        path: '/',
-        children: [
-          {
-            path: '',
-            component: 'blog-static',
-            action: () => {
-              this.__loadRoute('static');
-            },
-          },
-          {
-            path: '/(talks|about|chronicle|tags)/',
-            component: 'blog-static',
-            action: () => {
-              this.__loadRoute('static');
-            },
-          },
-          {
-            path: '/tags/(.*)',
-            component: 'blog-static',
-            action: () => {
-              this.__loadRoute('static');
-            },
-          },
-          {
-            path: '/chronicle/(.*)',
-            component: 'blog-entry',
-            action: () => {
-              this.__loadRoute('entry');
-            },
-          },
-          {
-            path: '(.*)',
-            component: 'blog-missing',
-          },
-        ],
-      },
-    ]);
+  __router(location) {
+    switch (true) {
+      case /chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*/.test(location.pathname):
+        this.__loadRoute('entry');
+        break;
+      case /(talks|about|chronicle|tags|^\/index.html|^\/$)/.test(
+        location.pathname,
+      ):
+        this.__loadRoute('static');
+        break;
+      default:
+        this.__loadRoute('missing');
+        break;
+    }
   }
 
   async __loadRoute(type) {
@@ -90,10 +65,18 @@ class BlogPwa extends LitElement {
       await import('./blog-entry.js');
     }
     try {
-      const dom = this.shadowRoot.querySelector(`blog-${type}`);
-      await dom.mount();
+      const checkElement = this.__domRefRouter.querySelector(`blog-${type}`);
+      if (checkElement) {
+        await checkElement.mount();
+      } else {
+        while (this.__domRefRouter.firstChild) {
+          this.__domRefRouter.removeChild(this.__domRefRouter.firstChild);
+        }
+        this.__domRefRouter.appendChild(this.__domEle[type].cloneNode());
+        await this.__domRefRouter.querySelector(`blog-${type}`).mount();
+      }
     } catch (error) {
-      // sometimes vaadin doesn't inject quickly, and their lifecycle doesn't
+      // sometimes doesn't inject quickly, and their lifecycle doesn't
       // always fire on swap when the inner component doesn't change, so we put
       // a little fallback trigger in to be safe
       setTimeout(() => this.__loadRoute(type), 100);
@@ -217,6 +200,7 @@ class BlogPwa extends LitElement {
         <div ?hidden=${!this.__hideSkeleton}>
           <slot id="skeleton" name="skeleton"></slot>
         </div>
+        <div id="outlet"></div>
       </main>
       <slot name="footer"></slot>
       <snack-bar hidden></snack-bar>

@@ -1,6 +1,7 @@
 import {LitElement, html} from 'lit-element';
 
 class BlogMissing extends LitElement {
+  mount() {}
   render() {
     return html`
       <style>
