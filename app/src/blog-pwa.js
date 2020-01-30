@@ -22,15 +22,10 @@ class BlogPwa extends LitElement {
   }
 
   firstUpdated() {
-    this.__domRefRouter = this.shadowRoot.querySelector('#outlet');
-    this.__domEle = {
-      static: document.createElement(`blog-static`),
-      entry: document.createElement('blog-entry'),
-      missing: document.createElement('blog-missing'),
-    };
+    this.__setupRouter();
 
-    installRouter(location => this.__router(location));
     this._ensureLazyLoaded();
+
     window.addEventListener('online', () => this._notifyNetworkStatus(false));
     window.addEventListener('offline', () => this._notifyNetworkStatus(true));
     window.addEventListener('display-snackbar', event => {
@@ -41,7 +36,26 @@ class BlogPwa extends LitElement {
     });
   }
 
-  __router(location) {
+  /**
+   * Setup the base elements for the router and start-up the location helper
+   */
+  __setupRouter() {
+    this.__domRefRouter = this.shadowRoot.querySelector('#outlet');
+    this.__domEle = {
+      static: document.createElement(`blog-static`),
+      entry: document.createElement('blog-entry'),
+      missing: document.createElement('blog-missing'),
+    };
+    installRouter(location => this.__routes(location));
+  }
+
+  /**
+   * Handles the changing of the navigation on page and loads the proper
+   * component(s)
+   *
+   * @param {object} location
+   */
+  __routes(location) {
     switch (true) {
       case /chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*/.test(location.pathname):
         this.__loadRoute('entry');
@@ -57,6 +71,12 @@ class BlogPwa extends LitElement {
     }
   }
 
+  /**
+   * Verify the state of the router outlet and then inject the or mount as
+   * needed
+   *
+   * @param {string} type
+   */
   async __loadRoute(type) {
     if (type === 'static') {
       await import('./blog-static.js');
@@ -83,7 +103,9 @@ class BlogPwa extends LitElement {
     }
   }
 
-  // PRPL all the things.
+  /**
+   * Load the non-essentials and startup the service worker and analytics
+   */
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
       import('./lazy-resources.js').then(_ => {
@@ -124,7 +146,7 @@ class BlogPwa extends LitElement {
           wb.register();
         }
         if ('requestIdleCallback' in window) {
-          requestIdleCallback(
+          window.requestIdleCallback(
             () => {
               this.__importAnalytics();
             },
