@@ -1043,26 +1043,6 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@vaadin/router@^1.5.2":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@vaadin/router/-/router-1.5.2.tgz#a80a1146e03806d4476c957c69681e6b681fcc66"
-  integrity sha512-Byjz/FQ7ohGZRrxZnoZ2DJgTUWtj7YLKFY9L4iaWw/NW9fklPyn+wYRgPfLc/uk3srBr1Hc9JWg/b++lE6lyfw==
-  dependencies:
-    "@vaadin/vaadin-usage-statistics" "^2.0.8"
-    path-to-regexp "2.4.0"
-
-"@vaadin/vaadin-development-mode-detector@^2.0.0":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-development-mode-detector/-/vaadin-development-mode-detector-2.0.4.tgz#f49c8009856bead92d248377c36b295b5aae78e5"
-  integrity sha512-S+PaFrZpK8uBIOnIHxjntTrgumd5ztuCnZww96ydGKXgo9whXfZsbMwDuD/102a/IuPUMyF+dh/n3PbWzJ6igA==
-
-"@vaadin/vaadin-usage-statistics@^2.0.8":
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-usage-statistics/-/vaadin-usage-statistics-2.0.10.tgz#31be892ac70b285fda05bc808694b247185528e1"
-  integrity sha512-j8bD1Ecl/UB3a2lgzS3j8nh/X2jfA38Pg74vTSepyE6OgzFggjWIyWrlrnQScQik5PkjHByKW4Cj33Rpt2Zm8g==
-  dependencies:
-    "@vaadin/vaadin-development-mode-detector" "^2.0.0"
-
 "@webcomponents/webcomponentsjs@^2.2.10":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.3.0.tgz#d17c67e9602d46f5a6c425bc00613bba83dcd0e2"
@@ -4843,13 +4823,6 @@ package-json@^4.0.0:
     registry-url "^3.0.3"
     semver "^5.1.0"
 
-page@^1.11.5:
-  version "1.11.5"
-  resolved "https://registry.yarnpkg.com/page/-/page-1.11.5.tgz#0cfc8608be337f26f4377f31df0787aef0ca1af7"
-  integrity sha512-0JXUHc7Y8p1cPJQbhZSwaKO3p+bU3Rgny+OM5gJMKHWHvJKan/fsE5RUzEjRQolv9DzPOSVWfSOHz0lLxK19eA==
-  dependencies:
-    path-to-regexp "~1.2.1"
-
 param-case@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/param-case/-/param-case-2.1.1.tgz#df94fd8cf6531ecf75e6bef9a0858fbc72be2247"
@@ -4955,18 +4928,6 @@ path-posix@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/path-posix/-/path-posix-1.0.0.tgz#06b26113f56beab042545a23bfa88003ccac260f"
   integrity sha1-BrJhE/Vr6rBCVFojv6iAA8ysJg8=
-
-path-to-regexp@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-2.4.0.tgz#35ce7f333d5616f1c1e1bfe266c3aba2e5b2e704"
-  integrity sha512-G6zHoVqC6GGTQkZwF4lkuEyMbVOjoBKAEybQUypI1WTkqinCOrq2x6U2+phkJ1XsEMTy4LjtwPI7HW+NVrRR2w==
-
-path-to-regexp@~1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.2.1.tgz#b33705c140234d873c8721c7b9fd8b541ed3aff9"
-  integrity sha1-szcFwUAjTYc8hyHHuf2LVB7Tr/k=
-  dependencies:
-    isarray "0.0.1"
 
 path-type@^3.0.0:
   version "3.0.0"
