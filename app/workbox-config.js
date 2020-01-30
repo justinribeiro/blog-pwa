@@ -1,7 +1,7 @@
 /* eslint-env node */
 module.exports = {
   swDest: './build/default/service-worker.js',
-  importWorkboxFrom: 'cdn',
+  inlineWorkboxRuntime: 'true',
   skipWaiting: false,
   clientsClaim: true,
   offlineGoogleAnalytics: true,
@@ -16,8 +16,8 @@ module.exports = {
     'src/blog-entry.js',
   ],
   navigateFallback: '/index.html',
-  navigateFallbackWhitelist: [/^(?!.*\.html).*/],
-  navigateFallbackBlacklist: [/xml/],
+  navigateFallbackAllowlist: [/^(?!.*\.html).*/],
+  navigateFallbackDenylist: [/xml/],
   ignoreURLParametersMatching: [/^utm_/],
   runtimeCaching: [
     {
@@ -35,12 +35,12 @@ module.exports = {
       },
     },
     {
-      urlPattern: /\.(?:png|gif|jpg|jpeg|svg|webp)$/,
+      urlPattern: /\.(?:png|jpg|jpeg|svg|webp)$/,
       handler: 'CacheFirst',
       options: {
         cacheName: 'img-cache',
         expiration: {
-          maxEntries: 200,
+          maxEntries: 250,
           maxAgeSeconds: 365 * 24 * 60 * 60,
         },
       },
@@ -57,23 +57,24 @@ module.exports = {
       },
     },
     {
-      urlPattern: /^https:\/\/storage.googleapis\.com/,
+      urlPattern: /^https:\/\/storage\.googleapis\.com/,
       handler: 'CacheFirst',
       options: {
         cacheName: 'cdn-cache',
+        cacheableResponse: {
+          statuses: [0, 200],
+        },
         expiration: {
-          maxEntries: 200,
+          maxEntries: 250,
+          maxAgeSeconds: 60 * 60 * 24 * 365,
         },
       },
     },
     {
-      urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+      urlPattern: /^https:\/\/fonts\.googleapis\.com/,
       handler: 'StaleWhileRevalidate',
       options: {
         cacheName: 'google-fonts-stylesheets',
-        expiration: {
-          maxEntries: 200,
-        },
       },
     },
     {
@@ -81,8 +82,11 @@ module.exports = {
       handler: 'CacheFirst',
       options: {
         cacheName: 'google-fonts-webfonts',
+        cacheableResponse: {
+          statuses: [0, 200],
+        },
         expiration: {
-          maxEntries: 200,
+          maxEntries: 30,
           maxAgeSeconds: 60 * 60 * 24 * 365,
         },
       },

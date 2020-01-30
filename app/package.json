@@ -32,7 +32,7 @@
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.9.0",
-    "workbox-cli": "^4.3.1"
+    "workbox-cli": "^5.0.0"
   },
   "scripts": {
     "dev": "yarn es-dev-server --hostname 0.0.0.0 --app-index index.html --node-resolve --open --watch",
@@ -64,6 +64,6 @@
     "lit-element": "^2.2.1",
     "prismjs": "^1.17.1",
     "pwa-helpers": "^0.9.1",
-    "workbox-window": "^4.3.1"
+    "workbox-window": "^5.0.0"
   }
 }
