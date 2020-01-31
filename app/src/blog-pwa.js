@@ -109,6 +109,7 @@ class BlogPwa extends LitElement {
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
       import('./lazy-resources.js').then(_ => {
+        this.__loadFonts();
         if ('serviceWorker' in navigator) {
           const wb = new Workbox('/service-worker.js');
 
@@ -117,16 +118,18 @@ class BlogPwa extends LitElement {
               this._setSnackBarText('Ready to work offline.');
             }
 
-            // Get the current page URL + all resources the page loaded.
-            const urlsToCache = [
-              location.href,
-              ...performance.getEntriesByType('resource').map(r => r.name),
-            ];
-            // Send that list of URLs to your router in the service worker.
-            wb.messageSW({
-              type: 'CACHE_URLS',
-              payload: {urlsToCache},
-            });
+            if ('requestIdleCallback' in window) {
+              window.requestIdleCallback(
+                () => {
+                  this.__cacheExistingLoadedUrls(wb);
+                },
+                {
+                  timeout: 5000,
+                },
+              );
+            } else {
+              this.__cacheExistingLoadedUrls(wb);
+            }
           });
 
           wb.addEventListener('waiting', event => {
@@ -162,6 +165,36 @@ class BlogPwa extends LitElement {
         this.loadComplete = true;
       });
     }
+  }
+
+  __loadFonts() {
+    const domRefHead = document.getElementsByTagName('head')[0];
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+
+    const cloneFontOne = link.cloneNode();
+    cloneFontOne.href =
+      'https://fonts.googleapis.com/css?family=Libre+Franklin:400|Literata:700&display=swap&subset=latin-ext';
+
+    const cloneFontTwo = link.cloneNode();
+    cloneFontTwo.href =
+      'https://fonts.googleapis.com/css?family=Literata&display=swap&text=JustinRibeiro';
+
+    domRefHead.appendChild(cloneFontOne);
+    domRefHead.appendChild(cloneFontTwo);
+  }
+
+  __cacheExistingLoadedUrls(wb) {
+    // Get the current page URL + all resources the page loaded.
+    const urlsToCache = [
+      location.href,
+      ...performance.getEntriesByType('resource').map(r => r.name),
+    ];
+    // Send that list of URLs to your router in the service worker.
+    wb.messageSW({
+      type: 'CACHE_URLS',
+      payload: {urlsToCache},
+    });
   }
 
   async __importAnalytics() {
