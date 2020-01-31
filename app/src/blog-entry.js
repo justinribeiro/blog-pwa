@@ -62,7 +62,28 @@ class BlogEntry extends BlogElement {
       super._processMetaData();
 
       this._generatedShareLinks();
+      this.__contentIndexApiOriginTrial();
       this.__getInteractionCounts();
+    }
+  }
+
+  // see https://web.dev/content-indexing-api/
+  async __contentIndexApiOriginTrial() {
+    const registration = await navigator.serviceWorker.ready;
+    if ('index' in registration) {
+      await registration.index.add({
+        id: this.metadata.filename.replace(/\//g, '-'),
+        launchUrl: new URL(this.metadata.permalink).pathname,
+        title: this.metadata.title,
+        description: this.metadata.description,
+        icons: [
+          {
+            src: this.metadata.imagetwitter,
+            type: 'image/jpg',
+          },
+        ],
+        category: 'article',
+      });
     }
   }
 
