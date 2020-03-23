@@ -5,6 +5,9 @@ title = "Justin Ribeiro"
 # specifcally for the PWA and GAE to load and parse
 publishdir = "../app/data"
 
+[markup.goldmark.renderer]
+  unsafe= true
+
 [taxonomies]
   tag = "tags"
 
