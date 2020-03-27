@@ -61,10 +61,40 @@ class BlogEntry extends BlogElement {
 
       super._processMetaData();
 
+      // This is my purely my personal preference showing; I can't stand full
+      // screen images on mobile devices, the UX annoys me no matter how good
+      // you think it is
+      if (!window.matchMedia('(max-width: 767px)').matches) {
+        this.__enableFigureExpansion();
+      }
+
       this._generatedShareLinks();
       this.__contentIndexApiOriginTrial();
       this.__getInteractionCounts();
     }
+  }
+
+  __enableFigureExpansion() {
+    this.__domRefs.figures = [...this.shadowRoot.querySelectorAll('figure')];
+    this.__domRefs.figures.forEach(figure => {
+      const event = figure.addEventListener('click', this.__expandFigure, { passive: true });
+    });
+  }
+
+  __expandFigure(event) {
+    const target = event.currentTarget;
+    if (target.hasAttribute('expand')) {
+      target.removeAttribute('expand');
+    } else {
+      target.setAttribute('expand', '');
+    }
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.__domRefs.figures.forEach(figure => {
+      figure.removeEventListener('click', this.__expandFigure, { passive: true });
+    });
   }
 
   // see https://web.dev/content-indexing-api/
@@ -167,12 +197,15 @@ class BlogEntry extends BlogElement {
 
         figure {
           margin: 1em 0;
+          transition: background 0.3s;
+          cursor: pointer;
         }
 
         figcaption {
           color: #666;
           font-size: 0.875rem;
           line-height: 1.125rem;
+          margin-top: 0.5em;
         }
 
         figcaption .author {
@@ -182,6 +215,33 @@ class BlogEntry extends BlogElement {
           line-height: 1.125rem;
           letter-spacing: 0.01em;
           font-size: 0.75rem;
+        }
+
+        figure[expand] {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: fixed;
+          box-sizing: border-box;
+          padding: 4rem;
+          background-color: #fff;
+          width: 100vw;
+          height: 100vh;
+          top: 0;
+          margin: 0;
+          z-index: 1;
+          /* because the container's max width on desktop is always 800px */
+          transform: translateX(calc((800px - 100vw)/2));
+        }
+
+        figure[expand] figcaption {
+          display: block;
+          width: 20%;
+          padding: 2em;
+        }
+
+        figure[expand] img {
+          width: 100vw !important;
         }
 
         time {

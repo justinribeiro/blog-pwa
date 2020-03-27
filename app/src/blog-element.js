@@ -23,6 +23,10 @@ export default class BlogElement extends LitElement {
         type: Boolean,
         attribute: false,
       },
+      __domRefs: {
+        type: Object,
+        attribute: false,
+      }
     };
   }
 
@@ -48,6 +52,10 @@ export default class BlogElement extends LitElement {
       facebook: '',
       linkedin: '',
       email: '',
+    };
+
+    this.__domRefs = {
+      figures: null,
     };
 
     this.failure = false;
