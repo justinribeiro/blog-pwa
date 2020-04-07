@@ -151,9 +151,6 @@ export default class BlogElement extends LitElement {
       .hotpink {
         color: var(--hotpink);
       }
-      .red {
-        color: var(--red);
-      }
 
       a {
         color: var(--accent-color-primary);
