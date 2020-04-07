@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <title>Justin Ribeiro</title>
-    <meta name="description" content="Software Engineer. Speaker. Writer. Dad. Coach. Occasionally funny.">
+    <meta name="description" content="Software Engineer. Film Photographer. Speaker. Writer. Dad. Coach. Occasionally funny.">
     <meta name="theme-color" content="#f1f1f1">
 
     <link rel="icon" href="/images/manifest/me-2020-Q1-192.png">
@@ -31,43 +31,56 @@
 
     <style>
       html {
-        --page-background: #ffffff;
         --primary-text-color: #212121;
         --secondary-text-color: #757575;
         --accent-color-primary: #0049A3;
         --accent-color-secondary: #943D0A;
-        --accent-color-highlight: #e6e6e6;
         --section-color: #e6e6e6;
         --structs-bg: #f1f1f1;
         --structs-hi: #940088;
         --structs-border: #cccccc;
-        --skeleton-background-start: #cccccc;
-        --skeleton-background-end: #e6e6e6;
+        --skeleton-bg: #cccccc;
         --notice-color-bg: #333333;
         --notice-color-text: #ffffff;
         --notice-color-link: #f1f900;
         --hotpink: hotpink;
-        --red: red;
 
         --code-background: #faf8f5;
         --code-color: #DD4A68;
 
-        --img-background: #faf8f5;
+        --header-height: 100px;
+        --header-font-offset: -10px;
+        --header-font-size: 32px;
+        --header-image: 75px;
 
-        --header-height-desktop: 100px;
-        --header-height-mobile: 85px;
+        --footer-flex-direction: row;
+        --footer-pad-lr: 1rem;
+        --footer-pad-tb: 20px;
 
         --font-family-serif: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
         --font-family-sans-serif: 'Libre Franklin', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
         --font-family-headers: 'Literata', var(--font-family-serif);
       }
 
-      body {
+      @media (max-width: 767px) {
+        html {
+          --header-height: 85px;
+          --header-font-size: 22px;
+          --header-image: 55px;
+          --header-font-offset: -5px;
+          --footer-flex-direction: column;
+          --footer-pad-lr: 20px;
+          --footer-pad-tb: 20px;
+        }
+      }
+
+      body, h1, h2 {
         margin: 0;
-        line-height: 1.5;
-        min-height: 100vh;
-        background-color: var(--page-background);
+      }
+
+      body {
         font-family: var(--font-family-sans-serif);
+        line-height: 1.5;
       }
 
       a {
@@ -78,92 +91,80 @@
 
       a:hover {
         color: var(--accent-color-secondary);
-        text-decoration: none;
         border-bottom: 1px solid var(--accent-color-secondary);
+      }
+
+      #pageHeader, #pageFooter {
+        background-color: var(--structs-bg);
+      }
+
+      #pageHeader h1, #pageFooter h2 {
+        font-weight: 100;
+        font-family: var(--font-family-headers);
       }
 
       #pageHeader {
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid var(--structs-border);
-        background-color: var(--structs-bg);
-        width: 100%;
-        height: var(--header-height-desktop);
+        height: var(--header-height);
       }
 
-      /*
-        Zone System gradient because I still love Adam's approach.
-        That, and I totally appropriated the look from Paul Lewis (his is cooler).
-      */
-      #pageHeader:after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        content: '';
-        background: linear-gradient(to right,
-          #000000 0,   #1a1a1a 10%, #333333 20%, #4d4d4d 30%, #666666 40%, #808080 50%,
-          #999999 60%, #b3b3b3 70%, #cccccc 80%, #e6e6e6 90%, #ffffff 100%);
-      }
-
-      #pageHeader div {
-        margin-top: 10px;
-      }
-
-      #pageHeader > div:last-child {
-        margin-top: 0;
+      #pageHeader > div {
+        padding-left: 1em;
       }
 
       #pageHeader h1 {
-        font-weight: 100;
-        margin: 0 5px;
-        font-family: var(--font-family-headers);
+        font-size: var(--header-font-size);
+        margin-top: var(--header-font-offset);
+      }
+
+      #pageHeader nav {
+        padding-top: 0.4em;
       }
 
       #pageHeader nav a {
-        margin: 0 5px;
         font-size: 16px;
         text-transform: uppercase;
-        line-height: 2em;
         letter-spacing: -0.03em;
+        margin-right: 0.5em;
       }
 
       #me {
-        width: 75px;
-        height: 75px;
-        border-radius: 10%;
-        margin: 0 25px;
-      }
-
-      #pageFooter {
-        border-top: 1px solid var(--structs-border);
-        background-color: var(--structs-bg);
         display: block;
-        margin-top: 2rem;
+        width: var(--header-image);
+        height: var(--header-image);
+        border-radius: 10%;
       }
 
-      #pageFooter section h2 {
-        font-weight: 400;
-      }
-
-      #pageFooter > div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+      #pageFooter > div , #skeleton {
         margin: auto;
         max-width: 800px;
       }
 
-      #pageFooter > div section {
-        flex: 1;
-        padding-right: 1em;
+      #pageFooter {
+        border-top: 1px solid var(--structs-border);
+        padding: var(--footer-pad-lr) var(--footer-pad-tb);
       }
 
-      #thanks {
-        padding: 0 0 40px;
+      #pageFooter h2 {
+        font-size: 22px;
+      }
+
+      #pageFooter > div {
+        display: flex;
+        flex-direction: var(--footer-flex-direction);
+        justify-content: center;
+
+      }
+
+      #pageFooter > div section {
+        flex: 1;
+      }
+
+      #pageFooter > div section:first-child {
+        padding-right: 1rem;
       }
 
       #thanks p {
@@ -174,95 +175,39 @@
       }
 
       #thanks p a {
-        background-image: none;
-        background-repeat: initial;
-        background-position: initial;
         color: var(--structs-hi);
-        border-bottom: 1px dotted;
-      }
-
-      #skeleton, #placeholder {
-        margin: auto;
-        padding: 0 20px;
-        max-width: 800px;
+        border-bottom: 1px dotted var(--structs-hi);
       }
 
       #skeleton {
-        min-height: 102vh;
+        padding: 0 20px;
+        padding-top: 1rem;
+        animation: load 2s ease infinite;
+        height: calc(100vh - var(--header-height));
+        will-change: opacity;
       }
 
-      #skeleton p {
-        margin-top: 10px;
-        margin-bottom: 29px;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 21px;
-        line-height: 1.58;
-        letter-spacing: -.003em;
-      }
-
-      hr {
+      #skeleton > div {
         height: 20px;
-        background: linear-gradient(
-          -45deg,
-          var(--skeleton-background-start),
-          var(--skeleton-background-end)
-        );        background-size: 400% 400%;
-        animation: load 1.5s ease infinite;
+        background-color: var(--skeleton-bg);
         border: 0;
+        margin-bottom: 1rem;
       }
 
-      hr.short {
+      #skeleton > div.short {
         width: 65%;
         margin-left: 0;
       }
 
       @keyframes load {
         0% {
-          background-position: 0% 50%
+          opacity: 0.5
         }
         50% {
-          background-position: 100% 50%
+          opacity: 1
         }
         100% {
-          background-position: 0% 50%
-        }
-      }
-
-      @media (max-width: 767px) {
-        #pageHeader {
-          height: var(--header-height-mobile);
-        }
-
-        #pageHeader h1 {
-          margin: 0;
-          font-size: 22px;
-        }
-
-        #pageHeader div:first-child {
-          display: flex;
-        }
-
-        #pageHeader div, #pageHeader > div:last-child {
-          margin-top: 5px;
-        }
-
-        #pageHeader nav a:first-child {
-          margin: 0 5px 0 0;
-        }
-
-        #me {
-          width: 55px;
-          height: 55px;
-          margin: 0 15px 0 0;
-        }
-
-        #pageFooter {
-          padding: 0 20px;
-        }
-
-        #pageFooter > div {
-          flex-direction: column;
+          opacity: 0.5
         }
       }
 
@@ -272,7 +217,7 @@
         }
 
         /* No room on smaller screens */
-        #pageHeader > div:first-child {
+        #pageHeader > img {
           display: none !important;
         }
       }
@@ -302,54 +247,48 @@
       // version of the site
       location.href = '{{ noscript }}';
     </script>
+
+    <header id="pageHeader">
+      <picture>
+        <source srcset="/images/manifest/me-2020-Q1-150.webp" type="image/webp">
+        <source srcset="/images/manifest/me-2020-Q1-150.jpg" type="image/jpeg">
+        <img id="me" src="/images/manifest/me-2020-Q1-150.jpg" alt="Justin Ribeiro">
+      </picture>
+      <div>
+        <h1>Justin Ribeiro</h1>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/chronicle/">Blog</a>
+          <a href="/talks/">Talks</a>
+          <a href="/about/">About</a>
+        </nav>
+      </div>
+    </header>
     <blog-pwa>
-      <header id="pageHeader" slot="header">
-        <div>
-          <picture>
-            <source srcset="/images/manifest/me-2020-Q1-150.webp" type="image/webp">
-            <source srcset="/images/manifest/me-2020-Q1-150.jpg" type="image/jpeg">
-            <img id="me" src="/images/manifest/me-2020-Q1-150.jpg" alt="Justin Ribeiro">
-          </picture>
-        </div>
-        <div>
-          <h1>Justin Ribeiro</h1>
-            <nav>
-              <a href="/">Home</a>
-              <a href="/chronicle/">Blog</a>
-              <a href="/talks/">Talks</a>
-              <a href="/about/">About</a>
-            </nav>
-        </div>
-      </header>
       <section id="skeleton" slot="skeleton">
-        <p>
-          <hr /><hr /><hr /><hr class="short" />
-        </p>
-        <p>
-          <hr /><hr /><hr /><hr class="short" />
-        </p>
-        <p>
-          <hr /><hr /><hr /><hr class="short" />
-        </p>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="short"></div>
       </section>
-      <footer id="pageFooter" slot="footer">
-        <div>
-          <section>
-            <h2>Hello, nice to meet you.</h2>
-            <p>I'm happy to talk. You can reach me on <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or via email at <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a></p>
-            <p>Looking for some of my code? Check <a rel="me" href="https://github.com/justinribeiro">Github</a> or <a rel="me" href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
-          </section>
-          <section>
-            <h2>Meta Things</h2>
-            <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. RIP Reader, follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml' target='blank'>Feedly</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
-            <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
-          </section>
-        </div>
-        <div id="thanks">
-          <p>Made with ❤️ using <a href="https://lit-element.polymer-project.org/">Web Components</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
-        </div>
-      </footer>
     </blog-pwa>
+    <footer id="pageFooter">
+      <div>
+        <section>
+          <h2>Hello, nice to meet you.</h2>
+          <p>I'm happy to talk. You can reach me on <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or via email at <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a></p>
+          <p>Looking for some of my code? Check <a rel="me" href="https://github.com/justinribeiro">Github</a> or <a rel="me" href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
+        </section>
+        <section>
+          <h2>Meta Things</h2>
+          <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. RIP Reader, follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml' target='blank'>Feedly</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
+          <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
+        </section>
+      </div>
+      <div id="thanks">
+        <p>Made with ❤️ using <a href="https://lit-element.polymer-project.org/">Web Components</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
+      </div>
+    </footer>
     <script src="./src/app.js"></script>
     <script type="application/ld+json">{"@context":"http://schema.org","@type":"Person","name":"Justin Ribeiro","url":"https://justinribeiro.com/","email":"justin@justinribeiro.com","image":"https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2020-Q1-512.jpg","sameAs":["https://twitter.com/justinribeiro","https://www.linkedin.com/in/justinribeiro","https://plus.google.com/+justinribeiro","https://github.com/justinribeiro","https://facebook.com/justinribeiro","https://ribeiro.social/@justin","https://hub.docker.com/r/justinribeiro/","https://developers.google.com/community/experts/directory/profile/profile-justin_ribeiro"]}</script>
   </body>

@@ -1,4 +1,4 @@
-import {LitElement, html, css} from 'lit-element';
+import {LitElement, html} from 'lit-element';
 import {installRouter} from 'pwa-helpers/router.js';
 import {Workbox} from 'workbox-window';
 
@@ -18,7 +18,10 @@ class BlogPwa extends LitElement {
   constructor() {
     super();
     this.offline = false;
-    this.__hideSkeleton = false;
+
+    // don't show it on first load, it's already been shown by before our
+    // component is ready
+    this.__hideSkeleton = true;
   }
 
   firstUpdated() {
@@ -114,10 +117,6 @@ class BlogPwa extends LitElement {
           const wb = new Workbox('/service-worker.js');
 
           wb.addEventListener('activated', event => {
-            if (!event.isUpdate) {
-              this._setSnackBarText('Ready to work offline.');
-            }
-
             if ('requestIdleCallback' in window) {
               window.requestIdleCallback(
                 () => {
@@ -240,24 +239,14 @@ class BlogPwa extends LitElement {
     }
   }
 
-  static get styles() {
-    return css`
-      main {
-        min-height: 100vh;
-      }
-    `;
-  }
-
   render() {
     return html`
-      <slot name="header"></slot>
       <main>
         <div ?hidden=${!this.__hideSkeleton}>
           <slot id="skeleton" name="skeleton"></slot>
         </div>
         <div id="outlet"></div>
       </main>
-      <slot name="footer"></slot>
       <snack-bar hidden></snack-bar>
     `;
   }
