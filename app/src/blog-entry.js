@@ -241,7 +241,11 @@ class BlogEntry extends BlogElement {
         }
 
         figure[expand] img {
+          object-fit: contain;
+          max-width: 100%;
+          max-height: 90vh;
           width: 100vw !important;
+          height: auto;
         }
 
         time {
