@@ -180,21 +180,6 @@ class BlogEntry extends BlogElement {
     return [
       super.styles,
       css`
-        #main iframe,
-        #main img {
-          max-width: 100%;
-          width: 100%;
-        }
-
-        #main img {
-          margin: auto;
-          display: block;
-        }
-
-        #main video {
-          max-width: 100%;
-        }
-
         figure {
           margin: 1em 0;
           transition: background 0.3s;
@@ -231,7 +216,7 @@ class BlogEntry extends BlogElement {
           margin: 0;
           z-index: 1;
           /* because the container's max width on desktop is always 800px */
-          transform: translateX(calc((800px - 100vw)/2));
+          transform: translateX(calc((800px - 100vw) / 2));
         }
 
         figure[expand] figcaption {
@@ -246,6 +231,21 @@ class BlogEntry extends BlogElement {
           max-height: 90vh;
           width: 100vw !important;
           height: auto;
+        }
+
+        #main iframe,
+        #main img {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        #main video {
+          max-width: 100%;
+        }
+
+        #main img {
+          margin: auto;
+          display: block;
         }
 
         time {

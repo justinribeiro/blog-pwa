@@ -13,10 +13,6 @@ class BlogStatic extends BlogElement {
           font-size: 28px;
         }
 
-        #posts > h2 {
-          margin-bottom: 10px;
-        }
-
         #posts {
           display: flex;
           flex-wrap: wrap;
@@ -70,6 +66,10 @@ class BlogStatic extends BlogElement {
         .post-container a span {
           font-size: 14px;
           color: var(--accent-color-primary);
+        }
+
+        #posts > h2 {
+          margin-bottom: 10px;
         }
 
         #tags {
