@@ -10,6 +10,7 @@
   "devDependencies": {
     "@babel/preset-modules": "^0.1.1",
     "@open-wc/building-utils": "^2.11.0",
+    "@open-wc/eslint-config": "^2.0.6",
     "@open-wc/prettier-config": "^1.1.0",
     "babel-plugin-bundled-import-meta": "^0.3.1",
     "babel-plugin-template-html-minifier": "^4.0.0",
