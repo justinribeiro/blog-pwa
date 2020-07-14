@@ -1,4 +1,4 @@
-import {LitElement, css} from 'lit-element';
+import { LitElement, css } from 'lit-element';
 import './blog-network-warning.js';
 
 /**
@@ -26,7 +26,7 @@ export default class BlogElement extends LitElement {
       __domRefs: {
         type: Object,
         attribute: false,
-      }
+      },
     };
   }
 
@@ -289,13 +289,11 @@ export default class BlogElement extends LitElement {
    *
    * @param {object} {{title, description, url, imagetwitter, imagefb}}
    */
-  _setPageMetaData({title, description, url, imagetwitter, imagefb}) {
+  _setPageMetaData({ title, description, url, imagetwitter, imagefb }) {
     // Flip the metadata on load
     // Note, Google Search will index this
     document.title = `${title} - Justin Ribeiro`;
-    document.head
-      .querySelector("meta[name='description']")
-      .setAttribute('content', description);
+    document.head.querySelector("meta[name='description']").setAttribute('content', description);
 
     this._setMeta('property', 'og:title', document.title);
     this._setMeta('property', 'twitter:title', document.title);
@@ -334,9 +332,7 @@ export default class BlogElement extends LitElement {
    * @param {string} content
    */
   _setMeta(attrName, attrValue, content) {
-    let element = document.head.querySelector(
-      `meta[${attrName}="${attrValue}"]`,
-    );
+    let element = document.head.querySelector(`meta[${attrName}="${attrValue}"]`);
     if (!element) {
       element = document.createElement('meta');
       element.setAttribute(attrName, attrValue);

@@ -10,11 +10,11 @@ const performanceConfig = {
 };
 
 function initAnalytics() {
-  (function(i, s, o, g, r, a, m) {
+  (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
     (i[r] =
       i[r] ||
-      function() {
+      function () {
         (i[r].q = i[r].q || []).push(arguments);
       }),
       (i[r].l = 1 * new Date());
@@ -22,13 +22,7 @@ function initAnalytics() {
     a.async = 1;
     a.src = g;
     m.parentNode.insertBefore(a, m);
-  })(
-    window,
-    document,
-    'script',
-    'https://www.google-analytics.com/analytics.js',
-    'ga',
-  );
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
   ga('create', analyticsId, 'auto');
   ga('set', 'transport', 'beacon');
@@ -36,7 +30,7 @@ function initAnalytics() {
   ga('send', 'pageview');
 
   const loadErrorEvents = (window.__e && window.__e.q) || [];
-  const fieldsObj = {eventAction: 'uncaught error'};
+  const fieldsObj = { eventAction: 'uncaught error' };
 
   // Replay any stored load error events.
   for (const event of loadErrorEvents) {
@@ -52,7 +46,7 @@ function initAnalytics() {
 function initPerformance() {
   let interval;
 
-  (function(sa) {
+  (function (sa) {
     function load(f) {
       const a = document.createElement('script');
       a.async = true;
@@ -61,9 +55,7 @@ function initPerformance() {
       s.parentNode.insertBefore(a, s);
     }
     load(sa);
-  })(
-    'https://www.gstatic.com/firebasejs/6.6.1/firebase-performance-standalone.js',
-  );
+  })('https://www.gstatic.com/firebasejs/6.6.1/firebase-performance-standalone.js');
 
   const start = () => {
     if (window.firebase) {
@@ -109,4 +101,4 @@ function __trackError(error, fieldsObj = {}) {
   );
 }
 
-export {initAnalytics, initPerformance};
+export { initAnalytics, initPerformance };

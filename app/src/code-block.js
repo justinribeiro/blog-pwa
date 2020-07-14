@@ -1,4 +1,4 @@
-import {LitElement, html, css} from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 import 'prismjs/prism.js';
 
 class CodeBlock extends LitElement {
@@ -26,20 +26,14 @@ class CodeBlock extends LitElement {
 
     // strip the lead/end newlines so we don't look horrible
     const codeClean = codeCombined.replace(/^\s+|\s+$/g, '');
-    const highlight = Prism.highlight(
-      codeClean,
-      Prism.languages[this.lang],
-      this.lang,
-    );
+    const highlight = Prism.highlight(codeClean, Prism.languages[this.lang], this.lang);
 
     // Set to our styled block
     this.shadowRoot.querySelector('#output').innerHTML = highlight;
   }
 
   async __loadLanguage() {
-    await __import(
-      `../node_modules/prismjs/components/prism-${this.lang}.min.js`,
-    );
+    await __import(`../node_modules/prismjs/components/prism-${this.lang}.min.js`);
   }
 
   static get styles() {
@@ -52,10 +46,9 @@ class CodeBlock extends LitElement {
 
       code[class*='language-'],
       pre[class*='language-'] {
-        font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
-          'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
-          'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
-          'Courier New', Courier, monospace;
+        font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+          'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+          'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier, monospace;
         font-size: 16px;
         line-height: 1.375;
         direction: ltr;

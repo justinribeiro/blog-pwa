@@ -1,6 +1,6 @@
-import {LitElement, html} from 'lit-element';
-import {installRouter} from 'pwa-helpers/router.js';
-import {Workbox} from 'workbox-window';
+import { LitElement, html } from 'lit-element';
+import { installRouter } from 'pwa-helpers/router.js';
+import { Workbox } from 'workbox-window';
 
 class BlogPwa extends LitElement {
   static get properties() {
@@ -63,9 +63,7 @@ class BlogPwa extends LitElement {
       case /chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*/.test(location.pathname):
         this.__loadRoute('entry');
         break;
-      case /(talks|about|chronicle|tags|^\/index.html|^\/$)/.test(
-        location.pathname,
-      ):
+      case /(talks|about|chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
         this.__loadRoute('static');
         break;
       default:
@@ -132,17 +130,12 @@ class BlogPwa extends LitElement {
           });
 
           wb.addEventListener('waiting', event => {
-            this._setSnackBarText(
-              'New and updated content is available.',
-              0,
-              true,
-              async () => {
-                wb.addEventListener('controlling', event => {
-                  window.location.reload();
-                });
-                wb.messageSW({type: 'SKIP_WAITING'});
-              },
-            );
+            this._setSnackBarText('New and updated content is available.', 0, true, async () => {
+              wb.addEventListener('controlling', event => {
+                window.location.reload();
+              });
+              wb.messageSW({ type: 'SKIP_WAITING' });
+            });
           });
 
           wb.register();
@@ -192,7 +185,7 @@ class BlogPwa extends LitElement {
     // Send that list of URLs to your router in the service worker.
     wb.messageSW({
       type: 'CACHE_URLS',
-      payload: {urlsToCache},
+      payload: { urlsToCache },
     });
   }
 

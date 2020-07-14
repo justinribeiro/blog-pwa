@@ -1,4 +1,4 @@
-import {LitElement, html} from 'lit-element';
+import { LitElement, html } from 'lit-element';
 
 class SnackBar extends LitElement {
   render(props) {
@@ -44,9 +44,7 @@ class SnackBar extends LitElement {
       </style>
       <div>
         <slot></slot>
-        ${this.action
-          ? html` <button @click="${this.__reload}">Refresh</a>`
-          : html``}
+        ${this.action ? html` <button @click="${this.__reload}">Refresh</a>` : html``}
       </div>
     `;
   }

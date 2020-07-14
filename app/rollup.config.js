@@ -1,6 +1,6 @@
 const customMinifyCss = require('@open-wc/building-utils/custom-minify-css');
 const resolve = require('rollup-plugin-node-resolve');
-const {terser} = require('rollup-plugin-terser');
+const { terser } = require('rollup-plugin-terser');
 const babel = require('rollup-plugin-babel');
 const filesize = require('rollup-plugin-filesize');
 
@@ -41,7 +41,7 @@ export default {
           {
             modules: {
               'lit-html': ['html'],
-              'lit-element': ['html', {name: 'css', encapsulation: 'style'}],
+              'lit-element': ['html', { name: 'css', encapsulation: 'style' }],
             },
             htmlMinifier: {
               collapseWhitespace: true,
@@ -74,7 +74,7 @@ export default {
       },
     }),
     filesize({
-      render: function(options, bundle, {fileName, gzipSize}) {
+      render: function (options, bundle, { fileName, gzipSize }) {
         return `${fileName}: ${gzipSize}`;
       },
     }),

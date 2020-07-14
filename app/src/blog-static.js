@@ -1,5 +1,5 @@
 import BlogElement from './blog-element.js';
-import {css, html} from 'lit-element';
+import { css, html } from 'lit-element';
 
 class BlogStatic extends BlogElement {
   static get styles() {

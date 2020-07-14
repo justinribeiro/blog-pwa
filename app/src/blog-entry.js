@@ -1,5 +1,5 @@
 import BlogElement from './blog-element.js';
-import {css, html} from 'lit-element';
+import { css, html } from 'lit-element';
 
 class BlogEntry extends BlogElement {
   static get properties() {
@@ -54,9 +54,7 @@ class BlogEntry extends BlogElement {
       let parseFeatureImage = '';
       if (this.metadata.featureimage) {
         parseFeatureImage = this._unescapeHtml(this.metadata.featureimage);
-        this.shadowRoot.querySelector(
-          '#featureImage',
-        ).innerHTML = parseFeatureImage;
+        this.shadowRoot.querySelector('#featureImage').innerHTML = parseFeatureImage;
       }
 
       super._processMetaData();
@@ -158,8 +156,7 @@ class BlogEntry extends BlogElement {
       });
 
       if (!response.ok) {
-        message =
-          "Oh no, your Webmention didn't seem to make it through. Please try again.";
+        message = "Oh no, your Webmention didn't seem to make it through. Please try again.";
       }
 
       this.dispatchEvent(
@@ -356,12 +353,9 @@ class BlogEntry extends BlogElement {
             read
             <span class="dotDivider"></span>
             Filed in
-            ${this.metadata.tags.split(',').map(
-              tag =>
-                html`
-                  <a href="/tags/${tag.toLowerCase()}/">${tag}</a>&nbsp;
-                `,
-            )}
+            ${this.metadata.tags
+              .split(',')
+              .map(tag => html` <a href="/tags/${tag.toLowerCase()}/">${tag}</a>&nbsp; `)}
           </div>
 
         <div id="metadataArticle" itemprop="articleBody"></div>
@@ -373,10 +367,8 @@ class BlogEntry extends BlogElement {
                 ? html`
                     <p>
                       Your browser supports the
-                      <a href="https://w3c.github.io/web-share/"
-                        >Web Share API</a
-                      >! Whoo hoo! Click the button to use the native share on
-                      your device.<br />
+                      <a href="https://w3c.github.io/web-share/">Web Share API</a>! Whoo hoo! Click
+                      the button to use the native share on your device.<br />
                       <button @click=${this.__webShare}>🚀 Share</button>
                     </p>
                   `
