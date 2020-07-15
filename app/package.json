@@ -37,7 +37,7 @@
     "workbox-cli": "^5.0.0"
   },
   "scripts": {
-    "dev": "yarn es-dev-server --hostname 0.0.0.0 --app-index index.html --node-resolve --open --watch",
+    "dev": "yarn es-dev-server --port 8081 --app-index index.html --node-resolve --open --watch",
     "lint:eslint": "yarn eslint --ext .js . --ignore-path ../.gitignore",
     "format:eslint": "yarn eslint --ext .js . --fix --ignore-path ../.gitignore",
     "lint:prettier": "yarn prettier \"**/*.js\" --check --ignore-path ../.gitignore",
