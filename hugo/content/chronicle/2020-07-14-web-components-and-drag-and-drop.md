@@ -224,7 +224,7 @@ This allows it to be more readily be used with ShadowDOM and web components, whi
 
 It's early days for said shim, but I've used on couple projects without issue. It is [available on NPM](https://badge.fury.io/js/%40justinribeiro%2Fhtml5-dragdroptouch-shim) and if you find bugs, do let me know.
 
-## Go futher
+## Go further
 
 Now I'm not saying this is the end all be all; there is more you could do (I don't go into list sorting for instance) and you surely would firm up those web components (ala...ditch those events on disconnect and be a good component citizen). Hopefully this gives you a spring board that using the bare metal web platform and the tooling it gives you is not the scary complicated beast some folks make it out to be. We have the tools, you just have to hone in on the right one's for the job.
 
