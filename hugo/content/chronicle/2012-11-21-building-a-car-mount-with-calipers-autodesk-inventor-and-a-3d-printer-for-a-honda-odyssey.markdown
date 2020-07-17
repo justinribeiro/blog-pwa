@@ -1,9 +1,6 @@
 ---
 tags:
-- CAD
-- 3D model
-- replicator1
-- inventor
+- maker
 date: 2012-11-21T00:00:00Z
 description: "Sometimes buying off the shelf parts is no fun. But going from drawing to 3D to printed part has never been easier, so I tackled the problem of creating a mount for my wife's Honda Odyssey Touring Elite."
 title: "Building a car mount with calipers, Autodesk Inventor, and a 3D Printer for a Honda Odyssey"

@@ -1,9 +1,7 @@
 ---
 tags:
-- hacking
+- maker
 - build
-- business
-- creativity
 date: 2009-07-12T00:00:00Z
 description: "Who needs a fancy properly made laptop mount for an expensive cart when you can make one from a $6.99 document holder?"
 title: Mounting a laptop on a Chief flat panel cart using a $6.99 document holder

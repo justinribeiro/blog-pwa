@@ -20,7 +20,7 @@ My chronicles aren’t exactly without analysis, but they are listing of events 
 Looking for a more specific archive of posts? You're in luck: <a href="/tags/">tags</a> gives you and overview of all five major categories for easy location or following of specific types of posts. Just want to dive in? See the tags below to navigate directly.
 
 <p id="tags">
-  <a href="/tags/web/">Web</a> <a href="/tags/iot/">IoT</a> <a href="/tags/business/">Business</a> <a href="/tags/photography/">Photography</a> <a href="/tags/personal/">Personal</a>
+  <a href="/tags/web/">Web</a> <a href="/tags/iot/">IoT</a> <a href="/tags/business/">Business</a> <a href="/tags/photography/">Photography</a> <a href="/tags/maker/">Maker</a> <a href="/tags/personal/">Personal</a>
 </p>
 
 ## Chronicle Listings

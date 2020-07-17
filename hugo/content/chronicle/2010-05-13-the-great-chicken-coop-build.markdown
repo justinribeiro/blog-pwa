@@ -3,7 +3,7 @@ tags:
 - build
 - chickens
 - coop
-- reclaimed
+- maker
 date: 2010-05-13T00:00:00Z
 description: Sometimes you really want fresh eggs and housing hens is the way to go.
 title: The great chicken coop build

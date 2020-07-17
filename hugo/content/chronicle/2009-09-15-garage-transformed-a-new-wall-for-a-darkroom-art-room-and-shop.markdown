@@ -1,8 +1,7 @@
 ---
 tags:
-- house
 - build
-- creativity
+- maker
 date: 2009-09-15T00:00:00Z
 description: Some said it couldn't be done, but I built a wall there anyhow.
 title: "Garage transformed: a new wall for a darkroom, art room and shop"

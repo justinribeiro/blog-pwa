@@ -1,7 +1,6 @@
 ---
 tags:
-- Makerbot
-- replicator2
+- maker
 date: 2012-10-24T00:00:00Z
 description: "A quick video and a few thoughts of the Makerbot Replicator 2 in action."
 title: "Firing up the Makerbot Replicator 2"

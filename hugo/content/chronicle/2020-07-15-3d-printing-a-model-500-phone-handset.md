@@ -29,6 +29,7 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200715-desk-phon
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200715-desk-phone-printed-finished-800.jpg"
 tags:
 - build
+- maker
 ---
 
 If there is one thing this pandemic has reminded me of is that talking on the phone is a lost art. In an era where the need to have nimble thumbs to type out messages while taking selfies has high societal value, the phone call signals impending doom. I call people and there is a shock and at times a bit of anger. _Just send a text Justin, I'm busy being locked in my house trying to dress this cat in a suit._ Danger at every ring.

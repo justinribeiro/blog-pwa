@@ -1,8 +1,6 @@
 ---
 tags:
-- make
-- digbuildlive
-- 3dprinter
+- maker
 date: 2014-05-15T00:00:00Z
 title: Breaking out the gear for mini-Maker Faire at Hickman Charter School
 url: /chronicle/2014/05/15/hickman-charter-school-maker-faire-science/

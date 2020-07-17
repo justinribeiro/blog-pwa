@@ -1,7 +1,7 @@
 ---
 tags:
 - build
-- mousebot
+- maker
 date: 2012-07-23T00:00:00Z
 description: "Alli and I took bought and put together a Herbie the mousebot kit we picked up from Maker Faire. My short and sweet review."
 title: "Review: Herbie the Mousebot kit build"

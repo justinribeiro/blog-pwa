@@ -1,8 +1,7 @@
 ---
 tags:
 - build
-- art
-- treehouse
+- maker
 date: 2010-02-05T00:00:00Z
 description: Don't have a tree outside?  Let's build one inside and then put a tree house in it.
 title: "Building an indoor tree house, part 1: the structure"

@@ -1,9 +1,7 @@
 ---
 
 tags:
-- house
-- hacking
-- home theater
+- maker
 - build
 date: 2008-06-16T00:00:00Z
 description: The first big project in the new house, building a entertainment center into

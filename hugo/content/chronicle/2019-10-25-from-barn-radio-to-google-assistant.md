@@ -27,6 +27,7 @@ imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-rep
 imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
 tags:
 - IoT
+- maker
 ---
 
 I enjoy old radios. Unlike today's streamline plastic devices with faux metal details, old radios were center pieces in many homes, the finer models made of hardwood and glass. They carry some weight and a touch of style from a time long since forgotten.

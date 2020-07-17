@@ -1,11 +1,8 @@
 ---
 tags:
-- house
 - build
-- creativity
-- darkroom
-- workshop
-- artroom
+- photography
+- maker
 date: 2010-02-11T00:00:00Z
 description: "It was a long time coming, but we finally completed the new darkroom, art room and workshop!"
 title: Darkroom, art room and workshop completed

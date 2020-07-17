@@ -1,9 +1,9 @@
 ---
 tags:
-- build
+- iot
 - arduino
 - mqtt
-- websocket
+- maker
 date: 2012-07-22T00:00:00Z
 description: "The Internet of things is here and now. Let's create a system to trigger an LED on an Arduino with MQTT, Mosquitto, Ratchet, and HTML5 WebSocket API."
 title: "The internet of things: trigger an LED on an Arduino with MQTT, Mosquitto, Ratchet, and HTML5 WebSocket API"
