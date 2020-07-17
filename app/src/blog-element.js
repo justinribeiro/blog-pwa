@@ -218,10 +218,6 @@ export default class BlogElement extends LitElement {
         font-style: normal;
       }
 
-      li {
-        margin-bottom: 20px;
-      }
-
       /* Don't like this; special case. TODO extract */
       p code,
       li code {

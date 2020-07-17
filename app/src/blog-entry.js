@@ -241,8 +241,8 @@ class BlogEntry extends BlogElement {
         }
 
         #main img {
-          margin: auto;
-          display: block;
+          /* margin: auto;
+          display: block; */
         }
 
         time {
@@ -303,11 +303,13 @@ class BlogEntry extends BlogElement {
           font-weight: 300;
         }
 
-        @media (max-width: 767px) {
-          #main img {
-            margin: none;
-          }
+        ol,
+        ul {
+          margin: 0;
+          padding: 0 0 0 24px;
+        }
 
+        @media (max-width: 767px) {
           #main iframe,
           #main img,
           #main lite-youtube {
@@ -318,6 +320,10 @@ class BlogEntry extends BlogElement {
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
+          }
+
+          #main img {
+            margin: none !important;
           }
 
           .subheadline {
@@ -343,44 +349,39 @@ class BlogEntry extends BlogElement {
           <div id="featureImage"></div>
 
           <div class="reads">
-            <time
-              .datetime="${this.metadata.dataModified}"
-              itemprop="datePublished"
-            >
+            <time .datetime="${this.metadata.dataModified}" itemprop="datePublished">
               ${this.metadata.date}
             </time>
-            <span class="dotDivider"></span> ${this.metadata.readingtime} min
-            read
+            <span class="dotDivider"></span> ${this.metadata.readingtime} min read
             <span class="dotDivider"></span>
             Filed in
             ${this.metadata.tags
               .split(',')
               .map(tag => html` <a href="/tags/${tag.toLowerCase()}/">${tag}</a>&nbsp; `)}
           </div>
+        </header>
 
         <div id="metadataArticle" itemprop="articleBody"></div>
         <footer id="metaShare">
           <div>
             <h3>Share this piece</h3>
-            ${
-              navigator.share
-                ? html`
-                    <p>
-                      Your browser supports the
-                      <a href="https://w3c.github.io/web-share/">Web Share API</a>! Whoo hoo! Click
-                      the button to use the native share on your device.<br />
-                      <button @click=${this.__webShare}>🚀 Share</button>
-                    </p>
-                  `
-                : html`
-                    <p id="share">
-                      <a href="${this.share.twitter}">Twitter</a>
-                      <a href="${this.share.facebook}">Facebook</a>
-                      <a href="${this.share.linkedin}">LinkedIn</a>
-                      <a href="${this.share.email}">Email</a>
-                    </p>
-                  `
-            }
+            ${navigator.share
+              ? html`
+                  <p>
+                    Your browser supports the
+                    <a href="https://w3c.github.io/web-share/">Web Share API</a>! Whoo hoo! Click
+                    the button to use the native share on your device.<br />
+                    <button @click=${this.__webShare}>🚀 Share</button>
+                  </p>
+                `
+              : html`
+                  <p id="share">
+                    <a href="${this.share.twitter}">Twitter</a>
+                    <a href="${this.share.facebook}">Facebook</a>
+                    <a href="${this.share.linkedin}">LinkedIn</a>
+                    <a href="${this.share.email}">Email</a>
+                  </p>
+                `}
 
             <h3>Respond to this piece</h3>
             <p>${this.interactions}</p>
@@ -389,16 +390,11 @@ class BlogEntry extends BlogElement {
               action="https://webmention.io/justinribeiro.com/webmention"
               method="POST"
             >
-              <input
-                type="hidden"
-                name="target"
-                .value="${this.metadata.permalink}"
-              />
+              <input type="hidden" name="target" .value="${this.metadata.permalink}" />
               <label
-                >Written a response or comment to this post? Fantastic! I
-                support
-                <a href="https://indieweb.org/Webmention">WebMentions</a>. Paste
-                and send your URL here:</label
+                >Written a response or comment to this post? Fantastic! I support
+                <a href="https://indieweb.org/Webmention">WebMentions</a>. Paste and send your URL
+                here:</label
               >
               <input
                 type="url"
@@ -413,16 +409,13 @@ class BlogEntry extends BlogElement {
             <br />
             <h3>Metadata</h3>
             <p>
-              Author Justin Ribeiro wrote ${this.metadata.words} words for this
-              piece and hopes you enjoyed it. Find an issue?
-              <a href="https://github.com/justinribeiro/blog-pwa/issues"
-                >File a ticket</a
-              >
+              Author Justin Ribeiro wrote ${this.metadata.words} words for this piece and hopes you
+              enjoyed it. Find an issue?
+              <a href="https://github.com/justinribeiro/blog-pwa/issues">File a ticket</a>
               or
               <a
-                href="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/${
-                  this.metadata.filename
-                }"
+                href="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/${this
+                  .metadata.filename}"
                 >edit this on Github.</a
               >
             </p>
