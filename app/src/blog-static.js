@@ -13,6 +13,10 @@ class BlogStatic extends BlogElement {
           font-size: 28px;
         }
 
+        .talk {
+          margin-top: 1rem;
+        }
+
         #posts {
           display: flex;
           flex-wrap: wrap;
