@@ -46,7 +46,7 @@ class BlogEntry extends BlogElement {
       }
 
       const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
-      if (CodeBlockRequired.test(parseHTML)) {
+      if (YouTubeRequired.test(parseHTML)) {
         import('./lite-youtube.js');
       }
 
