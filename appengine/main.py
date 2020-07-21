@@ -59,11 +59,11 @@ class MainHandler(webapp2.RequestHandler):
                                                    "midi 'none'; "
                                                    "payment 'none'; "
                                                    "picture-in-picture 'self' https://www.youtube.com; "
-                                                   "speaker 'self'; "
                                                    "sync-xhr 'none'; "
                                                    "usb 'none'; "
-                                                   "vibrate 'none'; "
-                                                   "vr 'none';")
+                                                   "wake-lock 'none';"
+                                                   "screen-wake-lock 'none';"
+                                                   "web-share 'self'; ")
         self.response.headers['Expect-CT'] = 'max-age=0, report-uri="https://justinribeiro.report-uri.com/r/d/ct/reportOnly"'
         self.response.headers['Report-To'] = '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://justinribeiro.report-uri.com/a/d/g"}],"include_subdomains":true}'
         self.response.headers['NEL'] = '{"report_to":"default","max_age":31536000,"include_subdomains":true}'
