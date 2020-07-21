@@ -1,4 +1,4 @@
-runtime: python37
+runtime: python38
 entrypoint: gunicorn -b :$PORT main:app
 
 inbound_services:
@@ -19,10 +19,6 @@ handlers:
   upload: dist/images/(.*)
   secure: always
   expiration: "180d"
-
-- url: /node_modules
-  static_dir: dist/node_modules
-  secure: always
 
 - url: /src
   static_dir: dist/src
@@ -50,6 +46,11 @@ handlers:
 - url: /service-worker.js
   static_files: dist/service-worker.js
   upload: dist/service-worker.js
+  secure: always
+
+- url: /service-worker.js.map
+  static_files: dist/service-worker.js.map
+  upload: dist/service-worker.js.map
   secure: always
 
 - url: /manifest.json

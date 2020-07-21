@@ -7,7 +7,7 @@ import webapp2
 import json
 import re
 import jinja2
-import http2push as http2
+import preloadlinks as pl
 import logging
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -27,8 +27,7 @@ def unescape(s):
     return s
 
 
-class MainHandler(http2.PushHandler):
-
+class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Strict-Transport-Security'] = 'max-age=63072000; includeSubDomains; preload'
         self.response.headers['X-Frame-Options'] = 'DENY'
@@ -203,8 +202,8 @@ class MainHandler(http2.PushHandler):
                                          .replace("index.php", ""), 'index.json')
                 push = os.path.join(os.path.dirname(
                     __file__), 'dist/push_manifest.json')
-                self.push_urls = http2.use_push_manifest(push)
-                header = self._generate_link_preload_headers()
+                self.push_urls = pl.use_push_manifest(push)
+                header = pl.generate_link_preload_headers(self)
                 self.response.headers.add_header('Link', header)
 
                 # Retarget our noscript

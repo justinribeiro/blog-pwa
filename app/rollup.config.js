@@ -72,6 +72,9 @@ export default {
         safari10: true,
         reserved: ['__import'],
       },
+      output: {
+        comments: false,
+      },
     }),
     filesize({
       render: function (options, bundle, { fileName, gzipSize }) {
