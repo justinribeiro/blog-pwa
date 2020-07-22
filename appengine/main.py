@@ -17,7 +17,6 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     comment_end_string="+/////////",
     autoescape=True)
 
-
 def unescape(s):
     s = s.replace("&lt;", "<")
     s = s.replace("&gt;", ">")
@@ -25,7 +24,6 @@ def unescape(s):
     s = s.replace("&#34;", "\"")
     s = s.replace("&amp;", "&")
     return s
-
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -61,9 +59,7 @@ class MainHandler(webapp2.RequestHandler):
                                                    "picture-in-picture 'self' https://www.youtube.com; "
                                                    "sync-xhr 'none'; "
                                                    "usb 'none'; "
-                                                   "wake-lock 'none';"
-                                                   "screen-wake-lock 'none';"
-                                                   "web-share 'self'; ")
+                                                   "screen-wake-lock 'none';")
         self.response.headers['Expect-CT'] = 'max-age=0, report-uri="https://justinribeiro.report-uri.com/r/d/ct/reportOnly"'
         self.response.headers['Report-To'] = '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://justinribeiro.report-uri.com/a/d/g"}],"include_subdomains":true}'
         self.response.headers['NEL'] = '{"report_to":"default","max_age":31536000,"include_subdomains":true}'
