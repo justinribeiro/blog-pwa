@@ -1,9 +1,6 @@
 import { LitElement, css } from 'lit-element';
 import './blog-network-warning.js';
 
-/**
- * BlogElement
- */
 export default class BlogElement extends LitElement {
   static get properties() {
     return {
@@ -12,10 +9,6 @@ export default class BlogElement extends LitElement {
         attribute: false,
       },
       metadata: {
-        type: Object,
-        attribute: false,
-      },
-      share: {
         type: Object,
         attribute: false,
       },
@@ -47,25 +40,35 @@ export default class BlogElement extends LitElement {
       tags: '',
     };
 
-    this.share = {
-      twitter: '',
-      facebook: '',
-      linkedin: '',
-      email: '',
-    };
+    this.share = [];
 
-    this.__domRefs = {
-      figures: null,
-    };
+    this.__domRefs = new Map();
 
     this.failure = false;
     this.loaded = false;
   }
 
+  /**
+   * Grabs a DOM ref from the in place map if available. Temporary spot for
+   * this; I think we'll make this a better WM+sym
+   * @param {string} name
+   * @param {string} selector DOM selector ref
+   * @returns {HTMLElement}
+   * @private
+   */
+  __getDomRef(name, selector = '') {
+    let ref;
+    if (!this.__domRefs.has(name)) {
+      ref = this.shadowRoot.querySelector(selector || name);
+      this.__domRefs.set(name, ref);
+    } else {
+      ref = this.__domRefs.get(name);
+    }
+    return ref;
+  }
+
   firstUpdated() {
-    this.shadowRoot
-      .querySelector('blog-network-warning')
-      .addEventListener('try-reconnect', () => this.mount());
+    this.__getDomRef('blog-network-warning').addEventListener('try-reconnect', () => this.mount());
   }
 
   async mount() {
@@ -119,7 +122,7 @@ export default class BlogElement extends LitElement {
     }
   }
 
-  _processMetaData(data, view) {
+  _processMetaData() {
     if (this.metadata.article !== undefined && this.metadata.article !== '') {
       const parseHTML = this._unescapeHtml(this.metadata.article);
       this.shadowRoot.querySelector('#metadataArticle').innerHTML = parseHTML;
@@ -140,6 +143,92 @@ export default class BlogElement extends LitElement {
         },
       }),
     );
+  }
+
+  /**
+   *
+   * @param {object} {{title, description, url, imagetwitter, imagefb}}
+   */
+  _setPageMetaData({ title, description, url, imagetwitter, imagefb }) {
+    // Flip the metadata on load
+    // Note, Google Search will index this
+    document.title = `${title} - Justin Ribeiro`;
+    document.head.querySelector("meta[name='description']").setAttribute('content', description);
+
+    this._setMeta('property', 'og:title', document.title);
+    this._setMeta('property', 'twitter:title', document.title);
+
+    if (description) {
+      this._setMeta('property', 'og:description', description);
+      this._setMeta('property', 'twitter:description', description);
+    }
+
+    const fallbackImg = `${document.location}images/manifest/me-2018-192.png`;
+    imagetwitter = imagetwitter || fallbackImg;
+    imagefb = imagefb || fallbackImg;
+    if (imagetwitter) {
+      this._setMeta('property', 'twitter:image:src', imagetwitter);
+      this._setMeta('property', 'og:image', imagefb);
+    }
+
+    url = url || document.location.href;
+    this._setMeta('property', 'og:url', url);
+    this._setMeta('property', 'twitter:url', url);
+
+    if (window.ga) {
+      ga('send', {
+        hitType: 'pageview',
+        page: window.location.pathname,
+        location: url,
+        title: title,
+      });
+    }
+  }
+
+  /**
+   * Locate and find document meta tags to update
+   * @param {string} attrName
+   * @param {string} attrValue
+   * @param {string} content
+   */
+  _setMeta(attrName, attrValue, content) {
+    let element = document.head.querySelector(`meta[${attrName}="${attrValue}"]`);
+    if (!element) {
+      element = document.createElement('meta');
+      element.setAttribute(attrName, attrValue);
+      document.head.appendChild(element);
+    }
+    element.setAttribute('content', content || '');
+  }
+
+  /**
+   * Fixes stuff I spit into JSON from Hugo
+   * @param {String} raw Anything HTML that needs unescaping..
+   * @return {String} string
+   */
+  _unescapeHtml(raw) {
+    const process = document.createElement('textarea');
+    process.innerHTML = raw;
+    return process.textContent;
+  }
+
+  /**
+   * Check the current state of the view so we can get rid of the skelton in
+   * weird inbetween states
+   * @param {boolean} failed
+   * @param {boolean} loaded
+   * @return {boolean} state
+   */
+  __checkViewState(failed, loaded) {
+    // In the event a network fail happens and we get not SW load,
+    // hide the skeleton
+    // In the event the network doesn't fail and we get a load,
+    // hide the skeleton
+    if ((failed && !loaded) || (!failed && loaded)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   static get styles() {
@@ -279,91 +368,5 @@ export default class BlogElement extends LitElement {
         display: none !important;
       }
     `;
-  }
-
-  /**
-   *
-   * @param {object} {{title, description, url, imagetwitter, imagefb}}
-   */
-  _setPageMetaData({ title, description, url, imagetwitter, imagefb }) {
-    // Flip the metadata on load
-    // Note, Google Search will index this
-    document.title = `${title} - Justin Ribeiro`;
-    document.head.querySelector("meta[name='description']").setAttribute('content', description);
-
-    this._setMeta('property', 'og:title', document.title);
-    this._setMeta('property', 'twitter:title', document.title);
-
-    if (description) {
-      this._setMeta('property', 'og:description', description);
-      this._setMeta('property', 'twitter:description', description);
-    }
-
-    const fallbackImg = `${document.location}images/manifest/me-2018-192.png`;
-    imagetwitter = imagetwitter || fallbackImg;
-    imagefb = imagefb || fallbackImg;
-    if (imagetwitter) {
-      this._setMeta('property', 'twitter:image:src', imagetwitter);
-      this._setMeta('property', 'og:image', imagefb);
-    }
-
-    url = url || document.location.href;
-    this._setMeta('property', 'og:url', url);
-    this._setMeta('property', 'twitter:url', url);
-
-    if (window.ga) {
-      ga('send', {
-        hitType: 'pageview',
-        page: window.location.pathname,
-        location: url,
-        title: title,
-      });
-    }
-  }
-
-  /**
-   * Locate and find document meta tags to update
-   * @param {string} attrName
-   * @param {string} attrValue
-   * @param {string} content
-   */
-  _setMeta(attrName, attrValue, content) {
-    let element = document.head.querySelector(`meta[${attrName}="${attrValue}"]`);
-    if (!element) {
-      element = document.createElement('meta');
-      element.setAttribute(attrName, attrValue);
-      document.head.appendChild(element);
-    }
-    element.setAttribute('content', content || '');
-  }
-
-  /**
-   * Fixes stuff I spit into JSON from Hugo
-   * @param {String} raw Anything HTML that needs unescaping..
-   * @return {String} string
-   */
-  _unescapeHtml(raw) {
-    const process = document.createElement('textarea');
-    process.innerHTML = raw;
-    return process.textContent;
-  }
-
-  /**
-   * Check the current state of the view so we can get rid of the skelton in
-   * weird inbetween states
-   * @param {boolean} failed
-   * @param {boolean} loaded
-   * @return {boolean} state
-   */
-  __checkViewState(failed, loaded) {
-    // In the event a network fail happens and we get not SW load,
-    // hide the skeleton
-    // In the event the network doesn't fail and we get a load,
-    // hide the skeleton
-    if ((failed && !loaded) || (!failed && loaded)) {
-      return true;
-    } else {
-      return false;
-    }
   }
 }

@@ -836,6 +836,14 @@
   resolved "https://registry.yarnpkg.com/@justinribeiro/lite-youtube/-/lite-youtube-0.6.2.tgz#305793f230070c1e653a697bfd2c6f4129c82a63"
   integrity sha512-FIaZtGuwt9PPIyQHI1S+59kXvq8I/baGQe0A3z34avH3EuJXCsN7XrZdKk0kdJG58MuCDQjWZb1E/rxYVF8RRw==
 
+"@justinribeiro/share-to-mastodon@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@justinribeiro/share-to-mastodon/-/share-to-mastodon-0.2.0.tgz#99514fa371c7dce13a0f0d5ddd15b0d999097e3d"
+  integrity sha512-j23B66JtVGsygcqlPSrYtkNjFPL7CW07gvfRclvp6mYaRHflubIZwcWWR/oK4zpfnOSqz8iCfZGMekflT9UGWg==
+  dependencies:
+    lit-element "^2.2.1"
+    lit-html "^1.1.2"
+
 "@justinribeiro/stl-part-viewer@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@justinribeiro/stl-part-viewer/-/stl-part-viewer-1.0.2.tgz#f7398af59c21866e9c7f50fe238da69a1e08dbe9"
@@ -4739,7 +4747,7 @@ lit-element@^2.1.0, lit-element@^2.2.1:
   dependencies:
     lit-html "^1.1.1"
 
-lit-html@^1.1.1:
+lit-html@^1.1.1, lit-html@^1.1.2:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.2.1.tgz#1fb933dc1e2ddc095f60b8086277d4fcd9d62cc8"
   integrity sha512-GSJHHXMGLZDzTRq59IUfL9FCdAlGfqNp/dEa7k7aBaaWD+JKaCjsAk9KYm2V12ItonVaYx2dprN66Zdm1AuBTQ==

@@ -7,15 +7,39 @@ class BlogEntry extends BlogElement {
       interactions: {
         type: String,
       },
+      share: {
+        type: Array,
+      },
     };
   }
 
-  _generatedShareLinks() {
+  constructor() {
+    super();
+    this.share = [];
+    this.interactions = 'Checking for interactions...';
+  }
+
+  __generatedShareLinks() {
     if (!navigator.share) {
-      this.share.twitter = `https://twitter.com/intent/tweet?url=${this.metadata.permalink}&text=${this.metadata.title} via @justinribeiro`;
-      this.share.facebook = `https://www.facebook.com/sharer.php?u=${this.metadata.permalink}`;
-      this.share.linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=${this.metadata.permalink}&title=${this.metadata.title}&source=&summary=${this.metadata.description}`;
-      this.share.email = `mailto:?subject=Article: ${this.metadata.title}&body=Article from Justin Ribeiro: ${this.metadata.permalink}`;
+      import('./share-to-mastodon.js');
+      this.share.push(
+        {
+          service: 'Twitter',
+          link: `https://twitter.com/intent/tweet?url=${this.metadata.permalink}&text=${this.metadata.title} via @justinribeiro`,
+        },
+        {
+          service: 'Facebook',
+          link: `https://www.facebook.com/sharer.php?u=${this.metadata.permalink}`,
+        },
+        {
+          service: 'LinkedIn',
+          link: `https://www.linkedin.com/shareArticle?mini=true&url=${this.metadata.permalink}&title=${this.metadata.title}&source=&summary=${this.metadata.description}`,
+        },
+        {
+          service: 'E-Mail',
+          link: `mailto:?subject=Article: ${this.metadata.title}&body=Article from Justin Ribeiro: ${this.metadata.permalink}`,
+        },
+      );
     }
   }
 
@@ -66,8 +90,7 @@ class BlogEntry extends BlogElement {
         this.__enableFigureExpansion();
       }
 
-      this._generatedShareLinks();
-      this.__contentIndexApiOriginTrial();
+      this.__generatedShareLinks();
       this.__getInteractionCounts();
     }
   }
@@ -75,7 +98,7 @@ class BlogEntry extends BlogElement {
   __enableFigureExpansion() {
     this.__domRefs.figures = [...this.shadowRoot.querySelectorAll('figure')];
     this.__domRefs.figures.forEach(figure => {
-      const event = figure.addEventListener('click', this.__expandFigure, { passive: true });
+      figure.addEventListener('click', this.__expandFigure, { passive: true });
     });
   }
 
@@ -93,26 +116,6 @@ class BlogEntry extends BlogElement {
     this.__domRefs.figures.forEach(figure => {
       figure.removeEventListener('click', this.__expandFigure, { passive: true });
     });
-  }
-
-  // see https://web.dev/content-indexing-api/
-  async __contentIndexApiOriginTrial() {
-    const registration = await navigator.serviceWorker.ready;
-    if ('index' in registration) {
-      await registration.index.add({
-        id: this.metadata.filename.replace(/\//g, '-'),
-        launchUrl: new URL(this.metadata.permalink).pathname,
-        title: this.metadata.title,
-        description: this.metadata.description,
-        icons: [
-          {
-            src: this.metadata.imagetwitter,
-            type: 'image/jpg',
-          },
-        ],
-        category: 'article',
-      });
-    }
   }
 
   async __getInteractionCounts() {
@@ -240,11 +243,6 @@ class BlogEntry extends BlogElement {
           max-width: 100%;
         }
 
-        #main img {
-          /* margin: auto;
-          display: block; */
-        }
-
         time {
           text-transform: uppercase;
         }
@@ -253,6 +251,7 @@ class BlogEntry extends BlogElement {
           padding-right: 0.45em;
           padding-left: 0.45em;
         }
+
         .dotDivider:after {
           content: '·';
         }
@@ -307,6 +306,18 @@ class BlogEntry extends BlogElement {
         ul {
           margin: 0;
           padding: 0 0 0 24px;
+        }
+
+        share-to-mastodon {
+          --wc-stm-font-family: var(--font-family-serif);
+          --wc-stm-link-text-decoration: none;
+          --wc-stm-link-color-initial: #0049a3;
+          --wc-stm-link-color-visited: #0049a3;
+          border-bottom: 1px solid #0049a3;
+          letter-spacing: -0.063px;
+          line-height: 33.18px;
+          margin: 0;
+          margin-right: 10.5px;
         }
 
         @media (max-width: 767px) {
@@ -376,10 +387,12 @@ class BlogEntry extends BlogElement {
                 `
               : html`
                   <p id="share">
-                    <a href="${this.share.twitter}">Twitter</a>
-                    <a href="${this.share.facebook}">Facebook</a>
-                    <a href="${this.share.linkedin}">LinkedIn</a>
-                    <a href="${this.share.email}">Email</a>
+                    ${this.share.map(i => html`<a href="${i.link}">${i.service}</a>`)}
+                    <share-to-mastodon
+                      message="${this.metadata.title} via @justin@ribeiro.social"
+                      url="${this.metadata.permalink}"
+                      >Mastodon</share-to-mastodon
+                    >
                   </p>
                 `}
 

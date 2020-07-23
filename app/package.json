@@ -62,6 +62,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@justinribeiro/lite-youtube": "^0.6.2",
+    "@justinribeiro/share-to-mastodon": "^0.2.0",
     "@justinribeiro/stl-part-viewer": "^1.0.2",
     "lit-element": "^2.2.1",
     "prismjs": "^1.17.1",

@@ -63,7 +63,6 @@ class MainHandler(webapp2.RequestHandler):
         self.response.headers['Expect-CT'] = 'max-age=0, report-uri="https://justinribeiro.report-uri.com/r/d/ct/reportOnly"'
         self.response.headers['Report-To'] = '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://justinribeiro.report-uri.com/a/d/g"}],"include_subdomains":true}'
         self.response.headers['NEL'] = '{"report_to":"default","max_age":31536000,"include_subdomains":true}'
-        self.response.headers['Origin-Trial'] = 'ArOMTDI8r1lGi6g/R/Ib61VmDtJuiTAUkI895IP0CgltkTDk5SjvBYerOXc8ubE5UHSAn4/50hX50Ltxv6TDzwAAAABqeyJvcmlnaW4iOiJodHRwczovL2p1c3RpbnJpYmVpcm8uY29tOjQ0MyIsImZlYXR1cmUiOiJDb250ZW50SW5kZXgiLCJleHBpcnkiOjE1ODc5OTQwODYsImlzU3ViZG9tYWluIjp0cnVlfQ=='
 
         # this list is a little of a cross-mix of bots and a few browsers that
         # can just skip the progressive checks (ala lynx). I've done this to

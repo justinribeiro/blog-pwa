@@ -19,6 +19,7 @@ export default {
     'src/3d-utils.js',
     'src/code-block.js',
     'src/lite-youtube.js',
+    'src/share-to-mastodon.js',
   ],
   treeshake: true,
   output: {
