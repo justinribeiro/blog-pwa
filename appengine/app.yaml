@@ -20,6 +20,10 @@ handlers:
   secure: always
   expiration: "180d"
 
+- url: /node_modules
+  static_dir: dist/node_modules
+  secure: always
+
 - url: /src
   static_dir: dist/src
   secure: always
