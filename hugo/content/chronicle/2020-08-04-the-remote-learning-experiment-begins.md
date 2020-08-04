@@ -8,7 +8,7 @@ tags:
   - school
 ---
 
-School starts here in two days. The four day rate of infection in our county stands at 24.69%, three times more than state of California's rate. The school meetings, held on your Zoom’s and YouTube streams of the world, distribute lackluster information and showcase poor leadership and vision. Most meetings are a insight into the community at large; some wear masks while others remove them to speak in the small enclosed room the board members sit in. Some parents are concerned; the majority shout about the great pandemic hoax and how the schools must open.
+School starts here in two days. The fourteen day rate of infection in our county stands at 24.69%, three times more than state of California's rate. The school meetings, held on your Zoom’s and YouTube streams of the world, distribute lackluster information and showcase poor leadership and vision. Most meetings are a insight into the community at large; some wear masks while others remove them to speak in the small enclosed room the board members sit in. Some parents are concerned; the majority shout about the great pandemic hoax and how the schools must open.
 
 The schools aren’t opening, much to my relief. The remote learning experiment begins. My kids are not thrilled.
 
