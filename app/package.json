@@ -65,7 +65,7 @@
     "@justinribeiro/share-to-mastodon": "^0.2.0",
     "@justinribeiro/stl-part-viewer": "^1.0.2",
     "lit-element": "^2.2.1",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.21.0",
     "pwa-helpers": "^0.9.1",
     "workbox-window": "^5.0.0"
   },
