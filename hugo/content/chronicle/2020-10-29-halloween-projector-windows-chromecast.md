@@ -1,6 +1,6 @@
 ---
 title: "Spooky Windows with Projectors and a Chromecast"
-description: "The kids wanted something different for Halloween so using spare parts it's time to make some projection windows."
+description: "With trick-o-treat a non-starter the kids needed something a little different for Halloween. Using spare parts around the shop it's time to make some projection windows."
 date: 2020-10-29T12:56:00-07:00
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>
@@ -19,7 +19,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
     <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20201029-the-hocus-pocus-house-800.jpg" alt="">
   </picture>
   <figcaption itemprop="caption description">
-    <span aria-hidden="true">Let the hocus pocus fun of Halloween take shape.</span>
+      <span aria-hidden="true">Let the hocus hocus pocus fun of Halloween take shape.</span>
     <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
   </figcaption>
 </figure>
@@ -32,17 +32,15 @@ tags:
   - halloween
 ---
 
-2020 has been a own horror film by any measure and the cancellation of trick-o-treating in some places was of little consequence at our house because my kids were not having it.
+2020 has been its own horror film by any measure and the cancellation of trick-o-treating in some places was of little consequence at our house because my kids were not having it.
 
 "We're not going out there people are crazy Dad," said one of the twins.
 
 "It's not worth the candy," said the other.
 
-No, I don't know which one said which line, don't try to change the subject. COVID and a good portion of people around us absolute dismissal of basic mask wearing safety protocols and common sense has broken my kids and many others for that matter. Candy is a kid currency, more valuable than actual money and significantly more tasty.
+No I don't know which one said which line, don't try to change the subject. COVID's ongoing rage and a good portion of people around us whom dismiss the basic mask wearing safety protocols have broken my kids. Candy is a kid currency, more valuable than actual money and significantly more tasty, and even they know it's not worth the it.
 
-Yeah, I'm proud of them for wanting to you know, not spread a deadly virus for the sake of candy. So it was time to look for silver linings.
-
-Enter Halloween decorations.
+It was time to look for silver linings. Enter Halloween decorations.
 
 I admit that I like decorations. I don't care about the theme as long as it's fun. The kids are into dragons, so we have many a inflatable Halloween dragon. We have smoke machines because Monica loves a good low fog. Giant spiders and spider webs hanging from the second floor? You bet. This year though we needed something more. Enter projection windows.
 
@@ -149,4 +147,4 @@ Pictures really don't do it justice, so here's a short clip of it in action.
 
 {{< liteyoutube videoid="RjB5KC0X7OY" videotitle="Halloween Projector Windows" >}}
 
-Happy Halloween! Stay safe out there.
+Happy Halloween! If you find yourself out on this spooky evening, stay safe out there.
