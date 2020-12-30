@@ -195,7 +195,7 @@ class BlogEntry extends BlogElement {
 
         figcaption .author {
           display: inline-block;
-          color: #888;
+          color: rgb(111 111 111);
           font-family: var(--font-family-serif);
           line-height: 1.125rem;
           letter-spacing: 0.01em;
@@ -233,10 +233,15 @@ class BlogEntry extends BlogElement {
           height: auto;
         }
 
-        #main iframe,
-        #main img {
+        #main iframe {
           max-width: 100%;
           width: 100%;
+        }
+
+        #main img {
+          max-width: 100%;
+          height: auto;
+
         }
 
         #main video {

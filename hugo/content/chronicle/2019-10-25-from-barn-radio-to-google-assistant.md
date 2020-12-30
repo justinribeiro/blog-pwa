@@ -16,7 +16,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
                 https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1280.jpg 1280w,
                 https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-1600.jpg 1600w"
         sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-<img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg" alt="While structurally in disrepair, the radio still contains the original labels.">
+<img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url(''data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\''http%3A//www.w3.org/2000/svg\'' xmlns%3Axlink=\''http%3A//www.w3.org/1999/xlink\'' viewBox=\''0 0 1280 853\''%3E%3Cfilter id=\''b\'' color-interpolation-filters=\''sRGB\''%3E%3CfeGaussianBlur stdDeviation=\''.5\''%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\''discrete\'' tableValues=\''1 1\''%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\''url(%23b)\'' x=\''0\'' y=\''0\'' height=\''100%25\'' width=\''100%25\'' xlink%3Ahref=\''data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\''%3E%3C/image%3E%3C/svg%3E'');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg" alt="While structurally in disrepair, the radio still contains the original labels.">
 <figcaption itemprop="caption description">
 <span aria-hidden="true">While structurally in disrepair, the radio still contains the original labels.</span>
 <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
@@ -50,7 +51,8 @@ This was a table top radio at one point, with a veneered swoop that I thought lo
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-02-1280.jpg 1280w,
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-02-1600.jpg 1600w"
           sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-02-800.jpg" alt="">
+  <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-02-800.jpg" alt="">
 </picture>
 <figcaption itemprop="caption description">
 <span aria-hidden="true">While structurally in disrepair, the radio still contains the original labels.</span>
@@ -71,7 +73,8 @@ This was a table top radio at one point, with a veneered swoop that I thought lo
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-03-1280.jpg 1280w,
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-03-1600.jpg 1600w"
           sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-03-800.jpg" alt="">
+  <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-03-800.jpg" alt="">
 </picture>
 
 While my wood working skills are not fantastic, I was able to put the hull back into a proper shape slowly.
@@ -89,7 +92,8 @@ While my wood working skills are not fantastic, I was able to put the hull back 
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-04-1280.jpg 1280w,
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-04-1600.jpg 1600w"
           sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-04-800.jpg" alt="Clamped up and slowly reshaping">
+  <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-04-800.jpg" alt="Clamped up and slowly reshaping">
 </picture>
 
 <picture>
@@ -105,7 +109,8 @@ While my wood working skills are not fantastic, I was able to put the hull back 
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-05-1280.jpg 1280w,
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-05-1600.jpg 1600w"
           sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-05-800.jpg" alt="Sanded and ready for some paint and stain">
+  <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-05-800.jpg" alt="Sanded and ready for some paint and stain">
 </picture>
 
 <picture>
@@ -121,7 +126,8 @@ While my wood working skills are not fantastic, I was able to put the hull back 
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-06-1280.jpg 1280w,
                   https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-06-1600.jpg 1600w"
           sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-  <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-06-800.jpg" alt="Drying after a clear coat">
+  <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-06-800.jpg" alt="Drying after a clear coat">
 </picture>
 
 From there, it was really a matter of putting back in some radio parts to make this thing rock again. Over the years, I've rebuilt the inner portion of the "radio" with various test concepts. For a while, I used a hulled Chromecast Audio with a custom amp I built that worked well, but the Google went and discontinued that (which is sad, because I _love_ the Chromecast Audio and it's easy to wire into preexisting old radios). Then I had a custom audio board I built that may or may not have started a fire (jury still out on that one).

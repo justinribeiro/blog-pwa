@@ -16,7 +16,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-05-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-05-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-05-800.jpg" alt="The finished negative holder holding a 6x6 mask in place.">
+    <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover; background-image: url(''data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\''http%3A//www.w3.org/2000/svg\'' xmlns%3Axlink=\''http%3A//www.w3.org/1999/xlink\'' viewBox=\''0 0 1280 853\''%3E%3Cfilter id=\''b\'' color-interpolation-filters=\''sRGB\''%3E%3CfeGaussianBlur stdDeviation=\''.5\''%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\''discrete\'' tableValues=\''1 1\''%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\''url(%23b)\'' x=\''0\'' y=\''0\'' height=\''100%25\'' width=\''100%25\'' xlink%3Ahref=\''data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\''%3E%3C/image%3E%3C/svg%3E'');"src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-05-800.jpg" alt="The finished negative holder holding a 6x6 mask in place.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The finished negative holder holding a 6x6 mask in place.</span>
@@ -56,7 +56,8 @@ The second problem was how to mount this. I took a spare 45 4x5 negative carrier
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-01-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-01-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-01-800.jpg" alt="The brass registration pins filed down to allow the acceptance of the glass plate.">
+    <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-01-800.jpg" alt="The brass registration pins filed down to allow the acceptance of the glass plate.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The brass registration pins filed down to allow the acceptance of the glass plate.</span>
@@ -80,7 +81,8 @@ With the glass fitting, I dusted the holder with flat matte black paint and felt
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-02-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-02-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-02-800.jpg" alt="Painted and lined with black velvet, the glass sits in place ready for testing.<">
+    <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-02-800.jpg" alt="Painted and lined with black velvet, the glass sits in place ready for testing.<">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">Painted and lined with black velvet, the glass sits in place ready for testing.</span>
@@ -108,7 +110,8 @@ I then took said masks and felted the bottom that would sit on the negative.
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-03-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-03-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-03-800.jpg" alt="The soft covered 3D printed negative mask for 35mm film.">
+    <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-03-800.jpg" alt="The soft covered 3D printed negative mask for 35mm film.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The soft covered 3D printed negative mask for 35mm film.</span>
@@ -132,7 +135,8 @@ The masks give an soft edge, though I don't generally print with the negative ho
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-04-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-04-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-04-800.jpg" alt="The effect of the negative mask edge when in use.">
+    <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-04-800.jpg" alt="The effect of the negative mask edge when in use.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The effect of the negative mask edge when in use.</span>
@@ -156,7 +160,8 @@ With the negative my masks working okay, I now needed them to not slide around. 
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-05-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-05-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-05-800.jpg" alt="The finished negative holder holding a 6x6 mask in place.">
+    <img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/20191223-45-negative-holder-05-800.jpg" alt="The finished negative holder holding a 6x6 mask in place.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The finished negative holder holding a 6x6 mask in place.</span>

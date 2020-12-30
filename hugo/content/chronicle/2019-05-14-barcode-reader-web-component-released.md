@@ -19,7 +19,8 @@ Now available ([available on npm](https://www.npmjs.com/package/@justinribeiro/b
 3. Uses [Comlink](https://github.com/GoogleChromeLabs/comlink) for the proxy of the worker
 4. Built as a web component via [LitElement](https://lit-element.polymer-project.org/)
 
-<img src="https://storage.googleapis.com/jdr-public-imgs/blog/201905010-barcode-chrome-devtools-remote-debug.png" alt="Debugging barcode-reader from a remote device in Chrome DevTools">
+<img decoding="async" loading="lazy" width="800" height="538" style="background-size: cover;
+          background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');" src="https://storage.googleapis.com/jdr-public-imgs/blog/201905010-barcode-chrome-devtools-remote-debug.png" alt="Debugging barcode-reader from a remote device in Chrome DevTools">
 
 Please note, this is not production ready by any means, but if you want to grab with npm or yarn to play with, please do!
 
