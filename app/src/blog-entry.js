@@ -241,7 +241,6 @@ class BlogEntry extends BlogElement {
         #main img {
           max-width: 100%;
           height: auto;
-
         }
 
         #main video {
@@ -278,8 +277,7 @@ class BlogEntry extends BlogElement {
         button {
           background: #f5ee00;
           border: 1px solid #ccc;
-          border-radius: 4px;
-          font-size: 1em;
+          font-size: 1rem;
         }
 
         label {
@@ -289,7 +287,7 @@ class BlogEntry extends BlogElement {
 
         input,
         button {
-          padding: 0.5em;
+          padding: 1rem;
         }
 
         input {
@@ -409,7 +407,7 @@ class BlogEntry extends BlogElement {
               method="POST"
             >
               <input type="hidden" name="target" .value="${this.metadata.permalink}" />
-              <label
+              <label for="webMentionSource"
                 >Written a response or comment to this post? Fantastic! I support
                 <a href="https://indieweb.org/Webmention">WebMentions</a>. Paste and send your URL
                 here:</label
@@ -420,9 +418,7 @@ class BlogEntry extends BlogElement {
                 placeholder="https://your-amazing-response-url-here/"
                 id="webMentionSource"
               />
-              <button @click="${e => this.__submitWebMention(e)}">
-                🚚 Send Webmention
-              </button>
+              <button @click="${e => this.__submitWebMention(e)}">🚚 Send Webmention</button>
             </form>
             <br />
             <h3>Metadata</h3>

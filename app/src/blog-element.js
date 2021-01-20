@@ -119,6 +119,7 @@ export default class BlogElement extends LitElement {
     } catch (error) {
       this.failure = true;
       this.loaded = false;
+      this.__showSkeleton(false);
     }
   }
 
@@ -237,10 +238,6 @@ export default class BlogElement extends LitElement {
         display: block;
       }
 
-      .hotpink {
-        color: var(--hotpink);
-      }
-
       a {
         color: var(--accent-color-primary);
         text-decoration: none;
@@ -249,7 +246,6 @@ export default class BlogElement extends LitElement {
 
       a:hover {
         color: var(--accent-color-secondary);
-        text-decoration: none;
         border-bottom: 1px solid var(--accent-color-secondary);
       }
 
@@ -259,8 +255,15 @@ export default class BlogElement extends LitElement {
       h4,
       h5,
       h6 {
-        font-family: var(--font-family-sans-serif);
-        margin: 0;
+        font-family: var(--font-family-headers);
+        margin: 0px 0px 0px -1.75px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+        margin-top: 1rem;
       }
 
       p,
@@ -269,64 +272,24 @@ export default class BlogElement extends LitElement {
         font-family: var(--font-family-serif);
         margin: 0;
         color: var(--primary-text-color);
-        margin-top: 10px;
-        margin-bottom: 29px;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 21px;
+        margin: 0.625rem 0 1.813rem;
+        font-size: 1.35rem;
         line-height: 1.58;
         letter-spacing: -0.003em;
-      }
-
-      h1 {
-        font-family: var(--font-family-headers);
-        font-size: 28px;
-        margin-left: -1.75px;
-        line-height: 1.25;
-        letter-spacing: -0.02em;
-        font-weight: 700;
-        margin-top: 16px;
-      }
-
-      h2 {
-        font-family: var(--font-family-headers);
-        font-size: 24px;
-        margin-left: -1.75px;
-        line-height: 1.15;
-        letter-spacing: -0.02em;
-        font-weight: 700;
-        font-style: normal;
-      }
-
-      h3 {
-        font-size: 20px;
-        margin-left: -1.75px;
-        line-height: 1.15;
-        letter-spacing: -0.02em;
-        font-weight: 400;
-        font-style: normal;
       }
 
       /* Don't like this; special case. TODO extract */
       p code,
       li code {
         background-color: var(--code-background);
-        font-size: 19px;
         color: var(--code-color);
-        padding: 5px;
+        padding: 2px;
       }
 
       blockquote {
         border-left: 5px solid var(--accent-color-primary);
         padding-left: 10px;
-        margin-left: 10px;
-      }
-
-      blockquote,
-      blockquote p {
         font-style: oblique;
-        font-weight: 400;
-        font-size: 20px;
       }
 
       /*

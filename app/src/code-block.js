@@ -33,7 +33,7 @@ class CodeBlock extends LitElement {
   }
 
   async __loadLanguage() {
-    await __import(`../node_modules/prismjs/components/prism-${this.lang}.min.js`);
+    await import(`../node_modules/prismjs/components/prism-${this.lang}.min.js`);
   }
 
   static get styles() {

@@ -1,6 +1,23 @@
 import { LitElement, html } from 'lit-element';
 
 class BlogNetworkWarning extends LitElement {
+  static get properties() {
+    return {
+      availableUrls: {
+        type: Array,
+      },
+      hidden: {
+        type: Boolean,
+        reflect: true,
+      },
+    };
+  }
+  constructor() {
+    super();
+    this.availableUrls = [];
+    this.hidden = true;
+  }
+
   _tryReconnect() {
     this.dispatchEvent(
       new CustomEvent('try-reconnect', {
@@ -8,6 +25,30 @@ class BlogNetworkWarning extends LitElement {
         composed: true,
       }),
     );
+  }
+
+  __getDataCache() {
+    caches.open('data-cache').then(cache => {
+      cache.keys().then(keys => {
+        keys.forEach(async request => {
+          const cacheGet = await fetch(request);
+          const cacheData = await cacheGet.json();
+          if (cacheData.title) {
+            this.availableUrls.push(cacheData);
+
+            // ugly hack, I'm tired
+            await this.requestUpdate();
+          }
+        });
+      });
+    });
+  }
+
+  attributeChangedCallback(name, oldval, newval) {
+    if (name === 'hidden' && newval === null) {
+      this.__getDataCache();
+    }
+    super.attributeChangedCallback(name, oldval, newval);
   }
 
   render() {
@@ -43,12 +84,19 @@ class BlogNetworkWarning extends LitElement {
             </g>
           </svg>
           <h1>No internet connection.</h1>
+          <p>Argh! Is the wifi lying to you? Are you in a tunnel?</p>
           <p>
-            Argh! Is the wifi lying to you? Are you in a tunnel? Now would be the time to check if
-            your device is still connected to WiFi or your mobile network.
+            While you wait for your internet connection to come back online, here are some articles
+            and pages you've visited that you can read offline.
           </p>
+          ${this.availableUrls.map(
+            post => html`
+              <a href="${post.permalink}">
+                ${post.title}
+              </a>
+            `)}
         </div>
-        <button @click="${this._tryReconnect}">Try Again</button>
+        <button @click="${this._tryReconnect}">Reload and Try Connection Again</button>
       </div>
     `;
   }

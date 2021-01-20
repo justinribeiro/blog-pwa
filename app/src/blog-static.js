@@ -31,13 +31,10 @@ class BlogStatic extends BlogElement {
 
         .post-container a {
           min-height: 100px;
-          color: initial;
-          background-image: none;
-          background-repeat: initial;
-          background-position: initial;
           display: block;
           padding: 20px;
           border-bottom: none;
+          border-radius: 0.5rem;
           transition-property: background-color;
           transition-duration: 0.3s;
           will-change: background-color;
@@ -52,14 +49,15 @@ class BlogStatic extends BlogElement {
         .post-container a h3 {
           font-weight: 400;
           text-transform: uppercase;
-          font-size: 14px;
+          font-size: 0.85rem;
           margin-bottom: 0.5rem;
+          font-family: var( --font-family-sans-serif);
           color: var(--accent-color-secondary);
         }
 
         .post-container a:hover {
           text-decoration: none;
-          background-color: var(--hotpink);
+          background-color: hotpink;
         }
 
         .post-container a:hover h2,

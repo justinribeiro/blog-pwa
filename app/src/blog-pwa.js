@@ -72,6 +72,23 @@ class BlogPwa extends LitElement {
     }
   }
 
+  async __showDynamicModal(component, elementName) {
+    if (!customElements.get(elementName)) {
+      await import(component);
+    }
+
+    this.dispatchEvent(
+      new CustomEvent('modal-open', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          componentInject: elementName,
+          gcOnClose: true,
+        },
+      }),
+    );
+  }
+
   /**
    * Verify the state of the router outlet and then inject the or mount as
    * needed

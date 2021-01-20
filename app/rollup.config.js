@@ -1,8 +1,7 @@
-const customMinifyCss = require('@open-wc/building-utils/custom-minify-css');
-const resolve = require('rollup-plugin-node-resolve');
-const { terser } = require('rollup-plugin-terser');
-const babel = require('rollup-plugin-babel');
-const filesize = require('rollup-plugin-filesize');
+import customMinifyCss from '@open-wc/building-utils/custom-minify-css';
+import resolve from '@rollup/plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
+import babel from '@rollup/plugin-babel';
 
 // This is my light spin off of the open-wc building-rollup package:
 // https://github.com/open-wc/open-wc/tree/master/packages/building-rollup If
@@ -10,8 +9,8 @@ const filesize = require('rollup-plugin-filesize');
 // base setup with great success in other projects)
 export default {
   input: [
-    'src/app.js',
     'src/blog-pwa.js',
+    'src/blog-element.js',
     'src/blog-static.js',
     'src/blog-entry.js',
     'src/lazy-resources.js',
@@ -24,9 +23,9 @@ export default {
   treeshake: true,
   output: {
     dir: 'build/default/src',
+    chunkFileNames: '[name].js',
     format: 'es',
     sourcemap: true,
-    dynamicImportFunction: '__import',
   },
   plugins: [
     resolve(),
@@ -67,19 +66,10 @@ export default {
       compress: {
         inline: 0,
         drop_console: true,
-        ecma: 8,
-      },
-      mangle: {
-        safari10: true,
-        reserved: ['__import'],
+        ecma: 2019,
       },
       output: {
         comments: false,
-      },
-    }),
-    filesize({
-      render: function (options, bundle, { fileName, gzipSize }) {
-        return `${fileName}: ${gzipSize}`;
       },
     }),
   ],
