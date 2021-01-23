@@ -252,16 +252,15 @@ class BlogEntry extends BlogElement {
         }
 
         .dotDivider {
-          padding-right: 0.45em;
-          padding-left: 0.45em;
+          padding: 0 0.5rem;
         }
 
         .dotDivider:after {
-          content: '·';
+          content: '•';
         }
 
         .reads {
-          margin-top: 10px;
+          padding: 0.75rem 0;
         }
 
         #metaShare {
@@ -282,7 +281,6 @@ class BlogEntry extends BlogElement {
 
         label {
           display: block;
-          margin-bottom: 0.5em;
         }
 
         input,
@@ -294,7 +292,7 @@ class BlogEntry extends BlogElement {
           width: 100%;
           border: 1px solid #b0b0b0;
           box-sizing: border-box;
-          margin-bottom: 0.5em;
+          font-size: 1rem;
         }
 
         .subheadline {
@@ -326,7 +324,8 @@ class BlogEntry extends BlogElement {
         @media (max-width: 767px) {
           #main iframe,
           #main img,
-          #main lite-youtube {
+          #main lite-youtube,
+          #main video {
             max-width: initial;
             width: 100vw;
             position: relative;

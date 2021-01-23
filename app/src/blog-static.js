@@ -6,9 +6,6 @@ class BlogStatic extends BlogElement {
     return [
       super.styles,
       css`
-        #shoutout {
-          margin-bottom: 30px;
-        }
         #shoutout p {
           font-size: 28px;
         }
@@ -51,7 +48,7 @@ class BlogStatic extends BlogElement {
           text-transform: uppercase;
           font-size: 0.85rem;
           margin-bottom: 0.5rem;
-          font-family: var( --font-family-sans-serif);
+          font-family: var(--font-family-sans-serif);
           color: var(--accent-color-secondary);
         }
 

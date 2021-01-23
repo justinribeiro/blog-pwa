@@ -262,7 +262,7 @@ export default class BlogElement extends LitElement {
       }
 
       h1 {
-        font-size: 1.75rem;
+        font-size: 2.5rem;
         margin-top: 1rem;
       }
 
@@ -272,9 +272,9 @@ export default class BlogElement extends LitElement {
         font-family: var(--font-family-serif);
         margin: 0;
         color: var(--primary-text-color);
-        margin: 0.625rem 0 1.813rem;
-        font-size: 1.35rem;
-        line-height: 1.58;
+        padding-bottom: 1rem;
+        font-size: 1.313rem;
+        line-height: 1.75;
         letter-spacing: -0.003em;
       }
 
@@ -316,6 +316,11 @@ export default class BlogElement extends LitElement {
         #main {
           margin: auto;
           max-width: 800px;
+        }
+
+        h1 {
+          font-size: 1.75rem;
+          margin-top: 1rem;
         }
 
         p,
