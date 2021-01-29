@@ -142,6 +142,19 @@ validate_tools() {
   fi
 }
 
+# this is hacky and very specific; I should just write a rollup plugin and be
+# smarter about this...but it'll work in the pinch for now
+generate_manifest() {
+  echo "{" >> ./ship/dist/push_manifest.json
+  for i in $(find ./ship/dist/src -name 'blog-*.js' -exec basename {} \;); do
+    echo "\"/src/$i\":{\"type\": \"script\"}," >> ./ship/dist/push_manifest.json
+  done
+  # soooo hacky, remove the last comman from the json
+  truncate -s-2 ./ship/dist/push_manifest.json
+  echo "" >> ./ship/dist/push_manifest.json
+  echo "}" >> ./ship/dist/push_manifest.json
+}
+
 case $target in
   (dev)
     print "${BOLD_YELLOW}BUILD TARGET = DEV${RESET}"
@@ -233,7 +246,10 @@ case $target in
     print "${BOLD_BLUE}STAGE 8: Copy frontend build /ship${RESET}"
     cp -R app/build/default ship/dist;
 
-    # Step 8: run app engine dev server to test
+    print "${BOLD_BLUE}STAGE 9: Generate preload manifest${RESET}"
+    generate_manifest $*
+
+    # run app engine dev server to test
     print "${BOLD_GREEN}/ship built and ready for deploy${RESET}"
 
     ;;

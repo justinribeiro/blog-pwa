@@ -12,6 +12,8 @@
     "@open-wc/building-utils": "^2.11.0",
     "@open-wc/eslint-config": "^2.0.6",
     "@open-wc/prettier-config": "^1.1.0",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-node-resolve": "^11.1.0",
     "babel-plugin-bundled-import-meta": "^0.3.1",
     "babel-plugin-template-html-minifier": "^4.0.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
@@ -25,15 +27,14 @@
     "http2-push-manifest": "^1.0.1",
     "prettier": "^2.0.1",
     "rollup": "^2.37.0",
-    "@rollup/plugin-babel": "^5.2.2",
     "rollup-plugin-filesize": "^9.1.0",
-    "@rollup/plugin-node-resolve": "^11.1.0",
+    "rollup-plugin-size": "^0.2.2",
     "rollup-plugin-terser": "^7.0.2",
     "stylelint": "^13.3.3",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-recommended": "^3.0.0",
     "web-component-analyzer": "^1.0.3",
-    "workbox-cli": "^5.0.0"
+    "workbox-cli": "^6.0.0"
   },
   "scripts": {
     "dev": "yarn es-dev-server --port 8081 --app-index index.html --node-resolve --open --watch",
@@ -46,14 +47,15 @@
     "lint": "yarn lint:eslint && yarn lint:prettier && yarn lint:css",
     "format": "yarn format:prettier",
     "build:clean": "rm -rf build && mkdir -p build/default/src && mkdir build/default/node_modules",
-    "build:copyDeps": "cp -r node_modules/intersection-observer/ build/default/node_modules && cp -r node_modules/prismjs/ build/default/node_modules && cp -r src/polyfill-dynamicimport.js build/default/src && cp -r src/polyfill-webcomponents.js build/default/src",
-    "build:copyRoot": "cp index.html build/default && cp robots.txt build/default && cp manifest.json build/default && cp push_manifest.json build/default",
-    "build:copyData": "cp -r images/ build/default && cp -r data/ build/default && cp -r helpers/ build/default",
+    "build:copyDeps": "cp -r node_modules/intersection-observer/ build/default/node_modules && cp -r node_modules/prismjs/ build/default/node_modules",
+    "build:copyRoot": "cp index.html build/default && cp robots.txt build/default && cp manifest.json build/default",
+    "build:copyData": "cp -r data/ build/default && cp -r helpers/ build/default",
     "build:minify": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output build/default/index.html build/default/index.html",
     "build:minify:static": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output build/default/helpers/static.html build/default/helpers/static.html",
     "build:modules": "yarn rollup -c",
     "build:sw": "yarn workbox generateSW workbox-config.js",
-    "build:dist": "yarn build:clean && yarn build:copyDeps && yarn build:copyRoot && yarn build:copyData && yarn build:minify && yarn build:minify:static && yarn build:modules && yarn build:sw"
+    "build:replacechunk": "find build/default/src -name 'blog-pwa-*.js' -exec basename {} \\; | xargs -I '{}' sed -i 's/blog-pwa.js/{}/g' build/default/index.html",
+    "build:dist": "yarn build:clean && yarn build:copyDeps && yarn build:copyRoot && yarn build:copyData && yarn build:minify && yarn build:minify:static && yarn build:modules && yarn build:replacechunk && yarn build:sw"
   },
   "bugs": {
     "url": "https://github.com/justinribeiro/blog-pwa/issues"
@@ -66,6 +68,7 @@
     "lit-element": "^2.2.1",
     "prismjs": "^1.21.0",
     "pwa-helpers": "^0.9.1",
+    "web-vitals": "^1.1.0",
     "workbox-window": "^5.0.0"
   },
   "eslintConfig": {

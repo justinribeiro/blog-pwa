@@ -93,8 +93,8 @@ if [[ ( $uploadgsutil ) ]]
 then
   echo ${BOLD_BLUE}STEP 3: Uploading to Google Cloud Storage...:${RESET}
   for width in ${widths[@]}; do
-    gsutil cp $outputpath-$width.$fileType $gsPath
-    gsutil cp $outputpath-$width.webp $gsPath
+    gsutil -h "Cache-Control:public,max-age=31536000,immutable" cp $outputpath-$width.$fileType $gsPath
+    gsutil -h "Cache-Control:public,max-age=31536000,immutable" cp $outputpath-$width.webp $gsPath
     gsutil acl ch -u AllUsers:R $gsPath$basefilename-$width.$fileType
     gsutil acl ch -u AllUsers:R $gsPath$basefilename-$width.webp
   done

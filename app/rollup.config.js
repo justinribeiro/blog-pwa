@@ -2,6 +2,7 @@ import customMinifyCss from '@open-wc/building-utils/custom-minify-css';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import babel from '@rollup/plugin-babel';
+import size from 'rollup-plugin-size';
 
 // This is my light spin off of the open-wc building-rollup package:
 // https://github.com/open-wc/open-wc/tree/master/packages/building-rollup If
@@ -10,20 +11,12 @@ import babel from '@rollup/plugin-babel';
 export default {
   input: [
     'src/blog-pwa.js',
-    'src/blog-element.js',
-    'src/blog-static.js',
-    'src/blog-entry.js',
-    'src/lazy-resources.js',
-    'src/analytics.js',
-    'src/3d-utils.js',
-    'src/code-block.js',
-    'src/lite-youtube.js',
-    'src/share-to-mastodon.js',
   ],
+  preserveEntrySignatures: false,
   treeshake: true,
   output: {
     dir: 'build/default/src',
-    chunkFileNames: '[name].js',
+    entryFileNames: '[name]-[hash].js',
     format: 'es',
     sourcemap: true,
   },
@@ -72,5 +65,6 @@ export default {
         comments: false,
       },
     }),
+    size({ publish: true }),
   ],
 };

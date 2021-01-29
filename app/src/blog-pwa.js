@@ -126,7 +126,7 @@ class BlogPwa extends LitElement {
    */
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
-      import('./lazy-resources.js').then(_ => {
+      import('./blog-lazy-load.js').then(_ => {
         this.__loadFonts();
         if ('serviceWorker' in navigator) {
           const wb = new Workbox('/service-worker.js');
@@ -151,7 +151,7 @@ class BlogPwa extends LitElement {
               wb.addEventListener('controlling', event => {
                 window.location.reload();
               });
-              wb.messageSW({ type: 'SKIP_WAITING' });
+              wb.messageSkipWaiting();
             });
           });
 
@@ -209,7 +209,7 @@ class BlogPwa extends LitElement {
   async __importAnalytics() {
     const module = await import('./analytics.js');
     module.initAnalytics();
-    module.initPerformance();
+    module.initCwp();
   }
 
   _setSnackBarText(text, duration, hold, callback) {

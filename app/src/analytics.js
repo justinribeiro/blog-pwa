@@ -1,13 +1,4 @@
 const analyticsId = 'UA-96204-3';
-const performanceConfig = {
-  apiKey: 'AIzaSyCL3JHSIHyP9si05JGojes1ovaZGGQLEww',
-  authDomain: 'justinribeiro-web.firebaseapp.com',
-  databaseURL: 'https://justinribeiro-web.firebaseio.com',
-  projectId: 'justinribeiro-web',
-  storageBucket: 'justinribeiro-web.appspot.com',
-  messagingSenderId: '975113193471',
-  appId: '1:975113193471:web:aafc5bbe0db1d350',
-};
 
 function initAnalytics() {
   (function (i, s, o, g, r, a, m) {
@@ -43,48 +34,6 @@ function initAnalytics() {
   });
 }
 
-function initPerformance() {
-  let interval;
-
-  (function (sa) {
-    function load(f) {
-      const a = document.createElement('script');
-      a.async = true;
-      a.src = f;
-      const s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(a, s);
-    }
-    load(sa);
-  })('https://www.gstatic.com/firebasejs/6.6.1/firebase-performance-standalone.js');
-
-  const start = () => {
-    if (window.firebase) {
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(
-          () => {
-            window.firebase.initializeApp(performanceConfig).performance();
-          },
-          {
-            timeout: 2000,
-          },
-        );
-      } else {
-        window.firebase.initializeApp(performanceConfig).performance();
-      }
-      if (interval) {
-        clearInterval(interval);
-      }
-    }
-  };
-  // Firebase wants to live higher on the window.onload, but tracing tells me
-  // to load later to gain some perf so let's do this
-  if (window.firebase) {
-    start();
-  } else {
-    interval = setInterval(start, 1000);
-  }
-}
-
 function __trackError(error, fieldsObj = {}) {
   ga(
     'send',
@@ -101,4 +50,24 @@ function __trackError(error, fieldsObj = {}) {
   );
 }
 
-export { initAnalytics, initPerformance };
+function __trackCwpMetric({ name, delta, id }) {
+  ga('send', 'event', {
+    eventCategory: 'Web Vitals',
+    eventAction: name,
+    eventLabel: id,
+    eventValue: Math.round(name === 'CLS' ? delta * 1000 : delta),
+    nonInteraction: true,
+    transport: 'beacon',
+  });
+}
+
+async function initCwp() {
+  const module = await import('web-vitals');
+  module.getCLS(__trackCwpMetric);
+  module.getFID(__trackCwpMetric);
+  module.getLCP(__trackCwpMetric);
+  module.getTTFB(__trackCwpMetric);
+  module.getFCP(__trackCwpMetric);
+}
+
+export { initAnalytics, initCwp };

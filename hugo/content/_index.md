@@ -1,7 +1,7 @@
 ---
 date: 2020-01-10T15:00:00-08:00
 title: "Words, Letters, and Thoughts"
-description: "Manager. Software Engineer. Film Photographer. Maker. Speaker. Writer. Dad. Coach. Occasionally funny."
+description: "Manager. Maker. Film Photographer. Recovering Software Engineer. Speaker. Writer. Dad. Coach. Occasionally funny."
 sitemap:
   changefreq: "weekly"
   priority: 0.8

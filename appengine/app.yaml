@@ -18,7 +18,7 @@ handlers:
   static_files: dist/images/\1
   upload: dist/images/(.*)
   secure: always
-  expiration: "180d"
+  expiration: "365d"
 
 - url: /node_modules
   static_dir: dist/node_modules
@@ -27,6 +27,7 @@ handlers:
 - url: /src
   static_dir: dist/src
   secure: always
+  expiration: "365d"
 
 - url: /robots.txt
   static_files: dist/robots.txt

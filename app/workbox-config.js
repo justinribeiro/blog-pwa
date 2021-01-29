@@ -8,7 +8,7 @@ module.exports = {
   cleanupOutdatedCaches: true,
   cacheId: 'BLOG-PWA',
   globDirectory: './build/default/',
-  globPatterns: ['index.html', 'src/blog-pwa.js', 'src/blog-static.js', 'src/blog-entry.js'],
+  globPatterns: ['index.html', '**/blog-*.js'],
   navigateFallback: '/index.html',
   navigateFallbackAllowlist: [/^(?!.*\.html).*/],
   navigateFallbackDenylist: [/xml/],
