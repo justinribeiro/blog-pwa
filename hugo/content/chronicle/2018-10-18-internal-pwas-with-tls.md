@@ -2,9 +2,7 @@
 date: 2018-10-18T08:00:00-08:00
 title: "Running progressive web apps on your intranet with TLS from Lets Encrypt"
 description: "With progressive web apps more advanced features such as service workers and background sync, we need a way for our intranet web applications to run on TLS with ease."
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20181018-tls-pwa-twitter-1024x535.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20181018-tls-pwa-fb-1200x630.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20181018-tls-pwa-gplus-800x360.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20181018-tls-pwa-twitter-1024x535.jpg"
 tags:
 - Web
 ---

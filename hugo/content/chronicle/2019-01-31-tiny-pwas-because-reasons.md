@@ -2,9 +2,7 @@
 date: 2019-01-31T08:00:00-08:00
 title: "Tiny PWAs and why I keep building them"
 description: "The search for useful tiny apps is hard, but progressive web apps and the growing api surface on the web platform are starting to fill the gap."
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190131-car-dashboard-pwa.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190131-car-dashboard-pwa.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190131-car-dashboard-pwa.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190131-car-dashboard-pwa.jpg"
 tags:
 - Web
 ---

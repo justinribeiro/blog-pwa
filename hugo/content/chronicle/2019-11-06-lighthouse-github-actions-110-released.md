@@ -22,9 +22,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
 </figcaption>
 </figure>'
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png"
 tags:
 - Web
 ---

@@ -2,9 +2,7 @@
 title: "code-block v0.1 web component released"
 date: 2019-04-16T21:47:30-07:00
 description: "Based on Prism.js and LitElement, code-block makes dropping code in simple."
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190416-code-block-custom.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190416-code-block-custom.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190416-code-block-custom.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190416-code-block-custom.jpg"
 tags:
 - Web
 ---

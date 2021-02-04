@@ -2,9 +2,7 @@
 date: 2017-01-13T15:59:02-08:00
 title: "Experimenting with a progressive web app blog"
 description: "An experiment in mixing Hugo and Polymer PRPL into a progressive web app blog."
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-twitter-1024x535.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-fb-1200x630.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-gplus-800x360.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20170113-trace-twitter-1024x535.jpg"
 tags:
 - Web
 ---
@@ -333,8 +331,8 @@ We can resolve this however. Since we have seperation of our views and data, we 
   &lt;meta name=&quot;twitter:title&quot; content=&quot;{{ title }} - Justin Ribeiro&quot;&gt;
   &lt;meta name=&quot;twitter:description&quot; content=&quot;{{ description }}&quot;&gt;
   &lt;meta name=&quot;twitter:creator&quot; content=&quot;@justinribeiro&quot;&gt;
-  {% if imagetwitter %}
-  &lt;meta name=&quot;twitter:image:src&quot; content=&quot;{{ imagetwitter }}&quot;&gt;
+  {% if socialimage %}
+  &lt;meta name=&quot;twitter:image:src&quot; content=&quot;{{ socialimage }}&quot;&gt;
   {% endif %}
 
   &lt;meta property=&quot;og:type&quot; content=&quot;article&quot; /&gt;
@@ -382,7 +380,7 @@ Yet there are some things hugo is not yet designed to do. Ala, spitting out JSON
   &quot;readingtime&quot;: &quot;{{ .ReadingTime }}&quot;,
   &quot;permalink&quot;: &quot;{{ .Permalink }}&quot;,
   &quot;filename&quot;: &quot;{{ .File.Path }}&quot;,
-  &quot;imagetwitter&quot;: &quot;{{ $.Params.imagetwitter }}&quot;,
+  &quot;socialimage&quot;: &quot;{{ $.Params.socialimage }}&quot;,
   &quot;imagefb&quot;: &quot;{{ $.Params.imagefb }}&quot;,
   &quot;imagegplus&quot;: &quot;{{ $.Params.imagegplus }}&quot;
 }

@@ -2,9 +2,7 @@
 title: "Modifying the Filter Holder on the Beseler 45MX enlarger to fit Ilford Multigrade filters"
 description: "A new set of Ilford Multigrade filters that wouldn't fit my under lens holder wasn't a cause for alarm. Someone hand me a cut saw."
 date: 2019-12-11T16:23:36-08:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191211-45mx-filter-holder-cut-01-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191211-45mx-filter-holder-cut-01-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191211-45mx-filter-holder-cut-01-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191211-45mx-filter-holder-cut-01-800.jpg"
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>
     <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191211-45mx-filter-holder-cut-01-640.webp 640w,

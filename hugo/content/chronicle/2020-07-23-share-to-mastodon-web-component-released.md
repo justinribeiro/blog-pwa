@@ -2,9 +2,7 @@
 title: "share-to-mastodon web component released"
 description: "Having a share button on your website for Mastodon is hard given it's decentralized nature. With my latest tiny web component it's now easier to give users the option."
 date: 2020-07-23T12:37:48-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20200723-fancy-button-800.png"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200723-fancy-button-800.png"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200723-fancy-button-800.png"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200723-fancy-button-800.png"
 tags:
   - Web
   - wc

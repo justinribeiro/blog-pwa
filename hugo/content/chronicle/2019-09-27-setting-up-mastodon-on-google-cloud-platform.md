@@ -10,6 +10,8 @@ Setting up Mastodon on Google Cloud Platform has been on my list of things to do
 
 > Note: this is what I consider the "friends and family" edition. If I wanted more scale, I'd do this in Kubernetes (which I may do anyhow, just because).
 
+> Addendum February 2021: Updated article with some of the version-specific revisions as part of Mastodon 3.3.x.
+
 I wanted something a little more robust then a single server setup which I find too brittle, so I settled on:
 
 1. Media stored on Google Cloud Storage.
@@ -114,7 +116,7 @@ Okay, so now you're staring at this command prompt. We have many things to insta
 
 1. Install Node.
 {{< codeblock lang="bash" >}}
-jdr@rsms:~$ curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+jdr@rsms:~$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 {{< /codeblock >}}
 2. Install Yarn.
 {{< codeblock lang="bash" >}}
@@ -124,12 +126,14 @@ jdr@rsms:~$ sudo apt-get update && sudo apt-get install yarn
 {{< /codeblock >}}
 3. Install a whole lot of dependencies. It took me a little digging to reconcile this list from various sources, but it works okay so we're going to roll with it.
 {{< codeblock lang="bash" >}}
-jdr@rsms:~$ sudo apt install imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core g++ libprotobuf-dev protobuf-compiler pkg-config nodejs gcc autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev nginx redis-server redis-tools postgresql postgresql-contrib letsencrypt yarn libidn11-dev libicu-dev
+jdr@rsms:~$ sudo apt install imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core g++ libprotobuf-dev protobuf-compiler pkg-config nodejs gcc autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev nginx redis-server redis-tools postgresql postgresql-contrib letsencrypt yarn libidn11-dev libicu-dev libjemalloc-dev
 {{< /codeblock >}}
 4. Now let's set up our user account where all this is going to live.
 {{< codeblock lang="bash" >}}
 jdr@rsms:~$ sudo adduser mastodon
 {{< /codeblock >}}
+
+> Addendum January 2021: Depending on what version of Debian you're on for the your instance, you may run into an issue with Redis being the incorrect version for the latest versions of Mastodon (Redis 4.x+). Note, the install won't fail, but your instance will not function correctly because the jobs won't run. This is not clear in the documentation pre-requisites at all. If that is the case, you can pull the latest redis and redis-tools by adding the relevant debian backports for your version (in my case on the bump to 3.2.x+, I needed stretch-backports/main to pull redis 5.x).
 
 Now let's switch over to our new user, and setup some more.
 
@@ -175,8 +179,8 @@ rbenv ()
 5. Now let's build Ruby.
 {{< codeblock lang="bash" >}}
 mastodon@rsms:~$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-mastodon@rsms:~$ rbenv install 2.6.1
-mastodon@rsms:~$ rbenv global 2.6.1
+mastodon@rsms:~$ rbenv install 2.7.2
+mastodon@rsms:~$ rbenv global 2.7.2
 {{< /codeblock >}}
 
 Once that finishes compiling, we move on to install Mastodon.

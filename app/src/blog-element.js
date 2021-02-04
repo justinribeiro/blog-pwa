@@ -148,9 +148,9 @@ export default class BlogElement extends LitElement {
 
   /**
    *
-   * @param {object} {{title, description, url, imagetwitter, imagefb}}
+   * @param {object} {{title, description, url, socialimage}}
    */
-  _setPageMetaData({ title, description, url, imagetwitter, imagefb }) {
+  _setPageMetaData({ title, description, url, socialimage }) {
     // Flip the metadata on load
     // Note, Google Search will index this
     document.title = `${title} - Justin Ribeiro`;
@@ -165,11 +165,10 @@ export default class BlogElement extends LitElement {
     }
 
     const fallbackImg = `${document.location}images/manifest/me-2018-192.png`;
-    imagetwitter = imagetwitter || fallbackImg;
-    imagefb = imagefb || fallbackImg;
-    if (imagetwitter) {
-      this._setMeta('property', 'twitter:image:src', imagetwitter);
-      this._setMeta('property', 'og:image', imagefb);
+    socialimage = socialimage || fallbackImg;
+    if (socialimage) {
+      this._setMeta('property', 'twitter:image:src', socialimage);
+      this._setMeta('property', 'og:image', socialimage);
     }
 
     url = url || document.location.href;

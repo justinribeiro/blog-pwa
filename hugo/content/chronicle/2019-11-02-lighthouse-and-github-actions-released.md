@@ -25,9 +25,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 </figure>'
 tags:
 - Web
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
 ---
 
 I'm just going to say it: I can pretty much integrate [Lighthouse](https://github.com/GoogleChrome/lighthouse) anywhere. I've put in [tests](https://github.com/justinribeiro/lighthouse-jest-example), I've written it into [Visual Studio code tasks](https://justinribeiro.com/chronicle/2018/06/26/running-lighthouse-audits-in-vs-code-via-tasks/), I've wired it into [docker](https://hub.docker.com/r/justinribeiro/lighthouse/), I made it dance at [Chrome Dev Summit on giant screens as a game](https://stickmanventures.com/blog/2016/11/21/demonstrating-web-performance-at-chrome-dev-summit-2016/), I've even made a [few commits here and there](https://github.com/GoogleChrome/lighthouse/pulls?q=is%3Apr+author%3Ajustinribeiro+is%3Aclosed).

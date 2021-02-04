@@ -2,9 +2,7 @@
 title: "Koi Pond Adventure: Constructing the Bog Filter"
 description: "A month into shoveling rock and reclaiming lumber through the affects of heavy wildfires in California, the bog filter is setup for plumbing."
 date: 2020-09-17T08:13:06-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20200903-rock-levels-pipe-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200903-rock-levels-pipe-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200903-rock-levels-pipe-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200903-rock-levels-pipe-800.jpg"
 tags:
   - maker
   - pond

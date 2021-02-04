@@ -2,9 +2,7 @@
 title: "The Difference Between Your Job and My Profession"
 description: "Sometimes a job is a more than a job. Sometimes that job is the thing you have spent a great deal of your life trying to perfect. Congratulations, you have found yourself a profession whether you like it or not."
 date: 2019-09-23T16:52:49-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg"
 tags:
 - Personal
 - Web

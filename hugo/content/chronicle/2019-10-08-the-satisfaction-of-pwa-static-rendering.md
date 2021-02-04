@@ -2,9 +2,7 @@
 title: "The Four Cases of Progressive Rendering Fallbacks for Progressive Web Apps"
 description: "Trying to determine exactly how progressive you PWA needs to be can be a challenge. The following four cases defined in this article are what I strive to build for content heavy PWAs."
 date: 2019-10-08T09:46:13-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191008-progressive-web-for-the-win-lynx-edition.png"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191008-progressive-web-for-the-win-lynx-edition.png"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191008-progressive-web-for-the-win-lynx-edition.png"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191008-progressive-web-for-the-win-lynx-edition.png"
 tags:
 - Web
 ---

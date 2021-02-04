@@ -12,17 +12,17 @@
     <meta itemprop="name" content="{{ title }} - Justin Ribeiro" />
     <meta itemprop="headline" content="{{ title }} - Justin Ribeiro" />
     <meta itemprop="description" content="{{ description }}" />
-    {% if imagegplus %}
-    <meta itemprop="image" content="{{ imagegplus }}" />
-    {% endif %}
+    {% if socialimage %}
+    <meta itemprop="image" content="{{ socialimage }}" />
+    {% socialimage %}
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@justinribeiro" />
     <meta name="twitter:title" content="{{ title }} - Justin Ribeiro" />
     <meta name="twitter:description" content="{{ description }}" />
     <meta name="twitter:creator" content="@justinribeiro" />
-    {% if imagetwitter %}
-    <meta name="twitter:image:src" content="{{ imagetwitter }}" />
+    {% if socialimage %}
+    <meta name="twitter:image:src" content="{{ socialimage }}" />
     {% endif %}
 
     <meta property="og:type" content="article" />
@@ -33,8 +33,8 @@
     <meta property="og:url" content="{{ permalink }}" />
     <meta property="article:published_time" content="{{ datePublished }}" />
     <meta property="article:modified_time" content="{{ dateModified }}" />
-    {% if imagefb %}
-    <meta property="og:image" content="{{ imagefb }}" />
+    {% if socialimage %}
+    <meta property="og:image" content="{{ socialimage }}" />
     {% endif %}
 
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>

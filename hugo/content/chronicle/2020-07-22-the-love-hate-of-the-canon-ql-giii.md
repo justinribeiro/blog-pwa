@@ -2,9 +2,7 @@
 title: "My Love-Hate Relationship with the Canon QL17 G-III"
 description: "Lovely images, a better quick loader than my Leica, and easy to handle, you'd think I'd be packing the Canon QL17 G-III all over town. Our relationship it turns out is complicated."
 date: 2020-07-22T10:57:04-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20200722-front-lens-element-out-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200722-front-lens-element-out-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200722-front-lens-element-out-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200722-front-lens-element-out-800.jpg"
 tags:
   - photography
   - maker

@@ -4,15 +4,15 @@
 #
 # Master should be greater than 2000x1300; script will center crop (don't put
 # focus on edges of frame)
-# 
+#
 # ./gensocials.zsh -i ~/my-master.jpg -o ~/20160501-title -u true
-# 
+#
 # Outputs for paste into Hugo md blog post file:
-# 
-# imagetwitter = "https://storage.googleapis.com/jdr-public-imgs/blog/20160501-title-twitter-1024x535.jpg"
+#
+# socialimage = "https://storage.googleapis.com/jdr-public-imgs/blog/20160501-title-twitter-1024x535.jpg"
 # imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/20160501-title-fb-1200x630.jpg"
 # imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/20160501-title-gplus-800x360.jpg"
-# 
+#
 
 autoload colors
 if [[ "$terminfo[colors]" -gt 8 ]]; then
@@ -75,6 +75,6 @@ then
 fi
 
 echo ${BOLD_RED}ACTION: Copy/Paste into YAML FrontMatter:${RESET}
-echo 'imagetwitter = "https://storage.googleapis.com/jdr-public-imgs/blog/'$basefilename'-twitter-1024x535.jpg"'
+echo 'socialimage = "https://storage.googleapis.com/jdr-public-imgs/blog/'$basefilename'-twitter-1024x535.jpg"'
 echo 'imagefb = "https://storage.googleapis.com/jdr-public-imgs/blog/'$basefilename'-fb-1200x630.jpg"'
 echo 'imagegplus = "https://storage.googleapis.com/jdr-public-imgs/blog/'$basefilename'-gplus-800x360.jpg"'

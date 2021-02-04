@@ -2,9 +2,7 @@
 title: "Six Months Using Firebase Web Performance Monitoring"
 description: "Tracking your web performance is the key to understanding how users are experiencing your site in the wild. After six months of using Firebase Web Performance monitoring, should you use it on your next project?"
 date: 2019-10-28T07:46:28-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-02-800.png"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-02-800.png"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-02-800.png"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-02-800.png"
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
 <picture>
   <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20191029-firebase-webperf-01-640.webp 640w,

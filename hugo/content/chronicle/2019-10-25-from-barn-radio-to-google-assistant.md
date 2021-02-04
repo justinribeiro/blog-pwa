@@ -23,9 +23,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
 </figcaption>
 </figure>'
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191025-radio-repair-01-800.jpg"
 tags:
 - IoT
 - maker

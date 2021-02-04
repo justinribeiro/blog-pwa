@@ -2,9 +2,7 @@
 date: 2018-07-03T08:00:00-08:00
 title: "How to debug a custom language service plugin for VS Code"
 description: "10 steps, three builds, and a cup of coffee later and we're debugging some language server action in VS Code."
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-twitter-1024x535.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-fb-1200x630.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-gplus-800x360.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20180073-vscode-langdebug-twitter-1024x535.jpg"
 tags:
 - Web
 ---

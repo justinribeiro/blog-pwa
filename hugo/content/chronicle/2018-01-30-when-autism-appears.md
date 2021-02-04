@@ -2,9 +2,7 @@
 date: 2018-01-30T08:00:00-08:00
 title: "When autism appears"
 description: "Autism in twins was not something that ever crossed my mind. When it finally did, I struggled to reconcile the diagnosis."
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180130-ribeiro-twins-twitter-1024x535.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180130-ribeiro-twins-fb-1200x630.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180130-ribeiro-twins-gplus-800x360.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20180130-ribeiro-twins-twitter-1024x535.jpg"
 tags:
 - Personal
 - Autism

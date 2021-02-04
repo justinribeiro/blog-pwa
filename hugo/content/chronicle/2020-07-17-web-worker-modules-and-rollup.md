@@ -2,9 +2,7 @@
 title: "Building module web workers for cross browser compatibility with rollup"
 description: "With module based web workers not available in all browsers, that shouldn't stop us from enjoying writing ESM-based workers that just work. Let's explore an old concept with a new tooling twist."
 date: 2020-07-17T10:30:01-08:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20200717-devtools-worker-blob-800.png"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200717-devtools-worker-blob-800.png"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200717-devtools-worker-blob-800.png"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200717-devtools-worker-blob-800.png"
 tags:
   - Web
 ---

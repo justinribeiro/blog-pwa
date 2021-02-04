@@ -2,9 +2,7 @@
 date: 2018-07-06T08:00:00-08:00
 title: "Added CSS quickfix and error reporting to lit-html-plugin for VS Code"
 description: "With version 1.6.0, CSS quickfix and error reporting becomes part our of lit-html tagged template editing experience."
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180706-vscode-cssquick-twitter-1024x535.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180706-vscode-cssquick-fb-1200x630.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180706-vscode-cssquick-gplus-800x360.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20180706-vscode-cssquick-twitter-1024x535.jpg"
 tags:
 - Web
 ---

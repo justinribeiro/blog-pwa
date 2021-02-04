@@ -33,6 +33,7 @@ class SnackBar extends LitElement {
           background: transparent;
           font-size: 1em;
           padding: 0;
+          margin-left: 0.25rem;
         }
 
         @media (min-width: 460px) {

@@ -24,9 +24,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
   </figcaption>
 </figure>
 '
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20200714-web-comp-drag-800.png"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200714-web-comp-drag-800.png"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200714-web-comp-drag-800.png"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200714-web-comp-drag-800.png"
 tags:
   - Web
 ---

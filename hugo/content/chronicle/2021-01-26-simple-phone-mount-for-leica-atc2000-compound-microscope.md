@@ -26,9 +26,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
   </figcaption>
 </figure>
 '
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20210126-leica-atc-mount-on-scope-with-phone-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20210126-leica-atc-mount-on-scope-with-phone-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20210126-leica-atc-mount-on-scope-with-phone-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210126-leica-atc-mount-on-scope-with-phone-800.jpg"
 tags:
   - maker
   - science

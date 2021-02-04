@@ -15,9 +15,7 @@
   "words": "{{ .FuzzyWordCount }}",
   "readingtime": "{{ .ReadingTime }}",
   "permalink": "{{ .Permalink }}",
-  "imagetwitter": "{{ $.Params.imagetwitter }}",
-  "imagefb": "{{ $.Params.imagefb }}",
-  "imagegplus": "{{ $.Params.imagegplus }}",
+  "socialimage": "{{ $.Params.socialimage }}",
   "posts": [ {{ range $i, $e := .Data.Pages}}
   {{if $i}}, {{end}}{{ .Render "li"}}
 {{end}}

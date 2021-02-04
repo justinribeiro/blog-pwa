@@ -152,6 +152,9 @@ class BlogPwa extends LitElement {
                 window.location.reload();
               });
               wb.messageSkipWaiting();
+
+              // failsafe remove snackbar
+              this.shadowRoot.querySelector('snack-bar').removeAttribute('active');
             });
           });
 

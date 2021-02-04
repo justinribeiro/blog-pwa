@@ -118,7 +118,7 @@ We settled on this for the corp site (a more slim example can be found in my [zu
   &lt;meta name=&quot;twitter:title&quot; content=&quot;{{ title }} - Stickman Ventures&quot;&gt;
   &lt;meta name=&quot;twitter:description&quot; content=&quot;{{ description }}&quot;&gt;
   &lt;meta name=&quot;twitter:creator&quot; content=&quot;{{ author.twitter }}&quot;&gt;
-  &lt;meta name=&quot;twitter:image:src&quot; content=&quot;{{ imagetwitter }}&quot;&gt;
+  &lt;meta name=&quot;twitter:image:src&quot; content=&quot;{{ socialimage }}&quot;&gt;
 
   &lt;meta property=&quot;og:type&quot; content=&quot;article&quot; /&gt;
   &lt;meta itemprop=&quot;og:headline&quot; content=&quot;{{ title }}&quot; /&gt;

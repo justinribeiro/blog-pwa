@@ -2,9 +2,7 @@
 title: "Repairing a busted Copal 0 aperture and custom printing a lens board"
 date: 2019-04-22T17:38:08-07:00
 description: "I love building and fixing things, why should a large format shutter be any different?"
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190422-teardown-copal-0.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190422-teardown-copal-0.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190422-teardown-copal-0.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190422-teardown-copal-0.jpg"
 tags:
 - Photography
 ---

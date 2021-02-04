@@ -25,9 +25,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
   </figcaption>
 </figure>
 '
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20210128-isabella-ribeiro-sketch-of-bird-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20210128-isabella-ribeiro-sketch-of-bird-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20210128-isabella-ribeiro-sketch-of-bird-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210128-isabella-ribeiro-sketch-of-bird-800.jpg"
 date: 2021-01-28T6:39:48-08:00
 tags:
   - personal

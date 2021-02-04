@@ -11,11 +11,14 @@ publishdir = "../app/data"
 [taxonomies]
   tag = "tags"
 
+titleCaseStyle = "Chicago"
+
 [permalinks]
   chronicle = "/chronicle/:year/:month/:day/:slug/"
 
 [params]
   ISO8601 = "2006-01-02T15:04:05PST"
+  imageCDN = "https://storage.googleapis.com/jdr-public-imgs/blog/"
 
 [sitemap]
   changefreq = "weekly"

@@ -72,7 +72,7 @@ class BlogNetworkWarning extends LitElement {
         }
       </style>
 
-      <div id="main">
+      <div id="main" aria-hidden="${this.hidden}">
         <div>
           <svg viewbox="0 0 24 24">
             <g id="no-internet">
@@ -89,12 +89,7 @@ class BlogNetworkWarning extends LitElement {
             While you wait for your internet connection to come back online, here are some articles
             and pages you've visited that you can read offline.
           </p>
-          ${this.availableUrls.map(
-            post => html`
-              <a href="${post.permalink}">
-                ${post.title}
-              </a>
-            `)}
+          ${this.availableUrls.map(post => html` <a href="${post.permalink}"> ${post.title} </a> `)}
         </div>
         <button @click="${this._tryReconnect}">Reload and Try Connection Again</button>
       </div>

@@ -2,9 +2,7 @@
 date: 2018-06-05T08:00:00-08:00
 title: "Chromium: long time compiler, first time committer"
 description: "All those years building Chrome and WebKit and putting it places, and yet this is my first commit."
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20180605-chromium-first-commit-twitter-1024x535.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20180605-chromium-first-commit-fb-1200x630.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20180605-chromium-first-commit-gplus-800x360.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20180605-chromium-first-commit-twitter-1024x535.jpg"
 tags:
 - Web
 ---

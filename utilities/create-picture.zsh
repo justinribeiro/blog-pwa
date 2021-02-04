@@ -104,7 +104,7 @@ fi
 finalFile="$cdnPath$basefilename"
 echo ${BOLD_RED}ACTION: Copy/Paste YAML Figure Head:${RESET}
 echo "
-<figure aria-label=\"media\" role=\"group\" itemscope=\"\" itemprop=\"associatedMedia\" itemtype=\"http://schema.org/ImageObject\">
+featureimage: '<figure aria-label=\"media\" role=\"group\" itemscope=\"\" itemprop=\"associatedMedia\" itemtype=\"http://schema.org/ImageObject\">
   <picture>
     <source srcset=\"$finalFile-640.webp 640w,
                     $finalFile-800.webp 800w,
@@ -126,10 +126,11 @@ echo "
     <span aria-hidden=\"true\"></span>
     <span class=\"author\" itemprop=\"copyrightHolder\"></span>
   </figcaption>
-</figure>
+</figure>'
+socialimage: \"$finalFile-800.$fileType\";
 "
 
-echo ${BOLD_RED}ACTION: Copy/Paste #main:${RESET}
+echo ${BOLD_RED}ACTION: Copy/Paste main body:${RESET}
 echo "
 <figure aria-label=\"media\" role=\"group\" itemscope=\"\" itemprop=\"associatedMedia\" itemtype=\"http://schema.org/ImageObject\">
   <picture>

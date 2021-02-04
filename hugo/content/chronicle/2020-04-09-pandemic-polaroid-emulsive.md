@@ -23,11 +23,9 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
     <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
   </figcaption>
 </figure>'
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20200409-polaroid-stack-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200409-polaroid-stack-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200409-polaroid-stack-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200409-polaroid-stack-800.jpg"
 tags:
-- Photography
+- photography
 ---
 
 Since sheltering-at-home some 25 days ago, I have been releasing Polaroids intermittently on my [socials](https://ribeiro.social/@justin). Those photographs turned into my recent piece [_PANDEMIC ON POLAROID: SHELTERED AT HOME_ over at EMULSIVE](https://emulsive.org/articles/projects/pandemic-on-polaroid-sheltered-at-home), which I quite enjoyed writing and putting together. Many thanks to EM over at EMULSIVE to get the piece published. The article doesn't take any liberties with the course of events; we live in such an unprecedented time that there isn't an need to exaggerate the daily happenings. The descriptions and scenes stand alone be it in words or frames.

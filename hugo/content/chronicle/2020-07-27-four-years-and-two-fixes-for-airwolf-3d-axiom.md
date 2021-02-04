@@ -2,9 +2,7 @@
 title: "Four Years and Two Fixes for Airwolf 3D AXIOM 3D printer"
 date: 2020-07-27T13:03:20-07:00
 description: "1000's of hours and a lot of general abuse later, the AXIOM 3D printer gets a couple minor maintenance repairs to keep it running smooth."
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20200727-underside-runner-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200727-underside-runner-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200727-underside-runner-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200727-underside-runner-800.jpg"
 tags:
   - maker
   - 3d printer

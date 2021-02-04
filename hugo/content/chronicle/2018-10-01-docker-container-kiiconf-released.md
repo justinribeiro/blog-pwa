@@ -2,9 +2,7 @@
 date: 2018-10-01T08:00:00-08:00
 title: "Kiiconf web configurator docker container released"
 description: "I dig the web config for my Whitefox keyboard, but I really want it contained locally. Docker to the rescue!"
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-twitter-1024x535.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-fb-1200x630.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-gplus-800x360.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20181001-kiiconf-whitefox-twitter-1024x535.jpg"
 tags:
 - IoT
 ---

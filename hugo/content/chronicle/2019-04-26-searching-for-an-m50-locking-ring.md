@@ -2,9 +2,7 @@
 title: "Finding an M50 lock ring for a Schneider Kreuznach enlarger lens in Portugal"
 description: "After exhausting outlets to find a difficult part, I turned to photographer and maker José Meneses and his Custom Photo Tools with great success."
 date: 2019-04-26T17:32:53-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-schneider-lens-with-customphototoolsring.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-schneider-lens-with-customphototoolsring.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-schneider-lens-with-customphototoolsring.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190426-mounted-schneider-lens-with-customphototoolsring.jpg"
 tags:
 - Photography
 ---

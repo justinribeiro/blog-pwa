@@ -2,9 +2,7 @@
 title: "Let the Koi Pond Build Adventure Begin"
 description: "Heat waves, hardpan, and harrowing trips to the hardware store be damned, let's build a koi pond in the middle of summer."
 date: 2020-07-20T10:30:01-08:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20200720-trough-installed-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200720-trough-installed-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200720-trough-installed-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200720-trough-installed-800.jpg"
 tags:
   - maker
   - pond

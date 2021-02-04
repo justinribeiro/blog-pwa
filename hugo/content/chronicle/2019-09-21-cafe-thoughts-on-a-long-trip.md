@@ -2,9 +2,7 @@
 title: "Long Days and Tall Cups: Why a Local Cafe Keeps My Sanity on the Road"
 description: "When I find myself hopping city to city, there's one constant in all those places: the local cafe where if I play my cards right, I get a decent cappuccino and some local color."
 date: 2019-09-21T17:08:35-07:00
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190921-a-good-cap-from-mi-800.jpg"
 tags:
 - Personal
 ---

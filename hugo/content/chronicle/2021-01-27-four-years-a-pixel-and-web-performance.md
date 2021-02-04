@@ -24,9 +24,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
   </figcaption>
 </figure>
 '
-imagetwitter: "https://storage.googleapis.com/jdr-public-imgs/blog/20200715-desk-phone-printed-finished-800.jpg"
-imagefb: "https://storage.googleapis.com/jdr-public-imgs/blog/20200715-desk-phone-printed-finished-800.jpg"
-imagegplus: "https://storage.googleapis.com/jdr-public-imgs/blog/20200715-desk-phone-printed-finished-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200715-desk-phone-printed-finished-800.jpg"
 tags:
   - Web
   - web-perf
