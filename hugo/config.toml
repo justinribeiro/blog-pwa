@@ -23,3 +23,20 @@ titleCaseStyle = "Chicago"
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
+
+[related]
+  includeNewer = true
+  threshold = 100
+  toLower = true
+
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+
+  [[related.indices]]
+    name = "keywords"
+    weight = 80
+
+  [[related.indices]]
+    name = "date"
+    weight = 10

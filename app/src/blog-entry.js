@@ -420,6 +420,15 @@ class BlogEntry extends BlogElement {
               <button @click="${e => this.__submitWebMention(e)}">🚚 Send Webmention</button>
             </form>
             <br />
+            ${this.metadata.relatedposts.length > 0
+              ? html`
+                  <h3>You Might Also Enjoy These Related Pieces</h3>
+                  ${this.metadata.relatedposts.map(
+                    post => html`<p><a href="${post.permalink}"> ${post.title}</a></p>`,
+                  )}
+                  <br />
+                `
+              : html``}
             <h3>Metadata</h3>
             <p>
               Author Justin Ribeiro wrote ${this.metadata.words} words for this piece and hopes you

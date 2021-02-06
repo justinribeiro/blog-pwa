@@ -127,7 +127,7 @@ featureimage: '<figure aria-label=\"media\" role=\"group\" itemscope=\"\" itempr
     <span class=\"author\" itemprop=\"copyrightHolder\"></span>
   </figcaption>
 </figure>'
-socialimage: \"$finalFile-800.$fileType\";
+socialimage: \"$finalFile-800.$fileType\"
 "
 
 echo ${BOLD_RED}ACTION: Copy/Paste main body:${RESET}

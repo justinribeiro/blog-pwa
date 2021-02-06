@@ -1,5 +1,6 @@
 {{ $content_to_string := printf "%s" .Content }}
 {{ $content := replace $content_to_string "\n" "\\n" }}
+{{ $related := .Site.RegularPages.Related . | first 3 }}
 {
   "title": "{{ .Title }}",
   "description": "{{ .Description | safeHTML }}",
@@ -14,5 +15,8 @@
   "tags": "{{ delimit .Params.tags "," }}",
   "filename": "{{ .File.Path }}",
   "socialimage": "{{ $.Params.socialimage }}",
-  "featureimage": "{{ $.Params.featureimage }}"
+  "featureimage": "{{ $.Params.featureimage }}",
+  "relatedposts": [ {{ range $i, $e := $related }}
+  {{if $i}}, {{end}}{{ .Render "li"}}
+{{end}} ]
 }

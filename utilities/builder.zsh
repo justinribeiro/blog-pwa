@@ -86,7 +86,9 @@ validate_json() {
   for file in **/*.json(D.); do;
     jq -c .title $file 1> /dev/null
     if [[ $? -eq 4 ]]; then
-      echo "file: $file"
+      echo "json parse error: $file"
+    else
+      jq -c . $file | sponge $file
     fi
   done
 }
@@ -128,6 +130,14 @@ validate_tools() {
 
   echo -n "gcloud ... "
   if ! type "gcloud" > /dev/null; then
+    echo "${BOLD_RED} NO ${RESET}"
+    good=false;
+  else
+    echo "${BOLD_GREEN} YES ${RESET}"
+  fi
+
+  echo -n "sponge ... "
+  if ! type "sponge" > /dev/null; then
     echo "${BOLD_RED} NO ${RESET}"
     good=false;
   else

@@ -38,6 +38,7 @@ export default class BlogElement extends LitElement {
       filename: '',
       view: '',
       tags: '',
+      relatedposts: [],
     };
 
     this.share = [];
@@ -92,6 +93,7 @@ export default class BlogElement extends LitElement {
       filename: '',
       view: '',
       tags: '',
+      relatedposts: [],
     };
 
     const dom = this.shadowRoot.querySelector('#metadataArticle');
