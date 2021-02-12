@@ -12,6 +12,9 @@ export default class BlogElement extends LitElement {
         type: Object,
         attribute: false,
       },
+      featureImage: {
+        type: Object,
+      },
       loaded: {
         type: Boolean,
         attribute: false,
@@ -25,28 +28,8 @@ export default class BlogElement extends LitElement {
 
   constructor() {
     super();
-
-    this.metadata = {
-      posts: [],
-      article: '',
-      title: '',
-      dataModified: '',
-      date: '',
-      readingtime: '',
-      permalink: '',
-      description: '',
-      filename: '',
-      view: '',
-      tags: '',
-      relatedposts: [],
-    };
-
-    this.share = [];
-
+    this.resetView();
     this.__domRefs = new Map();
-
-    this.failure = false;
-    this.loaded = false;
   }
 
   /**
@@ -80,7 +63,6 @@ export default class BlogElement extends LitElement {
   }
 
   resetView() {
-    this.loaded = false;
     this.metadata = {
       posts: [],
       article: '',
@@ -96,10 +78,10 @@ export default class BlogElement extends LitElement {
       relatedposts: [],
     };
 
-    const dom = this.shadowRoot.querySelector('#metadataArticle');
-    if (dom && dom.innerHTML !== '') {
-      dom.innerHTML = '';
-    }
+    this.content = '';
+    this.share = [];
+    this.failure = false;
+    this.loaded = false;
   }
 
   async _fetchMetaData() {
@@ -128,7 +110,7 @@ export default class BlogElement extends LitElement {
   _processMetaData() {
     if (this.metadata.article !== undefined && this.metadata.article !== '') {
       const parseHTML = this._unescapeHtml(this.metadata.article);
-      this.shadowRoot.querySelector('#metadataArticle').innerHTML = parseHTML;
+      this.__getDomRef('#metadataArticle').innerHTML = parseHTML;
     }
     this._setPageMetaData(this.metadata);
     this.__showSkeleton(false);
@@ -209,14 +191,24 @@ export default class BlogElement extends LitElement {
    * @return {String} string
    */
   _unescapeHtml(raw) {
-    const process = document.createElement('textarea');
-    process.innerHTML = raw;
-    return process.textContent;
+    const strReplacer = raw =>
+          raw
+            .replace(/(&#34;)/g, '"')
+            .replace(/(&lt;)(.+?)(&gt;)/gims, '<$2>')
+            .replace(/(&amp;)/gims, '&');
+
+    if (window.trustedTypes && trustedTypes.createPolicy) {
+      const unEscapeHTMLPolicy = trustedTypes.createPolicy('unEscapeHTMLPolicy', {
+        createHTML: raw => strReplacer(raw)
+      });
+      return unEscapeHTMLPolicy.createHTML(raw);
+    }
+    return strReplacer(raw);
   }
 
   /**
    * Check the current state of the view so we can get rid of the skelton in
-   * weird inbetween states
+   * weird in-between states
    * @param {boolean} failed
    * @param {boolean} loaded
    * @return {boolean} state

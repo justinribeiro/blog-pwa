@@ -1,6 +1,23 @@
 const analyticsId = 'UA-96204-3';
 
 function initAnalytics() {
+  let libUrl;
+  const analyticsSrc = url => {
+    const parsed = new URL(url, 'https://www.google-analytics.com');
+    if (parsed.origin === 'https://www.google-analytics.com') {
+      return parsed.href;
+    }
+    throw new TypeError('invalid analytics url');
+  };
+  if (window.trustedTypes && trustedTypes.createPolicy) {
+    const analyticsPolicy = trustedTypes.createPolicy('analyticsPolicy', {
+      createScriptURL: src => analyticsSrc(src),
+    });
+    libUrl = analyticsPolicy.createScriptURL('analytics.js');
+  } else {
+    libUrl = analyticsSrc('analytics.js');
+  }
+
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
     (i[r] =
@@ -13,7 +30,7 @@ function initAnalytics() {
     a.async = 1;
     a.src = g;
     m.parentNode.insertBefore(a, m);
-  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  })(window, document, 'script', libUrl, 'ga');
 
   ga('create', analyticsId, 'auto');
   ga('set', 'transport', 'beacon');

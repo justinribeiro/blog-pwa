@@ -126,60 +126,68 @@ class BlogPwa extends LitElement {
    */
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
+      this.__loadFonts();
       import('./blog-lazy-load.js').then(_ => {
-        this.__loadFonts();
-        if ('serviceWorker' in navigator) {
-          const wb = new Workbox('/service-worker.js');
-
-          wb.addEventListener('activated', event => {
-            if ('requestIdleCallback' in window) {
-              window.requestIdleCallback(
-                () => {
-                  this.__cacheExistingLoadedUrls(wb);
-                },
-                {
-                  timeout: 5000,
-                },
-              );
-            } else {
-              this.__cacheExistingLoadedUrls(wb);
-            }
-          });
-
-          wb.addEventListener('waiting', event => {
-            this._setSnackBarText('New and updated content is available.', 0, true, async () => {
-              wb.addEventListener('controlling', event => {
-                window.location.reload();
-              });
-              wb.messageSkipWaiting();
-
-              // failsafe remove snackbar
-              this.shadowRoot.querySelector('snack-bar').removeAttribute('active');
-            });
-          });
-
-          wb.register();
-        }
-        if ('requestIdleCallback' in window) {
-          window.requestIdleCallback(
-            () => {
-              this.__importAnalytics();
-            },
-            {
-              timeout: 5000,
-            },
-          );
-        } else {
-          this.__importAnalytics();
-        }
-
+        this.__loadSw();
+        this.__loadAnalytics();
         this._notifyNetworkStatus();
         this.loadComplete = true;
       });
     }
   }
 
-  __loadFonts() {
+  async __loadSw() {
+    if ('serviceWorker' in navigator) {
+      let swUrl;
+      const srcSw = url => {
+        const parsed = new URL(url, document.baseURI);
+        if (parsed.host === 'justinribeiro.com' || parsed.host === 'www.justinribeiro.com') {
+          return parsed.href;
+        }
+        throw new TypeError('invalid sw url');
+      };
+      if (window.trustedTypes && trustedTypes.createPolicy) {
+        const swPolicy = trustedTypes.createPolicy('swPolicy', {
+          createScriptURL: src => srcSw(src),
+        });
+        swUrl = swPolicy.createScriptURL('service-worker.js');
+      } else {
+        swUrl = srcSw('service-worker.js');
+      }
+      const wb = new Workbox(swUrl);
+
+      wb.addEventListener('activated', event => {
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(
+            () => {
+              this.__cacheExistingLoadedUrls(wb);
+            },
+            {
+              timeout: 5000,
+            },
+          );
+        } else {
+          this.__cacheExistingLoadedUrls(wb);
+        }
+      });
+
+      wb.addEventListener('waiting', event => {
+        this._setSnackBarText('New and updated content is available.', 0, true, async () => {
+          wb.addEventListener('controlling', event => {
+            window.location.reload();
+          });
+          wb.messageSkipWaiting();
+
+          // failsafe remove snackbar
+          this.shadowRoot.querySelector('snack-bar').removeAttribute('active');
+        });
+      });
+
+      wb.register();
+    }
+  }
+
+  async __loadFonts() {
     const domRefHead = document.getElementsByTagName('head')[0];
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -194,6 +202,21 @@ class BlogPwa extends LitElement {
 
     domRefHead.appendChild(cloneFontOne);
     domRefHead.appendChild(cloneFontTwo);
+  }
+
+  async __loadAnalytics() {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(
+        () => {
+          this.__importAnalytics();
+        },
+        {
+          timeout: 5000,
+        },
+      );
+    } else {
+      this.__importAnalytics();
+    }
   }
 
   __cacheExistingLoadedUrls(wb) {

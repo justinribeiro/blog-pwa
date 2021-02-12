@@ -36,7 +36,7 @@ class MainHandler(webapp2.RequestHandler):
                                                             "worker-src 'self'; "
                                                             "script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.google-analytics.com https://www.gstatic.com; "
                                                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
-                                                            "connect-src 'self' https://storage.googleapis.com https://www.google-analytics.com https://firebaseinstallations.googleapis.com https://firebaseremoteconfig.googleapis.com https://firebaselogging.googleapis.com https://webmention.io/; "
+                                                            "connect-src 'self' https://storage.googleapis.com https://www.google-analytics.com https://webmention.io/; "
                                                             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
                                                             "media-src 'self' https://storage.googleapis.com; "
                                                             "form-action 'self' https://webmention.io; "
@@ -44,7 +44,9 @@ class MainHandler(webapp2.RequestHandler):
                                                             "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; "
                                                             "frame-src https://www.youtube.com; "
                                                             "manifest-src 'self'; "
-                                                            "frame-ancestors 'none';")
+                                                            "frame-ancestors 'none';"
+                                                            "report-uri https://justinribeiro.report-uri.com/r/d/csp/enforce; report-to default")
+        self.response.headers['Content-Security-Policy-Report-Only'] = "require-trusted-types-for 'script'; report-uri https://justinribeiro.report-uri.com/r/d/csp/reportOnly; report-to default"
         self.response.headers['Feature-Policy'] = ("accelerometer 'none'; "
                                                    "ambient-light-sensor 'none'; "
                                                    "autoplay 'self' https://www.youtube.com;"

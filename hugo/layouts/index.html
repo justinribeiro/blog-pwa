@@ -3,7 +3,7 @@
 {
   "title": "{{ .Title }}",
   "description": "{{ .Description }}",
-  "article": "{{ $content }}",
+  "article": "{{ $content  }}",
   "date": "{{ .Date.Format "Mon Jan 2, 2006" }}",
   "datePublished": "{{ .Date.Format $.Site.Params.ISO8601 }}",
   "dateModified" : "{{ .Date.Format $.Site.Params.ISO8601 }}",

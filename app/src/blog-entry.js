@@ -74,11 +74,13 @@ class BlogEntry extends BlogElement {
         import('./lite-youtube.js');
       }
 
-      this.shadowRoot.querySelector('#metadataArticle').innerHTML = parseHTML;
+      // inject the trusted fragment
+      this.__getDomRef('#metadataArticle').innerHTML = parseHTML;
+
       let parseFeatureImage = '';
       if (this.metadata.featureimage) {
         parseFeatureImage = this._unescapeHtml(this.metadata.featureimage);
-        this.shadowRoot.querySelector('#featureImage').innerHTML = parseFeatureImage;
+        this.__getDomRef('#featureImage').innerHTML = parseFeatureImage;
       }
 
       super._processMetaData();
