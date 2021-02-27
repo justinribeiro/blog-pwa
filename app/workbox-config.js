@@ -1,11 +1,12 @@
 /* eslint-env node */
 module.exports = {
   swDest: './build/default/service-worker.js',
-  inlineWorkboxRuntime: 'true',
-  skipWaiting: false,
+  inlineWorkboxRuntime: false,
+  skipWaiting: true,
   clientsClaim: true,
   offlineGoogleAnalytics: true,
   cleanupOutdatedCaches: true,
+  mode: 'debug',
   cacheId: 'BLOG-PWA',
   globDirectory: './build/default/',
   globPatterns: ['index.html', '**/blog-*.js'],

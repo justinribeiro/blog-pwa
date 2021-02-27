@@ -297,14 +297,6 @@ class BlogEntry extends BlogElement {
           font-size: 1rem;
         }
 
-        .subheadline {
-          margin: 1em 0;
-          font-size: 21px;
-          font-family: 'Libre Franklin', sans-serif;
-          line-height: 1.55;
-          font-weight: 300;
-        }
-
         ol,
         ul {
           margin: 0;
@@ -340,10 +332,6 @@ class BlogEntry extends BlogElement {
           #main img {
             margin: none !important;
           }
-
-          .subheadline {
-            font-size: 18px;
-          }
         }
       `,
     ];
@@ -363,7 +351,7 @@ class BlogEntry extends BlogElement {
           <h2 class="subheadline">${this.metadata.description}</h2>
           <div id="featureImage"></div>
 
-          <div class="reads">
+          <div class="reads" ?hidden=${this.metadata.pagetype === 'page'}>
             <time .datetime="${this.metadata.dataModified}" itemprop="datePublished">
               ${this.metadata.date}
             </time>
@@ -377,7 +365,7 @@ class BlogEntry extends BlogElement {
         </header>
 
         <div id="metadataArticle" itemprop="articleBody"></div>
-        <footer id="metaShare">
+        <footer id="metaShare" ?hidden=${this.metadata.pagetype === 'page'}>
           <div>
             <h3>Share this piece</h3>
             ${navigator.share

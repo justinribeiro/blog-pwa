@@ -6,8 +6,12 @@ class BlogStatic extends BlogElement {
     return [
       super.styles,
       css`
+        #shoutout {
+          margin-top: 0.5rem;
+        }
+
         #shoutout p {
-          font-size: 28px;
+          font-size: 24px;
         }
 
         .talk {
@@ -85,7 +89,7 @@ class BlogStatic extends BlogElement {
           }
 
           #shoutout p {
-            font-size: 24px;
+            font-size: 20px;
           }
         }
       `,

@@ -60,10 +60,10 @@ class BlogPwa extends LitElement {
    */
   __routes(location) {
     switch (true) {
-      case /chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*/.test(location.pathname):
+      case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*|about|talks)/.test(location.pathname):
         this.__loadRoute('entry');
         break;
-      case /(talks|about|chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
+      case /(chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
         this.__loadRoute('static');
         break;
       default:

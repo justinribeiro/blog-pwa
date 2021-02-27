@@ -305,6 +305,14 @@ export default class BlogElement extends LitElement {
         line-height: auto;
       }
 
+      .subheadline {
+        margin: 1em 0;
+        font-size: 21px;
+        font-family: 'Libre Franklin', sans-serif;
+        line-height: 1.55;
+        font-weight: 300;
+      }
+
       @media (max-width: 767px) {
         #main {
           margin: auto;
@@ -322,6 +330,10 @@ export default class BlogElement extends LitElement {
           font-size: 18px;
           line-height: 1.58;
           letter-spacing: -0.004em;
+        }
+
+        .subheadline {
+          font-size: 18px;
         }
       }
 
