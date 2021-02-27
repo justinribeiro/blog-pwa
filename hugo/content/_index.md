@@ -1,14 +1,17 @@
 ---
-date: 2020-01-10T15:00:00-08:00
+date: 2021-02-17T00:00:00-08:00
 title: "Words, Letters, and Thoughts"
-description: "Manager. Maker. Film Photographer. Recovering Software Engineer. Speaker. Writer. Dad. Coach. Occasionally funny."
+description: "Justin Ribeiro is a former CEO working as a catalyst in driving the adoption of innovation and creativity in organizations. Recovering Software Engineer. Maker. Film Photographer. Speaker. Writer. Dad. Husband. Occasionally funny."
+pagetype: "page"
 sitemap:
   changefreq: "weekly"
   priority: 0.8
 ---
 
 <section id="shoutout">
-  <p>Hi. I'm Justin. I <span class="red">❤️</span> the open web, film photography, and making things. I try to make each day to make the world a better place. ☕ powered, <span title="Monica">👩</span><span title="Allison">👧</span><span title="Isabella">👧</span><span title="Evelyn">👧</span> driven.</p>
+  <p>Hi. I'm Justin, former CEO with an engineering streak, a writer's lament, a shooting film habit, and a baritone voice. I’ve done a few things. MBA but Ph.D. seeking.</p>
+
+  <p>I <span class="red">❤️</span> the open web, film photography, and making things. I try  each day to make the world a better place. ☕ powered, <span title="Monica">👩</span><span title="Allison">👧</span><span title="Isabella">👧</span><span title="Evelyn">👧</span> driven.</p>
 </section>
 
 ## The Latest Posts

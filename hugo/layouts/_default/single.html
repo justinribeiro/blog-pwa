@@ -11,5 +11,9 @@
   "words": "{{ .FuzzyWordCount }}",
   "readingtime": "{{ .ReadingTime }}",
   "permalink": "{{ .Permalink }}",
-  "socialimage": "{{ $.Params.socialimage }}"
+  "tags": "{{ delimit .Params.tags "," }}",
+  "filename": "{{ .File.Path }}",
+  "socialimage": "{{ $.Params.socialimage }}",
+  "featureimage": "{{ $.Params.featureimage }}",
+  "relatedposts": []
 }

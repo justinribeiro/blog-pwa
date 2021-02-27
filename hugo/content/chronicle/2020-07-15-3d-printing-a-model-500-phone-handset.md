@@ -138,3 +138,5 @@ The weight is still off as I didn’t shape the bottom base plate as originally 
 There are other additions to do of course. I think the next iteration will probably have wireless charging and bluetooth (if only for the ease of drop-and-talk, even if I do "wire" the handset). But for now, my four year old set of Pixels (yeah, still rocking the original) and it's 3.5mm headphone jack rule the day.
 
 Overall it's made my phone talking experience that much better, even if the majority of people don't want to talk on the phone. 😁
+
+> If you'd like to attempt a print of this, the files are located in my Github repo [justinribeiro/we-model-500-phone-stand](https://github.com/justinribeiro/we-model-500-phone-stand).

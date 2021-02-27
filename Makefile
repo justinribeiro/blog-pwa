@@ -6,6 +6,10 @@ setup:
 build:
 	./utilities/builder.zsh -t prod
 
+.PHONY: prod
+prod:
+	./utilities/builder.zsh -t prod; cd ship/dist; ws --port=8080; cd ../..;
+
 .PHONY: dev
 dev:
 	./utilities/builder.zsh -t dev
