@@ -1,5 +1,5 @@
 import BlogElement from './blog-element.js';
-import { css, html } from 'lit-element';
+import { css, html } from 'lit';
 
 class BlogStatic extends BlogElement {
   static get styles() {
@@ -19,24 +19,17 @@ class BlogStatic extends BlogElement {
         }
 
         #posts {
-          display: flex;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
           margin: auto;
           max-width: 800px;
         }
 
-        .post-container {
-          min-height: 125px;
-          width: calc(50% - 1rem);
-        }
-
         .post-container a {
-          min-height: 100px;
           display: block;
-          padding: 20px;
+          padding: 1rem;
           border-bottom: none;
           border-radius: 0.5rem;
-          transition-property: background-color;
           transition-duration: 0.3s;
           will-change: background-color;
         }
@@ -83,6 +76,7 @@ class BlogStatic extends BlogElement {
           #posts {
             margin: auto;
             max-width: 800px;
+            grid-template-columns: 1fr;
           }
           .post-container {
             width: 100%;

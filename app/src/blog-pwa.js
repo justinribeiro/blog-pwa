@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from 'lit';
 import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
 
@@ -169,18 +169,6 @@ class BlogPwa extends LitElement {
         } else {
           this.__cacheExistingLoadedUrls(wb);
         }
-      });
-
-      wb.addEventListener('waiting', event => {
-        this._setSnackBarText('New and updated content is available.', 0, true, async () => {
-          wb.addEventListener('controlling', event => {
-            window.location.reload();
-          });
-          wb.messageSkipWaiting();
-
-          // failsafe remove snackbar
-          this.shadowRoot.querySelector('snack-bar').removeAttribute('active');
-        });
       });
 
       wb.register();

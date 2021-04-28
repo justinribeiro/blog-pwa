@@ -1,4 +1,4 @@
-import { LitElement, css } from 'lit-element';
+import { LitElement, css } from 'lit';
 import './blog-network-warning.js';
 
 export default class BlogElement extends LitElement {
@@ -192,14 +192,14 @@ export default class BlogElement extends LitElement {
    */
   _unescapeHtml(raw) {
     const strReplacer = raw =>
-          raw
-            .replace(/(&#34;)/g, '"')
-            .replace(/(&lt;)(.+?)(&gt;)/gims, '<$2>')
-            .replace(/(&amp;)/gims, '&');
+      raw
+        .replace(/(&#34;)/g, '"')
+        .replace(/(&lt;)(.+?)(&gt;)/gims, '<$2>')
+        .replace(/(&amp;)/gims, '&');
 
     if (window.trustedTypes && trustedTypes.createPolicy) {
       const unEscapeHTMLPolicy = trustedTypes.createPolicy('unEscapeHTMLPolicy', {
-        createHTML: raw => strReplacer(raw)
+        createHTML: raw => strReplacer(raw),
       });
       return unEscapeHTMLPolicy.createHTML(raw);
     }
@@ -229,6 +229,13 @@ export default class BlogElement extends LitElement {
     return css`
       :host {
         display: block;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        :focus {
+          transition: outline-offset 00.25s ease;
+          outline-offset: 5px;
+        }
       }
 
       a {
@@ -295,14 +302,16 @@ export default class BlogElement extends LitElement {
         max-width: 800px;
       }
 
+      #tags-nav {
+        margin-bottom: 0.5rem;
+      }
+
       #tags a {
-        display: inline-flex;
         border: 1px solid #ccc;
         border-radius: 2px;
         padding: 0.25em 0.5em;
-        margin-top: 0.25em;
         background: #f2f0f0;
-        line-height: auto;
+        line-height: 2.5rem;
       }
 
       .subheadline {
