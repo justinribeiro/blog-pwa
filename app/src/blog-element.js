@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { LitElement, css } from 'lit';
 import './blog-network-warning.js';
 
@@ -52,7 +53,10 @@ export default class BlogElement extends LitElement {
   }
 
   firstUpdated() {
-    this.__getDomRef('blog-network-warning').addEventListener('try-reconnect', () => this.mount());
+    this.__getDomRef('blog-network-warning').addEventListener(
+      'try-reconnect',
+      () => this.mount()
+    );
   }
 
   async mount() {
@@ -126,7 +130,7 @@ export default class BlogElement extends LitElement {
         detail: {
           show: bool,
         },
-      }),
+      })
     );
   }
 
@@ -138,7 +142,9 @@ export default class BlogElement extends LitElement {
     // Flip the metadata on load
     // Note, Google Search will index this
     document.title = `${title} - Justin Ribeiro`;
-    document.head.querySelector("meta[name='description']").setAttribute('content', description);
+    document.head
+      .querySelector("meta[name='description']")
+      .setAttribute('content', description);
 
     this._setMeta('property', 'og:title', document.title);
     this._setMeta('property', 'twitter:title', document.title);
@@ -164,7 +170,7 @@ export default class BlogElement extends LitElement {
         hitType: 'pageview',
         page: window.location.pathname,
         location: url,
-        title: title,
+        title,
       });
     }
   }
@@ -176,7 +182,9 @@ export default class BlogElement extends LitElement {
    * @param {string} content
    */
   _setMeta(attrName, attrValue, content) {
-    let element = document.head.querySelector(`meta[${attrName}="${attrValue}"]`);
+    let element = document.head.querySelector(
+      `meta[${attrName}="${attrValue}"]`
+    );
     if (!element) {
       element = document.createElement('meta');
       element.setAttribute(attrName, attrValue);
@@ -198,9 +206,12 @@ export default class BlogElement extends LitElement {
         .replace(/(&amp;)/gims, '&');
 
     if (window.trustedTypes && trustedTypes.createPolicy) {
-      const unEscapeHTMLPolicy = trustedTypes.createPolicy('unEscapeHTMLPolicy', {
-        createHTML: raw => strReplacer(raw),
-      });
+      const unEscapeHTMLPolicy = trustedTypes.createPolicy(
+        'unEscapeHTMLPolicy',
+        {
+          createHTML: raw => strReplacer(raw),
+        }
+      );
       return unEscapeHTMLPolicy.createHTML(raw);
     }
     return strReplacer(raw);
@@ -220,9 +231,8 @@ export default class BlogElement extends LitElement {
     // hide the skeleton
     if ((failed && !loaded) || (!failed && loaded)) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   static get styles() {
@@ -233,7 +243,7 @@ export default class BlogElement extends LitElement {
 
       @media (prefers-reduced-motion: no-preference) {
         :focus {
-          transition: outline-offset 00.25s ease;
+          transition: outline-offset 0.25s ease;
           outline-offset: 5px;
         }
       }
@@ -256,7 +266,7 @@ export default class BlogElement extends LitElement {
       h5,
       h6 {
         font-family: var(--font-family-headers);
-        margin: 0px 0px 0px -1.75px;
+        margin: 0px 0px 0.5rem -1.75px;
         line-height: 1.15;
         letter-spacing: -0.02em;
       }
@@ -298,12 +308,8 @@ export default class BlogElement extends LitElement {
       */
       #main {
         margin: auto;
-        padding: 0 20px;
         max-width: 800px;
-      }
-
-      #tags-nav {
-        margin-bottom: 0.5rem;
+        padding: 0 20px;
       }
 
       #tags a {
@@ -323,11 +329,6 @@ export default class BlogElement extends LitElement {
       }
 
       @media (max-width: 767px) {
-        #main {
-          margin: auto;
-          max-width: 800px;
-        }
-
         h1 {
           font-size: 1.75rem;
           margin-top: 1rem;

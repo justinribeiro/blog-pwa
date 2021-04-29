@@ -3,3 +3,10 @@ app/build/
 app/node_modules/
 ship/
 node_modules
+app/.yarn/*
+!app/.yarn/patches
+!app/.yarn/releases
+!app/.yarn/plugins
+!app/.yarn/sdks
+!app/.yarn/versions
+app/.pnp.*

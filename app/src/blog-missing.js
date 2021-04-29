@@ -1,7 +1,9 @@
 import { LitElement, html } from 'lit';
 
 class BlogMissing extends LitElement {
+  // eslint-disable-next-line class-methods-use-this
   mount() {}
+
   render() {
     return html`
       <style>

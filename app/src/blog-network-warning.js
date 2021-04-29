@@ -12,6 +12,7 @@ class BlogNetworkWarning extends LitElement {
       },
     };
   }
+
   constructor() {
     super();
     this.availableUrls = [];
@@ -23,7 +24,7 @@ class BlogNetworkWarning extends LitElement {
       new CustomEvent('try-reconnect', {
         bubbles: false,
         composed: true,
-      }),
+      })
     );
   }
 
@@ -86,12 +87,17 @@ class BlogNetworkWarning extends LitElement {
           <h1>No internet connection.</h1>
           <p>Argh! Is the wifi lying to you? Are you in a tunnel?</p>
           <p>
-            While you wait for your internet connection to come back online, here are some articles
-            and pages you've visited that you can read offline.
+            While you wait for your internet connection to come back online,
+            here are some articles and pages you've visited that you can read
+            offline.
           </p>
-          ${this.availableUrls.map(post => html` <a href="${post.permalink}"> ${post.title} </a> `)}
+          ${this.availableUrls.map(
+            post => html` <a href="${post.permalink}"> ${post.title} </a> `
+          )}
         </div>
-        <button @click="${this._tryReconnect}">Reload and Try Connection Again</button>
+        <button @click="${this._tryReconnect}">
+          Reload and Try Connection Again
+        </button>
       </div>
     `;
   }

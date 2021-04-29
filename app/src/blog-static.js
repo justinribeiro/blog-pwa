@@ -1,46 +1,34 @@
-import BlogElement from './blog-element.js';
 import { css, html } from 'lit';
+import BlogElement from './blog-element.js';
 
 class BlogStatic extends BlogElement {
   static get styles() {
     return [
       super.styles,
       css`
-        #shoutout {
-          margin-top: 0.5rem;
-        }
-
-        #shoutout p {
-          font-size: 24px;
-        }
-
-        .talk {
-          margin-top: 1rem;
-        }
-
         #posts {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          margin: auto;
-          max-width: 800px;
+          grid-gap: 10px;
         }
 
-        .post-container a {
+        #posts > a {
           display: block;
-          padding: 1rem;
+          padding: 0.5rem;
           border-bottom: none;
           border-radius: 0.5rem;
           transition-duration: 0.3s;
           will-change: background-color;
         }
 
-        .post-container a h2 {
+        #posts > a h3 {
           color: var(--accent-color-primary);
           font-weight: 400;
           font-family: var(--font-family-serif);
+          font-size: 1.5rem;
         }
 
-        .post-container a h3 {
+        #posts > a time {
           font-weight: 400;
           text-transform: uppercase;
           font-size: 0.85rem;
@@ -49,41 +37,19 @@ class BlogStatic extends BlogElement {
           color: var(--accent-color-secondary);
         }
 
-        .post-container a:hover {
+        #posts > a:hover {
           text-decoration: none;
           background-color: hotpink;
         }
 
-        .post-container a:hover h2,
-        .post-container a:hover h3 {
-          color: #fff !important;
-        }
-
-        .post-container a span {
-          font-size: 14px;
-          color: var(--accent-color-primary);
-        }
-
-        #posts > h2 {
-          margin-bottom: 10px;
-        }
-
-        #tags {
-          margin: 0.5em 0;
+        #posts > a:hover time,
+        #posts > a:hover h3 {
+          color: #fff;
         }
 
         @media (max-width: 767px) {
           #posts {
-            margin: auto;
-            max-width: 800px;
             grid-template-columns: 1fr;
-          }
-          .post-container {
-            width: 100%;
-          }
-
-          #shoutout p {
-            font-size: 20px;
           }
         }
       `,
@@ -94,23 +60,27 @@ class BlogStatic extends BlogElement {
     return html`
       <div id="main" ?hidden=${!this.loaded}>
         <div id="metadataArticle"></div>
-      </div>
-      ${this.metadata.posts
-        ? html`
-            <div id="posts">
-              ${this.metadata.posts.map(
-                post => html`
-                  <div class="post-container">
+        ${this.metadata.posts
+          ? html`
+              <div id="posts">
+                ${this.metadata.posts.map(
+                  post => html`
                     <a href="${post.permalink}">
-                      <h3 class="date">🗒️ ${post.date}</h3>
-                      <h2 class="title">${post.title}</h2>
+                      <time
+                        .datetime="${post.dataModified}"
+                        aria-label="Posted ${post.date}"
+                      >
+                        🗒️ ${post.date}
+                      </time>
+                      <h3>${post.title}</h3>
                     </a>
-                  </div>
-                `,
-              )}
-            </div>
-          `
-        : html``}
+                  `
+                )}
+              </div>
+            `
+          : html``}
+      </div>
+
       <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
     `;
   }

@@ -5,7 +5,7 @@ What started as an experiment in mixing Hugo, Polymer, and the PRPL pattern to b
 ## Features
 
 * It's a progressive web app with all the fixin's (service worker, PRPL pattern, H2, et cetera)
-* The base PWA component and it's bundle weight just *15.1KB* gzip'ed.
+* The base PWA component and it's bundle weigh just *15.1KB* gzip'ed onm the wire.
 * Renders if there is no JavaScript via `<noscript>` injected fallback to static generation
 * Renders metadata to linkbots when sharing without the need for client JavaScript via server side detection and alternative render path
 

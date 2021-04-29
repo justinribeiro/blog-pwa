@@ -127,7 +127,7 @@ class BlogPwa extends LitElement {
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
       this.__loadFonts();
-      import('./blog-lazy-load.js').then(_ => {
+      import('./blog-lazy-load.js').then(() => {
         this.__loadSw();
         this.__loadAnalytics();
         this._notifyNetworkStatus();
@@ -156,7 +156,7 @@ class BlogPwa extends LitElement {
       }
       const wb = new Workbox(swUrl);
 
-      wb.addEventListener('activated', event => {
+      wb.addEventListener('activated', (event) => {
         if ('requestIdleCallback' in window) {
           window.requestIdleCallback(
             () => {
