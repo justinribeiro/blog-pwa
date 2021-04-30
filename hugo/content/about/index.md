@@ -35,7 +35,7 @@ tags:
 
 Hi, I’m Justin Ribeiro and for the last 25 years, I’ve been a catalyst in driving the adoption of innovation and creativity in organizations. From telecommunications to aerospace, hospitality to consumer goods, to the very web browser or platform you’re using right now, I’ve managed to build teams and train executives and managers on not just the science of management and leadership, but on the art required to invigorate a company for the next phase of its growth.
 
-My management and leadership training has been forged in both experience and in the halls of universities. I am a former Dean’s Research Fellow, earning an MBA from University of San Francisco in 2006 as well as an BA in Business from Seattle University in 2002.
+My management and leadership training has been forged in both experience and in the halls of universities. I am a former Dean’s Research Fellow, earning an MBA from University of San Francisco in 2006 as well as an BA in Business from Seattle University in 2002. I am currently a Doctoral Student in Management at Case Western Reserve University, class of 2024.
 
 As an executive and leader, I’m known for innovating and building organizations. In March 2020 as CEO, I oversaw the acquisition and merger of the consultancy company I built over the last 13 years, Stickman Ventures Inc, to This Dot Labs. In 2006, I ran an experimental advertising company called Your Media Coverage that helped define user generated content advertising and was featured in an NHK: Japan documentary on new media and advertising called Advertising Revolution. In 1996 at age 16 I wrote, marketed, and sold my first piece product, a precursor to the content management systems of today.
 

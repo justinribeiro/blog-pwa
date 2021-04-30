@@ -260,6 +260,15 @@ export default class BlogElement extends LitElement {
         border-bottom: 1px solid var(--accent-color-secondary);
       }
 
+      del {
+        background: #fbcdd4;
+      }
+
+      ins {
+        background: #d2fbcd;
+        text-decoration: none;
+      }
+
       h1,
       h2,
       h3,
