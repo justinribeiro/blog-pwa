@@ -53,7 +53,7 @@
         --footer-pad-lr: 1rem;
         --footer-pad-tb: 20px;
 
-        --font-family-serif: Georgia, Palatino, "Palatino Linotype", Cambria, Times, "Times New Roman", serif;
+        --font-family-serif: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
         --font-family-sans-serif: 'Libre Franklin', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
         --font-family-headers: 'Literata', var(--font-family-serif);
       }
@@ -62,6 +62,7 @@
         :focus {
           transition: outline-offset .25s ease;
           outline-offset: 5px;
+          outline: 3px solid #000;
         }
       }
 
@@ -223,18 +224,11 @@
     <link href="/data/tags/personal/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Personal Articles" />
     <script>addEventListener('error', window.__e=function f(e){f.q=f.q||[];f.q.push(e)});</script>
   <body>
-    <noscript aria-hidden="true">
-      <p>JavaScript appears to be turned off.
-      No problem, this Progressive Web App is Progressive!
-      Redirecting to static page...</p>
-      <meta http-equiv="refresh" content="0;url={{ noscript }}">
-    </noscript>
     <script nomodule>
       // IE11 and anything that doesn't support ES Modules gets the no-JS
       // version of the site
       location.href = '{{ noscript }}';
     </script>
-
     <header id="pageHeader">
       <picture>
         <source srcset="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-150.webp" type="image/webp">
@@ -253,6 +247,11 @@
         </nav>
       </div>
     </header>
+    <noscript aria-hidden="true">
+      <p>JavaScript appears to be turned off and that's a-okay!</p>
+      <p>This Progressive Web App is Progressive! Redirecting to static page...</p>
+      <meta http-equiv="refresh" content="0;url={{ noscript }}">
+    </noscript>
     <blog-pwa>
       <section id="skeleton" slot="skeleton">
         <div></div>

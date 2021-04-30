@@ -245,6 +245,7 @@ export default class BlogElement extends LitElement {
         :focus {
           transition: outline-offset 0.25s ease;
           outline-offset: 5px;
+          outline: 3px solid #000;
         }
       }
 

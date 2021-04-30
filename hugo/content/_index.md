@@ -15,7 +15,7 @@ sitemap:
 </section>
 
 <nav id="tags" aria-labelledby="tags-nav">
-  <h3 id="tags-nav">Popular Post Categories</h3>
+  <h2 id="tags-nav">Popular Post Categories</h2>
   <p><a href="/tags/maker/">Maker</a> <a href="/tags/web/">Web</a> <a href="/tags/photography/">Photography</a> <a href="/tags/business/">Business</a> <a href="/tags/iot/">IoT</a> <a href="/tags/personal/">Personal</a></p>
 </nav>
 

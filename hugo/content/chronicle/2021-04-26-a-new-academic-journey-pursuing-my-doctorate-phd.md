@@ -1,5 +1,5 @@
 ---
-title: "A New Journey: Pursuing My Doctorate in Management"
+title: "A New Journey: Pursuing My Doctoral Degree in Management"
 description: "Sometimes you have to make the leap to to pursue the questions that keep you awake at night."
 date: 2021-04-26T19:20:21-07:00
 tags:
