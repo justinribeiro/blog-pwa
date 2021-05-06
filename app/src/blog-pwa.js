@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit';
+import { LitElement, html, css } from 'lit';
 import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
 
@@ -60,7 +60,9 @@ class BlogPwa extends LitElement {
    */
   __routes(location) {
     switch (true) {
-      case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*|about|talks)/.test(location.pathname):
+      case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*|about|talks)/.test(
+        location.pathname
+      ):
         this.__loadRoute('entry');
         break;
       case /(chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
@@ -85,7 +87,7 @@ class BlogPwa extends LitElement {
           componentInject: elementName,
           gcOnClose: true,
         },
-      }),
+      })
     );
   }
 
@@ -141,7 +143,10 @@ class BlogPwa extends LitElement {
       let swUrl;
       const srcSw = url => {
         const parsed = new URL(url, document.baseURI);
-        if (parsed.host === 'justinribeiro.com' || parsed.host === 'www.justinribeiro.com') {
+        if (
+          parsed.host === 'justinribeiro.com' ||
+          parsed.host === 'www.justinribeiro.com'
+        ) {
           return parsed.href;
         }
         throw new TypeError('invalid sw url');
@@ -156,7 +161,7 @@ class BlogPwa extends LitElement {
       }
       const wb = new Workbox(swUrl);
 
-      wb.addEventListener('activated', (event) => {
+      wb.addEventListener('activated', event => {
         if ('requestIdleCallback' in window) {
           window.requestIdleCallback(
             () => {
@@ -164,7 +169,7 @@ class BlogPwa extends LitElement {
             },
             {
               timeout: 5000,
-            },
+            }
           );
         } else {
           this.__cacheExistingLoadedUrls(wb);
@@ -200,7 +205,7 @@ class BlogPwa extends LitElement {
         },
         {
           timeout: 5000,
-        },
+        }
       );
     } else {
       this.__importAnalytics();
@@ -263,13 +268,22 @@ class BlogPwa extends LitElement {
     }
   }
 
+  static get styles() {
+    return css`
+      main {
+        display: grid;
+        justify-content: center;
+      }
+    `;
+  }
+
   render() {
     return html`
       <main>
         <div ?hidden=${!this.__hideSkeleton}>
           <slot id="skeleton" name="skeleton"></slot>
         </div>
-        <div id="outlet"></div>
+        <section id="outlet"></section>
       </main>
       <snack-bar hidden></snack-bar>
     `;

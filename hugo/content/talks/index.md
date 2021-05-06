@@ -97,26 +97,25 @@ _This list is generally always out of date and only contains slidedecks from pub
 <p>March 2016. Google GDG NA Community Summit.</p>
 
 <h3 class="talk"><a href="http://modernweb.podbean.com/e/s01e07-the-polymer-2016-roadmap-featuring-rob-dodson-with-justin-ribeiro/?token=7c3006a3a725cb6fb0999e9abbcac825">S01E07 - The Polymer 2016 Roadmap featuring Rob Dodson with Justin Ribeiro</a></h3>
-<p>March 2016. [Modern Web Podcast](http://www.modern-web.org/#/modern-web-podcast).</p>
+<p>March 2016. <a href="http://www.modern-web.org/#/modern-web-podcast">Modern Web Podcast</a></p>
 
 <h3 class="talk"><a href="https://goo.gl/6ICgb9">Show me the Context: Beacons, Hints, and You</a></h3>
-<p>February 2016. [GDG DevFest 2016 - GDG Kansas City](https://goo.gl/6ICgb9).</p>
+<p>February 2016. <a href="https://goo.gl/6ICgb9">GDG DevFest 2016 - GDG Kansas City</a></p>
 
 <h3 class="talk"><a href="https://docs.google.com/presentation/d/1gi3Mg_fXwpXWYWwnBWoai7O6zVDHU83FWWuTKdBlLxI/edit?usp=sharing">Progressive Web Apps:
 the web gets appy edition</a></h3>
 <p>January 2016. GDG Oakdale.</p>
 
 <h3 class="talk"><a href="https://docs.google.com/presentation/d/1MU8DbZo5qqFSIta0Z1IHWpeHeq0__f-FVkf6vEWokGY/edit?usp=sharing">Building real-time elements using Polymer and Firebase</a></h3>
-<p>January 2016. [IoT DevFest Arizona](http://www.iotdevfest.com/).</p>
+<p>January 2016. <a href="http://www.iotdevfest.com/">IoT DevFest Arizona</a></p>
 
 <h3 class="talk"><a href="https://goo.gl/6ICgb9">Beacons, Hinting, and You: Context and Discovery</a></h3>
-<p>November 2015. [GDG DevFest 2015 - GDG Silicon Valley](https://devfest2015.gdgsv.com/#!/speakers/10).</p>
+<p>November 2015. <a href="https://devfest2015.gdgsv.com/#!/speakers/10">GDG DevFest 2015 - GDG Silicon Valley</a></p>
 
 <h3 class="talk"><a href="https://docs.google.com/presentation/d/1EWvhD8djrzvStPBX0jXqfDTz7OFwd0JV7MZqsalzPcw/edit?usp=sharing">JavaScript Design Patterns</a></h3>
 <p>September 2015. GDG Oakdale.</p>
 
 <h3 class="talk"><a href="https://plus.google.com/u/0/events/cnd2ivdfsn8j73hrd4cqgv9l704">Polymer 1.0</a></h3>
-<p>June 2015. [The Web Platform Podcast](http://thewebplatform.libsyn.com/).</p>
 
 <h3 class="talk"><a href="https://events.google.com/io2015/schedule?sid=654889d1-cbf5-e411-b87f-00155d5066d7#day2/654889d1-cbf5-e411-b87f-00155d5066d7">Google Developer Expert on Polymer and Firebase for real-time elements</a></h3>
 <p>May 2015. Google I/O.</p>
@@ -125,7 +124,7 @@ the web gets appy edition</a></h3>
 <p>May 2015. GDG Oakdale.</p>
 
 <h3 class="talk"><a href="https://goo.gl/chTreG">Developing for Project Tango</a></h3>
-<p>April 2015. [Smart Glass Innovators](http://www.meetup.com/smartglass/events/221811679/).</p>
+<p>April 2015. <a href="http://www.meetup.com/smartglass/events/221811679/">Smart Glass Innovators</a></p>
 
 <h3 class="talk"><a href="https://docs.google.com/presentation/d/1THYy53nbF-p6_pDTacLsKj8kYDolG0T1uCJyU0i5sk0/edit?usp=sharing">Firebase: An Overview</a></h3>
 <p>April 2015. GDG Oakdale.</p>
@@ -143,7 +142,7 @@ the web gets appy edition</a></h3>
 <p>February 2015. GDG Oakdale</p>
 
 <h3 class="talk"><a href="https://docs.google.com/presentation/d/1tGNmaPPF5UfHty58OfCyVpuxsNyJZ2_gewC7Z9RWZPM/edit?usp=sharing">Deploy all the things with Google Cloud Platform</a></h3>
-Video: [https://www.youtube.com/watch?v=-7gUa9t8jug](https://www.youtube.com/watch?v=-7gUa9t8jug)
+<a href="https://www.youtube.com/watch?v=-7gUa9t8jug">Video</a>
 <p>January 2015. A Night with ReThinkDB</p>
 
 <h3 class="talk"><a href="https://justinribeiro.github.io/chrome-extensions-codelab-gdg-oakdale/">Chrome Extensions Codelab</a></h3>

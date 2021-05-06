@@ -1,5 +1,4 @@
-import { css, html } from 'lit';
-import BlogElement from './blog-element.js';
+import { BlogElement, html, css } from './blog-element.js';
 
 class BlogStatic extends BlogElement {
   static get styles() {
@@ -8,8 +7,9 @@ class BlogStatic extends BlogElement {
       css`
         #posts {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-gap: 10px;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          justify-content: center;
+          grid-gap: 0.5rem;
         }
 
         #posts > a {
@@ -45,12 +45,6 @@ class BlogStatic extends BlogElement {
         #posts > a:hover time,
         #posts > a:hover h3 {
           color: #fff;
-        }
-
-        @media (max-width: 767px) {
-          #posts {
-            grid-template-columns: 1fr;
-          }
         }
       `,
     ];

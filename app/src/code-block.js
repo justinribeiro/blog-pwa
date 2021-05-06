@@ -60,8 +60,8 @@ class CodeBlock extends LitElement {
         tab-size: 4;
 
         hyphens: none;
-        background: #faf8f5;
-        color: #222222;
+        background: var(--code-block-bg);
+        color: var(--code-block-text);
       }
 
       /* Code blocks */
@@ -80,7 +80,7 @@ class CodeBlock extends LitElement {
 
       :not(pre) > code[class*='language-'],
       pre[class*='language-'] {
-        background: #f5f2f0;
+        background: var(--code-block-bg);
       }
 
       /* Inline code */
@@ -176,6 +176,10 @@ class CodeBlock extends LitElement {
 
       .token.entity {
         cursor: help;
+      }
+
+      .token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
+        background: none;
       }
 
       pre {

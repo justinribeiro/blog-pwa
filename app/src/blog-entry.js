@@ -1,5 +1,4 @@
-import { css, html } from 'lit';
-import BlogElement from './blog-element.js';
+import { BlogElement, html, css } from './blog-element.js';
 
 class BlogEntry extends BlogElement {
   static get properties() {
@@ -145,7 +144,7 @@ class BlogEntry extends BlogElement {
     event.preventDefault();
     let message =
       'Thank you for sharing! Your Webmention has been received and is currently be processed.';
-    const {  action  } = this.shadowRoot.querySelector('#webMentionForm');
+    const { action } = this.shadowRoot.querySelector('#webMentionForm');
     const target = this.metadata.permalink;
     const source = this.shadowRoot.querySelector('#webMentionSource').value;
 
@@ -192,7 +191,7 @@ class BlogEntry extends BlogElement {
         }
 
         figcaption {
-          color: #666;
+          color: var(--secondary-text-color);
           font-size: 0.875rem;
           line-height: 1.125rem;
           margin-top: 0.5em;
@@ -200,7 +199,7 @@ class BlogEntry extends BlogElement {
 
         figcaption .author {
           display: inline-block;
-          color: rgb(111 111 111);
+          color: var(--secondary-text-color);
           font-family: var(--font-family-serif);
           line-height: 1.125rem;
           letter-spacing: 0.01em;
@@ -214,7 +213,7 @@ class BlogEntry extends BlogElement {
           position: fixed;
           box-sizing: border-box;
           padding: 4rem;
-          background-color: #fff;
+          background-color: var(--bg);
           width: 100vw;
           height: 100vh;
           top: 0;
@@ -295,7 +294,7 @@ class BlogEntry extends BlogElement {
 
         input {
           width: 100%;
-          border: 1px solid #b0b0b0;
+          border: var(--border);
           box-sizing: border-box;
           font-size: 1rem;
         }
@@ -309,9 +308,9 @@ class BlogEntry extends BlogElement {
         share-to-mastodon {
           --wc-stm-font-family: var(--font-family-serif);
           --wc-stm-link-text-decoration: none;
-          --wc-stm-link-color-initial: #0049a3;
-          --wc-stm-link-color-visited: #0049a3;
-          border-bottom: 1px solid #0049a3;
+          --wc-stm-link-color-initial: var(--accent-color-primary);
+          --wc-stm-link-color-visited: var(--accent-color-secondary);
+          border-bottom: 1px solid var(--accent-color-primary);
           letter-spacing: -0.063px;
           line-height: 33.18px;
           margin: 0;
@@ -334,6 +333,15 @@ class BlogEntry extends BlogElement {
 
           #main img {
             margin: none !important;
+          }
+        }
+
+        @media (prefers-reduced-data: reduce) {
+          img,
+          video,
+          lite-youtube,
+          stl-part-viewer {
+            display: none;
           }
         }
       `,

@@ -85,7 +85,7 @@
         --font-family-headers: 'Literata', var(--font-family-serif);
       }
 
-       @media (prefers-reduced-motion: no-preference) {
+      @media (prefers-reduced-motion: no-preference) {
         :focus {
           transition: outline-offset .25s ease;
           outline-offset: 5px;
@@ -169,56 +169,31 @@
         border-radius: 10%;
       }
 
-      #pageFooter > div , #skeleton {
-        margin: auto;
-        max-width: 800px;
-      }
-
       #pageFooter {
         border-top: 1px solid var(--structs-border);
         padding: var(--footer-pad-lr) var(--footer-pad-tb);
-      }
-
-      #pageFooter h2 {
-        font-size: 22px;
-      }
-
-      #pageFooter > div {
-        display: flex;
-        flex-direction: var(--footer-flex-direction);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(275px, 400px));
         justify-content: center;
-
+        grid-gap: 0.5rem;
       }
 
-      #pageFooter > div section {
-        flex: 1;
-      }
-
-      #pageFooter > div section:first-child {
-        padding-right: 1rem;
-      }
-
-      #thanks p {
-        font-size: 14px;
+      #thanks {
+        font-size: 85%;
         text-transform: uppercase;
         color: var(--structs-hi);
         text-align: center;
       }
 
-      #thanks p a {
+      #thanks a {
         color: var(--structs-hi);
         border-bottom: 1px dotted var(--structs-hi);
       }
 
-      hr {
-        height: 20px;
-        background-color: #e6e6e6;
-        border: 0;
-      }
-
-      hr.short {
-        width: 65%;
-        margin-left: 0;
+      @media (min-width: 767px) {
+        #thanks  {
+          grid-column: span 2;
+        }
       }
 
       code-block,
@@ -332,36 +307,22 @@
         display: none !important;
       }
 
-      /* Use these to generate skeleton blocks before content loads */
-      hr {
-        height: 20px;
-        background-color: #e6e6e6;
-        border: 0;
-      }
-      hr.short {
-        width: 65%;
-        margin-left: 0;
-      }
-
       /*
         Design choice: in my components, I always have a #main as a container
         in my web components. Why isn't named container? No idea. LOL.
       */
-      #main,
-      #skeleton {
+      #main
+      {
         margin: auto;
         padding: 0 20px;
         max-width: 800px;
       }
 
-      #skeleton {
-        min-height: 102vh;
-      }
-
       #posts {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-content: center;
+        grid-gap: 0.5rem;
       }
 
       #posts > a {
@@ -405,12 +366,6 @@
         font-family: 'Libre Franklin', sans-serif;
         line-height: 1.55;
         font-weight: 300;
-      }
-
-      @media (max-width: 767px) {
-        #posts {
-          grid-template-columns: 1fr;
-        }
       }
 
       #main iframe,
@@ -694,68 +649,32 @@
       </div>
     </div>
     <footer id="pageFooter">
-      <div>
-        <section>
-          <h2>Hello, nice to meet you.</h2>
-          <p>
-            I'm happy to talk. You can reach me on
-            <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or
-            via email at
-            <a
-              rel="me"
-              href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)"
-              >justin@justinribeiro.com</a
-            >
-          </p>
-
-          <p>
-            Looking for some of my code? Check
-            <a rel="me" href="https://github.com/justinribeiro">Github</a> or
-            <a rel="me" href="https://hub.docker.com/r/justinribeiro/"
-              >DockerHub</a
-            >.
-          </p>
-        </section>
-        <section>
-          <h2>Meta Things</h2>
-          <p>
-            <a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>.
-            RIP Reader, follow along on
-            <a
-              href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml"
-              target="blank"
-              >Feedly</a
-            >.
-          </p>
-          <p>
-            What, you found a bug on this site? Yikes. Please take a moment and
-            <a href="https://github.com/justinribeiro/blog-pwa/issues/new"
-              >file a ticket</a
-            >
-            so I can fix it.
-          </p>
-        </section>
-      </div>
-      <div id="thanks">
-        <p>
-          Made with ❤️ using
-          <a href="https://lit-element.polymer-project.org/">Web Components</a>
-          and <a href="https://gohugo.io/">Hugo</a>.
-        </p>
-      </div>
-      <div class="h-card" hidden>
-        <span class="p-name u-uid" rel="me">Justin Ribeiro</span>
-        <a href="https://justinribeiro.com" class="u-url">https://justinribeiro.com</a>
-        <a class="u-email" href="mailto:justin@justinribeiro.com">justin@justinribeiro.com</a>
-        <p class="p-note">A blog on web development, business, family, and a touch of photography by Justin Ribeiro.</p>
-        <img
-          id="me"
-          src="/images/manifest/me-2020-Q1-150.jpg"
-          alt="Justin Ribeiro"
-          class="u-photo"
-        />
-      </div>
+      <section>
+        <h2>Hello, nice to meet you.</h2>
+        <p>I'm happy to talk. You can reach me on <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or via email at <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a></p>
+        <p>Looking for some of my code? Check <a rel="me" href="https://github.com/justinribeiro">Github</a> or <a rel="me" href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
+      </section>
+      <section>
+        <h2>Meta Things</h2>
+        <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. RIP Reader, follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml' target='blank'>Feedly</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
+        <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
+      </section>
+      <section id="thanks">
+        <p>Made with ❤️ using <a href="https://lit-element.polymer-project.org/">Web Components</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
+      </section>
     </footer>
+    <div class="h-card" hidden>
+      <span class="p-name u-uid" rel="me">Justin Ribeiro</span>
+      <a href="https://justinribeiro.com" class="u-url">https://justinribeiro.com</a>
+      <a class="u-email" href="mailto:justin@justinribeiro.com">justin@justinribeiro.com</a>
+      <p class="p-note">A blog on web development, business, family, and a touch of photography by Justin Ribeiro.</p>
+      <img
+        id="me"
+        src="/images/manifest/me-2020-Q1-150.jpg"
+        alt="Justin Ribeiro"
+        class="u-photo"
+      />
+    </div>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
