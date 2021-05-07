@@ -37,6 +37,8 @@ class BlogPwa extends LitElement {
     this.addEventListener('blog-pwa-toggle-skeleton', event => {
       this.__hideSkeleton = event.detail.show;
     });
+
+    this.__setupDarkMode();
   }
 
   /**
@@ -265,6 +267,41 @@ class BlogPwa extends LitElement {
         ? 'You appear to have gone offline.'
         : 'You appear to now be back online.';
       this._setSnackBarText(offlineState);
+    }
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  __setupDarkMode() {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+      const darkModeOn = e.matches;
+      const cHtml = document.querySelector('html');
+      if (darkModeOn) {
+        cHtml.setAttribute('darkmode', '');
+      } else {
+        cHtml.removeAttribute('darkmode');
+      }
+    });
+
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.querySelector('html').setAttribute('darkmode', '');
+    } else if ('AmbientLightSensor' in window) {
+      navigator.permissions
+        .query({ name: 'ambient-light-sensor' })
+        .then(result => {
+          if (result.state === 'denied') {
+            return;
+          }
+          const sensor = new AmbientLightSensor({ frequency: 0.25 });
+          sensor.addEventListener('reading', () => {
+            const cHtml = document.querySelector('html');
+            if (sensor.illuminance < 3) {
+              cHtml.setAttribute('darkmode', '');
+            } else if (sensor.illuminance > 3) {
+              cHtml.removeAttribute('darkmode');
+            }
+          });
+          sensor.start();
+        });
     }
   }
 

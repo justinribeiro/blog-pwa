@@ -277,26 +277,24 @@ class BlogEntry extends BlogElement {
           margin-right: 0.5em;
         }
 
-        button {
-          background: #f5ee00;
-          border: 1px solid #ccc;
-          font-size: 1rem;
-        }
-
         label {
           display: block;
         }
 
         input,
         button {
-          padding: 1rem;
+          padding: calc(var(--space-cs) * 2);
+          font-size: var(--form-input-fs);
+          border: var(--border);
+          box-sizing: border-box;
+        }
+
+        button {
+          background: var(--form-button-color);
         }
 
         input {
           width: 100%;
-          border: var(--border);
-          box-sizing: border-box;
-          font-size: 1rem;
         }
 
         ol,

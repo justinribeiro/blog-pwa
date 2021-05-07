@@ -293,7 +293,7 @@ class BlogElement extends LitElement {
         margin: 0 0 calc(var(--space-cs) * 2) 0;
         color: var(--primary-text-color);
         font-size: var(--font-base);
-        line-height: calc(var(--font-base)  * var(--font-lhr));
+        line-height: calc(var(--font-base) * var(--font-lhr));
       }
 
       /* Don't like this; special case. TODO extract */
@@ -308,6 +308,10 @@ class BlogElement extends LitElement {
         border-left: var(--outline-thickness) solid var(--accent-color-primary);
         padding-left: var(--space-cs);
         font-style: oblique;
+      }
+
+      img {
+        filter: var(--image-filter, initial);
       }
 
       /*

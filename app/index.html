@@ -29,7 +29,7 @@
     <link rel="pingback" href="https://webmention.io/justinribeiro.com/xmlrpc" />
 
     <style>
-      html {
+      :root {
         --bg: #ffffff;
         --primary-text-color: #212121;
         --secondary-text-color: #757575;
@@ -44,6 +44,9 @@
         --notice-color-text: #ffffff;
         --notice-color-link: #f1f900;
 
+        --form-input-fs: 1rem;
+        --form-button-color: #f5ee00;
+
         --diff-del-color: #fbcdd4;
         --diff-ins-color: #d2fbcd;
 
@@ -55,7 +58,6 @@
         --code-block-text: #222;
 
         --page-last: 800px;
-
         --header-height: 100px;
         --header-font-offset: -10px;
         --header-font-offset-left: -1.75px;
@@ -76,39 +78,47 @@
         --font-lhr: 1.618;
         --font-h1: 2.5rem;
         --font-base: 1.333rem;
+
+        --motion: .25s ease;
+      }
+
+      :root[darkmode] {
+        --bg: #121212;
+        --primary-text-color: #fafafa;
+        --secondary-text-color: #F1f1f1;
+        --accent-color-primary: #81d7ff;
+        --accent-color-secondary: #D06262;
+        --section-color: #444;
+        --structs-bg:#333;
+        --structs-hi: #FF94F6;
+        --structs-border: #555;
+        --skeleton-bg: #cccccc;
+
+        --form-button-color: #868200;
+
+        --diff-del-color: #ff0026;
+        --diff-ins-color: #0b4e02;
+
+        --code-background: #0c0c0c;
+        --code-color: #DD4A68;
+        --code-block-bg: #000;
+        --code-block-text: #fafafa;
+
+        --image-filter: grayscale(50%);
       }
 
       @media (prefers-color-scheme: dark) {
-        html {
-          --bg: #121212;
-          --primary-text-color: #ffffff;
-          --secondary-text-color: #F1f1f1;
-          --accent-color-primary: #81d7ff;
-          --accent-color-secondary: #D06262;
-          --section-color: #444;
-          --structs-bg:#333;
-          --structs-hi: #FF94F6;
-          --structs-border: #555;
-          --skeleton-bg: #cccccc;
 
-          --diff-del-color: #ff0026;
-          --diff-ins-color: #0b4e02;
-
-          --code-background: #0c0c0c;
-          --code-color: #DD4A68;
-          --code-block-bg: #000;
-          --code-block-text: #fff;
-        }
       }
 
       @media (prefers-reduced-motion: no-preference) {
         :focus {
-          transition: outline-offset .25s ease;
+          transition: outline-offset var(--motion);
         }
       }
 
       @media (max-width: 767px) {
-        html {
+        :root {
           --header-height: 85px;
           --header-font-size: 22px;
           --header-image: 55px;
