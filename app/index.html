@@ -64,6 +64,8 @@
         --header-letter-spacing: -0.02rem;
         --header-font-size: 32px;
         --header-image: 75px;
+        --footer-grid-min: 275px;
+        --footer-grid-max: 400px;
 
         --border-thickness: 1px;
         --border: var(--border-thickness) solid var(--structs-border);
@@ -78,8 +80,8 @@
         --font-lhr: 1.618;
         --font-h1: 2.5rem;
         --font-base: 1.333rem;
-
-        --motion: .25s ease;
+        --motion-duration: 0;
+        --motion-type:  none;
       }
 
       :root[darkmode] {
@@ -107,13 +109,13 @@
         --image-filter: grayscale(50%);
       }
 
-      @media (prefers-color-scheme: dark) {
-
-      }
-
       @media (prefers-reduced-motion: no-preference) {
+        :root {
+          --motion-duration: .3s;
+          --motion-type:  ease
+        }
         :focus {
-          transition: outline-offset var(--motion);
+          transition: outline-offset var(--motion-duration) var(--motion-type);
         }
       }
 
@@ -180,7 +182,7 @@
 
       #pageFooter {
         border-top: var(--border);
-        grid-template-columns: repeat(auto-fit, minmax(275px, 400px));
+        grid-template-columns: repeat(auto-fit, minmax(var(--footer-grid-min), var(--footer-grid-max)));
       }
 
       #pageHeader h1 {
@@ -202,7 +204,6 @@
       }
 
       #thanks {
-        font-size: 85%;
         text-transform: uppercase;
         color: var(--structs-hi);
         text-align: center;
@@ -235,8 +236,11 @@
       }
 
       @media (min-width: 767px) {
+        #pageFooter {
+          grid-template-columns: repeat(2, minmax(var(--footer-grid-min), var(--footer-grid-max)));
+        }
         #thanks  {
-          grid-column: span 2;
+          grid-column: 1 / -1;
         }
       }
 
@@ -309,10 +313,9 @@
         <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
       </section>
       <section id="thanks">
-        <p>Made with ❤️ using <a href="https://lit-element.polymer-project.org/">Web Components</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
+        <small>Made with ❤️ using <a href="https://lit.dev/">Web Components</a>, <a href="https://gohugo.io/">Hugo</a>, and <a href="https://github.com/justinribeiro/blog-pwa">Blog-PWA</a>.</small>
       </section>
     </footer>
     <script type="module" src="./src/blog-pwa.js"></script>
     <script type="application/ld+json">{"@context":"http://schema.org","@type":"Person","name":"Justin Ribeiro","url":"https://justinribeiro.com/","email":"justin@justinribeiro.com","image":"https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2020-Q1-512.jpg","sameAs":["https://twitter.com/justinribeiro","https://www.linkedin.com/in/justinribeiro","https://plus.google.com/+justinribeiro","https://github.com/justinribeiro","https://facebook.com/justinribeiro","https://ribeiro.social/@justin","https://hub.docker.com/r/justinribeiro/","https://developers.google.com/community/experts/directory/profile/profile-justin_ribeiro"]}</script>
   </body>
-</html>

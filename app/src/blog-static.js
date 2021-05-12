@@ -9,15 +9,15 @@ class BlogStatic extends BlogElement {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           justify-content: center;
-          grid-gap: 0.5rem;
+          grid-gap: var(--space-cs);
         }
 
         #posts > a {
           display: block;
-          padding: 0.5rem;
+          padding: var(--space-cs);
           border-bottom: none;
-          border-radius: 0.5rem;
-          transition-duration: 0.3s;
+          border-radius: var(--space-cs);
+          transition-duration: var(--motion-duration);
           will-change: background-color;
         }
 
@@ -32,7 +32,7 @@ class BlogStatic extends BlogElement {
           font-weight: 400;
           text-transform: uppercase;
           font-size: 0.85rem;
-          margin-bottom: 0.5rem;
+          margin-bottom: var(--space-cs);
           font-family: var(--font-family-sans-serif);
           color: var(--accent-color-secondary);
         }

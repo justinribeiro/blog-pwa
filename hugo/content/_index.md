@@ -16,7 +16,7 @@ sitemap:
 
 <nav id="tags" aria-labelledby="tags-nav">
   <h2 id="tags-nav">Popular Post Categories</h2>
-  <p><a href="/tags/maker/">Maker</a> <a href="/tags/web/">Web</a> <a href="/tags/photography/">Photography</a> <a href="/tags/business/">Business</a> <a href="/tags/iot/">IoT</a> <a href="/tags/personal/">Personal</a></p>
+  <p><a href="/tags/maker/" aria-label="Read posts about Maker projects">Maker</a> <a href="/tags/web/" aria-label="Read posts about the Web Platform">Web</a> <a href="/tags/photography/" aria-label="Read posts about Photography and Film">Photography</a> <a href="/tags/business/" aria-label="Read posts about Business and Management">Business</a> <a href="/tags/iot/" aria-label="Read posts about Internet of Things">IoT</a> <a href="/tags/personal/" aria-label="Read posts about my personal adventures">Personal</a></p>
 </nav>
 
 ## The Latest Posts
