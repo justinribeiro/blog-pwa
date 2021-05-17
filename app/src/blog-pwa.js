@@ -274,7 +274,7 @@ class BlogPwa extends LitElement {
   __setupDarkMode() {
     window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
       const darkModeOn = e.matches;
-      const cHtml = document.querySelector('html');
+      const cHtml = document.querySelector(':root');
       if (darkModeOn) {
         cHtml.setAttribute('darkmode', '');
       } else {
@@ -283,7 +283,7 @@ class BlogPwa extends LitElement {
     });
 
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.querySelector('html').setAttribute('darkmode', '');
+      document.querySelector(':root').setAttribute('darkmode', '');
     } else if ('AmbientLightSensor' in window) {
       navigator.permissions
         .query({ name: 'ambient-light-sensor' })
@@ -293,7 +293,7 @@ class BlogPwa extends LitElement {
           }
           const sensor = new AmbientLightSensor({ frequency: 0.25 });
           sensor.addEventListener('reading', () => {
-            const cHtml = document.querySelector('html');
+            const cHtml = document.querySelector(':root');
             if (sensor.illuminance < 3) {
               cHtml.setAttribute('darkmode', '');
             } else if (sensor.illuminance > 3) {
