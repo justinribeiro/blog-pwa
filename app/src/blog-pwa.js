@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit';
+import { LitElement, html, css } from 'lit';
 import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
 
@@ -37,6 +37,8 @@ class BlogPwa extends LitElement {
     this.addEventListener('blog-pwa-toggle-skeleton', event => {
       this.__hideSkeleton = event.detail.show;
     });
+
+    this.__setupDarkMode();
   }
 
   /**
@@ -60,7 +62,9 @@ class BlogPwa extends LitElement {
    */
   __routes(location) {
     switch (true) {
-      case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*|about|talks)/.test(location.pathname):
+      case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*|about|talks)/.test(
+        location.pathname
+      ):
         this.__loadRoute('entry');
         break;
       case /(chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
@@ -85,7 +89,7 @@ class BlogPwa extends LitElement {
           componentInject: elementName,
           gcOnClose: true,
         },
-      }),
+      })
     );
   }
 
@@ -141,7 +145,10 @@ class BlogPwa extends LitElement {
       let swUrl;
       const srcSw = url => {
         const parsed = new URL(url, document.baseURI);
-        if (parsed.host === 'justinribeiro.com' || parsed.host === 'www.justinribeiro.com') {
+        if (
+          parsed.host === 'justinribeiro.com' ||
+          parsed.host === 'www.justinribeiro.com'
+        ) {
           return parsed.href;
         }
         throw new TypeError('invalid sw url');
@@ -156,7 +163,7 @@ class BlogPwa extends LitElement {
       }
       const wb = new Workbox(swUrl);
 
-      wb.addEventListener('activated', (event) => {
+      wb.addEventListener('activated', event => {
         if ('requestIdleCallback' in window) {
           window.requestIdleCallback(
             () => {
@@ -164,7 +171,7 @@ class BlogPwa extends LitElement {
             },
             {
               timeout: 5000,
-            },
+            }
           );
         } else {
           this.__cacheExistingLoadedUrls(wb);
@@ -200,7 +207,7 @@ class BlogPwa extends LitElement {
         },
         {
           timeout: 5000,
-        },
+        }
       );
     } else {
       this.__importAnalytics();
@@ -263,13 +270,57 @@ class BlogPwa extends LitElement {
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  __setupDarkMode() {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+      const darkModeOn = e.matches;
+      const cHtml = document.querySelector(':root');
+      if (darkModeOn) {
+        cHtml.setAttribute('darkmode', '');
+      } else {
+        cHtml.removeAttribute('darkmode');
+      }
+    });
+
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.querySelector(':root').setAttribute('darkmode', '');
+    } else if ('AmbientLightSensor' in window) {
+      navigator.permissions
+        .query({ name: 'ambient-light-sensor' })
+        .then(result => {
+          if (result.state === 'denied') {
+            return;
+          }
+          const sensor = new AmbientLightSensor({ frequency: 0.25 });
+          sensor.addEventListener('reading', () => {
+            const cHtml = document.querySelector(':root');
+            if (sensor.illuminance < 3) {
+              cHtml.setAttribute('darkmode', '');
+            } else if (sensor.illuminance > 3) {
+              cHtml.removeAttribute('darkmode');
+            }
+          });
+          sensor.start();
+        });
+    }
+  }
+
+  static get styles() {
+    return css`
+      main {
+        display: grid;
+        justify-content: center;
+      }
+    `;
+  }
+
   render() {
     return html`
       <main>
         <div ?hidden=${!this.__hideSkeleton}>
           <slot id="skeleton" name="skeleton"></slot>
         </div>
-        <div id="outlet"></div>
+        <section id="outlet"></section>
       </main>
       <snack-bar hidden></snack-bar>
     `;

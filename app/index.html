@@ -6,6 +6,7 @@
     <title>Justin Ribeiro</title>
     <meta name="description" content="Manager. Maker. Film Photographer. Recovering Software Engineer. Speaker. Writer. Dad. Coach. Occasionally funny.">
     <meta name="theme-color" content="#f1f1f1">
+    <meta name="color-scheme" content="dark light">
 
     <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-192.png">
     <link rel="apple-touch-icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-192.png">
@@ -28,7 +29,9 @@
     <link rel="pingback" href="https://webmention.io/justinribeiro.com/xmlrpc" />
 
     <style>
-      html {
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
         --primary-text-color: #212121;
         --secondary-text-color: #757575;
         --accent-color-primary: #0049A3;
@@ -42,40 +45,97 @@
         --notice-color-text: #ffffff;
         --notice-color-link: #f1f900;
 
+        --form-input-fs: 1rem;
+        --form-button-color: #f5ee00;
+
+        --diff-del-color: #fbcdd4;
+        --diff-ins-color: #d2fbcd;
+
+        --space-cs: 0.5rem;
+
         --code-background: #faf8f5;
         --code-color: #DD4A68;
+        --code-block-bg: #f5f2f0;
+        --code-block-text: #222;
 
+        --page-last: 800px;
         --header-height: 100px;
         --header-font-offset: -10px;
+        --header-font-offset-left: -1.75px;
+        --header-letter-spacing: -0.02rem;
         --header-font-size: 32px;
         --header-image: 75px;
-        --footer-flex-direction: row;
-        --footer-pad-lr: 1rem;
-        --footer-pad-tb: 20px;
+        --footer-grid-min: 275px;
+        --footer-grid-max: 400px;
+
+        --border-thickness: 1px;
+        --border: var(--border-thickness) solid var(--structs-border);
+        --border-radius: 5px;
+        --outline: 3px solid var(--primary-text-color);
+        --outline-thickness: 5px;
 
         --font-family-serif: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
         --font-family-sans-serif: 'Libre Franklin', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
         --font-family-headers: 'Literata', var(--font-family-serif);
+
+        --font-lhr: 1.618;
+        --font-h1: 2.5rem;
+        --font-base: 1.333rem;
+        --motion-duration: 0;
+        --motion-type:  none;
+      }
+
+      :root[darkmode] {
+        --bg: #121212;
+        --primary-text-color: #fafafa;
+        --secondary-text-color: #F1f1f1;
+        --accent-color-primary: #81d7ff;
+        --accent-color-secondary: #D06262;
+        --section-color: #444;
+        --structs-bg:#333;
+        --structs-hi: #FF94F6;
+        --structs-border: #555;
+        --skeleton-bg: #cccccc;
+
+        --form-button-color: #868200;
+
+        --diff-del-color: #ff0026;
+        --diff-ins-color: #0b4e02;
+
+        --code-background: #0c0c0c;
+        --code-color: #DD4A68;
+        --code-block-bg: #000;
+        --code-block-text: #fafafa;
+
+        --image-filter: grayscale(50%);
       }
 
       @media (prefers-reduced-motion: no-preference) {
+        :root {
+          --motion-duration: .3s;
+          --motion-type:  ease
+        }
         :focus {
-          transition: outline-offset .25s ease;
-          outline-offset: 5px;
-          outline: 3px solid #000;
+          transition: outline-offset var(--motion-duration) var(--motion-type);
         }
       }
 
       @media (max-width: 767px) {
-        html {
+        :root {
           --header-height: 85px;
           --header-font-size: 22px;
           --header-image: 55px;
           --header-font-offset: -5px;
-          --footer-flex-direction: column;
-          --footer-pad-lr: 20px;
-          --footer-pad-tb: 20px;
+          --page-last: 88vw;
+
+          --font-h1: 1.75rem;
+          --font-base: 1.125rem;
         }
+      }
+
+      :focus {
+        outline-offset: var(--outline-thickness);
+        outline: var(--outline);
       }
 
       body, h1, h2 {
@@ -84,7 +144,9 @@
 
       body {
         font-family: var(--font-family-sans-serif);
-        line-height: 1.5;
+        color: var(--primary-text-color);
+        line-height: var(--font-lhr);
+        background-color: var(--bg);
       }
 
       a {
@@ -107,16 +169,22 @@
         font-family: var(--font-family-headers);
       }
 
-      #pageHeader {
-        display: flex;
+      #pageHeader, #pageFooter {
+        display: grid;
         align-items: center;
         justify-content: center;
-        border-bottom: 1px solid var(--structs-border);
-        height: var(--header-height);
+        gap: var(--space-cs);
+        padding: var(--space-cs);
       }
 
-      #pageHeader > div {
-        padding-left: 1em;
+      #pageHeader {
+        border-bottom: var(--border);
+        grid-template-columns: auto auto;
+      }
+
+      #pageFooter {
+        border-top: var(--border);
+        grid-template-columns: repeat(auto-fit, minmax(var(--footer-grid-min), var(--footer-grid-max)));
       }
 
       #pageHeader h1 {
@@ -124,83 +192,58 @@
         margin-top: var(--header-font-offset);
       }
 
-      #pageHeader nav {
-        padding-top: 0.4em;
-      }
-
       #pageHeader nav a {
-        font-size: 1em;
         text-transform: uppercase;
         letter-spacing: -0.03em;
-        margin-right: 0.5em;
+        margin-right: var(--space-cs);
       }
 
       #me {
-        display: block;
         width: var(--header-image);
         height: var(--header-image);
         border-radius: 10%;
+        display: block;
       }
 
-      #pageFooter > div , #skeleton {
-        margin: auto;
-        max-width: 800px;
-      }
-
-      #pageFooter {
-        border-top: 1px solid var(--structs-border);
-        padding: var(--footer-pad-lr) var(--footer-pad-tb);
-      }
-
-      #pageFooter h2 {
-        font-size: 22px;
-      }
-
-      #pageFooter > div {
-        display: flex;
-        flex-direction: var(--footer-flex-direction);
-        justify-content: center;
-
-      }
-
-      #pageFooter > div section {
-        flex: 1;
-      }
-
-      #pageFooter > div section:first-child {
-        padding-right: 1rem;
-      }
-
-      #thanks p {
-        font-size: 14px;
+      #thanks {
         text-transform: uppercase;
         color: var(--structs-hi);
         text-align: center;
       }
 
-      #thanks p a {
+      #thanks a {
         color: var(--structs-hi);
-        border-bottom: 1px dotted var(--structs-hi);
+        border-bottom: 1px solid var(--structs-hi);
       }
 
       #skeleton {
+        margin: auto;
+        max-width: 800px;
         padding: 0 20px;
         padding-top: 1rem;
-        animation: load 2s ease infinite;
+        animation: load 3s ease infinite;
         height: calc(100vh - var(--header-height));
         will-change: opacity;
       }
 
       #skeleton > div {
-        height: 20px;
+        height: 25px;
         background-color: var(--skeleton-bg);
-        border: 0;
+        border-radius: 5px;
         margin-bottom: 1rem;
       }
 
       #skeleton > div.short {
         width: 65%;
-        margin-left: 0;
+      }
+
+      @media (min-width: 767px) {
+        #pageFooter {
+          grid-template-columns: repeat(2, minmax(var(--footer-grid-min), var(--footer-grid-max)));
+        }
+        #thanks  {
+          grid-column: 1 / -1;
+        }
       }
 
       @keyframes load {
@@ -261,23 +304,20 @@
       </section>
     </blog-pwa>
     <footer id="pageFooter">
-      <div>
-        <section>
-          <h2>Hello, nice to meet you.</h2>
-          <p>I'm happy to talk. You can reach me on <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or via email at <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a></p>
-          <p>Looking for some of my code? Check <a rel="me" href="https://github.com/justinribeiro">Github</a> or <a rel="me" href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
-        </section>
-        <section>
-          <h2>Meta Things</h2>
-          <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. RIP Reader, follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml' target='blank'>Feedly</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
-          <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
-        </section>
-      </div>
-      <div id="thanks">
-        <p>Made with ❤️ using <a href="https://lit-element.polymer-project.org/">Web Components</a> and <a href="https://gohugo.io/">Hugo</a>.</p>
-      </div>
+      <section>
+        <h2>Hello, nice to meet you.</h2>
+        <p>I'm happy to talk. You can reach me on <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or via email at <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a></p>
+        <p>Looking for some of my code? Check <a rel="me" href="https://github.com/justinribeiro">Github</a> or <a rel="me" href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
+      </section>
+      <section>
+        <h2>Meta Things</h2>
+        <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. RIP Reader, follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml' target='blank'>Feedly</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
+        <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
+      </section>
+      <section id="thanks">
+        <small>Made with ❤️ using <a href="https://lit.dev/">Web Components</a>, <a href="https://gohugo.io/">Hugo</a>, and <a href="https://github.com/justinribeiro/blog-pwa">Blog-PWA</a>.</small>
+      </section>
     </footer>
     <script type="module" src="./src/blog-pwa.js"></script>
     <script type="application/ld+json">{"@context":"http://schema.org","@type":"Person","name":"Justin Ribeiro","url":"https://justinribeiro.com/","email":"justin@justinribeiro.com","image":"https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2020-Q1-512.jpg","sameAs":["https://twitter.com/justinribeiro","https://www.linkedin.com/in/justinribeiro","https://plus.google.com/+justinribeiro","https://github.com/justinribeiro","https://facebook.com/justinribeiro","https://ribeiro.social/@justin","https://hub.docker.com/r/justinribeiro/","https://developers.google.com/community/experts/directory/profile/profile-justin_ribeiro"]}</script>
   </body>
-</html>

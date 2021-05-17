@@ -1,8 +1,8 @@
 /* eslint-disable class-methods-use-this */
-import { LitElement, css } from 'lit';
+import { LitElement, css, html } from 'lit';
 import './blog-network-warning.js';
 
-export default class BlogElement extends LitElement {
+class BlogElement extends LitElement {
   static get properties() {
     return {
       failure: {
@@ -244,28 +244,28 @@ export default class BlogElement extends LitElement {
       @media (prefers-reduced-motion: no-preference) {
         :focus {
           transition: outline-offset 0.25s ease;
-          outline-offset: 5px;
-          outline: 3px solid #000;
+          outline-offset: var(--outline-thickness);
+          outline: var(--outline);
         }
       }
 
       a {
         color: var(--accent-color-primary);
         text-decoration: none;
-        border-bottom: 1px solid var(--accent-color-primary);
+        border-bottom: var(--border-thickness) solid var(--accent-color-primary);
       }
 
       a:hover {
         color: var(--accent-color-secondary);
-        border-bottom: 1px solid var(--accent-color-secondary);
+        border-color: var(--accent-color-secondary);
       }
 
       del {
-        background: #fbcdd4;
+        background: var(--diff-del-color);
       }
 
       ins {
-        background: #d2fbcd;
+        background: var(--diff-ins-color);
         text-decoration: none;
       }
 
@@ -276,26 +276,24 @@ export default class BlogElement extends LitElement {
       h5,
       h6 {
         font-family: var(--font-family-headers);
-        margin: 0px 0px 0.5rem -1.75px;
+        margin: 0 0 var(--space-cs) var(--header-font-offset-left);
         line-height: 1.15;
-        letter-spacing: -0.02em;
+        letter-spacing: var(--header-letter-spacing);
       }
 
       h1 {
-        font-size: 2.5rem;
-        margin-top: 1rem;
+        font-size: var(--font-h1);
+        margin-top: var(--space-cs);
       }
 
       p,
       li,
       label {
         font-family: var(--font-family-serif);
-        margin: 0;
+        margin: 0 0 calc(var(--space-cs) * 2) 0;
         color: var(--primary-text-color);
-        padding-bottom: 1rem;
-        font-size: 1.313rem;
-        line-height: 1.75;
-        letter-spacing: -0.003em;
+        font-size: var(--font-base);
+        line-height: calc(var(--font-base) * var(--font-lhr));
       }
 
       /* Don't like this; special case. TODO extract */
@@ -303,13 +301,17 @@ export default class BlogElement extends LitElement {
       li code {
         background-color: var(--code-background);
         color: var(--code-color);
-        padding: 2px;
+        font-size: 85%;
       }
 
       blockquote {
-        border-left: 5px solid var(--accent-color-primary);
-        padding-left: 10px;
+        border-left: var(--outline-thickness) solid var(--accent-color-primary);
+        padding-left: var(--space-cs);
         font-style: oblique;
+      }
+
+      img {
+        filter: var(--image-filter, initial);
       }
 
       /*
@@ -317,44 +319,25 @@ export default class BlogElement extends LitElement {
         in my web components. Why isn't named container? No idea. LOL.
       */
       #main {
-        margin: auto;
-        max-width: 800px;
-        padding: 0 20px;
+        max-width: var(--page-last);
+        padding: 0 calc(var(--space-cs) * 2);
       }
 
       #tags a {
-        border: 1px solid #ccc;
-        border-radius: 2px;
-        padding: 0.25em 0.5em;
-        background: #f2f0f0;
-        line-height: 2.5rem;
+        /* display: inline-block; */
+        border: var(--border-thickness) solid var(--structs-border);
+        border-radius: var(--border-radius);
+        padding: calc(var(--space-cs) / 2);
+        background: var(--structs-bg);
+        line-height: calc((var(--space-cs) * 2) + var(--font-base));
       }
 
       .subheadline {
-        margin: 1em 0;
-        font-size: 21px;
-        font-family: 'Libre Franklin', sans-serif;
-        line-height: 1.55;
+        margin: calc(var(--space-cs) * 2) 0;
+        font-family: var(--font-family-san-serif);
+        line-height: var(--font-lhr);
         font-weight: 300;
-      }
-
-      @media (max-width: 767px) {
-        h1 {
-          font-size: 1.75rem;
-          margin-top: 1rem;
-        }
-
-        p,
-        li,
-        label {
-          font-size: 18px;
-          line-height: 1.58;
-          letter-spacing: -0.004em;
-        }
-
-        .subheadline {
-          font-size: 18px;
-        }
+        font-size: var(--font-base);
       }
 
       [hidden] {
@@ -363,3 +346,5 @@ export default class BlogElement extends LitElement {
     `;
   }
 }
+
+export { BlogElement, html, css };

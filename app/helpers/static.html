@@ -55,7 +55,9 @@
 
     {% raw %}
     <style>
-      html {
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
         --primary-text-color: #212121;
         --secondary-text-color: #757575;
         --accent-color-primary: #0049A3;
@@ -69,40 +71,99 @@
         --notice-color-text: #ffffff;
         --notice-color-link: #f1f900;
 
+        --form-input-fs: 1rem;
+        --form-button-color: #f5ee00;
+
+        --diff-del-color: #fbcdd4;
+        --diff-ins-color: #d2fbcd;
+
+        --space-cs: 0.5rem;
+
         --code-background: #faf8f5;
         --code-color: #DD4A68;
+        --code-block-bg: #f5f2f0;
+        --code-block-text: #222;
 
+        --page-last: 800px;
         --header-height: 100px;
         --header-font-offset: -10px;
+        --header-font-offset-left: -1.75px;
+        --header-letter-spacing: -0.02rem;
         --header-font-size: 32px;
         --header-image: 75px;
-        --footer-flex-direction: row;
-        --footer-pad-lr: 1rem;
-        --footer-pad-tb: 20px;
+        --footer-grid-min: 275px;
+        --footer-grid-max: 400px;
+
+        --border-thickness: 1px;
+        --border: var(--border-thickness) solid var(--structs-border);
+        --border-radius: 5px;
+        --outline: 3px solid var(--primary-text-color);
+        --outline-thickness: 5px;
 
         --font-family-serif: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
         --font-family-sans-serif: 'Libre Franklin', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
         --font-family-headers: 'Literata', var(--font-family-serif);
+
+        --font-lhr: 1.618;
+        --font-h1: 2.5rem;
+        --font-base: 1.333rem;
+        --motion-duration: 0;
+        --motion-type:  none;
       }
 
-       @media (prefers-reduced-motion: no-preference) {
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121212;
+          --primary-text-color: #fafafa;
+          --secondary-text-color: #F1f1f1;
+          --accent-color-primary: #81d7ff;
+          --accent-color-secondary: #D06262;
+          --section-color: #444;
+          --structs-bg:#333;
+          --structs-hi: #FF94F6;
+          --structs-border: #555;
+          --skeleton-bg: #cccccc;
+
+          --form-button-color: #868200;
+
+          --diff-del-color: #ff0026;
+          --diff-ins-color: #0b4e02;
+
+          --code-background: #0c0c0c;
+          --code-color: #DD4A68;
+          --code-block-bg: #000;
+          --code-block-text: #fafafa;
+
+          --image-filter: grayscale(50%);
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        :root {
+          --motion-duration: .3s;
+          --motion-type:  ease
+        }
         :focus {
-          transition: outline-offset .25s ease;
-          outline-offset: 5px;
-          outline: 3px solid #000;
+          transition: outline-offset var(--motion-duration) var(--motion-type);
         }
       }
 
       @media (max-width: 767px) {
-        html {
+        :root {
           --header-height: 85px;
           --header-font-size: 22px;
           --header-image: 55px;
           --header-font-offset: -5px;
-          --footer-flex-direction: column;
-          --footer-pad-lr: 20px;
-          --footer-pad-tb: 20px;
+          --page-last: 88vw;
+
+          --font-h1: 1.75rem;
+          --font-base: 1.125rem;
         }
+      }
+
+      :focus {
+        outline-offset: var(--outline-thickness);
+        outline: var(--outline);
       }
 
       body, h1, h2 {
@@ -111,7 +172,9 @@
 
       body {
         font-family: var(--font-family-sans-serif);
-        line-height: 1.5;
+        color: var(--primary-text-color);
+        line-height: var(--font-lhr);
+        background-color: var(--bg);
       }
 
       a {
@@ -134,16 +197,22 @@
         font-family: var(--font-family-headers);
       }
 
-      #pageHeader {
-        display: flex;
+      #pageHeader, #pageFooter {
+        display: grid;
         align-items: center;
         justify-content: center;
-        border-bottom: 1px solid var(--structs-border);
-        height: var(--header-height);
+        gap: var(--space-cs);
+        padding: var(--space-cs);
       }
 
-      #pageHeader > div {
-        padding-left: 1em;
+      #pageHeader {
+        border-bottom: var(--border);
+        grid-template-columns: auto auto;
+      }
+
+      #pageFooter {
+        border-top: var(--border);
+        grid-template-columns: repeat(auto-fit, minmax(var(--footer-grid-min), var(--footer-grid-max)));
       }
 
       #pageHeader h1 {
@@ -151,74 +220,37 @@
         margin-top: var(--header-font-offset);
       }
 
-      #pageHeader nav {
-        padding-top: 0.4em;
-      }
-
       #pageHeader nav a {
-        font-size: 1em;
         text-transform: uppercase;
         letter-spacing: -0.03em;
-        margin-right: 0.5em;
+        margin-right: var(--space-cs);
       }
 
       #me {
-        display: block;
         width: var(--header-image);
         height: var(--header-image);
         border-radius: 10%;
+        display: block;
       }
 
-      #pageFooter > div , #skeleton {
-        margin: auto;
-        max-width: 800px;
-      }
-
-      #pageFooter {
-        border-top: 1px solid var(--structs-border);
-        padding: var(--footer-pad-lr) var(--footer-pad-tb);
-      }
-
-      #pageFooter h2 {
-        font-size: 22px;
-      }
-
-      #pageFooter > div {
-        display: flex;
-        flex-direction: var(--footer-flex-direction);
-        justify-content: center;
-
-      }
-
-      #pageFooter > div section {
-        flex: 1;
-      }
-
-      #pageFooter > div section:first-child {
-        padding-right: 1rem;
-      }
-
-      #thanks p {
-        font-size: 14px;
+      #thanks {
         text-transform: uppercase;
         color: var(--structs-hi);
         text-align: center;
       }
 
-      #thanks p a {
+      #thanks a {
         color: var(--structs-hi);
-        border-bottom: 1px dotted var(--structs-hi);
+        border-bottom: 1px solid var(--structs-hi);
       }
 
-      hr {
-        height: 20px;
-        background-color: #e6e6e6;
-        border: 0;
-      }
-
-      hr.short {
-        width: 65%;
-        margin-left: 0;
+      @media (min-width: 767px) {
+        #pageFooter {
+          grid-template-columns: repeat(2, minmax(var(--footer-grid-min), var(--footer-grid-max)));
+        }
+        #thanks  {
+          grid-column: 1 / -1;
+        }
       }
 
       code-block,
@@ -241,21 +273,29 @@
         overflow-wrap: normal;
         tab-size: 4;
         hyphens: none;
-        color: rgb(34, 34, 34);
-        background: rgb(250, 248, 245);
-        padding: 1em;
+        color: var(--code-block-text);
+        background: var(--code-block-bg);
+        padding: calc(var(--space-cs) * 2);
       }
 
       a {
-        color: #0049a3;
+        color: var(--accent-color-primary);
         text-decoration: none;
-        border-bottom: 1px solid #0049a3;
+        border-bottom: var(--border-thickness) solid var(--accent-color-primary);
       }
 
       a:hover {
-        color: #943D0A;
+        color: var(--accent-color-secondary);
+        border-color: var(--accent-color-secondary);
+      }
+
+      del {
+        background: var(--diff-del-color);
+      }
+
+      ins {
+        background: var(--diff-ins-color);
         text-decoration: none;
-        border-bottom: 1px solid #943D0A;
       }
 
       h1,
@@ -265,26 +305,24 @@
       h5,
       h6 {
         font-family: var(--font-family-headers);
-        margin: 0px 0px 0.5rem -1.75px;
+        margin: 0 0 var(--space-cs) var(--header-font-offset-left);
         line-height: 1.15;
-        letter-spacing: -0.02em;
+        letter-spacing: var(--header-letter-spacing);
       }
 
       h1 {
-        font-size: 2.5rem;
-        margin-top: 1rem;
+        font-size: var(--font-h1);
+        margin-top: var(--space-cs);
       }
 
       p,
       li,
       label {
         font-family: var(--font-family-serif);
-        margin: 0;
+        margin: 0 0 calc(var(--space-cs) * 2) 0;
         color: var(--primary-text-color);
-        padding-bottom: 1rem;
-        font-size: 1.313rem;
-        line-height: 1.75;
-        letter-spacing: -0.003em;
+        font-size: var(--font-base);
+        line-height: calc(var(--font-base) * var(--font-lhr));
       }
 
       /* Don't like this; special case. TODO extract */
@@ -292,84 +330,67 @@
       li code {
         background-color: var(--code-background);
         color: var(--code-color);
-        padding: 2px;
+        font-size: 85%;
       }
 
       blockquote {
-        border-left: 5px solid var(--accent-color-primary);
-        padding-left: 10px;
+        border-left: var(--outline-thickness) solid var(--accent-color-primary);
+        padding-left: var(--space-cs);
         font-style: oblique;
       }
 
-      li {
-        margin-bottom: 20px;
-      }
-
-      blockquote,
-      blockquote p {
-        font-style: oblique;
-        font-weight: 400;
-        font-size: 20px;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 0.5em;
-      }
-      input,
-      button {
-        padding: 0.5em;
-        font-size: 1em;
-      }
-      input {
-        width: 100%;
-        border: 1px solid #b0b0b0;
-        box-sizing: border-box;
-        margin-bottom: 0.5em;
-      }
-
-      [hidden] {
-        display: none !important;
-      }
-
-      /* Use these to generate skeleton blocks before content loads */
-      hr {
-        height: 20px;
-        background-color: #e6e6e6;
-        border: 0;
-      }
-      hr.short {
-        width: 65%;
-        margin-left: 0;
+      img {
+        filter: var(--image-filter, initial);
       }
 
       /*
         Design choice: in my components, I always have a #main as a container
         in my web components. Why isn't named container? No idea. LOL.
       */
-      #main,
-      #skeleton {
-        margin: auto;
-        padding: 0 20px;
-        max-width: 800px;
+      #main {
+        max-width: var(--page-last);
+        padding: 0 calc(var(--space-cs) * 2);
       }
 
-      #skeleton {
-        min-height: 102vh;
+      #tags a {
+        /* display: inline-block; */
+        border: var(--border-thickness) solid var(--structs-border);
+        border-radius: var(--border-radius);
+        padding: calc(var(--space-cs) / 2);
+        background: var(--structs-bg);
+        line-height: calc((var(--space-cs) * 2) + var(--font-base));
+      }
+
+      .subheadline {
+        margin: calc(var(--space-cs) * 2) 0;
+        font-family: var(--font-family-san-serif);
+        line-height: var(--font-lhr);
+        font-weight: 300;
+        font-size: var(--font-base);
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      main {
+        display: grid;
+        justify-content: center;
       }
 
       #posts {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-content: center;
+        grid-gap: var(--space-cs);
       }
 
       #posts > a {
         display: block;
-        padding: 0.5rem;
+        padding: var(--space-cs);
         border-bottom: none;
-        border-radius: 0.5rem;
-        transition-duration: 0.3s;
+        border-radius: var(--space-cs);
+        transition-duration: var(--motion-duration);
         will-change: background-color;
       }
 
@@ -384,7 +405,7 @@
         font-weight: 400;
         text-transform: uppercase;
         font-size: 0.85rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: var(--space-cs);
         font-family: var(--font-family-sans-serif);
         color: var(--accent-color-secondary);
       }
@@ -399,109 +420,99 @@
         color: #fff;
       }
 
-      .subheadline {
-        margin: 1em 0;
-        font-size: 21px;
-        font-family: 'Libre Franklin', sans-serif;
-        line-height: 1.55;
-        font-weight: 300;
-      }
-
-      @media (max-width: 767px) {
-        #posts {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      #main iframe,
-      #main img {
-        max-width: 100%;
-        width: 100%;
-      }
-
-      #main img {
-        margin: auto;
-        display: block;
-      }
-
-      #main video {
-        max-width: 100%;
-      }
-
-      .reads {
-        margin-top: 10px;
-      }
-
       figure {
         margin: 1em 0;
+        transition: background 0.3s;
+        cursor: pointer;
       }
 
       figcaption {
-        color: #666;
+        color: var(--secondary-text-color);
         font-size: 0.875rem;
         line-height: 1.125rem;
+        margin-top: 0.5em;
       }
 
       figcaption .author {
         display: inline-block;
-        color: #888;
+        color: var(--secondary-text-color);
         font-family: var(--font-family-serif);
         line-height: 1.125rem;
         letter-spacing: 0.01em;
         font-size: 0.75rem;
       }
 
+      #main iframe {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      #main img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #main video {
+        max-width: 100%;
+      }
+
       time {
         text-transform: uppercase;
       }
 
+      .dotDivider {
+        padding: 0 0.5rem;
+      }
+
+      .dotDivider:after {
+        content: '•';
+      }
+
+      .reads {
+        padding: 0.75rem 0;
+      }
+
       #metaShare {
         display: block;
-        background-color: #e6e6e6;
+        background-color: var(--section-color);
         padding: 1em;
       }
 
-      .dotDivider {
-        padding-right: 0.45em;
-        padding-left: 0.45em;
+      #share > a {
+        margin-right: 0.5em;
       }
 
-      .dotDivider::after {
-        content: '·';
+      label {
+        display: block;
       }
 
-      #tags a {
-        display: inline-flex;
-        border: 1px solid #ccc;
-        border-radius: 2px;
-        padding: 0.25em 0.5em;
-        margin-top: 0.25em;
-        background: #f2f0f0;
-        line-height: auto;
+      input,
+      button {
+        padding: calc(var(--space-cs) * 2);
+        font-size: var(--form-input-fs);
+        border: var(--border);
+        box-sizing: border-box;
+      }
+
+      button {
+        background: var(--form-button-color);
+      }
+
+      input {
+        width: 100%;
+      }
+
+      ol,
+      ul {
+        margin: 0;
+        padding: 0 0 0 24px;
       }
 
       @media (max-width: 767px) {
-        #main,
-        #skeleton {
-          margin: auto;
-          padding: 0 20px;
-          max-width: 800px;
-        }
-
-        p,
-        li,
-        label {
-          font-size: 18px;
-          line-height: 1.58;
-          letter-spacing: -0.004em;
-        }
-
-        #main img {
-          margin: none;
-        }
-
         #main iframe,
-        #main img {
+        #main img,
+        #main lite-youtube,
+        #main video {
           max-width: initial;
           width: 100vw;
           position: relative;
@@ -511,19 +522,17 @@
           margin-right: -50vw;
         }
 
-        .subheadline {
-          font-size: 18px;
+        #main img {
+          margin: none !important;
         }
       }
 
-      @media (max-width: 320px) {
-        #pageHeader {
-          text-align: center;
-        }
-
-        /* No room on smaller screens */
-        #pageHeader > div:first-child {
-          display: none !important;
+      @media (prefers-reduced-data: reduce) {
+        img,
+        video,
+        lite-youtube,
+        stl-part-viewer {
+          display: none;
         }
       }
     </style>
@@ -533,15 +542,11 @@
   </head>
   <body>
     <header id="pageHeader">
-      <div>
-          <img
-            id="me"
-            src="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-150.jpg"
-            alt="Justin Ribeiro"
-            width="75" height="75"
-          />
-        </a>
-      </div>
+      <img
+        id="me"
+        src="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-150.jpg"
+        alt="Justin Ribeiro"
+        width="75" height="75">
       <div>
         <h1>Justin Ribeiro</h1>
         <nav>
@@ -552,7 +557,7 @@
         </nav>
       </div>
     </header>
-    <div id="container">
+    <main>
       <div id="main">
         {% if pagetype == "post" %}
         <article
@@ -692,70 +697,34 @@
         </section>
         {% endif %}
       </div>
-    </div>
+    </main>
     <footer id="pageFooter">
-      <div>
-        <section>
-          <h2>Hello, nice to meet you.</h2>
-          <p>
-            I'm happy to talk. You can reach me on
-            <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or
-            via email at
-            <a
-              rel="me"
-              href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)"
-              >justin@justinribeiro.com</a
-            >
-          </p>
-
-          <p>
-            Looking for some of my code? Check
-            <a rel="me" href="https://github.com/justinribeiro">Github</a> or
-            <a rel="me" href="https://hub.docker.com/r/justinribeiro/"
-              >DockerHub</a
-            >.
-          </p>
-        </section>
-        <section>
-          <h2>Meta Things</h2>
-          <p>
-            <a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>.
-            RIP Reader, follow along on
-            <a
-              href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml"
-              target="blank"
-              >Feedly</a
-            >.
-          </p>
-          <p>
-            What, you found a bug on this site? Yikes. Please take a moment and
-            <a href="https://github.com/justinribeiro/blog-pwa/issues/new"
-              >file a ticket</a
-            >
-            so I can fix it.
-          </p>
-        </section>
-      </div>
-      <div id="thanks">
-        <p>
-          Made with ❤️ using
-          <a href="https://lit-element.polymer-project.org/">Web Components</a>
-          and <a href="https://gohugo.io/">Hugo</a>.
-        </p>
-      </div>
-      <div class="h-card" hidden>
-        <span class="p-name u-uid" rel="me">Justin Ribeiro</span>
-        <a href="https://justinribeiro.com" class="u-url">https://justinribeiro.com</a>
-        <a class="u-email" href="mailto:justin@justinribeiro.com">justin@justinribeiro.com</a>
-        <p class="p-note">A blog on web development, business, family, and a touch of photography by Justin Ribeiro.</p>
-        <img
-          id="me"
-          src="/images/manifest/me-2020-Q1-150.jpg"
-          alt="Justin Ribeiro"
-          class="u-photo"
-        />
-      </div>
+      <section>
+        <h2>Hello, nice to meet you.</h2>
+        <p>I'm happy to talk. You can reach me on <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or via email at <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a></p>
+        <p>Looking for some of my code? Check <a rel="me" href="https://github.com/justinribeiro">Github</a> or <a rel="me" href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
+      </section>
+      <section>
+        <h2>Meta Things</h2>
+        <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. RIP Reader, follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml' target='blank'>Feedly</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
+        <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
+      </section>
+      <section id="thanks">
+        <small>Made with ❤️ using <a href="https://lit.dev/">Web Components</a>, <a href="https://gohugo.io/">Hugo</a>, and <a href="https://github.com/justinribeiro/blog-pwa">Blog-PWA</a>.</small>
+      </section>
     </footer>
+    <div class="h-card" hidden>
+      <span class="p-name u-uid" rel="me">Justin Ribeiro</span>
+      <a href="https://justinribeiro.com" class="u-url">https://justinribeiro.com</a>
+      <a class="u-email" href="mailto:justin@justinribeiro.com">justin@justinribeiro.com</a>
+      <p class="p-note">A blog on web development, business, family, and a touch of photography by Justin Ribeiro.</p>
+      <img
+        id="me"
+        src="/images/manifest/me-2020-Q1-150.jpg"
+        alt="Justin Ribeiro"
+        class="u-photo"
+      />
+    </div>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",

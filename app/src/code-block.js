@@ -43,12 +43,17 @@ class CodeBlock extends LitElement {
       * Based on dabblet (http://dabblet.com)
       * @author Lea Verou
       */
+      :host {
+        display: block;
+        width: 100%;
+      }
 
       code[class*='language-'],
       pre[class*='language-'] {
-        font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
-          'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
-          'Liberation Mono', 'Nimbus Mono L', 'Courier New', Courier, monospace;
+        font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+          'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+          'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+          'Courier New', Courier, monospace;
         font-size: 16px;
         line-height: 1.375;
         direction: ltr;
@@ -60,8 +65,8 @@ class CodeBlock extends LitElement {
         tab-size: 4;
 
         hyphens: none;
-        background: #faf8f5;
-        color: #222222;
+        background: var(--code-block-bg);
+        color: var(--code-block-text);
       }
 
       /* Code blocks */
@@ -80,7 +85,7 @@ class CodeBlock extends LitElement {
 
       :not(pre) > code[class*='language-'],
       pre[class*='language-'] {
-        background: #f5f2f0;
+        background: var(--code-block-bg);
       }
 
       /* Inline code */
@@ -176,6 +181,14 @@ class CodeBlock extends LitElement {
 
       .token.entity {
         cursor: help;
+      }
+
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .language-css .token.string,
+      .style .token.string {
+        background: none;
       }
 
       pre {
