@@ -1,14 +1,11 @@
 import { LitElement, html, css } from 'lit';
 import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
+import { initAnalytics, initCwp } from './analytics.js';
 
 class BlogPwa extends LitElement {
   static get properties() {
     return {
-      offline: {
-        type: Boolean,
-        attribute: false,
-      },
       __hideSkeleton: {
         type: Boolean,
       },
@@ -17,7 +14,6 @@ class BlogPwa extends LitElement {
 
   constructor() {
     super();
-    this.offline = false;
 
     // don't show it on first load, it's already been shown by before our
     // component is ready
@@ -29,14 +25,30 @@ class BlogPwa extends LitElement {
 
     this._ensureLazyLoaded();
 
-    window.addEventListener('online', () => this._notifyNetworkStatus(false));
-    window.addEventListener('offline', () => this._notifyNetworkStatus(true));
     window.addEventListener('display-snackbar', event => {
       this._setSnackBarText(event.detail.message, 5000);
     });
+
     this.addEventListener('blog-pwa-toggle-skeleton', event => {
       this.__hideSkeleton = event.detail.show;
     });
+
+    // this is slightly heavy handed, but I have other notions of using this
+    // event for some other things
+    document.addEventListener(
+      'keydown',
+      event => {
+        if (event.key === 'Escape') {
+          document.dispatchEvent(
+            new CustomEvent('blog-pwa-escape-pressed', {
+              bubbles: true,
+              composed: true,
+            })
+          );
+        }
+      },
+      { passive: true }
+    );
 
     this.__setupDarkMode();
   }
@@ -50,6 +62,7 @@ class BlogPwa extends LitElement {
       static: document.createElement(`blog-static`),
       entry: document.createElement('blog-entry'),
       missing: document.createElement('blog-missing'),
+      offline: document.createElement('blog-offline'),
     };
     installRouter(location => this.__routes(location));
   }
@@ -70,27 +83,13 @@ class BlogPwa extends LitElement {
       case /(chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
         this.__loadRoute('static');
         break;
+      case /(offline|^\/index.html|^\/$)/.test(location.pathname):
+        this.__loadRoute('offline');
+        break;
       default:
         this.__loadRoute('missing');
         break;
     }
-  }
-
-  async __showDynamicModal(component, elementName) {
-    if (!customElements.get(elementName)) {
-      await import(component);
-    }
-
-    this.dispatchEvent(
-      new CustomEvent('modal-open', {
-        bubbles: true,
-        composed: true,
-        detail: {
-          componentInject: elementName,
-          gcOnClose: true,
-        },
-      })
-    );
   }
 
   /**
@@ -105,6 +104,9 @@ class BlogPwa extends LitElement {
     }
     if (type === 'entry') {
       await import('./blog-entry.js');
+    }
+    if (type === 'offline') {
+      await import('./blog-offline.js');
     }
     try {
       const checkElement = this.__domRefRouter.querySelector(`blog-${type}`);
@@ -130,11 +132,9 @@ class BlogPwa extends LitElement {
    */
   _ensureLazyLoaded() {
     if (!this.loadComplete) {
-      this.__loadFonts();
-      import('./blog-lazy-load.js').then(() => {
+      import('./blog-lazy-load.js').then(async () => {
         this.__loadSw();
         this.__loadAnalytics();
-        this._notifyNetworkStatus();
         this.loadComplete = true;
       });
     }
@@ -182,23 +182,6 @@ class BlogPwa extends LitElement {
     }
   }
 
-  async __loadFonts() {
-    const domRefHead = document.getElementsByTagName('head')[0];
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-
-    const cloneFontOne = link.cloneNode();
-    cloneFontOne.href =
-      'https://fonts.googleapis.com/css?family=Libre+Franklin:400|Literata:700&display=swap&subset=latin-ext';
-
-    const cloneFontTwo = link.cloneNode();
-    cloneFontTwo.href =
-      'https://fonts.googleapis.com/css?family=Literata&display=swap&text=JustinRibeiro';
-
-    domRefHead.appendChild(cloneFontOne);
-    domRefHead.appendChild(cloneFontTwo);
-  }
-
   async __loadAnalytics() {
     if ('requestIdleCallback' in window) {
       window.requestIdleCallback(
@@ -228,9 +211,8 @@ class BlogPwa extends LitElement {
   }
 
   async __importAnalytics() {
-    const module = await import('./analytics.js');
-    module.initAnalytics();
-    module.initCwp();
+    initAnalytics();
+    initCwp();
   }
 
   _setSnackBarText(text, duration, hold, callback) {
@@ -256,18 +238,6 @@ class BlogPwa extends LitElement {
         snackBar.removeAttribute('active');
       }
     }, timeout);
-  }
-
-  _notifyNetworkStatus(status) {
-    const oldOffline = this.offline;
-    this.offline = status;
-
-    if (this.offline || (!this.offline && oldOffline === true)) {
-      const offlineState = this.offline
-        ? 'You appear to have gone offline.'
-        : 'You appear to now be back online.';
-      this._setSnackBarText(offlineState);
-    }
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -317,10 +287,10 @@ class BlogPwa extends LitElement {
   render() {
     return html`
       <main>
+        <section id="outlet"></section>
         <div ?hidden=${!this.__hideSkeleton}>
           <slot id="skeleton" name="skeleton"></slot>
         </div>
-        <section id="outlet"></section>
       </main>
       <snack-bar hidden></snack-bar>
     `;

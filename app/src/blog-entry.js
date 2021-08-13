@@ -1,4 +1,5 @@
 import { BlogElement, html, css } from './blog-element.js';
+import { defaultStrings, stringInterpolate } from './blog-strings.js';
 
 class BlogEntry extends BlogElement {
   static get properties() {
@@ -9,121 +10,218 @@ class BlogEntry extends BlogElement {
       share: {
         type: Array,
       },
+      strings: {
+        type: Object,
+      },
     };
   }
 
   constructor() {
     super();
     this.share = [];
-    this.interactions = 'Checking for interactions...';
+
+    // this is not a full accounting of all strings on this page; only the
+    // various interaction strings in our EcmaScript
+    this.strings = {
+      ...defaultStrings,
+    };
+
+    this.interactions = this.strings.webmentions.start;
+
+    // I'd like to eventually make this reliant on my own cache / implementation
+    this.webmentionApiEndpoint = 'https://webmention.io/api/count?target=';
   }
 
-  __generatedShareLinks() {
+  firstUpdated() {
+    super.firstUpdated();
+    document.addEventListener(
+      'blog-pwa-escape-pressed',
+      this.__figureCloseOnEscape.bind(this)
+    );
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    // This is my purely my personal preference showing; I can't stand full
+    // screen images on mobile devices, the UX annoys me no matter how good you
+    // think it is. In this case, don't remove the listeners if they are on
+    // mobile (because they won't be there)
+    if (!window.matchMedia('(max-width: 767px)').matches) {
+      this.__domRefs.figures.forEach(figure => {
+        figure.removeEventListener('click', this.__figureToggleView, {
+          passive: true,
+        });
+      });
+    }
+  }
+
+  /**
+   * This does some additional work for the usual data injection:
+   * 1. only lazy loading the util components that may be in a post
+   * 2. only adds the figure expand/contract if not mobile
+   * 3. gets the interaction counts
+   * 4. adds share links if web share api not available
+   */
+  async __processMetaData() {
+    super.__processMetaData();
+    const checkLazyLoadTargets = this.__getDomRef('#metadataArticle').innerHTML;
+    const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
+    if (ViewerRequired.test(checkLazyLoadTargets)) {
+      import('./3d-utils.js');
+    }
+
+    const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
+    if (CodeBlockRequired.test(checkLazyLoadTargets)) {
+      import('./code-block.js');
+    }
+
+    const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
+    if (YouTubeRequired.test(checkLazyLoadTargets)) {
+      import('./lite-youtube.js');
+    }
+
+    if (this.metadata.featureimage) {
+      this.__getDomRef('#featureImage').innerHTML = this.__unescapeHtml(
+        this.metadata.featureimage
+      );
+    }
+
+    // This is my purely my personal preference showing; I can't stand full
+    // screen images on mobile devices, the UX annoys me no matter how good
+    // you think it is
+    if (!window.matchMedia('(max-width: 767px)').matches) {
+      this.__figureInteractionSetup();
+    }
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(
+        async () => {
+          this.__shareCreateLinks();
+          this.__webmentionGetInteractionCounts();
+        },
+        {
+          timeout: 5000,
+        }
+      );
+    } else {
+      this.__shareCreateLinks();
+      this.__webmentionGetInteractionCounts();
+    }
+  }
+
+  /**
+   * Use the Web Share API to share this content on user interaction
+   */
+  async __shareWithWebShareApi() {
+    try {
+      await navigator.share({
+        title: stringInterpolate(this.strings.sharing.title, {
+          title: this.metadata.title,
+        }),
+        text: this.metadata.description,
+        url: this.metadata.permalink,
+      });
+    } catch (e) {
+      // ahh that did not work or they bailed out
+    }
+  }
+
+  /**
+   * Generate share links when Web Share API is not available
+   */
+  __shareCreateLinks() {
     if (!navigator.share) {
       import('./share-to-mastodon.js');
+
+      // make it easier for the interpolate
+      const data = {
+        permalink: this.metadata.permalink,
+        title: this.metadata.title,
+        description: this.metadata.description,
+      };
+
       this.share.push(
         {
           service: 'Twitter',
-          link: `https://twitter.com/intent/tweet?url=${this.metadata.permalink}&text=${this.metadata.title} via @justinribeiro`,
+          link: stringInterpolate(this.strings.sharing.services.twitter, data),
         },
         {
           service: 'Facebook',
-          link: `https://www.facebook.com/sharer.php?u=${this.metadata.permalink}`,
+          link: stringInterpolate(this.strings.sharing.services.facebook, data),
         },
         {
           service: 'LinkedIn',
-          link: `https://www.linkedin.com/shareArticle?mini=true&url=${this.metadata.permalink}&title=${this.metadata.title}&source=&summary=${this.metadata.description}`,
+          link: stringInterpolate(this.strings.sharing.services.linkedin, data),
         },
         {
           service: 'E-Mail',
-          link: `mailto:?subject=Article: ${this.metadata.title}&body=Article from Justin Ribeiro: ${this.metadata.permalink}`,
+          link: stringInterpolate(this.strings.sharing.services.email, data),
         }
       );
     }
   }
 
-  async __webShare() {
-    try {
-      await navigator.share({
-        title: `"${this.metadata.title}" by Justin Ribeiro.`,
-        text: this.metadata.description,
-        url: this.metadata.permalink,
-      });
-    } catch (e) {
-      // ahh that did not work
-    }
-  }
-
-  async _processMetaData() {
-    if (this.metadata.article !== undefined && this.metadata.article !== '') {
-      const parseHTML = this._unescapeHtml(this.metadata.article);
-
-      const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
-      if (ViewerRequired.test(parseHTML)) {
-        import('./3d-utils.js');
-      }
-
-      const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
-      if (CodeBlockRequired.test(parseHTML)) {
-        import('./code-block.js');
-      }
-
-      const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
-      if (YouTubeRequired.test(parseHTML)) {
-        import('./lite-youtube.js');
-      }
-
-      // inject the trusted fragment
-      this.__getDomRef('#metadataArticle').innerHTML = parseHTML;
-
-      let parseFeatureImage = '';
-      if (this.metadata.featureimage) {
-        parseFeatureImage = this._unescapeHtml(this.metadata.featureimage);
-        this.__getDomRef('#featureImage').innerHTML = parseFeatureImage;
-      }
-
-      super._processMetaData();
-
-      // This is my purely my personal preference showing; I can't stand full
-      // screen images on mobile devices, the UX annoys me no matter how good
-      // you think it is
-      if (!window.matchMedia('(max-width: 767px)').matches) {
-        this.__enableFigureExpansion();
-      }
-
-      this.__generatedShareLinks();
-      this.__getInteractionCounts();
-    }
-  }
-
-  __enableFigureExpansion() {
+  /**
+   * Hunt for figures in the shadowDom and added an interaction for
+   * expand/contract of image size
+   */
+  __figureInteractionSetup() {
     this.__domRefs.figures = [...this.shadowRoot.querySelectorAll('figure')];
+
+    const template = document.createElement('button');
+    template.setAttribute('aria-label', this.strings.figures.expand);
+    template.textContent = this.strings.figures.button;
+
     this.__domRefs.figures.forEach(figure => {
-      figure.addEventListener('click', this.__expandFigure, { passive: true });
+      figure.addEventListener('click', this.__figureToggleView.bind(this), {
+        passive: true,
+      });
+      figure.appendChild(template.cloneNode(true));
     });
   }
 
-  __expandFigure(event) {
+  /**
+   * Used by interaction event from user to determine expand/contract state and
+   * labels
+   * @param {Event} event
+   */
+  __figureToggleView(event) {
     const target = event.currentTarget;
     if (target.hasAttribute('expand')) {
       target.removeAttribute('expand');
+      target
+        .querySelector('button')
+        .setAttribute('aria-label', this.strings.figures.expand);
     } else {
       target.setAttribute('expand', '');
+      target
+        .querySelector('button')
+        .setAttribute('aria-label', this.strings.figures.contract);
     }
   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    this.__domRefs.figures.forEach(figure => {
-      figure.removeEventListener('click', this.__expandFigure, {
-        passive: true,
+  /**
+   * Hunt down open figures and close them on Escape key
+   */
+  __figureCloseOnEscape() {
+    const hasItems = this.shadowRoot.querySelectorAll('figure[expand]');
+    if (hasItems.length > 0) {
+      hasItems.forEach(figure => {
+        figure.removeAttribute('expand');
+        figure
+          .querySelector('button')
+          .setAttribute('aria-label', this.strings.figures.expand);
       });
-    });
+    }
   }
 
-  async __getInteractionCounts() {
+  /**
+   * Get the amount of open web interactions we see from the service
+   */
+  async __webmentionGetInteractionCounts() {
     const response = await fetch(
-      `https://webmention.io/api/count?target=${this.metadata.permalink}`,
+      `${this.webmentionApiEndpoint}${this.metadata.permalink}`,
       {
         method: 'GET',
         mode: 'cors',
@@ -133,22 +231,27 @@ class BlogEntry extends BlogElement {
     if (response.ok) {
       const data = await response.json();
       if (data.count > 0) {
-        this.interactions = `There are currently ${data.count} interactions with this piece on the open web.`;
+        this.interactions = stringInterpolate(this.strings.webmentions.some, {
+          count: data.count,
+        });
       } else {
-        this.interactions = `There are currently no interactions with this piece. Be the first!`;
+        this.interactions = this.strings.webmentions.none;
       }
     }
   }
 
-  async __submitWebMention(event) {
+  /**
+   * Send webmention to remote service
+   * @param {Event} event
+   */
+  async __webmentionSubmitToService(event) {
     event.preventDefault();
-    let message =
-      'Thank you for sharing! Your Webmention has been received and is currently be processed.';
-    const { action } = this.shadowRoot.querySelector('#webMentionForm');
-    const target = this.metadata.permalink;
+    let message = this.strings.webmentions.shared;
     const source = this.shadowRoot.querySelector('#webMentionSource').value;
 
     if (source !== '') {
+      const { action } = this.shadowRoot.querySelector('#webMentionForm');
+
       // technically, we could get the location header and show them the ticket,
       // but I'm not 100% sold on that as a user experience
       const response = await fetch(action, {
@@ -158,12 +261,11 @@ class BlogEntry extends BlogElement {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: `target=${target}&source=${source}`,
+        body: `target=${this.metadata.permalink}&source=${source}`,
       });
 
       if (!response.ok) {
-        message =
-          "Oh no, your Webmention didn't seem to make it through. Please try again.";
+        message = this.strings.webmentions.error;
       }
 
       this.dispatchEvent(
@@ -188,12 +290,13 @@ class BlogEntry extends BlogElement {
           margin: 1em 0;
           transition: background 0.3s;
           cursor: pointer;
+          position: relative;
         }
 
         figcaption {
           color: var(--secondary-text-color);
-          font-size: 0.875rem;
-          line-height: 1.125rem;
+          font-size: var(--figcaption);
+          line-height: var(--font-lhr);
           margin-top: 0.5em;
         }
 
@@ -201,9 +304,32 @@ class BlogEntry extends BlogElement {
           display: inline-block;
           color: var(--secondary-text-color);
           font-family: var(--font-family-serif);
-          line-height: 1.125rem;
-          letter-spacing: 0.01em;
-          font-size: 0.75rem;
+          font-size: var(--figcaption-author);
+        }
+
+        figure button {
+          position: fixed;
+          bottom: var(--figure-button-margin);
+          right: calc(var(--figure-button-margin) / 3);
+          position: absolute;
+          transform: rotate(135deg);
+          border-radius: 50%;
+          width: calc(var(--font-base) * 2.75);
+          font-size: var(--font-base);
+          opacity: 0.5;
+        }
+
+        figure:hover button,
+        figure button:hover,
+        figure button:focus {
+          opacity: 1;
+        }
+
+        figure[expand] button {
+          display: block;
+          bottom: initial;
+          right: var(--figure-button-margin);
+          top: var(--figure-button-margin);
         }
 
         figure[expand] {
@@ -219,8 +345,7 @@ class BlogEntry extends BlogElement {
           top: 0;
           margin: 0;
           z-index: 1;
-          /* because the container's max width on desktop is always 800px */
-          transform: translateX(calc((800px - 100vw) / 2));
+          transform: translateX(calc((var(--page-last) - 100vw) / 2));
         }
 
         figure[expand] figcaption {
@@ -332,6 +457,10 @@ class BlogEntry extends BlogElement {
           #main img {
             margin: none !important;
           }
+
+          figure button {
+            display: none;
+          }
         }
 
         @media (prefers-reduced-data: reduce) {
@@ -353,13 +482,11 @@ class BlogEntry extends BlogElement {
         id="main"
         itemscope
         itemtype="http://schema.org/BlogPosting"
-        ?hidden="${!this.loaded}"
       >
         <header>
           <h1 itemprop="headline">${this.metadata.title}</h1>
           <h2 class="subheadline">${this.metadata.description}</h2>
           <div id="featureImage"></div>
-
           <div class="reads" ?hidden=${this.metadata.pagetype === 'page'}>
             <time
               .datetime="${this.metadata.dataModified}"
@@ -379,7 +506,6 @@ class BlogEntry extends BlogElement {
               )}
           </div>
         </header>
-
         <div id="metadataArticle" itemprop="articleBody"></div>
         <footer id="metaShare" ?hidden=${this.metadata.pagetype === 'page'}>
           <div>
@@ -391,7 +517,9 @@ class BlogEntry extends BlogElement {
                     <a href="https://w3c.github.io/web-share/">Web Share API</a
                     >! Whoo hoo! Click the button to use the native share on
                     your device.<br />
-                    <button @click=${this.__webShare}>🚀 Share</button>
+                    <button @click=${this.__shareWithWebShareApi}>
+                      🚀 Share
+                    </button>
                   </p>
                 `
               : html`
@@ -432,7 +560,7 @@ class BlogEntry extends BlogElement {
                 placeholder="https://your-amazing-response-url-here/"
                 id="webMentionSource"
               />
-              <button @click="${e => this.__submitWebMention(e)}">
+              <button @click="${e => this.__webmentionSubmitToService(e)}">
                 🚚 Send Webmention
               </button>
             </form>
@@ -466,8 +594,6 @@ class BlogEntry extends BlogElement {
           </div>
         </footer>
       </article>
-
-      <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
     `;
   }
 }

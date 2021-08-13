@@ -1,42 +1,53 @@
 const analyticsId = 'UA-96204-3';
 
-function initAnalytics() {
-  let libUrl;
-  const analyticsSrc = url => {
-    const parsed = new URL(url, 'https://www.google-analytics.com');
-    if (parsed.origin === 'https://www.google-analytics.com') {
-      return parsed.href;
-    }
-    throw new TypeError('invalid analytics url');
+// don't hold this; let our user be anonymous after a reload
+const analyticsUid = Math.floor(Math.random() * 1000 * Date.now());
+
+function sendToGa(data) {
+  const payload = {
+    v: 1,
+    tid: analyticsId,
+    uid: analyticsUid,
+    aip: 1,
+    sd: `${window.screen.colorDepth}-bit`,
+    sr: `${window.screen.width}x${window.screen.height}`,
+    vp: `${window.innerWidth}x${window.innerHeight}`,
+    ul: navigator.language.toLowerCase(),
+    de: document.characterSet.toLowerCase(),
+    dl: window.location.href,
+    dh: window.location.origin,
+    dp: window.location.pathname,
+    dt: document.title,
+    dr: document.referrer,
+    us: navigator.userAgent,
+    ...data,
   };
-  if (window.trustedTypes && trustedTypes.createPolicy) {
-    const analyticsPolicy = trustedTypes.createPolicy('analyticsPolicy', {
-      createScriptURL: src => analyticsSrc(src),
-    });
-    libUrl = analyticsPolicy.createScriptURL('analytics.js');
-  } else {
-    libUrl = analyticsSrc('analytics.js');
-  }
+  navigator.sendBeacon('https://www.google-analytics.com/collect', new URLSearchParams(payload).toString());
+}
 
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    (i[r] =
-      i[r] ||
-      function () {
-        (i[r].q = i[r].q || []).push(arguments);
-      }),
-      (i[r].l = 1 * new Date());
-    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m);
-  })(window, document, 'script', libUrl, 'ga');
+function __trackError(error, fieldsObj = {}) {
+  sendToGa({
+    t: 'event',
+    ec: 'Script',
+    ea: 'error',
+    el: (error && error.stack) || '(not set)',
+    ni: 1,
+    ...fieldsObj,
+  });
+}
 
-  ga('create', analyticsId, 'auto');
-  ga('set', 'transport', 'beacon');
-  ga('set', 'anonymizeIp', true);
-  ga('send', 'pageview');
+function __trackCwpMetric({ name, delta, id }) {
+  sendToGa({
+    t: 'event',
+    ec: 'Web Vitals',
+    ea: name,
+    el: id,
+    ev: Math.round(name === 'CLS' ? delta * 1000 : delta),
+    ni: 1,
+  });
+}
 
+function initAnalytics() {
   const loadErrorEvents = (window.__e && window.__e.q) || [];
   const fieldsObj = { eventAction: 'uncaught error' };
 
@@ -51,33 +62,6 @@ function initAnalytics() {
   });
 }
 
-function __trackError(error, fieldsObj = {}) {
-  ga(
-    'send',
-    'event',
-    Object.assign(
-      {
-        eventCategory: 'Script',
-        eventAction: 'error',
-        eventLabel: (error && error.stack) || '(not set)',
-        nonInteraction: true,
-      },
-      fieldsObj,
-    ),
-  );
-}
-
-function __trackCwpMetric({ name, delta, id }) {
-  ga('send', 'event', {
-    eventCategory: 'Web Vitals',
-    eventAction: name,
-    eventLabel: id,
-    eventValue: Math.round(name === 'CLS' ? delta * 1000 : delta),
-    nonInteraction: true,
-    transport: 'beacon',
-  });
-}
-
 async function initCwp() {
   const module = await import('web-vitals');
   module.getCLS(__trackCwpMetric);
@@ -87,4 +71,4 @@ async function initCwp() {
   module.getFCP(__trackCwpMetric);
 }
 
-export { initAnalytics, initCwp };
+export { initAnalytics, initCwp, sendToGa };

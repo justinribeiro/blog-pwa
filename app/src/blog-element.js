@@ -1,24 +1,16 @@
 /* eslint-disable class-methods-use-this */
 import { LitElement, css, html } from 'lit';
-import './blog-network-warning.js';
+import { sendToGa } from './analytics.js';
 
 class BlogElement extends LitElement {
   static get properties() {
     return {
-      failure: {
-        type: Boolean,
-        attribute: false,
-      },
       metadata: {
         type: Object,
         attribute: false,
       },
       featureImage: {
         type: Object,
-      },
-      loaded: {
-        type: Boolean,
-        attribute: false,
       },
       __domRefs: {
         type: Object,
@@ -33,29 +25,16 @@ class BlogElement extends LitElement {
     this.__domRefs = new Map();
   }
 
-  /**
-   * Grabs a DOM ref from the in place map if available. Temporary spot for
-   * this; I think we'll make this a better WM+sym
-   * @param {string} name
-   * @param {string} selector DOM selector ref
-   * @returns {HTMLElement}
-   * @private
-   */
-  __getDomRef(name, selector = '') {
-    let ref;
-    if (!this.__domRefs.has(name)) {
-      ref = this.shadowRoot.querySelector(selector || name);
-      this.__domRefs.set(name, ref);
-    } else {
-      ref = this.__domRefs.get(name);
-    }
-    return ref;
-  }
-
   firstUpdated() {
-    this.__getDomRef('blog-network-warning').addEventListener(
-      'try-reconnect',
-      () => this.mount()
+    this.shadowRoot.addEventListener(
+      'load',
+      e => {
+        if (e.target.tagName !== 'IMG') {
+          return;
+        }
+        e.target.style.backgroundImage = 'none';
+      },
+      true
     );
   }
 
@@ -84,15 +63,13 @@ class BlogElement extends LitElement {
 
     this.content = '';
     this.share = [];
-    this.failure = false;
-    this.loaded = false;
   }
 
   async _fetchMetaData() {
-    let getPath = location.pathname;
+    let getPath = window.location.pathname;
     const checkEnding = new RegExp('index.php|index.html', 'g');
-    if (checkEnding.test(location.pathname)) {
-      getPath = location.pathname.replace(/index\.php|index\.html/g, '');
+    if (checkEnding.test(window.location.pathname)) {
+      getPath = window.location.pathname.replace(/index\.php|index\.html/g, '');
     }
     const targetUrl = `/data${getPath}index.json`;
 
@@ -102,24 +79,20 @@ class BlogElement extends LitElement {
         throw new Error(response.statusText);
       }
       this.metadata = await response.json();
-      this._processMetaData();
-      this.failure = false;
+      this.__processMetaData();
     } catch (error) {
-      this.failure = true;
-      this.loaded = false;
       this.__showSkeleton(false);
+      window.location.href = '/offline';
     }
   }
 
-  _processMetaData() {
-    if (this.metadata.article !== undefined && this.metadata.article !== '') {
-      const parseHTML = this._unescapeHtml(this.metadata.article);
-      this.__getDomRef('#metadataArticle').innerHTML = parseHTML;
-    }
-    this._setPageMetaData(this.metadata);
+  async __processMetaData() {
+    this.__getDomRef('#metadataArticle').innerHTML = this.__unescapeHtml(
+      this.metadata.article
+    );
+    this.__setPageMetaData(this.metadata);
     this.__showSkeleton(false);
-    this.failure = false;
-    this.loaded = true;
+    sendToGa({ t: 'pageview' });
   }
 
   __showSkeleton(bool) {
@@ -135,44 +108,53 @@ class BlogElement extends LitElement {
   }
 
   /**
-   *
-   * @param {object} {{title, description, url, socialimage}}
+   * Grabs a DOM ref from the in place map if available. Temporary spot for
+   * this; I think we'll make this a better WM+sym
+   * @param {string} name
+   * @param {string} selector DOM selector ref
+   * @returns {HTMLElement}
+   * @private
    */
-  _setPageMetaData({ title, description, url, socialimage }) {
-    // Flip the metadata on load
-    // Note, Google Search will index this
+  __getDomRef(name, selector = '', documentPath = '') {
+    let ref;
+    if (documentPath) {
+      ref = document.querySelector(documentPath);
+      this.__domRefs.set(name, ref);
+    } else if (!this.__domRefs.has(name)) {
+      ref = this.shadowRoot.querySelector(selector || name);
+      this.__domRefs.set(name, ref);
+    } else {
+      ref = this.__domRefs.get(name);
+    }
+    return ref;
+  }
+
+  /**
+   * Set the pages metadata on data load. Note, Google Search will index this so
+   * it's not just for show
+   * @param {object} {{title, description, url, socialImage}}
+   */
+  __setPageMetaData({ title, description, url, socialimage }) {
+    const fallbackImg = this.__getDomRef('fallbackImg', '', 'link[rel=icon]')
+      .href;
     document.title = `${title} - Justin Ribeiro`;
-    document.head
-      .querySelector("meta[name='description']")
-      .setAttribute('content', description);
 
-    this._setMeta('property', 'og:title', document.title);
-    this._setMeta('property', 'twitter:title', document.title);
+    this.__setMetaDom('property', 'og:title', document.title);
+    this.__setMetaDom('property', 'twitter:title', document.title);
 
-    if (description) {
-      this._setMeta('property', 'og:description', description);
-      this._setMeta('property', 'twitter:description', description);
-    }
+    this.__setMetaDom('name', 'description', description);
+    this.__setMetaDom('property', 'og:description', description);
+    this.__setMetaDom('property', 'twitter:description', description);
 
-    const fallbackImg = `${document.location}images/manifest/me-2018-192.png`;
-    socialimage = socialimage || fallbackImg;
-    if (socialimage) {
-      this._setMeta('property', 'twitter:image:src', socialimage);
-      this._setMeta('property', 'og:image', socialimage);
-    }
+    this.__setMetaDom(
+      'property',
+      'twitter:image:src',
+      socialimage || fallbackImg
+    );
+    this.__setMetaDom('property', 'og:image', socialimage || fallbackImg);
 
-    url = url || document.location.href;
-    this._setMeta('property', 'og:url', url);
-    this._setMeta('property', 'twitter:url', url);
-
-    if (window.ga) {
-      ga('send', {
-        hitType: 'pageview',
-        page: window.location.pathname,
-        location: url,
-        title,
-      });
-    }
+    this.__setMetaDom('property', 'og:url', url || document.location.href);
+    this.__setMetaDom('property', 'twitter:url', url || document.location.href);
   }
 
   /**
@@ -181,7 +163,7 @@ class BlogElement extends LitElement {
    * @param {string} attrValue
    * @param {string} content
    */
-  _setMeta(attrName, attrValue, content) {
+  __setMetaDom(attrName, attrValue, content) {
     let element = document.head.querySelector(
       `meta[${attrName}="${attrValue}"]`
     );
@@ -195,44 +177,26 @@ class BlogElement extends LitElement {
 
   /**
    * Fixes stuff I spit into JSON from Hugo
-   * @param {String} raw Anything HTML that needs unescaping..
+   * @param {String} data Anything HTML that needs unescaping..
    * @return {String} string
    */
-  _unescapeHtml(raw) {
+  __unescapeHtml(data) {
     const strReplacer = raw =>
       raw
         .replace(/(&#34;)/g, '"')
         .replace(/(&lt;)(.+?)(&gt;)/gims, '<$2>')
         .replace(/(&amp;)/gims, '&');
 
-    if (window.trustedTypes && trustedTypes.createPolicy) {
-      const unEscapeHTMLPolicy = trustedTypes.createPolicy(
+    if (window.trustedTypes && window.trustedTypes.createPolicy) {
+      const unEscapeHTMLPolicy = window.trustedTypes.createPolicy(
         'unEscapeHTMLPolicy',
         {
           createHTML: raw => strReplacer(raw),
         }
       );
-      return unEscapeHTMLPolicy.createHTML(raw);
+      return unEscapeHTMLPolicy.createHTML(data);
     }
-    return strReplacer(raw);
-  }
-
-  /**
-   * Check the current state of the view so we can get rid of the skelton in
-   * weird in-between states
-   * @param {boolean} failed
-   * @param {boolean} loaded
-   * @return {boolean} state
-   */
-  __checkViewState(failed, loaded) {
-    // In the event a network fail happens and we get not SW load,
-    // hide the skeleton
-    // In the event the network doesn't fail and we get a load,
-    // hide the skeleton
-    if ((failed && !loaded) || (!failed && loaded)) {
-      return true;
-    }
-    return false;
+    return strReplacer(data);
   }
 
   static get styles() {

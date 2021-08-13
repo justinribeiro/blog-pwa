@@ -52,16 +52,25 @@ handlers:
   static_files: dist/service-worker.js
   upload: dist/service-worker.js
   secure: always
+  expiration: "0d 0h"
 
 - url: /service-worker.js.map
   static_files: dist/service-worker.js.map
   upload: dist/service-worker.js.map
   secure: always
+  expiration: "0d 0h"
 
 - url: /manifest.json
-  static_files: dist/manifest.json
-  upload: dist/manifest.json
+  static_files: dist/app.webmanifest
+  upload: dist/app.webmanifest
   secure: always
+  expiration: "30d"
+
+- url: /app.webmanifest
+  static_files: dist/app.webmanifest
+  upload: dist/app.webmanifest
+  secure: always
+  expiration: "30d"
 
 - url: .*
   secure: always

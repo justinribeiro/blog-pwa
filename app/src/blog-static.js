@@ -52,7 +52,7 @@ class BlogStatic extends BlogElement {
 
   render() {
     return html`
-      <div id="main" ?hidden=${!this.loaded}>
+      <div id="main">
         <div id="metadataArticle"></div>
         ${this.metadata.posts
           ? html`
@@ -74,8 +74,6 @@ class BlogStatic extends BlogElement {
             `
           : html``}
       </div>
-
-      <blog-network-warning ?hidden="${!this.failure}"></blog-network-warning>
     `;
   }
 }

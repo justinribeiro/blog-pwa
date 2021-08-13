@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Generate Lighthouse Report
-        uses: justinribeiro/lighthouse-action@v1.0.1
+        uses: justinribeiro/lighthouse-action@v2.0.0
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
           url: https://${{ github.sha }}-dot-${{ secrets.GAE_PID }}.appspot.com

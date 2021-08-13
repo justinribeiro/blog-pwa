@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <title>Justin Ribeiro</title>
     <meta name="description" content="Manager. Maker. Film Photographer. Recovering Software Engineer. Speaker. Writer. Dad. Coach. Occasionally funny.">
-    <meta name="theme-color" content="#f1f1f1">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f1f1">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
     <meta name="color-scheme" content="dark light">
 
     <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-192.png">
     <link rel="apple-touch-icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-192.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/app.webmanifest">
     <base href="/">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -19,11 +20,10 @@
     <meta property="og:site_name" content="JustinRibeiro.com">
     <meta property="og:image" content="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-192.png" />
 
-    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-    <link ref="preconnect" href="//fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
-    <link rel="preconnect" href="//storage.googleapis.com/" crossorigin>
-    <link rel="preconnect" href="//www.google-analytics.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link ref="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://storage.googleapis.com/" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin>
 
     <link rel="webmention" href="https://webmention.io/justinribeiro.com/webmention" />
     <link rel="pingback" href="https://webmention.io/justinribeiro.com/xmlrpc" />
@@ -78,9 +78,14 @@
         --font-family-sans-serif: 'Libre Franklin', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
         --font-family-headers: 'Literata', var(--font-family-serif);
 
-        --font-lhr: 1.618;
+        --font-lhr: 1.418;
         --font-h1: 2.5rem;
         --font-base: 1.333rem;
+        --figcaption: calc(var(--font-base) * 0.7);
+        --figcaption-author: calc(var(--font-base) * 0.65);
+
+        --figure-button-margin: 3rem;
+
         --motion-duration: 0;
         --motion-type:  none;
       }
@@ -165,7 +170,7 @@
       }
 
       #pageHeader h1, #pageFooter h2 {
-        font-weight: 100;
+        font-weight: 400;
         font-family: var(--font-family-headers);
       }
 
@@ -183,6 +188,7 @@
       }
 
       #pageFooter {
+        min-height: 20vh;
         border-top: var(--border);
         grid-template-columns: repeat(auto-fit, minmax(var(--footer-grid-min), var(--footer-grid-max)));
       }
@@ -266,10 +272,11 @@
     <link href="/data/tags/business/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Management and Business Articles" />
     <link href="/data/tags/personal/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Personal Articles" />
     <script>addEventListener('error', window.__e=function f(e){f.q=f.q||[];f.q.push(e)});</script>
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&family=Literata:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&family=Literata:wght@400&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');" >
   <body>
     <script nomodule>
-      // IE11 and anything that doesn't support ES Modules gets the no-JS
-      // version of the site
       location.href = '{{ noscript }}';
     </script>
     <header id="pageHeader">
@@ -319,5 +326,5 @@
       </section>
     </footer>
     <script type="module" src="./src/blog-pwa.js"></script>
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"Person","name":"Justin Ribeiro","url":"https://justinribeiro.com/","email":"justin@justinribeiro.com","image":"https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2020-Q1-512.jpg","sameAs":["https://twitter.com/justinribeiro","https://www.linkedin.com/in/justinribeiro","https://plus.google.com/+justinribeiro","https://github.com/justinribeiro","https://facebook.com/justinribeiro","https://ribeiro.social/@justin","https://hub.docker.com/r/justinribeiro/","https://developers.google.com/community/experts/directory/profile/profile-justin_ribeiro"]}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"Person","name":"Justin Ribeiro","url":"https://justinribeiro.com/","email":"justin@justinribeiro.com","image":"https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-2020-Q1-512.jpg","sameAs":["https://twitter.com/justinribeiro","https://www.linkedin.com/in/justinribeiro","https://read.cv/justinribeiro","https://github.com/justinribeiro","https://facebook.com/justinribeiro","https://ribeiro.social/@justin","https://hub.docker.com/r/justinribeiro/","https://developers.google.com/community/experts/directory/profile/profile-justin_ribeiro"]}</script>
   </body>
