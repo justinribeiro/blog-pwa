@@ -52,6 +52,7 @@
         --diff-ins-color: #d2fbcd;
 
         --space-cs: 0.5rem;
+        --space-nav: calc(var(--space-cs) / 2);
 
         --code-background: #faf8f5;
         --code-color: #DD4A68;
@@ -201,7 +202,8 @@
       #pageHeader nav a {
         text-transform: uppercase;
         letter-spacing: -0.03em;
-        margin-right: var(--space-cs);
+        margin: var(--space-nav) var(--space-nav) var(--space-nav) 0;
+        display: inline-block;
       }
 
       #me {
@@ -244,6 +246,11 @@
       }
 
       @media (min-width: 767px) {
+        #pageHeader nav a {
+          margin-right: var(--space-cs);
+          display: initial;
+        }
+
         #pageFooter {
           grid-template-columns: repeat(2, minmax(var(--footer-grid-min), var(--footer-grid-max)));
         }
@@ -271,7 +278,6 @@
     <link href="/data/tags/photography/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Photography Articles and Prints" />
     <link href="/data/tags/business/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Management and Business Articles" />
     <link href="/data/tags/personal/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Personal Articles" />
-    <script>addEventListener('error', window.__e=function f(e){f.q=f.q||[];f.q.push(e)});</script>
 
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&family=Literata:wght@400&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&family=Literata:wght@400&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');" >
@@ -293,6 +299,7 @@
           <a href="/">Home</a>
           <a href="/chronicle/">Blog</a>
           <a href="/talks/">Talks</a>
+          <a href="/reading/">Reading</a>
           <a href="/about/">About</a>
         </nav>
       </div>

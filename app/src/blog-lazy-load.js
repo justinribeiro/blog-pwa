@@ -1,3 +1,3 @@
 import './snack-bar.js';
-import './blog-missing.js';
-import './blog-offline.js';
+import './page-missing.js';
+import './page-offline.js';

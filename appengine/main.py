@@ -34,9 +34,9 @@ class MainHandler(webapp2.RequestHandler):
         self.response.headers['Referrer-Policy'] = 'no-referrer, strict-origin-when-cross-origin'
         self.response.headers['Content-Security-Policy'] = ("default-src 'none'; base-uri 'self'; "
                                                             "worker-src 'self'; "
-                                                            "script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.google-analytics.com https://www.gstatic.com; "
+                                                            "script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.gstatic.com; "
                                                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
-                                                            "connect-src 'self' https://storage.googleapis.com https://www.google-analytics.com https://webmention.io/; "
+                                                            "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.google-analytics.com https://webmention.io/; "
                                                             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
                                                             "media-src 'self' https://storage.googleapis.com; "
                                                             "form-action 'self' https://webmention.io; "
@@ -48,7 +48,7 @@ class MainHandler(webapp2.RequestHandler):
                                                             "report-uri https://justinribeiro.report-uri.com/r/d/csp/enforce; report-to default")
         self.response.headers['Content-Security-Policy-Report-Only'] = "require-trusted-types-for 'script'; report-uri https://justinribeiro.report-uri.com/r/d/csp/reportOnly; report-to default"
         self.response.headers['Feature-Policy'] = ("accelerometer 'none'; "
-                                                   "ambient-light-sensor 'none'; "
+                                                   "ambient-light-sensor 'self'; "
                                                    "autoplay 'self' https://www.youtube.com;"
                                                    "camera 'none'; "
                                                    "fullscreen 'self' https://www.youtube.com; "

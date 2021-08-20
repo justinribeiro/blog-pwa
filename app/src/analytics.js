@@ -22,20 +22,11 @@ function sendToGa(data) {
     us: navigator.userAgent,
     ...data,
   };
-  navigator.sendBeacon('https://www.google-analytics.com/collect', new URLSearchParams(payload).toString());
+  navigator.sendBeacon(
+    'https://www.google-analytics.com/collect',
+    new URLSearchParams(payload).toString()
+  );
 }
-
-function __trackError(error, fieldsObj = {}) {
-  sendToGa({
-    t: 'event',
-    ec: 'Script',
-    ea: 'error',
-    el: (error && error.stack) || '(not set)',
-    ni: 1,
-    ...fieldsObj,
-  });
-}
-
 function __trackCwpMetric({ name, delta, id }) {
   sendToGa({
     t: 'event',
@@ -44,21 +35,6 @@ function __trackCwpMetric({ name, delta, id }) {
     el: id,
     ev: Math.round(name === 'CLS' ? delta * 1000 : delta),
     ni: 1,
-  });
-}
-
-function initAnalytics() {
-  const loadErrorEvents = (window.__e && window.__e.q) || [];
-  const fieldsObj = { eventAction: 'uncaught error' };
-
-  // Replay any stored load error events.
-  for (const event of loadErrorEvents) {
-    __trackError(event.error, fieldsObj);
-  }
-
-  // Add a new listener to track event immediately.
-  window.addEventListener('error', event => {
-    __trackError(event.error, fieldsObj);
   });
 }
 
@@ -71,4 +47,4 @@ async function initCwp() {
   module.getFCP(__trackCwpMetric);
 }
 
-export { initAnalytics, initCwp, sendToGa };
+export { initCwp, sendToGa };

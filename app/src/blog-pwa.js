@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
-import { initAnalytics, initCwp } from './analytics.js';
+import { initCwp } from './analytics.js';
 
 class BlogPwa extends LitElement {
   static get properties() {
@@ -63,6 +63,7 @@ class BlogPwa extends LitElement {
       entry: document.createElement('blog-entry'),
       missing: document.createElement('blog-missing'),
       offline: document.createElement('blog-offline'),
+      reading: document.createElement('blog-reading'),
     };
     installRouter(location => this.__routes(location));
   }
@@ -82,6 +83,9 @@ class BlogPwa extends LitElement {
         break;
       case /(chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
         this.__loadRoute('static');
+        break;
+      case /(reading|^\/index.html|^\/$)/.test(location.pathname):
+        this.__loadRoute('reading');
         break;
       case /(offline|^\/index.html|^\/$)/.test(location.pathname):
         this.__loadRoute('offline');
@@ -106,7 +110,10 @@ class BlogPwa extends LitElement {
       await import('./blog-entry.js');
     }
     if (type === 'offline') {
-      await import('./blog-offline.js');
+      await import('./page-offline.js');
+    }
+    if (type === 'reading') {
+      await import('./page-reading.js');
     }
     try {
       const checkElement = this.__domRefRouter.querySelector(`blog-${type}`);
@@ -134,7 +141,7 @@ class BlogPwa extends LitElement {
     if (!this.loadComplete) {
       import('./blog-lazy-load.js').then(async () => {
         this.__loadSw();
-        this.__loadAnalytics();
+        initCwp();
         this.loadComplete = true;
       });
     }
@@ -182,21 +189,6 @@ class BlogPwa extends LitElement {
     }
   }
 
-  async __loadAnalytics() {
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(
-        () => {
-          this.__importAnalytics();
-        },
-        {
-          timeout: 5000,
-        }
-      );
-    } else {
-      this.__importAnalytics();
-    }
-  }
-
   __cacheExistingLoadedUrls(wb) {
     // Get the current page URL + all resources the page loaded.
     const urlsToCache = [
@@ -208,11 +200,6 @@ class BlogPwa extends LitElement {
       type: 'CACHE_URLS',
       payload: { urlsToCache },
     });
-  }
-
-  async __importAnalytics() {
-    initAnalytics();
-    initCwp();
   }
 
   _setSnackBarText(text, duration, hold, callback) {

@@ -51,6 +51,17 @@ module.exports = {
       },
     },
     {
+      urlPattern: /^https:\/\/us-west2-justinribeiro-web\.cloudfunctions\.net/,
+      handler: 'NetworkFirst',
+      options: {
+        networkTimeoutSeconds: 3,
+        cacheName: 'link-cache',
+        expiration: {
+          maxEntries: 200,
+        },
+      },
+    },
+    {
       urlPattern: /^https:\/\/storage\.googleapis\.com/,
       handler: 'CacheFirst',
       options: {
