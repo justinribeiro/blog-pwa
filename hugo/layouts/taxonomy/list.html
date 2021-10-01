@@ -16,8 +16,9 @@
   "readingtime": "{{ .ReadingTime }}",
   "permalink": "{{ .Permalink }}",
   "socialimage": "{{ $.Params.socialimage }}",
-  "posts": [ {{ range $i, $e := .Data.Pages}}
-  {{if $i}}, {{end}}{{ .Render "li"}}
-{{end}}
-]
+  "posts": [
+    {{range $index, $element := .Data.Pages}}
+      {{if $index}},{{end}}{{ .Render "li"}}
+    {{end}}
+  ]
 }

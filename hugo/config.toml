@@ -5,13 +5,13 @@ title = "Justin Ribeiro"
 # specifically for the PWA and GAE to load and parse
 publishdir = "../app/data"
 
+titleCaseStyle = "Chicago"
+
 [markup.goldmark.renderer]
   unsafe= true
 
 [taxonomies]
   tag = "tags"
-
-titleCaseStyle = "Chicago"
 
 [permalinks]
   chronicle = "/chronicle/:year/:month/:day/:slug/"

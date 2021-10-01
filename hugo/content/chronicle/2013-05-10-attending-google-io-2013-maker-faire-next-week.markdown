@@ -1,7 +1,7 @@
 ---
 tags:
 - Maker Faire
-- Google I/O
+- GoogleIO
 date: 2013-05-10T00:00:00Z
 description: "Google I/O and Maker Faire in one week? Heaven!"
 title: Attending Google I/O 2013 + Maker Faire next week
@@ -19,4 +19,3 @@ Second time going, super excited. Great time to talk to developers on the front 
 I'll be at <a href="http://makerfaire.com/">Maker Faire</a> with my wife and oldest little girl, Alli on Saturday and Sunday (the 1.5 year old twins are not coming with us). Alli wants to build a fairly complicated robot this summer, so if you're around Maker Faire and have a robot, she's going to ask you a few hundred questions. You've been warned. :-)
 
 I love going to Maker Faire. Nice people, great ideas, just a lot of family fun (and hacking)!
-

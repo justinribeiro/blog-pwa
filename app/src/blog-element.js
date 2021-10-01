@@ -1,6 +1,5 @@
 /* eslint-disable class-methods-use-this */
 import { LitElement, css, html } from 'lit';
-import { sendToGa } from './analytics.js';
 
 class BlogElement extends LitElement {
   static get properties() {
@@ -92,7 +91,6 @@ class BlogElement extends LitElement {
     );
     this.__setPageMetaData(this.metadata);
     this.__showSkeleton(false);
-    sendToGa({ t: 'pageview' });
   }
 
   __showSkeleton(bool) {
@@ -135,8 +133,11 @@ class BlogElement extends LitElement {
    * @param {object} {{title, description, url, socialImage}}
    */
   __setPageMetaData({ title, description, url, socialimage }) {
-    const fallbackImg = this.__getDomRef('fallbackImg', '', 'link[rel=icon]')
-      .href;
+    const fallbackImg = this.__getDomRef(
+      'fallbackImg',
+      '',
+      'link[rel=icon]'
+    ).href;
     document.title = `${title} - Justin Ribeiro`;
 
     this.__setMetaDom('property', 'og:title', document.title);
@@ -155,6 +156,15 @@ class BlogElement extends LitElement {
 
     this.__setMetaDom('property', 'og:url', url || document.location.href);
     this.__setMetaDom('property', 'twitter:url', url || document.location.href);
+
+    if (window.ga) {
+      window.ga('send', {
+        hitType: 'pageview',
+        page: window.location.pathname,
+        location: url || document.location.href,
+        title,
+      });
+    }
   }
 
   /**

@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
-import { initCwp } from './analytics.js';
 
 class BlogPwa extends LitElement {
   static get properties() {
@@ -141,10 +140,17 @@ class BlogPwa extends LitElement {
     if (!this.loadComplete) {
       import('./blog-lazy-load.js').then(async () => {
         this.__loadSw();
-        initCwp();
+        this.__loadAnalytics();
         this.loadComplete = true;
       });
     }
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  async __loadAnalytics() {
+    const module = await import('./analytics.js');
+    module.initAnalytics();
+    module.initCwp();
   }
 
   async __loadSw() {
@@ -160,8 +166,8 @@ class BlogPwa extends LitElement {
         }
         throw new TypeError('invalid sw url');
       };
-      if (window.trustedTypes && trustedTypes.createPolicy) {
-        const swPolicy = trustedTypes.createPolicy('swPolicy', {
+      if (window.trustedTypes && window.trustedTypes.createPolicy) {
+        const swPolicy = window.trustedTypes.createPolicy('swPolicy', {
           createScriptURL: src => srcSw(src),
         });
         swUrl = swPolicy.createScriptURL('service-worker.js');

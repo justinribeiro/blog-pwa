@@ -1,40 +1,54 @@
 const analyticsId = 'UA-96204-3';
 
-// don't hold this; let our user be anonymous after a reload
-const analyticsUid = Math.floor(Math.random() * 1000 * Date.now());
-
-function sendToGa(data) {
-  const payload = {
-    v: 1,
-    tid: analyticsId,
-    uid: analyticsUid,
-    aip: 1,
-    sd: `${window.screen.colorDepth}-bit`,
-    sr: `${window.screen.width}x${window.screen.height}`,
-    vp: `${window.innerWidth}x${window.innerHeight}`,
-    ul: navigator.language.toLowerCase(),
-    de: document.characterSet.toLowerCase(),
-    dl: window.location.href,
-    dh: window.location.origin,
-    dp: window.location.pathname,
-    dt: document.title,
-    dr: document.referrer,
-    us: navigator.userAgent,
-    ...data,
+function initAnalytics() {
+  let libUrl;
+  const analyticsSrc = url => {
+    const parsed = new URL(url, 'https://www.google-analytics.com');
+    if (parsed.origin === 'https://www.google-analytics.com') {
+      return parsed.href;
+    }
+    throw new TypeError('invalid analytics url');
   };
-  navigator.sendBeacon(
-    'https://www.google-analytics.com/collect',
-    new URLSearchParams(payload).toString()
-  );
+  if (window.trustedTypes && window.trustedTypes.createPolicy) {
+    const analyticsPolicy = window.trustedTypes.createPolicy(
+      'analyticsPolicy',
+      {
+        createScriptURL: src => analyticsSrc(src),
+      }
+    );
+    libUrl = analyticsPolicy.createScriptURL('analytics.js');
+  } else {
+    libUrl = analyticsSrc('analytics.js');
+  }
+
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(window, document, 'script', libUrl, 'ga');
+
+  ga('create', analyticsId, 'auto');
+  ga('set', 'transport', 'beacon');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
 }
+
 function __trackCwpMetric({ name, delta, id }) {
-  sendToGa({
-    t: 'event',
-    ec: 'Web Vitals',
-    ea: name,
-    el: id,
-    ev: Math.round(name === 'CLS' ? delta * 1000 : delta),
-    ni: 1,
+  ga('send', 'event', {
+    eventCategory: 'Web Vitals',
+    eventAction: name,
+    eventLabel: id,
+    eventValue: Math.round(name === 'CLS' ? delta * 1000 : delta),
+    nonInteraction: true,
+    transport: 'beacon',
   });
 }
 
@@ -47,4 +61,4 @@ async function initCwp() {
   module.getFCP(__trackCwpMetric);
 }
 
-export { initCwp, sendToGa };
+export { initAnalytics, initCwp };

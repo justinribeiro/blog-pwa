@@ -26,12 +26,9 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
   </figcaption>
 </figure>'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-800.jpg"
-
 sitemap:
   changefreq: "monthly"
   priority: 0.5
-tags:
-  - none
 ---
 
 Over the course of my career, I've given hundreds of talks across the United States in a wide mix of both public and private engagements. I produced and co-hosted The Web Platform Podcast for five years with over a million downloads. I’ve written for publications such as Safari Books Online, EMULSIVE, and NFC Forum, and have spoken at large conferences such as Google I/O, Eclipsecon, SPAR 3D and jQuery Conference.

@@ -944,10 +944,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
 
-"@justinribeiro/lite-youtube@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@justinribeiro/lite-youtube/-/lite-youtube-0.6.2.tgz#305793f230070c1e653a697bfd2c6f4129c82a63"
-  integrity sha512-FIaZtGuwt9PPIyQHI1S+59kXvq8I/baGQe0A3z34avH3EuJXCsN7XrZdKk0kdJG58MuCDQjWZb1E/rxYVF8RRw==
+"@justinribeiro/lite-youtube@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@justinribeiro/lite-youtube/-/lite-youtube-1.0.0.tgz#112dafd7ca4b5cfc6d32ba65e87abace8b1fead6"
+  integrity sha512-jHf9Nvv9v99kMQx75VwgZ5jn3z/MU51wIN/PjcMN85a0UGkPNdb7vSXQd67g9cPQxmYr4sjVVyekDo+zWF+bdQ==
 
 "@justinribeiro/share-to-mastodon@^1.0.0":
   version "1.0.0"

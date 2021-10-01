@@ -34,7 +34,7 @@ class MainHandler(webapp2.RequestHandler):
         self.response.headers['Referrer-Policy'] = 'no-referrer, strict-origin-when-cross-origin'
         self.response.headers['Content-Security-Policy'] = ("default-src 'none'; base-uri 'self'; "
                                                             "worker-src 'self'; "
-                                                            "script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.gstatic.com; "
+                                                            "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google-analytics.com blob: https://www.gstatic.com; "
                                                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
                                                             "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.google-analytics.com https://webmention.io/; "
                                                             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "

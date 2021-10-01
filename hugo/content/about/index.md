@@ -29,8 +29,6 @@ socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210217-about
 sitemap:
   changefreq: "monthly"
   priority: 0.5
-tags:
-  - none
 ---
 
 Hi, I’m Justin Ribeiro and for the last 25 years, I’ve been a catalyst in driving the adoption of innovation and creativity in organizations. From telecommunications to aerospace, hospitality to consumer goods, to the very web browser or platform you’re using right now, I’ve managed to build teams and train executives and managers on not just the science of management and leadership, but on the art required to invigorate a company for the next phase of its growth.

@@ -46,6 +46,10 @@ class BlogStatic extends BlogElement {
         #posts > a:hover h3 {
           color: #fff;
         }
+
+        #shoutout {
+          margin-top: 0.5rem;
+        }
       `,
     ];
   }

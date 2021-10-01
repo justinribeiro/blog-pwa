@@ -256,6 +256,9 @@ case $target in
     print "${BOLD_BLUE}STAGE 8: Copy frontend build /ship${RESET}"
     cp -R app/build/default ship/dist;
 
+    # clean this up
+    xmllint --format app/data/sitemap.xml > ship/dist/data/sitemap.xml
+
     print "${BOLD_BLUE}STAGE 9: Generate preload manifest${RESET}"
     generate_manifest $*
 
