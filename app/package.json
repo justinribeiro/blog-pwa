@@ -68,10 +68,9 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@justinribeiro/lite-youtube": "^1.0.0",
+    "@justinribeiro/lite-youtube": "^1.2.0",
     "@justinribeiro/share-to-mastodon": "^1.0.0",
-    "@justinribeiro/stl-part-viewer": "^2.0.1",
-    "@justinribeiro/toggle-tooltip": "^1.0.0",
+    "@justinribeiro/stl-part-viewer": "^2.1.0",
     "lit": "^2.0.0",
     "prismjs": "^1.21.0",
     "pwa-helpers": "^0.9.1",
