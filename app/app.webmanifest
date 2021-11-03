@@ -1,8 +1,9 @@
 {
   "name": "Justin Ribeiro",
   "short_name": "Justin R.",
-  "description": "Manager. Maker. Film Photographer. Recovering Software Engineer. Speaker. Writer. Dad. Coach. Occasionally funny.",
+  "description": "Former CEO working as a catalyst in driving the adoption of innovation and creativity in organizations. Recovering Software Engineer. Maker. Film Photographer. Speaker. Writer. Dad. Husband. Doctorate Student. Occasionally funny.",
   "start_url": "/",
+  "scope": "/",
   "theme_color": "#f1f1f1",
   "background_color": "#f1f1f1",
   "icons": [

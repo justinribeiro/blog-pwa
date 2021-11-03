@@ -2,7 +2,7 @@
 module.exports = {
   swDest: './build/default/service-worker.js',
   inlineWorkboxRuntime: true,
-  skipWaiting: true,
+  skipWaiting: false,
   clientsClaim: true,
   offlineGoogleAnalytics: true,
   cleanupOutdatedCaches: true,
@@ -19,23 +19,16 @@ module.exports = {
       handler: 'NetworkOnly',
     },
     {
-      urlPattern: /\.(?:js|css)$/,
+      urlPattern: /\.(?:js|css|webmanifest)$/,
       handler: 'StaleWhileRevalidate',
       options: {
         cacheName: 'static-cache',
         expiration: {
           maxEntries: 200,
-        },
-      },
-    },
-    {
-      urlPattern: /\.(?:png|jpg|jpeg|svg|webp)$/,
-      handler: 'CacheFirst',
-      options: {
-        cacheName: 'img-cache',
-        expiration: {
-          maxEntries: 250,
-          maxAgeSeconds: 365 * 24 * 60 * 60,
+          purgeOnQuotaError: true,
+          matchOptions: {
+            ignoreVary: true,
+          },
         },
       },
     },
@@ -47,6 +40,10 @@ module.exports = {
         cacheName: 'data-cache',
         expiration: {
           maxEntries: 200,
+          purgeOnQuotaError: true,
+          matchOptions: {
+            ignoreVary: true,
+          },
         },
       },
     },
@@ -58,6 +55,10 @@ module.exports = {
         cacheName: 'link-cache',
         expiration: {
           maxEntries: 200,
+          purgeOnQuotaError: true,
+          matchOptions: {
+            ignoreVary: true,
+          },
         },
       },
     },
@@ -70,8 +71,12 @@ module.exports = {
           statuses: [0, 200],
         },
         expiration: {
-          maxEntries: 250,
+          maxEntries: 500,
           maxAgeSeconds: 60 * 60 * 24 * 365,
+          purgeOnQuotaError: true,
+          matchOptions: {
+            ignoreVary: true,
+          },
         },
       },
     },

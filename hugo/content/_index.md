@@ -1,7 +1,7 @@
 ---
 date: 2021-02-17T00:00:00-08:00
 title: "Words, Letters, and Thoughts"
-description: "Justin Ribeiro is a former CEO working as a catalyst in driving the adoption of innovation and creativity in organizations. Recovering Software Engineer. Maker. Film Photographer. Speaker. Writer. Dad. Husband. Occasionally funny."
+description: "Justin Ribeiro is a former CEO working as a catalyst in driving the adoption of innovation and creativity in organizations. Recovering Software Engineer. Maker. Film Photographer. Speaker. Writer. Dad. Husband. Doctorate Student. Occasionally funny."
 pagetype: "page"
 sitemap:
   changefreq: "weekly"

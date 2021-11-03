@@ -157,11 +157,8 @@ class BlogPwa extends LitElement {
     if ('serviceWorker' in navigator) {
       let swUrl;
       const srcSw = url => {
-        const parsed = new URL(url, document.baseURI);
-        if (
-          parsed.host === 'justinribeiro.com' ||
-          parsed.host === 'www.justinribeiro.com'
-        ) {
+        const parsed = new URL(url, window.location.origin);
+        if (url.origin !== window.location.origin) {
           return parsed.href;
         }
         throw new TypeError('invalid sw url');
@@ -176,7 +173,7 @@ class BlogPwa extends LitElement {
       }
       const wb = new Workbox(swUrl);
 
-      wb.addEventListener('activated', event => {
+      wb.addEventListener('activated', () => {
         if ('requestIdleCallback' in window) {
           window.requestIdleCallback(
             () => {
@@ -191,14 +188,29 @@ class BlogPwa extends LitElement {
         }
       });
 
+      wb.addEventListener('waiting', () => {
+        this._setSnackBarText(
+          'New and updated content is available.',
+          0,
+          true,
+          async () => {
+            wb.addEventListener('controlling', () => {
+              window.location.reload();
+            });
+            wb.messageSW({ type: 'SKIP_WAITING' });
+          }
+        );
+      });
+
       wb.register();
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
   __cacheExistingLoadedUrls(wb) {
     // Get the current page URL + all resources the page loaded.
     const urlsToCache = [
-      location.href,
+      window.location.href,
       ...performance.getEntriesByType('resource').map(r => r.name),
     ];
     // Send that list of URLs to your router in the service worker.

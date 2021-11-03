@@ -1,0 +1,12 @@
+[
+  {
+    "method": ["GET", "HEAD"],
+    "origin": [
+      "http://localhost:8081",
+      "http://localhost:8080",
+      "https://www.justinribeiro.com",
+      "https://justinribeiro.com"
+    ],
+    "responseHeader": ["Content-Type"]
+  }
+]

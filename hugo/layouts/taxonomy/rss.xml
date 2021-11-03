@@ -11,8 +11,8 @@
     <managingEditor>justin@justinribeiro.com (Justin Ribeiro)</managingEditor>
     <webMaster>justin@justinribeiro.com (Justin Ribeiro)</webMaster>
     <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
-    <webfeeds:icon>https://justinribeiro.com/images/manifest/me-2018-192.png</webfeeds:icon>
-    <webfeeds:logo>https://justinribeiro.com/images/manifest/logo.svg</webfeeds:logo>
+    <webfeeds:icon>https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-192.png</webfeeds:icon>
+    <webfeeds:logo>https://storage.googleapis.com/jdr-public-imgs/manifest/logo.svg</webfeeds:logo>
     <webfeeds:accentColor>0049A3</webfeeds:accentColor>
     <webfeeds:related layout="card" target="browser"/>
     <webfeeds:analytics id="UA-96204-3" engine="GoogleAnalytics" />
