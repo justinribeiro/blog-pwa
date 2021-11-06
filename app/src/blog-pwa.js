@@ -3,53 +3,72 @@ import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
 
 class BlogPwa extends LitElement {
-  static get properties() {
-    return {
-      __hideSkeleton: {
-        type: Boolean,
-      },
-    };
-  }
+  static properties = {
+    /**
+     * check whether we've completed our main app load (crp + lazy resources)
+     * @private
+     */
+    __loaded: {
+      type: Boolean,
+      state: true,
+    },
+    /**
+     * show / hide the skeleton loader facade
+     */
+    __showSkeleton: {
+      type: Boolean,
+      state: true,
+    },
+    /**
+     * shadow DOM reference holder
+     * @private
+     */
+    __dom: {
+      type: Object,
+    },
+  };
 
   constructor() {
     super();
+    this.__loaded = false;
+    this.__showSkeleton = true;
+    this.__dom = {
+      snackBar: null,
+    };
 
-    // don't show it on first load, it's already been shown by before our
-    // component is ready
-    this.__hideSkeleton = true;
+    this.addEventListener('blog-pwa-toggle-skeleton', event => {
+      this.__showSkeleton = event.detail.show;
+    });
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener(
+      'blog-pwa-show-message',
+      this.__listenForSbMessageEvent.bind(this)
+    );
+    document.addEventListener('keydown', BlogPwa.__listenForEscapeKeyEvent, {
+      passive: true,
+    });
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener(
+      'blog-pwa-show-message',
+      this.__listenForSbMessageEvent.bind(this)
+    );
+    document.removeEventListener('keydown', BlogPwa.__listenForEscapeKeyEvent, {
+      passive: true,
+    });
+    super.disconnectedCallback();
   }
 
   firstUpdated() {
+    this.__dom.snackBar = this.shadowRoot.querySelector('snack-bar');
+
     this.__setupRouter();
-
-    this._ensureLazyLoaded();
-
-    window.addEventListener('display-snackbar', event => {
-      this._setSnackBarText(event.detail.message, 5000);
-    });
-
-    this.addEventListener('blog-pwa-toggle-skeleton', event => {
-      this.__hideSkeleton = event.detail.show;
-    });
-
-    // this is slightly heavy handed, but I have other notions of using this
-    // event for some other things
-    document.addEventListener(
-      'keydown',
-      event => {
-        if (event.key === 'Escape') {
-          document.dispatchEvent(
-            new CustomEvent('blog-pwa-escape-pressed', {
-              bubbles: true,
-              composed: true,
-            })
-          );
-        }
-      },
-      { passive: true }
-    );
-
-    this.__setupDarkMode();
+    this.__initializeNonCrpREsources();
+    BlogPwa.__setupPrefersColorScheme();
   }
 
   /**
@@ -99,7 +118,7 @@ class BlogPwa extends LitElement {
    * Verify the state of the router outlet and then inject the or mount as
    * needed
    *
-   * @param {string} type
+   * @param {string} type The metadata page style to use
    */
   async __loadRoute(type) {
     if (type === 'static') {
@@ -134,26 +153,35 @@ class BlogPwa extends LitElement {
   }
 
   /**
-   * Load the non-essentials and startup the service worker and analytics
+   * Lazy load the non-essentials and startup additional services outside the
+   * critical rendering path
    */
-  _ensureLazyLoaded() {
-    if (!this.loadComplete) {
+  async __initializeNonCrpREsources() {
+    if (!this.__loaded) {
       import('./blog-lazy-load.js').then(async () => {
-        this.__loadSw();
-        this.__loadAnalytics();
-        this.loadComplete = true;
+        this.__loadServiceWorker();
+        BlogPwa.__loadAnalytics();
+        this.__loaded = true;
       });
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  async __loadAnalytics() {
+  /**
+   * Lazy load analytics and measure the web performance
+   * @private
+   * @static
+   */
+  static async __loadAnalytics() {
     const module = await import('./analytics.js');
     module.initAnalytics();
     module.initCwp();
   }
 
-  async __loadSw() {
+  /**
+   * Lazy load service worker and workbox-window reload
+   * @private
+   */
+  async __loadServiceWorker() {
     if ('serviceWorker' in navigator) {
       let swUrl;
       const srcSw = url => {
@@ -184,30 +212,33 @@ class BlogPwa extends LitElement {
             }
           );
         } else {
-          this.__cacheExistingLoadedUrls(wb);
+          BlogPwa.__cacheExistingLoadedUrls(wb);
         }
       });
 
       wb.addEventListener('waiting', () => {
-        this._setSnackBarText(
-          'New and updated content is available.',
-          0,
-          true,
-          async () => {
+        this.showSnackbar({
+          text: 'New and updated content is available.',
+          requireInteraction: true,
+          callback: async () => {
             wb.addEventListener('controlling', () => {
               window.location.reload();
             });
             wb.messageSW({ type: 'SKIP_WAITING' });
-          }
-        );
+          },
+        });
       });
 
       wb.register();
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  __cacheExistingLoadedUrls(wb) {
+  /**
+   * Cache existing loaded urls within the service worker cache
+   * @private
+   * @static
+   */
+  static __cacheExistingLoadedUrls(wb) {
     // Get the current page URL + all resources the page loaded.
     const urlsToCache = [
       window.location.href,
@@ -220,33 +251,37 @@ class BlogPwa extends LitElement {
     });
   }
 
-  _setSnackBarText(text, duration, hold, callback) {
-    const timeout = duration || 5000;
-    const snackBar = this.shadowRoot.querySelector('snack-bar');
-
-    // Strange bug where the bar blips on some initial loads
-    // workaround by hiding at load and then removing as needed one time
-    if (snackBar.hasAttribute('hidden')) {
-      snackBar.removeAttribute('hidden');
+  /**
+   * Listen for Escape, dispatch custom event to page components for closing of
+   * image full screens and other visual component interactions
+   * @param {Event} event
+   * @static
+   * @event blog-pwa-escape-pressed
+   */
+  static __listenForEscapeKeyEvent(event) {
+    if (event.key === 'Escape') {
+      document.dispatchEvent(
+        new CustomEvent('blog-pwa-escape-pressed', {
+          bubbles: true,
+          composed: true,
+        })
+      );
     }
-
-    if (callback) {
-      snackBar.trigger = callback;
-      snackBar.action = true;
-    }
-
-    snackBar.innerHTML = text;
-    snackBar.setAttribute('active', '');
-
-    setTimeout(() => {
-      if (!hold) {
-        snackBar.removeAttribute('active');
-      }
-    }, timeout);
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  __setupDarkMode() {
+  /**
+   * listen and show snackbar as needed
+   * @param {Event} event
+   */
+  __listenForSbMessageEvent(event) {
+    this.showSnackbar(event.detail);
+  }
+
+  /**
+   * Setup the color scheme based on user system preference
+   * @static
+   */
+  static __setupPrefersColorScheme() {
     window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
       const darkModeOn = e.matches;
       const cHtml = document.querySelector(':root');
@@ -280,22 +315,54 @@ class BlogPwa extends LitElement {
     }
   }
 
-  static get styles() {
-    return css`
-      main {
-        display: grid;
-        justify-content: center;
+  /**
+   * Open the snackbar and show the user a message
+   *
+   * @param {Object} options
+   * @param {string} options.text The message to add to the slot
+   * @param {number} [options.timeout=5000] Milliseconds to show message
+   * @param {boolean}[options.requireInteraction=false] Don't set the timeout,
+   * require user to interact
+   * @param {function} [options.callback=null] Function to call for interaction
+   */
+  showSnackbar({
+    text = '',
+    timeout = 5000,
+    requireInteraction = false,
+    callback = null,
+  }) {
+    if (text !== '') {
+      this.__dom.snackBar.removeAttribute('hidden');
+      this.__dom.snackBar.textContent = text;
+
+      if (callback) {
+        this.__dom.snackBar.trigger = callback;
+        this.__dom.snackBar.action = true;
       }
-    `;
+
+      this.__dom.snackBar.setAttribute('active', '');
+      if (!requireInteraction) {
+        setTimeout(() => {
+          this.__dom.snackBar.removeAttribute('active');
+        }, timeout);
+      }
+    }
   }
+
+  static styles = css`
+    main {
+      display: grid;
+      justify-content: center;
+    }
+  `;
 
   render() {
     return html`
       <main>
-        <section id="outlet"></section>
-        <div ?hidden=${!this.__hideSkeleton}>
+        <div ?hidden=${!this.__showSkeleton}>
           <slot id="skeleton" name="skeleton"></slot>
         </div>
+        <section id="outlet"></section>
       </main>
       <snack-bar hidden></snack-bar>
     `;

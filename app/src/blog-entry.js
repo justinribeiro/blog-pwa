@@ -2,19 +2,17 @@ import { BlogElement, html, css } from './blog-element.js';
 import { defaultStrings, stringInterpolate } from './blog-strings.js';
 
 class BlogEntry extends BlogElement {
-  static get properties() {
-    return {
-      interactions: {
-        type: String,
-      },
-      share: {
-        type: Array,
-      },
-      strings: {
-        type: Object,
-      },
-    };
-  }
+  static properties = {
+    interactions: {
+      type: String,
+    },
+    share: {
+      type: Array,
+    },
+    strings: {
+      type: Object,
+    },
+  };
 
   constructor() {
     super();
@@ -282,198 +280,196 @@ class BlogEntry extends BlogElement {
     }
   }
 
-  static get styles() {
-    return [
-      super.styles,
-      css`
-        figure {
-          margin: 1em 0;
-          transition: background 0.3s;
-          cursor: pointer;
-          position: relative;
-        }
+  static styles = [
+    super.styles,
+    css`
+      figure {
+        margin: 1em 0;
+        transition: background 0.3s;
+        cursor: pointer;
+        position: relative;
+      }
 
-        figcaption {
-          color: var(--secondary-text-color);
-          font-size: var(--figcaption);
-          line-height: var(--font-lhr);
-          margin-top: 0.5em;
-        }
+      figcaption {
+        color: var(--secondary-text-color);
+        font-size: var(--figcaption);
+        line-height: var(--font-lhr);
+        margin-top: 0.5em;
+      }
 
-        figcaption .author {
-          display: inline-block;
-          color: var(--secondary-text-color);
-          font-family: var(--font-family-serif);
-          font-size: var(--figcaption-author);
-        }
+      figcaption .author {
+        display: inline-block;
+        color: var(--secondary-text-color);
+        font-family: var(--font-family-serif);
+        font-size: var(--figcaption-author);
+      }
 
-        figure button {
-          position: fixed;
-          bottom: var(--figure-button-margin);
-          right: calc(var(--figure-button-margin) / 3);
-          position: absolute;
-          transform: rotate(135deg);
-          border-radius: 50%;
-          width: calc(var(--font-base) * 2.75);
-          font-size: var(--font-base);
-          opacity: 0.5;
-        }
+      figure button {
+        position: fixed;
+        bottom: var(--figure-button-margin);
+        right: calc(var(--figure-button-margin) / 3);
+        position: absolute;
+        transform: rotate(135deg);
+        border-radius: 50%;
+        width: calc(var(--font-base) * 2.75);
+        font-size: var(--font-base);
+        opacity: 0.5;
+      }
 
-        figure:hover button,
-        figure button:hover,
-        figure button:focus {
-          opacity: 1;
-        }
+      figure:hover button,
+      figure button:hover,
+      figure button:focus {
+        opacity: 1;
+      }
 
-        figure[expand] button {
-          display: block;
-          bottom: initial;
-          right: var(--figure-button-margin);
-          top: var(--figure-button-margin);
-        }
+      figure[expand] button {
+        display: block;
+        bottom: initial;
+        right: var(--figure-button-margin);
+        top: var(--figure-button-margin);
+      }
 
-        figure[expand] {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: fixed;
-          box-sizing: border-box;
-          padding: 4rem;
-          background-color: var(--bg);
+      figure[expand] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        box-sizing: border-box;
+        padding: 4rem;
+        background-color: var(--bg);
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        margin: 0;
+        z-index: 1;
+        transform: translateX(calc((var(--page-last) - 100vw) / 2));
+      }
+
+      figure[expand] figcaption {
+        display: block;
+        width: 20%;
+        padding: 2em;
+      }
+
+      figure[expand] img {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 90vh;
+        width: 100vw !important;
+        height: auto;
+      }
+
+      #main iframe {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      #main img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #main video {
+        max-width: 100%;
+      }
+
+      time {
+        text-transform: uppercase;
+      }
+
+      .dotDivider {
+        padding: 0 0.5rem;
+      }
+
+      .dotDivider:after {
+        content: '•';
+      }
+
+      .reads {
+        padding: 0.75rem 0;
+      }
+
+      #metaShare {
+        display: block;
+        background-color: var(--section-color);
+        padding: 1em;
+      }
+
+      #share > a {
+        margin-right: 0.5em;
+      }
+
+      label {
+        display: block;
+      }
+
+      input,
+      button {
+        padding: calc(var(--space-cs) * 2);
+        font-size: var(--form-input-fs);
+        border: var(--border);
+        box-sizing: border-box;
+      }
+
+      button {
+        background: var(--form-button-color);
+      }
+
+      input {
+        width: 100%;
+      }
+
+      ol,
+      ul {
+        margin: 0;
+        padding: 0 0 0 24px;
+      }
+
+      share-to-mastodon {
+        --wc-stm-font-family: var(--font-family-serif);
+        --wc-stm-link-text-decoration: none;
+        --wc-stm-link-color-initial: var(--accent-color-primary);
+        --wc-stm-link-color-visited: var(--accent-color-secondary);
+        border-bottom: 1px solid var(--accent-color-primary);
+        letter-spacing: -0.063px;
+        line-height: 33.18px;
+        margin: 0;
+        margin-right: 10.5px;
+      }
+
+      @media (max-width: 767px) {
+        #main iframe,
+        #main img,
+        #main lite-youtube,
+        #main video {
+          max-width: initial;
           width: 100vw;
-          height: 100vh;
-          top: 0;
-          margin: 0;
-          z-index: 1;
-          transform: translateX(calc((var(--page-last) - 100vw) / 2));
-        }
-
-        figure[expand] figcaption {
-          display: block;
-          width: 20%;
-          padding: 2em;
-        }
-
-        figure[expand] img {
-          object-fit: contain;
-          max-width: 100%;
-          max-height: 90vh;
-          width: 100vw !important;
-          height: auto;
-        }
-
-        #main iframe {
-          max-width: 100%;
-          width: 100%;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
         }
 
         #main img {
-          max-width: 100%;
-          height: auto;
+          margin: none !important;
         }
 
-        #main video {
-          max-width: 100%;
+        figure button {
+          display: none;
         }
+      }
 
-        time {
-          text-transform: uppercase;
+      @media (prefers-reduced-data: reduce) {
+        img,
+        video,
+        lite-youtube,
+        stl-part-viewer {
+          display: none;
         }
-
-        .dotDivider {
-          padding: 0 0.5rem;
-        }
-
-        .dotDivider:after {
-          content: '•';
-        }
-
-        .reads {
-          padding: 0.75rem 0;
-        }
-
-        #metaShare {
-          display: block;
-          background-color: var(--section-color);
-          padding: 1em;
-        }
-
-        #share > a {
-          margin-right: 0.5em;
-        }
-
-        label {
-          display: block;
-        }
-
-        input,
-        button {
-          padding: calc(var(--space-cs) * 2);
-          font-size: var(--form-input-fs);
-          border: var(--border);
-          box-sizing: border-box;
-        }
-
-        button {
-          background: var(--form-button-color);
-        }
-
-        input {
-          width: 100%;
-        }
-
-        ol,
-        ul {
-          margin: 0;
-          padding: 0 0 0 24px;
-        }
-
-        share-to-mastodon {
-          --wc-stm-font-family: var(--font-family-serif);
-          --wc-stm-link-text-decoration: none;
-          --wc-stm-link-color-initial: var(--accent-color-primary);
-          --wc-stm-link-color-visited: var(--accent-color-secondary);
-          border-bottom: 1px solid var(--accent-color-primary);
-          letter-spacing: -0.063px;
-          line-height: 33.18px;
-          margin: 0;
-          margin-right: 10.5px;
-        }
-
-        @media (max-width: 767px) {
-          #main iframe,
-          #main img,
-          #main lite-youtube,
-          #main video {
-            max-width: initial;
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-          }
-
-          #main img {
-            margin: none !important;
-          }
-
-          figure button {
-            display: none;
-          }
-        }
-
-        @media (prefers-reduced-data: reduce) {
-          img,
-          video,
-          lite-youtube,
-          stl-part-viewer {
-            display: none;
-          }
-        }
-      `,
-    ];
-  }
+      }
+    `,
+  ];
 
   render() {
     return html`

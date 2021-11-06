@@ -16,18 +16,17 @@
     "@open-wc/eslint-config": "^4.3.0",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-node-resolve": "^11.1.0",
+    "@web/dev-server": "^0.1.26",
     "babel-plugin-bundled-import-meta": "^0.3.1",
     "babel-plugin-template-html-minifier": "^4.0.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "es-dev-server": "^1.31.1",
-    "eslint": "^7.25.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-lit": "^1.2.0",
-    "eslint-plugin-lit-a11y": "^1.0.1",
-    "eslint-plugin-no-only-tests": "^2.6.0",
+    "eslint-plugin-lit-a11y": "^2.0.0",
     "eslint-plugin-wc": "^1.3.1",
     "html-minifier": "^4.0.0",
     "http2-push-manifest": "^1.0.1",
@@ -36,15 +35,15 @@
     "rollup-plugin-filesize": "^9.1.0",
     "rollup-plugin-size": "^0.2.2",
     "rollup-plugin-terser": "^7.0.2",
-    "stylelint": "^13.3.3",
-    "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-recommended": "^3.0.0",
+    "stylelint": "^14.0.0",
+    "stylelint-config-prettier": "^9.0.0",
+    "stylelint-config-recommended": "^6.0.0",
     "web-component-analyzer": "^1.0.3",
-    "workbox-cli": "^6.0.0"
+    "workbox-cli": "^6.3.0"
   },
   "scripts": {
-    "dev": "yarn es-dev-server --port 8081 --app-index index.html --node-resolve --open --watch",
-    "lint:eslint": "yarn eslint --ext .js . --ignore-path ../.gitignore",
+    "dev": "yarn wds --port 8081 --app-index index.html --node-resolve --open --watch",
+    "lint:eslint": "yarn build:clean && yarn eslint --ext .js . --ignore-path ../.gitignore",
     "format:eslint": "yarn eslint --ext .js . --fix --ignore-path ../.gitignore",
     "lint:prettier": "yarn prettier \"**/*.js\" --check --ignore-path ../.gitignore",
     "format:prettier": "yarn prettier \"**/*.js\" --write --ignore-path ../.gitignore",
@@ -78,12 +77,28 @@
     "workbox-window": "^6.0.0"
   },
   "eslintConfig": {
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": "latest"
+    },
     "extends": [
       "@open-wc/eslint-config",
+      "plugin:import/recommended",
+      "plugin:wc/recommended",
+      "plugin:lit/recommended",
       "eslint-config-prettier"
+    ],
+    "plugins": [
+      "lit-a11y",
+      "html"
     ],
     "rules": {
       "no-console": "error"
+    },
+    "globals": {
+      "AmbientLightSensor": false,
+      "ga": false,
+      "Prism": false
     }
   },
   "prettier": {

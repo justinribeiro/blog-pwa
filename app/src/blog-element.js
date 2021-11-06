@@ -2,21 +2,19 @@
 import { LitElement, css, html } from 'lit';
 
 class BlogElement extends LitElement {
-  static get properties() {
-    return {
-      metadata: {
-        type: Object,
-        attribute: false,
-      },
-      featureImage: {
-        type: Object,
-      },
-      __domRefs: {
-        type: Object,
-        attribute: false,
-      },
-    };
-  }
+  static properties = {
+    metadata: {
+      type: Object,
+      attribute: false,
+    },
+    featureImage: {
+      type: Object,
+    },
+    __domRefs: {
+      type: Object,
+      attribute: false,
+    },
+  };
 
   constructor() {
     super();
@@ -209,116 +207,114 @@ class BlogElement extends LitElement {
     return strReplacer(data);
   }
 
-  static get styles() {
-    return css`
-      :host {
-        display: block;
-      }
+  static styles = css`
+    :host {
+      display: block;
+    }
 
-      @media (prefers-reduced-motion: no-preference) {
-        :focus {
-          transition: outline-offset 0.25s ease;
-          outline-offset: var(--outline-thickness);
-          outline: var(--outline);
-        }
+    @media (prefers-reduced-motion: no-preference) {
+      :focus {
+        transition: outline-offset 0.25s ease;
+        outline-offset: var(--outline-thickness);
+        outline: var(--outline);
       }
+    }
 
-      a {
-        color: var(--accent-color-primary);
-        text-decoration: none;
-        border-bottom: var(--border-thickness) solid var(--accent-color-primary);
-      }
+    a {
+      color: var(--accent-color-primary);
+      text-decoration: none;
+      border-bottom: var(--border-thickness) solid var(--accent-color-primary);
+    }
 
-      a:hover {
-        color: var(--accent-color-secondary);
-        border-color: var(--accent-color-secondary);
-      }
+    a:hover {
+      color: var(--accent-color-secondary);
+      border-color: var(--accent-color-secondary);
+    }
 
-      del {
-        background: var(--diff-del-color);
-      }
+    del {
+      background: var(--diff-del-color);
+    }
 
-      ins {
-        background: var(--diff-ins-color);
-        text-decoration: none;
-      }
+    ins {
+      background: var(--diff-ins-color);
+      text-decoration: none;
+    }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: var(--font-family-headers);
-        margin: 0 0 var(--space-cs) var(--header-font-offset-left);
-        line-height: 1.15;
-        letter-spacing: var(--header-letter-spacing);
-      }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-family-headers);
+      margin: 0 0 var(--space-cs) var(--header-font-offset-left);
+      line-height: 1.15;
+      letter-spacing: var(--header-letter-spacing);
+    }
 
-      h1 {
-        font-size: var(--font-h1);
-        margin-top: var(--space-cs);
-      }
+    h1 {
+      font-size: var(--font-h1);
+      margin-top: var(--space-cs);
+    }
 
-      p,
-      li,
-      label {
-        font-family: var(--font-family-serif);
-        margin: 0 0 calc(var(--space-cs) * 2) 0;
-        color: var(--primary-text-color);
-        font-size: var(--font-base);
-        line-height: calc(var(--font-base) * var(--font-lhr));
-      }
+    p,
+    li,
+    label {
+      font-family: var(--font-family-serif);
+      margin: 0 0 calc(var(--space-cs) * 2) 0;
+      color: var(--primary-text-color);
+      font-size: var(--font-base);
+      line-height: calc(var(--font-base) * var(--font-lhr));
+    }
 
-      /* Don't like this; special case. TODO extract */
-      p code,
-      li code {
-        background-color: var(--code-background);
-        color: var(--code-color);
-        font-size: 85%;
-      }
+    /* Don't like this; special case. TODO extract */
+    p code,
+    li code {
+      background-color: var(--code-background);
+      color: var(--code-color);
+      font-size: 85%;
+    }
 
-      blockquote {
-        border-left: var(--outline-thickness) solid var(--accent-color-primary);
-        padding-left: var(--space-cs);
-        font-style: oblique;
-      }
+    blockquote {
+      border-left: var(--outline-thickness) solid var(--accent-color-primary);
+      padding-left: var(--space-cs);
+      font-style: oblique;
+    }
 
-      img {
-        filter: var(--image-filter, initial);
-      }
+    img {
+      filter: var(--image-filter, initial);
+    }
 
-      /*
+    /*
         Design choice: in my components, I always have a #main as a container
         in my web components. Why isn't named container? No idea. LOL.
       */
-      #main {
-        max-width: var(--page-last);
-        padding: 0 calc(var(--space-cs) * 2);
-      }
+    #main {
+      max-width: var(--page-last);
+      padding: 0 calc(var(--space-cs) * 2);
+    }
 
-      #tags a {
-        /* display: inline-block; */
-        border: var(--border-thickness) solid var(--structs-border);
-        border-radius: var(--border-radius);
-        padding: calc(var(--space-cs) / 2);
-        background: var(--structs-bg);
-        line-height: calc((var(--space-cs) * 2) + var(--font-base));
-      }
+    #tags a {
+      /* display: inline-block; */
+      border: var(--border-thickness) solid var(--structs-border);
+      border-radius: var(--border-radius);
+      padding: calc(var(--space-cs) / 2);
+      background: var(--structs-bg);
+      line-height: calc((var(--space-cs) * 2) + var(--font-base));
+    }
 
-      .subheadline {
-        margin: calc(var(--space-cs) * 2) 0;
-        font-family: var(--font-family-san-serif);
-        line-height: var(--font-lhr);
-        font-weight: 300;
-        font-size: var(--font-base);
-      }
+    .subheadline {
+      margin: calc(var(--space-cs) * 2) 0;
+      font-family: var(--font-family-san-serif);
+      line-height: var(--font-lhr);
+      font-weight: 300;
+      font-size: var(--font-base);
+    }
 
-      [hidden] {
-        display: none !important;
-      }
-    `;
-  }
+    [hidden] {
+      display: none !important;
+    }
+  `;
 }
 
 export { BlogElement, html, css };

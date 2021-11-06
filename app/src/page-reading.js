@@ -1,50 +1,46 @@
 import { BlogElement, html, css } from './blog-element.js';
 
 class BlogReading extends BlogElement {
-  static get properties() {
-    return {
-      count: {
-        type: Number,
-      },
-      data: {
-        type: Array,
-      },
-    };
-  }
+  static properties = {
+    count: {
+      type: Number,
+    },
+    data: {
+      type: Array,
+    },
+  };
 
-  static get styles() {
-    return [
-      super.styles,
-      css`
-        #links div {
-          padding: 0.5rem 0;
-          border-bottom: 1px dotted #8f8e8e;
-        }
-        #links p {
-          margin: 0;
-        }
+  static styles = [
+    super.styles,
+    css`
+      #links div {
+        padding: 0.5rem 0;
+        border-bottom: 1px dotted #8f8e8e;
+      }
+      #links p {
+        margin: 0;
+      }
 
-        .outlink {
-          font-family: var(--font-family-serif);
-          font-size: var(--font-base);
-        }
+      .outlink {
+        font-family: var(--font-family-serif);
+        font-size: var(--font-base);
+      }
 
-        .host {
-          font-family: var(--font-family-sans-serif);
-          font-size: var(--figcaption-author);
-          font-style: italic;
-        }
+      .host {
+        font-family: var(--font-family-sans-serif);
+        font-size: var(--figcaption-author);
+        font-style: italic;
+      }
 
-        .labels > a {
-          text-transform: uppercase;
-          color: var(--secondary-text-color);
-          font-family: var(--font-family-sans-serif);
-          font-size: var(--figcaption-author);
-          border-bottom-color: var(--secondary-text-color);
-        }
-      `,
-    ];
-  }
+      .labels > a {
+        text-transform: uppercase;
+        color: var(--secondary-text-color);
+        font-family: var(--font-family-sans-serif);
+        font-size: var(--figcaption-author);
+        border-bottom-color: var(--secondary-text-color);
+      }
+    `,
+  ];
 
   constructor() {
     super();

@@ -1,13 +1,11 @@
 import { BlogElement, html, css } from './blog-element.js';
 
 class BlogOffline extends BlogElement {
-  static get properties() {
-    return {
-      availableUrls: {
-        type: Array,
-      },
-    };
-  }
+  static properties = {
+    availableUrls: {
+      type: Array,
+    },
+  };
 
   constructor() {
     super();
@@ -36,54 +34,52 @@ class BlogOffline extends BlogElement {
     });
   }
 
-  static get styles() {
-    return [
-      super.styles,
-      css`
-        #posts {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          justify-content: center;
-          grid-gap: var(--space-cs);
-        }
+  static styles = [
+    super.styles,
+    css`
+      #posts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-content: center;
+        grid-gap: var(--space-cs);
+      }
 
-        #posts > a {
-          display: block;
-          padding: var(--space-cs);
-          border-bottom: none;
-          border-radius: var(--space-cs);
-          transition-duration: var(--motion-duration);
-          will-change: background-color;
-        }
+      #posts > a {
+        display: block;
+        padding: var(--space-cs);
+        border-bottom: none;
+        border-radius: var(--space-cs);
+        transition-duration: var(--motion-duration);
+        will-change: background-color;
+      }
 
-        #posts > a h3 {
-          color: var(--accent-color-primary);
-          font-weight: 400;
-          font-family: var(--font-family-serif);
-          font-size: 1.5rem;
-        }
+      #posts > a h3 {
+        color: var(--accent-color-primary);
+        font-weight: 400;
+        font-family: var(--font-family-serif);
+        font-size: 1.5rem;
+      }
 
-        #posts > a time {
-          font-weight: 400;
-          text-transform: uppercase;
-          font-size: 0.85rem;
-          margin-bottom: var(--space-cs);
-          font-family: var(--font-family-sans-serif);
-          color: var(--accent-color-secondary);
-        }
+      #posts > a time {
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-bottom: var(--space-cs);
+        font-family: var(--font-family-sans-serif);
+        color: var(--accent-color-secondary);
+      }
 
-        #posts > a:hover {
-          text-decoration: none;
-          background-color: hotpink;
-        }
+      #posts > a:hover {
+        text-decoration: none;
+        background-color: hotpink;
+      }
 
-        #posts > a:hover time,
-        #posts > a:hover h3 {
-          color: #fff;
-        }
-      `,
-    ];
-  }
+      #posts > a:hover time,
+      #posts > a:hover h3 {
+        color: #fff;
+      }
+    `,
+  ];
 
   render() {
     return html`

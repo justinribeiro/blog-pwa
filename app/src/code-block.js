@@ -20,13 +20,18 @@ class CodeBlock extends LitElement {
     await this.__loadLanguage();
     const nodes = this.shadowRoot.querySelector('#code').assignedNodes();
     let codeCombined = '';
+    // eslint-disable-next-line no-plusplus
     for (let index = 0, len = nodes.length; index < len; ++index) {
       codeCombined += nodes[index].nodeValue;
     }
 
     // strip the lead/end newlines so we don't look horrible
     const codeClean = codeCombined.replace(/^\s+|\s+$/g, '');
-    const highlight = Prism.highlight(codeClean, Prism.languages[this.lang], this.lang);
+    const highlight = Prism.highlight(
+      codeClean,
+      Prism.languages[this.lang],
+      this.lang
+    );
 
     // Set to our styled block
     this.shadowRoot.querySelector('#output').innerHTML = highlight;
