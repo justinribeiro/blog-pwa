@@ -5,8 +5,8 @@ export const defaultStrings = {
   webmentions: {
     start: 'Checking for interactions...',
     none: 'There are currently no interactions with this piece. Be the first!',
-    some:
-      'There are currently {{ count }} interactions with this piece on the open web.',
+    some: 'There are currently {{ count }} interactions with this piece on the open web.',
+    invalid: 'The URL you entered does not appear to be valid.',
     error:
       "Oh no, your Webmention didn't seem to make it through. Please try again.",
     shared:

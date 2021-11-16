@@ -245,9 +245,13 @@ class BlogEntry extends BlogElement {
   async __webmentionSubmitToService(event) {
     event.preventDefault();
     let message = this.strings.webmentions.shared;
-    const source = this.shadowRoot.querySelector('#webMentionSource').value;
+    const formField = this.shadowRoot.querySelector('#webMentionSource');
+    formField.checkValidity();
 
-    if (source !== '') {
+    if (!formField.validity.valid) {
+      formField.setCustomValidity(this.strings.webmentions.invalid);
+      formField.reportValidity();
+    } else {
       const { action } = this.shadowRoot.querySelector('#webMentionForm');
 
       // technically, we could get the location header and show them the ticket,
@@ -259,7 +263,7 @@ class BlogEntry extends BlogElement {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: `target=${this.metadata.permalink}&source=${source}`,
+        body: `target=${this.metadata.permalink}&source=${formField.value}`,
       });
 
       if (!response.ok) {
@@ -555,6 +559,8 @@ class BlogEntry extends BlogElement {
                 name="source"
                 placeholder="https://your-amazing-response-url-here/"
                 id="webMentionSource"
+                required
+                pattern="https://.*"
               />
               <button @click="${e => this.__webmentionSubmitToService(e)}">
                 🚚 Send Webmention
