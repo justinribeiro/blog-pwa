@@ -58,11 +58,7 @@ class RibeiroSocialPhotos extends LitElement {
         photo => html`
           <div>
             <a href="${photo.url}">
-              <img
-                src="${photo.media}"
-                alt="${photo.content.replace(/<[^>]*>?/gm, '')}"
-                loading="lazy"
-              />
+              <img src="${photo.media}" alt="${photo.content}" loading="lazy" />
             </a>
           </div>
         `
