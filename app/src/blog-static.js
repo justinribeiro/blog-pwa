@@ -49,8 +49,28 @@ class BlogStatic extends BlogElement {
       #shoutout {
         margin-top: 0.5rem;
       }
+
+      p.more {
+        text-align: center;
+      }
+
+      a.more {
+        border: var(--border-thickness) solid var(--structs-border);
+        border-radius: var(--border-radius);
+        padding: var(--space-cs);
+        background: var(--structs-bg);
+        line-height: calc((var(--space-cs) * 2) + var(--font-base));
+      }
     `,
   ];
+
+  async __processMetaData() {
+    super.__processMetaData();
+
+    if (this.metadata.enableMastodonPhotos) {
+      import('./ribeiro-social-photos.js');
+    }
+  }
 
   render() {
     return html`
@@ -73,8 +93,26 @@ class BlogStatic extends BlogElement {
                   `
                 )}
               </div>
+              <br />
+              <p class="more">
+                <a class="more" href="/chronicle/"
+                  >More posts and articles &raquo;
+                </a>
+              </p>
             `
           : html``}
+        ${this.metadata.enableMastodonPhotos
+          ? html`
+              <h2>The Latest Photographs</h2>
+              <ribeiro-social-photos> Fetching... </ribeiro-social-photos>
+              <br />
+              <p class="more">
+                <a class="more" href="https://ribeiro.social/@justin"
+                  >More photographs &raquo;
+                </a>
+              </p>
+            `
+          : ``}
       </div>
     `;
   }

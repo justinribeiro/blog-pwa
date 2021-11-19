@@ -205,7 +205,7 @@ class BlogPwa extends LitElement {
         if ('requestIdleCallback' in window) {
           window.requestIdleCallback(
             () => {
-              this.__cacheExistingLoadedUrls(wb);
+              BlogPwa.__cacheExistingLoadedUrls(wb);
             },
             {
               timeout: 5000,

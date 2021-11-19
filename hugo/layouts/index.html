@@ -12,7 +12,8 @@
   "readingtime": "{{ .ReadingTime }}",
   "permalink": "{{ .Permalink }}",
   "socialimage": "{{ $.Params.socialimage }}",
-  "posts": [ {{ range $i, $e := first 16 (where .Site.RegularPages "Section" "chronicle") }}
+  "enableMastodonPhotos": true,
+  "posts": [ {{ range $i, $e := first 10 (where .Site.RegularPages "Section" "chronicle") }}
   {{if $i}}, {{end}}{{ .Render "li"}}{{end}}
   ]
 }

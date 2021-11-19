@@ -55,6 +55,7 @@ class BlogElement extends LitElement {
       filename: '',
       view: '',
       tags: '',
+      enableMastodonPhotos: false,
       relatedposts: [],
     };
 
