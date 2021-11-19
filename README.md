@@ -1,6 +1,6 @@
 # blog-pwa
 
-What started as an experiment in mixing Hugo, Polymer, and the PRPL pattern to build a progressive web app blog that turned into my actual blog.
+What started as an experiment in 2017 mixing Hugo, Polymer, and the PRPL pattern to build a progressive web app turned into a very robust and fast engine that powers my blog. As the web platform grows, so does this engine.
 
 ## Features
 
@@ -11,12 +11,11 @@ What started as an experiment in mixing Hugo, Polymer, and the PRPL pattern to b
 
 ## The basics
 
-* [lit-element](https://lit-element.polymer-project.org/) app shell and web components
-* [Hugo](https://gohugo.io/) to manage posts and metadata
+* [lit](https://lit.dev/) powers the app shell and web components, with a few vanilla web components for good measure.
+* [hugo](https://gohugo.io/) to write and manage posts and page metadata
 * [workbox](https://developers.google.com/web/tools/workbox/) for generating precache and runtime caching service worker
-* [rollup](https://rollupjs.org) for component bundles and splitting for our PRPL loading
+* [rollup](https://rollupjs.org) for handling the bundles and splitting for our PRPL lazy loading goodness
 * [h2-push via http2push-gae](https://github.com/GoogleChrome/http2push-gae) for Google App Engine for serving
-* Polyfills only load on need; no extra bytes shipped (including for dynamic imports).
 
 ## The not-so-basics
 
@@ -27,7 +26,7 @@ The gist of the tools employed and their uses include.
 * `sed` is amazing and helps wrangle some of the JSON output from Hugo (years of old posts + multiple times moved = fun!)
 * `zmv` is the thing you've probably never heard of about but might want to try. Renames files fast to proper type (Hugo won't output pure JSON at moment)
 * `jq` is blazing fast over lots of files; validates my json output so I know things will load in the PWA and Python
-* `polymer-cli` handles the dev serving
+* `@web/dev-server` handles the dev serving
 * `workbox-cli` handles the service worker generation
 * `rollup-cli` handles the es modules and bundles splitting for prod builds
 * `http2-push-manifest` is super useful and works out of the box with http2push-gae
