@@ -41,7 +41,7 @@ class RibeiroSocialPhotos extends LitElement {
     super();
 
     this.mastodonEndpoint =
-      'https://us-west2-justinribeiro-web.cloudfunctions.net/get-mastodon-images';
+      'https://us-west2-justinribeiro-web.cloudfunctions.net/get-ribeirosocial-photos';
     this.data = [];
   }
 

@@ -27,6 +27,7 @@ class SnackBar extends LitElement {
         transition-property: transform;
         transition-duration: 0.2s;
         pointer-events: auto;
+        z-index: 1000;
       }
       :host([active]) {
         transform: translate3d(0, 0, 0);

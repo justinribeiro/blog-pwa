@@ -83,26 +83,24 @@ class BlogOffline extends BlogElement {
 
   render() {
     return html`
-      <div id="main">
-        <div id="metadataArticle">
-          <h1>Welcome to the Offline World</h1>
-          <p>
-            Is your WiFi lying to you? Are you in a tunnel? Did your cat eat
-            your ethernet cable?
-          </p>
-          <p>
-            We've all been there. While I can't load the article you want to
-            read at the moment, here are some articles and pages you've visited
-            that you can read offline.
-          </p>
-        </div>
-        <div id="posts">
-          ${this.availableUrls.map(
-            post => html` <a href="${post.permalink}">
-              <h3>${post.title}</h3>
-            </a>`
-          )}
-        </div>
+      <div id="metadataArticle">
+        <h1>Welcome to the Offline World</h1>
+        <p>
+          Is your WiFi lying to you? Are you in a tunnel? Did your cat eat your
+          ethernet cable?
+        </p>
+        <p>
+          We've all been there. While I can't load the article you want to read
+          at the moment, here are some articles and pages you've visited that
+          you can read offline.
+        </p>
+      </div>
+      <div id="posts">
+        ${this.availableUrls.map(
+          post => html` <a href="${post.permalink}">
+            <h3>${post.title}</h3>
+          </a>`
+        )}
       </div>
     `;
   }

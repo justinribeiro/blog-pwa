@@ -171,7 +171,7 @@
         background-color: var(--structs-bg);
       }
 
-      #pageHeader h1, #pageFooter h2 {
+      #mainHeader, .footerHeader {
         font-weight: 400;
         font-family: var(--font-family-headers);
       }
@@ -195,12 +195,12 @@
         grid-template-columns: repeat(auto-fit, minmax(var(--footer-grid-min), var(--footer-grid-max)));
       }
 
-      #pageHeader h1 {
+      #mainHeader {
         font-size: var(--header-font-size);
         margin-top: var(--header-font-offset);
       }
 
-      #pageHeader nav a {
+      #pageNav > a {
         text-transform: uppercase;
         letter-spacing: -0.03em;
         margin: var(--space-nav) var(--space-nav) var(--space-nav) 0;
@@ -247,7 +247,7 @@
       }
 
       @media (min-width: 767px) {
-        #pageHeader nav a {
+        #pageNav > a {
           margin-right: var(--space-cs);
           display: initial;
         }
@@ -255,8 +255,14 @@
         #pageFooter {
           grid-template-columns: repeat(2, minmax(var(--footer-grid-min), var(--footer-grid-max)));
         }
-        #thanks  {
+        #thanks {
           grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 360px) {
+        #pageNav > a {
+          letter-spacing: -0.1em;
         }
       }
 
@@ -296,8 +302,8 @@
           id="me" src="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-150.jpg" width="75" height="75" alt="Justin Ribeiro">
       </picture>
       <div>
-        <h1>Justin Ribeiro</h1>
-        <nav>
+        <h1 id="mainHeader">Justin Ribeiro</h1>
+        <nav id="pageNav">
           <a href="/">Home</a>
           <a href="/chronicle/">Blog</a>
           <a href="/talks/">Talks</a>
@@ -321,12 +327,12 @@
     </blog-pwa>
     <footer id="pageFooter">
       <section>
-        <h2>Hello, nice to meet you.</h2>
+        <h2 class="footerHeader">Hello, nice to meet you.</h2>
         <p>I'm happy to talk. You can reach me on <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or via email at <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a></p>
         <p>Looking for some of my code? Check <a rel="me" href="https://github.com/justinribeiro">Github</a> or <a rel="me" href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
       </section>
       <section>
-        <h2>Meta Things</h2>
+        <h2 class="footerHeader">Meta Things</h2>
         <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. RIP Reader, follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml' target='blank'>Feedly</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
         <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
       </section>

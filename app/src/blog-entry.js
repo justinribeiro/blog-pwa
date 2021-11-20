@@ -61,9 +61,12 @@ class BlogEntry extends BlogElement {
    * 3. gets the interaction counts
    * 4. adds share links if web share api not available
    */
-  async __processMetaData() {
-    super.__processMetaData();
-    const checkLazyLoadTargets = this.__getDomRef('#metadataArticle').innerHTML;
+  async __processPageData() {
+    super.__processPageData();
+
+    this.__removeAllChildNodes(this.__getDomRef('#featureImage'));
+
+    const checkLazyLoadTargets = this.__unescapeHtml(this.metadata.article);
     const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
     if (ViewerRequired.test(checkLazyLoadTargets)) {
       import('./3d-utils.js');
@@ -80,12 +83,15 @@ class BlogEntry extends BlogElement {
     }
 
     if (this.metadata.featureimage) {
-      this.__getDomRef('#featureImage').innerHTML = this.__unescapeHtml(
-        this.metadata.featureimage
-      );
+      const template = document
+        .createRange()
+        .createContextualFragment(
+          this.__unescapeHtml(this.metadata.featureimage)
+        );
+      this.__getDomRef('#featureImage').appendChild(template);
     }
 
-    // This is my purely my personal preference showing; I can't stand full
+    // This is my personal preference showing; I can't stand full
     // screen images on mobile devices, the UX annoys me no matter how good
     // you think it is
     if (!window.matchMedia('(max-width: 767px)').matches) {
@@ -287,6 +293,9 @@ class BlogEntry extends BlogElement {
   static styles = [
     super.styles,
     css`
+      :host {
+        min-height: 100vh;
+      }
       figure {
         margin: 1em 0;
         transition: background 0.3s;

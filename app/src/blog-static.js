@@ -4,6 +4,10 @@ class BlogStatic extends BlogElement {
   static styles = [
     super.styles,
     css`
+      :host {
+        min-height: 100vh;
+      }
+
       #posts {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -64,8 +68,8 @@ class BlogStatic extends BlogElement {
     `,
   ];
 
-  async __processMetaData() {
-    super.__processMetaData();
+  async __processPageData() {
+    super.__processPageData();
 
     if (this.metadata.enableMastodonPhotos) {
       import('./ribeiro-social-photos.js');
@@ -74,46 +78,44 @@ class BlogStatic extends BlogElement {
 
   render() {
     return html`
-      <div id="main">
-        <div id="metadataArticle"></div>
-        ${this.metadata.posts
-          ? html`
-              <div id="posts">
-                ${this.metadata.posts.map(
-                  post => html`
-                    <a href="${post.permalink}">
-                      <time
-                        .datetime="${post.dataModified}"
-                        aria-label="Posted ${post.date}"
-                      >
-                        🗒️ ${post.date}
-                      </time>
-                      <h3>${post.title}</h3>
-                    </a>
-                  `
-                )}
-              </div>
-              <br />
-              <p class="more">
-                <a class="more" href="/chronicle/"
-                  >More posts and articles &raquo;
-                </a>
-              </p>
-            `
-          : html``}
-        ${this.metadata.enableMastodonPhotos
-          ? html`
-              <h2>The Latest Photographs</h2>
-              <ribeiro-social-photos> Fetching... </ribeiro-social-photos>
-              <br />
-              <p class="more">
-                <a class="more" href="https://ribeiro.social/@justin"
-                  >More photographs &raquo;
-                </a>
-              </p>
-            `
-          : ``}
-      </div>
+      <div id="metadataArticle"></div>
+      ${this.metadata.posts
+        ? html`
+            <div id="posts">
+              ${this.metadata.posts.map(
+                post => html`
+                  <a href="${post.permalink}">
+                    <time
+                      .datetime="${post.dataModified}"
+                      aria-label="Posted ${post.date}"
+                    >
+                      🗒️ ${post.date}
+                    </time>
+                    <h3>${post.title}</h3>
+                  </a>
+                `
+              )}
+            </div>
+            <br />
+            <p class="more">
+              <a class="more" href="/chronicle/"
+                >More posts and articles &raquo;
+              </a>
+            </p>
+          `
+        : html``}
+      ${this.metadata.enableMastodonPhotos
+        ? html`
+            <h2>The Latest Photographs</h2>
+            <ribeiro-social-photos> Fetching... </ribeiro-social-photos>
+            <br />
+            <p class="more">
+              <a class="more" href="https://ribeiro.social/@justin"
+                >More photographs &raquo;
+              </a>
+            </p>
+          `
+        : ``}
     `;
   }
 }

@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
+import { classMap } from 'lit/directives/class-map.js';
 
 class BlogPwa extends LitElement {
   static properties = {
@@ -121,6 +122,7 @@ class BlogPwa extends LitElement {
    * @param {string} type The metadata page style to use
    */
   async __loadRoute(type) {
+    this.__showSkeleton = true;
     if (type === 'static') {
       await import('./blog-static.js');
     }
@@ -133,16 +135,18 @@ class BlogPwa extends LitElement {
     if (type === 'reading') {
       await import('./page-reading.js');
     }
+
     try {
       const checkElement = this.__domRefRouter.querySelector(`blog-${type}`);
       if (checkElement) {
         await checkElement.mount();
       } else {
-        while (this.__domRefRouter.firstChild) {
-          this.__domRefRouter.removeChild(this.__domRefRouter.firstChild);
-        }
         this.__domRefRouter.appendChild(this.__domEle[type].cloneNode());
         await this.__domRefRouter.querySelector(`blog-${type}`).mount();
+        // we don't do this first because we're going to smooth the transition
+        if (this.__domRefRouter.childNodes.length > 1) {
+          this.__domRefRouter.removeChild(this.__domRefRouter.firstChild);
+        }
       }
     } catch (error) {
       // sometimes doesn't inject quickly, and their lifecycle doesn't
@@ -350,19 +354,58 @@ class BlogPwa extends LitElement {
   }
 
   static styles = css`
+    :host {
+      display: block;
+      min-height: 100vh;
+    }
+
     main {
       display: grid;
       justify-content: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    div {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      transition: ease-in opacity 0.3s;
+      z-index: 1;
+    }
+
+    /** cut down on the layout shift */
+    #outlet {
+      min-height: 100vh;
+      will-change: opacity;
+      transition: ease-in opacity 0.3s;
+      z-index: 2;
+    }
+    .show {
+      opacity: 1;
+    }
+    .hide {
+      opacity: 0;
     }
   `;
 
   render() {
+    const clsPerfImproveOutlet = {
+      show: !this.__showSkeleton,
+      hide: this.__showSkeleton,
+    };
+
+    const smoothTransitionGap = {
+      show: this.__showSkeleton,
+      hide: !this.__showSkeleton,
+    };
+
     return html`
       <main>
-        <div ?hidden=${!this.__showSkeleton}>
+        <section id="outlet" class=${classMap(clsPerfImproveOutlet)}></section>
+        <div class=${classMap(smoothTransitionGap)}>
           <slot id="skeleton" name="skeleton"></slot>
         </div>
-        <section id="outlet"></section>
       </main>
       <snack-bar hidden></snack-bar>
     `;

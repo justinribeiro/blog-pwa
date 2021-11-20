@@ -35,13 +35,19 @@ class BlogElement extends LitElement {
     );
   }
 
+  /**
+   * Fire up and start piecing the data together
+   * @async
+   */
   async mount() {
-    this.__showSkeleton(true);
     window.scroll(0, 0);
     this.resetView();
-    await this._fetchMetaData();
+    await this.__fetchPageData();
   }
 
+  /**
+   * Reset the world view for the page
+   */
   resetView() {
     this.metadata = {
       posts: [],
@@ -63,7 +69,10 @@ class BlogElement extends LitElement {
     this.share = [];
   }
 
-  async _fetchMetaData() {
+  /**
+   * Fetch the page data json from the remote based on path
+   */
+  async __fetchPageData() {
     let getPath = window.location.pathname;
     const checkEnding = new RegExp('index.php|index.html', 'g');
     if (checkEnding.test(window.location.pathname)) {
@@ -77,21 +86,31 @@ class BlogElement extends LitElement {
         throw new Error(response.statusText);
       }
       this.metadata = await response.json();
-      this.__processMetaData();
+      this.__processPageData();
     } catch (error) {
       this.__showSkeleton(false);
       window.location.href = '/offline';
     }
   }
 
-  async __processMetaData() {
-    this.__getDomRef('#metadataArticle').innerHTML = this.__unescapeHtml(
-      this.metadata.article
-    );
+  /**
+   * Process the data return and pump it into the main article body
+   */
+  async __processPageData() {
+    this.__removeAllChildNodes(this.__getDomRef('#metadataArticle'));
+    const template = document
+      .createRange()
+      .createContextualFragment(this.__unescapeHtml(this.metadata.article));
+    this.__getDomRef('#metadataArticle').appendChild(template);
+
     this.__setPageMetaData(this.metadata);
     this.__showSkeleton(false);
   }
 
+  /**
+   * Whether we should show the skeleton loading in the shell or not
+   * @param {Boolean} bool
+   */
   __showSkeleton(bool) {
     this.dispatchEvent(
       new CustomEvent('blog-pwa-toggle-skeleton', {
@@ -102,6 +121,16 @@ class BlogElement extends LitElement {
         },
       })
     );
+  }
+
+  /**
+   * Stop being lazy, clean up nodes and events better
+   * @param {Node} parent
+   */
+  __removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
   }
 
   /**
@@ -211,6 +240,9 @@ class BlogElement extends LitElement {
   static styles = css`
     :host {
       display: block;
+      max-width: var(--page-last);
+      padding: 0 calc(var(--space-cs) * 2);
+      min-height: 100vh;
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -284,15 +316,6 @@ class BlogElement extends LitElement {
 
     img {
       filter: var(--image-filter, initial);
-    }
-
-    /*
-        Design choice: in my components, I always have a #main as a container
-        in my web components. Why isn't named container? No idea. LOL.
-      */
-    #main {
-      max-width: var(--page-last);
-      padding: 0 calc(var(--space-cs) * 2);
     }
 
     #tags a {
