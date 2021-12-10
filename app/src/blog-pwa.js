@@ -68,7 +68,7 @@ class BlogPwa extends LitElement {
     this.__dom.snackBar = this.shadowRoot.querySelector('snack-bar');
 
     this.__setupRouter();
-    this.__initializeNonCrpREsources();
+    this.__initializeNonCrpResources();
     BlogPwa.__setupPrefersColorScheme();
   }
 
@@ -94,25 +94,27 @@ class BlogPwa extends LitElement {
    * @param {object} location
    */
   __routes(location) {
+    let route;
     switch (true) {
       case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*|about|talks)/.test(
         location.pathname
       ):
-        this.__loadRoute('entry');
+        route = 'entry';
         break;
       case /(chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
-        this.__loadRoute('static');
+        route = 'static';
         break;
-      case /(reading|^\/index.html|^\/$)/.test(location.pathname):
-        this.__loadRoute('reading');
+      case /(reading)/.test(location.pathname):
+        route = 'reading'
         break;
-      case /(offline|^\/index.html|^\/$)/.test(location.pathname):
-        this.__loadRoute('offline');
+      case /(offline)/.test(location.pathname):
+        route = 'offline';
         break;
       default:
-        this.__loadRoute('missing');
+        route = 'missing';
         break;
     }
+    this.__loadRoute(route);
   }
 
   /**
@@ -134,6 +136,9 @@ class BlogPwa extends LitElement {
     }
     if (type === 'reading') {
       await import('./page-reading.js');
+    }
+    if (type === 'missing') {
+      await import('./page-missing.js');
     }
 
     try {
@@ -160,7 +165,7 @@ class BlogPwa extends LitElement {
    * Lazy load the non-essentials and startup additional services outside the
    * critical rendering path
    */
-  async __initializeNonCrpREsources() {
+  async __initializeNonCrpResources() {
     if (!this.__loaded) {
       import('./blog-lazy-load.js').then(async () => {
         this.__loadServiceWorker();
@@ -285,7 +290,7 @@ class BlogPwa extends LitElement {
    * Setup the color scheme based on user system preference
    * @static
    */
-  static __setupPrefersColorScheme() {
+  static async __setupPrefersColorScheme() {
     window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
       const darkModeOn = e.matches;
       const cHtml = document.querySelector(':root');
@@ -299,23 +304,8 @@ class BlogPwa extends LitElement {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.querySelector(':root').setAttribute('darkmode', '');
     } else if ('AmbientLightSensor' in window) {
-      navigator.permissions
-        .query({ name: 'ambient-light-sensor' })
-        .then(result => {
-          if (result.state === 'denied') {
-            return;
-          }
-          const sensor = new AmbientLightSensor({ frequency: 0.25 });
-          sensor.addEventListener('reading', () => {
-            const cHtml = document.querySelector(':root');
-            if (sensor.illuminance < 3) {
-              cHtml.setAttribute('darkmode', '');
-            } else if (sensor.illuminance > 3) {
-              cHtml.removeAttribute('darkmode');
-            }
-          });
-          sensor.start();
-        });
+      const module = await import('./experimental-web.js');
+      module.setupAmbientLightThemeSwitching();
     }
   }
 

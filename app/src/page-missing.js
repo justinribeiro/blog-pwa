@@ -1,43 +1,47 @@
-import { LitElement, html } from 'lit';
+import { BlogElement, html, css } from './blog-element.js';
 
-class BlogMissing extends LitElement {
-  // eslint-disable-next-line class-methods-use-this
-  mount() {}
+class BlogMissing extends BlogElement {
+  async mount() {
+    window.scroll(0, 0);
+    this.__setPageMetaData({
+      title: 'Page Not Found',
+      description: 'No dice finding that.',
+    });
+
+    this.__showSkeleton(false);
+  }
 
   render() {
     return html`
-      <style>
-        :host {
-          display: block;
-          padding: 40px 20px;
-          text-align: center;
-        }
-
-        #main {
-          margin: auto;
-          max-width: 400px;
-          padding-top: 135px;
-        }
-
-        svg {
-          display: inline-block;
-          width: 150px;
-          height: 150px;
-        }
-      </style>
-      <div id="main">
-        <div>
-          <svg viewbox="0 0 24 24">
-            <g id="error">
-              <path
-                d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-              ></path>
-            </g>
-          </svg>
-          <h1>Sorry, I couldn't find that page.</h1>
+      <section id="metadataArticle">
+        <h1>Sorry, I can't find that page.</h1>
+        <h2 class="subheadline">
+          404 NOT FOUND!?!?! Who's running this circus?
+        </h2>
+        <p>
+          I'm sorry for the inconvenience but be assured I have been alerted and
+          will look into finding the aforementioned missing page. In the mean
+          time, head back the <a href="/">home page</a> or to the
+          <a href="/chronicle/">archive</a> for other posts you may find
+          interesting.
+        </p>
+        <div style="width:100%;height:0;padding-bottom:76%;position:relative;">
+          <iframe
+            src="https://giphy.com/embed/xTiTngQ7Gpakdpm4nu"
+            width="100%"
+            height="100%"
+            style="position:absolute"
+            frameborder="0"
+            class="giphy-embed"
+            allowfullscreen
+          ></iframe>
         </div>
-        <a href="/">Go to the home page</a>
-      </div>
+        <p>
+          <a href="https://giphy.com/gifs/the-x-files-xTiTngQ7Gpakdpm4nu"
+            >via GIPHY</a
+          >
+        </p>
+      </section>
     `;
   }
 }
