@@ -42,7 +42,7 @@ class MainHandler(webapp2.RequestHandler):
                                                             "form-action 'self' https://webmention.io; "
                                                             "object-src 'none'; "
                                                             "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; "
-                                                            "frame-src https://www.youtube.com; "
+                                                            "frame-src https://giphy.com https://www.youtube.com; "
                                                             "manifest-src 'self'; "
                                                             "frame-ancestors 'none';"
                                                             "report-uri https://justinribeiro.report-uri.com/r/d/csp/enforce; report-to default")
