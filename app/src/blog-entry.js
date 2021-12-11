@@ -69,17 +69,22 @@ class BlogEntry extends BlogElement {
     const checkLazyLoadTargets = this.__unescapeHtml(this.metadata.article);
     const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
     if (ViewerRequired.test(checkLazyLoadTargets)) {
-      import('./3d-utils.js');
+      import('./lod-3d-utils.js');
     }
 
     const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
     if (CodeBlockRequired.test(checkLazyLoadTargets)) {
-      import('./code-block.js');
+      import('./lod-code-block.js');
     }
 
     const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
     if (YouTubeRequired.test(checkLazyLoadTargets)) {
-      import('./lite-youtube.js');
+      import('./lod-lite-youtube.js');
+    }
+
+    const TooltipRequired = new RegExp('(</toggle-citation>)', 'g');
+    if (TooltipRequired.test(checkLazyLoadTargets)) {
+      import('./lod-toggle-citation.js');
     }
 
     if (this.metadata.featureimage) {
@@ -136,7 +141,7 @@ class BlogEntry extends BlogElement {
    */
   __shareCreateLinks() {
     if (!navigator.share) {
-      import('./share-to-mastodon.js');
+      import('./lod-share-to-mastodon.js');
 
       // make it easier for the interpolate
       const data = {

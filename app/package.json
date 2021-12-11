@@ -70,6 +70,7 @@
     "@justinribeiro/lite-youtube": "^1.3.0",
     "@justinribeiro/share-to-mastodon": "^1.0.0",
     "@justinribeiro/stl-part-viewer": "^2.1.0",
+    "@justinribeiro/toggle-tooltip": "^1.0.0",
     "lit": "^2.0.0",
     "prismjs": "^1.21.0",
     "pwa-helpers": "^0.9.1",

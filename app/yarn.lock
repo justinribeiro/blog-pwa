@@ -1001,6 +1001,14 @@
     lit "^2.0.0"
     three "^0.125.0"
 
+"@justinribeiro/toggle-tooltip@^1.0.0":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@justinribeiro/toggle-tooltip/-/toggle-tooltip-1.0.3.tgz#09ec3db6f0ee3dbcfe24546ab8b36f3aea6895b3"
+  integrity sha512-aiFba6vJks2RK3WVlLMyvIh7o2hikcBQxCMEeLlkYmKEyNLcd1H+/i8HhpYC1pKWYdFZDFf2sPcV4Chimkss+A==
+  dependencies:
+    lit "^2.0.0"
+    tslib "^2.2.0"
+
 "@lit/reactive-element@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@lit/reactive-element/-/reactive-element-1.0.1.tgz#853cacd4d78d79059f33f66f8e7b0e5c34bee294"
@@ -6636,7 +6644,7 @@ tslib@^1.9.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3:
+tslib@^2.0.3, tslib@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==

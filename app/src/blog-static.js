@@ -72,7 +72,7 @@ class BlogStatic extends BlogElement {
     super.__processPageData();
 
     if (this.metadata.enableMastodonPhotos) {
-      import('./ribeiro-social-photos.js');
+      import('./lod-ribeiro-social-photos.js');
     }
   }
 

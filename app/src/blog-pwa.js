@@ -181,7 +181,7 @@ class BlogPwa extends LitElement {
    * @static
    */
   static async __loadAnalytics() {
-    const module = await import('./analytics.js');
+    const module = await import('./lod-analytics.js');
     module.initAnalytics();
     module.initCwp();
   }
@@ -304,7 +304,7 @@ class BlogPwa extends LitElement {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.querySelector(':root').setAttribute('darkmode', '');
     } else if ('AmbientLightSensor' in window) {
-      const module = await import('./experimental-web.js');
+      const module = await import('./lod-experimental-web.js');
       module.setupAmbientLightThemeSwitching();
     }
   }
