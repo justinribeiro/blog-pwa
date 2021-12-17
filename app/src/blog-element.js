@@ -318,6 +318,27 @@ class BlogElement extends LitElement {
       filter: var(--image-filter, initial);
     }
 
+    table {
+      width: 100%;
+      border-spacing: 0;
+      margin-bottom: calc(var(--space-cs) * 2);
+    }
+
+    thead {
+      background-color: var(--section-color);
+    }
+
+    tr,
+    th,
+    td {
+      padding: var(--space-cs);
+      border: 1px solid #eee;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--structs-bg);
+    }
+
     #tags a {
       /* display: inline-block; */
       border: var(--border-thickness) solid var(--structs-border);
