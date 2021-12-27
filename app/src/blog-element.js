@@ -89,7 +89,7 @@ class BlogElement extends LitElement {
       this.__processPageData();
     } catch (error) {
       this.__showSkeleton(false);
-      window.location.href = '/offline';
+      window.location.href = '/';
     }
   }
 
