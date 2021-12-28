@@ -1,6 +1,6 @@
 ---
 title: "Syndication from Mastodon to Twitter, a Holiday of Good Will"
-description: "I may not be originating content on Twitter but in the spirit of the holidays I spin up a little syndication and sync to meet old friends where they are."
+descripti-on: "I may not be originating content on Twitter but in the spirit of the holidays I spin up a little syndication and sync to meet old friends where they are."
 date: 2021-12-27T10:44:42-08:00
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>
