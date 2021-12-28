@@ -1,38 +1,54 @@
 {
   "name": "Justin Ribeiro",
   "short_name": "Justin R.",
-  "description": "Former CEO working as a catalyst in driving the adoption of innovation and creativity in organizations. Recovering Software Engineer. Maker. Film Photographer. Speaker. Writer. Dad. Husband. Doctorate Student. Occasionally funny.",
-  "start_url": "/",
+  "description": "Former CEO with an engineering streak, a writer's lament, a film habit, and a baritone voice. I’ve done a few things. Doctorate Student at Case Western Reserve University. Occasionally funny.",
+  "id": "/?pwainstalled=1",
+  "start_url": "/?pwainstalled=1",
   "scope": "/",
   "theme_color": "#f1f1f1",
   "background_color": "#f1f1f1",
+  "display": "standalone",
   "icons": [
     {
-      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-192.png",
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-384.png",
-      "sizes": "384x384",
-      "type": "image/png"
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
-      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-512.png",
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-512-maskable.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2020-Q1-maskable.png",
-      "sizes": "568x568",
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-512-maskable.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "display": "standalone"
+  "screenshots": [
+    {
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2022-ss-01.png",
+      "type": "image/png",
+      "sizes": "1081x2162"
+    },
+    {
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2022-ss-02.png",
+      "type": "image/jpg",
+      "sizes": "1081x2162"
+    },
+    {
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2022-ss-03.png",
+      "type": "image/jpg",
+      "sizes": "1081x2162"
+    }
+  ]
 }
