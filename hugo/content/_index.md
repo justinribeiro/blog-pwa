@@ -9,7 +9,7 @@ sitemap:
 ---
 
 <section id="shoutout">
-  <p>Hi. I'm Justin, former CEO with an engineering streak, a writer's lament, a shooting film habit, and a baritone voice. I’ve done a few things. MBA but <del>Ph.D. seeking</del> <ins><a href="/chronicle/2021/04/26/a-new-journey-pursuing-my-doctoral-degree-in-management/">Doctoral Student @ CWRU</a></ins>.</p>
+  <p>Hi. I'm Justin, former CEO with an engineering streak, a writer's lament, a shooting film habit, and a baritone voice. I’ve done a few things. MBA but <del>Ph.D. seeking</del> <ins><a href="/chronicle/2021/04/26/a-new-journey-pursuing-my-doctoral-degree-in-management/">Doctoral Student</a> and <a href="/chronicle/2022/03/03/selected-as-a-doctor-of-management-design-and-innovation-fellow-at-case-western-reserve-university/">DM Design & Innovation Fellow </a> @ CWRU</ins>.</p>
 
   <p>I <span class="red">❤️</span> the open web, film photography, and making things. I try  each day to make the world a better place. ☕ powered, <span title="Monica">👩</span><span title="Allison">👧</span><span title="Isabella">👧</span><span title="Evelyn">👧</span> driven.</p>
 </section>
