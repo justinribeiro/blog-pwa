@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
+import './lod-lite-youtube.js';
 
-class RibeiroSocialPhotos extends LitElement {
+class YouTubeVideoList extends LitElement {
   static properties = {
     data: {
       type: Array,
@@ -13,7 +14,7 @@ class RibeiroSocialPhotos extends LitElement {
       grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
       gap: 1rem;
     }
-    img {
+    lite-youtube {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
@@ -23,13 +24,13 @@ class RibeiroSocialPhotos extends LitElement {
 
     /** Ugh, Safari */
     @supports not (aspect-ratio: 1 / 1) {
-      img::before {
+      lite-youtube::before {
         float: left;
         padding-top: 100%;
         content: '';
       }
 
-      img::after {
+      lite-youtube::after {
         display: block;
         content: '';
         clear: both;
@@ -40,13 +41,13 @@ class RibeiroSocialPhotos extends LitElement {
   constructor() {
     super();
 
-    this.mastodonEndpoint =
-      'https://us-west2-justinribeiro-web.cloudfunctions.net/get-ribeirosocial-photos';
+    this.youtubeEndpoint =
+      'https://us-west1-justinribeiro-web.cloudfunctions.net/get-youtube-videos';
     this.data = [];
   }
 
   async firstUpdated() {
-    const response = await fetch(`${this.mastodonEndpoint}`, {
+    const response = await fetch(`${this.youtubeEndpoint}`, {
       mode: 'cors',
     });
     this.data = await response.json();
@@ -55,16 +56,12 @@ class RibeiroSocialPhotos extends LitElement {
   render() {
     return html`
       ${this.data.map(
-        photo => html`
+        video => html`
           <div>
-            <a href="${photo.url}">
-              <img
-                src="${photo.media}"
-                alt="${photo.content}"
-                title="${photo.content}"
-                loading="lazy"
-              />
-            </a>
+            <lite-youtube
+              videotitle="${video.title}"
+              videoid="${video.id}"
+            ></lite-youtube>
           </div>
         `
       )}
@@ -72,4 +69,4 @@ class RibeiroSocialPhotos extends LitElement {
   }
 }
 
-window.customElements.define('ribeiro-social-photos', RibeiroSocialPhotos);
+window.customElements.define('youtube-video-list', YouTubeVideoList);

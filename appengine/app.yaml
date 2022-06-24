@@ -1,9 +1,6 @@
 runtime: python38
 entrypoint: gunicorn -b :$PORT main:app
 
-inbound_services:
-- warmup
-
 handlers:
 - url: /data/(.*)
   static_files: dist/data/\1

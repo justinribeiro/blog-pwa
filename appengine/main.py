@@ -36,7 +36,7 @@ class MainHandler(webapp2.RequestHandler):
                                                             "worker-src 'self'; "
                                                             "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google-analytics.com blob: https://www.gstatic.com; "
                                                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
-                                                            "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.google-analytics.com https://webmention.io/; "
+                                                            "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://us-west1-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.google-analytics.com https://webmention.io/; "
                                                             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
                                                             "media-src 'self' https://storage.googleapis.com; "
                                                             "form-action 'self' https://webmention.io; "

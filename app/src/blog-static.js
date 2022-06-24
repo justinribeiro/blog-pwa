@@ -64,6 +64,7 @@ class BlogStatic extends BlogElement {
         padding: var(--space-cs);
         background: var(--structs-bg);
         line-height: calc((var(--space-cs) * 2) + var(--font-base));
+        margin-right: var(--space-cs);
       }
     `,
   ];
@@ -73,6 +74,7 @@ class BlogStatic extends BlogElement {
 
     if (this.metadata.enableMastodonPhotos) {
       import('./lod-ribeiro-social-photos.js');
+      import('./lod-youtube-list.js');
     }
   }
 
@@ -110,8 +112,46 @@ class BlogStatic extends BlogElement {
             <ribeiro-social-photos> Fetching... </ribeiro-social-photos>
             <br />
             <p class="more">
-              <a class="more" href="https://ribeiro.social/@justin"
-                >More photographs &raquo;
+              More photographs:
+              <a class="more" rel="me" href="https://ribeiro.social/@justin">
+                Ribeiro.Social
+              </a>
+
+              <a
+                class="more"
+                rel="me"
+                href="https://www.instagram.com/justin.d.ribeiro/"
+              >
+                Instagram
+              </a>
+            </p>
+
+            <h2>The Latest Videos</h2>
+            <youtube-video-list> Fetching... </youtube-video-list>
+            <br />
+            <p class="more">
+              More Videos:
+              <a
+                class="more"
+                rel="me"
+                href="https://youtube.com/justinribeiro/videos"
+              >
+                YouTube
+              </a>
+
+              <a
+                class="more"
+                rel="me"
+                href="https://www.instagram.com/justin.d.ribeiro/reels/"
+              >
+                Instagram Reels
+              </a>
+
+              <a
+                class="more"
+                rel="me"
+                href="https://www.tiktok.com/@justin.d.ribeiro"
+                >TikTok
               </a>
             </p>
           `

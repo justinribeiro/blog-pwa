@@ -63,6 +63,21 @@ module.exports = {
       },
     },
     {
+      urlPattern: /^https:\/\/us-west1-justinribeiro-web\.cloudfunctions\.net/,
+      handler: 'NetworkFirst',
+      options: {
+        networkTimeoutSeconds: 3,
+        cacheName: 'video-cache',
+        expiration: {
+          maxEntries: 200,
+          purgeOnQuotaError: true,
+          matchOptions: {
+            ignoreVary: true,
+          },
+        },
+      },
+    },
+    {
       urlPattern: /^https:\/\/storage\.googleapis\.com/,
       handler: 'CacheFirst',
       options: {
