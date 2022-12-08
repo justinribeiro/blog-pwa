@@ -1,5 +1,9 @@
-runtime: python38
-entrypoint: gunicorn -b :$PORT main:app
+runtime: python310
+entrypoint: gunicorn -b :$PORT -w 2 main:app
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 1
 
 handlers:
 - url: /data/(.*)
