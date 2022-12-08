@@ -12,6 +12,10 @@ Setting up Mastodon on Google Cloud Platform has been on my list of things to do
 
 > Addendum February 2021: Updated article with some of the version-specific revisions as part of Mastodon 3.3.x.
 
+> Addendum November 2022: Updated article with some of the version-specific revisions as part of long term support, revised Google Cloud Storage information regarding role/service account.
+
+> Addendum November 2022 v4 upgrade: Updated version numbers for dependencies, added S3_FORCE_SINGLE_REQUEST to .env.production instructions, noted change to sidekiq if upgrading from v3.x
+
 I wanted something a little more robust then a single server setup which I find too brittle, so I settled on:
 
 1. Media stored on Google Cloud Storage.
@@ -36,6 +40,8 @@ Fantastic! You're on your way. While those name servers are populating around th
 
 ## Setting up the email
 
+> Addendum November 2022: [Dave Snider](https://social.davesnider.com/@davesnider) noted that the the Flex plan that I used to setup and write these instructions seems to not longer exists in 2022. [SendGrid](https://sendgrid.com/pricing/) has a free forever plan for low volumes, so that should be a viable alternative (and I will set out to make the switch myself and write revised instructions this month).
+
 [Mailgun](https://www.mailgun.com) has always touted itself as an email service for developers and I've always found incredibly useful in client projects, so I'm recommending it for this limited task. One reason is that based on the limited need for email, we're not going to break the free tier quota.
 
 1. [Get yourself an account](https://signup.mailgun.com/) and login.
@@ -49,7 +55,7 @@ How you proceed from here is up to you: you can add those records via [Google Cl
 
 > Note: the biggest hurdle you will find when doing creating the TXT records within the Cloud Console is the "Warning: A record for this domain has whitespace but is not a "quoted string"". This also happens with 2048 DKIM strings, which won't save when clicking "Create". The trick is to simply break the string into 255 character lines and wrap them with quotes. I know what you're thinking: "that is not intuitive". Yes, I agree.
 
-Once you've got those records saved, it's now time to wait for those records to propogate. With Cloud DNS, this happens pretty quick (one reason I like Cloud DNS). But while that verification of record is happening on Mailgun, let's get our storage setup.
+Once you've got those records saved, it's now time to wait for those records to propagate. With Cloud DNS, this happens pretty quick (one reason I like Cloud DNS). But while that verification of record is happening on Mailgun, let's get our storage setup.
 
 ## Setting up Google Cloud Storage
 
@@ -61,12 +67,61 @@ I just don't like all the images tied to a single instance, so storing them in m
 4. Make sure Google-managed key is selected.
 5. Click "Create".
 6. This will spin up a bucket but we're not done yet. We're going to need API keys to access and store things on this bucket.
-7. Go to [Storage > Settings](https://console.cloud.google.com/storage/settings).
+7. You will need a service account with the "Storage Object Admin" Role, which you can create with the "Grant Access" button under the "Permissions" tab.
+<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+  <picture>
+    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-640.webp 640w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-800.webp 800w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-1024.webp 1024w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-1280.webp 1280w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-1600.webp 1600w"
+            sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
+    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-640.png 640w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-800.png 800w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-1024.png 1024w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-1280.png 1280w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-1600.png 1600w"
+            sizes="(min-width: 800px) 800px, 100vw" type="image/png">
+    <img decoding="async" loading="lazy" width="800" height="538"
+      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
+      src="https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-800.png" alt="What your new service account should look like.">
+  </picture>
+  <figcaption itemprop="caption description">
+    <span aria-hidden="true">What your new service account should look like.</span>
+    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+  </figcaption>
+</figure>
+
+8. Go to [Storage > Settings](https://console.cloud.google.com/storage/settings).
 8. Click "Interoperability".
 9. Find the section "Access keys for service accounts".
 10. Click "Create a New Key" button.
 11. Select an existing service account or create a new one (I opted to create a new one specific for this project)
 12. Once it generates a an Access Key and Secret, copy them somewhere safe (it won't show you the secret again).
+
+<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+  <picture>
+    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-640.webp 640w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-800.webp 800w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-1024.webp 1024w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-1280.webp 1280w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-1600.webp 1600w"
+            sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
+    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-640.png 640w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-800.png 800w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-1024.png 1024w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-1280.png 1280w,
+                    https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-1600.png 1600w"
+            sizes="(min-width: 800px) 800px, 100vw" type="image/png">
+    <img decoding="async" loading="lazy" width="800" height="538"
+      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
+      src="https://storage.googleapis.com/jdr-public-imgs/blog/20221107-revise-mastodon-docs-gcp-02-800.png" alt="">
+  </picture>
+  <figcaption itemprop="caption description">
+    <span aria-hidden="true">The Service Account setup with the keys we'll use later for a env prod file configuration.</span>
+    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+  </figcaption>
+</figure>
 
 Why do we need these keys? This gives us AWS S3 compatibility mode, which we need to use for the Mastodon. Now that we have storage, let's setup the database.
 
@@ -116,7 +171,8 @@ Okay, so now you're staring at this command prompt. We have many things to insta
 
 1. Install Node.
 {{< codeblock lang="bash" >}}
-jdr@rsms:~$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+jdr@rsms:~$ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - && \
+sudo apt-get install -y nodejs
 {{< /codeblock >}}
 2. Install Yarn.
 {{< codeblock lang="bash" >}}
@@ -134,6 +190,10 @@ jdr@rsms:~$ sudo adduser mastodon
 {{< /codeblock >}}
 
 > Addendum January 2021: Depending on what version of Debian you're on for the your instance, you may run into an issue with Redis being the incorrect version for the latest versions of Mastodon (Redis 4.x+). Note, the install won't fail, but your instance will not function correctly because the jobs won't run. This is not clear in the documentation pre-requisites at all. If that is the case, you can pull the latest redis and redis-tools by adding the relevant debian backports for your version (in my case on the bump to 3.2.x+, I needed stretch-backports/main to pull redis 5.x).
+
+> Addendum November 2022: Revised the version of Node to latest LTS v18. Cheers to [Brian Schlining](https://mastodon.social/@Schlining) for pointing that out!
+
+> Addendum November 2022 Number 2: If you're using Debian Stetch (and not a more recent version), you can't use LTS v18 and should use v16 of node for reasons I will not get into (tldr; the v18 build is broken on Stretch). Cheers to [Dave Snider](https://social.davesnider.com/@davesnider) for pointing that out!
 
 Now let's switch over to our new user, and setup some more.
 
@@ -179,8 +239,8 @@ rbenv ()
 5. Now let's build Ruby.
 {{< codeblock lang="bash" >}}
 mastodon@rsms:~$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-mastodon@rsms:~$ rbenv install 2.7.2
-mastodon@rsms:~$ rbenv global 2.7.2
+mastodon@rsms:~$ rbenv install 3.0.4
+mastodon@rsms:~$ rbenv global 3.0.4
 {{< /codeblock >}}
 
 Once that finishes compiling, we move on to install Mastodon.
@@ -313,8 +373,9 @@ E-mail address to send e-mails "from": mastodon@example.com
 Send a test e-mail with this configuration right now? Yes
 Send test e-mail to: YOUR_EMAIL_ADDRESS
 {{< /codeblock >}}
-10. Great! Continue answering questions until you finish the setup. Once complete, we have to add the following line to our `.env.production`:
+10. Great! Continue answering questions until you finish the setup. Once complete, we have to add the following lines to our `.env.production`:
 {{< codeblock lang="bash" >}}
+S3_FORCE_SINGLE_REQUEST=true
 S3_SIGNATURE_VERSION=s3
 {{< /codeblock >}}
 11. Back up the .env.production for safe keeping!
@@ -338,7 +399,9 @@ jdr@rsms:~$ sudo systemctl start mastodon-web mastodon-sidekiq mastodon-streamin
 jdr@rsms:~$ sudo systemctl enable mastodon-*
 {{< /codeblock >}}
 
-## Your fancy new social network lives
+> Addendum November 2022 v4 upgrade: If you previously used this guide to setup, make sure to add the `-q ingress` to your mastodon-sidekiq.service or you'll have timeline update update issues.
+
+## Your fancy new social network livee
 
 If everything went according to plan, you should be up and running live on your domain! If something went bump, crash, explosion, you'll have to dig into the [Mastodon Installation Guide](https://docs.joinmastodon.org/administration/installation/) (of which a lot of this is covered in there).
 
