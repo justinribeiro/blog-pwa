@@ -78,6 +78,12 @@ class BlogElement extends LitElement {
     if (checkEnding.test(window.location.pathname)) {
       getPath = window.location.pathname.replace(/index\.php|index\.html/g, '');
     }
+
+    // strange case someone found...odd
+    if (!getPath.endsWith('/')) {
+      getPath = `${getPath}/`;
+    }
+
     const targetUrl = `/data${getPath}index.json`;
 
     try {
