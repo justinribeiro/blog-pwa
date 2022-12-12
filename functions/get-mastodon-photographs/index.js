@@ -72,7 +72,7 @@ exports.photographs = async (req, res) => {
             media: data.media_attachments.map((item) => item.url)[0],
           };
         })
-        .slice(0, 6);
+        .slice(0, 9);
 
       cache.store(crunched);
 
