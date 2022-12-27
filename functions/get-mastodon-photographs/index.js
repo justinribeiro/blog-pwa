@@ -58,7 +58,12 @@ exports.photographs = async (req, res) => {
       return res.status(200).send(cache.data);
     }
 
-    M.get("accounts/2/statuses", {}).then((resp) => {
+    M.get("accounts/2/statuses", {
+      only_media: true,
+      exclude_reblogs: true,
+      exclude_replies: true,
+      limit: 9,
+    }).then((resp) => {
       // crunch the big json to really only the things we're going to render in
       // the browser
       const crunched = resp.data
