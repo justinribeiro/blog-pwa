@@ -190,15 +190,6 @@ class BlogElement extends LitElement {
 
     this.__setMetaDom('property', 'og:url', url || document.location.href);
     this.__setMetaDom('property', 'twitter:url', url || document.location.href);
-
-    if (window.ga) {
-      window.ga('send', {
-        hitType: 'pageview',
-        page: window.location.pathname,
-        location: url || document.location.href,
-        title,
-      });
-    }
   }
 
   /**

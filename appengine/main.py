@@ -34,9 +34,9 @@ class MainHandler(webapp2.RequestHandler):
         self.response.headers['Referrer-Policy'] = 'no-referrer, strict-origin-when-cross-origin'
         self.response.headers['Content-Security-Policy'] = ("default-src 'none'; base-uri 'self'; "
                                                             "worker-src 'self'; "
-                                                            "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google-analytics.com blob: https://www.gstatic.com; "
+                                                            "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com blob: https://www.gstatic.com; "
                                                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
-                                                            "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://us-west1-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.google-analytics.com https://webmention.io/; "
+                                                            "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://us-west1-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://webmention.io/; "
                                                             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
                                                             "media-src 'self' https://storage.googleapis.com; "
                                                             "form-action 'self' https://webmention.io; "
@@ -62,7 +62,8 @@ class MainHandler(webapp2.RequestHandler):
                                                    "sync-xhr 'none'; "
                                                    "usb 'none'; "
                                                    "screen-wake-lock 'none';")
-        self.response.headers['Expect-CT'] = 'max-age=0, report-uri="https://justinribeiro.report-uri.com/r/d/ct/reportOnly"'
+        # Deprecated, see https://chromestatus.com/feature/6244547273687040
+        # self.response.headers['Expect-CT'] = 'max-age=0, report-uri="https://justinribeiro.report-uri.com/r/d/ct/reportOnly"'
         self.response.headers['Report-To'] = '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://justinribeiro.report-uri.com/a/d/g"}],"include_subdomains":true}'
         self.response.headers['NEL'] = '{"report_to":"default","max_age":31536000,"include_subdomains":true}'
 

@@ -74,7 +74,7 @@
     "lit": "^2.0.0",
     "prismjs": "^1.21.0",
     "pwa-helpers": "^0.9.1",
-    "web-vitals": "^2.0.0",
+    "web-vitals": "^3.0.0",
     "workbox-window": "^6.0.0"
   },
   "eslintConfig": {
@@ -98,7 +98,7 @@
     },
     "globals": {
       "AmbientLightSensor": false,
-      "ga": false,
+      "gtag": false,
       "Prism": false
     }
   },
