@@ -538,15 +538,15 @@ class BlogEntry extends BlogElement {
                 `
               : html`
                   <p id="share">
-                    ${this.share.map(
-                      i => html`<a href="${i.link}">${i.service}</a>`
-                    )}
                     <share-to-mastodon
                       message="${this.metadata
                         .title} via @justin@ribeiro.social"
                       url="${this.metadata.permalink}"
                       >Mastodon</share-to-mastodon
                     >
+                    ${this.share.map(
+                      i => html`<a href="${i.link}">${i.service}</a>`
+                    )}
                   </p>
                 `}
 

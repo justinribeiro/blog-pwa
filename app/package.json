@@ -1,5 +1,5 @@
 {
-  "description": "Combining Lit Web Components, Hugo, Service Worker, and Rollup into a progressive web app blog.",
+  "description": "Combining Web Components (Lit), Hugo, Service Worker, and Rollup into a progressive web app blog.",
   "repository": {
     "type": "git",
     "url": "git@github.com:justinribeiro/blog-pwa.git"
@@ -7,6 +7,7 @@
   "name": "blog-pwa",
   "version": "3.0.0",
   "author": "Justin Ribeiro <justin@justinribeiro.com>",
+  "type": "module",
   "devDependencies": {
     "@babel/core": "^7.13.16",
     "@babel/eslint-parser": "^7.13.14",
@@ -15,8 +16,10 @@
     "@open-wc/building-utils": "^2.11.0",
     "@open-wc/eslint-config": "^4.3.0",
     "@rollup/plugin-babel": "^5.2.2",
-    "@rollup/plugin-node-resolve": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@web/dev-server": "^0.1.26",
+    "@web/rollup-plugin-copy": "^0.3.0",
+    "@web/rollup-plugin-html": "^1.11.0",
     "babel-plugin-bundled-import-meta": "^0.3.1",
     "babel-plugin-template-html-minifier": "^4.0.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
@@ -31,9 +34,11 @@
     "html-minifier": "^4.0.0",
     "http2-push-manifest": "^1.0.1",
     "prettier": "^2.2.1",
-    "rollup": "^2.67.0",
+    "rollup": "^3.9.0",
     "rollup-plugin-filesize": "^9.1.0",
+    "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-size": "^0.2.2",
+    "rollup-plugin-summary": "^2.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "stylelint": "^14.0.0",
     "stylelint-config-prettier": "^9.0.0",
@@ -58,7 +63,7 @@
     "build:minify": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-attribute-quotes --remove-tag-whitespace --remove-optional-tags --minify-css true --output build/default/index.html build/default/index.html",
     "build:minify:static": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-attribute-quotes --remove-tag-whitespace --remove-optional-tags --minify-css true --output build/default/helpers/static.html build/default/helpers/static.html",
     "build:modules": "yarn rollup -c",
-    "build:sw": "yarn workbox generateSW workbox-config.js",
+    "build:sw": "yarn workbox generateSW workbox-config.cjs",
     "build:replacechunk": "find build/default/src -name 'blog-pwa-*.js' -exec basename {} \\; | xargs -I '{}' sed -i 's/blog-pwa.js/{}/g' build/default/index.html",
     "build:dist": "yarn build:clean && yarn build:copyDeps && yarn build:copyRoot && yarn build:copyData && yarn build:minify && yarn build:minify:static && yarn build:modules && yarn build:replacechunk && yarn build:sw"
   },
@@ -68,10 +73,10 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@justinribeiro/lite-youtube": "^1.3.0",
-    "@justinribeiro/share-to-mastodon": "^1.0.0",
+    "@justinribeiro/share-to-mastodon": "^2.0.0",
     "@justinribeiro/stl-part-viewer": "^2.1.0",
     "@justinribeiro/toggle-tooltip": "^1.0.0",
-    "lit": "^2.0.0",
+    "lit": "^2.5.0",
     "prismjs": "^1.21.0",
     "pwa-helpers": "^0.9.1",
     "web-vitals": "^3.0.0",
