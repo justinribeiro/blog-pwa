@@ -31,7 +31,16 @@ class BlogStatic extends BlogElement {
         font-size: 1.5rem;
       }
 
-      #posts > a time {
+      #posts > a p {
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-bottom: var(--space-cs);
+        font-family: var(--font-family-sans-serif);
+        color: var(--accent-color-secondary);
+      }
+
+      #posts > a p {
         font-weight: 400;
         text-transform: uppercase;
         font-size: 0.85rem;
@@ -45,7 +54,7 @@ class BlogStatic extends BlogElement {
         background-color: hotpink;
       }
 
-      #posts > a:hover time,
+      #posts > a:hover p,
       #posts > a:hover h3 {
         color: #fff;
       }
@@ -87,13 +96,16 @@ class BlogStatic extends BlogElement {
               ${this.metadata.posts.map(
                 post => html`
                   <a href="${post.permalink}">
-                    <time
-                      .datetime="${post.dataModified}"
-                      aria-label="Posted ${post.date}"
-                    >
-                      🗒️ ${post.date}
-                    </time>
                     <h3>${post.title}</h3>
+                    <p>
+                      <time
+                        .datetime="${post.dataModified}"
+                        aria-label="Posted ${post.date}"
+                      >
+                        🗒️ ${post.date}
+                      </time>
+                      • ${post.readingtime} min read
+                    </p>
                   </a>
                 `
               )}

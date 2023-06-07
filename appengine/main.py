@@ -8,7 +8,7 @@ import json
 import re
 import jinja2
 import preloadlinks as pl
-import logging
+# import logging
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -113,6 +113,23 @@ class MainHandler(webapp2.RequestHandler):
         ]
         bot_list_search = '(?:%s)' % '|'.join(bot_list_hunt)
 
+        name = os.path.join(os.path.dirname(__file__), 'dist/data/',
+                            self.request.path.lstrip(
+            "/").replace("index.html", "")
+            .replace("index.php", ""), 'index.json')
+        f = open(name, 'r')
+        c = f.read()
+        f.close()
+
+        # parse the read
+        data = json.loads(c)
+
+        # save our html
+        data['article'] = unescape(data['article'])
+
+        if 'featureimage' in data:
+            data['featureimage'] = unescape(data['featureimage'])
+
         # Fun fact: a lot of webmention tools don't set a user agent, which
         # causes this to die hard, so let's just work around it for now
         if self.request.headers.get('User-Agent') is None or re.search(bot_list_search, self.request.headers.get('User-Agent').lower()):
@@ -123,26 +140,10 @@ class MainHandler(webapp2.RequestHandler):
             # More info:
             # https://developers.google.com/search/docs/guides/dynamic-rendering
             #
-            name = os.path.join(os.path.dirname(__file__), 'dist/data/',
-                                self.request.path.lstrip(
-                "/").replace("index.html", "")
-                .replace("index.php", ""), 'index.json')
-            f = open(name, 'r')
-            c = f.read()
-            f.close()
-
-            # parse the read
-            data = json.loads(c)
-
-            # save our html
-            data['article'] = unescape(data['article'])
 
             # make our code-blocks render cleaner on old browsers that don't
             # support the CSS; bots generally don't care about this
             data['article'] = data['article'].replace('code-block', 'pre')
-
-            if 'featureimage' in data:
-                data['featureimage'] = unescape(data['featureimage'])
 
             # Grab our template
             static_template = JINJA_ENVIRONMENT.get_template(
@@ -158,26 +159,10 @@ class MainHandler(webapp2.RequestHandler):
                 # In this scenario, I know that our root path data is always in
                 # the index.json within the /data/ directory so it's only a
                 # matter of open-and-pass
-                name = os.path.join(os.path.dirname(__file__), 'dist/data/',
-                                    self.request.path.lstrip(
-                    "/").replace("index.html", "")
-                    .replace("index.php", ""), 'index.json')
-                f = open(name, 'r')
-                c = f.read()
-                f.close()
-
-                # parse the read
-                data = json.loads(c)
-
-                # save our html
-                data['article'] = unescape(data['article'])
 
                 # make our code-blocks render cleaner on old browsers that don't
                 # support the CSS; bots generally don't care about this
                 data['article'] = data['article'].replace('code-block', 'pre')
-
-                if 'featureimage' in data:
-                    data['featureimage'] = unescape(data['featureimage'])
 
                 # Grab our template
                 static_template = JINJA_ENVIRONMENT.get_template(
@@ -206,9 +191,7 @@ class MainHandler(webapp2.RequestHandler):
 
                 # Retarget our noscript
                 # We chop the URL params for safety and add static param
-                data = {
-                    'noscript': self.request.path + '?static=true',
-                }
+                data['noscript'] = self.request.path + '?static=true'
 
                 # Grab our template
                 pwa_template = JINJA_ENVIRONMENT.get_template(

@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
-import { classMap } from 'lit/directives/class-map.js';
 
 class BlogPwa extends LitElement {
   static properties = {
@@ -10,13 +9,6 @@ class BlogPwa extends LitElement {
      * @private
      */
     __loaded: {
-      type: Boolean,
-      state: true,
-    },
-    /**
-     * show / hide the skeleton loader facade
-     */
-    __showSkeleton: {
       type: Boolean,
       state: true,
     },
@@ -32,14 +24,9 @@ class BlogPwa extends LitElement {
   constructor() {
     super();
     this.__loaded = false;
-    this.__showSkeleton = true;
     this.__dom = {
       snackBar: null,
     };
-
-    this.addEventListener('blog-pwa-toggle-skeleton', event => {
-      this.__showSkeleton = event.detail.show;
-    });
   }
 
   connectedCallback() {
@@ -105,7 +92,7 @@ class BlogPwa extends LitElement {
         route = 'static';
         break;
       case /(reading)/.test(location.pathname):
-        route = 'reading'
+        route = 'reading';
         break;
       case /(offline)/.test(location.pathname):
         route = 'offline';
@@ -124,7 +111,9 @@ class BlogPwa extends LitElement {
    * @param {string} type The metadata page style to use
    */
   async __loadRoute(type) {
-    this.__showSkeleton = true;
+    // future change placeholder
+    const eleRoot = 'blog';
+
     if (type === 'static') {
       await import('./blog-static.js');
     }
@@ -142,16 +131,18 @@ class BlogPwa extends LitElement {
     }
 
     try {
-      const checkElement = this.__domRefRouter.querySelector(`blog-${type}`);
+      const checkElement = this.__domRefRouter.querySelector(
+        `${eleRoot}-${type}`
+      );
       if (checkElement) {
         await checkElement.mount();
       } else {
-        this.__domRefRouter.appendChild(this.__domEle[type].cloneNode());
-        await this.__domRefRouter.querySelector(`blog-${type}`).mount();
-        // we don't do this first because we're going to smooth the transition
-        if (this.__domRefRouter.childNodes.length > 1) {
+        if (this.__domRefRouter.childNodes.length === 1) {
           this.__domRefRouter.removeChild(this.__domRefRouter.firstChild);
         }
+        const node = this.__domEle[type].cloneNode();
+        node.mount();
+        this.__domRefRouter.appendChild(node);
       }
     } catch (error) {
       // sometimes doesn't inject quickly, and their lifecycle doesn't
@@ -355,48 +346,11 @@ class BlogPwa extends LitElement {
       min-height: 100vh;
       position: relative;
     }
-
-    div {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      transition: ease-in opacity 0.3s;
-      z-index: 1;
-    }
-
-    /** cut down on the layout shift */
-    #outlet {
-      min-height: 100vh;
-      will-change: opacity;
-      transition: ease-in opacity 0.3s;
-      z-index: 2;
-    }
-    .show {
-      opacity: 1;
-    }
-    .hide {
-      opacity: 0;
-    }
   `;
 
   render() {
-    const clsPerfImproveOutlet = {
-      show: !this.__showSkeleton,
-      hide: this.__showSkeleton,
-    };
-
-    const smoothTransitionGap = {
-      show: this.__showSkeleton,
-      hide: !this.__showSkeleton,
-    };
-
     return html`
-      <main>
-        <section id="outlet" class=${classMap(clsPerfImproveOutlet)}></section>
-        <div class=${classMap(smoothTransitionGap)}>
-          <slot id="skeleton" name="skeleton"></slot>
-        </div>
-      </main>
+      <main id="outlet"></main>
       <snack-bar hidden></snack-bar>
     `;
   }

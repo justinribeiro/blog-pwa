@@ -122,7 +122,7 @@
           --motion-duration: .3s;
           --motion-type:  ease
         }
-        :focus {
+        a:focus {
           transition: outline-offset var(--motion-duration) var(--motion-type);
         }
       }
@@ -140,7 +140,7 @@
         }
       }
 
-      :focus {
+      a:focus {
         outline-offset: var(--outline-thickness);
         outline: var(--outline);
       }
@@ -154,6 +154,11 @@
         color: var(--primary-text-color);
         line-height: var(--font-lhr);
         background-color: var(--bg);
+      }
+
+      blog-pwa {
+        display: block;
+        min-height: 100vh;
       }
 
       a {
@@ -225,27 +230,6 @@
         border-bottom: 1px solid var(--structs-hi);
       }
 
-      #skeleton {
-        margin: auto;
-        max-width: 800px;
-        padding: 0 20px;
-        padding-top: 1rem;
-        animation: load 3s ease infinite;
-        height: calc(100vh - var(--header-height));
-        will-change: opacity;
-      }
-
-      #skeleton > div {
-        height: 25px;
-        background-color: var(--skeleton-bg);
-        border-radius: 5px;
-        margin-bottom: 1rem;
-      }
-
-      #skeleton > div.short {
-        width: 65%;
-      }
-
       @media (min-width: 767px) {
         #pageNav > a {
           margin-right: var(--space-cs);
@@ -265,26 +249,14 @@
           letter-spacing: -0.1em;
         }
       }
-
-      @keyframes load {
-        0% {
-          opacity: 0.5
-        }
-        50% {
-          opacity: 1
-        }
-        100% {
-          opacity: 0.5
-        }
-      }
     </style>
 
-    <link href="/data/chronicle/index.xml" rel="feed" type="application/rss+xml" title="Justin Ribeiro" />
-    <link href="/data/tags/web/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Web Dev, Web Perf, and Web Platform Articles" />
-    <link href="/data/tags/iot/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Internet of Things (IoT) Articles" />
-    <link href="/data/tags/photography/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Photography Articles and Prints" />
-    <link href="/data/tags/business/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Management and Business Articles" />
-    <link href="/data/tags/personal/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Personal Articles" />
+    <link href="/data/chronicle/index.xml" rel="feed" type="application/rss+xml" title="RSS - All Posts and Articles" />
+    <link href="/data/tags/web/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Web Dev, Web Perf, and Web Platform Articles" />
+    <link href="/data/tags/iot/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Internet of Things (IoT) Articles" />
+    <link href="/data/tags/photography/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Photography Articles and Prints" />
+    <link href="/data/tags/business/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Management and Business Articles" />
+    <link href="/data/tags/personal/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Personal Articles" />
 
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&family=Literata:wght@400&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&family=Literata:wght@400&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');" >
@@ -317,14 +289,7 @@
       <p>This Progressive Web App is Progressive! Redirecting to static page...</p>
       <meta http-equiv="refresh" content="0;url={{ noscript }}">
     </noscript>
-    <blog-pwa>
-      <section id="skeleton" slot="skeleton">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="short"></div>
-      </section>
-    </blog-pwa>
+    <blog-pwa></blog-pwa>
     <footer id="pageFooter">
       <section>
         <h2 class="footerHeader">Hello, nice to meet you.</h2>
@@ -333,7 +298,7 @@
       </section>
       <section>
         <h2 class="footerHeader">Meta Things</h2>
-        <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. RIP Reader, follow along on <a href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fjustinribeiro.com%2Fdata%2Fchronicle%2Findex.xml' target='blank'>Feedly</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
+        <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
         <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
       </section>
       <section id="thanks">
