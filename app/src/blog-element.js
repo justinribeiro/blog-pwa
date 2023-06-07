@@ -62,6 +62,7 @@ class BlogElement extends LitElement {
       view: '',
       tags: '',
       enableMastodonPhotos: false,
+      pagetype: 'page',
       relatedposts: [],
     };
 
@@ -94,7 +95,6 @@ class BlogElement extends LitElement {
       this.metadata = await response.json();
       this.__processPageData();
     } catch (error) {
-      this.__showSkeleton(false);
       window.location.href = '/';
     }
   }
@@ -110,23 +110,6 @@ class BlogElement extends LitElement {
     this.__getDomRef('#metadataArticle').appendChild(template);
 
     this.__setPageMetaData(this.metadata);
-    this.__showSkeleton(false);
-  }
-
-  /**
-   * Whether we should show the skeleton loading in the shell or not
-   * @param {Boolean} bool
-   */
-  __showSkeleton(bool) {
-    this.dispatchEvent(
-      new CustomEvent('blog-pwa-toggle-skeleton', {
-        bubbles: true,
-        composed: true,
-        detail: {
-          show: bool,
-        },
-      })
-    );
   }
 
   /**
@@ -243,7 +226,7 @@ class BlogElement extends LitElement {
     }
 
     @media (prefers-reduced-motion: no-preference) {
-      :focus {
+      a:focus {
         transition: outline-offset 0.25s ease;
         outline-offset: var(--outline-thickness);
         outline: var(--outline);
