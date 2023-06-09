@@ -7,13 +7,22 @@ class BlogMissing extends BlogElement {
       title: 'Page Not Found',
       description: 'No dice finding that.',
     });
-
-    this.__showSkeleton(false);
   }
+
+  static styles = [
+    super.styles,
+    css`
+      #giphy {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+    `,
+  ];
 
   render() {
     return html`
-      <section id="metadataArticle">
+      <section>
         <h1>Sorry, I can't find that page.</h1>
         <h2 class="subheadline">
           404 NOT FOUND!?!?! Who's running this circus?
@@ -25,22 +34,21 @@ class BlogMissing extends BlogElement {
           <a href="/chronicle/">archive</a> for other posts you may find
           interesting.
         </p>
-        <div style="width:100%;height:0;padding-bottom:76%;position:relative;">
+        <div id="giphy">
           <iframe
             src="https://giphy.com/embed/xTiTngQ7Gpakdpm4nu"
-            width="100%"
-            height="100%"
-            style="position:absolute"
+            width="480"
+            height="363"
             frameborder="0"
-            class="giphy-embed"
             allowfullscreen
+            title="Mulder from the show The X-Files typing on a computer."
           ></iframe>
+          <p>
+            <a href="https://giphy.com/gifs/the-x-files-xTiTngQ7Gpakdpm4nu"
+              >via GIPHY</a
+            >
+          </p>
         </div>
-        <p>
-          <a href="https://giphy.com/gifs/the-x-files-xTiTngQ7Gpakdpm4nu"
-            >via GIPHY</a
-          >
-        </p>
       </section>
     `;
   }

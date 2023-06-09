@@ -35,9 +35,7 @@ You see it turns out the Tiktok embed is _terrible_ on so many levels that my we
                     https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-js-devtools-1280.png 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-js-devtools-1600.png 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/png">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-js-devtools-800.png" alt="500kB of JavaScript, I'm sure that's all needed immediately said no one.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-js-devtools-800.png" alt="500kB of JavaScript, I'm sure that's all needed immediately said no one.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">500kB of JavaScript, I'm sure that's all needed immediately said no one.</span>
@@ -61,9 +59,7 @@ You see it turns out the Tiktok embed is _terrible_ on so many levels that my we
                     https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-img-devtools-1280.png 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-img-devtools-1600.png 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/png">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-img-devtools-800.png" alt="Sure, I'm sure we need all these images before we've done literally anything.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-img-devtools-800.png" alt="Sure, I'm sure we need all these images before we've done literally anything.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">Sure, I'm sure we need all these images before we've done literally anything.</span>
@@ -87,9 +83,7 @@ You see it turns out the Tiktok embed is _terrible_ on so many levels that my we
                     https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-video-devtools-1280.png 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-video-devtools-1600.png 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/png">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-video-devtools-800.png" alt="Why they do this is beyond me: the video downloaded, not streamed on interaction.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-video-devtools-800.png" alt="Why they do this is beyond me: the video downloaded, not streamed on interaction.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">Why they do this is beyond me: the video downloaded, not streamed on interaction.</span>
@@ -127,9 +121,7 @@ And hey, TikTok's source code says is hiring, so maybe they'll get some web perf
                     https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-hire-web-perf-1280.png 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-hire-web-perf-1600.png 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/png">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-hire-web-perf-800.png" alt="Scouring their embed source code, I ran into this line. Hire some web perf people, please.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-hire-web-perf-800.png" alt="Scouring their embed source code, I ran into this line. Hire some web perf people, please.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">Scouring their embed source code, I ran into this line. Hire some web perf people, please.</span>

@@ -62,7 +62,7 @@ class BlogReading extends BlogElement {
     });
     this.__getLinkRoll();
 
-    this.__showSkeleton(false);
+
   }
 
   async __getLinkRoll() {
@@ -77,7 +77,7 @@ class BlogReading extends BlogElement {
 
   render() {
     return html`
-      <section id="metadataArticle">
+      <section>
         <h1>What I'm Reading</h1>
         <p>
           I read a lot. I don't log every word, I don't count the pages, I just

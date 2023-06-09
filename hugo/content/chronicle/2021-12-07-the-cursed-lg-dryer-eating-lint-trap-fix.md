@@ -42,9 +42,7 @@ After installing the new front assembly—which had developed some sort of claw 
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-no-fit-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-no-fit-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-no-fit-800.jpg" alt="">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-no-fit-800.jpg" alt="">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The brand new, part number matching parts, not fitting together. Fantastic.</span>
@@ -68,9 +66,7 @@ As the above photograph shows, that doesn't seat into the front assembly. A quic
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-old-part-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-old-part-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-old-part-800.jpg" alt="The old broken part and it's seating notch for the lint trap filter.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-old-part-800.jpg" alt="The old broken part and it's seating notch for the lint trap filter.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The old broken part and it's seating notch for the lint trap filter.</span>
@@ -94,9 +90,7 @@ And if we look at the new version, no notch.
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-new-part-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-new-part-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-new-part-800.jpg" alt="The new part fits perfectly but lacks the notch.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-new-part-800.jpg" alt="The new part fits perfectly but lacks the notch.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The new part fits perfectly but lacks the notch.</span>
@@ -128,9 +122,7 @@ The bandsaw whirled to life with an unexpected dull orange spark from a piece of
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-bandsaw-cuts-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-bandsaw-cuts-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-bandsaw-cuts-800.jpg" alt="">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-bandsaw-cuts-800.jpg" alt="">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The offcuts from hacking the LG lint trap.</span>
@@ -154,9 +146,7 @@ The proof is in the fitting they say and it was a pretty clean overall fit.
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-new-fit-after-cut-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-new-fit-after-cut-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-new-fit-after-cut-800.jpg" alt="">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lg-dryer-lint-new-fit-after-cut-800.jpg" alt="">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The part fitting perfectly in the LG dryer after a little chop on the bandsaw.</span>

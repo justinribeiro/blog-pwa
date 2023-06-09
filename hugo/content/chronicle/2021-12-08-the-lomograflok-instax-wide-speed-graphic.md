@@ -16,9 +16,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-testing-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-testing-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url(''data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\''http%3A//www.w3.org/2000/svg\'' xmlns%3Axlink=\''http%3A//www.w3.org/1999/xlink\'' viewBox=\''0 0 1280 853\''%3E%3Cfilter id=\''b\'' color-interpolation-filters=\''sRGB\''%3E%3CfeGaussianBlur stdDeviation=\''.5\''%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\''discrete\'' tableValues=\''1 1\''%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\''url(%23b)\'' x=\''0\'' y=\''0\'' height=\''100%25\'' width=\''100%25\'' xlink%3Ahref=\''data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\''%3E%3C/image%3E%3C/svg%3E'');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-testing-800.jpg" alt="My Speed Graphic sits next to test shots from the LomoGraflok on the work bench.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-testing-800.jpg" alt="My Speed Graphic sits next to test shots from the LomoGraflok on the work bench.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">My Speed Graphic sits next to test shots from the LomoGraflok on the work bench.</span>
@@ -67,9 +65,7 @@ I grabbed the camera, mounted it on a tripod and stripped the rangefinder and th
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-infinity-stops-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-infinity-stops-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-infinity-stops-800.jpg" alt="The infinity stops moved back to account for the LomoGraflok spacer, the black gaffer tape denoting the previous location.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-infinity-stops-800.jpg" alt="The infinity stops moved back to account for the LomoGraflok spacer, the black gaffer tape denoting the previous location.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">The infinity stops moved back to account for the LomoGraflok spacer, the black gaffer tape denoting the previous location.</span>
@@ -93,9 +89,7 @@ At this point I verified that the viewfinder would probably need a bit of a mask
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-mask-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-mask-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-mask-800.jpg" alt="Masking tape acts as a temporary mask to validate the film location through test shots.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-mask-800.jpg" alt="Masking tape acts as a temporary mask to validate the film location through test shots.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">Masking tape acts as a temporary mask to validate the film location through test shots.</span>
@@ -119,9 +113,7 @@ At this point, I was ready to shoot some frames. I pulled the ground glass and m
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-mounted-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-mounted-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538"
-      style="background-size: cover; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http%3A//www.w3.org/2000/svg\' xmlns%3Axlink=\'http%3A//www.w3.org/1999/xlink\' viewBox=\'0 0 1280 853\'%3E%3Cfilter id=\'b\' color-interpolation-filters=\'sRGB\'%3E%3CfeGaussianBlur stdDeviation=\'.5\'%3E%3C/feGaussianBlur%3E%3CfeComponentTransfer%3E%3CfeFuncA type=\'discrete\' tableValues=\'1 1\'%3E%3C/feFuncA%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter=\'url(%23b)\' x=\'0\' y=\'0\' height=\'100%25\' width=\'100%25\' xlink%3Ahref=\'data%3Aimage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAs0lEQVQI1wGoAFf/AImSoJSer5yjs52ktp2luJuluKOpuJefsoCNowB+kKaOm66grL+krsCnsMGrt8m1u8mzt8OVoLIAhJqzjZ2tnLLLnLHJp7fNmpyjqbPCqLrRjqO7AIeUn5ultaWtt56msaSnroZyY4mBgLq7wY6TmwCRfk2Pf1uzm2WulV+xmV6rmGyQfFm3nWSBcEIAfm46jX1FkH5Djn5AmodGo49MopBLlIRBfG8yj/dfjF5frTUAAAAASUVORK5CYII=\'%3E%3C/image%3E%3C/svg%3E');"
-      src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-mounted-800.jpg" alt="Not small: the LomoGraflok mounted on the Speed Graphic.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20211207-speed-graphic-lomograflok-mounted-800.jpg" alt="Not small: the LomoGraflok mounted on the Speed Graphic.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">Not small: the LomoGraflok mounted on the Speed Graphic.</span>

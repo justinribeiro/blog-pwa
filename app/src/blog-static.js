@@ -89,7 +89,7 @@ class BlogStatic extends BlogElement {
 
   render() {
     return html`
-      <div id="metadataArticle"></div>
+      <section>${this.articleBody}</section>
       ${this.metadata.posts
         ? html`
             <div id="posts">

@@ -8,7 +8,7 @@ import json
 import re
 import jinja2
 import preloadlinks as pl
-import logging
+import secrets
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -30,6 +30,9 @@ def unescape(s):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        stylenonce = secrets.token_hex(16)
+        jsnonce = secrets.token_hex(16)
+
         self.response.headers[
             "Strict-Transport-Security"
         ] = "max-age=63072000; includeSubDomains; preload"
@@ -42,8 +45,8 @@ class MainHandler(webapp2.RequestHandler):
         self.response.headers["Content-Security-Policy"] = (
             "default-src 'none'; base-uri 'self'; "
             "worker-src 'self'; "
-            "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com blob: https://www.gstatic.com; "
-            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            "script-src 'nonce-js-" + jsnonce + "' 'strict-dynamic'; "
+            "style-src 'self' 'nonce-css-" + stylenonce + "' https://fonts.googleapis.com; "
             "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://us-west1-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://webmention.io/; "
             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
             "media-src 'self' https://storage.googleapis.com; "
@@ -169,6 +172,8 @@ class MainHandler(webapp2.RequestHandler):
             # support the CSS; bots generally don't care about this
             data["article"] = data["article"].replace("code-block", "pre")
 
+            data['cssnonce'] = stylenonce
+
             # Grab our template
             static_template = JINJA_ENVIRONMENT.get_template("dist/helpers/static.html")
 
@@ -197,7 +202,11 @@ class MainHandler(webapp2.RequestHandler):
 
             # Retarget our noscript
             # We chop the URL params for safety and add static param
-            data["noscript"] = self.request.path + "?static=true"
+            data = {
+                'noscript': self.request.path + '?static=true',
+                'cssnonce': stylenonce,
+                'jsnonce': jsnonce,
+            }
 
             # Grab our template
             pwa_template = JINJA_ENVIRONMENT.get_template("dist/index.html")

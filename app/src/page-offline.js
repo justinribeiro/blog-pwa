@@ -14,7 +14,7 @@ class BlogOffline extends BlogElement {
 
   mount() {
     this.__getDataCache();
-    this.__showSkeleton(false);
+
   }
 
   __getDataCache() {
@@ -83,7 +83,7 @@ class BlogOffline extends BlogElement {
 
   render() {
     return html`
-      <div id="metadataArticle">
+      <section>
         <h1>Welcome to the Offline World</h1>
         <p>
           Is your WiFi lying to you? Are you in a tunnel? Did your cat eat your
@@ -94,7 +94,7 @@ class BlogOffline extends BlogElement {
           at the moment, here are some articles and pages you've visited that
           you can read offline.
         </p>
-      </div>
+      </section>
       <div id="posts">
         ${this.availableUrls.map(
           post => html` <a href="${post.permalink}">
