@@ -59,8 +59,7 @@
     <link href="/data/tags/business/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Management and Business Articles" />
     <link href="/data/tags/personal/index.xml" rel="alternate" type="application/rss+xml" title="Justin Ribeiro - Personal Articles" />
 
-    {% raw %}
-    <style>
+    <style nonce="css-{{ cssnonce }}">
       :root {
         color-scheme: light dark;
         --bg: #ffffff;
@@ -542,7 +541,7 @@
         }
       }
     </style>
-    {% endraw %}
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&family=Literata:wght@400&display=swap">
   </head>
   <body>
@@ -593,7 +592,7 @@
               >
                 <a class="p-author h-card" href="/" itemprop="url">
                   <img
-                    src="/images/manifest/me-2018-150.jpg"
+                   src="/images/manifest/me-2018-150.jpg"
                     class="u-photo"
                     hidden
                   />
@@ -725,7 +724,7 @@
       <p class="p-note">A blog on web development, business, family, and a touch of photography by Justin Ribeiro.</p>
       <img
         id="me"
-        src="/images/manifest/me-2020-Q1-150.jpg"
+       src="/images/manifest/me-2020-Q1-150.jpg"
         alt="Justin Ribeiro"
         class="u-photo"
       />

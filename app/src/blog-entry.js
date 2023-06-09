@@ -62,7 +62,7 @@ class BlogEntry extends BlogElement {
    * 4. adds share links if web share api not available
    */
   async __processPageData() {
-    super.__processPageData();
+    await super.__processPageData();
 
     this.__removeAllChildNodes(this.__getDomRef('#featureImage'));
 
@@ -520,7 +520,7 @@ class BlogEntry extends BlogElement {
               )}
           </div>
         </header>
-        <div id="metadataArticle" itemprop="articleBody"></div>
+        <section itemprop="articleBody">${this.articleBody}</section>
         <footer id="metaShare" ?hidden=${this.metadata.pagetype === 'page'}>
           <div>
             <h3>Share this piece</h3>

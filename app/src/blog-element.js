@@ -1,5 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import { LitElement, css, html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 class BlogElement extends LitElement {
   static properties = {
@@ -9,6 +10,9 @@ class BlogElement extends LitElement {
     },
     featureImage: {
       type: Object,
+    },
+    articleBody: {
+      type: String,
     },
     __domRefs: {
       type: Object,
@@ -20,19 +24,6 @@ class BlogElement extends LitElement {
     super();
     this.resetView();
     this.__domRefs = new Map();
-  }
-
-  firstUpdated() {
-    this.shadowRoot.addEventListener(
-      'load',
-      e => {
-        if (e.target.tagName !== 'IMG') {
-          return;
-        }
-        e.target.style.backgroundImage = 'none';
-      },
-      true
-    );
   }
 
   /**
@@ -65,7 +56,7 @@ class BlogElement extends LitElement {
       pagetype: 'page',
       relatedposts: [],
     };
-
+    this.articleBody = '';
     this.content = '';
     this.share = [];
   }
@@ -95,7 +86,12 @@ class BlogElement extends LitElement {
       this.metadata = await response.json();
       this.__processPageData();
     } catch (error) {
-      window.location.href = '/';
+      // not ideal, but generally works
+      if (navigator.onLine) {
+        window.location.href = '/missing';
+      } else {
+        window.location.href = '/offline';
+      }
     }
   }
 
@@ -103,11 +99,8 @@ class BlogElement extends LitElement {
    * Process the data return and pump it into the main article body
    */
   async __processPageData() {
-    this.__removeAllChildNodes(this.__getDomRef('#metadataArticle'));
-    const template = document
-      .createRange()
-      .createContextualFragment(this.__unescapeHtml(this.metadata.article));
-    this.__getDomRef('#metadataArticle').appendChild(template);
+    const htmlData = this.__unescapeHtml(this.metadata.article);
+    this.articleBody = html`${unsafeHTML(htmlData.toString())}`;
 
     this.__setPageMetaData(this.metadata);
   }
@@ -334,6 +327,11 @@ class BlogElement extends LitElement {
       line-height: var(--font-lhr);
       font-weight: 300;
       font-size: var(--font-base);
+    }
+
+    img {
+      background: radial-gradient(rgb(101, 112, 100), rgb(166 175 170))
+        no-repeat;
     }
 
     [hidden] {

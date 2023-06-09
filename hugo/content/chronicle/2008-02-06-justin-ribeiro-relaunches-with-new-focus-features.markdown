@@ -10,9 +10,9 @@ title: JustinRibeiro.com relaunches with new focus, features
 url: /chronicle/2008/02/06/justin-ribeiro-relaunches-with-new-focus-features/
 ---
 
-<p align="left">After a few months, I am happy to finally launch the newest version of JustinRibeiro.com.  The site has been on the back burner for some time, as other projects have taken priority.  However, after putting the final touches on my Wordpress hacking I'm happy to finally allow this new version out the door.
+<p>After a few months, I am happy to finally launch the newest version of JustinRibeiro.com.  The site has been on the back burner for some time, as other projects have taken priority.  However, after putting the final touches on my Wordpress hacking I'm happy to finally allow this new version out the door.
 
-<p align="left">Some new features and changes the site contains:
+<p>Some new features and changes the site contains:
 
 
 
@@ -23,7 +23,7 @@ url: /chronicle/2008/02/06/justin-ribeiro-relaunches-with-new-focus-features/
 	* The main RSS feed is now powered by <a href="http://www.feedburner.com/fb/a/home">Feedburner</a>.
 	* I've removed the resume page.  If you would like my current resume, please just ask.
 
-<p align="left">What you can expect in the future:
+<p>What you can expect in the future:
 
 
 
@@ -32,5 +32,5 @@ url: /chronicle/2008/02/06/justin-ribeiro-relaunches-with-new-focus-features/
 	* I'm not planning on moving any of the projects off of J5 Studios
 	* The photography galleries on J5 Studios will remain, but Monica and I are in the implementation stages of opening a new photography gallery with purchase options, so stay tuned
 
-<p align="left">I hope everyone enjoys the new JustinRibeiro.com, and that we can start a new conversation here.
+<p>I hope everyone enjoys the new JustinRibeiro.com, and that we can start a new conversation here.
 
