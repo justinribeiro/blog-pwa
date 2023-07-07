@@ -28,7 +28,10 @@ socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210426-cwru-
 tags:
  - business
  - personal
+ - phd
 ---
+
+> Update, June 2023: Having been encouraged by my research, advisors, and colleagues, I declared and have been accepted into the PhD program in the School of Graduate Studies at Case Western Reserve University. So instead of now being a Doctoral Candidate in my 3rd year, I am now a PhD student preparing for comprehensives next year and working diligently on my 2nd study and dissertation.
 
 The lack of writing here over the course of the last couple of months is by no accident. I've not befallen writers block or illness, I've not been buried under work or deadlines. I've not been hiding from the light of day so much as trying to climb a mountain to see it from a new perspective, a set of vastly different contexts with very different stakes.
 
