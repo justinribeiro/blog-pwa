@@ -47,7 +47,7 @@ class MainHandler(webapp2.RequestHandler):
             "worker-src 'self'; "
             "script-src 'nonce-js-" + jsnonce + "' 'strict-dynamic'; "
             "style-src 'self' 'nonce-css-" + stylenonce + "' https://fonts.googleapis.com; "
-            "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://us-west1-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://webmention.io/; "
+            "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://us-west1-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://webmention.io/ https://analytics.google.com; "
             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
             "media-src 'self' https://storage.googleapis.com; "
             "form-action 'self' https://webmention.io; "

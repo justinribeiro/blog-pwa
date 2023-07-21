@@ -17,6 +17,7 @@
     "@open-wc/eslint-config": "^4.3.0",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.3",
     "@web/dev-server": "^0.1.26",
     "@web/rollup-plugin-copy": "^0.3.0",
     "@web/rollup-plugin-html": "^1.11.0",
@@ -39,12 +40,11 @@
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-size": "^0.2.2",
     "rollup-plugin-summary": "^2.0.0",
-    "rollup-plugin-terser": "^7.0.2",
     "stylelint": "^14.0.0",
     "stylelint-config-prettier": "^9.0.0",
     "stylelint-config-recommended": "^6.0.0",
     "web-component-analyzer": "^1.0.3",
-    "workbox-cli": "^6.3.0"
+    "workbox-cli": "^7.0.0"
   },
   "scripts": {
     "dev": "yarn wds --port 8081 --app-index index.html --node-resolve --open --watch",
@@ -80,7 +80,7 @@
     "prismjs": "^1.21.0",
     "pwa-helpers": "^0.9.1",
     "web-vitals": "^3.0.0",
-    "workbox-window": "^6.0.0"
+    "workbox-window": "^7.0.0"
   },
   "eslintConfig": {
     "parserOptions": {

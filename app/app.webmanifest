@@ -10,12 +10,6 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
       "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
