@@ -85,6 +85,11 @@ class BlogStatic extends BlogElement {
       import('./lod-ribeiro-social-photos.js');
       import('./lod-youtube-list.js');
     }
+
+    // because the "more" buttons are outside the render() of the page data
+    // which causes a CLS shift of weirdness; this is imperfect at best
+    await this.updateComplete;
+    this.clsSteady = true;
   }
 
   render() {
@@ -111,7 +116,7 @@ class BlogStatic extends BlogElement {
               )}
             </div>
             <br />
-            <p class="more">
+            <p class="more" ?hidden=${this.clsSteady === false}>
               <a class="more" href="/chronicle/"
                 >More posts and articles &raquo;
               </a>
@@ -123,7 +128,7 @@ class BlogStatic extends BlogElement {
             <h2>The Latest Photographs</h2>
             <ribeiro-social-photos> Fetching... </ribeiro-social-photos>
             <br />
-            <p class="more">
+            <p class="more" ?hidden=${this.clsSteady === false}>
               More photographs:
               <a class="more" rel="me" href="https://ribeiro.social/@justin">
                 Ribeiro.Social
@@ -141,7 +146,7 @@ class BlogStatic extends BlogElement {
             <h2>The Latest Videos</h2>
             <youtube-video-list> Fetching... </youtube-video-list>
             <br />
-            <p class="more">
+            <p class="more" ?hidden=${this.clsSteady === false}>
               More Videos:
               <a
                 class="more"

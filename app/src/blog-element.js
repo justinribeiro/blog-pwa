@@ -14,6 +14,9 @@ class BlogElement extends LitElement {
     articleBody: {
       type: String,
     },
+    clsSteady: {
+      type: Boolean,
+    },
     __domRefs: {
       type: Object,
       attribute: false,
@@ -59,6 +62,7 @@ class BlogElement extends LitElement {
     this.articleBody = '';
     this.content = '';
     this.share = [];
+    this.clsSteady = false;
   }
 
   /**
