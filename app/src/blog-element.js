@@ -14,9 +14,6 @@ class BlogElement extends LitElement {
     articleBody: {
       type: String,
     },
-    clsSteady: {
-      type: Boolean,
-    },
     __domRefs: {
       type: Object,
       attribute: false,
@@ -155,21 +152,10 @@ class BlogElement extends LitElement {
     document.title = `${title} - Justin Ribeiro`;
 
     this.__setMetaDom('property', 'og:title', document.title);
-    this.__setMetaDom('property', 'twitter:title', document.title);
-
     this.__setMetaDom('name', 'description', description);
     this.__setMetaDom('property', 'og:description', description);
-    this.__setMetaDom('property', 'twitter:description', description);
-
-    this.__setMetaDom(
-      'property',
-      'twitter:image:src',
-      socialimage || fallbackImg
-    );
     this.__setMetaDom('property', 'og:image', socialimage || fallbackImg);
-
     this.__setMetaDom('property', 'og:url', url || document.location.href);
-    this.__setMetaDom('property', 'twitter:url', url || document.location.href);
   }
 
   /**

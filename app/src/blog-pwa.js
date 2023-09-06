@@ -56,7 +56,6 @@ class BlogPwa extends LitElement {
 
     this.__setupRouter();
     this.__initializeNonCrpResources();
-    BlogPwa.__setupPrefersColorScheme();
   }
 
   /**
@@ -275,29 +274,6 @@ class BlogPwa extends LitElement {
    */
   __listenForSbMessageEvent(event) {
     this.showSnackbar(event.detail);
-  }
-
-  /**
-   * Setup the color scheme based on user system preference
-   * @static
-   */
-  static async __setupPrefersColorScheme() {
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-      const darkModeOn = e.matches;
-      const cHtml = document.querySelector(':root');
-      if (darkModeOn) {
-        cHtml.setAttribute('darkmode', '');
-      } else {
-        cHtml.removeAttribute('darkmode');
-      }
-    });
-
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.querySelector(':root').setAttribute('darkmode', '');
-    } else if ('AmbientLightSensor' in window) {
-      const module = await import('./lod-experimental-web.js');
-      module.setupAmbientLightThemeSwitching();
-    }
   }
 
   /**

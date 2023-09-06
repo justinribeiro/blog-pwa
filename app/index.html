@@ -72,30 +72,32 @@
         --motion-type:  none;
       }
 
-      :root[darkmode] {
-        --bg: #121212;
-        --primary-text-color: #fafafa;
-        --secondary-text-color: #F1f1f1;
-        --accent-color-primary: #81d7ff;
-        --accent-color-secondary: #D06262;
-        --section-color: #444;
-        --structs-bg:#333;
-        --structs-hi: #FF94F6;
-        --structs-border: #555;
-        --skeleton-bg: #cccccc;
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121212;
+          --primary-text-color: #fafafa;
+          --secondary-text-color: #F1f1f1;
+          --accent-color-primary: #81d7ff;
+          --accent-color-secondary: #D06262;
+          --section-color: #444;
+          --structs-bg:#333;
+          --structs-hi: #FF94F6;
+          --structs-border: #555;
+          --skeleton-bg: #cccccc;
 
-        --form-button-color: #868200;
+          --form-button-color: #868200;
 
-        --diff-del-color: #ff0026;
-        --diff-ins-color: #0b4e02;
+          --diff-del-color: #ff0026;
+          --diff-ins-color: #0b4e02;
 
-        --code-background: #0c0c0c;
-        --code-color: #DD4A68;
-        --code-block-bg: #000;
-        --code-block-text: #fafafa;
+          --code-background: #0c0c0c;
+          --code-color: #DD4A68;
+          --code-block-bg: #000;
+          --code-block-text: #fafafa;
 
-        --image-filter: grayscale(50%);
-        --wc-stm-dialog-background-color: #000;
+          --image-filter: grayscale(50%);
+          --wc-stm-dialog-background-color: #000;
+        }
       }
 
       @media (prefers-reduced-motion: no-preference) {
@@ -251,8 +253,6 @@
     <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2021.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-apple-180.png">
     <link rel="manifest" href="/app.webmanifest">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@justinribeiro">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="JustinRibeiro.com">
     <meta property="og:image" content="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-192.png" />
@@ -282,8 +282,6 @@
       </div>
     </header>
     <noscript aria-hidden="true">
-      <p>JavaScript appears to be turned off and that's a-okay!</p>
-      <p>This Progressive Web App is Progressive! Redirecting to static page...</p>
       <meta http-equiv="refresh" content="0;url={{ noscript }}">
     </noscript>
     <blog-pwa></blog-pwa>

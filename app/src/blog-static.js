@@ -94,6 +94,8 @@ class BlogStatic extends BlogElement {
 
   render() {
     return html`
+      <h1 itemprop="headline">${this.metadata.title}</h1>
+      <h2 class="subheadline">${this.metadata.description}</h2>
       <section>${this.articleBody}</section>
       ${this.metadata.posts
         ? html`

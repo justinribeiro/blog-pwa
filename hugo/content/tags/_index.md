@@ -1,15 +1,11 @@
 ---
 date: 2019-10-07T00:00:00-08:00
 title: "Tags and Categories"
-description: "Not digging the random stream of thoughts mixed together in the main feed? You're in luck: there are five major tags that contain different themes of material."
+description: "Not digging the random stream of thoughts mixed together in the main feed? Fear not: I some tags that are available for finer grain control of your reading and viewing experience."
 sitemap:
   changefreq: "weekly"
   priority: 0.8
 ---
-
-# 📰 Tags and Categories
-
-Not digging the random stream of thoughts mixed together in the main feed? You're in luck: there are five major tags that contain different themes of material.
 
 ## 🕸️ Web Dev, Web Perf, and Web Platform Articles
 

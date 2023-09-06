@@ -2779,6 +2779,11 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
+dark-mode-toggle@^0.14.6:
+  version "0.14.6"
+  resolved "https://registry.yarnpkg.com/dark-mode-toggle/-/dark-mode-toggle-0.14.6.tgz#3cb8f494ec96d9dd05394364cf5d28d348d14824"
+  integrity sha512-I27vghhZXYfGqLjR90R8WnNUU6AFldMOAuBI13RsKQ16NlWCUW9aj3zj7fvel5TqGZPFOhDsoRVzbI/m+VTimQ==
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
