@@ -20,7 +20,7 @@ export default {
       compress: {
         inline: 0,
         drop_console: true,
-        ecma: 2020,
+        ecma: 2022,
       },
       output: {
         comments: false,
