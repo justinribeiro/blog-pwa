@@ -18,12 +18,16 @@ class BlogElement extends LitElement {
       type: Object,
       attribute: false,
     },
+    __stripDown: {
+      type: Boolean,
+    },
   };
 
   constructor() {
     super();
     this.resetView();
     this.__domRefs = new Map();
+    this.__stripDown = false;
   }
 
   /**
@@ -104,6 +108,26 @@ class BlogElement extends LitElement {
     this.articleBody = html`${unsafeHTML(htmlData.toString())}`;
 
     this.__setPageMetaData(this.metadata);
+
+    await this.updateComplete;
+
+    if (!this.__stripDown) {
+      document.dispatchEvent(
+        new CustomEvent('blog-pwa-clean-prerender-slot', {
+          bubbles: true,
+          composed: true,
+        })
+      );
+      this.__stripDown = true;
+    }
+
+    // I kindaaaaa don't care about the analytics anymore; this should be the
+    // post-shell trigger, but if it accidental double counts it's not going to
+    // skew my stats enough that'll I'll care (I look at them like once a year
+    // LOL)
+    if (window.ga4track) {
+      window.ga4track.trackEvent('page_view');
+    }
   }
 
   /**

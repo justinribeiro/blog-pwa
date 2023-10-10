@@ -1,42 +1,23 @@
+import ga4mp from '@analytics-debugger/ga4mp';
+
 const analyticsId = 'G-37E9EEEWD9';
+const ga4track = ga4mp([analyticsId], {
+  user_id: undefined,
+  non_personalized_ads: true,
+  debug: true,
+});
 
+/**
+ * This is strip down because GA4 is a heavy nightmare
+ */
 function initAnalytics() {
-  let libUrl;
-  const analyticsSrc = url => {
-    const parsed = new URL(url, 'https://www.googletagmanager.com');
-    if (parsed.origin === 'https://www.googletagmanager.com') {
-      return parsed.href;
-    }
-    throw new TypeError('invalid analytics url');
-  };
-  if (window.trustedTypes && window.trustedTypes.createPolicy) {
-    const analyticsPolicy = window.trustedTypes.createPolicy(
-      'analyticsPolicy',
-      {
-        createScriptURL: src => analyticsSrc(src),
-      }
-    );
-    libUrl = analyticsPolicy.createScriptURL(`gtag/js?id=${analyticsId}`);
-  } else {
-    libUrl = analyticsSrc(`gtag/js?id=${analyticsId}`);
-  }
+  // Meh, lazy Justin
+  window.ga4track = ga4track;
 
-  const gaScriptElement = document.createElement('script');
-  gaScriptElement.async = 1;
-  gaScriptElement.src = libUrl;
-  const firstScript = document.getElementsByTagName('script')[0];
-  firstScript.parentNode.insertBefore(gaScriptElement, firstScript);
-
-  window.dataLayer = window.dataLayer || [];
-  // GA4 chokes hard on rest args for some reason...
-  function gtag() {
-    // eslint-disable-next-line prefer-rest-params
-    window.dataLayer.push(arguments);
-  }
-  window.gtag = gtag;
-
-  gtag('js', new Date());
-  gtag('config', analyticsId);
+  ga4track.trackEvent('page_view', {
+    is_session_start: true,
+    is_first_visit: true,
+  });
 }
 
 /**
@@ -68,7 +49,7 @@ function __trackCwpMetric({ name, delta, value, id, attribution }) {
       eventParams.debug_target = 'Not Applicable';
   }
 
-  gtag('event', name, eventParams);
+  ga4track.trackEvent(name, eventParams);
 }
 
 async function initCwp() {
