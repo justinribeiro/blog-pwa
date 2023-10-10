@@ -130,26 +130,30 @@ class MainHandler(webapp2.RequestHandler):
         ]
         bot_list_search = "(?:%s)" % "|".join(bot_list_hunt)
 
-        name = os.path.join(
-            os.path.dirname(__file__),
-            "dist/data/",
-            self.request.path.lstrip("/")
-            .replace("index.html", "")
-            .replace("index.php", ""),
-            "index.json",
-        )
-        f = open(name, "r")
-        c = f.read()
-        f.close()
+        # don't "build" the shell; return empty for the service worker
+        if self.request.path.lstrip("/") != "sw-shell.html":
+            name = os.path.join(
+                os.path.dirname(__file__),
+                "dist/data/",
+                self.request.path.lstrip("/")
+                .replace("index.html", "")
+                .replace("index.php", ""),
+                "index.json",
+            )
+            f = open(name, "r")
+            c = f.read()
+            f.close()
 
-        # parse the read
-        data = json.loads(c)
+            # parse the read
+            data = json.loads(c)
 
-        # save our html
-        data["article"] = unescape(data["article"])
+            # save our html
+            data["article"] = unescape(data["article"])
 
-        if "featureimage" in data:
-            data["featureimage"] = unescape(data["featureimage"])
+            if "featureimage" in data:
+                data["featureimage"] = unescape(data["featureimage"])
+        else:
+            data = {}
 
         # Fun fact: a lot of webmention tools don't set a user agent, which
         # causes this to die hard, so let's just work around it for now
@@ -195,21 +199,24 @@ class MainHandler(webapp2.RequestHandler):
                 .replace("index.php", ""),
                 "index.json",
             )
-            push = os.path.join(os.path.dirname(__file__), "dist/push_manifest.json")
-            self.push_urls = pl.use_push_manifest(push)
-            header = pl.generate_link_preload_headers(self)
-            self.response.headers.add_header("Link", header)
+            #push = os.path.join(os.path.dirname(__file__), "dist/push_manifest.json")
+            #self.push_urls = pl.use_push_manifest(push)
+            #header = pl.generate_link_preload_headers(self)
+            #self.response.headers.add_header("Link", header)
 
-            # Retarget our noscript
-            # We chop the URL params for safety and add static param
-            data = {
-                'noscript': self.request.path + '?static=true',
-                'cssnonce': stylenonce,
-                'jsnonce': jsnonce,
-            }
+            data['noscript'] = self.request.path + '?static=true'
+            data['cssnonce'] = stylenonce
+            data['jsnonce'] = jsnonce
+
+            # Since the index is now built with a first render, we don't want
+            # the shell to have that when served from the device so give it a
+            # slim-set version
+            template = "dist/index.html"
+            if self.request.path.lstrip("/") == "sw-shell.html":
+                template = "dist/sw-shell.html"
 
             # Grab our template
-            pwa_template = JINJA_ENVIRONMENT.get_template("dist/index.html")
+            pwa_template = JINJA_ENVIRONMENT.get_template(template)
 
             # Send down the wire
             return self.response.write(pwa_template.render(data))

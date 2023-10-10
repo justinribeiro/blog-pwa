@@ -237,90 +237,7 @@
           letter-spacing: -0.1em;
         }
       }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: var(--font-family-headers);
-        margin: 0 0 var(--space-cs) var(--header-font-offset-left);
-        line-height: 1.15;
-        letter-spacing: var(--header-letter-spacing);
-      }
-
-      h1 {
-        font-size: var(--font-h1);
-        margin-top: var(--space-cs);
-      }
-
-      p,
-      li,
-      label {
-        font-family: var(--font-family-serif);
-        margin: 0 0 calc(var(--space-cs) * 2) 0;
-        color: var(--primary-text-color);
-        font-size: var(--font-base);
-        line-height: calc(var(--font-base) * var(--font-lhr));
-      }
-
-      /* Don't like this; special case. TODO extract */
-      p code,
-      li code {
-        background-color: var(--code-background);
-        color: var(--code-color);
-        font-size: 85%;
-      }
-
-      blockquote {
-        border-left: var(--outline-thickness) solid var(--accent-color-primary);
-        padding-left: var(--space-cs);
-        font-style: oblique;
-      }
-
-      img {
-        filter: var(--image-filter, initial);
-      }
-
-      main {
-        max-width: var(--page-last);
-        padding: 0 calc(var(--space-cs) * 2);
-        display: grid;
-        justify-content: center;
-      }
-
-      #tags a {
-        /* display: inline-block; */
-        border: var(--border-thickness) solid var(--structs-border);
-        border-radius: var(--border-radius);
-        padding: calc(var(--space-cs) / 2);
-        background: var(--structs-bg);
-        line-height: calc((var(--space-cs) * 2) + var(--font-base));
-      }
-
-      .subheadline {
-        margin: calc(var(--space-cs) * 2) 0;
-        font-family: var(--font-family-san-serif);
-        line-height: var(--font-lhr);
-        font-weight: 300;
-        font-size: var(--font-base);
-      }
-
-      blog-pwa {
-        display: grid;
-        align-items: center;
-        justify-content: center;
-      }
-
-      main {
-        display: grid;
-        justify-content: center;
-        min-height: 100vh;
-        position: relative;
-      }
     </style>
-
     <meta name="description" content="I ❤️ the open web. Film photographer and mediocre darkroom printer. Maker of sometimes interesting things. Coder of open source curiosities. Always exploring.">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f1f1">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
@@ -335,6 +252,8 @@
     <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2021.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-apple-180.png">
     <link rel="manifest" href="/app.webmanifest">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@justinribeiro">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="JustinRibeiro.com">
     <meta property="og:image" content="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-192.png" />
@@ -344,14 +263,11 @@
     <link id="fonts" rel="stylesheet" media="print" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&family=Literata:wght@400&display=swap">
   </head>
   <body>
-    <script nonce="js-{{ jsnonce }}" nomodule>
-      window.location.href = '{{ noscript }}';
-    </script>
     <header id="pageHeader">
       <picture>
         <source srcset="https://storage.googleapis.com/jdr-public-imgs/manifest/justinribeiro-headshot-color-2022-v1-150.webp" type="image/webp">
         <source srcset="https://storage.googleapis.com/jdr-public-imgs/manifest/justinribeiro-headshot-color-2022-v1-150.jpg" type="image/jpeg">
-        <img decoding="async" id="me" src="https://storage.googleapis.com/jdr-public-imgs/manifest/justinribeiro-headshot-color-2022-v1-150.jpg" width="75" height="75" alt="Justin Ribeiro">
+        <img decoding="async" loading="lazy" id="me" src="https://storage.googleapis.com/jdr-public-imgs/manifest/justinribeiro-headshot-color-2022-v1-150.jpg" width="75" height="75" alt="Justin Ribeiro">
       </picture>
       <div>
         <h1 id="mainHeader">Justin Ribeiro</h1>
@@ -365,152 +281,11 @@
       </div>
     </header>
     <noscript aria-hidden="true">
+      <p>JavaScript appears to be turned off and that's a-okay!</p>
+      <p>This Progressive Web App is Progressive! Redirecting to static page...</p>
       <meta http-equiv="refresh" content="0;url={{ noscript }}">
     </noscript>
-    <blog-pwa prerender="true">
-      <main>
-        <article
-          itemprop="blogPost"
-          itemscope
-          itemtype="http://schema.org/BlogPosting"
-          class="h-entry"
-        >
-          <header>
-            <h1 itemprop="headline" class="p-name">{{ title | safe }}</h1>
-            <h2 class="subheadline">{{ description }}</h2>
-            <div id="featureImage">{{ featureimage | safe }}</div>
-
-            {% if pagetype == "post" %}
-            <div class="reads">
-              <time
-                datetime="{{ dataModified }}"
-                itemprop="datePublished dateModified"
-                content="{{ dateModified }}"
-              >
-                {{ date }}
-              </time>
-              <span class="dotDivider"></span> {{ readingtime }} min read
-              <span
-                itemprop="publisher author"
-                itemscope
-                itemtype="http://schema.org/Person"
-                hidden
-              >
-                <a class="p-author h-card" href="/" itemprop="url">
-                  <img
-                  src="/images/manifest/me-2018-150.jpg"
-                    class="u-photo"
-                    alt="Justin Ribeiro"
-                    hidden
-                  />
-                  <span itemprop="name">Justin Ribeiro</span>
-                  <span class="u-url">https://justinribeiro.com</span>
-                </a>
-              </span>
-              <span class="dotDivider"></span>
-              Filed in
-              {% set tags = tags.split(',') %}
-              {% for tag in tags %}
-              <a href="/tags/{{ tag | lower }}/">{{ tag }}</a>
-              {% endfor %}
-            </div>
-            {% endif %}
-          </header>
-          <div itemprop="articleBody" class="e-content">
-            {{ article | safe }}
-          </div>
-          {% if pagetype == "post" %}
-          <footer id="metaShare">
-            <div>
-              <h3>Share this piece</h3>
-              <p id="share">
-                <a
-                  href="https://twitter.com/intent/tweet?url={{
-                    permalink
-                  }}&text={{ title }} via @justinribeiro"
-                  >Twitter</a
-                >
-                <a href="https://www.facebook.com/sharer.php?u={{ permalink }}"
-                  >Facebook</a
-                >
-                <a
-                  href="https://www.linkedin.com/shareArticle?mini=true&url={{
-                    permalink
-                  }}&title={{ title }}&source=&summary={{ description }}"
-                  >LinkedIn</a
-                >
-                <a
-                  href="mailto:?subject=Article:
-              {{ title }}&body=Article from Justin Ribeiro:
-              {{ permalink }}"
-                  >Email</a
-                >
-              </p>
-              <h3>Respond to this piece</h3>
-              <form
-                id="webMentionForm"
-                action="https://webmention.io/justinribeiro.com/webmention"
-                method="POST"
-                target="_blank"
-              >
-                <input
-                  type="hidden"
-                  name="target"
-                  value="{{ permalink }}"
-                />
-                <label
-                  >Written a response or comment to this post? Fantastic! I
-                  support
-                  <a href="https://indieweb.org/Webmention">WebMentions</a>. Paste
-                  and send your URL here:</label
-                >
-                <input
-                  type="url"
-                  name="source"
-                  placeholder="https://your-amazing-response-url-here/"
-                  id="webMentionSource"
-                />
-                <button type="submit">
-                  🚚 Send Webmention
-                </button>
-              </form>
-              <br />
-              <p>
-                Author Justin Ribeiro wrote {{ words }} words for
-                <a href="{{ permalink }}" class="u-url">this piece</a> on
-                <time class="dt-published" datetime="{{ dateModified }}">{{
-                  dateModified
-                }}</time>
-                and hopes you enjoyed it. Find an issue?
-                <a href="https://github.com/justinribeiro/blog-pwa/issues"
-                  >File a ticket</a
-                >
-                or
-                <a
-                  href="https://github.com/justinribeiro/blog-pwa/tree/master/hugo/content/{{
-                    filename
-                  }}"
-                  >edit this on Github.</a
-                >
-              </p>
-            </div>
-          </footer>
-        </article>
-        {% endif %} {% if posts %}
-        <section id="posts">
-          {% for post in posts %}
-            <a href="{{ post.permalink }}">
-              <h3>{{ post.title }}</h3>
-              <p>
-                <time aria-label="Posted {{ post.date }}">🗒️ {{ post.date }}</time>
-                • {{ post.readingtime }} min read
-              </p>
-            </a>
-          {% endfor %}
-        </section>
-        {% endif %}
-      </main>
-    </blog-pwa>
+    <blog-pwa></blog-pwa>
     <footer id="pageFooter">
       <section>
         <h2 class="footerHeader">Hello, nice to meet you.</h2>
@@ -527,7 +302,7 @@
       </section>
     </footer>
     <script nonce="js-{{ jsnonce }}">window.litNonce = 'css-{{ cssnonce }}'; window.liteYouTubeNonce = 'css-{{ cssnonce }}';</script>
-    <script type="module" src="./src/blog-pwa.js" nonce="js-{{ jsnonce }}" fetchpriority="high"></script>
+    <script type="module" src="./src/blog-pwa.js" nonce="js-{{ jsnonce }}"></script>
     <script type="application/ld+json" nonce="js-{{ jsnonce }}">{"@context":"http://schema.org","@type":"Person","name":"Justin Ribeiro","url":"https://justinribeiro.com/","email":"justin@justinribeiro.com","image":"https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-color-2022-v1-512.jpg","sameAs":["https://twitter.com/justinribeiro","https://www.linkedin.com/in/justinribeiro","https://read.cv/justinribeiro","https://github.com/justinribeiro","https://facebook.com/justinribeiro","https://ribeiro.social/@justin","https://hub.docker.com/r/justinribeiro/","https://developers.google.com/community/experts/directory/profile/profile-justin_ribeiro","https://www.instagram.com/justin.d.ribeiro/","https://www.tiktok.com/@justin.d.ribeiro","https://weatherhead.case.edu/students/justin-ribeiro","https://www.youtube.com/@justinribeiro"]}</script>
     <script nonce="js-{{ jsnonce }}">document.getElementById("fonts").addEventListener("load", function() { this.media = "all"; });</script>
   </body>

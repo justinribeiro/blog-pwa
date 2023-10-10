@@ -4,15 +4,16 @@ module.exports = {
   inlineWorkboxRuntime: true,
   skipWaiting: false,
   clientsClaim: true,
-  offlineGoogleAnalytics: true,
+  offlineGoogleAnalytics: false,
   cleanupOutdatedCaches: true,
   cacheId: 'BLOG-PWA',
   globDirectory: './build/default/',
-  globPatterns: ['index.html', '**/blog-*.js'],
-  navigateFallback: '/index.html',
+  globPatterns: ['sw-shell.html', '**/blog-*.js'],
+  navigateFallback: '/sw-shell.html',
   navigateFallbackAllowlist: [/^(?!.*\.html).*/],
   navigateFallbackDenylist: [/xml/],
   ignoreURLParametersMatching: [/^utm_/],
+  babelPresetEnvTargets: ['> 0.75% and last 2 versions'],
   runtimeCaching: [
     {
       urlPattern: /.*\?static=true/,
@@ -48,26 +49,12 @@ module.exports = {
       },
     },
     {
-      urlPattern: /^https:\/\/us-west2-justinribeiro-web\.cloudfunctions\.net/,
+      urlPattern:
+        /^https:\/\/us-west(?:1|2)-justinribeiro-web\.cloudfunctions\.net/,
       handler: 'NetworkFirst',
       options: {
         networkTimeoutSeconds: 3,
-        cacheName: 'link-cache',
-        expiration: {
-          maxEntries: 200,
-          purgeOnQuotaError: true,
-          matchOptions: {
-            ignoreVary: true,
-          },
-        },
-      },
-    },
-    {
-      urlPattern: /^https:\/\/us-west1-justinribeiro-web\.cloudfunctions\.net/,
-      handler: 'NetworkFirst',
-      options: {
-        networkTimeoutSeconds: 3,
-        cacheName: 'video-cache',
+        cacheName: 'api-cache',
         expiration: {
           maxEntries: 200,
           purgeOnQuotaError: true,
@@ -100,6 +87,9 @@ module.exports = {
       handler: 'StaleWhileRevalidate',
       options: {
         cacheName: 'google-fonts-stylesheets',
+        cacheableResponse: {
+          statuses: [0, 200],
+        },
       },
     },
     {

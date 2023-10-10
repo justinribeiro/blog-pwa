@@ -19,6 +19,9 @@ class BlogPwa extends LitElement {
     __dom: {
       type: Object,
     },
+    prerender: {
+      type: Boolean,
+    },
   };
 
   constructor() {
@@ -27,6 +30,7 @@ class BlogPwa extends LitElement {
     this.__dom = {
       snackBar: null,
     };
+    this.prerender = false;
   }
 
   connectedCallback() {
@@ -55,7 +59,17 @@ class BlogPwa extends LitElement {
     this.__dom.snackBar = this.shadowRoot.querySelector('snack-bar');
 
     this.__setupRouter();
-    this.__initializeNonCrpResources();
+    this.__loadServiceWorker();
+
+    if (this.prerender) {
+      window.addEventListener(
+        'blog-pwa-clean-prerender-slot',
+        this.__listenForSlotCleanEvent.bind(this),
+        { once: true }
+      );
+    } else {
+      this.shadowRoot.querySelector('#prerender').remove();
+    }
   }
 
   /**
@@ -158,7 +172,6 @@ class BlogPwa extends LitElement {
   async __initializeNonCrpResources() {
     if (!this.__loaded) {
       import('./blog-lazy-load.js').then(async () => {
-        this.__loadServiceWorker();
         BlogPwa.__loadAnalytics();
         this.__loaded = true;
       });
@@ -230,6 +243,7 @@ class BlogPwa extends LitElement {
 
       wb.register();
     }
+    this.__initializeNonCrpResources();
   }
 
   /**
@@ -276,6 +290,10 @@ class BlogPwa extends LitElement {
     this.showSnackbar(event.detail);
   }
 
+  __listenForSlotCleanEvent() {
+    this.shadowRoot.querySelector('#prerender').classList.add('slide-hide');
+  }
+
   /**
    * Open the snackbar and show the user a message
    *
@@ -313,6 +331,7 @@ class BlogPwa extends LitElement {
   static styles = css`
     :host {
       display: block;
+      position: relative;
       min-height: 100vh;
     }
 
@@ -322,12 +341,31 @@ class BlogPwa extends LitElement {
       min-height: 100vh;
       position: relative;
     }
+
+    #prerender {
+      display: grid;
+      justify-content: center;
+      min-height: 100vh;
+      position: absolute;
+      top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      width: calc(var(--page-last) + 32px);
+    }
+
+    .slide-hide {
+      opacity: 0;
+      transform: translateX(-10000px);
+    }
   `;
 
   render() {
     return html`
       <main id="outlet"></main>
       <snack-bar hidden></snack-bar>
+      <div id="prerender" aria-hidden="true"><slot></slot></div>
     `;
   }
 }
