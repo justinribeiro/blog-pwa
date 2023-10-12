@@ -12,6 +12,9 @@ export default {
     entryFileNames: '[name]-[hash].js',
     format: 'es',
     sourcemap: true,
+    generatedCode: {
+      preset: 'es2015',
+    },
   },
   plugins: [
     resolve(),
