@@ -290,8 +290,14 @@ class BlogPwa extends LitElement {
     this.showSnackbar(event.detail);
   }
 
-  __listenForSlotCleanEvent() {
-    this.shadowRoot.querySelector('#prerender').classList.add('slide-hide');
+  /**
+   * Soooo hacky Justin, but the perf ain't bad
+   */
+  async __listenForSlotCleanEvent() {
+    const ele = this.shadowRoot.querySelector('#prerender');
+    ele.classList.add('slide-hide');
+    await this.updateComplete;
+    ele.remove();
   }
 
   /**
