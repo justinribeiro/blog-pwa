@@ -29,6 +29,8 @@ class BlogStatic extends BlogElement {
         font-weight: 400;
         font-family: var(--font-family-serif);
         font-size: 1.5rem;
+        display: inline;
+        border-bottom: 1px solid var(--accent-color-primary);
       }
 
       #posts > a p {
@@ -57,6 +59,10 @@ class BlogStatic extends BlogElement {
       #posts > a:hover p,
       #posts > a:hover h3 {
         color: #fff;
+      }
+
+      #posts > a:hover h3 {
+        border-bottom: 1px solid #fff;
       }
 
       #shoutout {
@@ -114,7 +120,7 @@ class BlogStatic extends BlogElement {
                       • ${post.readingtime} min read
                     </p>
                   </a>
-                `
+                `,
               )}
             </div>
             <br />

@@ -37,19 +37,23 @@ class BlogPwa extends LitElement {
     super.connectedCallback();
     window.addEventListener(
       'blog-pwa-show-message',
-      this.__listenForSbMessageEvent.bind(this)
+      this.__listenForSbMessageEvent.bind(this),
     );
-    document.addEventListener('keydown', BlogPwa.__listenForEscapeKeyEvent, {
-      passive: true,
-    });
+    document.addEventListener(
+      'keydown',
+      this.__listenForEscapeKeyEvent.bind(this),
+      {
+        passive: true,
+      },
+    );
   }
 
   disconnectedCallback() {
     window.removeEventListener(
       'blog-pwa-show-message',
-      this.__listenForSbMessageEvent.bind(this)
+      this.__listenForSbMessageEvent.bind(this),
     );
-    document.removeEventListener('keydown', BlogPwa.__listenForEscapeKeyEvent, {
+    document.removeEventListener('keydown', this.__listenForEscapeKeyEvent.bind(this), {
       passive: true,
     });
     super.disconnectedCallback();
@@ -65,7 +69,7 @@ class BlogPwa extends LitElement {
       window.addEventListener(
         'blog-pwa-clean-prerender-slot',
         this.__listenForSlotCleanEvent.bind(this),
-        { once: true }
+        { once: true },
       );
     } else {
       this.shadowRoot.querySelector('#prerender').remove();
@@ -97,7 +101,7 @@ class BlogPwa extends LitElement {
     let route;
     switch (true) {
       case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*|about|talks)/.test(
-        location.pathname
+        location.pathname,
       ):
         route = 'entry';
         break;
@@ -145,7 +149,7 @@ class BlogPwa extends LitElement {
 
     try {
       const checkElement = this.__domRefRouter.querySelector(
-        `${eleRoot}-${type}`
+        `${eleRoot}-${type}`,
       );
       if (checkElement) {
         await checkElement.mount();
@@ -221,7 +225,7 @@ class BlogPwa extends LitElement {
             },
             {
               timeout: 5000,
-            }
+            },
           );
         } else {
           BlogPwa.__cacheExistingLoadedUrls(wb);
@@ -271,13 +275,13 @@ class BlogPwa extends LitElement {
    * @static
    * @event blog-pwa-escape-pressed
    */
-  static __listenForEscapeKeyEvent(event) {
+  __listenForEscapeKeyEvent(event) {
     if (event.key === 'Escape') {
-      document.dispatchEvent(
+      this.shadowRoot.querySelector('blog-entry').dispatchEvent(
         new CustomEvent('blog-pwa-escape-pressed', {
           bubbles: true,
           composed: true,
-        })
+        }),
       );
     }
   }

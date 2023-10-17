@@ -32,10 +32,15 @@ class BlogEntry extends BlogElement {
 
   firstUpdated() {
     super.firstUpdated();
-    document.addEventListener(
-      'blog-pwa-escape-pressed',
-      this.__figureCloseOnEscape.bind(this)
-    );
+    if (!window.matchMedia('(max-width: 767px)').matches) {
+      this.addEventListener(
+        'blog-pwa-escape-pressed',
+        this.__figureCloseOnEscape.bind(this),
+        {
+          passive: true,
+        },
+      );
+    }
   }
 
   disconnectedCallback() {
@@ -51,6 +56,13 @@ class BlogEntry extends BlogElement {
           passive: true,
         });
       });
+      this.removeEventListener(
+        'blog-pwa-escape-pressed',
+        this.__figureCloseOnEscape,
+        {
+          passive: true,
+        },
+      );
     }
   }
 
