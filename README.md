@@ -56,6 +56,12 @@ A progressive web app is only as good as the web performance it offers. I mean, 
 
 Pulling up a trusty Moto G4 on 3G over on WebPageTest, we can see just how fast we are:
 
+2023:
+
+![image](https://github.com/justinribeiro/blog-pwa/assets/643503/86c59596-c432-4eec-bb9d-86a850e097a7)
+
+2019:
+
 ![image](https://user-images.githubusercontent.com/643503/73583203-bd71b780-4445-11ea-9f2a-4a3261da0346.png)
 
 Just want the traces and the raw numbers? Check out the [results on WebPageTest](https://www.webpagetest.org/result/200131_XN_c40dba83cf1a2d53e7121d356bad1e32/).
