@@ -48,17 +48,6 @@ class BlogPwa extends LitElement {
     );
   }
 
-  disconnectedCallback() {
-    window.removeEventListener(
-      'blog-pwa-show-message',
-      this.__listenForSbMessageEvent.bind(this),
-    );
-    document.removeEventListener('keydown', this.__listenForEscapeKeyEvent.bind(this), {
-      passive: true,
-    });
-    super.disconnectedCallback();
-  }
-
   firstUpdated() {
     this.__dom.snackBar = this.shadowRoot.querySelector('snack-bar');
 
