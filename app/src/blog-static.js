@@ -95,7 +95,6 @@ class BlogStatic extends BlogElement {
     // because the "more" buttons are outside the render() of the page data
     // which causes a CLS shift of weirdness; this is imperfect at best
     await this.updateComplete;
-    this.clsSteady = true;
   }
 
   render() {

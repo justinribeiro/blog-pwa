@@ -4,8 +4,8 @@ What started as an experiment in 2017 mixing Hugo, Polymer, and the PRPL pattern
 
 ## Features
 
-* It's a progressive web app with all the fixin's (service worker, PRPL pattern, H2, et cetera)
-* The base PWA component and it's bundle weigh just *15.1KB* gzip'ed onm the wire.
+* It's a progressive web app with all the fixin's (service worker, PRPL pattern, H3, et cetera)
+* The base PWA component and it's bundle weigh just *15.1KB* gzip'ed on the wire.
 * Renders if there is no JavaScript via `<noscript>` injected fallback to static generation
 * Renders metadata to linkbots when sharing without the need for client JavaScript via server side detection and alternative render path
 
@@ -55,6 +55,10 @@ The gist of the tools employed and their uses include.
 A progressive web app is only as good as the web performance it offers. I mean, who wants to sit around waiting 10 seconds for a blog post to initially load? No one.
 
 Pulling up a trusty Moto G4 on 3G over on WebPageTest, we can see just how fast we are:
+
+2024:
+
+![image](https://github.com/justinribeiro/blog-pwa/assets/643503/be369fa5-ab6e-4a03-be8a-8f64c9fdb402)
 
 2023:
 

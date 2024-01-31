@@ -147,7 +147,7 @@ class BlogPwa extends LitElement {
           this.__domRefRouter.removeChild(this.__domRefRouter.firstChild);
         }
         const node = this.__domEle[type].cloneNode();
-        node.mount();
+        await node.mount();
         this.__domRefRouter.appendChild(node);
       }
     } catch (error) {
@@ -289,8 +289,8 @@ class BlogPwa extends LitElement {
   async __listenForSlotCleanEvent() {
     const ele = this.shadowRoot.querySelector('#prerender');
     ele.classList.add('slide-hide');
-    await this.updateComplete;
-    ele.remove();
+    // await this.updateComplete;
+    // ele.remove();
   }
 
   /**
@@ -338,7 +338,6 @@ class BlogPwa extends LitElement {
       display: grid;
       justify-content: center;
       min-height: 100vh;
-      position: relative;
     }
 
     #prerender {
