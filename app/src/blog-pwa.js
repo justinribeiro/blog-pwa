@@ -204,37 +204,39 @@ class BlogPwa extends LitElement {
       } else {
         swUrl = srcSw('service-worker.js');
       }
-      const wb = new Workbox(swUrl);
+      this.wb = new Workbox(swUrl);
 
-      wb.addEventListener('activated', () => {
+      this.wb.addEventListener('activated', () => {
         if ('requestIdleCallback' in window) {
           window.requestIdleCallback(
             () => {
-              BlogPwa.__cacheExistingLoadedUrls(wb);
+              BlogPwa.__cacheExistingLoadedUrls(this.wb);
             },
             {
               timeout: 5000,
             },
           );
         } else {
-          BlogPwa.__cacheExistingLoadedUrls(wb);
+          BlogPwa.__cacheExistingLoadedUrls(this.wb);
         }
       });
 
-      wb.addEventListener('waiting', () => {
+      this.wb.addEventListener('waiting', () => {
+        this.wb.addEventListener('controlling', () => {
+          window.location.reload();
+        });
+
         this.showSnackbar({
           text: 'New and updated content is available.',
           requireInteraction: true,
           callback: async () => {
-            wb.addEventListener('controlling', () => {
-              window.location.reload();
-            });
-            wb.messageSW({ type: 'SKIP_WAITING' });
+            this.wb.messageSkipWaiting();
+            this.__dom.snackBar.removeAttribute('active');
           },
         });
       });
 
-      wb.register();
+      this.wb.register();
     }
     this.__initializeNonCrpResources();
   }
