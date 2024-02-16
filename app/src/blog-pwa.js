@@ -75,7 +75,6 @@ class BlogPwa extends LitElement {
       entry: document.createElement('blog-entry'),
       missing: document.createElement('blog-missing'),
       offline: document.createElement('blog-offline'),
-      reading: document.createElement('blog-reading'),
     };
     installRouter(location => this.__routes(location));
   }
@@ -96,9 +95,6 @@ class BlogPwa extends LitElement {
         break;
       case /(chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
         route = 'static';
-        break;
-      case /(reading)/.test(location.pathname):
-        route = 'reading';
         break;
       case /(offline)/.test(location.pathname):
         route = 'offline';
@@ -128,9 +124,6 @@ class BlogPwa extends LitElement {
     }
     if (type === 'offline') {
       await import('./page-offline.js');
-    }
-    if (type === 'reading') {
-      await import('./page-reading.js');
     }
     if (type === 'missing') {
       await import('./page-missing.js');
@@ -179,7 +172,6 @@ class BlogPwa extends LitElement {
   static async __loadAnalytics() {
     const module = await import('./lod-analytics.js');
     module.initAnalytics();
-    module.initCwp();
   }
 
   /**

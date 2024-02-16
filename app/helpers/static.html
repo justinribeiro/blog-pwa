@@ -34,8 +34,6 @@
     <meta property="og:image" content="{{ socialimage }}" />
     {% endif %}
 
-    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-    <link ref="preconnect" href="//fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="//www.gstatic.com" crossorigin>
     <link rel="preconnect" href="//storage.googleapis.com/" crossorigin>
 
@@ -540,9 +538,20 @@
       [hidden] {
         display: none !important;
       }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Libre Franklin';
+        src: url('https://storage.googleapis.com/jdr-public-imgs/fonts/libre-franklin-v14-latin-regular.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: 'Literata';
+        src: url('https://storage.googleapis.com/jdr-public-imgs/fonts/literata-v35-latin-regular.woff2') format('woff2');
+      }
     </style>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400&family=Literata:wght@400&display=swap">
   </head>
   <body>
     <header id="pageHeader">
