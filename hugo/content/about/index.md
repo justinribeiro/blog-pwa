@@ -1,6 +1,7 @@
 ---
 date: 2021-02-17T00:00:00-08:00
 title: "About Justin"
+subtitle: "Hello Wonderful People."
 description: "Driven by curiosity, listening, and learning, I enjoy leading a prolific multi-hyphenate existence: business leader, engineer, teacher, mentor, writer, photographer, maker among many other pursuits."
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>
