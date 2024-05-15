@@ -48,6 +48,7 @@ class BlogElement extends LitElement {
       posts: [],
       article: '',
       title: '',
+      subtitle: '',
       dataModified: '',
       date: '',
       readingtime: '',

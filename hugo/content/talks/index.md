@@ -1,6 +1,7 @@
 ---
 date: 2021-02-17T00:00:00-08:00
 title: "Talks, Publications, and Podcasts"
+subtitle: "All the world is a stage and given the opportunity, I am always happy to act and teach upon it."
 description: "All the world is a stage and given the opportunity, I am always happy to act and teach upon it."
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>

@@ -6,6 +6,7 @@ class BlogStatic extends BlogElement {
     css`
       :host {
         min-height: 100vh;
+        margin: auto auto;
       }
 
       #posts {

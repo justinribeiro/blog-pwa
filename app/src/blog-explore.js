@@ -91,45 +91,6 @@ class BlogExplore extends BlogElement {
         padding: initial;
       }
 
-      header h1,
-      header h2 {
-        text-align: center;
-      }
-
-      figure {
-        margin: 0;
-        transition: background 0.3s;
-        position: relative;
-      }
-
-      figcaption {
-        color: var(--secondary-text-color);
-        font-size: var(--figcaption);
-        line-height: var(--font-lhr);
-        margin-top: 0.5em;
-      }
-
-      figcaption .author {
-        display: inline-block;
-        color: var(--secondary-text-color);
-        font-family: var(--font-family-serif);
-        font-size: var(--figcaption-author);
-      }
-
-      #main iframe {
-        max-width: 100%;
-        width: 100%;
-      }
-
-      #main img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      #main video {
-        max-width: 100%;
-      }
-
       #featureImage {
         display: grid;
         grid-template: 'container';
@@ -150,6 +111,29 @@ class BlogExplore extends BlogElement {
         object-fit: cover;
       }
 
+      figure {
+        margin: 0px;
+      }
+
+      header h1,
+      header h2 {
+        text-align: center;
+      }
+
+      #main iframe {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      #main img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #main video {
+        max-width: 100%;
+      }
+
       header {
         padding: calc(var(--space-cs) * 4);
       }
@@ -158,6 +142,84 @@ class BlogExplore extends BlogElement {
         max-width: 100vw;
         padding: 0 calc(var(--space-cs) * 7);
         margin: auto;
+      }
+
+      #showcaseFive {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        grid-gap: 1rem;
+        padding: initial;
+      }
+
+      #showcaseFive a {
+        border-bottom: none;
+        color: inherit;
+        height: auto;
+      }
+
+      .fourWayBox {
+        display: grid;
+        /* this is the same as grid-template-columns: 1fr 1fr 1fr 1fr; */
+
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        padding: initial;
+      }
+
+      .fourWayBox a {
+        display: block;
+        border-bottom: none;
+        color: inherit;
+        height: auto;
+      }
+
+      #showcaseFive h3,
+      .fourWayBox h3,
+      .card h3 {
+        font-size: 1.5rem;
+        font-weight: 100;
+      }
+
+      #showcaseFive h4,
+      .fourWayBox h4,
+      .card h4 {
+        font-weight: 100;
+        font-family: var(--font-family-sans-serif);
+      }
+
+      .fourWayBox a {
+        padding: 1rem;
+      }
+
+      .card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      section > p {
+        font-size: 1rem;
+      }
+
+      svg {
+        width: 16px;
+        vertical-align: text-bottom;
+      }
+
+      hr {
+        width: 100%;
+        margin: 2rem auto;
+        border: 1px solid #ccc;
+      }
+
+      @media (max-width: 675px) {
+        header {
+          padding: calc(var(--space-cs) * 2);
+        }
+
+        section {
+          padding: 0 calc(var(--space-cs) * 2);
+        }
       }
 
       @media (prefers-reduced-data: reduce) {
@@ -183,7 +245,7 @@ class BlogExplore extends BlogElement {
         <header>
           <div id="subHeader">
             <h1 itemprop="headline">${this.metadata.title}</h1>
-            <h2 class="subheadline">${this.metadata.description}</h2>
+            <h2 class="subheadline">${this.metadata.subtitle}</h2>
           </div>
         </header>
         <section itemprop="articleBody">${this.articleBody}</section>

@@ -3,6 +3,7 @@
 {{ $related := .Site.RegularPages.Related . | first 3 }}
 {
   "title": "{{ .Title }}",
+  "subtitle": "{{ $.Params.SubTitle }}",
   "description": "{{ .Description | safeHTML }}",
   "article": "{{ $content }}",
   "date": "{{ .Date.Format "Mon Jan 2, 2006" }}",

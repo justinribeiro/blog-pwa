@@ -10,7 +10,7 @@ class RibeiroSocialPhotos extends LitElement {
   static styles = css`
     :host {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
       gap: 1rem;
     }
     img {
@@ -66,7 +66,7 @@ class RibeiroSocialPhotos extends LitElement {
               />
             </a>
           </div>
-        `
+        `,
       )}
     `;
   }

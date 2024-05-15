@@ -2,6 +2,7 @@
 {{ $content := replace $content_to_string "\n" "\\n" }}
 {
   "title": "{{ .Title }}",
+  "subtitle": "{{ $.Params.SubTitle }}",
   "description": "{{ .Description }}",
   "article": "{{ $content }}",
   "date": "{{ .Date.Format "Mon Jan 2, 2006" }}",

@@ -11,7 +11,7 @@ class YouTubeVideoList extends LitElement {
   static styles = css`
     :host {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
       gap: 1rem;
     }
     lite-youtube {
@@ -63,7 +63,7 @@ class YouTubeVideoList extends LitElement {
               videoid="${video.id}"
             ></lite-youtube>
           </div>
-        `
+        `,
       )}
     `;
   }

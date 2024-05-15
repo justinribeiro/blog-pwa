@@ -95,7 +95,7 @@ class BlogPwa extends LitElement {
       ):
         route = 'entry';
         break;
-      case /(about|talks|speaking)/.test(location.pathname):
+      case /(about|talks|speaking|research|consulting)/.test(location.pathname):
         route = 'page';
         break;
       case /(explore|^\/index.html|^\/$)/.test(location.pathname):

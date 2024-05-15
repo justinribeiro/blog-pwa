@@ -103,7 +103,7 @@ class BlogEntry extends BlogElement {
       const template = document
         .createRange()
         .createContextualFragment(
-          this.__unescapeHtml(this.metadata.featureimage)
+          this.__unescapeHtml(this.metadata.featureimage),
         );
       this.__getDomRef('#featureImage').appendChild(template);
     }
@@ -123,7 +123,7 @@ class BlogEntry extends BlogElement {
         },
         {
           timeout: 5000,
-        }
+        },
       );
     } else {
       this.__shareCreateLinks();
@@ -178,7 +178,7 @@ class BlogEntry extends BlogElement {
         {
           service: 'E-Mail',
           link: stringInterpolate(this.strings.sharing.services.email, data),
-        }
+        },
       );
     }
   }
@@ -246,7 +246,7 @@ class BlogEntry extends BlogElement {
       {
         method: 'GET',
         mode: 'cors',
-      }
+      },
     );
 
     if (response.ok) {
@@ -300,7 +300,7 @@ class BlogEntry extends BlogElement {
           detail: {
             message,
           },
-        })
+        }),
       );
 
       this.shadowRoot.querySelector('#webMentionSource').value = '';
@@ -312,6 +312,7 @@ class BlogEntry extends BlogElement {
     css`
       :host {
         min-height: 100vh;
+        margin: auto auto;
       }
       figure {
         margin: 1em 0;
@@ -387,6 +388,7 @@ class BlogEntry extends BlogElement {
         max-height: 90vh;
         width: 100vw !important;
         height: auto;
+        background: transparent;
       }
 
       #main iframe {
@@ -396,6 +398,7 @@ class BlogEntry extends BlogElement {
 
       #main img {
         max-width: 100%;
+        width: 100%;
         height: auto;
       }
 
@@ -527,8 +530,9 @@ class BlogEntry extends BlogElement {
             ${this.metadata.tags
               .split(',')
               .map(
-                tag =>
-                  html` <a href="/tags/${tag.toLowerCase()}/">${tag}</a>&nbsp; `
+                tag => html`
+                  <a href="/tags/${tag.toLowerCase()}/">${tag}</a>&nbsp;
+                `,
               )}
           </div>
         </header>
@@ -557,7 +561,7 @@ class BlogEntry extends BlogElement {
                       >Mastodon</share-to-mastodon
                     >
                     ${this.share.map(
-                      i => html`<a href="${i.link}">${i.service}</a>`
+                      i => html`<a href="${i.link}">${i.service}</a>`,
                     )}
                   </p>
                 `}
@@ -600,7 +604,7 @@ class BlogEntry extends BlogElement {
                     post =>
                       html`<p>
                         <a href="${post.permalink}"> ${post.title}</a>
-                      </p>`
+                      </p>`,
                   )}
                   <br />
                 `

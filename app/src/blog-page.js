@@ -91,20 +91,6 @@ class BlogPage extends BlogElement {
         position: relative;
       }
 
-      figcaption {
-        color: var(--secondary-text-color);
-        font-size: var(--figcaption);
-        line-height: var(--font-lhr);
-        margin-top: 0.5em;
-      }
-
-      figcaption .author {
-        display: inline-block;
-        color: var(--secondary-text-color);
-        font-family: var(--font-family-serif);
-        font-size: var(--figcaption-author);
-      }
-
       #main iframe {
         max-width: 100%;
         width: 100%;
@@ -141,6 +127,30 @@ class BlogPage extends BlogElement {
 
       #subHeader {
         z-index: 1;
+      }
+
+      #subHeader h1 {
+        font-size: calc(var(--font-h1) / 2.2);
+        font-family: var(--font-family-sans-serif);
+        line-height: 1.15;
+        letter-spacing: 0.01rem;
+        text-transform: uppercase;
+        margin: calc(var(--space-cs) * 3);
+      }
+
+      #subHeader h2 {
+        font-size: var(--font-h1);
+        font-family: var(--font-family-headers);
+        margin: calc(var(--space-cs) * 3);
+        line-height: 1.15;
+        letter-spacing: var(--header-letter-spacing);
+      }
+
+      .pullHook {
+        font-size: calc(var(--font-h1) / 1.5);
+        margin: calc(var(--space-cs) * 3);
+        font-weight: 100;
+        text-align: center;
       }
 
       section,
@@ -187,7 +197,7 @@ class BlogPage extends BlogElement {
         <header>
           <div id="subHeader">
             <h1 itemprop="headline">${this.metadata.title}</h1>
-            <h2 class="subheadline">${this.metadata.description}</h2>
+            <h2 itemprop="subheadline">${this.metadata.subtitle}</h2>
           </div>
         </header>
         <section itemprop="articleBody">${this.articleBody}</section>

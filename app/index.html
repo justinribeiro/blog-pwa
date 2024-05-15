@@ -261,7 +261,19 @@
       @media (min-width: 767px) {
         #pageNav > a {
           margin-right: var(--space-cs);
-          display: initial;
+        }
+      }
+
+      @media (max-width: 675px) {
+        #pageNav > a {
+          letter-spacing: -0.1em;
+        }
+        #pageHeader {
+          text-align: center;
+          justify-content: center;;
+        }
+        #pageHeader, #pageFooter {
+           grid-template-columns: auto;
         }
       }
 
@@ -386,8 +398,9 @@
     <header id="pageHeader">
       <h1 id="mainHeader"><a href="/">Justin Ribeiro</a></h1>
       <nav id="pageNav">
-        <a href="/research/">Research</a>
+        <a href="/research/"> Research</a>
         <a href="/speaking/">Speaking</a>
+        <a href="/consulting/">Consulting</a>
         <a href="/about/">About</a>
         <a href="/explore/">Explore</a>
       </nav>
@@ -566,6 +579,10 @@
       <section>
         <h2>More Justin</h2>
         <p>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" color="#000"><path stroke="#000" stroke-linecap="round" d="M5 19.5V5a2 2 0 0 1 2-2h11.4a.6.6 0 0 1 .6.6V21M9 7h6M6.5 15H19M6.5 18H19M6.5 21H19"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M6.5 18c-1 0-1.5-.672-1.5-1.5S5.5 15 6.5 15M6.5 21c-1 0-1.5-.672-1.5-1.5S5.5 18 6.5 18"/></svg>
+          <a href="/chronicle">Blog</a>
+        </p>
+        <p>
           <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6 1-5.9 6.5.1 2 0 4.4.4 7 1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a>
         </p>
@@ -583,7 +600,7 @@
         </p>
         <p>
           <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" stroke="#000"/><path d="M17.5 6.5h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <a rel="me" href="https://github.com/justinribeiro">Instagram</a>
+          <a rel="me" href="https://instagram.com/justin.d.ribeiro">Instagram</a>
         </p>
       </section>
       <section>
