@@ -147,9 +147,10 @@
         color: var(--accent-color-primary);
         text-decoration: none;
         border-bottom: 1px solid var(--accent-color-primary);
+        transition: all 500ms ease-in-out;
       }
 
-      a:hover {
+      a:hover, a:focus {
         color: var(--accent-color-secondary);
         border-bottom: 1px solid var(--accent-color-secondary);
       }
@@ -159,7 +160,7 @@
           no-repeat;
       }
 
-      #pageHeader, #pageFooter {
+      #pageHeader, #pageFooter, #pageNav {
         background-color: var(--structs-bg);
       }
 
@@ -264,10 +265,7 @@
         }
       }
 
-      @media (max-width: 675px) {
-        #pageNav > a {
-          letter-spacing: -0.1em;
-        }
+      @media (max-width: 645px) {
         #pageHeader {
           text-align: center;
           justify-content: center;;
@@ -275,9 +273,33 @@
         #pageHeader, #pageFooter {
            grid-template-columns: auto;
         }
+        #pageHeader {
+          position: relative;
+        }
       }
 
-      @media (max-width: 360px) {
+      @media (max-width: 435px) {
+        #pageNav {
+          font-size: smaller;
+        }
+        #pageHeader, #pageFooter {
+          padding: var(--space-cs) 0;
+        }
+      }
+
+      @media (max-width: 376px) {
+        #pageNav > a {
+          letter-spacing: -0.05em;
+        }
+      }
+
+      @media (max-width: 320px) {
+        #pageNav {
+          font-size: x-small;
+        }
+        #pageFooter {
+          padding: calc(var(--space-cs)* 5) calc(var(--space-cs)* 3);
+        }
         #pageNav > a {
           letter-spacing: -0.1em;
         }
@@ -358,6 +380,19 @@
         font-size: var(--font-base);
       }
 
+      #pageNav {
+        text-align: center;
+      }
+
+      #pageNav svg
+      {
+        width: 32px;
+        height: 32px;
+        display: block;
+        margin: auto auto;
+        padding: .5rem;
+      }
+
       @font-face {
         font-display: swap;
         font-family: 'Libre Franklin';
@@ -398,11 +433,26 @@
     <header id="pageHeader">
       <h1 id="mainHeader"><a href="/">Justin Ribeiro</a></h1>
       <nav id="pageNav">
-        <a href="/research/"> Research</a>
-        <a href="/speaking/">Speaking</a>
-        <a href="/consulting/">Consulting</a>
-        <a href="/about/">About</a>
-        <a href="/explore/">Explore</a>
+        <a href="/research/">
+          <svg fill="none" stroke-width="1.5" color="#000" viewBox="0 0 24 24"><path stroke="#000" stroke-linejoin="round" d="M8 15c4.875 0 7-2.051 7-7 0 4.949 2.11 7 7 7-4.89 0-7 2.11-7 7 0-4.89-2.125-7-7-7ZM2 6.5c3.134 0 4.5-1.318 4.5-4.5 0 3.182 1.357 4.5 4.5 4.5-3.143 0-4.5 1.357-4.5 4.5 0-3.143-1.366-4.5-4.5-4.5Z"/></svg>
+          Research
+        </a>
+        <a href="/speaking/">
+          <svg fill="none" stroke-width="1.5" color="#000" viewBox="0 0 24 24"><rect width="6" height="12" x="9" y="2" stroke="#000" stroke-width="1.5" rx="3"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M5 3v2M1 2v4m18-3v2m4-3v4M5 10v1a7 7 0 0 0 7 7v0a7 7 0 0 0 7-7v-1M12 18v4m0 0H9m3 0h3"/></svg>
+          Speaking
+        </a>
+        <a href="/consulting/">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M6 20.5C7 11 11.5 8 20 6"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M15.909 3.81 20.395 5.9l-2.092 4.486M5 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM16 20.243l2.121-2.122m0 0L20.243 16m-2.122 2.121L16 16m2.121 2.121 2.122 2.122"/></svg>
+          Consulting
+        </a>
+        <a href="/about/">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="8" stroke="#000" stroke-width="1.5"/><path stroke="#000" d="M17.5 6.348c2.297-.538 3.945-.476 4.338.312.73 1.466-3.158 4.89-8.687 7.645-5.528 2.757-10.602 3.802-11.333 2.336-.392-.786.544-2.134 2.349-3.64"/></svg>
+          About
+        </a>
+        <a href="/explore/">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M3 12h3l3-9 6 18 3-9h3"/></svg>
+          Explore
+        </a>
       </nav>
     </header>
     <noscript aria-hidden="true">

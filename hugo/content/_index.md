@@ -5,19 +5,7 @@ subtitle: "Always leaping, always exploring, and having fun along the way."
 description: "I 💓 the open web. Film photographer and mediocre darkroom printer. Maker of sometimes interesting things. Coder of open source curiosities. Always leaping, always exploring."
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>
-    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-640.webp 640w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-800.webp 800w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1024.webp 1024w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1280.webp 1280w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1600.webp 1600w"
-            sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
-    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-640.jpg 640w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-800.jpg 800w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1024.jpg 1024w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1280.jpg 1280w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1600.jpg 1600w"
-            sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-800.jpg" alt="">
+    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-test.jpg" alt="">
   </picture>
 </figure>
 '

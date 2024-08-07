@@ -5,23 +5,11 @@ subtitle: "Helping Unlock Your Organizations Potential"
 description: "Descriptions"
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>
-    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-640.webp 640w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-800.webp 800w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1024.webp 1024w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1280.webp 1280w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1600.webp 1600w"
-            sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
-    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-640.jpg 640w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-800.jpg 800w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1024.jpg 1024w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1280.jpg 1280w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-1600.jpg 1600w"
-            sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/blog/2024-test-width-800.jpg" alt="">
+    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-5-test.jpg" alt="Another rental car, in another car park, outside big glass buildings. And yeah, I always wear the tie.">
   </picture>
   <figcaption itemprop="caption description">
-    <span aria-hidden="true"></span>
-    <span class="author" itemprop="copyrightHolder"></span>
+    <span aria-hidden="true">Another rental car, in another car park, outside big glass buildings. And yeah, I always wear the tie.</span>
+    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
   </figcaption>
 </figure>
 '

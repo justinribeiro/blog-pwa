@@ -105,12 +105,16 @@ class BlogPage extends BlogElement {
         max-width: 100%;
       }
 
+      figure video {
+        width: 100%;
+      }
+
       #featureImage {
         display: grid;
         grid-template: 'container';
-        place-items: center;
+        /* place-items: center;
         place-content: center;
-        max-height: clamp(450px, 40vh, 700px);
+        max-height: clamp(450px, 40vh, 700px); */
         overflow: hidden;
       }
 
@@ -160,6 +164,11 @@ class BlogPage extends BlogElement {
         margin: auto;
       }
 
+      figcaption {
+        text-align: center;
+        font-size: 12px;
+      }
+
       /* pssft never the real one */
       #fakeSig {
         width: 35%;
@@ -172,6 +181,21 @@ class BlogPage extends BlogElement {
       #fakeSig > path {
         stroke: var(--primary-text-color);
         fill: var(--primary-text-color);
+      }
+
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+      }
+
+      .timeline figcaption {
+        font-size: initial;
+        text-align: initial;
+      }
+      .timeline .author {
+        opacity: 0;
       }
 
       @media (prefers-reduced-data: reduce) {

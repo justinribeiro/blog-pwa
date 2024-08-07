@@ -94,9 +94,9 @@ class BlogExplore extends BlogElement {
       #featureImage {
         display: grid;
         grid-template: 'container';
-        place-items: center;
+        /* place-items: center;
         place-content: center;
-        max-height: clamp(450px, 40vh, 700px);
+        max-height: clamp(450px, 40vh, 700px); */
         overflow: hidden;
       }
 
