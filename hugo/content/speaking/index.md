@@ -3,23 +3,23 @@ date: 2024-05-07T00:00:00-08:00
 title: "Speaking"
 subtitle: "Thank you for considering me!"
 description: "Descriptions"
-featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
-  <video autoplay loop playsinline>
-    <source src="https://storage.googleapis.com/jdr-public-imgs/pages/output-av1.mp4" type="video/mp4; codecs="av01.2.05M.08,Opus,tmcd"; profiles="isom,av01,iso2,mp41">
-  </video>
-  <figcaption itemprop="caption description">
-    <span>String words into sentences into throughts into ideas...and you can too!</span>
-    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
-  </figcaption>
-</figure>
-'
-socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210217-about-me-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-talkin-and-ponderin.jpg"
 sitemap:
   changefreq: "monthly"
   priority: 0.5
 ---
 
 Due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my speaking schedule has become more limited over the years. My commitment encompasses valuable time spent with family and friends, as well as time reserved for creative pursuits. Should my availability not align with your event, rest assured that myself and my capable team is on hand to suggest excellent alternatives.
+
+<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+  <picture>
+    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-talkin-and-ponderin.jpg" width="800" height="536" alt="Sitting at my desk, pondering my next turn of phrase.">
+  </picture>
+  <figcaption itemprop="caption description">
+    <span aria-hidden="true">Sitting at my desk, pondering my next turn of phrase.</span>
+    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+  </figcaption>
+</figure>
 
 I appreciate your interest and hope we align so that I can speak at your upcoming event, podcast, or show. Stay wonderful people!
 

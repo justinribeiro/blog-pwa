@@ -91,26 +91,6 @@ class BlogExplore extends BlogElement {
         padding: initial;
       }
 
-      #featureImage {
-        display: grid;
-        grid-template: 'container';
-        /* place-items: center;
-        place-content: center;
-        max-height: clamp(450px, 40vh, 700px); */
-        overflow: hidden;
-      }
-
-      #featureImage > * {
-        grid-area: container;
-        max-width: 100vw;
-      }
-
-      #featureImage img {
-        width: 100vw;
-        height: auto;
-        object-fit: cover;
-      }
-
       figure {
         margin: 0px;
       }
@@ -120,18 +100,11 @@ class BlogExplore extends BlogElement {
         text-align: center;
       }
 
-      #main iframe {
-        max-width: 100%;
-        width: 100%;
-      }
-
       #main img {
         max-width: 100%;
         height: auto;
-      }
-
-      #main video {
-        max-width: 100%;
+        position: unset;
+        margin: unset;
       }
 
       header {
@@ -159,8 +132,6 @@ class BlogExplore extends BlogElement {
 
       .fourWayBox {
         display: grid;
-        /* this is the same as grid-template-columns: 1fr 1fr 1fr 1fr; */
-
         grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
         padding: initial;
       }
@@ -212,7 +183,7 @@ class BlogExplore extends BlogElement {
         border: 1px solid #ccc;
       }
 
-      @media (max-width: 675px) {
+      @media (max-width: 768px) {
         header {
           padding: calc(var(--space-cs) * 2);
         }

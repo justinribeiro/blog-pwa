@@ -112,7 +112,7 @@
       @media (max-width: 767px) {
         :root {
           --header-height: 85px;
-          --header-font-size: 22px;
+          --header-font-size: 26px;
           --header-image: 55px;
           --header-font-offset: -5px;
           --page-last: 88vw;
@@ -160,7 +160,7 @@
           no-repeat;
       }
 
-      #pageHeader, #pageFooter, #pageNav {
+      #pageHeader, #pageFooter, #pageNav, #socialNav {
         background-color: var(--structs-bg);
       }
 
@@ -178,7 +178,7 @@
 
       #pageHeader {
         border-bottom: var(--border);
-        grid-template-columns: auto auto;
+        grid-template-columns: auto auto auto;
         position: sticky;
         top: 0;
         z-index: 1;
@@ -251,12 +251,23 @@
         border-bottom: initial;
       }
 
-      #pageNav > a {
+      #pageNav > a, #socialNav > a {
         text-transform: uppercase;
         margin: var(--space-nav) var(--space-nav) var(--space-nav) 0;
         display: inline-block;
         font-weight: 600;
         letter-spacing: .02rem;
+      }
+
+      #socialNav > a {
+        border-bottom: none;
+      }
+
+      #socialNav svg {
+        width: 24px;
+        height: 24px;
+        padding: .25rem;
+        display: block;
       }
 
       @media (min-width: 767px) {
@@ -265,12 +276,12 @@
         }
       }
 
-      @media (max-width: 645px) {
+      @media (max-width: 768px) {
         #pageHeader {
           text-align: center;
-          justify-content: center;;
+          justify-content: center;
         }
-        #pageHeader, #pageFooter {
+        #pageHeader, #pagefooter {
            grid-template-columns: auto;
         }
         #pageHeader {
@@ -278,31 +289,27 @@
         }
       }
 
-      @media (max-width: 435px) {
-        #pageNav {
-          font-size: smaller;
-        }
+      @media (max-width: 460px) {
         #pageHeader, #pageFooter {
           padding: var(--space-cs) 0;
         }
       }
 
       @media (max-width: 376px) {
+        #pageNav {
+          font-size: smaller;
+        }
         #pageNav > a {
           letter-spacing: -0.05em;
         }
       }
 
       @media (max-width: 320px) {
-        #pageNav {
-          font-size: x-small;
-        }
+
         #pageFooter {
           padding: calc(var(--space-cs)* 5) calc(var(--space-cs)* 3);
         }
-        #pageNav > a {
-          letter-spacing: -0.1em;
-        }
+
       }
 
       @media (min-width: 3000px) {
@@ -433,26 +440,24 @@
     <header id="pageHeader">
       <h1 id="mainHeader"><a href="/">Justin Ribeiro</a></h1>
       <nav id="pageNav">
-        <a href="/research/">
-          <svg fill="none" stroke-width="1.5" color="#000" viewBox="0 0 24 24"><path stroke="#000" stroke-linejoin="round" d="M8 15c4.875 0 7-2.051 7-7 0 4.949 2.11 7 7 7-4.89 0-7 2.11-7 7 0-4.89-2.125-7-7-7ZM2 6.5c3.134 0 4.5-1.318 4.5-4.5 0 3.182 1.357 4.5 4.5 4.5-3.143 0-4.5 1.357-4.5 4.5 0-3.143-1.366-4.5-4.5-4.5Z"/></svg>
-          Research
-        </a>
         <a href="/speaking/">
-          <svg fill="none" stroke-width="1.5" color="#000" viewBox="0 0 24 24"><rect width="6" height="12" x="9" y="2" stroke="#000" stroke-width="1.5" rx="3"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M5 3v2M1 2v4m18-3v2m4-3v4M5 10v1a7 7 0 0 0 7 7v0a7 7 0 0 0 7-7v-1M12 18v4m0 0H9m3 0h3"/></svg>
           Speaking
         </a>
         <a href="/consulting/">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M6 20.5C7 11 11.5 8 20 6"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M15.909 3.81 20.395 5.9l-2.092 4.486M5 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM16 20.243l2.121-2.122m0 0L20.243 16m-2.122 2.121L16 16m2.121 2.121 2.122 2.122"/></svg>
           Consulting
         </a>
+        <a href="/research/">
+          Research
+        </a>
         <a href="/about/">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="8" stroke="#000" stroke-width="1.5"/><path stroke="#000" d="M17.5 6.348c2.297-.538 3.945-.476 4.338.312.73 1.466-3.158 4.89-8.687 7.645-5.528 2.757-10.602 3.802-11.333 2.336-.392-.786.544-2.134 2.349-3.64"/></svg>
           About
         </a>
-        <a href="/explore/">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M3 12h3l3-9 6 18 3-9h3"/></svg>
-          Explore
-        </a>
+      </nav>
+      <nav id="socialNav">
+        <a rel="me" href="https://ribeiro.social/@justin" title="Mastodon"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6 1-5.9 6.5.1 2 0 4.4.4 7 1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a rel="me" href="https://github.com/justinribeiro" title="Github"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.3 19v-1.9a2.1 2.1 0 0 0-.6-1.7c2.1-.2 4.3-1 4.3-4.5 0-1-.4-1.8-1-2.4.3-.8.3-1.7 0-2.5 0 0-.8-.2-2.7 1a9.2 9.2 0 0 0-4.6 0C7.8 5.8 7 6 7 6c-.4.8-.4 1.7-.1 2.5-.6.6-1 1.5-1 2.4 0 3.5 2.2 4.3 4.3 4.6a2.2 2.2 0 0 0-.6 1.6V19" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.7 17.7c-2 .6-3.7 0-4.7-2" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a rel="me" href="https://youtube.com/justinribeiro" title="YouTube"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m14 12-3.5 2v-4l3.5 2Z" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12.7v-1.4C2 8.4 2 6.9 3 6c.8-1 2.2-1 5-1a144.2 144.2 0 0 1 8 0c2.8 0 4.2 0 5 1 1 1 1 2.4 1 5.3v1.4c0 2.9 0 4.4-1 5.3-.8 1-2.2 1-5 1a144.2 144.2 0 0 1-8 0c-2.8 0-4.2 0-5-1-1-1-1-2.4-1-5.3Z" stroke="#000"/></svg></a>
+        <a rel="me" href="https://instagram.com/justin.d.ribeiro" title="Instagram"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" stroke="#000"/><path d="M17.5 6.5h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </nav>
     </header>
     <noscript aria-hidden="true">

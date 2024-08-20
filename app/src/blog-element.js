@@ -117,7 +117,7 @@ class BlogElement extends LitElement {
         new CustomEvent('blog-pwa-clean-prerender-slot', {
           bubbles: true,
           composed: true,
-        })
+        }),
       );
       this.__stripDown = true;
     }
@@ -172,7 +172,7 @@ class BlogElement extends LitElement {
     const fallbackImg = this.__getDomRef(
       'fallbackImg',
       '',
-      'link[rel=icon]'
+      'link[rel=icon]',
     ).href;
     document.title = `${title} - Justin Ribeiro`;
 
@@ -191,7 +191,7 @@ class BlogElement extends LitElement {
    */
   __setMetaDom(attrName, attrValue, content) {
     let element = document.head.querySelector(
-      `meta[${attrName}="${attrValue}"]`
+      `meta[${attrName}="${attrValue}"]`,
     );
     if (!element) {
       element = document.createElement('meta');
@@ -218,7 +218,7 @@ class BlogElement extends LitElement {
         'unEscapeHTMLPolicy',
         {
           createHTML: raw => strReplacer(raw),
-        }
+        },
       );
       return unEscapeHTMLPolicy.createHTML(data);
     }
@@ -347,6 +347,104 @@ class BlogElement extends LitElement {
     img {
       background: radial-gradient(rgb(101, 112, 100), rgb(166 175 170))
         no-repeat;
+    }
+
+    figure {
+      margin: 1em 0;
+      transition: background 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    figcaption {
+      color: var(--secondary-text-color);
+      font-size: var(--figcaption);
+      line-height: var(--font-lhr);
+      margin-top: 0.5em;
+    }
+
+    figcaption .author {
+      display: inline-block;
+      color: var(--secondary-text-color);
+      font-family: var(--font-family-serif);
+      font-size: var(--figcaption-author);
+    }
+
+    figure button {
+      position: fixed;
+      bottom: var(--figure-button-margin);
+      right: calc(var(--figure-button-margin) / 3);
+      position: absolute;
+      transform: rotate(135deg);
+      border-radius: 50%;
+      width: calc(var(--font-base) * 2.75);
+      font-size: var(--font-base);
+      opacity: 0.5;
+    }
+
+    figure:hover button,
+    figure button:hover,
+    figure button:focus {
+      opacity: 1;
+    }
+
+    #main img {
+      max-width: initial;
+      width: 80vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -40vw;
+      margin-right: -40vw;
+      height: auto;
+    }
+
+    figure[expand] button {
+      display: block;
+      bottom: initial;
+      right: var(--figure-button-margin);
+      top: var(--figure-button-margin);
+    }
+
+    figure[expand] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      box-sizing: border-box;
+      padding: 4rem;
+      background-color: var(--bg);
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      margin: 0;
+      z-index: 1;
+      transform: translateX(calc((var(--page-last) - 100vw) / 2));
+    }
+
+    figure[expand] figcaption {
+      display: block;
+      width: 20%;
+      padding: 2em;
+    }
+
+    figure[expand] img {
+      all: unset !important;
+      object-fit: contain;
+      max-width: 100% !important;
+      max-height: 90vh;
+      width: 100vw !important;
+      height: auto;
+      background: transparent;
+    }
+
+    #main iframe {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    #main video {
+      max-width: 100%;
     }
 
     [hidden] {

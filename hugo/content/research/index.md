@@ -3,17 +3,9 @@ date: 2024-05-07T00:00:00-08:00
 title: "Research"
 subtitle: "Allowing Lived Experience to Emerge: My Research Process"
 description: "THis is a descriptions"
-featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
-  <picture>
-    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-4-test.jpg" alt="Where my research journey started; at the Weatherhead School of Management at Case Western Reserve University.">
-  </picture>
-  <figcaption itemprop="caption description">
-    <span aria-hidden="true">Where my research journey started; at the Weatherhead School of Management at Case Western Reserve University.</span>
-    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
-  </figcaption>
-</figure>
+featureimage: '
 '
-socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210217-about-me-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-2023-kicking-it-at-case.jpg"
 sitemap:
   changefreq: "monthly"
   priority: 0.5
@@ -28,6 +20,16 @@ I am a <a href="/chronicle/2022/03/03/selected-as-a-doctor-of-management-design-
 ## Research Methodology
 
 I am trained in qualitative, quantitative, and mixed methods research designs. My qualitative research employs a constructivist grounded theory approach as outlined by Strauss and Corbin, capturing the lived experiences of software developers and emphasizing their real-life context, a concept highlighted by Charmaz. My quantitative research adopts a methodological approach using covariance-based structural equation modeling (CB-SEM), following the framework established by Anderson and Gerbing, to establish the presence and directionality of effects in my research models. Additionally, I incorporate mixed methods designs to integrate the strengths of both qualitative and quantitative approaches, as advocated by Tashakkori and Teddlie.
+
+<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+  <picture>
+    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-2023-kicking-it-at-case.jpg" width="800" height="536" alt="Where my research journey started; at the Weatherhead School of Management at Case Western Reserve University.">
+  </picture>
+  <figcaption itemprop="caption description">
+    <span aria-hidden="true">Where my research journey started; at the Weatherhead School of Management at Case Western Reserve University.</span>
+    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+  </figcaption>
+</figure>
 
 Given the complexity of my research, my methods are informed by my own experience. The size of software artifact data, such as commits and developer conversations, I continue to develop bespoke software tools to analyze large datasets, providing insights that are otherwise inaccessible to researchers. You can take the engineer away from their code editor, but I tend to find my way back as needed. Similarly, the need to gain insight from developers where they are and hear their stories is key, relying on interview and consulting skills I've honed through decades as a practioner.
 

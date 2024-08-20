@@ -85,30 +85,6 @@ class BlogPage extends BlogElement {
         text-align: center;
       }
 
-      figure {
-        margin: 0;
-        transition: background 0.3s;
-        position: relative;
-      }
-
-      #main iframe {
-        max-width: 100%;
-        width: 100%;
-      }
-
-      #main img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      #main video {
-        max-width: 100%;
-      }
-
-      figure video {
-        width: 100%;
-      }
-
       #featureImage {
         display: grid;
         grid-template: 'container';
@@ -126,6 +102,7 @@ class BlogPage extends BlogElement {
       #featureImage img {
         width: 100vw;
         height: auto;
+        max-height: 525px;
         object-fit: cover;
       }
 
@@ -190,12 +167,31 @@ class BlogPage extends BlogElement {
         grid-row-gap: 1rem;
       }
 
+      .timeline figure {
+        margin: 0;
+        transition: background 0.3s;
+        position: relative;
+      }
+
       .timeline figcaption {
         font-size: initial;
         text-align: initial;
       }
+
+      #main .timeline img {
+        all: unset;
+        max-width: 100%;
+        height: auto;
+      }
+
       .timeline .author {
         opacity: 0;
+      }
+
+      @media (max-width: 460px) {
+        .timeline {
+          grid-template-columns: repeat(1, 1fr);
+        }
       }
 
       @media (prefers-reduced-data: reduce) {
@@ -217,7 +213,6 @@ class BlogPage extends BlogElement {
         itemscope
         itemtype="http://schema.org/BlogPosting"
       >
-        <div id="featureImage"></div>
         <header>
           <div id="subHeader">
             <h1 itemprop="headline">${this.metadata.title}</h1>

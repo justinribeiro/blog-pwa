@@ -3,23 +3,24 @@ date: 2024-05-07T00:00:00-08:00
 title: "Consulting"
 subtitle: "Helping Unlock Your Organizations Potential"
 description: "Descriptions"
-featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
-  <picture>
-    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-5-test.jpg" alt="Another rental car, in another car park, outside big glass buildings. And yeah, I always wear the tie.">
-  </picture>
-  <figcaption itemprop="caption description">
-    <span aria-hidden="true">Another rental car, in another car park, outside big glass buildings. And yeah, I always wear the tie.</span>
-    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
-  </figcaption>
-</figure>
-'
-socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210217-about-me-800.jpg"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-5-test.jpg"
 sitemap:
   changefreq: "monthly"
   priority: 0.5
 ---
 
 Given the majority of my nearly three decade career has been in the business of consulting for firms and organizations on management and software engineering challenges, I am no stranger to consulting requests. I take a great deal of pride on my ability to help organizations. However, due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my consulting availability is limited. Should my availability not align with your current consulting needs, rest assured that myself and my capable team is on hand to suggest excellent alternatives.
+
+<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+  <picture>
+    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-5-test.jpg" width="800" height="536" alt="Another rental car, in another car park, outside big glass buildings. And yeah, I always wear the tie.">
+  </picture>
+  <figcaption itemprop="caption description">
+    <span aria-hidden="true">Another rental car, in another car park, outside big glass buildings. And yeah, I always wear the tie.</span>
+    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+  </figcaption>
+</figure>
+<br>
 
 I appreciate your interest and hope we align so that I can work with your organization. Stay wonderful people!
 

@@ -3,12 +3,6 @@ date: 2021-02-17T00:00:00-08:00
 title: "Rediscovering Creativity One Story At a Time."
 subtitle: "Always leaping, always exploring, and having fun along the way."
 description: "I 💓 the open web. Film photographer and mediocre darkroom printer. Maker of sometimes interesting things. Coder of open source curiosities. Always leaping, always exploring."
-featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
-  <picture>
-    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-test.jpg" alt="">
-  </picture>
-</figure>
-'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210217-about-me-800.jpg"
 pagetype: "page"
 sitemap:
@@ -26,7 +20,7 @@ sitemap:
     </div>
   </a>
   <div class="secondary">
-      <a href="" class="card">
+      <a href="/chronicle/2021/11/18/lite-youtube-web-component-goes-1.0-offers-more-features/" class="card">
       <img src="https://images.placeholders.dev/?width=1600&height=1600&text=holder&bgColor=%23f7f6f6&textColor=%236d6e71">
       <div>
         <h4>WEB DEV</h4>
@@ -34,7 +28,7 @@ sitemap:
         <p>The secretly popular component tops 75 million loads a month so I decided to level up some features.<p>
       </div>
     </a>
-    <a href="" class="card">
+    <a href="http://localhost:8081/chronicle/2021/02/23/building-a-custom-polaroid-sx-70-camera-rig/" class="card">
       <img src="https://images.placeholders.dev/?width=1600&height=1600&text=holder&bgColor=%23f7f6f6&textColor=%236d6e71">
       <div>
         <h4>PHOTOGRAPHY</h4>
@@ -42,7 +36,7 @@ sitemap:
         <p>My love for the Polaroid SX-70 knows no bounds.<p>
       </div>
     </a>
-    <a href="" class="card">
+    <a href="/chronicle/2023/07/05/climbing-the-mountain-of-phd-quantitative-rigor/" class="card">
       <img src="https://images.placeholders.dev/?width=1600&height=1600&text=holder&bgColor=%23f7f6f6&textColor=%236d6e71">
       <div>
         <h4>PHD STUDIES</h4>
@@ -50,7 +44,7 @@ sitemap:
         <p>Knowing the method is one thing; it's another to apply in the time box.<p>
       </div>
     </a>
-    <a href="" class="card">
+    <a href="/2023/07/24/protecting-our-chickens-and-ducks-with-a-zoo-netting-enclosed-run/" class="card">
       <img src="https://images.placeholders.dev/?width=1600&height=1600&text=holder&bgColor=%23f7f6f6&textColor=%236d6e71">
       <div>
         <h4>TINY FARM</h4>
@@ -61,24 +55,24 @@ sitemap:
   </div>
 </section>
 <hr>
-<h2>Most Popular Posts</h2>
+<h2>Oddly Popular Posts</h2>
 <p>All the latest posts are available on <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" color="#000"><path stroke="#000" stroke-linecap="round" d="M5 19.5V5a2 2 0 0 1 2-2h11.4a.6.6 0 0 1 .6.6V21M9 7h6M6.5 15H19M6.5 18H19M6.5 21H19"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M6.5 18c-1 0-1.5-.672-1.5-1.5S5.5 15 6.5 15M6.5 21c-1 0-1.5-.672-1.5-1.5S5.5 18 6.5 18"/></svg> <a href="/chronicle">Blog</a>.</p>
 <section class="fourWayBox">
-    <a href="">
+    <a href="/chronicle/2021/02/01/the-great-prius-combination-meter-repair-or-lets-rip-the-dashboard-apart/">
       <h4>HACKING</h4>
       <h3>The Great Prius Combination Meter Repair</h3>
     </a>
-    <a href="">
-    <h4>GAMES</h4>
-    <h3>Uno Flip Destroyed My Family</h3>
+    <a href="/chronicle/2020/07/28/uno-flip-destroyed-my-family/">
+      <h4>HUMOR</h4>
+      <h3>Uno Flip Destroyed My Family</h3>
     </a>
-    <a href="">
-    <h4>PHOTOGRAPHY</h4>
-    <h3>Resolving slack in the Beseler 45MX Enlarger</h3>
+    <a href="/chronicle/2019/12/06/resolving-slack-and-alignment-in-the-beseler-45mx-enlarger/">
+      <h4>PHOTOGRAPHY</h4>
+      <h3>Resolving slack in the Beseler 45MX Enlarger</h3>
     </a>
-    <a href="">
-    <h4>MAKER</h4>
-    <h3>The Cursed LG Dryer Clothes Eating Lint Trap Fix</h3>
+    <a href="/chronicle/2021/12/07/the-cursed-lg-dryer-clothes-eating-lint-trap-fix/">
+      <h4>MAKER</h4>
+      <h3>The Cursed LG Dryer Clothes Eating Lint Trap Fix</h3>
     </a>
 </section>
 <hr>

@@ -5,7 +5,7 @@ subtitle: "Hello Wonderful People."
 description: "Driven by curiosity, listening, and learning, I enjoy leading a prolific multi-hyphenate existence: business leader, engineer, teacher, mentor, writer, photographer, maker among many other pursuits."
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>
-    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-test-2.jpg" alt="I love shooting film, as seen here during the California flooding in the winter of 2023.">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-polaroid-flood.jpg" alt="I love shooting film, as seen here during the California flooding in the winter of 2023.">
   </picture>
   <figcaption itemprop="caption description">
     <span aria-hidden="true">I love shooting film, as seen here during the California flooding in the winter of 2023.</span>
@@ -32,12 +32,14 @@ I try to be grateful for my messy, authentic, multi-hyphenate existence even whe
 
 ## A Bit of History
 
-So often we define ourselves by our CV's and resumes, yet there's a lot more interesting things that happen over time. Below is the absoutely not exhastive history of me.
+Often we define ourselves by professional lives, exclaiming our expertise in formal histories of positions, backed by dates and tasks, distributed through CV's and resumes. Our lives are more than that; my life is more than that. As I go through boxes of old photos with smudged dates, I find the experience laced with memories that at times bring tears of joy and in others sadness. Below is a brief, incomplete, and growing history of me, of important people and interesting events in my life.
+
+Possibly you find it interesting, or maybe not. But I won't be reduced to titles and placards
 
 <div class="timeline">
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1980-dad-and-i.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1980-dad-and-i.jpg" alt="1980: My Dad and I hanging out. That man right there taught me you math and how to build pretty much anything.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">1980: My Dad and I hanging out. That man right there taught me you math and how to build pretty much anything.</span>
@@ -46,7 +48,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1980-mom-and-i.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1980-mom-and-i.jpg" alt="1980: My Mom and I. That lady right there taught me BASIC when I was eight years old on a Commadore 64.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">1980: My Mom and I. That lady right there taught me BASIC when I was eight years old on a Commadore 64.</span>
@@ -55,25 +57,43 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1988-jim-katie-and-pumpkins.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1985-marco-and-I.jpg" alt="1985-ish: The talented photographer Marco Tovar and I when we were kids (and as you can see by the red tie, I started early).">
     </picture>
     <figcaption itemprop="caption description">
-      <span aria-hidden="true">1988: My younger siblings Jim and Katie handing out at our pumpkin stand. We grew up farming and  had that pumpkin stand well past when I left for college.</span>
+      <span aria-hidden="true">1985-ish: The talented photographer Marco Tovar and I when we were kids (and as you can see by the red tie, I started early).</span>
       <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
     </figcaption>
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1998-Seattle-U.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1988-jim-katie-and-pumpkins.jpg" alt="1987-ish: My younger siblings Jim and Katie handing out at our pumpkin stand. We grew up farming and  had that pumpkin stand well past when I left for college.">
     </picture>
     <figcaption itemprop="caption description">
-      <span aria-hidden="true">Late-1990's: Get my Bachelor's degree in Business from Seattle Univsitry. Also, thrown out of Computer Science program at same time.</span>
+      <span aria-hidden="true">1987-ish: My younger siblings Jim and Katie handing out at our pumpkin stand. We grew up farming and  had that pumpkin stand well past when I left for college.</span>
       <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
     </figcaption>
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2004-USF-grad-school.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1998-Seattle-U.jpg" alt="Late-1990's: Get my Bachelor's degree in Business from Seattle University (my goalkeeping jeresy shown). Also, thrown out of Computer Science program at same time.">
+    </picture>
+    <figcaption itemprop="caption description">
+      <span aria-hidden="true">Late-1990's: Get my Bachelor's degree in Business from Seattle University (my goalkeeping jeresy shown). Also, thrown out of Computer Science program at same time.</span>
+      <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+    </figcaption>
+  </figure>
+  <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+    <picture>
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2003-jd-jessah-alisa.jpg" alt="2003-ish: Three of best people on the planet as far as I'm concerned: JD McAlpine, Jessah Foulk Walker, and Alisa Murry on a ferry outside Seattle.">
+    </picture>
+    <figcaption itemprop="caption description">
+      <span aria-hidden="true">2003-ish: Three of best people on the planet as far as I'm concerned: JD McAlpine, Jessah Foulk Walker, and Alisa Murry on a ferry outside Seattle.</span>
+      <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+    </figcaption>
+  </figure>
+  <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+    <picture>
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2004-USF-grad-school.jpg" alt="Mid-2000's: Get my Master's degree in Business from University of San Francisco.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">Mid-2000's: Get my Master's degree in Business from University of San Francisco.</span>
@@ -82,7 +102,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2004-corporate.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2004-corporate.jpg" alt="2004-ish: Corporate as corporate gets. I was that shadowy figure wandering around your corporation changing things.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2004-ish: Corporate as corporate gets. I was that shadowy figure wandering around your corporation changing things.</span>
@@ -91,7 +111,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2005-the-photographer.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2005-the-photographer.jpg" alt="2005-ish: I sell some photography to a few museums for pennies, but it inspires some new creative ideas.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2005-ish: I sell some photography to a few museums for pennies, but it inspires some new creative ideas.</span>
@@ -100,7 +120,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2005-toyota.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2005-toyota.jpg" alt="2005: Start a low budget ad team as part of the user generated ad movement, start shooting ads. this one for Toyota. Those crazy creatives on the deserted road include James Duvall, Jerry Crisco, and Josh Blagg pictured.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2005: Start a low budget ad team as part of the "user generated ad" movement, start shooting ads. this one for Toyota. Those crazy creatives on the deserted road include James Duvall, Jerry Crisco, and Josh Blagg pictured.</span>
@@ -109,7 +129,16 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2006-nhk-doc.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2005-david-josh-james.jpg" alt="2005-ish: David Steele, Josh Blagg, and James Duvall shooting PopSecret popcorn ads in James' kitchen.">
+    </picture>
+    <figcaption itemprop="caption description">
+      <span aria-hidden="true">2005-ish: David Steele, Josh Blagg, and James Duvall shooting PopSecret popcorn ads in James' kitchen.</span>
+      <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+    </figcaption>
+  </figure>
+  <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+    <picture>
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2006-nhk-doc.jpg" alt="2006: NHK flies a documentuary crew out and I'm in a huge in Japan.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2006: NHK flies a documentuary crew out and I'm in a huge in Japan.</span>
@@ -118,16 +147,16 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2008-surgery.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2008-surgery.jpg" alt="2008: Have surgery to remove tumor from neck. I was lucky, tests on tumor come back negative.">
     </picture>
     <figcaption itemprop="caption description">
-      <span aria-hidden="true">2008: Have surgery to remove tumor from neck; get lucky.</span>
+      <span aria-hidden="true">2008: Have surgery to remove tumor from neck. I was lucky, tests on tumor come back negative.</span>
       <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
     </figcaption>
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2008-wedding.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2008-wedding.jpg" alt="2008: Monica and I get married.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2008: Monica and I get married.</span>
@@ -136,25 +165,25 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2008-gareth.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2008-gareth.jpg" alt="2008: The ever talented Gareth Coen speaking at our wedding.">
     </picture>
     <figcaption itemprop="caption description">
-      <span aria-hidden="true">2008: My best man, the ever talented Gareth Coen (still the funniest speech I've ever heard).</span>
+      <span aria-hidden="true">2008: The ever talented Gareth Coen speaking at our wedding.</span>
       <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
     </figcaption>
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2008-golf.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2008-golf.jpg" alt="2008-ish: The stinct into a golf company (seen here Gareth Coen testing gear at the PGA show...as press).">
     </picture>
     <figcaption itemprop="caption description">
-      <span aria-hidden="true">2008-ish: The stinct into a golf company (seen here Gareth Coen testing gear at the PGA show with our properly obtained press badges).</span>
+      <span aria-hidden="true">2008-ish: The stinct into a golf company (seen here Gareth Coen testing gear at the PGA show...as press).</span>
       <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
     </figcaption>
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2009-alli-doing-stuff.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2009-alli-doing-stuff.jpg" alt="2009: Daughter #1, Alli, doing kid stuff.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2009: Daughter #1, Alli, doing kid stuff.</span>
@@ -163,16 +192,16 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2011-US-office-hidden-door.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2011-US-office-hidden-door.jpg" alt="2011: We open the US SVI office, with out own side door of intrigue.">
     </picture>
     <figcaption itemprop="caption description">
-      <span aria-hidden="true">2011: We open the US SVI office, with out own side door of integiue.</span>
+      <span aria-hidden="true">2011: We open the US SVI office, with out own side door of intrigue.</span>
       <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
     </figcaption>
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2012-creative-swing.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2012-creative-swing.jpg" alt="2012: We start taking creative swings at SVI, this one doing toy design for Minecraft before the game exploded. We later were threatened for that. The gifted and talented David Steele pictured.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2012: We start taking creative swings at SVI, this one doing toy design for Minecraft before the game exploded. We later were threatened for that. The gifted and talented David Steele pictured.</span>
@@ -181,7 +210,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2012-twins-arrive.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2012-twins-arrive.jpg" alt="2012: Daughter #2 and #3 come on the scene, Isa and Eve.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2012: Daughter #2 and #3 come on the scene, Isa and Eve.</span>
@@ -190,7 +219,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2013-office-ridiculous.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2013-office-ridiculous.jpg" alt="2013: Office shenengins with the talented crew of James Duvall, Paul Perrone, and Jamie Kuppens.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2013: Office shenengins with the talented crew of James Duvall, Paul Perrone, and Jamie Kuppens.</span>
@@ -199,7 +228,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2014-NFC.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2014-NFC.jpg" alt="2010s: Too many booths, too many clients. This one while working the NFC Forum booth at some industry event.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2010s: Too many booths, too many clients. This one while working the NFC Forum booth at some industry event.</span>
@@ -208,7 +237,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2015-google-io.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2015-google-io.jpg" alt="2015: I speak at Google I/O while not actually directly working for Google, a rare feat their lawyers would explain to me...a lot.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2015: I speak at Google I/O while not actually directly working for Google, a rare feat their lawyers would explain to me...a lot.</span>
@@ -217,7 +246,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2016-cds-drag-race.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2016-cds-drag-race.jpg" alt="2016: Build some crazy cutting edge softare demos, this one for Chrome Dev Summit. The talented artist and designer Laura Krake Perrone pictured.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2016: Build some crazy cutting edge softare demos, this one for Chrome Dev Summit. The talented artist and designer Laura Krake Perrone pictured.</span>
@@ -226,7 +255,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2017-james-and-jessica.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2017-james-and-jessica.jpg" alt="2017: Speaking at at frankly too many conferences; 100K in the air that year. My partners in chrime, the talented engineers Jesica Early-Cha and James Cha-Early.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2017: Speaking at at frankly too many conferences; 100K in the air that year. My partners in chrime, the talented engineers Jesica Early-Cha and James Cha-Early.</span>
@@ -235,7 +264,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2018-corporate-cool.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2018-corporate-cool.jpg" alt="2018: A bit of fun shooting corporate headshoots, but still not cool. Rebuilding corporate platforms and divisions requires fun.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2018: A bit of fun shooting corporate headshoots, but still not cool. Rebuilding corporate platforms and divisions requires fun.</span>
@@ -244,7 +273,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2019-the-voice.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2019-the-voice.jpg" alt="2019: Live streaming and podcasting in the makeshift booth at the old office.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2019: Live streaming and podcasting in the makeshift booth at the old office.</span>
@@ -253,7 +282,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2020-the-day-before-covid.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2020-the-day-before-covid.jpg" alt="March 2020: Stuck on road as COVID begins, here alone in an empty hotel bar.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">March 2020: Stuck on road as COVID begins, here alone in an empty hotel bar.</span>
@@ -262,7 +291,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
  <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2020-covid-cut.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2020-covid-cut.jpg" alt="2020: Monica trimming my hair during lockdown and having a hilarious time of it.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2020: Monica trimming my hair during lockdown and having a hilarious time of it.</span>
@@ -271,7 +300,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
    <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2020-in-the-workshop.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2020-in-the-workshop.jpg" alt="2020: Standing in my workshop, a sanctuary to be creative during lockdown.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2020: Standing in my workshop, a sanctuary to be creative during lockdown.</span>
@@ -280,7 +309,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
    <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2020-pandemic-on-polaroid.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2020-pandemic-on-polaroid.jpg" alt="2020: My photo series and article Pandemic on Polaroid runs in EMULSIVE.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2020: My photo series and article "Pandemic on Polaroid" runs in EMULSIVE.</span>
@@ -289,7 +318,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
      <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2021-CWRU.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2021-CWRU.jpg" alt="2021: Start my Doctoral program at Case Western Reserve University.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2021: Start my Doctoral program at Case Western Reserve University.</span>
@@ -298,7 +327,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
     <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2021-teach-alli-drive.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2021-teach-alli-drive.jpg" alt="2021: Teaching Alli to drive with largely empty roads during pandemic.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2021: Teaching Alli to drive with largely empty roads during pandemic.</span>
@@ -307,7 +336,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2022-EMS.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2022-EMS.jpg" alt="2022: A first: attending and talking about my research at Engaged Management conference in Guadalajara Mexico with the sage of wisdom himself (and on my PhD Committee) Dr. Phil Cola.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2022: A first: attending and talking about my research at Engaged Management conference in Guadalajara Mexico with the sage of wisdom himself (and on my PhD Committee) Dr. Phil Cola.</span>
@@ -316,7 +345,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
 <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2023-tiny-farm-starts.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2023-tiny-farm-starts.jpg" alt="2022: Monica, the girls, and I buy some land and start tiny farm.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2022: Monica, the girls, and I buy some land and start tiny farm.</span>
@@ -325,7 +354,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2022-college.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2022-college.jpg" alt="2023: Monica and I going to visit Alli at college.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2023: Monica and I going to visit Alli at college.</span>
@@ -334,7 +363,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2023-research-fellow.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2023-research-fellow.jpg" alt="2023: Become a Doctor of Managment Design and Innovation Fellow at Case Western Reserve University.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2023: Become a Doctor of Managment Design and Innovation Fellow at Case Western Reserve University.</span>
@@ -343,7 +372,8 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2023-checks.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2023-checks.jpg" alt="2023: Another round of checks for tumor recurrence.</span>
+">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2023: Another round of checks for tumor recurrence.</span>
@@ -352,7 +382,7 @@ So often we define ourselves by our CV's and resumes, yet there's a lot more int
   </figure>
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2024-phd-candidate.jpg" alt="">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2024-phd-candidate.jpg" alt="2024: Passed my exams, become a PhD Candidate.">
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2024: Passed my exams, become a PhD Candidate.</span>
