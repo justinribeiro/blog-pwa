@@ -4,6 +4,7 @@ title: "Speaking"
 subtitle: "Thank you for considering me!"
 description: "Descriptions"
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-talkin-and-ponderin.jpg"
+pagetype: "content"
 sitemap:
   changefreq: "monthly"
   priority: 0.5

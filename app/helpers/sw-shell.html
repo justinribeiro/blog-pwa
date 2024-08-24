@@ -11,13 +11,13 @@
     <style nonce="css-{{ cssnonce }}">
       :root {
         color-scheme: light dark;
-        --bg: #ffffff;
+        --bg: #fffcf9;
         --primary-text-color: #212121;
         --secondary-text-color: #757575;
         --accent-color-primary: #0049A3;
         --accent-color-secondary: #943D0A;
         --section-color: #e6e6e6;
-        --structs-bg: #f1f1f1;
+        --structs-bg: #f6f4ef;
         --structs-hi: #940088;
         --structs-border: #cccccc;
         --skeleton-bg: #cccccc;
@@ -39,7 +39,7 @@
         --code-block-bg: #f5f2f0;
         --code-block-text: #222;
 
-        --page-last: 800px;
+        --page-last: 1000px;
         --header-height: 100px;
         --header-font-offset: -10px;
         --header-font-offset-left: -1.75px;
@@ -71,34 +71,6 @@
         --motion-type:  none;
       }
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #121212;
-          --primary-text-color: #fafafa;
-          --secondary-text-color: #F1f1f1;
-          --accent-color-primary: #81d7ff;
-          --accent-color-secondary: #D06262;
-          --section-color: #444;
-          --structs-bg:#333;
-          --structs-hi: #FF94F6;
-          --structs-border: #555;
-          --skeleton-bg: #cccccc;
-
-          --form-button-color: #868200;
-
-          --diff-del-color: #ff0026;
-          --diff-ins-color: #0b4e02;
-
-          --code-background: #0c0c0c;
-          --code-color: #DD4A68;
-          --code-block-bg: #000;
-          --code-block-text: #fafafa;
-
-          --image-filter: grayscale(50%);
-          --wc-stm-dialog-background-color: #000;
-        }
-      }
-
       @media (prefers-reduced-motion: no-preference) {
         :root {
           --motion-duration: .3s;
@@ -112,7 +84,7 @@
       @media (max-width: 767px) {
         :root {
           --header-height: 85px;
-          --header-font-size: 22px;
+          --header-font-size: 26px;
           --header-image: 55px;
           --header-font-offset: -5px;
           --page-last: 88vw;
@@ -147,9 +119,10 @@
         color: var(--accent-color-primary);
         text-decoration: none;
         border-bottom: 1px solid var(--accent-color-primary);
+        transition: all 500ms ease-in-out;
       }
 
-      a:hover {
+      a:hover, a:focus {
         color: var(--accent-color-secondary);
         border-bottom: 1px solid var(--accent-color-secondary);
       }
@@ -159,7 +132,7 @@
           no-repeat;
       }
 
-      #pageHeader, #pageFooter {
+      #pageHeader, #pageFooter, #pageNav, #socialNav {
         background-color: var(--structs-bg);
       }
 
@@ -171,70 +144,215 @@
       #pageHeader, #pageFooter {
         display: grid;
         align-items: center;
-        justify-content: center;
-        gap: var(--space-cs);
-        padding: var(--space-cs);
+        justify-content: space-between;
+        padding: var(--space-cs) calc(var(--space-cs) * 3);
       }
 
       #pageHeader {
         border-bottom: var(--border);
-        grid-template-columns: auto auto;
+        grid-template-columns: auto auto auto;
+        position: sticky;
+        top: 0;
+        z-index: 1;
       }
 
       #pageFooter {
         min-height: 20vh;
         border-top: var(--border);
-        grid-template-columns: repeat(auto-fit, minmax(var(--footer-grid-min), var(--footer-grid-max)));
+        display: grid;
+        grid-template-columns: minmax(400px, 3fr) minmax(200px, 225px) minmax(100px, 150px) minmax(200px, 250px);
+        grid-template-rows: 1fr;
+        gap: var(--space-cs);
+        justify-content: space-around;
+        align-items: start;
+        padding: calc(var(--space-cs)* 5) calc(var(--space-cs)* 3);
+      }
+
+      #pageFooter svg {
+        vertical-align: middle;
+        width: 18px;
+      }
+
+      #pageFooter h2 {
+        font-variant-caps: all-small-caps;
+      }
+
+      #pageFooter p {
+        font-size: 100%;
+        margin: 0;
+      }
+
+      #pageFooter label {
+        display: block;
+        margin: 0;
+        font-size: 100%;
+      }
+
+      #pageFooter input, #pageFooter button {
+        display: inline-block;
+      }
+
+      input#contact_email {
+        width: 50%;
+        padding: 1rem;
+        font-size: 1rem;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      #pageFooter button {
+        padding: 1rem;
+        font-size: 1rem;
+        border:  none;
+        border-radius: 5px;
+        background-color: blue;
+      }
+
+      #pageFooter h2.callOut {
+        font-variant-caps: small-caps;
+        font-size: 2rem;
       }
 
       #mainHeader {
         font-size: var(--header-font-size);
-        margin-top: var(--header-font-offset);
       }
 
-      #pageNav > a {
+      #mainHeader > a {
+        color: var(--primary-text-color);
+        border-bottom: initial;
+      }
+
+      #pageNav > a, #socialNav > a {
         text-transform: uppercase;
-        letter-spacing: -0.03em;
         margin: var(--space-nav) var(--space-nav) var(--space-nav) 0;
         display: inline-block;
+        font-weight: 600;
+        letter-spacing: .02rem;
       }
 
-      #me {
-        width: var(--header-image);
-        height: var(--header-image);
-        border-radius: 10%;
+      #socialNav > a {
+        border-bottom: none;
+      }
+
+      #socialNav svg {
+        width: 24px;
+        height: 24px;
+        padding: .25rem;
         display: block;
-      }
-
-      #thanks {
-        text-transform: uppercase;
-        color: var(--structs-hi);
-        text-align: center;
-      }
-
-      #thanks a {
-        color: var(--structs-hi);
-        border-bottom: 1px solid var(--structs-hi);
       }
 
       @media (min-width: 767px) {
         #pageNav > a {
           margin-right: var(--space-cs);
-          display: initial;
-        }
-
-        #pageFooter {
-          grid-template-columns: repeat(2, minmax(var(--footer-grid-min), var(--footer-grid-max)));
-        }
-        #thanks {
-          grid-column: 1 / -1;
         }
       }
 
-      @media (max-width: 360px) {
-        #pageNav > a {
-          letter-spacing: -0.1em;
+      @media (max-width: 768px) {
+        #pageHeader {
+          text-align: center;
+          justify-content: center;
         }
+        #pageHeader, #pagefooter {
+           grid-template-columns: auto;
+        }
+        #pageHeader {
+          position: relative;
+        }
+      }
+
+      @media (max-width: 460px) {
+        #pageHeader, #pageFooter {
+          padding: var(--space-cs) 0;
+        }
+      }
+
+      @media (max-width: 376px) {
+        #pageNav {
+          font-size: smaller;
+        }
+        #pageNav > a {
+          letter-spacing: -0.05em;
+        }
+      }
+
+      @media (max-width: 320px) {
+
+        #pageFooter {
+          padding: calc(var(--space-cs)* 5) calc(var(--space-cs)* 3);
+        }
+
+      }
+
+      @media (min-width: 3000px) {
+        body {
+          zoom: 1.5;
+        }
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-family-headers);
+        margin: 0 0 var(--space-cs) var(--header-font-offset-left);
+        line-height: 1.15;
+        letter-spacing: var(--header-letter-spacing);
+      }
+
+      h1 {
+        font-size: var(--font-h1);
+        margin-top: var(--space-cs);
+      }
+
+      p,
+      li,
+      label {
+        font-family: var(--font-family-serif);
+        margin: 0 0 calc(var(--space-cs) * 2) 0;
+        color: var(--primary-text-color);
+        font-size: var(--font-base);
+        line-height: calc(var(--font-base) * var(--font-lhr));
+      }
+
+      /* Don't like this; special case. TODO extract */
+      p code,
+      li code {
+        background-color: var(--code-background);
+        color: var(--code-color);
+        font-size: 85%;
+      }
+
+      blockquote {
+        border-left: var(--outline-thickness) solid var(--accent-color-primary);
+        padding-left: var(--space-cs);
+        font-style: oblique;
+      }
+
+      img {
+        filter: var(--image-filter, initial);
+      }
+
+      main {
+        max-width: var(--page-last);
+        padding: 0 calc(var(--space-cs) * 2);
+        display: grid;
+        justify-content: center;
+      }
+
+      #pageNav {
+        text-align: center;
+      }
+
+      #pageNav svg
+      {
+        width: 32px;
+        height: 32px;
+        display: block;
+        margin: auto auto;
+        padding: .5rem;
       }
 
       @font-face {
@@ -249,6 +367,7 @@
         src: url('https://storage.googleapis.com/jdr-public-imgs/fonts/literata-v35-latin-regular.woff2') format('woff2');
       }
     </style>
+
     <meta name="description" content="I ❤️ the open web. Film photographer and mediocre darkroom printer. Maker of sometimes interesting things. Coder of open source curiosities. Always exploring.">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f1f1">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
@@ -263,8 +382,6 @@
     <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2021.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-apple-180.png">
     <link rel="manifest" href="/app.webmanifest">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@justinribeiro">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="JustinRibeiro.com">
     <meta property="og:image" content="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-192.png" />
@@ -272,45 +389,117 @@
     <link rel="pingback" href="https://webmention.io/justinribeiro.com/xmlrpc" />
   </head>
   <body>
+    <script nonce="js-{{ jsnonce }}" nomodule>
+      window.location.href = '{{ noscript }}';
+    </script>
     <header id="pageHeader">
-      <picture>
-        <source srcset="https://storage.googleapis.com/jdr-public-imgs/manifest/justinribeiro-headshot-color-2022-v1-150.webp" type="image/webp">
-        <source srcset="https://storage.googleapis.com/jdr-public-imgs/manifest/justinribeiro-headshot-color-2022-v1-150.jpg" type="image/jpeg">
-        <img decoding="async" loading="lazy" id="me" src="https://storage.googleapis.com/jdr-public-imgs/manifest/justinribeiro-headshot-color-2022-v1-150.jpg" width="75" height="75" alt="Justin Ribeiro">
-      </picture>
-      <div>
-        <h1 id="mainHeader">Justin Ribeiro</h1>
-        <nav id="pageNav">
-          <a href="/">Home</a>
-          <a href="/chronicle/">Blog</a>
-          <a href="/talks/">Talks</a>
-          <a href="/about/">About</a>
-        </nav>
-      </div>
+      <h1 id="mainHeader"><a href="/">Justin Ribeiro</a></h1>
+      <nav id="pageNav">
+        <a href="/speaking/">
+          Speaking
+        </a>
+        <a href="/consulting/">
+          Consulting
+        </a>
+        <a href="/research/">
+          Research
+        </a>
+        <a href="/about/">
+          About
+        </a>
+      </nav>
+      <nav id="socialNav">
+        <a rel="me" href="https://ribeiro.social/@justin" title="Mastodon"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6 1-5.9 6.5.1 2 0 4.4.4 7 1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a rel="me" href="https://github.com/justinribeiro" title="Github"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.3 19v-1.9a2.1 2.1 0 0 0-.6-1.7c2.1-.2 4.3-1 4.3-4.5 0-1-.4-1.8-1-2.4.3-.8.3-1.7 0-2.5 0 0-.8-.2-2.7 1a9.2 9.2 0 0 0-4.6 0C7.8 5.8 7 6 7 6c-.4.8-.4 1.7-.1 2.5-.6.6-1 1.5-1 2.4 0 3.5 2.2 4.3 4.3 4.6a2.2 2.2 0 0 0-.6 1.6V19" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.7 17.7c-2 .6-3.7 0-4.7-2" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a rel="me" href="https://youtube.com/justinribeiro" title="YouTube"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m14 12-3.5 2v-4l3.5 2Z" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12.7v-1.4C2 8.4 2 6.9 3 6c.8-1 2.2-1 5-1a144.2 144.2 0 0 1 8 0c2.8 0 4.2 0 5 1 1 1 1 2.4 1 5.3v1.4c0 2.9 0 4.4-1 5.3-.8 1-2.2 1-5 1a144.2 144.2 0 0 1-8 0c-2.8 0-4.2 0-5-1-1-1-1-2.4-1-5.3Z" stroke="#000"/></svg></a>
+        <a rel="me" href="https://instagram.com/justin.d.ribeiro" title="Instagram"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" stroke="#000"/><path d="M17.5 6.5h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </nav>
     </header>
     <noscript aria-hidden="true">
-      <p>JavaScript appears to be turned off and that's a-okay!</p>
-      <p>This Progressive Web App is Progressive! Redirecting to static page...</p>
       <meta http-equiv="refresh" content="0;url={{ noscript }}">
     </noscript>
     <blog-pwa></blog-pwa>
     <footer id="pageFooter">
       <section>
-        <h2 class="footerHeader">Hello, nice to meet you.</h2>
-        <p>I'm happy to talk. You can reach me on <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or via email at <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a></p>
-        <p>Looking for some of my code? Check <a rel="me" href="https://github.com/justinribeiro">Github</a> or <a rel="me" href="https://hub.docker.com/r/justinribeiro/">DockerHub</a>.</p>
+        <form action="https://app.keila.io/forms/nfrm_gzVqyaVq" method="post">
+          <h2 class="callOut">
+            Haven’t Signed Up Yet?<br>
+            Perfect Timing!
+          </h1>
+          <p>Get the latest insights and fun direct to your email.</p>
+          <label for="contact_email">Email Address</label>
+          <input id="contact_email" name="contact[email]" placeholder="you@example.org" type="email" required>
+          <button>Sign Up</button>
+        </form>
       </section>
       <section>
-        <h2 class="footerHeader">Meta Things</h2>
-        <p><a href="/data/chronicle/index.xml" target="_blank">RSS feed</a>. Looking for topic specific RSS? See <a href="/tags/">tag feeds</a>.</a></p>
-        <p>What, you found a bug on this site? Yikes. Please take a moment and <a href="https://github.com/justinribeiro/blog-pwa/issues/new">file a ticket</a> so I can fix it.</p>
+        <h2>Contact</h2>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
+          <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
+          <a rel="me" href="mailto:justin.ribeiro@case.edu&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin.ribeiro@case.edu</a>
+        </p>
       </section>
-      <section id="thanks">
-        <small>Made with ❤️ using <a href="https://lit.dev/">Web Components</a>, <a href="https://gohugo.io/">Hugo</a>, and <a href="https://github.com/justinribeiro/blog-pwa">Blog-PWA</a>.</small>
+      <section>
+        <h2>More Justin</h2>
+        <p>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" color="#000"><path stroke="#000" stroke-linecap="round" d="M5 19.5V5a2 2 0 0 1 2-2h11.4a.6.6 0 0 1 .6.6V21M9 7h6M6.5 15H19M6.5 18H19M6.5 21H19"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M6.5 18c-1 0-1.5-.672-1.5-1.5S5.5 15 6.5 15M6.5 21c-1 0-1.5-.672-1.5-1.5S5.5 18 6.5 18"/></svg>
+          <a href="/chronicle">Blog</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6 1-5.9 6.5.1 2 0 4.4.4 7 1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5ZM7 17v-7" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 17v-3.3m0-3.7v3.8m0 0c0-3.8 6-3.8 6 0V17M7 7h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a rel="me" href="https://ribeiro.social/@justin">LinkedIn</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.3 19v-1.9a2.1 2.1 0 0 0-.6-1.7c2.1-.2 4.3-1 4.3-4.5 0-1-.4-1.8-1-2.4.3-.8.3-1.7 0-2.5 0 0-.8-.2-2.7 1a9.2 9.2 0 0 0-4.6 0C7.8 5.8 7 6 7 6c-.4.8-.4 1.7-.1 2.5-.6.6-1 1.5-1 2.4 0 3.5 2.2 4.3 4.3 4.6a2.2 2.2 0 0 0-.6 1.6V19" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.7 17.7c-2 .6-3.7 0-4.7-2" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a rel="me" href="https://github.com/justinribeiro">Github</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m14 12-3.5 2v-4l3.5 2Z" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12.7v-1.4C2 8.4 2 6.9 3 6c.8-1 2.2-1 5-1a144.2 144.2 0 0 1 8 0c2.8 0 4.2 0 5 1 1 1 1 2.4 1 5.3v1.4c0 2.9 0 4.4-1 5.3-.8 1-2.2 1-5 1a144.2 144.2 0 0 1-8 0c-2.8 0-4.2 0-5-1-1-1-1-2.4-1-5.3Z" stroke="#000"/></svg>
+          <a rel="me" href="https://github.com/justinribeiro">YouTube</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" stroke="#000"/><path d="M17.5 6.5h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a rel="me" href="https://instagram.com/justin.d.ribeiro">Instagram</a>
+        </p>
+      </section>
+      <section>
+        <h2>Syndication</h2>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="/data/chronicle/index.xml" target="_blank">RSS feed - All Posts</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="/data/tags/maker/index.xml" target="_blank">RSS feed - Research</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="/data/tags/maker/index.xml" target="_blank">RSS feed - Maker</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="/data/tags/web/index.xml" target="_blank">RSS feed - Software Development</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="/data/tags/photography/index.xml" target="_blank">RSS feed - Photography</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="/data/tags/web/index.xml" target="_blank">RSS feed - Personal</a>
+        </p>
       </section>
     </footer>
     <script nonce="js-{{ jsnonce }}">window.litNonce = 'css-{{ cssnonce }}'; window.liteYouTubeNonce = 'css-{{ cssnonce }}';</script>
-    <script type="module" src="./src/blog-pwa.js" nonce="js-{{ jsnonce }}"></script>
+    <script type="module" src="./src/blog-pwa.js" nonce="js-{{ jsnonce }}" fetchpriority="high"></script>
     <script type="application/ld+json" nonce="js-{{ jsnonce }}">{"@context":"http://schema.org","@type":"Person","name":"Justin Ribeiro","url":"https://justinribeiro.com/","email":"justin@justinribeiro.com","image":"https://storage.googleapis.com/jdr-public-imgs/me/justinribeiro-headshot-color-2022-v1-512.jpg","sameAs":["https://twitter.com/justinribeiro","https://www.linkedin.com/in/justinribeiro","https://read.cv/justinribeiro","https://github.com/justinribeiro","https://facebook.com/justinribeiro","https://ribeiro.social/@justin","https://hub.docker.com/r/justinribeiro/","https://developers.google.com/community/experts/directory/profile/profile-justin_ribeiro","https://www.instagram.com/justin.d.ribeiro/","https://www.tiktok.com/@justin.d.ribeiro","https://weatherhead.case.edu/students/justin-ribeiro","https://www.youtube.com/@justinribeiro"]}</script>
   </body>
   </html>

@@ -26,49 +26,6 @@ class BlogPage extends BlogElement {
     super.disconnectedCallback();
   }
 
-  /**
-   * This does some additional work for the usual data injection:
-   * 1. only lazy loading the util components that may be in a post
-   * 2. only adds the figure expand/contract if not mobile
-   * 3. gets the interaction counts
-   * 4. adds share links if web share api not available
-   */
-  async __processPageData() {
-    await super.__processPageData();
-
-    this.__removeAllChildNodes(this.__getDomRef('#featureImage'));
-
-    const checkLazyLoadTargets = this.__unescapeHtml(this.metadata.article);
-    const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
-    if (ViewerRequired.test(checkLazyLoadTargets)) {
-      import('./lod-3d-utils.js');
-    }
-
-    const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
-    if (CodeBlockRequired.test(checkLazyLoadTargets)) {
-      import('./lod-code-block.js');
-    }
-
-    const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
-    if (YouTubeRequired.test(checkLazyLoadTargets)) {
-      import('./lod-lite-youtube.js');
-    }
-
-    const TooltipRequired = new RegExp('(</toggle-citation>)', 'g');
-    if (TooltipRequired.test(checkLazyLoadTargets)) {
-      import('./lod-toggle-citation.js');
-    }
-
-    if (this.metadata.featureimage) {
-      const template = document
-        .createRange()
-        .createContextualFragment(
-          this.__unescapeHtml(this.metadata.featureimage),
-        );
-      this.__getDomRef('#featureImage').appendChild(template);
-    }
-  }
-
   static styles = [
     super.styles,
     css`
@@ -77,6 +34,7 @@ class BlogPage extends BlogElement {
 
         /* these are fancy pages, blow it out  */
         max-width: initial;
+        width: 100%;
         padding: initial;
       }
 
@@ -85,29 +43,11 @@ class BlogPage extends BlogElement {
         text-align: center;
       }
 
-      #featureImage {
-        display: grid;
-        grid-template: 'container';
-        /* place-items: center;
-        place-content: center;
-        max-height: clamp(450px, 40vh, 700px); */
-        overflow: hidden;
-      }
-
-      #featureImage > * {
-        grid-area: container;
-        max-width: 100vw;
-      }
-
-      #featureImage img {
-        width: 100vw;
+      #main img {
+        max-width: 100%;
         height: auto;
-        max-height: 525px;
-        object-fit: cover;
-      }
-
-      #subHeader {
-        z-index: 1;
+        position: unset;
+        margin: unset;
       }
 
       #subHeader h1 {
@@ -139,6 +79,16 @@ class BlogPage extends BlogElement {
         max-width: var(--page-last);
         padding: 0 calc(var(--space-cs) * 2);
         margin: auto;
+      }
+
+      #showcaseFive,
+      .fourWayBox,
+      .explore {
+        max-width: 100vw;
+      }
+
+      .explore {
+        padding: 0 calc(var(--space-cs) * 7);
       }
 
       figcaption {
@@ -188,6 +138,125 @@ class BlogPage extends BlogElement {
         opacity: 0;
       }
 
+      #showcaseFive {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        grid-gap: 1rem;
+        padding: initial;
+      }
+
+      #showcaseFive a {
+        border-bottom: none;
+        color: inherit;
+        height: auto;
+      }
+
+      .fourWayBox {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        padding: initial;
+      }
+
+      .fourWayBox a {
+        display: block;
+        border-bottom: none;
+        color: inherit;
+        height: auto;
+      }
+
+      #showcaseFive h3,
+      .fourWayBox h3,
+      .card h3 {
+        font-size: 1.5rem;
+        font-weight: 100;
+      }
+
+      #showcaseFive h4,
+      .fourWayBox h4,
+      .card h4 {
+        font-weight: 100;
+        font-family: var(--font-family-sans-serif);
+      }
+
+      .fourWayBox a {
+        padding: 1rem;
+      }
+
+      .card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      svg {
+        width: 16px;
+        vertical-align: text-bottom;
+      }
+
+      hr {
+        width: 100%;
+        margin: 2rem auto;
+        border: 1px solid #ccc;
+      }
+
+      #posts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-content: center;
+        grid-gap: var(--space-cs);
+      }
+
+      #posts > a {
+        display: block;
+        padding: var(--space-cs);
+        border-bottom: none;
+        border-radius: var(--space-cs);
+        transition-duration: var(--motion-duration);
+        will-change: background-color;
+      }
+
+      #posts > a h3 {
+        color: var(--accent-color-primary);
+        font-weight: 400;
+        font-family: var(--font-family-serif);
+        font-size: 1.5rem;
+        display: inline;
+        border-bottom: 1px solid var(--accent-color-primary);
+      }
+
+      #posts > a p {
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-bottom: var(--space-cs);
+        font-family: var(--font-family-sans-serif);
+        color: var(--accent-color-secondary);
+      }
+
+      #posts > a p {
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-bottom: var(--space-cs);
+        font-family: var(--font-family-sans-serif);
+        color: var(--accent-color-secondary);
+      }
+
+      #posts > a:hover {
+        text-decoration: none;
+        background-color: hotpink;
+      }
+
+      #posts > a:hover p,
+      #posts > a:hover h3 {
+        color: #fff;
+      }
+
+      #posts > a:hover h3 {
+        border-bottom: 1px solid #fff;
+      }
+
       @media (max-width: 460px) {
         .timeline {
           grid-template-columns: repeat(1, 1fr);
@@ -213,13 +282,37 @@ class BlogPage extends BlogElement {
         itemscope
         itemtype="http://schema.org/BlogPosting"
       >
-        <header>
+        <header class=${this.metadata.pagetype}>
           <div id="subHeader">
             <h1 itemprop="headline">${this.metadata.title}</h1>
             <h2 itemprop="subheadline">${this.metadata.subtitle}</h2>
           </div>
         </header>
-        <section itemprop="articleBody">${this.articleBody}</section>
+        <section itemprop="articleBody" class=${this.metadata.pagetype}>
+          ${this.articleBody}
+          ${this.metadata.posts
+            ? html`
+                <div id="posts">
+                  ${this.metadata.posts.map(
+                    post => html`
+                      <a href="${post.permalink}">
+                        <h3>${post.title}</h3>
+                        <p>
+                          <time
+                            .datetime="${post.dataModified}"
+                            aria-label="Posted ${post.date}"
+                          >
+                            🗒️ ${post.date}
+                          </time>
+                          • ${post.readingtime} min read
+                        </p>
+                      </a>
+                    `,
+                  )}
+                </div>
+              `
+            : html``}
+        </section>
       </article>
     `;
   }

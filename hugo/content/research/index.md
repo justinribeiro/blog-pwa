@@ -3,9 +3,8 @@ date: 2024-05-07T00:00:00-08:00
 title: "Research"
 subtitle: "Allowing Lived Experience to Emerge: My Research Process"
 description: "THis is a descriptions"
-featureimage: '
-'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-2023-kicking-it-at-case.jpg"
+pagetype: "content"
 sitemap:
   changefreq: "monthly"
   priority: 0.5

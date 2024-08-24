@@ -3,16 +3,8 @@ date: 2021-02-17T00:00:00-08:00
 title: "About Justin"
 subtitle: "Hello Wonderful People."
 description: "Driven by curiosity, listening, and learning, I enjoy leading a prolific multi-hyphenate existence: business leader, engineer, teacher, mentor, writer, photographer, maker among many other pursuits."
-featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
-  <picture>
-    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-polaroid-flood.jpg" alt="I love shooting film, as seen here during the California flooding in the winter of 2023.">
-  </picture>
-  <figcaption itemprop="caption description">
-    <span aria-hidden="true">I love shooting film, as seen here during the California flooding in the winter of 2023.</span>
-    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
-  </figcaption>
-</figure>'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210217-about-me-800.jpg"
+pagetype: "content"
 sitemap:
   changefreq: "monthly"
   priority: 0.5

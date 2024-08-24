@@ -68,36 +68,14 @@ class BlogEntry extends BlogElement {
 
   /**
    * This does some additional work for the usual data injection:
-   * 1. only lazy loading the util components that may be in a post
-   * 2. only adds the figure expand/contract if not mobile
+   * 1. only adds the figure expand/contract if not mobile
    * 3. gets the interaction counts
-   * 4. adds share links if web share api not available
+   * 3. adds share links if web share api not available
    */
   async __processPageData() {
     await super.__processPageData();
 
     this.__removeAllChildNodes(this.__getDomRef('#featureImage'));
-
-    const checkLazyLoadTargets = this.__unescapeHtml(this.metadata.article);
-    const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
-    if (ViewerRequired.test(checkLazyLoadTargets)) {
-      import('./lod-3d-utils.js');
-    }
-
-    const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
-    if (CodeBlockRequired.test(checkLazyLoadTargets)) {
-      import('./lod-code-block.js');
-    }
-
-    const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
-    if (YouTubeRequired.test(checkLazyLoadTargets)) {
-      import('./lod-lite-youtube.js');
-    }
-
-    const TooltipRequired = new RegExp('(</toggle-citation>)', 'g');
-    if (TooltipRequired.test(checkLazyLoadTargets)) {
-      import('./lod-toggle-citation.js');
-    }
 
     if (this.metadata.featureimage) {
       const template = document
@@ -313,6 +291,105 @@ class BlogEntry extends BlogElement {
       :host {
         min-height: 100vh;
         margin: auto auto;
+      }
+
+      /* bust the seams on blog posts */
+      #main img {
+        max-width: initial;
+        width: 80vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -40vw;
+        margin-right: -40vw;
+        height: auto;
+      }
+
+      figure {
+        margin: 1em 0;
+        transition: background 0.3s;
+        cursor: pointer;
+        position: relative;
+      }
+
+      figcaption {
+        color: var(--secondary-text-color);
+        font-size: var(--figcaption);
+        line-height: var(--font-lhr);
+        margin-top: 0.5em;
+      }
+
+      figcaption .author {
+        display: inline-block;
+        color: var(--secondary-text-color);
+        font-family: var(--font-family-serif);
+        font-size: var(--figcaption-author);
+      }
+
+      figure button {
+        position: fixed;
+        bottom: var(--figure-button-margin);
+        right: calc(var(--figure-button-margin) / 3);
+        position: absolute;
+        transform: rotate(135deg);
+        border-radius: 50%;
+        width: calc(var(--font-base) * 2.75);
+        font-size: var(--font-base);
+        opacity: 0.5;
+      }
+
+      figure:hover button,
+      figure button:hover,
+      figure button:focus {
+        opacity: 1;
+      }
+
+      figure[expand] button {
+        display: block;
+        bottom: initial;
+        right: var(--figure-button-margin);
+        top: var(--figure-button-margin);
+      }
+
+      figure[expand] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        box-sizing: border-box;
+        padding: 4rem;
+        background-color: var(--bg);
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        margin: 0;
+        z-index: 1;
+        transform: translateX(calc((var(--page-last) - 100vw) / 2));
+      }
+
+      figure[expand] figcaption {
+        display: block;
+        width: 20%;
+        padding: 2em;
+      }
+
+      figure[expand] img {
+        all: unset !important;
+        object-fit: contain;
+        max-width: 100% !important;
+        max-height: 90vh;
+        width: 100vw !important;
+        height: auto;
+        background: transparent;
+      }
+
+      #main iframe {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      #main video {
+        max-width: 100%;
       }
 
       time {

@@ -72,7 +72,6 @@ class BlogPwa extends LitElement {
     this.__domRefRouter = this.shadowRoot.querySelector('#outlet');
     this.__domEle = {
       page: document.createElement(`blog-page`),
-      explore: document.createElement(`blog-explore`),
       static: document.createElement(`blog-static`),
       entry: document.createElement('blog-entry'),
       missing: document.createElement('blog-missing'),
@@ -95,14 +94,10 @@ class BlogPwa extends LitElement {
       ):
         route = 'entry';
         break;
-      case /(about|talks|speaking|research|consulting)/.test(location.pathname):
+      case /(about|talks|speaking|research|consulting|chronicle|tags|^\/index.html|^\/$)/.test(
+        location.pathname,
+      ):
         route = 'page';
-        break;
-      case /(explore|^\/index.html|^\/$)/.test(location.pathname):
-        route = 'explore';
-        break;
-      case /(chronicle|tags)/.test(location.pathname):
-        route = 'static';
         break;
       case /(offline)/.test(location.pathname):
         route = 'offline';
@@ -124,14 +119,8 @@ class BlogPwa extends LitElement {
     // future change placeholder
     const eleRoot = 'blog';
 
-    if (type === 'static') {
-      await import('./blog-static.js');
-    }
     if (type === 'page') {
       await import('./blog-page.js');
-    }
-    if (type === 'explore') {
-      await import('./blog-explore.js');
     }
     if (type === 'entry') {
       await import('./blog-entry.js');

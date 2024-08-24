@@ -1,7 +1,9 @@
 ---
 date: 2019-10-07T00:00:00-08:00
 title: "Chronicle Archives"
-description: "Code, thoughts, words, and projects: now with even more words!"
+subtitle: "Code, thoughts, words, and projects: now with even more words!"
+description: "All the blog posts through the years: code, thoughts, words, and projects."
+pagetype: "page"
 sitemap:
   changefreq: "weekly"
   priority: 0.8
