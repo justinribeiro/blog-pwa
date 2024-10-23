@@ -293,37 +293,12 @@ class BlogEntry extends BlogElement {
         margin: auto auto;
       }
 
-      /* bust the seams on blog posts */
-      #main img {
-        max-width: initial;
-        width: 80vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -40vw;
-        margin-right: -40vw;
-        height: auto;
-      }
-
-      figure {
-        margin: 1em 0;
-        transition: background 0.3s;
-        cursor: pointer;
-        position: relative;
-      }
-
-      figcaption {
-        color: var(--secondary-text-color);
-        font-size: var(--figcaption);
+      .subheadline {
+        margin: calc(var(--space-cs) * 2) 0;
+        font-family: var(--font-family-san-serif);
         line-height: var(--font-lhr);
-        margin-top: 0.5em;
-      }
-
-      figcaption .author {
-        display: inline-block;
-        color: var(--secondary-text-color);
-        font-family: var(--font-family-serif);
-        font-size: var(--figcaption-author);
+        font-weight: 300;
+        font-size: var(--font-base);
       }
 
       figure button {
@@ -370,7 +345,7 @@ class BlogEntry extends BlogElement {
       figure[expand] figcaption {
         display: block;
         width: 20%;
-        padding: 2em;
+        padding: calc(var(--space-cs) * 2);
       }
 
       figure[expand] img {
@@ -397,7 +372,7 @@ class BlogEntry extends BlogElement {
       }
 
       .dotDivider {
-        padding: 0 0.5rem;
+        padding: 0 var(--space-cs);
       }
 
       .dotDivider:after {
@@ -411,11 +386,13 @@ class BlogEntry extends BlogElement {
       #metaShare {
         display: block;
         background-color: var(--section-color);
-        padding: 1em;
+        padding: calc(var(--space-cs) * 2);
+        border-radius: var(--space-cs);
+        margin-bottom: calc(var(--space-cs) * 2);
       }
 
       #share > a {
-        margin-right: 0.5em;
+        margin-right: var(--space-cs);
       }
 
       label {

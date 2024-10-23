@@ -72,7 +72,6 @@ class BlogPwa extends LitElement {
     this.__domRefRouter = this.shadowRoot.querySelector('#outlet');
     this.__domEle = {
       page: document.createElement(`blog-page`),
-      static: document.createElement(`blog-static`),
       entry: document.createElement('blog-entry'),
       missing: document.createElement('blog-missing'),
       offline: document.createElement('blog-offline'),
@@ -286,8 +285,8 @@ class BlogPwa extends LitElement {
   async __listenForSlotCleanEvent() {
     const ele = this.shadowRoot.querySelector('#prerender');
     ele.classList.add('slide-hide');
-    // await this.updateComplete;
-    // ele.remove();
+    await this.updateComplete;
+    ele.remove();
   }
 
   /**
@@ -347,7 +346,6 @@ class BlogPwa extends LitElement {
       margin-right: auto;
       left: 0;
       right: 0;
-      /* width: calc(var(--page-last) + 32px); */
     }
 
     .slide-hide {

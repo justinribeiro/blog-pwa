@@ -336,10 +336,6 @@ class BlogElement extends LitElement {
       font-style: oblique;
     }
 
-    img {
-      filter: var(--image-filter, initial);
-    }
-
     table {
       width: 100%;
       border-spacing: 0;
@@ -362,12 +358,62 @@ class BlogElement extends LitElement {
     }
 
     img {
+      filter: var(--image-filter, initial);
+      border-radius: 0.5rem;
       background: radial-gradient(rgb(101, 112, 100), rgb(166 175 170))
         no-repeat;
     }
 
+    figure {
+      margin: 1em 0;
+      transition: background 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    figure img {
+      max-width: initial;
+      width: 80vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -40vw;
+      margin-right: -40vw;
+      height: auto;
+    }
+
+    figcaption {
+      color: var(--secondary-text-color);
+      font-size: var(--figcaption);
+      line-height: var(--font-lhr);
+      margin-top: 0.5em;
+    }
+
+    figcaption .author {
+      display: inline-block;
+      color: var(--secondary-text-color);
+      font-family: var(--font-family-serif);
+      font-size: var(--figcaption-author);
+    }
+
     [hidden] {
       display: none !important;
+    }
+
+    @media (max-width: 1024px) {
+      img {
+        border-radius: revert;
+      }
+
+      figure img {
+        max-width: initial;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+      }
     }
   `;
 }

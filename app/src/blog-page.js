@@ -36,18 +36,19 @@ class BlogPage extends BlogElement {
         max-width: initial;
         width: 100%;
         padding: initial;
+
+        --blog-page-spacer-x: 3;
+      }
+
+      @media (min-width: 769px) {
+        :host {
+          --blog-page-spacer-x: 7;
+        }
       }
 
       header h1,
       header h2 {
         text-align: center;
-      }
-
-      #main img {
-        max-width: 100%;
-        height: auto;
-        position: unset;
-        margin: unset;
       }
 
       #subHeader h1 {
@@ -87,13 +88,72 @@ class BlogPage extends BlogElement {
         max-width: 100vw;
       }
 
-      .explore {
-        padding: 0 calc(var(--space-cs) * 7);
+      #showcaseFive img {
+        max-width: 100%;
       }
 
-      figcaption {
-        text-align: center;
-        font-size: 12px;
+      .explore {
+        padding: 0 calc(var(--space-cs) * var(--blog-page-spacer-x));
+      }
+
+      #showcaseFive {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        grid-gap: 1rem;
+        padding: initial;
+      }
+
+      #showcaseFive a,
+      .fourWayBox a {
+        border-bottom: none;
+        color: inherit;
+        height: auto;
+      }
+
+      .fourWayBox {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        padding: initial;
+      }
+
+      .fourWayBox a {
+        display: block;
+      }
+
+      #showcaseFive h3,
+      .fourWayBox h3,
+      .card h3 {
+        font-size: 1.5rem;
+        font-weight: 100;
+      }
+
+      #showcaseFive h4,
+      .fourWayBox h4,
+      .card h4 {
+        font-weight: 100;
+        font-family: var(--font-family-sans-serif);
+      }
+
+      .fourWayBox a {
+        padding: 1rem;
+      }
+
+      .card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      svg {
+        width: 20px;
+        vertical-align: text-bottom;
+      }
+
+      hr {
+        width: 100%;
+        margin: 2rem auto;
+        border: 1px solid #ccc;
       }
 
       /* pssft never the real one */
@@ -123,81 +183,20 @@ class BlogPage extends BlogElement {
         position: relative;
       }
 
-      .timeline figcaption {
+      .timeline img {
+        position: initial;
+        margin-left: initial;
+        margin-right: initial;
+        max-width: 100%;
+      }
+
+      .timline figcaption {
         font-size: initial;
         text-align: initial;
       }
 
-      #main .timeline img {
-        all: unset;
-        max-width: 100%;
-        height: auto;
-      }
-
       .timeline .author {
         opacity: 0;
-      }
-
-      #showcaseFive {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-        grid-gap: 1rem;
-        padding: initial;
-      }
-
-      #showcaseFive a {
-        border-bottom: none;
-        color: inherit;
-        height: auto;
-      }
-
-      .fourWayBox {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-        padding: initial;
-      }
-
-      .fourWayBox a {
-        display: block;
-        border-bottom: none;
-        color: inherit;
-        height: auto;
-      }
-
-      #showcaseFive h3,
-      .fourWayBox h3,
-      .card h3 {
-        font-size: 1.5rem;
-        font-weight: 100;
-      }
-
-      #showcaseFive h4,
-      .fourWayBox h4,
-      .card h4 {
-        font-weight: 100;
-        font-family: var(--font-family-sans-serif);
-      }
-
-      .fourWayBox a {
-        padding: 1rem;
-      }
-
-      .card {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-gap: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      svg {
-        width: 16px;
-        vertical-align: text-bottom;
-      }
-
-      hr {
-        width: 100%;
-        margin: 2rem auto;
-        border: 1px solid #ccc;
       }
 
       #posts {
@@ -223,15 +222,6 @@ class BlogPage extends BlogElement {
         font-size: 1.5rem;
         display: inline;
         border-bottom: 1px solid var(--accent-color-primary);
-      }
-
-      #posts > a p {
-        font-weight: 400;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        margin-bottom: var(--space-cs);
-        font-family: var(--font-family-sans-serif);
-        color: var(--accent-color-secondary);
       }
 
       #posts > a p {

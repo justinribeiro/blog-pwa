@@ -8,7 +8,7 @@ build:
 
 .PHONY: prod
 prod:
-	./utilities/builder.zsh -t prod; cd ship/; /usr/bin/python3 /usr/lib/google-cloud-sdk/bin/dev_appserver.py --runtime_python_path="python27=/usr/bin/python2.7,python3=/usr/bin/python3" .; cd ../..;
+	./utilities/builder.zsh -t prod; cd ship/; /usr/bin/python3 /usr/lib/google-cloud-sdk/bin/dev_appserver.py --runtime_python_path="python3=/usr/bin/python3" .; cd ../..;
 
 .PHONY: dev
 dev:

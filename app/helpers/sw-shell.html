@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin>
 
     <style nonce="css-{{ cssnonce }}">
-      :root {
+           :root {
         color-scheme: light dark;
         --bg: #fffcf9;
         --primary-text-color: #212121;
         --secondary-text-color: #757575;
         --accent-color-primary: #0049A3;
         --accent-color-secondary: #943D0A;
-        --section-color: #e6e6e6;
+        --section-color: #f6f4ef;
         --structs-bg: #f6f4ef;
         --structs-hi: #940088;
         --structs-border: #cccccc;
@@ -94,11 +94,6 @@
         }
       }
 
-      a:focus {
-        outline-offset: var(--outline-thickness);
-        outline: var(--outline);
-      }
-
       body, h1, h2 {
         margin: 0;
       }
@@ -122,21 +117,21 @@
         transition: all 500ms ease-in-out;
       }
 
-      a:hover, a:focus {
+      a:hover {
         color: var(--accent-color-secondary);
         border-bottom: 1px solid var(--accent-color-secondary);
       }
 
-      img {
-        background: radial-gradient(rgb(101, 112, 100), rgb(166 175 170))
-          no-repeat;
+      a:focus {
+        outline-offset: var(--outline-thickness);
+        outline: var(--outline);
       }
 
       #pageHeader, #pageFooter, #pageNav, #socialNav {
         background-color: var(--structs-bg);
       }
 
-      #mainHeader, .footerHeader {
+      #mainHeader {
         font-weight: 400;
         font-family: var(--font-family-headers);
       }
@@ -159,59 +154,26 @@
       #pageFooter {
         min-height: 20vh;
         border-top: var(--border);
-        display: grid;
-        grid-template-columns: minmax(400px, 3fr) minmax(200px, 225px) minmax(100px, 150px) minmax(200px, 250px);
-        grid-template-rows: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+        grid-template-rows: 1fr auto;
         gap: var(--space-cs);
-        justify-content: space-around;
+        justify-content: center;
         align-items: start;
         padding: calc(var(--space-cs)* 5) calc(var(--space-cs)* 3);
       }
 
-      #pageFooter svg {
-        vertical-align: middle;
-        width: 18px;
-      }
-
-      #pageFooter h2 {
-        font-variant-caps: all-small-caps;
-      }
-
       #pageFooter p {
-        font-size: 100%;
-        margin: 0;
+        line-height: initial;
       }
 
-      #pageFooter label {
-        display: block;
-        margin: 0;
-        font-size: 100%;
-      }
-
-      #pageFooter input, #pageFooter button {
-        display: inline-block;
-      }
-
-      input#contact_email {
-        width: 50%;
-        padding: 1rem;
-        font-size: 1rem;
-        background-color: #fff;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-      }
-
-      #pageFooter button {
-        padding: 1rem;
-        font-size: 1rem;
-        border:  none;
-        border-radius: 5px;
-        background-color: blue;
-      }
-
-      #pageFooter h2.callOut {
+      #pageFooter  h2 {
         font-variant-caps: small-caps;
-        font-size: 2rem;
+        font-family: var(--font-family-headers);
+      }
+
+      #pageFooter  svg {
+        width: 20px;
+        vertical-align: text-bottom;
       }
 
       #mainHeader {
@@ -234,125 +196,34 @@
       #socialNav > a {
         border-bottom: none;
       }
-
-      #socialNav svg {
+      #socialNav  svg {
         width: 24px;
         height: 24px;
         padding: .25rem;
         display: block;
       }
 
-      @media (min-width: 767px) {
-        #pageNav > a {
-          margin-right: var(--space-cs);
-        }
-      }
-
       @media (max-width: 768px) {
         #pageHeader {
+          position: relative;
           text-align: center;
           justify-content: center;
         }
         #pageHeader, #pagefooter {
            grid-template-columns: auto;
         }
-        #pageHeader {
-          position: relative;
-        }
       }
 
-      @media (max-width: 460px) {
-        #pageHeader, #pageFooter {
-          padding: var(--space-cs) 0;
-        }
-      }
-
-      @media (max-width: 376px) {
+      @media (max-width: 412px) {
         #pageNav {
-          font-size: smaller;
+          font-size: 85%;
         }
-        #pageNav > a {
-          letter-spacing: -0.05em;
-        }
-      }
-
-      @media (max-width: 320px) {
-
-        #pageFooter {
-          padding: calc(var(--space-cs)* 5) calc(var(--space-cs)* 3);
-        }
-
       }
 
       @media (min-width: 3000px) {
         body {
           zoom: 1.5;
         }
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: var(--font-family-headers);
-        margin: 0 0 var(--space-cs) var(--header-font-offset-left);
-        line-height: 1.15;
-        letter-spacing: var(--header-letter-spacing);
-      }
-
-      h1 {
-        font-size: var(--font-h1);
-        margin-top: var(--space-cs);
-      }
-
-      p,
-      li,
-      label {
-        font-family: var(--font-family-serif);
-        margin: 0 0 calc(var(--space-cs) * 2) 0;
-        color: var(--primary-text-color);
-        font-size: var(--font-base);
-        line-height: calc(var(--font-base) * var(--font-lhr));
-      }
-
-      /* Don't like this; special case. TODO extract */
-      p code,
-      li code {
-        background-color: var(--code-background);
-        color: var(--code-color);
-        font-size: 85%;
-      }
-
-      blockquote {
-        border-left: var(--outline-thickness) solid var(--accent-color-primary);
-        padding-left: var(--space-cs);
-        font-style: oblique;
-      }
-
-      img {
-        filter: var(--image-filter, initial);
-      }
-
-      main {
-        max-width: var(--page-last);
-        padding: 0 calc(var(--space-cs) * 2);
-        display: grid;
-        justify-content: center;
-      }
-
-      #pageNav {
-        text-align: center;
-      }
-
-      #pageNav svg
-      {
-        width: 32px;
-        height: 32px;
-        display: block;
-        margin: auto auto;
-        padding: .5rem;
       }
 
       @font-face {
@@ -367,7 +238,6 @@
         src: url('https://storage.googleapis.com/jdr-public-imgs/fonts/literata-v35-latin-regular.woff2') format('woff2');
       }
     </style>
-
     <meta name="description" content="I ❤️ the open web. Film photographer and mediocre darkroom printer. Maker of sometimes interesting things. Coder of open source curiosities. Always exploring.">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f1f1">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
@@ -413,6 +283,7 @@
         <a rel="me" href="https://github.com/justinribeiro" title="Github"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.3 19v-1.9a2.1 2.1 0 0 0-.6-1.7c2.1-.2 4.3-1 4.3-4.5 0-1-.4-1.8-1-2.4.3-.8.3-1.7 0-2.5 0 0-.8-.2-2.7 1a9.2 9.2 0 0 0-4.6 0C7.8 5.8 7 6 7 6c-.4.8-.4 1.7-.1 2.5-.6.6-1 1.5-1 2.4 0 3.5 2.2 4.3 4.3 4.6a2.2 2.2 0 0 0-.6 1.6V19" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.7 17.7c-2 .6-3.7 0-4.7-2" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a rel="me" href="https://youtube.com/justinribeiro" title="YouTube"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m14 12-3.5 2v-4l3.5 2Z" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12.7v-1.4C2 8.4 2 6.9 3 6c.8-1 2.2-1 5-1a144.2 144.2 0 0 1 8 0c2.8 0 4.2 0 5 1 1 1 1 2.4 1 5.3v1.4c0 2.9 0 4.4-1 5.3-.8 1-2.2 1-5 1a144.2 144.2 0 0 1-8 0c-2.8 0-4.2 0-5-1-1-1-1-2.4-1-5.3Z" stroke="#000"/></svg></a>
         <a rel="me" href="https://instagram.com/justin.d.ribeiro" title="Instagram"><svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" stroke="#000"/><path d="M17.5 6.5h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a rel="me" href="https://orcid.org/0009-0002-8221-9120" title="ORCid"><svg viewBox="0 0 32 32"><path d="M16 3C8.832 3 3 8.832 3 16s5.832 13 13 13 13-5.832 13-13S23.168 3 16 3zm0 2c6.087 0 11 4.913 11 11s-4.913 11-11 11S5 22.087 5 16 9.913 5 16 5zm-5 3a1 1 0 0 0 0 2 1 1 0 0 0 0-2zm-1 3v11h2V11zm4 0v11h4.5c3.026 0 5.5-2.474 5.5-5.5S21.526 11 18.5 11zm2 2h2.5c1.944 0 3.5 1.556 3.5 3.5S20.444 20 18.5 20H16z"/></svg></a>
       </nav>
     </header>
     <noscript aria-hidden="true">
@@ -420,29 +291,6 @@
     </noscript>
     <blog-pwa></blog-pwa>
     <footer id="pageFooter">
-      <section>
-        <form action="https://app.keila.io/forms/nfrm_gzVqyaVq" method="post">
-          <h2 class="callOut">
-            Haven’t Signed Up Yet?<br>
-            Perfect Timing!
-          </h1>
-          <p>Get the latest insights and fun direct to your email.</p>
-          <label for="contact_email">Email Address</label>
-          <input id="contact_email" name="contact[email]" placeholder="you@example.org" type="email" required>
-          <button>Sign Up</button>
-        </form>
-      </section>
-      <section>
-        <h2>Contact</h2>
-        <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
-          <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a>
-        </p>
-        <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
-          <a rel="me" href="mailto:justin.ribeiro@case.edu&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin.ribeiro@case.edu</a>
-        </p>
-      </section>
       <section>
         <h2>More Justin</h2>
         <p>
@@ -453,10 +301,7 @@
           <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6 1-5.9 6.5.1 2 0 4.4.4 7 1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a>
         </p>
-        <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5ZM7 17v-7" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 17v-3.3m0-3.7v3.8m0 0c0-3.8 6-3.8 6 0V17M7 7h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <a rel="me" href="https://ribeiro.social/@justin">LinkedIn</a>
-        </p>
+
         <p>
           <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.3 19v-1.9a2.1 2.1 0 0 0-.6-1.7c2.1-.2 4.3-1 4.3-4.5 0-1-.4-1.8-1-2.4.3-.8.3-1.7 0-2.5 0 0-.8-.2-2.7 1a9.2 9.2 0 0 0-4.6 0C7.8 5.8 7 6 7 6c-.4.8-.4 1.7-.1 2.5-.6.6-1 1.5-1 2.4 0 3.5 2.2 4.3 4.3 4.6a2.2 2.2 0 0 0-.6 1.6V19" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.7 17.7c-2 .6-3.7 0-4.7-2" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a rel="me" href="https://github.com/justinribeiro">Github</a>
@@ -468,6 +313,10 @@
         <p>
           <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" stroke="#000"/><path d="M17.5 6.5h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a rel="me" href="https://instagram.com/justin.d.ribeiro">Instagram</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5ZM7 17v-7" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 17v-3.3m0-3.7v3.8m0 0c0-3.8 6-3.8 6 0V17M7 7h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a rel="me" href="https://ribeiro.social/@justin">LinkedIn</a>
         </p>
       </section>
       <section>
@@ -495,6 +344,17 @@
         <p>
           <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a href="/data/tags/web/index.xml" target="_blank">RSS feed - Personal</a>
+        </p>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
+          <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a>
+        </p>
+        <p>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
+          <a rel="me" href="mailto:justin.ribeiro@case.edu&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin.ribeiro@case.edu</a>
         </p>
       </section>
     </footer>
