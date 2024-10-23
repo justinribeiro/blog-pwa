@@ -25,6 +25,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
   </figcaption>
 </figure>'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-800.jpg"
+pagetype: "page"
 sitemap:
   changefreq: "monthly"
   priority: 0.5

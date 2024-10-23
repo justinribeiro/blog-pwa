@@ -4,7 +4,7 @@ title: "Research"
 subtitle: "Allowing Lived Experience to Emerge: My Research Process"
 description: "THis is a descriptions"
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-2023-kicking-it-at-case.jpg"
-pagetype: "content"
+pagetype: "page"
 sitemap:
   changefreq: "monthly"
   priority: 0.5
