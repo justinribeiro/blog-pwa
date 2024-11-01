@@ -48,6 +48,7 @@ class BlogElement extends LitElement {
       posts: [],
       article: '',
       title: '',
+      subtitle: '',
       dataModified: '',
       date: '',
       readingtime: '',
@@ -56,14 +57,12 @@ class BlogElement extends LitElement {
       filename: '',
       view: '',
       tags: '',
-      enableMastodonPhotos: false,
-      pagetype: 'page',
+      pagetype: '',
       relatedposts: [],
     };
     this.articleBody = '';
     this.content = '';
     this.share = [];
-    this.clsSteady = false;
   }
 
   /**
@@ -109,6 +108,8 @@ class BlogElement extends LitElement {
 
     this.__setPageMetaData(this.metadata);
 
+    this.__lazyLoadInjector(htmlData);
+
     await this.updateComplete;
 
     if (!this.__stripDown) {
@@ -116,7 +117,7 @@ class BlogElement extends LitElement {
         new CustomEvent('blog-pwa-clean-prerender-slot', {
           bubbles: true,
           composed: true,
-        })
+        }),
       );
       this.__stripDown = true;
     }
@@ -135,9 +136,11 @@ class BlogElement extends LitElement {
    * @param {Node} parent
    */
   __removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
+    try {
+      while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+      }
+    } catch {}
   }
 
   /**
@@ -171,7 +174,7 @@ class BlogElement extends LitElement {
     const fallbackImg = this.__getDomRef(
       'fallbackImg',
       '',
-      'link[rel=icon]'
+      'link[rel=icon]',
     ).href;
     document.title = `${title} - Justin Ribeiro`;
 
@@ -190,7 +193,7 @@ class BlogElement extends LitElement {
    */
   __setMetaDom(attrName, attrValue, content) {
     let element = document.head.querySelector(
-      `meta[${attrName}="${attrValue}"]`
+      `meta[${attrName}="${attrValue}"]`,
     );
     if (!element) {
       element = document.createElement('meta');
@@ -217,11 +220,43 @@ class BlogElement extends LitElement {
         'unEscapeHTMLPolicy',
         {
           createHTML: raw => strReplacer(raw),
-        }
+        },
       );
       return unEscapeHTMLPolicy.createHTML(data);
     }
     return strReplacer(data);
+  }
+
+  __lazyLoadInjector(data) {
+    const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
+    if (ViewerRequired.test(data)) {
+      import('./lod-3d-utils.js');
+    }
+
+    const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
+    if (CodeBlockRequired.test(data)) {
+      import('./lod-code-block.js');
+    }
+
+    const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
+    if (YouTubeRequired.test(data)) {
+      import('./lod-lite-youtube.js');
+    }
+
+    const TooltipRequired = new RegExp('(</toggle-citation>)', 'g');
+    if (TooltipRequired.test(data)) {
+      import('./lod-toggle-citation.js');
+    }
+
+    const YouTubeListRequired = new RegExp('(</ribeiro-social-photos)', 'g');
+    if (YouTubeListRequired.test(data)) {
+      import('./lod-youtube-list.js');
+    }
+
+    const PhotosRequired = new RegExp('(</youtube-video-list>)', 'g');
+    if (PhotosRequired.test(data)) {
+      import('./lod-ribeiro-social-photos.js');
+    }
   }
 
   static styles = css`
@@ -301,10 +336,6 @@ class BlogElement extends LitElement {
       font-style: oblique;
     }
 
-    img {
-      filter: var(--image-filter, initial);
-    }
-
     table {
       width: 100%;
       border-spacing: 0;
@@ -326,30 +357,63 @@ class BlogElement extends LitElement {
       background-color: var(--structs-bg);
     }
 
-    #tags a {
-      /* display: inline-block; */
-      border: var(--border-thickness) solid var(--structs-border);
-      border-radius: var(--border-radius);
-      padding: calc(var(--space-cs) / 2);
-      background: var(--structs-bg);
-      line-height: calc((var(--space-cs) * 2) + var(--font-base));
-    }
-
-    .subheadline {
-      margin: calc(var(--space-cs) * 2) 0;
-      font-family: var(--font-family-san-serif);
-      line-height: var(--font-lhr);
-      font-weight: 300;
-      font-size: var(--font-base);
-    }
-
     img {
+      filter: var(--image-filter, initial);
+      border-radius: 0.5rem;
       background: radial-gradient(rgb(101, 112, 100), rgb(166 175 170))
         no-repeat;
     }
 
+    figure {
+      margin: 1em 0;
+      transition: background 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    figure img {
+      max-width: initial;
+      width: 80vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -40vw;
+      margin-right: -40vw;
+      height: auto;
+    }
+
+    figcaption {
+      color: var(--secondary-text-color);
+      font-size: var(--figcaption);
+      line-height: var(--font-lhr);
+      margin-top: 0.5em;
+    }
+
+    figcaption .author {
+      display: inline-block;
+      color: var(--secondary-text-color);
+      font-family: var(--font-family-serif);
+      font-size: var(--figcaption-author);
+    }
+
     [hidden] {
       display: none !important;
+    }
+
+    @media (max-width: 1024px) {
+      img {
+        border-radius: revert;
+      }
+
+      figure img {
+        max-width: initial;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+      }
     }
   `;
 }

@@ -71,11 +71,10 @@ class BlogPwa extends LitElement {
   __setupRouter() {
     this.__domRefRouter = this.shadowRoot.querySelector('#outlet');
     this.__domEle = {
-      static: document.createElement(`blog-static`),
+      page: document.createElement(`blog-page`),
       entry: document.createElement('blog-entry'),
       missing: document.createElement('blog-missing'),
       offline: document.createElement('blog-offline'),
-      reading: document.createElement('blog-reading'),
     };
     installRouter(location => this.__routes(location));
   }
@@ -89,16 +88,15 @@ class BlogPwa extends LitElement {
   __routes(location) {
     let route;
     switch (true) {
-      case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*|about|talks)/.test(
+      case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*)/.test(
         location.pathname,
       ):
         route = 'entry';
         break;
-      case /(chronicle|tags|^\/index.html|^\/$)/.test(location.pathname):
-        route = 'static';
-        break;
-      case /(reading)/.test(location.pathname):
-        route = 'reading';
+      case /(about|talks|speaking|research|consulting|chronicle|tags|^\/index.html|^\/$)/.test(
+        location.pathname,
+      ):
+        route = 'page';
         break;
       case /(offline)/.test(location.pathname):
         route = 'offline';
@@ -120,17 +118,14 @@ class BlogPwa extends LitElement {
     // future change placeholder
     const eleRoot = 'blog';
 
-    if (type === 'static') {
-      await import('./blog-static.js');
+    if (type === 'page') {
+      await import('./blog-page.js');
     }
     if (type === 'entry') {
       await import('./blog-entry.js');
     }
     if (type === 'offline') {
       await import('./page-offline.js');
-    }
-    if (type === 'reading') {
-      await import('./page-reading.js');
     }
     if (type === 'missing') {
       await import('./page-missing.js');
@@ -179,7 +174,6 @@ class BlogPwa extends LitElement {
   static async __loadAnalytics() {
     const module = await import('./lod-analytics.js');
     module.initAnalytics();
-    module.initCwp();
   }
 
   /**
@@ -204,37 +198,39 @@ class BlogPwa extends LitElement {
       } else {
         swUrl = srcSw('service-worker.js');
       }
-      const wb = new Workbox(swUrl);
+      this.wb = new Workbox(swUrl);
 
-      wb.addEventListener('activated', () => {
+      this.wb.addEventListener('activated', () => {
         if ('requestIdleCallback' in window) {
           window.requestIdleCallback(
             () => {
-              BlogPwa.__cacheExistingLoadedUrls(wb);
+              BlogPwa.__cacheExistingLoadedUrls(this.wb);
             },
             {
               timeout: 5000,
             },
           );
         } else {
-          BlogPwa.__cacheExistingLoadedUrls(wb);
+          BlogPwa.__cacheExistingLoadedUrls(this.wb);
         }
       });
 
-      wb.addEventListener('waiting', () => {
+      this.wb.addEventListener('waiting', () => {
+        this.wb.addEventListener('controlling', () => {
+          window.location.reload();
+        });
+
         this.showSnackbar({
           text: 'New and updated content is available.',
           requireInteraction: true,
           callback: async () => {
-            wb.addEventListener('controlling', () => {
-              window.location.reload();
-            });
-            wb.messageSW({ type: 'SKIP_WAITING' });
+            this.wb.messageSkipWaiting();
+            this.__dom.snackBar.removeAttribute('active');
           },
         });
       });
 
-      wb.register();
+      this.wb.register();
     }
     this.__initializeNonCrpResources();
   }
@@ -289,8 +285,8 @@ class BlogPwa extends LitElement {
   async __listenForSlotCleanEvent() {
     const ele = this.shadowRoot.querySelector('#prerender');
     ele.classList.add('slide-hide');
-    // await this.updateComplete;
-    // ele.remove();
+    await this.updateComplete;
+    ele.remove();
   }
 
   /**
@@ -335,8 +331,8 @@ class BlogPwa extends LitElement {
     }
 
     main {
-      display: grid;
-      justify-content: center;
+      /* display: grid; */
+      /* justify-content: center; */
       min-height: 100vh;
     }
 
@@ -350,7 +346,6 @@ class BlogPwa extends LitElement {
       margin-right: auto;
       left: 0;
       right: 0;
-      width: calc(var(--page-last) + 32px);
     }
 
     .slide-hide {

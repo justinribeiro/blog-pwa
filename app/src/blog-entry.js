@@ -68,42 +68,20 @@ class BlogEntry extends BlogElement {
 
   /**
    * This does some additional work for the usual data injection:
-   * 1. only lazy loading the util components that may be in a post
-   * 2. only adds the figure expand/contract if not mobile
+   * 1. only adds the figure expand/contract if not mobile
    * 3. gets the interaction counts
-   * 4. adds share links if web share api not available
+   * 3. adds share links if web share api not available
    */
   async __processPageData() {
     await super.__processPageData();
 
     this.__removeAllChildNodes(this.__getDomRef('#featureImage'));
 
-    const checkLazyLoadTargets = this.__unescapeHtml(this.metadata.article);
-    const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
-    if (ViewerRequired.test(checkLazyLoadTargets)) {
-      import('./lod-3d-utils.js');
-    }
-
-    const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
-    if (CodeBlockRequired.test(checkLazyLoadTargets)) {
-      import('./lod-code-block.js');
-    }
-
-    const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
-    if (YouTubeRequired.test(checkLazyLoadTargets)) {
-      import('./lod-lite-youtube.js');
-    }
-
-    const TooltipRequired = new RegExp('(</toggle-citation>)', 'g');
-    if (TooltipRequired.test(checkLazyLoadTargets)) {
-      import('./lod-toggle-citation.js');
-    }
-
     if (this.metadata.featureimage) {
       const template = document
         .createRange()
         .createContextualFragment(
-          this.__unescapeHtml(this.metadata.featureimage)
+          this.__unescapeHtml(this.metadata.featureimage),
         );
       this.__getDomRef('#featureImage').appendChild(template);
     }
@@ -123,7 +101,7 @@ class BlogEntry extends BlogElement {
         },
         {
           timeout: 5000,
-        }
+        },
       );
     } else {
       this.__shareCreateLinks();
@@ -178,7 +156,7 @@ class BlogEntry extends BlogElement {
         {
           service: 'E-Mail',
           link: stringInterpolate(this.strings.sharing.services.email, data),
-        }
+        },
       );
     }
   }
@@ -246,7 +224,7 @@ class BlogEntry extends BlogElement {
       {
         method: 'GET',
         mode: 'cors',
-      }
+      },
     );
 
     if (response.ok) {
@@ -300,7 +278,7 @@ class BlogEntry extends BlogElement {
           detail: {
             message,
           },
-        })
+        }),
       );
 
       this.shadowRoot.querySelector('#webMentionSource').value = '';
@@ -312,26 +290,15 @@ class BlogEntry extends BlogElement {
     css`
       :host {
         min-height: 100vh;
-      }
-      figure {
-        margin: 1em 0;
-        transition: background 0.3s;
-        cursor: pointer;
-        position: relative;
+        margin: auto auto;
       }
 
-      figcaption {
-        color: var(--secondary-text-color);
-        font-size: var(--figcaption);
+      .subheadline {
+        margin: calc(var(--space-cs) * 2) 0;
+        font-family: var(--font-family-san-serif);
         line-height: var(--font-lhr);
-        margin-top: 0.5em;
-      }
-
-      figcaption .author {
-        display: inline-block;
-        color: var(--secondary-text-color);
-        font-family: var(--font-family-serif);
-        font-size: var(--figcaption-author);
+        font-weight: 300;
+        font-size: var(--font-base);
       }
 
       figure button {
@@ -378,25 +345,22 @@ class BlogEntry extends BlogElement {
       figure[expand] figcaption {
         display: block;
         width: 20%;
-        padding: 2em;
+        padding: calc(var(--space-cs) * 2);
       }
 
       figure[expand] img {
+        all: unset !important;
         object-fit: contain;
-        max-width: 100%;
+        max-width: 100% !important;
         max-height: 90vh;
         width: 100vw !important;
         height: auto;
+        background: transparent;
       }
 
       #main iframe {
         max-width: 100%;
         width: 100%;
-      }
-
-      #main img {
-        max-width: 100%;
-        height: auto;
       }
 
       #main video {
@@ -408,7 +372,7 @@ class BlogEntry extends BlogElement {
       }
 
       .dotDivider {
-        padding: 0 0.5rem;
+        padding: 0 var(--space-cs);
       }
 
       .dotDivider:after {
@@ -422,11 +386,13 @@ class BlogEntry extends BlogElement {
       #metaShare {
         display: block;
         background-color: var(--section-color);
-        padding: 1em;
+        padding: calc(var(--space-cs) * 2);
+        border-radius: var(--space-cs);
+        margin-bottom: calc(var(--space-cs) * 2);
       }
 
       #share > a {
-        margin-right: 0.5em;
+        margin-right: var(--space-cs);
       }
 
       label {
@@ -467,7 +433,7 @@ class BlogEntry extends BlogElement {
         margin-right: 10.5px;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 1024px) {
         #main iframe,
         #main img,
         #main lite-youtube,
@@ -527,8 +493,9 @@ class BlogEntry extends BlogElement {
             ${this.metadata.tags
               .split(',')
               .map(
-                tag =>
-                  html` <a href="/tags/${tag.toLowerCase()}/">${tag}</a>&nbsp; `
+                tag => html`
+                  <a href="/tags/${tag.toLowerCase()}/">${tag}</a>&nbsp;
+                `,
               )}
           </div>
         </header>
@@ -557,7 +524,7 @@ class BlogEntry extends BlogElement {
                       >Mastodon</share-to-mastodon
                     >
                     ${this.share.map(
-                      i => html`<a href="${i.link}">${i.service}</a>`
+                      i => html`<a href="${i.link}">${i.service}</a>`,
                     )}
                   </p>
                 `}
@@ -600,7 +567,7 @@ class BlogEntry extends BlogElement {
                     post =>
                       html`<p>
                         <a href="${post.permalink}"> ${post.title}</a>
-                      </p>`
+                      </p>`,
                   )}
                   <br />
                 `

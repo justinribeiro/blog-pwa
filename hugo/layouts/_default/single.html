@@ -2,12 +2,13 @@
 {{ $content := replace $content_to_string "\n" "\\n" }}
 {
   "title": "{{ .Title }}",
+  "subtitle": "{{ $.Params.SubTitle }}",
   "description": "{{ .Description }}",
   "article": "{{ $content }}",
   "date": "{{ .Date.Format "Mon Jan 2, 2006" }}",
   "datePublished": "{{ .Date.Format $.Site.Params.ISO8601 }}",
   "dateModified" : "{{ .Date.Format $.Site.Params.ISO8601 }}",
-  "pagetype": "page",
+  "pagetype": "{{ .Params.pagetype }}",
   "words": "{{ .FuzzyWordCount }}",
   "readingtime": "{{ .ReadingTime }}",
   "permalink": "{{ .Permalink }}",

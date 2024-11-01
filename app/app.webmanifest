@@ -7,6 +7,7 @@
   "scope": "/",
   "theme_color": "#f1f1f1",
   "background_color": "#f1f1f1",
+  "display_override": ["fullscreen", "minimal-ui"],
   "display": "standalone",
   "icons": [
     {
@@ -24,19 +25,40 @@
   ],
   "screenshots": [
     {
-      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2022-ss-01.png",
-      "type": "image/png",
-      "sizes": "1081x2162"
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2024-ss-homepage-narrow.jpg",
+      "type": "image/jpg",
+      "sizes": "1082x2402",
+      "form_factor": "narrow"
     },
     {
-      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2022-ss-02.png",
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2024-ss-article-narrow.jpg",
       "type": "image/jpg",
-      "sizes": "1081x2162"
+      "sizes": "1082x2402",
+      "form_factor": "narrow"
     },
     {
-      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2022-ss-03.png",
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2024-ss-about-narrow.jpg",
       "type": "image/jpg",
-      "sizes": "1081x2162"
+      "sizes": "1082x2402",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2024-ss-homepage-wide.jpg",
+      "type": "image/jpg",
+      "sizes": "3072x1728",
+      "form_factor": "wide"
+    },
+    {
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2024-ss-article-wide.jpg",
+      "type": "image/jpg",
+      "sizes": "3072x1728",
+      "form_factor": "wide"
+    },
+    {
+      "src": "https://storage.googleapis.com/jdr-public-imgs/manifest/site-2024-ss-about-wide.jpg",
+      "type": "image/jpg",
+      "sizes": "3072x1728",
+      "form_factor": "wide"
     }
   ]
 }

@@ -46,13 +46,15 @@ class MainHandler(webapp2.RequestHandler):
             "default-src 'none'; base-uri 'self'; "
             "worker-src 'self'; "
             "script-src 'nonce-js-" + jsnonce + "' 'strict-dynamic'; "
-            "style-src 'self' 'nonce-css-" + stylenonce + "' https://fonts.googleapis.com; "
+            "style-src 'self' 'nonce-css-"
+            + stylenonce
+            + "' https://fonts.googleapis.com; "
             "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://us-west1-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://webmention.io/ https://analytics.google.com; "
             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
             "media-src 'self' https://storage.googleapis.com; "
             "form-action 'self' https://webmention.io; "
             "object-src 'none'; "
-            "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; "
+            "font-src 'self' https://storage.googleapis.com; "
             "frame-src https://giphy.com https://www.youtube.com; "
             "manifest-src 'self'; "
             "frame-ancestors 'none';"
@@ -199,10 +201,10 @@ class MainHandler(webapp2.RequestHandler):
                 .replace("index.php", ""),
                 "index.json",
             )
-            #push = os.path.join(os.path.dirname(__file__), "dist/push_manifest.json")
-            #self.push_urls = pl.use_push_manifest(push)
-            #header = pl.generate_link_preload_headers(self)
-            #self.response.headers.add_header("Link", header)
+            # push = os.path.join(os.path.dirname(__file__), "dist/push_manifest.json")
+            # self.push_urls = pl.use_push_manifest(push)
+            # header = pl.generate_link_preload_headers(self)
+            # self.response.headers.add_header("Link", header)
 
             data['noscript'] = self.request.path + '?static=true'
             data['cssnonce'] = stylenonce
