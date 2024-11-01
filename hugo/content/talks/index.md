@@ -1,200 +1,35 @@
 ---
-date: 2021-02-17T00:00:00-08:00
-title: "Talks, Publications, and Podcasts"
-subtitle: "All the world is a stage and given the opportunity, I am always happy to act and teach upon it."
-description: "All the world is a stage and given the opportunity, I am always happy to act and teach upon it."
-featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
-  <picture>
-    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-640.webp 640w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-800.webp 800w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-1024.webp 1024w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-1280.webp 1280w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-1600.webp 1600w"
-            sizes="(min-width: 800px) 800px, 100vw" type="image/webp">
-    <source srcset="https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-640.jpg 640w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-800.jpg 800w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-1024.jpg 1024w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-1280.jpg 1280w,
-                    https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-1600.jpg 1600w"
-            sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-800.jpg" alt="Sound check while  on the stage at the Nesbitt-Elliott Playhouse in Arizona.">
-  </picture>
-  <figcaption itemprop="caption description">
-    <span aria-hidden="true">Sound check while  on the stage at the Nesbitt-Elliott Playhouse in Arizona.</span>
-    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
-  </figcaption>
-</figure>'
-socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210226-talks-stage-800.jpg"
+date: 2024-05-07T00:00:00-08:00
+title: "Speaking"
+subtitle: "Thank you for considering me!"
+description: "Descriptions"
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-talkin-and-ponderin.jpg"
 pagetype: "page"
 sitemap:
   changefreq: "monthly"
   priority: 0.5
 ---
 
-Over the course of my career, I've given hundreds of talks across the United States in a wide mix of both public and private engagements. I produced and co-hosted The Web Platform Podcast for five years with over a million downloads. I’ve written for publications such as Safari Books Online, EMULSIVE, and NFC Forum, and have spoken at large conferences such as Google I/O, Eclipsecon, SPAR 3D and jQuery Conference.
+Due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my speaking schedule has become more limited over the years. My commitment encompasses valuable time spent with family and friends, as well as time reserved for creative pursuits. Should my availability not align with your event, rest assured that myself and my capable team is on hand to suggest excellent alternatives.
 
-I have a strict rule about speaking on only topics that I thorough real world experience and results from within the innovation, management, and software engineering spaces. This allows me to deliver talks and have conversations with the people in attendance, virtually and in person, that are meaningful and rich. My goal when giving any talk is to deliver takeaways that are applicable and allow innovation to occur throughout an organization or community.
+<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+  <picture>
+    <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/page-talkin-and-ponderin.jpg" width="800" height="536" alt="Sitting at my desk, pondering my next turn of phrase.">
+  </picture>
+  <figcaption itemprop="caption description">
+    <span aria-hidden="true">Sitting at my desk, pondering my next turn of phrase.</span>
+    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+  </figcaption>
+</figure>
 
-## 🎤 Request Speaking Engagement
-Looking for a speaker at your school, conference, or corporate event? Send me an email at [justin@justinribeiro.com](mailto:justin@justinribeiro.com&subject=[Talk%20Justin%20Talk]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,) and let's try to make it happen!
+I appreciate your interest and hope we align so that I can speak at your upcoming event, podcast, or show. Stay wonderful people!
 
-Please note: I _will not_ accept a speaking invitation, either for a talk or panel, unless your event has a defined diversity and inclusion statement. It's 2021. We're not in the dark ages.
+<svg xmlns="http://www.w3.org/2000/svg" id="fakeSig" viewBox="442.884 210.246 877.596 376.441"><path d="M 447.21,258.20 C 448.84 259.16, 450.47 258.76, 455.05 258.52 C 459.63 258.29, 462.60 257.71, 470.09 257.03 C 477.58 256.35, 482.23 255.88, 492.49 255.10 C 502.75 254.32, 509.11 254.20, 521.39 253.13 C 533.68 252.07, 540.74 251.25, 553.93 249.77 C 567.12 248.29, 574.25 247.40, 587.34 245.74 C 600.44 244.08, 607.18 243.17, 619.39 241.46 C 631.60 239.75, 637.55 238.76, 648.40 237.20 C 659.24 235.64, 664.32 234.85, 673.61 233.67 C 682.90 232.49, 687.20 232.31, 694.86 231.31 C 702.53 230.31, 705.90 229.90, 711.94 228.67 C 717.98 227.45, 720.47 226.47, 725.07 225.18 C 729.66 223.90, 732.13 223.53, 734.92 222.25 C 737.72 220.98, 738.59 219.73, 739.03 218.82 C 739.47 217.92, 737.88 216.79, 737.12 217.73 C 736.36 218.67, 735.73 219.68, 735.23 223.54 C 734.73 227.40, 734.80 230.40, 734.61 237.02 C 734.43 243.64, 733.99 247.39, 734.29 256.64 C 734.59 265.89, 735.06 271.40, 736.12 283.27 C 737.19 295.14, 738.18 302.02, 739.63 315.98 C 741.09 329.95, 741.90 337.87, 743.40 353.09 C 744.90 368.31, 745.87 376.50, 747.13 392.07 C 748.38 407.65, 749.27 415.74, 749.69 430.98 C 750.10 446.23, 749.86 453.98, 749.21 468.30 C 748.56 482.61, 748.17 489.95, 746.45 502.56 C 744.74 515.17, 743.74 521.21, 740.64 531.36 C 737.54 541.51, 735.50 545.73, 730.96 553.32 C 726.41 560.90, 723.79 564.34, 717.92 569.29 C 712.05 574.23, 709.03 575.96, 701.61 578.05 C 694.18 580.14, 689.77 580.35, 680.81 579.75 C 671.84 579.14, 666.39 577.96, 656.79 575.02 C 647.19 572.07, 641.79 569.89, 632.83 565.01 C 623.86 560.14, 619.15 556.87, 611.95 550.64 C 604.74 544.41, 601.39 540.59, 596.80 533.87 C 592.21 527.15, 590.56 523.78, 589.00 517.02 C 587.44 510.26, 587.32 506.85, 588.99 500.06 C 590.67 493.28, 592.24 489.68, 597.37 483.09 C 602.50 476.50, 606.00 473.10, 614.64 467.13 C 623.28 461.15, 628.91 458.18, 640.57 453.22 C 652.23 448.25, 659.73 446.15, 672.93 442.31 C 686.13 438.46, 693.44 436.74, 706.57 433.98 C 719.70 431.22, 726.58 430.27, 738.59 428.49 C 750.60 426.70, 756.42 426.32, 766.61 425.04 C 776.81 423.75, 781.36 423.44, 789.57 422.06 C 797.78 420.67, 801.41 420.00, 807.66 418.12 C 813.90 416.23, 816.57 414.93, 820.79 412.64 C 825.02 410.35, 827.26 408.75, 828.79 406.65 C 830.33 404.56, 829.42 402.71, 828.46 402.17 C 827.51 401.64, 825.10 401.90, 824.02 404.00 C 822.94 406.09, 822.51 408.47, 823.06 412.64 C 823.61 416.81, 824.55 420.11, 826.77 424.84 C 829.00 429.58, 830.56 432.51, 834.18 436.32 C 837.80 440.13, 840.23 441.88, 844.86 443.91 C 849.49 445.95, 852.31 446.52, 857.33 446.49 C 862.35 446.45, 865.11 445.94, 869.96 443.74 C 874.80 441.54, 877.60 439.80, 881.56 435.48 C 885.51 431.15, 887.09 427.65, 889.74 422.12 C 892.38 416.59, 893.25 412.59, 894.77 407.83 C 896.30 403.07, 896.73 400.90, 897.37 398.33 C 898.02 395.76, 898.21 396.02, 898.01 394.97 C 897.81 393.92, 897.84 393.01, 896.36 393.06 C 894.88 393.12, 892.30 392.69, 890.61 395.24 C 888.92 397.78, 889.22 400.93, 887.89 405.78 C 886.56 410.63, 886.14 414.39, 883.94 419.48 C 881.75 424.57, 880.26 427.59, 876.92 431.24 C 873.59 434.89, 871.21 436.03, 867.29 437.71 C 863.37 439.39, 861.24 439.66, 857.34 439.62 C 853.43 439.58, 851.26 439.16, 847.76 437.51 C 844.25 435.86, 842.35 434.55, 839.81 431.36 C 837.26 428.18, 836.25 425.61, 835.03 421.60 C 833.81 417.58, 834.13 414.77, 833.71 411.28 C 833.29 407.80, 833.92 406.36, 832.92 404.16 C 831.92 401.97, 830.63 400.96, 828.71 400.30 C 826.80 399.64, 825.59 399.42, 823.35 400.87 C 821.12 402.32, 820.97 404.95, 817.54 407.56 C 814.12 410.17, 811.95 411.73, 806.23 413.93 C 800.50 416.14, 796.92 416.95, 788.92 418.58 C 780.92 420.21, 776.36 420.63, 766.21 422.08 C 756.07 423.53, 750.22 423.96, 738.19 425.84 C 726.15 427.72, 719.24 428.69, 706.04 431.47 C 692.85 434.26, 685.52 435.96, 672.20 439.78 C 658.89 443.60, 651.34 445.64, 639.46 450.57 C 627.58 455.51, 621.80 458.40, 612.80 464.44 C 603.81 470.49, 599.99 473.87, 594.47 480.80 C 588.94 487.74, 587.03 491.70, 585.18 499.12 C 583.33 506.54, 583.50 510.54, 585.23 517.90 C 586.95 525.26, 588.90 528.87, 593.80 535.94 C 598.69 543.00, 602.23 546.83, 609.71 553.24 C 617.20 559.65, 622.01 562.95, 631.22 567.97 C 640.43 572.99, 645.89 575.26, 655.76 578.34 C 665.63 581.41, 671.19 582.70, 680.56 583.35 C 689.93 584.00, 694.68 583.86, 702.61 581.58 C 710.54 579.31, 713.99 577.30, 720.21 571.97 C 726.42 566.64, 729.07 562.89, 733.69 554.93 C 738.31 546.96, 740.26 542.56, 743.31 532.15 C 746.35 521.74, 747.28 515.63, 748.91 502.88 C 750.55 490.13, 750.89 482.79, 751.48 468.39 C 752.07 454.00, 752.30 446.22, 751.87 430.92 C 751.43 415.62, 750.55 407.51, 749.32 391.90 C 748.09 376.29, 747.14 368.10, 745.72 352.87 C 744.31 337.63, 743.54 329.69, 742.25 315.73 C 740.96 301.76, 740.04 294.84, 739.27 283.02 C 738.51 271.21, 738.16 265.71, 738.43 256.63 C 738.69 247.54, 739.53 244.00, 740.60 237.61 C 741.68 231.21, 743.29 228.75, 743.82 224.64 C 744.34 220.53, 744.32 219.30, 743.22 217.07 C 742.12 214.84, 740.62 214.03, 738.30 213.50 C 735.98 212.98, 734.69 213.24, 731.62 214.44 C 728.56 215.64, 727.13 217.57, 722.98 219.51 C 718.82 221.44, 716.58 222.52, 710.85 224.12 C 705.11 225.72, 701.83 226.25, 694.30 227.51 C 686.76 228.78, 682.43 229.07, 673.17 230.44 C 663.90 231.81, 658.80 232.68, 647.97 234.36 C 637.14 236.03, 631.21 237.06, 619.01 238.82 C 606.82 240.58, 600.09 241.50, 587.02 243.15 C 573.94 244.80, 566.81 245.68, 553.63 247.06 C 540.46 248.44, 533.43 249.22, 521.15 250.07 C 508.88 250.91, 502.55 250.89, 492.27 251.29 C 482.00 251.69, 477.31 251.84, 469.79 252.06 C 462.27 252.28, 459.24 252.05, 454.67 252.39 C 450.09 252.73, 448.40 252.60, 446.91 253.76 C 445.42 254.92, 445.58 257.25, 447.21 258.20" /><path d="M 967.61,368.90 C 966.49 367.08, 964.32 365.71, 960.85 364.89 C 957.38 364.07, 954.48 364.18, 950.28 364.80 C 946.08 365.42, 943.49 365.75, 939.84 367.98 C 936.20 370.22, 933.27 372.19, 932.07 375.96 C 930.87 379.74, 931.75 382.67, 933.85 386.86 C 935.95 391.05, 938.10 392.68, 942.59 396.93 C 947.07 401.18, 950.35 403.53, 956.28 408.11 C 962.21 412.68, 966.12 415.26, 972.22 419.80 C 978.31 424.33, 981.88 426.76, 986.75 430.79 C 991.63 434.82, 994.08 437.08, 996.60 439.97 C 999.11 442.86, 999.28 443.54, 999.32 445.23 C 999.35 446.91, 999.48 447.04, 996.77 448.38 C 994.06 449.73, 991.61 451.11, 985.76 451.97 C 979.90 452.83, 975.16 452.97, 967.50 452.68 C 959.84 452.40, 954.69 452.00, 947.46 450.56 C 940.23 449.12, 935.82 448.05, 931.34 445.49 C 926.87 442.93, 926.31 440.76, 925.06 437.77 C 923.81 434.78, 924.85 433.33, 925.11 430.55 C 925.37 427.78, 926.99 425.55, 926.36 423.90 C 925.74 422.24, 923.65 421.11, 921.98 422.28 C 920.31 423.44, 918.52 426.09, 918.02 429.72 C 917.53 433.35, 917.37 436.37, 919.51 440.44 C 921.66 444.51, 923.37 447.07, 928.76 450.07 C 934.15 453.08, 938.77 453.89, 946.46 455.47 C 954.16 457.05, 959.22 457.48, 967.24 457.98 C 975.26 458.48, 979.96 458.73, 986.54 457.97 C 993.13 457.20, 996.34 456.66, 1000.17 454.16 C 1004.01 451.65, 1005.51 449.06, 1005.71 445.44 C 1005.92 441.81, 1004.35 439.79, 1001.22 436.04 C 998.09 432.29, 995.25 430.73, 990.05 426.68 C 984.85 422.63, 981.30 420.35, 975.22 415.78 C 969.14 411.22, 965.31 408.52, 959.67 403.86 C 954.04 399.20, 950.87 396.56, 947.05 392.48 C 943.22 388.39, 941.94 386.14, 940.55 383.45 C 939.16 380.77, 939.32 380.39, 940.09 379.06 C 940.86 377.74, 942.09 377.66, 944.41 376.83 C 946.72 375.99, 948.57 375.24, 951.65 374.87 C 954.74 374.49, 956.88 375.14, 959.85 374.96 C 962.81 374.78, 964.91 375.19, 966.47 373.97 C 968.02 372.76, 968.74 370.72, 967.61 368.90" /><path d="M 1002.65,263.75 C 1002.24 265.04, 1002.26 264.94, 1003.62 268.29 C 1004.98 271.64, 1006.82 273.54, 1009.44 280.52 C 1012.06 287.49, 1013.60 292.65, 1016.72 303.17 C 1019.83 313.68, 1021.65 320.60, 1025.01 333.09 C 1028.36 345.58, 1030.15 353.05, 1033.49 365.62 C 1036.84 378.19, 1038.78 384.72, 1041.72 395.94 C 1044.66 407.17, 1046.20 412.87, 1048.21 421.76 C 1050.22 430.65, 1050.75 435.05, 1051.78 440.40 C 1052.80 445.75, 1053.10 447.54, 1053.35 448.51 C 1053.61 449.47, 1054.84 447.92, 1053.04 445.22 C 1051.25 442.52, 1048.46 439.81, 1044.40 435.01 C 1040.34 430.21, 1037.14 426.43, 1032.74 421.23 C 1028.34 416.02, 1025.75 413.05, 1022.38 408.96 C 1019.02 404.87, 1017.69 402.59, 1015.91 400.79 C 1014.12 398.98, 1012.68 400.11, 1013.45 399.93 C 1014.21 399.75, 1015.56 400.06, 1019.73 399.89 C 1023.89 399.71, 1027.05 399.19, 1034.30 399.06 C 1041.54 398.93, 1046.54 398.88, 1055.96 399.25 C 1065.38 399.61, 1071.27 400.13, 1081.40 400.89 C 1091.53 401.64, 1097.28 402.04, 1106.61 403.02 C 1115.94 404.00, 1120.52 404.32, 1128.06 405.80 C 1135.60 407.27, 1138.69 408.23, 1144.31 410.39 C 1149.94 412.55, 1152.35 414.01, 1156.20 416.58 C 1160.05 419.16, 1161.32 420.51, 1163.56 423.27 C 1165.80 426.02, 1165.69 428.56, 1167.40 430.37 C 1169.10 432.18, 1170.45 432.51, 1172.07 432.31 C 1173.69 432.11, 1174.74 431.22, 1175.48 429.39 C 1176.22 427.57, 1176.53 425.72, 1175.77 423.19 C 1175.01 420.66, 1174.31 418.21, 1171.68 416.73 C 1169.04 415.24, 1165.28 414.92, 1162.60 415.76 C 1159.93 416.59, 1158.80 418.25, 1158.30 420.90 C 1157.81 423.56, 1158.72 426.72, 1160.12 429.03 C 1161.53 431.33, 1163.06 431.55, 1165.33 432.44 C 1167.60 433.33, 1169.31 433.90, 1171.47 433.47 C 1173.64 433.04, 1175.33 432.12, 1176.14 430.30 C 1176.94 428.47, 1177.00 426.80, 1175.51 424.33 C 1174.02 421.85, 1171.97 420.43, 1168.68 417.91 C 1165.40 415.38, 1163.64 414.07, 1159.07 411.70 C 1154.50 409.33, 1151.90 408.01, 1145.84 406.05 C 1139.78 404.10, 1136.54 403.26, 1128.77 401.92 C 1121.00 400.59, 1116.40 400.33, 1106.99 399.38 C 1097.57 398.42, 1091.86 398.04, 1081.70 397.16 C 1071.54 396.28, 1065.67 395.68, 1056.20 394.97 C 1046.74 394.25, 1041.79 393.96, 1034.39 393.59 C 1026.98 393.22, 1024.02 392.54, 1019.17 393.10 C 1014.32 393.67, 1011.98 394.12, 1010.12 396.41 C 1008.27 398.71, 1008.43 401.25, 1009.90 404.59 C 1011.37 407.92, 1013.88 408.95, 1017.45 413.11 C 1021.03 417.27, 1023.40 420.15, 1027.77 425.39 C 1032.15 430.64, 1035.13 434.43, 1039.32 439.33 C 1043.52 444.23, 1045.34 447.81, 1048.75 449.89 C 1052.16 451.98, 1054.88 451.81, 1056.38 449.75 C 1057.87 447.69, 1057.19 445.36, 1056.22 439.60 C 1055.24 433.84, 1053.86 429.83, 1051.52 420.95 C 1049.18 412.07, 1047.57 406.41, 1044.50 395.20 C 1041.44 383.99, 1039.50 377.48, 1036.19 364.90 C 1032.88 352.33, 1031.12 344.87, 1027.96 332.32 C 1024.81 319.77, 1023.11 312.84, 1020.39 302.16 C 1017.68 291.47, 1016.49 286.23, 1014.39 278.89 C 1012.29 271.54, 1011.63 268.83, 1009.89 265.42 C 1008.15 262.00, 1007.14 262.15, 1005.69 261.82 C 1004.24 261.48, 1003.07 262.45, 1002.65 263.75" /><path d="M 1115.16,318.86 C 1116.04 319.65, 1116.56 319.25, 1116.02 318.19 C 1115.48 317.13, 1113.35 314.35, 1112.46 313.56 C 1111.58 312.77, 1111.06 313.17, 1111.60 314.23 C 1112.14 315.28, 1114.27 318.06, 1115.16 318.86" /><path d="M 1189.18,409.08 C 1189.29 411.07, 1190.49 412.68, 1192.59 414.83 C 1194.69 416.99, 1196.65 417.70, 1199.66 419.87 C 1202.67 422.05, 1204.46 424.07, 1207.63 425.69 C 1210.79 427.31, 1212.58 427.70, 1215.49 427.98 C 1218.40 428.25, 1219.66 427.91, 1222.17 427.07 C 1224.68 426.22, 1226.04 425.49, 1228.06 423.76 C 1230.07 422.03, 1230.98 420.76, 1232.25 418.41 C 1233.51 416.05, 1233.33 414.59, 1234.40 411.98 C 1235.48 409.37, 1235.84 407.80, 1237.62 405.36 C 1239.40 402.92, 1240.49 401.62, 1243.31 399.78 C 1246.13 397.95, 1247.76 397.04, 1251.73 396.20 C 1255.70 395.35, 1258.31 395.18, 1263.16 395.56 C 1268.01 395.94, 1271.03 396.49, 1275.96 398.12 C 1280.89 399.74, 1283.32 400.85, 1287.80 403.67 C 1292.28 406.49, 1294.68 408.51, 1298.36 412.20 C 1302.04 415.90, 1303.87 418.72, 1306.19 422.16 C 1308.50 425.60, 1308.45 427.21, 1309.93 429.39 C 1311.41 431.57, 1312.25 432.55, 1313.60 433.07 C 1314.96 433.59, 1316.02 433.39, 1316.70 431.98 C 1317.38 430.57, 1317.90 428.86, 1317.00 426.03 C 1316.10 423.19, 1315.03 421.51, 1312.19 417.82 C 1309.34 414.13, 1307.01 411.43, 1302.78 407.58 C 1298.54 403.72, 1295.97 401.62, 1291.01 398.53 C 1286.06 395.45, 1283.46 394.09, 1278.02 392.14 C 1272.59 390.19, 1269.36 389.43, 1263.85 388.77 C 1258.33 388.11, 1255.37 388.12, 1250.44 388.83 C 1245.50 389.55, 1243.21 390.38, 1239.18 392.34 C 1235.15 394.31, 1233.32 395.86, 1230.30 398.67 C 1227.28 401.49, 1225.99 403.51, 1224.09 406.42 C 1222.19 409.33, 1221.62 410.95, 1220.79 413.24 C 1219.97 415.54, 1220.19 416.52, 1219.96 417.88 C 1219.73 419.24, 1220.03 419.84, 1219.65 420.03 C 1219.27 420.23, 1219.28 419.73, 1218.04 418.85 C 1216.80 417.96, 1215.87 417.22, 1213.45 415.62 C 1211.02 414.01, 1208.87 412.74, 1205.92 410.80 C 1202.97 408.86, 1201.49 407.12, 1198.71 405.93 C 1195.94 404.74, 1193.96 404.22, 1192.05 404.85 C 1190.14 405.48, 1189.07 407.08, 1189.18 409.08" /></svg>
 
-## Why No Management Talks Online?
+## Diversity, Equity, and Inclusion Statement
 
-I get this question a lot. Most of my innovation and management talks are not available publicly, but are designed specifically for a given corporation or organization.
+I place a high importance on diversity, equity, inclusion, and belonging. For events featuring multiple speakers, I will participate only with organizations that demonstrate a firm commitment to diverse representation, inclusivity throughout their event lineup, and equitable opportunities in both compensation and exposure. Thank you for your understanding.
 
-It is on my list to give more of these talks publicly as the pandemic winds down. Stay tuned.
+## Places, Organizations, and Conferences I've Spoken At
 
-## 🎙️ The Web Platform Podcast
-In December 2015, I became a regular host on [The Web Platform Podcast](https://thewebplatformpodcast.com/) with [Erik Isaksen](https://www.twitter.com/eisaksen). Starting in mid-2017, I've started hosting the show with [Danny Blue](https://www.twitter.com/dee_bloo), [Amal Hussein](https://twitter.com/nomadtechie), and [Leon Revill](https://twitter.com/revillweb). Today, while I rarely host, I still produce the show for distribution.
-
-For a full listing of episodes check out [https://thewebplatformpodcast.com/](https://thewebplatformpodcast.com/).
-
-## ☀️ Past Talks, Slidedecks and Publications
-_This list is generally always out of date and only contains slidedecks from public talks. If you are looking for a private deck that I made for your organization, please contact your internal event staff for information.!_
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1sBMWJEIWfp9lmwOPgqvIHvJoIRuF6Xi_oKGJCmtf02g/edit?usp=sharing">Getting Started with WebAssembly</a></h3>
-<p>Various Locations, January 2019.</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/161n4DQ3TTzb-99ajEac-yEg2E_9zt7PY9wrRTGmm0J0/edit?usp=sharing">WebNFC: Wait, we have a spec for that?</a></h3>
-<p>Connection Summit, March 2018.</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1AbSFAHp6GogWE_tB6DJMjQgM7yi7KxwREyO-amVEa-w/edit?usp=sharing">SSR, Rendertron, and You</a></h3>
-<p>Various Locations, January 2018.</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1bXLfZRRotDD5u516Qp0NO94IjYUlG0ts8DSyccKJceY/edit?usp=sharing">21 Years: try { coding(); }  finally { learning(); }</a></h3>
-<p>Various Locations, 2018.</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1aYNQy2RmeGAiq3GRDACZWOIpAKT64BsejAiClywOJkI/edit?usp=sharing">Finding Endangered Tortoises with IoT, Cloud and Web Combined</a></h3>
-<p>IoT DevFest Arizona, March 2017.</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1tV4F0sCODK8ukPVBN0BDQaWxwIwtfKmrlvW0IVyra1U/edit?usp=sharing">Integrating and Delivering AMP: Accelerated Mobile Pages today!</a></h3>
-<p>Various Locations, February 2017.</p>
-
-<h3 class="talk"><a href="https://stickmanventures.com/blog/2016/11/21/demonstrating-web-performance-at-chrome-dev-summit-2016/">Demonstrating web performance at Chrome Dev Summit 2016</a></h3>
-<p>November 2016. Google Chrome Dev Summit.</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/13MaK90_gBJ9RTgKzQGO8jV74S8P7QGSfUWtaFUXnCUE/edit?usp=sharing">Web Components and Polymer BEYOND</a></h3>
-<p>Various Locations, 2016.</p>
-
-<h3 class="talk">Introduction to Accelerated Mobile Pages (AMP)</h3>
-<p>September 2016. GDG Silicon Valley.</p>
-
-<h3 class="talk">Introduction to Accelerated Mobile Pages (AMP)</h3>
-<p>August 2016. GDG Oakdale.</p>
-
-<h3 class="talk">Building Progressive Web Apps - 3 part series</h3>
-<p>May 2016. GDG Oakdale.</p>
-
-<h3 class="talk">Building Firebase Applications - 3 part series</h3>
-<p>April 2016. GDG Oakdale.</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1IQF1MDEpn99S9xYqWoXzDgS4lDJpK_ne_z9gdxQ5WG4/edit?usp=sharing">For Love of Dev</a></h3>
-<p>March 2016. Google GDG NA Community Summit.</p>
-
-<h3 class="talk"><a href="http://modernweb.podbean.com/e/s01e07-the-polymer-2016-roadmap-featuring-rob-dodson-with-justin-ribeiro/?token=7c3006a3a725cb6fb0999e9abbcac825">S01E07 - The Polymer 2016 Roadmap featuring Rob Dodson with Justin Ribeiro</a></h3>
-<p>March 2016. <a href="http://www.modern-web.org/#/modern-web-podcast">Modern Web Podcast</a></p>
-
-<h3 class="talk"><a href="https://goo.gl/6ICgb9">Show me the Context: Beacons, Hints, and You</a></h3>
-<p>February 2016. <a href="https://goo.gl/6ICgb9">GDG DevFest 2016 - GDG Kansas City</a></p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1gi3Mg_fXwpXWYWwnBWoai7O6zVDHU83FWWuTKdBlLxI/edit?usp=sharing">Progressive Web Apps:
-the web gets appy edition</a></h3>
-<p>January 2016. GDG Oakdale.</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1MU8DbZo5qqFSIta0Z1IHWpeHeq0__f-FVkf6vEWokGY/edit?usp=sharing">Building real-time elements using Polymer and Firebase</a></h3>
-<p>January 2016. <a href="http://www.iotdevfest.com/">IoT DevFest Arizona</a></p>
-
-<h3 class="talk"><a href="https://goo.gl/6ICgb9">Beacons, Hinting, and You: Context and Discovery</a></h3>
-<p>November 2015. <a href="https://devfest2015.gdgsv.com/#!/speakers/10">GDG DevFest 2015 - GDG Silicon Valley</a></p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1EWvhD8djrzvStPBX0jXqfDTz7OFwd0JV7MZqsalzPcw/edit?usp=sharing">JavaScript Design Patterns</a></h3>
-<p>September 2015. GDG Oakdale.</p>
-
-<h3 class="talk"><a href="https://plus.google.com/u/0/events/cnd2ivdfsn8j73hrd4cqgv9l704">Polymer 1.0</a></h3>
-
-<h3 class="talk"><a href="https://events.google.com/io2015/schedule?sid=654889d1-cbf5-e411-b87f-00155d5066d7#day2/654889d1-cbf5-e411-b87f-00155d5066d7">Google Developer Expert on Polymer and Firebase for real-time elements</a></h3>
-<p>May 2015. Google I/O.</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/15cgBdaQB4wggOrIxnJBxFTkzZQVTsIWpRCW5ziGZUiA/edit?usp=sharing">Google Cast - Introducing the SDK</a></h3>
-<p>May 2015. GDG Oakdale.</p>
-
-<h3 class="talk"><a href="https://goo.gl/chTreG">Developing for Project Tango</a></h3>
-<p>April 2015. <a href="http://www.meetup.com/smartglass/events/221811679/">Smart Glass Innovators</a></p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1THYy53nbF-p6_pDTacLsKj8kYDolG0T1uCJyU0i5sk0/edit?usp=sharing">Firebase: An Overview</a></h3>
-<p>April 2015. GDG Oakdale.</p>
-
-<h3 class="talk"><a href="https://goo.gl/chTreG">Developing for Project Tango</a></h3>
-<p>March 2015. GDG Fresno</p>
-
-<h3 class="talk"><a href="http://tapintonfc.org/2015/03/working-with-androids-hce-libnfc-and-chrome-nfc/">Guest Post: Working with Android HCE, libNFC, and Chrome-NFC</a></h3>
-<p>March 2015. NFC Forum</p>
-
-<h3 class="talk"><a href="https://goo.gl/chTreG">Developing for Project Tango</a></h3>
-<p>March 2015. GDG Oakdale</p>
-
-<h3 class="talk"><a href="https://justinribeiro.github.io/service-worker-codelab-gdg-oakdale/">ServiceWorker Codelab</a></h3>
-<p>February 2015. GDG Oakdale</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1tGNmaPPF5UfHty58OfCyVpuxsNyJZ2_gewC7Z9RWZPM/edit?usp=sharing">Deploy all the things with Google Cloud Platform</a></h3>
-<a href="https://www.youtube.com/watch?v=-7gUa9t8jug">Video</a>
-<p>January 2015. A Night with ReThinkDB</p>
-
-<h3 class="talk"><a href="https://justinribeiro.github.io/chrome-extensions-codelab-gdg-oakdale/">Chrome Extensions Codelab</a></h3>
-<p>January 2015. GDG Oakdale</p>
-
-<h3 class="talk">From zero to deploy: Getting started with Google Cloud Platform</h3>
-<p>December 2014. GDG Oakdale</p>
-
-<h3 class="talk"><a href="https://www.justinribeiro.com/talks/android-wear-introduction-gdg-devfest-2014/">Android Wear: Introduction </a></h3>
-<p>October 2014. GDG DevFest Fresno 2014</p>
-
-<h3 class="talk"><a href="https://www.justinribeiro.com/talks/google-glass-development-gdg-devfest-2014/">Google Glass: Introduction </a></h3>
-<p>October 2014. GDG DevFest Fresno 2014</p>
-
-<h3 class="talk"><a href="https://www.justinribeiro.com/talks/polymer-introduction-and-cases-gdg-oakdale/">Polymer: Introduction and Cases</a></h3>
-<p>October 2014. GDG Oakdale</p>
-
-<h3 class="talk"><a href="https://www.justinribeiro.com/talks/rsd-tech-and-education/">Changing perception in education</a></h3>
-<p>August 2014. Riverbank Schools Leadership Retreat</p>
-
-<h3 class="talk"><a href="https://www.justinribeiro.com/talks/mirror-api-and-beyond-gdg-oakdale/">Google Glass: Mirror API and Beyond</a></h3>
-<p>June 2014. GDG Oakdale</p>
-
-<h3 class="talk"><a href="http://cdn.cache.stickmanventures.com/presentations/sparinternational2014/index.html#/">Beyond WebGL: Increasing Online Viewer Performance Pipeline on the Web and for Your Audience</a></h3>
-<p>April 2014. SPAR International</p>
-
-<h3 class="talk"><a href="https://docs.google.com/presentation/d/1s-QRidCPcyaP8nuiYCuq1Ldr9LuaCLsQ5i11VrexSik/pub">NFC and the web: It’s happening</a></h3>
-<p>March 2014. NFC Forum</p>
-
-<h3 class="talk">Safari Books Online: Glassware Development</h3>
-<p>March 2014. Articles on I was commissioned to write three pieces for Safari Books Online
-development blog</p>
-<ul>
-<li><a href="http://blog.safaribooksonline.com/2014/03/05/building-glassware-mirror-api/">Building Glassware with Mirror API</a></li>
-<li><a href="http://blog.safaribooksonline.com/2014/03/19/using-subscriptions-contacts-google-glass/">Using Subscriptions and Contacts in the Mirror API</a></li>
-<li><a href="http://blog.safaribooksonline.com/2014/03/17/quick-tip-using-mirror-api-glass/">Google Glass development quick tip</a></li>
-</ul>
-
-<h3 class="talk"><a href="http://cdn.cache.stickmanventures.com/presentations/jqueryconsd2014/index.html">Handling real-time data on the web</a></h3>
-Video: [https://www.youtube.com/watch?v=PPComWm8yig](https://www.youtube.com/watch?v=PPComWm8yig)
-<p>February 2014. jQuery Conference San Diego</p>
-
-<h3 class="talk"><a href="http://cdn.cache.stickmanventures.com/presentations/eclipsecon2013/index.html#/">Merging Technologies to bring 3D printing status to the web</a></h3>
-<p>February 2013. EclipseCon Boston</p>
-
-<h3 class="talk">Getting started with Google Analytics</h3>
-<p>March 2013. Oakdale Chamber of Commerce</p>
-<ul>
-<li><a href="https://docs.google.com/presentation/d/1LCUzXYsa3b4QqY2X-cnzfm_j189qmG8soS_hsyMFMnU/pub?start=false&loop=false&delayms=3000">Session 1</a></li>
-<li><a href="https://docs.google.com/presentation/d/1CtouKvbX3vbDD0fm8Lzxarw7jMtodQ7sICU5RJkLAAs/pub?start=false&loop=false&delayms=3000">Session 2</a></li>
-</ul>
-
-<h3 class="talk">Getting started with Google AdWords</h3>
-<p>March 2013. Oakdale Chamber of Commerce</p>
-<ul>
-<li><a href="https://docs.google.com/presentation/d/1XnztOHCq7VvGSL1TJEkrNoLv5Zb_OYcxiFhrDE4pK4M/pub?start=false&loop=false&delayms=3000">Session 1</a></li>
-<li><a href="https://docs.google.com/presentation/d/17E0JfdrZEs2VdNm8IDfLGfl8BwohH3zuS0gwxDOPrWs/pub?start=false&loop=false&delayms=3000">Session 2</a></li>
-</ul>
+Justin’s voice has reached millions through The Web Platform Podcast, and his insights have been shared on stage at global conferences, including Google I/O, Eclipsecon, SPAR 3D, NFC Connection Summit, Global Entrepreneur Summit, and Academy of Management among many others. Beyond the conference stage, Justin has given private engagement talks on specific topics requested within his areas of expertise.

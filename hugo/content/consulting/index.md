@@ -10,7 +10,7 @@ sitemap:
   priority: 0.5
 ---
 
-Given the majority of my nearly three decade career has been in the business of consulting for firms and organizations on management and software engineering challenges, I am no stranger to consulting requests. I take a great deal of pride on my ability to help organizations. However, due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my consulting availability is limited. Should my availability not align with your current consulting needs, rest assured that myself and my capable team is on hand to suggest excellent alternatives.
+Given the majority of my nearly three decade career has been in the business of consulting for firms and organizations on management and software engineering challenges, I am no stranger to consulting requests. I take a great deal of pride on my ability to help organizations. However, due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my consulting availability is limited. Should my availability not align with your current consulting needs, rest assured that myself and <a href="mailto:team@justinribeiro.com&subject=Book%20Justin%20For%20Consult%20-%20Your%20Note%20Here&body=Dear%20Mr.%20Justin Team,">my capable team</a> is on hand to suggest excellent alternatives.
 
 <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>

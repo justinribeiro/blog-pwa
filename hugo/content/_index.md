@@ -1,5 +1,5 @@
 ---
-date: 2021-02-17T00:00:00-08:00
+date: 2024-10-31T00:00:00-08:00
 title: "Rediscovering Creativity One Story At a Time."
 subtitle: "Always leaping, always exploring, and having fun along the way."
 description: "I 💓 the open web. Film photographer and mediocre darkroom printer. Maker of sometimes interesting things. Coder of open source curiosities. Always leaping, always exploring."
@@ -11,45 +11,45 @@ sitemap:
 ---
 
 <section id="showcaseFive">
-  <a href="">
-    <img src="https://images.placeholders.dev/?width=1600&height=1600&text=holder&bgColor=%23f7f6f6&textColor=%236d6e71">
+  <a href="/chronicle/2024/10/28/paper-accepted-at-international-conference-on-information-systems-icis-2024/">
+    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-icis.avif" alt="My paper was accepted at International Conference on Information Systems (ICIS) 2024!">
     <div>
-      <h4>RECAP</h4>
-      <h3>The Harsh California Winter</h3>
-      <p>Flooding was but a distance dream when the atmospheric rivers hit California. The winter had other plans.<p>
+      <h4>PRESENT</h4>
+      <h3>Paper accepted at International Conference on Information Systems (ICIS) 2024</h3>
+      <p>After minor reviewer notes and revision, my qualitative study, Is Agile Software Development Innovative? A Software Developer Perspective makes its way to Thailand in December.<p>
     </div>
   </a>
   <div class="secondary">
-      <a href="/chronicle/2021/11/18/lite-youtube-web-component-goes-1.0-offers-more-features/" class="card">
-      <img src="https://images.placeholders.dev/?width=1600&height=1600&text=holder&bgColor=%23f7f6f6&textColor=%236d6e71">
-      <div>
-        <h4>WEB DEV</h4>
-        <h3>lite-youtube Web Component Goes 1.0, Offers More Features</h3>
-        <p>The secretly popular component tops 75 million loads a month so I decided to level up some features.<p>
-      </div>
-    </a>
-    <a href="http://localhost:8081/chronicle/2021/02/23/building-a-custom-polaroid-sx-70-camera-rig/" class="card">
-      <img src="https://images.placeholders.dev/?width=1600&height=1600&text=holder&bgColor=%23f7f6f6&textColor=%236d6e71">
+    <a href="/chronicle/2021/02/23/building-a-custom-polaroid-sx-70-camera-rig/" class="card">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-polaroid-rig.jpg" alt="Everyone needs a hand grip for their SX-70 right?">
       <div>
         <h4>PHOTOGRAPHY</h4>
         <h3>Building a Custom Polaroid SX-70 Camera Rig</h3>
         <p>My love for the Polaroid SX-70 knows no bounds.<p>
       </div>
     </a>
-    <a href="/chronicle/2023/07/05/climbing-the-mountain-of-phd-quantitative-rigor/" class="card">
-      <img src="https://images.placeholders.dev/?width=1600&height=1600&text=holder&bgColor=%23f7f6f6&textColor=%236d6e71">
+    <a href="/chronicle/2021/11/18/lite-youtube-web-component-goes-1.0-offers-more-features/" class="card">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-lite-youtube.avif" alt="lite-youtube featured on Google's Chrome for Developers site.">
       <div>
-        <h4>PHD STUDIES</h4>
-        <h3>Climbing the Mountain of PhD Quantitative Rigor</h3>
-        <p>Knowing the method is one thing; it's another to apply in the time box.<p>
+        <h4>WEB DEV</h4>
+        <h3>lite-youtube Web Component Goes 1.0, Offers More Features</h3>
+        <p>The secretly popular component tops 75 million loads a month so I decided to level up some features.<p>
       </div>
     </a>
-    <a href="/2023/07/24/protecting-our-chickens-and-ducks-with-a-zoo-netting-enclosed-run/" class="card">
-      <img src="https://images.placeholders.dev/?width=1600&height=1600&text=holder&bgColor=%23f7f6f6&textColor=%236d6e71">
+    <a href="/chronicle/2023/07/24/protecting-our-chickens-and-ducks-with-a-zoo-netting-enclosed-run/" class="card">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-chickenprotect.jpg" alt="A grey chicken on a mossy rock which needs protection from birds of prey">
       <div>
         <h4>TINY FARM</h4>
         <h3>Protecting our Chickens and Ducks with a Zoo Netting Enclosed Run</h3>
         <p>After a string of killings from birds of prey, we opted to go big and enclose the run for our ducks and chickens, all 6000 plus square feet.<p>
+      </div>
+    </a>
+    <a href="/chronicle/2024/09/01/89-pages-and-2-hours-later-phd-proposal-defense-passed/" class="card">
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-weatherhead.jpg" alt="Case Western Reserve University in the distance from my hotel room, specifically the Peter B Lewis building.">
+      <div>
+        <h4>PHD STUDIES</h4>
+        <h3>89 Pages and 2 Hours Later: PhD Proposal Defense Passed</h3>
+        <p>You can write yourself out of the maze, but can your committee follow you?<p>
       </div>
     </a>
   </div>
@@ -84,25 +84,25 @@ sitemap:
 <p>Follow all the code on <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.3 19v-1.9a2.1 2.1 0 0 0-.6-1.7c2.1-.2 4.3-1 4.3-4.5 0-1-.4-1.8-1-2.4.3-.8.3-1.7 0-2.5 0 0-.8-.2-2.7 1a9.2 9.2 0 0 0-4.6 0C7.8 5.8 7 6 7 6c-.4.8-.4 1.7-.1 2.5-.6.6-1 1.5-1 2.4 0 3.5 2.2 4.3 4.3 4.6a2.2 2.2 0 0 0-.6 1.6V19" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.7 17.7c-2 .6-3.7 0-4.7-2" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg> <a rel="me" href="https://github.com/justinribeiro">Github</a></p>
 <section class="fourWayBox">
   <div>
-    <a href="">
+    <a href="https://github.com/justinribeiro/lite-youtube">
     <h3>lite-youtube</h3>
     <p>The fastest little YouTube web component on this side of the internet.</p>
     </a>
   </div>
   <div>
-    <a href="">
+    <a href="https://github.com/justinribeiro/zotero-google-scholar-citation-count">
     <h3>zotero-google-scholar-citation-count</h3>
     <p>Zotero plugin for fetching number of citations from Google Scholar.</p>
     </a>
   </div>
   <div>
-    <a href="">
+    <a href="https://github.com/justinribeiro/speedometer-pwa">
     <h3>speedometer-pwa</h3>
     <p>A tiny no-frills speedometer progressive web app based on Geolocation API, AmbientLightSensor API, and WakeLock API.</p>
     </a>
   </div>
   <div>
-    <a href="">
+    <a href="https://github.com/justinribeiro/dockerfiles">
     <h3>dockerfiles</h3>
     <p>Various dockerfiles including chrome-headless, lighthouse and other tooling.</p>
     </a>

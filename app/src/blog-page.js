@@ -89,7 +89,10 @@ class BlogPage extends BlogElement {
       }
 
       #showcaseFive img {
+        width: 100%;
         max-width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: var();
       }
 
       .explore {
@@ -99,7 +102,7 @@ class BlogPage extends BlogElement {
       #showcaseFive {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-        grid-gap: 1rem;
+        grid-gap: calc(var(--space-cs) * 4);
         padding: initial;
       }
 
@@ -141,8 +144,8 @@ class BlogPage extends BlogElement {
       .card {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        grid-gap: 1rem;
-        margin-bottom: 1rem;
+        grid-gap: calc(var(--space-cs) * 2);
+        margin-bottom: calc(var(--space-cs) * 4);
       }
 
       svg {

@@ -42,7 +42,7 @@ class YouTubeVideoList extends LitElement {
     super();
 
     this.youtubeEndpoint =
-      'https://us-west1-justinribeiro-web.cloudfunctions.net/get-youtube-videos';
+      'https://us-west1-justinribeiro-web.cloudfunctions.net/get-ytv';
     this.data = [];
   }
 
