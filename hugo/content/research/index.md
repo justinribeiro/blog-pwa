@@ -44,7 +44,7 @@ I didn't say it was simple. But damn if it isn't fun and engaging.
 
 While I complete my dissertation, I have been disseminating my research in both academic peer-reviewed contexts as a well as practiioner conferences such as:
 
-Ribeiro, J., Lyytinen, K., s Agile Software Development Innovative? A Software Developer Perspective. Paper presented at the International Conference on Information Systems (ICIS) - December 2024
+Ribeiro, J., Lyytinen, K., s Agile Software Development Innovative? A Software Developer Perspective. Paper presented at the International Conference on Information Systems (ICIS) - December 2024 [Download Paper](https://aisel.aisnet.org/icis2024/isdesign/isdesign/13/)
 
 Ribeiro, J., Lyytinen, K., Beyond The Merge Conflict: The Effects Of Cognitive Conflict On Developer Creativity And Release Innovation In Open-Source Software Projects. Paper presented at the Academy of Management Doctoral Consortium, Management Consulting Division - August 2024
 
