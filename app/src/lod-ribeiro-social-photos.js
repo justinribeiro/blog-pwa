@@ -13,6 +13,19 @@ class RibeiroSocialPhotos extends LitElement {
       grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
       gap: 1rem;
     }
+
+    @media (max-width: 768px) {
+      :host {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+
+    @media (max-width: 376px) {
+      :host {
+        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+      }
+    }
+
     img {
       width: 100%;
       aspect-ratio: 1 / 1;
