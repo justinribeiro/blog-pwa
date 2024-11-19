@@ -28,11 +28,11 @@ sitemap:
         <p>My love for the Polaroid SX-70 knows no bounds.<p>
       </div>
     </a>
-    <a href="/chronicle/2021/11/18/lite-youtube-web-component-goes-1.0-offers-more-features/" class="card">
+    <a href="/chronicle/2024/11/15/lite-youtube-web-component-v1.6-released/" class="card">
       <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-lite-youtube.avif" alt="lite-youtube featured on Google's Chrome for Developers site.">
       <div>
         <h4>WEB DEV</h4>
-        <h3>lite-youtube Web Component Goes 1.0, Offers More Features</h3>
+        <h3>lite-youtube Web Component Updated to v1.6, Offers More Features</h3>
         <p>The secretly popular component tops 75 million loads a month so I decided to level up some features.<p>
       </div>
     </a>
