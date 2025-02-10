@@ -11,12 +11,12 @@ sitemap:
 ---
 
 <section id="showcaseFive">
-  <a href="/chronicle/2024/10/28/paper-accepted-at-international-conference-on-information-systems-icis-2024/">
-    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-icis.avif" alt="My paper was accepted at International Conference on Information Systems (ICIS) 2024!">
+  <a href="/chronicle/2025/02/10/my-phd-dissertation-defense-announcement/">
+    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20250210-the-defense-date.avif" alt="My defense announcement on the Case Western Reserve University defense calendar.">
     <div>
-      <h4>PRESENT</h4>
-      <h3>Paper accepted at International Conference on Information Systems (ICIS) 2024</h3>
-      <p>After minor reviewer notes and revision, my qualitative study, Is Agile Software Development Innovative? A Software Developer Perspective makes its way to Thailand in December.<p>
+      <h4>ITS THE FINAL COUNTDOWN</h4>
+      <h3>The Date is Set: My PhD Dissertation Defense Announcement</h3>
+      <p>February 28th, 2025 is just around the corner, and I'm both excited and terrified. Four years of work come down to this...and my 285 page dissertation, but a lot of it this.<p>
     </div>
   </a>
   <div class="secondary">
@@ -44,12 +44,12 @@ sitemap:
         <p>After a string of killings from birds of prey, we opted to go big and enclose the run for our ducks and chickens, all 6000 plus square feet.<p>
       </div>
     </a>
-    <a href="/chronicle/2024/09/01/89-pages-and-2-hours-later-phd-proposal-defense-passed/" class="card">
-      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-weatherhead.jpg" alt="Case Western Reserve University in the distance from my hotel room, specifically the Peter B Lewis building.">
+    <a href="/chronicle/2024/10/28/paper-accepted-at-international-conference-on-information-systems-icis-2024/" class="card">
+    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-icis.avif" alt="My paper was accepted at International Conference on Information Systems (ICIS) 2024!">
       <div>
-        <h4>PHD STUDIES</h4>
-        <h3>89 Pages and 2 Hours Later: PhD Proposal Defense Passed</h3>
-        <p>You can write yourself out of the maze, but can your committee follow you?<p>
+        <h4>PRESENT</h4>
+        <h3>Paper accepted at International Conference on Information Systems (ICIS) 2024</h3>
+        <p>After minor reviewer notes and revision, my qualitative study, Is Agile Software Development Innovative? A Software Developer Perspective makes its way to Thailand in December.</p>
       </div>
     </a>
   </div>

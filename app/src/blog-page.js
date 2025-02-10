@@ -193,7 +193,7 @@ class BlogPage extends BlogElement {
         max-width: 100%;
       }
 
-      .timline figcaption {
+      .timeline figcaption {
         font-size: initial;
         text-align: initial;
       }

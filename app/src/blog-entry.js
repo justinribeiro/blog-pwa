@@ -395,6 +395,10 @@ class BlogEntry extends BlogElement {
         margin-right: var(--space-cs);
       }
 
+      .center {
+        text-align: center;
+      }
+
       label {
         display: block;
       }
