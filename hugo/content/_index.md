@@ -77,7 +77,7 @@ sitemap:
 </section>
 <hr>
 <h2>The Latest Photographs</h2>
-<p>Follow along on <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6 1-5.9 6.5.1 2 0 4.4.4 7 1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg> <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a> or <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" stroke="#000"/><path d="M17.5 6.5h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg> <a rel="me" href="https://instagram.com/justin.d.ribeiro">Instagram</a></p>
+<p>Follow along on <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6 1-5.9 6.5.1 2 0 4.4.4 7 1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg> <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a></p>
 <ribeiro-social-photos> Fetching... </ribeiro-social-photos>
 <hr>
 <h2>Popular Open Source Code</h2>
@@ -110,7 +110,6 @@ sitemap:
 </section>
 <hr>
 <h2>The Latest Videos</h2>
-<p>Follow all the latest videos and reels on <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m14 12-3.5 2v-4l3.5 2Z" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12.7v-1.4C2 8.4 2 6.9 3 6c.8-1 2.2-1 5-1a144.2 144.2 0 0 1 8 0c2.8 0 4.2 0 5 1 1 1 1 2.4 1 5.3v1.4c0 2.9 0 4.4-1 5.3-.8 1-2.2 1-5 1a144.2 144.2 0 0 1-8 0c-2.8 0-4.2 0-5-1-1-1-1-2.4-1-5.3Z" stroke="#000"/></svg> <a rel="me" href="https://github.com/justinribeiro">YouTube</a> or <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" stroke="#000"/><path d="M17.5 6.5h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <a rel="me" href="https://github.com/justinribeiro">Instagram</a></p>
+<p>Follow all the latest videos and reels on <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m14 12-3.5 2v-4l3.5 2Z" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12.7v-1.4C2 8.4 2 6.9 3 6c.8-1 2.2-1 5-1a144.2 144.2 0 0 1 8 0c2.8 0 4.2 0 5 1 1 1 1 2.4 1 5.3v1.4c0 2.9 0 4.4-1 5.3-.8 1-2.2 1-5 1a144.2 144.2 0 0 1-8 0c-2.8 0-4.2 0-5-1-1-1-1-2.4-1-5.3Z" stroke="#000"/></svg> <a rel="me" href="https://github.com/justinribeiro">YouTube</a></p>
 <youtube-video-list> Fetching... </youtube-video-list>
 <hr>
