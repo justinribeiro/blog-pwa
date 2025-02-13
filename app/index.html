@@ -235,6 +235,12 @@
         }
       }
 
+      /** Hopefully you don't have to fly away **/
+      #canaryInCoalMine {
+        width: 48px !important;
+        filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 1));
+      }
+
       @font-face {
         font-display: swap;
         font-family: 'Libre Franklin';
@@ -956,70 +962,71 @@
       <section>
         <h2>More Justin</h2>
         <p>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" color="#000"><path stroke="#000" stroke-linecap="round" d="M5 19.5V5a2 2 0 0 1 2-2h11.4a.6.6 0 0 1 .6.6V21M9 7h6M6.5 15H19M6.5 18H19M6.5 21H19"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M6.5 18c-1 0-1.5-.672-1.5-1.5S5.5 15 6.5 15M6.5 21c-1 0-1.5-.672-1.5-1.5S5.5 18 6.5 18"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" color="#000" aria-hidden="true"><path stroke="#000" stroke-linecap="round" d="M5 19.5V5a2 2 0 0 1 2-2h11.4a.6.6 0 0 1 .6.6V21M9 7h6M6.5 15H19M6.5 18H19M6.5 21H19"/><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M6.5 18c-1 0-1.5-.672-1.5-1.5S5.5 15 6.5 15M6.5 21c-1 0-1.5-.672-1.5-1.5S5.5 18 6.5 18"/></svg>
           <a href="/chronicle">Blog</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6 1-5.9 6.5.1 2 0 4.4.4 7 1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="M7 13.5V9c0-3 5-3 5 0v3m5 1.5V9c0-3-5-3-5 0v3" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 17c7.5 1 13 0 13-4V9c0-5.5-4-6.5-6-6.5H9c-3 0-6 1-5.9 6.5.1 2 0 4.4.4 7 1 8 10.5 5.5 12 5v-1.5S7.5 21 8 17Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a rel="me" href="https://ribeiro.social/@justin">Mastodon</a>
         </p>
         <p>
-          <svg viewBox="0 0 48 48"><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9.2 33.5a17.6 17.6 0 1 1 5.6 5.5l-7.3 1.5zm2.6 9.8 1.9-.4M4.1 39l-.8 3.2a2 2 0 0 0 2.4 2.5l3.2-.8m-3.7-9.6-.4 1.9m39.8-18.5a21.4 21.4 0 0 0-1.8-4.2M3.4 17.8a21.4 21.4 0 0 1 1.8-4.3m35.5-3a21.7 21.7 0 0 0-3.3-3.3m-30 3.2a21.6 21.6 0 0 1 3.2-3.2m23.7-2a21.5 21.5 0 0 0-4.3-2M13.7 5.1A21.4 21.4 0 0 1 18 3.3m8.3-.7a21.8 21.8 0 0 0-4.6 0m-19 23.9a22 22 0 0 1 0-5m.7 8.7a21.4 21.4 0 0 0 1.8 4.2m39.4-4.2a21.4 21.4 0 0 1-1.8 4.3m-2.1 3a21.6 21.6 0 0 1-3.3 3.3m-23.7 2a21.5 21.5 0 0 0 4.3 1.9m16.3-1.8a21.4 21.4 0 0 1-4.3 1.8m15.4-18.2a22 22 0 0 0 0-5M21.7 45.4a21.8 21.8 0 0 0 4.6 0"/></svg>
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9.2 33.5a17.6 17.6 0 1 1 5.6 5.5l-7.3 1.5zm2.6 9.8 1.9-.4M4.1 39l-.8 3.2a2 2 0 0 0 2.4 2.5l3.2-.8m-3.7-9.6-.4 1.9m39.8-18.5a21.4 21.4 0 0 0-1.8-4.2M3.4 17.8a21.4 21.4 0 0 1 1.8-4.3m35.5-3a21.7 21.7 0 0 0-3.3-3.3m-30 3.2a21.6 21.6 0 0 1 3.2-3.2m23.7-2a21.5 21.5 0 0 0-4.3-2M13.7 5.1A21.4 21.4 0 0 1 18 3.3m8.3-.7a21.8 21.8 0 0 0-4.6 0m-19 23.9a22 22 0 0 1 0-5m.7 8.7a21.4 21.4 0 0 0 1.8 4.2m39.4-4.2a21.4 21.4 0 0 1-1.8 4.3m-2.1 3a21.6 21.6 0 0 1-3.3 3.3m-23.7 2a21.5 21.5 0 0 0 4.3 1.9m16.3-1.8a21.4 21.4 0 0 1-4.3 1.8m15.4-18.2a22 22 0 0 0 0-5M21.7 45.4a21.8 21.8 0 0 0 4.6 0"/></svg>
           <a rel="me" href="https://signal.me/#eu/Lg2DdtX9mceX7xYCGLHXhoWdFrRyqIP0n-Dlsxr8b0r9vT3V7FxAk6VGExKYwmP5o">Signal</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.3 19v-1.9a2.1 2.1 0 0 0-.6-1.7c2.1-.2 4.3-1 4.3-4.5 0-1-.4-1.8-1-2.4.3-.8.3-1.7 0-2.5 0 0-.8-.2-2.7 1a9.2 9.2 0 0 0-4.6 0C7.8 5.8 7 6 7 6c-.4.8-.4 1.7-.1 2.5-.6.6-1 1.5-1 2.4 0 3.5 2.2 4.3 4.3 4.6a2.2 2.2 0 0 0-.6 1.6V19" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.7 17.7c-2 .6-3.7 0-4.7-2" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.3 19v-1.9a2.1 2.1 0 0 0-.6-1.7c2.1-.2 4.3-1 4.3-4.5 0-1-.4-1.8-1-2.4.3-.8.3-1.7 0-2.5 0 0-.8-.2-2.7 1a9.2 9.2 0 0 0-4.6 0C7.8 5.8 7 6 7 6c-.4.8-.4 1.7-.1 2.5-.6.6-1 1.5-1 2.4 0 3.5 2.2 4.3 4.3 4.6a2.2 2.2 0 0 0-.6 1.6V19" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.7 17.7c-2 .6-3.7 0-4.7-2" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a rel="me" href="https://github.com/justinribeiro">Github</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m14 12-3.5 2v-4l3.5 2Z" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12.7v-1.4C2 8.4 2 6.9 3 6c.8-1 2.2-1 5-1a144.2 144.2 0 0 1 8 0c2.8 0 4.2 0 5 1 1 1 1 2.4 1 5.3v1.4c0 2.9 0 4.4-1 5.3-.8 1-2.2 1-5 1a144.2 144.2 0 0 1-8 0c-2.8 0-4.2 0-5-1-1-1-1-2.4-1-5.3Z" stroke="#000"/></svg>
-          <a rel="me" href="https://github.com/justinribeiro">YouTube</a>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="m14 12-3.5 2v-4l3.5 2Z" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12.7v-1.4C2 8.4 2 6.9 3 6c.8-1 2.2-1 5-1a144.2 144.2 0 0 1 8 0c2.8 0 4.2 0 5 1 1 1 1 2.4 1 5.3v1.4c0 2.9 0 4.4-1 5.3-.8 1-2.2 1-5 1a144.2 144.2 0 0 1-8 0c-2.8 0-4.2 0-5-1-1-1-1-2.4-1-5.3Z" stroke="#000"/></svg>
+          <a rel="me" href="https://youtube.com/justinribeiro">YouTube</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5ZM7 17v-7" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 17v-3.3m0-3.7v3.8m0 0c0-3.8 6-3.8 6 0V17M7 7h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <a rel="me" href="https://www.linkedin.com/in/justinribeiro">LinkedIn</a>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5ZM7 17v-7" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 17v-3.3m0-3.7v3.8m0 0c0-3.8 6-3.8 6 0V17M7 7h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a rel="me" href="https://ribeiro.social/@justin">LinkedIn</a>
         </p>
       </section>
       <section>
         <h2>Syndication</h2>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a href="/data/chronicle/index.xml" target="_blank">RSS feed - All Posts</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a href="/data/tags/maker/index.xml" target="_blank">RSS feed - Research</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a href="/data/tags/maker/index.xml" target="_blank">RSS feed - Maker</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a href="/data/tags/web/index.xml" target="_blank">RSS feed - Software Development</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a href="/data/tags/photography/index.xml" target="_blank">RSS feed - Photography</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="M12 17c0-3-2-5-5-5m10 5c0-6-4-10-10-10m0 10h0" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <a href="/data/tags/web/index.xml" target="_blank">RSS feed - Personal</a>
         </p>
       </section>
       <section>
         <h2>Contact</h2>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
           <a rel="me" href="mailto:justin@justinribeiro.com&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin@justinribeiro.com</a>
         </p>
         <p>
-          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" aria-hidden="true"><path d="m7 9 5 3.5L17 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17V7c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" stroke="#000"/></svg>
           <a rel="me" href="mailto:justin.ribeiro@case.edu&subject=[Contact%20Justin]%20Your%20Subject%20Here&body=Dear%20Mr.%20Justin,)">justin.ribeiro@case.edu</a>
         </p>
         <h2>Nuts and Bolts</h2>
         <p>Made with love using using <a href="https://lit.dev/">web components</a>, <a href="https://gohugo.io/">hugo</a>, and <a href="https://github.com/justinribeiro/blog-pwa">blog-pwa</a>.</p>
         <p>Interested in the Web? Support open <a href="https://www.w3.org/">Web Standards</a> and <a href="https://openwebdocs.org/">Web Docs</a>.</p>
+        <svg viewBox="0 0 128 128" id="canaryInCoalMine"><title>I'm a canary in a (website) coal mine.</title><path fill="#2f2f2f" d="M63 99.5s6-1.4 9.8-5.2L45.2 64.4 36 69.7l2.2 23.2 17.6 7.1z"/><path fill="#ffc38f" d="M49.1 100.8c-.6 0-.7.2-.6.8.6 3.7 0 7.8-3.7 9.5a13 13 0 0 1-3.7 1.1c-1.5.3-3 .6-3.7 2.2-1.4 3.3 2.3 2.7 4.3 2.6 3-.2 6.4-1.2 8.8-3 1.6-1.1 2.1-3 2.2-4.8 0-2.2.5-4.7 1-6.9 0-.6.5-1.5.3-2.1-.8.2-1.7.5-2.6.6-.8.2-1.5-.1-2.3 0m15.2 11c.8-2.9.4-6-.2-8.8 0-.5-.2-1-.3-1.4 0-.5-.2-.9-.3-1.3 0-.7-.7-1-1.3-.8l-1.5.1c-.5 0-1.4 0-1.8.5-.3.4.1.9.2 1.2l.3 1.6v3.3c-.2 2.2-1 4.4-1.8 6.5-.6 1.3-1.6 2.5-2.2 3.9-1.1 2.7 4.2 2.7 5.6 2.2 1.6-.5 2-2.1 2.3-3.6l1-3.4"/><defs><path id="a" d="M111.8 41.6c-4.7-1.2-9.4-3-14.4-3.5-7.6-.7-10.2 2.6-15 7.6-2.5 2.6-4.7 7.9-8.4 9-4.3 1.4-9-3-11.6-6-3.7-4.4-5.5-9.8-8.2-14.8a25 25 0 0 0-12.7-11.3A25 25 0 0 0 31.2 21a27 27 0 0 0-14 5.1c-11.2 8-12 22.6-6.8 34.3 4.4 10 1.2 22.4 9 31 8.1 8.7 21.8 11.8 33.3 10.5 2.9-.3 5.8-1 8.5-1.9l1.7-.6-3.1-1.4a31.8 31.8 0 0 1-12.1-10.7 39.5 39.5 0 0 1-4.6-8.7c-.5-1.6-1-3.3-1.1-5-.1-.7-.2-1.7.2-2.5.8-1.4 1.6.2 1.8 1A32 32 0 0 0 66 96c3.3 1.2 7 1.9 10.6 1 4-.9 5.6-4.4 9.1-6a7.3 7.3 0 0 0 3.4-2.7c.5-.6.9-1.2 1.5-1.7.5-.4 1.3-.5 1.8-1s1-1.2 1-2c.2-.4.3-.7.2-1.2-.3-.7-1-1.1-1.6-1.6-1.8-1.5-3.5-1.9-1.3-3.8 2.3-2 4.8-3.6 7.3-5.1l5.8-3.8c4.5-2.7 9-5.4 13.7-7.8 3.4-1.7 8.5-3.6 9.3-7.9 1-5.2-11-9.9-15-10.8"/></defs><use fill="#FFFF8F" href="#a"/><path fill="#2f2f2f" d="M26.5 42.3c-1.3 2-1 4.8.7 6.3s4.2 1.1 5.5-.8a5 5 0 0 0-.7-6.3 3.7 3.7 0 0 0-5.5.8"/><path fill="#ffc38f" d="M10.3 45.7c-.9 0-1.8.7-2.5 1.2a24.6 24.6 0 0 0-6 6.2c-.7 1.1-1.2 2.2.3 2.9 1.5.7 3.1.7 4.8.9l5 .4c1.5 0 3.2.3 4.5-.2 1-.3.7-1.1.5-1.8-.2-1-.7-2-1.1-3-.9-2-2.6-6.5-5.3-6.6z"/></svg>
       </section>
     </footer>
     <script nonce="js-{{ jsnonce }}">window.litNonce = 'css-{{ cssnonce }}'; window.liteYouTubeNonce = 'css-{{ cssnonce }}';</script>
