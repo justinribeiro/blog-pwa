@@ -1,6 +1,6 @@
 baseurl = "https://justinribeiro.com/"
 languageCode = "en-us"
-title = "Justin Ribeiro"
+title = "Dr. Justin Ribeiro, Ph.D."
 
 # specifically for the PWA and GAE to load and parse
 publishdir = "../app/data"

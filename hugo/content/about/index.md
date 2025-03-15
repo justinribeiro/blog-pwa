@@ -1,6 +1,6 @@
 ---
 date: 2021-02-17T00:00:00-08:00
-title: "About Justin"
+title: "About Dr. Justin"
 subtitle: "Hello Wonderful People."
 description: "Driven by curiosity, listening, and learning, I enjoy leading a prolific multi-hyphenate existence: business leader, engineer, teacher, mentor, writer, photographer, maker among many other pursuits."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210217-about-me-800.jpg"
@@ -12,7 +12,7 @@ sitemap:
 
 <h3 class="pullHook">I'm a leader, researcher, and storyteller who's spent nearly three decades helping transform organizations.</h3>
 
-Officially: I'm a former executive and consultant that spent more than two decades transforming and leading organizations through change. My work history spans a wide range of industries, from aerospace to digital platforms and everything in between. As a software engineer, my contributions to open-source software have included critical projects like Chromium, Visual Studio Code, and Eclipse. My practitioner experience lead to my interest in research on creativity and innovation in software development, where I am a Doctor of Management Design & Innovation Fellow at Weatherhead School of Management at Case Western Reserve University.
+Officially: I'm a former executive and consultant that spent more than two decades transforming and leading organizations through change. My work history spans a wide range of industries, from aerospace to digital platforms and everything in between. As a software engineer, my contributions to open-source software have included critical projects like Chromium, Visual Studio Code, and Eclipse. My practitioner experience lead to my interest in research on creativity and innovation in software development, where I am a Doctor of Management Design & Innovation Fellow at Weatherhead School of Management at Case Western Reserve University, where I earned my Ph.D. in Management, Designing Sustainable Systems.
 
 Unofficially: I came up in the software business under NASA's motto "Dare Mighty Things", which I live to this day. I believe that our perceptions of creativity have been more lost to the businesses processes we've adopted that over the last decade have betrayed our ability to realize radical innovations. Individually, we box ourselves into corporate titles, losing not only ourselves but our creative soul.
 
@@ -378,6 +378,33 @@ Possibly you find it interesting, or maybe not. But I won't be reduced to titles
     </picture>
     <figcaption itemprop="caption description">
       <span aria-hidden="true">2024: Passed my exams, become a PhD Candidate.</span>
+      <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+    </figcaption>
+  </figure>
+  <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+    <picture>
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2025-phd-fam-in-finland.jpg" alt="2025: Head to Finland, where (from left) Dalithia Smith, Dalana Brand, Dereck Faulkner and Justin Ribeiro dry run our PhD defenses.">
+    </picture>
+    <figcaption itemprop="caption description">
+      <span aria-hidden="true">2025: Head to Finland, where (from left) Dalithia Smith, Dalana Brand, Dereck Faulkner and I dry run our PhD defenses.</span>
+      <span class="author" itemprop="copyrightHolder">Dereck Faulkner</span>
+    </figcaption>
+  </figure>
+  <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+    <picture>
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2025-kalle-and-justin.jpg" alt="2025: Passed my Ph.D. defense in front of my committee (my chair, Kalle Lyytinen pictured), become a Dr. Justin Ribeiro, Ph.D.">
+    </picture>
+    <figcaption itemprop="caption description">
+      <span aria-hidden="true">2025: Passed my Ph.D. defense in front of my committee (my chair, Kalle Lyytinen pictured), become a Dr. Justin Ribeiro, Ph.D.</span>
+      <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
+    </figcaption>
+  </figure>
+  <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
+    <picture>
+      <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/2025-the-fab-five.jpg" alt="2025: Passed my exams, become a PhD Candidate.">
+    </picture>
+    <figcaption itemprop="caption description">
+      <span aria-hidden="true">2025: The Fab Five Doctors: (from left) Dereck Faulkner, Dalithia Smith, Donna Contat, Dalana Brand, and myself, all smiles post defense.</span>
       <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
     </figcaption>
   </figure>

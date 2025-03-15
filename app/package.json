@@ -6,7 +6,7 @@
   },
   "name": "blog-pwa",
   "version": "3.0.0",
-  "author": "Justin Ribeiro <justin@justinribeiro.com>",
+  "author": "Dr. Justin Ribeiro, Ph.D. <justin@justinribeiro.com>",
   "type": "module",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.1",

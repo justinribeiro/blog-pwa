@@ -13,7 +13,7 @@ export const defaultStrings = {
       'Thank you for sharing! Your Webmention has been received and is currently be processed.',
   },
   sharing: {
-    title: '{{ title }} by Justin Ribeiro',
+    title: '{{ title }} by Dr. Justin Ribeiro, Ph.D.',
     services: {
       twitter:
         'https://twitter.com/intent/tweet?url={{ permalink }}&text={{ title }} via @justinribeiro',
@@ -21,7 +21,7 @@ export const defaultStrings = {
       linkedin:
         'https://www.linkedin.com/shareArticle?mini=true&url={{ permalink }}&title={{ title }}&source=&summary={{ description }}',
       email:
-        'mailto:?subject=Article: {{ title }}&body=Article from Justin Ribeiro: {{ permalink }}',
+        'mailto:?subject=Article: {{ title }}&body=Article from Dr. Justin Ribeiro, Ph.D.: {{ permalink }}',
     },
   },
   figures: {

@@ -176,7 +176,7 @@ class BlogElement extends LitElement {
       '',
       'link[rel=icon]',
     ).href;
-    document.title = `${title} - Justin Ribeiro`;
+    document.title = `${title} - Dr. Justin Ribeiro, Ph.D. `;
 
     this.__setMetaDom('property', 'og:title', document.title);
     this.__setMetaDom('name', 'description', description);

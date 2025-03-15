@@ -578,8 +578,8 @@ class BlogEntry extends BlogElement {
               : html``}
             <h3>Metadata</h3>
             <p>
-              Author Justin Ribeiro wrote ${this.metadata.words} words for this
-              piece and hopes you enjoyed it. Find an issue?
+              Author Dr. Justin Ribeiro, Ph.D. wrote ${this.metadata.words}
+              words for this piece and hopes you enjoyed it. Find an issue?
               <a href="https://github.com/justinribeiro/blog-pwa/issues"
                 >File a ticket</a
               >

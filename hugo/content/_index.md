@@ -11,12 +11,12 @@ sitemap:
 ---
 
 <section id="showcaseFive">
-  <a href="/chronicle/2025/02/10/my-phd-dissertation-defense-announcement/">
-    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20250210-the-defense-date.avif" alt="My defense announcement on the Case Western Reserve University defense calendar.">
+  <a href="/chronicle/2025/03/13/four-years-and-a-successful-phd-dissertation-defense/">
+    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/2025-kalle-and-justin.jpg" alt="Justin Ribeiro and his chair, Kalle Lyytinen, after successfully defending his PhD dissertation.">
     <div>
-      <h4>ITS THE FINAL COUNTDOWN</h4>
-      <h3>The Date is Set: My PhD Dissertation Defense Announcement</h3>
-      <p>February 28th, 2025 is just around the corner, and I'm both excited and terrified. Four years of work come down to this...and my 285 page dissertation, but a lot of it this.<p>
+      <h4>WELCOME DR JUSTIN</h4>
+      <h3>Four Years and a Successful PhD Dissertation Defense</h3>
+      <p>You do not forget that moment after they walk back into the room and call you Doctor. It is both surreal and exuberant wrapped in one fleeting yet frozen moment.<p>
     </div>
   </a>
   <div class="secondary">
