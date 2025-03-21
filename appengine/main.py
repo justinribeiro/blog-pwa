@@ -89,6 +89,56 @@ class MainHandler(webapp2.RequestHandler):
             "NEL"
         ] = '{"report_to":"default","max_age":31536000,"include_subdomains":true}'
 
+        ai_list_hunt = [
+            "AI2Bot",
+            "Ai2Bot-Dolma",
+            "Amazonbot",
+            "anthropic-ai",
+            "Applebot",
+            "Applebot-Extended",
+            "Brightbot\ 1.0",
+            "Bytespider",
+            "CCBot",
+            "ChatGPT-User",
+            "Claude-Web",
+            "ClaudeBot",
+            "cohere-ai",
+            "cohere-training-data-crawler",
+            "Crawlspace",
+            "Diffbot",
+            "DuckAssistBot",
+            "FacebookBot",
+            "FriendlyCrawler",
+            "Google-Extended",
+            "GoogleOther",
+            "GoogleOther-Image",
+            "GoogleOther-Video",
+            "GPTBot",
+            "iaskspider/2.0",
+            "ICC-Crawler",
+            "ImagesiftBot",
+            "img2dataset",
+            "ISSCyberRiskCrawler",
+            "Kangaroo\ Bot",
+            "Meta-ExternalAgent",
+            "Meta-ExternalFetcher",
+            "OAI-SearchBot",
+            "omgili",
+            "omgilibot",
+            "PanguBot",
+            "PerplexityBot",
+            "PetalBot",
+            "Scrapy",
+            "SemrushBot-OCOB",
+            "SemrushBot-SWA",
+            "Sidetrade\ indexer\ bot",
+            "Timpibot",
+            "VelenPublicWebCrawler",
+            "Webzio-Extended",
+            "YouBot",
+        ]
+        ai_list_search = "(?:%s)" % "|".join(ai_list_hunt)
+
         # this list is a little of a cross-mix of bots and a few browsers that
         # can just skip the progressive checks (ala lynx). I've done this to
         # just make the experience a little nicer
@@ -156,6 +206,11 @@ class MainHandler(webapp2.RequestHandler):
                 data["featureimage"] = unescape(data["featureimage"])
         else:
             data = {}
+
+        if re.search(ai_list_search, self.request.headers.get("User-Agent").lower()):
+            return self.response.write(
+                "0100001001001001010101000100010100100000010011010101100100100000010100110100100001001001010011100101100100100000010011010100010101010100010000010100110000100000010000010101001101010011"
+            )
 
         # Fun fact: a lot of webmention tools don't set a user agent, which
         # causes this to die hard, so let's just work around it for now
