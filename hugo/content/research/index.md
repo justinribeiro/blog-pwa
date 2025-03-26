@@ -5,6 +5,10 @@ subtitle: "Allowing Lived Experience to Emerge: My Research Process"
 description: "Allowing Lived Experience to Emerge: My Research Process"
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-2023-kicking-it-at-case.jpg"
 pagetype: "page"
+tags:
+ - about
+ - research
+ - cv
 sitemap:
   changefreq: "monthly"
   priority: 0.5

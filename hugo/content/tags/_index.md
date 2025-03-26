@@ -2,6 +2,10 @@
 date: 2019-10-07T00:00:00-08:00
 title: "Tags and Categories"
 description: "Not digging the random stream of thoughts mixed together in the main feed? Fear not: I some tags that are available for finer grain control of your reading and viewing experience."
+pagetype: "page"
+tags:
+ - posts
+ - sections
 sitemap:
   changefreq: "weekly"
   priority: 0.8

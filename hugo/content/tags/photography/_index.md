@@ -2,6 +2,11 @@
 date: 2019-10-07T00:00:00-08:00
 title: "Photography Articles and Prints"
 description: "From film and darkroom to modern digital, explore photography with photographs and thoughts from Justin Ribeiro."
+pagetype: "page"
+tags:
+ - posts
+ - section
+ - photography
 sitemap:
   changefreq: "weekly"
   priority: 0.8

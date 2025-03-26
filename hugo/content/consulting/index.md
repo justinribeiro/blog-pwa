@@ -5,6 +5,10 @@ subtitle: "Helping Unlock Your Organizations Potential"
 description: "Descriptions"
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-5-test.jpg"
 pagetype: "page"
+tags:
+ - about
+ - services
+ - consulting
 sitemap:
   changefreq: "monthly"
   priority: 0.5

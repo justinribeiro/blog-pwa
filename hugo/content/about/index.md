@@ -5,6 +5,10 @@ subtitle: "Hello Wonderful People."
 description: "Driven by curiosity, listening, and learning, I enjoy leading a prolific multi-hyphenate existence: business leader, engineer, teacher, mentor, writer, photographer, maker among many other pursuits."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210217-about-me-800.jpg"
 pagetype: "page"
+tags:
+ - about
+ - person
+ - history
 sitemap:
   changefreq: "monthly"
   priority: 0.5

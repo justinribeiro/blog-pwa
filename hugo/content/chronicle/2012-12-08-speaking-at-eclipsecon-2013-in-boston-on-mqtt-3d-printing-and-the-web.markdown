@@ -1,7 +1,7 @@
 ---
 tags:
-- EclipseCon
-- speaking
+ - EclipseCon
+ - presenting
 date: 2012-12-08T00:00:00Z
 description: "They're letting me speak at EclipseCon 2013 in Boston. Awesome!"
 title: "Speaking at EclipseCon 2013 in Boston on MQTT, 3D Printing, and the Web"

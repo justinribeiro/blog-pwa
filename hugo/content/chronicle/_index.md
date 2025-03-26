@@ -4,6 +4,9 @@ title: "Chronicle Archives"
 subtitle: "Code, thoughts, words, and projects: now with even more words!"
 description: "All the blog posts through the years: code, thoughts, words, and projects."
 pagetype: "page"
+tags:
+ - posts
+ - archive
 sitemap:
   changefreq: "weekly"
   priority: 0.8

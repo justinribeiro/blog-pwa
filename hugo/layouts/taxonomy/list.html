@@ -17,8 +17,13 @@
   "permalink": "{{ .Permalink }}",
   "socialimage": "{{ $.Params.socialimage }}",
   "posts": [
-    {{range $index, $element := .Data.Pages}}
-      {{if $index}},{{end}}{{ .Render "li"}}
-    {{end}}
+    {{ $count := 0 }}
+    {{ range $index, $element := .Data.Pages }}
+      {{ if and (ne $element.Params.pagetype "page") (ne $element.Params.pagetype "explore") }}
+        {{ if gt $count 0 }},{{ end }}
+        {{ .Render "li" }}
+        {{ $count = add $count 1 }}
+      {{ end }}
+    {{ end }}
   ]
 }

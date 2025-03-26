@@ -1,7 +1,7 @@
 ---
 tags:
-- business
-- consulting
+ - business
+ - consultant
 date: 2010-06-23T00:00:00Z
 description: Oh, consulting! It runs the world and often lives into the ground.
 title: Notes on being a consultant, ala you don€™t want to be one

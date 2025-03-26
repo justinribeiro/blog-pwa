@@ -2,6 +2,11 @@
 date: 2019-10-07T00:00:00-08:00
 title: "Internet of Things (IoT) Articles"
 description: "Sample code, knowledge, and a touch whimsy on developing software and hardware for the internet of things."
+pagetype: "page"
+tags:
+ - posts
+ - section
+ - iot
 sitemap:
   changefreq: "weekly"
   priority: 0.8

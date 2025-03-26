@@ -5,6 +5,15 @@ subtitle: "Always leaping, always exploring, and having fun along the way."
 description: "I 💓 the open web. Film photographer and mediocre darkroom printer. Maker of sometimes interesting things. Coder of open source curiosities. Always leaping, always exploring."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210217-about-me-800.jpg"
 pagetype: "explore"
+tags:
+ - person
+ - phd
+ - programmer
+ - maker
+ - speaker
+ - dad
+ - photographer
+ - researcher
 sitemap:
   changefreq: "weekly"
   priority: 0.8

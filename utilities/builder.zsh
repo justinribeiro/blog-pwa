@@ -84,11 +84,11 @@ validate_json() {
   # we basically pipe the good jq output to /dev/null
   # and only look for parse errors
   for file in **/*.json(D.); do;
-    jq -c .title $file 1> /dev/null
-    if [[ $? -eq 4 ]]; then
-      echo "json parse error: $file"
-    else
+    jq -c . $file 1> /dev/null
+    if [[ $? -eq 0 ]]; then
       jq -c . $file | sponge $file
+    else
+       echo "json parse error: $file"
     fi
   done
 }

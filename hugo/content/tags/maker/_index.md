@@ -2,6 +2,11 @@
 date: 2019-10-07T00:00:00-08:00
 title: "Maker, Builder, and Creativity Articles"
 description: "All the maker projects and construction from Justin Ribeiro."
+pagetype: "page"
+tags:
+ - posts
+ - section
+ - maker
 sitemap:
   changefreq: "weekly"
   priority: 0.8

@@ -2,6 +2,11 @@
 date: 2019-10-07T00:00:00-08:00
 title: "Web Dev, Web Perf, and Web Platform Articles"
 description: "Sample code, knowledge, and a touch whimsy on developing software for the web platform from Justin Ribeiro."
+pagetype: "page"
+tags:
+ - posts
+ - section
+ - programming
 sitemap:
   changefreq: "weekly"
   priority: 0.8
