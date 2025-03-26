@@ -170,7 +170,7 @@ class BlogElement extends LitElement {
    * it's not just for show
    * @param {object} {{title, description, url, socialImage}}
    */
-  __setPageMetaData({ title, description, url, socialimage }) {
+  __setPageMetaData({ title, description, url, socialimage, tags }) {
     const fallbackImg = this.__getDomRef(
       'fallbackImg',
       '',
@@ -180,6 +180,7 @@ class BlogElement extends LitElement {
 
     this.__setMetaDom('property', 'og:title', document.title);
     this.__setMetaDom('name', 'description', description);
+    this.__setMetaDom('name', 'keywords', tags);
     this.__setMetaDom('property', 'og:description', description);
     this.__setMetaDom('property', 'og:image', socialimage || fallbackImg);
     this.__setMetaDom('property', 'og:url', url || document.location.href);
