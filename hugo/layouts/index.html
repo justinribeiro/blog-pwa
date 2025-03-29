@@ -9,6 +9,7 @@
   "datePublished": "{{ .Date.Format $.Site.Params.ISO8601 }}",
   "dateModified" : "{{ .Date.Format $.Site.Params.ISO8601 }}",
   "pagetype": "{{ .Params.pagetype }}",
+  "tags": "{{ delimit .Params.tags "," }}",
   "words": "{{ .FuzzyWordCount }}",
   "readingtime": "{{ .ReadingTime }}",
   "permalink": "{{ .Permalink }}",

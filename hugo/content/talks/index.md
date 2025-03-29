@@ -2,7 +2,7 @@
 date: 2024-05-07T00:00:00-08:00
 title: "Speaking"
 subtitle: "Thank you for considering me!"
-description: "Descriptions"
+description: "Justin’s voice has reached millions through The Web Platform Podcast, and his insights have been shared on stage at global conferences, including Google I/O, Eclipsecon, SPAR 3D, NFC Connection Summit, Global Entrepreneur Summit, and Academy of Management among many others. Beyond the conference stage, Justin has given private engagement talks on specific topics requested within his areas of expertise."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-talkin-and-ponderin.jpg"
 pagetype: "page"
 tags:

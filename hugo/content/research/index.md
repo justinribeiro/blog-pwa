@@ -2,7 +2,7 @@
 date: 2024-05-07T00:00:00-08:00
 title: "Research"
 subtitle: "Allowing Lived Experience to Emerge: My Research Process"
-description: "Allowing Lived Experience to Emerge: My Research Process"
+description: "My research advances strategies for harnessing cognitive diversity, fostering creativity, and shaping innovative software teams."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-2023-kicking-it-at-case.jpg"
 pagetype: "page"
 tags:
@@ -14,7 +14,7 @@ sitemap:
   priority: 0.5
 ---
 
-My research advances strategies for harnessing cognitive diversity, fostering creativity and shaping innovative software teams. My research delves into cognitive conflict's role in spurring novelty in software engineering, revealing how diverse perspectives catalyze breakthroughs in both corporate Agile and open-source environments.
+My research advances strategies for harnessing cognitive diversity, fostering creativity, and shaping innovative software teams. My research delves into cognitive conflict's role in spurring novelty in software engineering, revealing how diverse perspectives catalyze breakthroughs in both corporate Agile and open-source environments.
 
 Topics central to my research include creativity, cognitive dissonance, cognitive conflict, digital innovation, and software development digital artifacts.
 

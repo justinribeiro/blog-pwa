@@ -2,7 +2,7 @@
 date: 2024-05-07T00:00:00-08:00
 title: "Consulting"
 subtitle: "Helping Unlock Your Organizations Potential"
-description: "Descriptions"
+description: "Given the majority of my three decade career has been in the business of consulting for firms and organizations on management and software engineering challenges, I am no stranger to consulting requests."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/pages/page-5-test.jpg"
 pagetype: "page"
 tags:
@@ -14,7 +14,7 @@ sitemap:
   priority: 0.5
 ---
 
-Given the majority of my nearly three decade career has been in the business of consulting for firms and organizations on management and software engineering challenges, I am no stranger to consulting requests. I take a great deal of pride on my ability to help organizations. However, due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my consulting availability is limited. Should my availability not align with your current consulting needs, rest assured that myself and <a href="mailto:team@justinribeiro.com&subject=Book%20Justin%20For%20Consult%20-%20Your%20Note%20Here&body=Dear%20Mr.%20Justin Team,">my capable team</a> is on hand to suggest excellent alternatives.
+Given the majority of my three decade career has been in the business of consulting for firms and organizations on management and software engineering challenges, I am no stranger to consulting requests. I take a great deal of pride on my ability to help organizations. However, due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my consulting availability is limited. Should my availability not align with your current consulting needs, rest assured that myself and <a href="mailto:team@justinribeiro.com&subject=Book%20Justin%20For%20Consult%20-%20Your%20Note%20Here&body=Dear%20Mr.%20Justin Team,">my capable team</a> is on hand to suggest excellent alternatives.
 
 <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>
@@ -36,7 +36,7 @@ I appreciate your interest and hope we align so that I can work with your organi
 While I do not make an extensive list of organizations I've worked with public due to legal agreements, I've worked with a large number of organizations. Selected firm experience includes: Google, Samsung, Amazon, Microsoft, Boeing, Smithsonian, Bank of America, USDA, AT&T, Paramount and Wyndham.
 
 ## Industry Experience
-Justin has a wide range experience across industries, including: Aerospace, Banking, Payments Systems, Commodities Trading, High Tech, Telecommunications, Entertainment, Animation, Agriculture, Computer Hardware, Asset Management, Food Manufacturing, Travel and Hospitality,Consumer Goods Manufacturing, Global Shipping, Utilities and Infrastructure, Museums and Heritage, Education
+Justin has a wide range experience across industries, including: Aerospace, Banking, Payments Systems, Commodities Trading, High Tech, Telecommunications, Entertainment, Animation, Agriculture, Computer Hardware, Asset Management, Food Manufacturing, Travel and Hospitality, Consumer Goods Manufacturing, Global Shipping, Utilities and Infrastructure, Museums and Heritage, Education
 
 ## Areas of Excellence
 Justin has a wide range areas where he has lead organization change, including: Decisive Vision, Strategic Delivery, Process Improvement, Team Leadership, Hands-On Software Engineering, Budgeting and Financial Planning, Technical Architecture Development, Company Growth, Cost Controls, Change Management, Innovation Practices, Software Development Life Cycle (SDLC), Roadmap and Planning
