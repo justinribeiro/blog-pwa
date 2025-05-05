@@ -932,6 +932,20 @@
   resolved "https://registry.yarnpkg.com/@justinribeiro/lite-youtube/-/lite-youtube-1.8.1.tgz#d0035abb79beb924fd5a66feae5bf6828df1e99b"
   integrity sha512-b64RclJsQoONgIjayk/2wPqwrCdxcb2ZBR49cS6Tgt858vj7eKJYhekwgYBRn61tDDflkYedK+KOkrdBZVnwRQ==
 
+"@justinribeiro/rollup-plugin-asset-build-size-compare@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@justinribeiro/rollup-plugin-asset-build-size-compare/-/rollup-plugin-asset-build-size-compare-1.0.0.tgz#b212f34befdfb9e9e241bb4bddd2f9a4bd5e535b"
+  integrity sha512-C+0tSMkQeXwp2eAlzAbFIWvdFkEDsXudM2G2Z+hUffcaPtbYhq0A0ZEXhxHtPLHnHgiFqovC2V7hb7/h605dwg==
+  dependencies:
+    axios "^1.2.2"
+    chalk "^5.2.0"
+    ci-env "^1.17.0"
+    fs-extra "^11.1.0"
+    glob "^8.0.3"
+    minimatch "^5.1.2"
+    pretty-bytes "^6.0.0"
+    zlib "^1.0.5"
+
 "@justinribeiro/share-to-mastodon@^2.0.0":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@justinribeiro/share-to-mastodon/-/share-to-mastodon-2.0.2.tgz#781efe23c19e2a598a23bf64cac913fff540fae8"
@@ -5070,20 +5084,6 @@ rollup-plugin-minify-html-literals@^1.2.6:
   dependencies:
     minify-html-literals "^1.3.5"
     rollup-pluginutils "^2.8.2"
-
-rollup-plugin-size@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-size/-/rollup-plugin-size-0.3.1.tgz#7a88a3f0229a57e7e9bc2136683169f8d27e2e01"
-  integrity sha512-SAtpTAAJ0nFkISxLxYjDZX9Zqt34tAIil98R305ZM0GhTnnO6VYG0P5M+2IXKo/iNDdbpBcIfg1W06CLtk/vXA==
-  dependencies:
-    axios "^1.2.2"
-    chalk "^5.2.0"
-    ci-env "^1.17.0"
-    fs-extra "^11.1.0"
-    glob "^8.0.3"
-    minimatch "^5.1.2"
-    pretty-bytes "^6.0.0"
-    zlib "^1.0.5"
 
 rollup-pluginutils@^2.8.2:
   version "2.8.2"

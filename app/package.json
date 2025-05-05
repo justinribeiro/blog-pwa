@@ -9,6 +9,7 @@
   "author": "Dr. Justin Ribeiro, Ph.D. <justin@justinribeiro.com>",
   "type": "module",
   "devDependencies": {
+    "@justinribeiro/rollup-plugin-asset-build-size-compare": "^1.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@web/dev-server": "^0.4.2",
@@ -24,7 +25,6 @@
     "prettier": "^3.2.5",
     "rollup": "^4.11.0",
     "rollup-plugin-minify-html-literals": "^1.2.6",
-    "rollup-plugin-size": "^0.3.1",
     "stylelint": "^16.2.1",
     "web-component-analyzer": "^2.0.0",
     "workbox-cli": "^7.0.0"
