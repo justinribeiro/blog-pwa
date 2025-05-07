@@ -20,15 +20,23 @@ sitemap:
 ---
 
 <section id="showcaseFive">
-  <a href="/chronicle/2025/03/13/four-years-and-a-successful-phd-dissertation-defense/">
-    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/2025-kalle-and-justin.jpg" alt="Justin Ribeiro and his chair, Kalle Lyytinen, after successfully defending his PhD dissertation.">
+  <a href="/chronicle/2025/05/06/a-tiny-analysis-of-nginx-compression-directives-and-a-new-rollup-web-asset-build-size-plugin/">
+    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20250507-rollup-build.avif" alt="Running compression tests on the build of this very blog using my new rollup plugin.">
     <div>
-      <h4>WELCOME DR JUSTIN</h4>
-      <h3>Four Years and a Successful PhD Dissertation Defense</h3>
-      <p>You do not forget that moment after they walk back into the room and call you Doctor. It is both surreal and exuberant wrapped in one fleeting yet frozen moment.<p>
+      <h4>PERF ANALYSIS</h4>
+      <h3>A Tiny Analysis of Nginx Compression Directives and a new Rollup Web Asset Build Size Plugin</h3>
+      <p>It will come to no surprise to anyone that web performance is something I hold dear. As such, I’ve always taken a multi-pronged approach to try to give me the visibility I need to make choices on what kinds of performance I can control to the best of my ability. That said, I did not set out to run this analysis, or fork and write an opinionated rollup plugin, but here we are.</p>
     </div>
   </a>
   <div class="secondary">
+    <a href="/chronicle/2025/03/13/four-years-and-a-successful-phd-dissertation-defense/" class="card">
+      <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/2025-kalle-and-justin.jpg" alt="Justin Ribeiro and his chair, Kalle Lyytinen, after successfully defending his PhD dissertation.">
+      <div>
+        <h4>WELCOME DR JUSTIN</h4>
+        <h3>Four Years and a Successful PhD Dissertation Defense</h3>
+        <p>You do not forget that moment after they walk back into the room and call you Doctor. It is both surreal and exuberant wrapped in one fleeting yet frozen moment.</p>
+      </div>
+    </a>
     <a href="/chronicle/2021/02/23/building-a-custom-polaroid-sx-70-camera-rig/" class="card">
       <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-polaroid-rig.jpg" alt="Everyone needs a hand grip for their SX-70 right?">
       <div>
@@ -37,12 +45,12 @@ sitemap:
         <p>My love for the Polaroid SX-70 knows no bounds.<p>
       </div>
     </a>
-    <a href="/chronicle/2024/11/15/lite-youtube-web-component-v1.6-released/" class="card">
+    <a href="/chronicle/2025/04/29/week-in-review-all-the-updates-to-the-open-source/" class="card">
       <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-lite-youtube.avif" alt="lite-youtube featured on Google's Chrome for Developers site.">
       <div>
-        <h4>WEB DEV</h4>
-        <h3>lite-youtube Web Component Updated to v1.6, Offers More Features</h3>
-        <p>The secretly popular component tops 75 million loads a month so I decided to level up some features.<p>
+        <h4>OPEN SOURCE DEV</h4>
+        <h3>Week in Review: All the Updates</h3>
+        <p>Updates to lite-youtube, code-block, and Google Scholar Citation Count for Zotero round out a week of catching up on maintainer activities.<p>
       </div>
     </a>
     <a href="/chronicle/2023/07/24/protecting-our-chickens-and-ducks-with-a-zoo-netting-enclosed-run/" class="card">

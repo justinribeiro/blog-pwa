@@ -33,5 +33,9 @@ export default {
       compression: 'brotli',
       filename: '.build-size-brotli.json',
     }),
+    size({
+      compression: 'gzip',
+      filename: '.build-size-gzip.json',
+    }),
   ],
 };
