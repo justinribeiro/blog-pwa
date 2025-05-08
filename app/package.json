@@ -9,7 +9,7 @@
   "author": "Dr. Justin Ribeiro, Ph.D. <justin@justinribeiro.com>",
   "type": "module",
   "devDependencies": {
-    "@justinribeiro/rollup-plugin-asset-build-size-compare": "^1.0.0",
+    "@justinribeiro/rollup-plugin-asset-build-size-compare": "^1.1.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@web/dev-server": "^0.4.2",

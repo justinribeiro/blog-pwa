@@ -4,7 +4,7 @@ const analyticsId = 'G-37E9EEEWD9';
 const ga4track = ga4mp([analyticsId], {
   user_id: undefined,
   non_personalized_ads: true,
-  debug: true,
+  debug: false,
 });
 
 /**

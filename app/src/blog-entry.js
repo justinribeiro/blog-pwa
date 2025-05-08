@@ -138,20 +138,29 @@ class BlogEntry extends BlogElement {
         permalink: this.metadata.permalink,
         title: this.metadata.title,
         description: this.metadata.description,
+        tags: this.metadata.tags,
       };
 
       this.share.push(
         {
-          service: 'Twitter',
-          link: stringInterpolate(this.strings.sharing.services.twitter, data),
-        },
-        {
-          service: 'Facebook',
-          link: stringInterpolate(this.strings.sharing.services.facebook, data),
+          service: 'BlueSky',
+          link: stringInterpolate(this.strings.sharing.services.bluesky, data),
         },
         {
           service: 'LinkedIn',
           link: stringInterpolate(this.strings.sharing.services.linkedin, data),
+        },
+        {
+          service: 'Pocket',
+          link: stringInterpolate(this.strings.sharing.services.pocket, data),
+        },
+        {
+          service: 'Reddit',
+          link: stringInterpolate(this.strings.sharing.services.reddit, data),
+        },
+        {
+          service: 'Linkhut',
+          link: stringInterpolate(this.strings.sharing.services.linkhut, data),
         },
         {
           service: 'E-Mail',
@@ -538,7 +547,7 @@ class BlogEntry extends BlogElement {
             <form
               id="webMentionForm"
               action="https://webmention.io/justinribeiro.com/webmention"
-              method="POST"
+              method="post"
             >
               <input
                 type="hidden"

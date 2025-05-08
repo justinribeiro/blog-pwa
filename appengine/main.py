@@ -49,7 +49,7 @@ class MainHandler(webapp2.RequestHandler):
             "style-src 'self' 'nonce-css-"
             + stylenonce
             + "' https://fonts.googleapis.com; "
-            "connect-src 'self' https://us-west2-justinribeiro-web.cloudfunctions.net https://us-west1-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://webmention.io/ https://analytics.google.com; "
+            "connect-src 'self' https://us-west1-justinribeiro-web.cloudfunctions.net https://storage.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://webmention.io/ https://analytics.google.com; "
             "img-src 'self' data: https://storage.googleapis.com https://i.ytimg.com; "
             "media-src 'self' https://storage.googleapis.com; "
             "form-action 'self' https://webmention.io; "
@@ -58,11 +58,11 @@ class MainHandler(webapp2.RequestHandler):
             "frame-src https://giphy.com https://www.youtube.com; "
             "manifest-src 'self'; "
             "frame-ancestors 'none';"
-            "report-uri https://justinribeiro.report-uri.com/r/d/csp/enforce; report-to default"
+            # "report-uri https://justinribeiro.report-uri.com/r/d/csp/enforce; report-to default"
         )
-        self.response.headers[
-            "Content-Security-Policy-Report-Only"
-        ] = "require-trusted-types-for 'script'; report-uri https://justinribeiro.report-uri.com/r/d/csp/reportOnly; report-to default"
+        self.response.headers["Content-Security-Policy-Report-Only"] = (
+            "require-trusted-types-for 'script';"
+        )
         self.response.headers["Feature-Policy"] = (
             "accelerometer 'none'; "
             "ambient-light-sensor 'self'; "
@@ -82,12 +82,12 @@ class MainHandler(webapp2.RequestHandler):
         )
         # Deprecated, see https://chromestatus.com/feature/6244547273687040
         # self.response.headers['Expect-CT'] = 'max-age=0, report-uri="https://justinribeiro.report-uri.com/r/d/ct/reportOnly"'
-        self.response.headers[
-            "Report-To"
-        ] = '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://justinribeiro.report-uri.com/a/d/g"}],"include_subdomains":true}'
-        self.response.headers[
-            "NEL"
-        ] = '{"report_to":"default","max_age":31536000,"include_subdomains":true}'
+        # self.response.headers[
+        #    "Report-To"
+        # ] = '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://justinribeiro.report-uri.com/a/d/g"}],"include_subdomains":true}'
+        # self.response.headers[
+        #    "NEL"
+        # ] = '{"report_to":"default","max_age":31536000,"include_subdomains":true}'
 
         ai_list_hunt = [
             "AI2Bot",

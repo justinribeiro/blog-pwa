@@ -15,9 +15,11 @@ export const defaultStrings = {
   sharing: {
     title: '{{ title }} by Dr. Justin Ribeiro, Ph.D.',
     services: {
-      twitter:
-        'https://twitter.com/intent/tweet?url={{ permalink }}&text={{ title }} via @justinribeiro',
-      facebook: 'https://www.facebook.com/sharer.php?u={{ permalink }}',
+      bluesky: 'https://bsky.app/intent/compose?text={{title}}%20{{permalink}}',
+      pocket: 'https://getpocket.com/save?url={{permalink}}&title={{text}}',
+      reddit: 'https://www.reddit.com/submit?url={{permalink}}&title={{text}}',
+      linkhut:
+        'https://ln.ht/_/add?url={{permalink}}&title={{title}}&tags={{tags}}',
       linkedin:
         'https://www.linkedin.com/shareArticle?mini=true&url={{ permalink }}&title={{ title }}&source=&summary={{ description }}',
       email:

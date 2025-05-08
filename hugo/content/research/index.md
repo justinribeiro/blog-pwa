@@ -50,6 +50,8 @@ Looking for a visting professor or a guest lecturer? I am open and available to 
 
 <a href="https://storage.googleapis.com/jdr-docs/justinribeiro-cv-20250313.pdf" target="_blank">Justin Ribeiro - Curriculum Vitae (CV)</a>
 
+<a href="http://rave.ohiolink.edu/etdc/view?acc_num=case1743683688353522" target="_blank">Justin Ribeiro - Thesis</a>
+
 ## Papers and Proceedings
 
 Having successfully defended my dissertation in February 2025, I am now in the process of disseminating this existing research through both academic peer-reviewed venues and practitioner conferences, while working on new research. Previous such dissemination includes:
