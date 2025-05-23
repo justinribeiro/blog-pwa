@@ -18,7 +18,7 @@ My research advances strategies for harnessing cognitive diversity, fostering cr
 
 Topics central to my research include creativity, cognitive dissonance, cognitive conflict, digital innovation, and software development digital artifacts.
 
-I earned a Ph.D. in Management, Designing Sustainable Systems at Case Western Reserve University (chair: [Kalle Lyytinen](https://case.edu/weatherhead/about/faculty-and-staff-directory/kalle-lyytinen)) and am a <a href="/chronicle/2022/03/03/selected-as-a-doctor-of-management-design-and-innovation-fellow-at-case-western-reserve-university/">Doctor of Management Design & Innovation Fellow</a> at Weatherhead School of Management at Case Western Reserve University.
+I earned a Ph.D. in Management, Designing Sustainable Systems at Case Western Reserve University (chair: [Kalle Lyytinen](https://case.edu/weatherhead/about/faculty-and-staff-directory/kalle-lyytinen)) and am a <a href="/chronicle/2022/03/03/selected-as-a-doctor-of-management-design-and-innovation-fellow-at-case-western-reserve-university/">Doctor of Management Design & Innovation Fellow</a> and Engaged Pracitioner Scholar at Weatherhead School of Management at Case Western Reserve University.
 
 ## Research Methodology
 
@@ -50,7 +50,7 @@ Looking for a visting professor or a guest lecturer? I am open and available to 
 
 <a href="https://storage.googleapis.com/jdr-docs/justinribeiro-cv-20250313.pdf" target="_blank">Justin Ribeiro - Curriculum Vitae (CV)</a>
 
-<a href="http://rave.ohiolink.edu/etdc/view?acc_num=case1743683688353522" target="_blank">Justin Ribeiro - Thesis</a>
+<a href="https://rave.ohiolink.edu/etdc/view?acc_num=case1743683688353522" target="_blank">Justin Ribeiro - Dissertation</a>
 
 ## Papers and Proceedings
 
