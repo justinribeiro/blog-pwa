@@ -4,7 +4,6 @@
 export const defaultStrings = {
   webmentions: {
     start: 'Checking for interactions...',
-    none: 'There are currently no interactions with this piece. Be the first!',
     some: 'There are currently {{ count }} interactions with this piece on the open web.',
     invalid: 'The URL you entered does not appear to be valid.',
     error:
@@ -32,27 +31,3 @@ export const defaultStrings = {
     button: '⬌',
   },
 };
-
-/**
- * Run the function, otherwise return the value
- * @param {Function | string | number} obj
- * @returns string
- */
-function stringExtract(obj) {
-  return typeof obj === 'function' ? obj() : obj;
-}
-
-/**
- * Interpolate a set of object values into a string
- * @param {string} text
- * @param {object} values
- * @returns string
- */
-export function stringInterpolate(text, values) {
-  return Object.entries(stringExtract(values)).reduce(
-    // eslint-disable-next-line no-shadow
-    (text, [key, value]) =>
-      text.replace(new RegExp(`{{[ ]*${key}[ ]*}}`), stringExtract(value)),
-    text
-  );
-}

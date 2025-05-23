@@ -1,17 +1,9 @@
 import { LitElement, html, css } from 'lit';
-import { installRouter } from 'pwa-helpers/router.js';
 import { Workbox } from 'workbox-window';
+import { installRouter } from './router.js';
 
 class BlogPwa extends LitElement {
   static properties = {
-    /**
-     * check whether we've completed our main app load (crp + lazy resources)
-     * @private
-     */
-    __loaded: {
-      type: Boolean,
-      state: true,
-    },
     /**
      * shadow DOM reference holder
      * @private
@@ -26,7 +18,6 @@ class BlogPwa extends LitElement {
 
   constructor() {
     super();
-    this.__loaded = false;
     this.__dom = {
       snackBar: null,
     };
@@ -145,7 +136,7 @@ class BlogPwa extends LitElement {
         await node.mount();
         this.__domRefRouter.appendChild(node);
       }
-    } catch (error) {
+    } catch {
       // sometimes doesn't inject quickly, and their lifecycle doesn't
       // always fire on swap when the inner component doesn't change, so we put
       // a little fallback trigger in to be safe
@@ -158,22 +149,10 @@ class BlogPwa extends LitElement {
    * critical rendering path
    */
   async __initializeNonCrpResources() {
-    if (!this.__loaded) {
-      import('./blog-lazy-load.js').then(async () => {
-        BlogPwa.__loadAnalytics();
-        this.__loaded = true;
-      });
-    }
-  }
-
-  /**
-   * Lazy load analytics and measure the web performance
-   * @private
-   * @static
-   */
-  static async __loadAnalytics() {
-    const module = await import('./lod-analytics.js');
-    module.initAnalytics();
+    import('./blog-lazy-load.js').then(async () => {
+      const module = await import('./lod-analytics.js');
+      module.initAnalytics();
+    });
   }
 
   /**

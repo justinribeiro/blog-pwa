@@ -1,11 +1,7 @@
-import ga4mp from '@analytics-debugger/ga4mp';
+import analytics from '@justinribeiro/tiny-ga4';
 
 const analyticsId = 'G-37E9EEEWD9';
-const ga4track = ga4mp([analyticsId], {
-  user_id: undefined,
-  non_personalized_ads: true,
-  debug: false,
-});
+const ga4track = analytics(analyticsId);
 
 /**
  * This is strip down because GA4 is a heavy nightmare

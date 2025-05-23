@@ -1,5 +1,5 @@
 import { BlogElement, html, css } from './blog-element.js';
-import { defaultStrings, stringInterpolate } from './blog-strings.js';
+import { defaultStrings } from './blog-strings.js';
 
 class BlogPage extends BlogElement {
   static properties = {

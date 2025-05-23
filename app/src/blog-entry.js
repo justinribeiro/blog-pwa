@@ -1,8 +1,12 @@
 import { BlogElement, html, css } from './blog-element.js';
-import { defaultStrings, stringInterpolate } from './blog-strings.js';
+import { defaultStrings } from './blog-strings.js';
+import { stringInterpolate } from './helpers.js';
 
 class BlogEntry extends BlogElement {
   static properties = {
+    figures: {
+      type: Object,
+    },
     interactions: {
       type: String,
     },
@@ -51,7 +55,7 @@ class BlogEntry extends BlogElement {
     // think it is. In this case, don't remove the listeners if they are on
     // mobile (because they won't be there)
     if (!window.matchMedia('(max-width: 767px)').matches) {
-      this.__domRefs.figures.forEach(figure => {
+      this.figures.forEach(figure => {
         figure.removeEventListener('click', this.__figureToggleView, {
           passive: true,
         });
@@ -74,8 +78,8 @@ class BlogEntry extends BlogElement {
    */
   async __processPageData() {
     await super.__processPageData();
-
-    this.__removeAllChildNodes(this.__getDomRef('#featureImage'));
+    const featureImageRef = this.shadowRoot.querySelector('#featureImage');
+    featureImageRef?.replaceChildren();
 
     if (this.metadata.featureimage) {
       const template = document
@@ -83,7 +87,7 @@ class BlogEntry extends BlogElement {
         .createContextualFragment(
           this.__unescapeHtml(this.metadata.featureimage),
         );
-      this.__getDomRef('#featureImage').appendChild(template);
+      featureImageRef.appendChild(template);
     }
 
     // This is my personal preference showing; I can't stand full
@@ -121,7 +125,7 @@ class BlogEntry extends BlogElement {
         text: this.metadata.description,
         url: this.metadata.permalink,
       });
-    } catch (e) {
+    } catch {
       // ahh that did not work or they bailed out
     }
   }
@@ -175,17 +179,21 @@ class BlogEntry extends BlogElement {
    * expand/contract of image size
    */
   __figureInteractionSetup() {
-    this.__domRefs.figures = [...this.shadowRoot.querySelectorAll('figure')];
+    this.figures = [...this.shadowRoot.querySelectorAll('figure')];
 
     const template = document.createElement('button');
     template.setAttribute('aria-label', this.strings.figures.expand);
     template.textContent = this.strings.figures.button;
 
-    this.__domRefs.figures.forEach(figure => {
+    this.figures.forEach(figure => {
+      const fragment = document.createDocumentFragment();
+      const button = template.cloneNode(true);
+      fragment.appendChild(button);
+
       figure.addEventListener('click', this.__figureToggleView.bind(this), {
         passive: true,
       });
-      figure.appendChild(template.cloneNode(true));
+      figure.appendChild(fragment);
     });
   }
 
@@ -196,32 +204,27 @@ class BlogEntry extends BlogElement {
    */
   __figureToggleView(event) {
     const target = event.currentTarget;
-    if (target.hasAttribute('expand')) {
-      target.removeAttribute('expand');
-      target
-        .querySelector('button')
-        .setAttribute('aria-label', this.strings.figures.expand);
-    } else {
-      target.setAttribute('expand', '');
-      target
-        .querySelector('button')
-        .setAttribute('aria-label', this.strings.figures.contract);
-    }
+    const button = target.querySelector('button');
+    const isExpanded = target.hasAttribute('expand');
+
+    target.toggleAttribute('expand', !isExpanded);
+    button.setAttribute(
+      'aria-label',
+      isExpanded ? this.strings.figures.expand : this.strings.figures.contract,
+    );
   }
 
   /**
    * Hunt down open figures and close them on Escape key
    */
   __figureCloseOnEscape() {
-    const hasItems = this.shadowRoot.querySelectorAll('figure[expand]');
-    if (hasItems.length > 0) {
-      hasItems.forEach(figure => {
-        figure.removeAttribute('expand');
-        figure
-          .querySelector('button')
-          .setAttribute('aria-label', this.strings.figures.expand);
-      });
-    }
+    const figures = this.shadowRoot.querySelectorAll('figure[expand]');
+    figures.forEach(figure => {
+      figure.removeAttribute('expand');
+      figure
+        .querySelector('button')
+        .setAttribute('aria-label', this.strings.figures.expand);
+    });
   }
 
   /**
@@ -236,16 +239,13 @@ class BlogEntry extends BlogElement {
       },
     );
 
-    if (response.ok) {
-      const data = await response.json();
-      if (data.count > 0) {
-        this.interactions = stringInterpolate(this.strings.webmentions.some, {
-          count: data.count,
-        });
-      } else {
-        this.interactions = this.strings.webmentions.none;
-      }
-    }
+    if (!response.ok) return;
+
+    const data = await response.json();
+    const count = data?.count ?? 0;
+    this.interactions = stringInterpolate(this.strings?.webmentions.some, {
+      count,
+    });
   }
 
   /**
