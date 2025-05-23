@@ -1,7 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import size from '@justinribeiro/rollup-plugin-asset-build-size-compare';
-import minifyHTML from 'rollup-plugin-minify-html-literals';
+import minifyHTML from 'rollup-plugin-minify-html-literals-v3';
 
 export default {
   input: ['src/blog-pwa.js'],
@@ -18,7 +18,7 @@ export default {
   },
   plugins: [
     resolve(),
-    minifyHTML.default(),
+    minifyHTML(),
     terser({
       compress: {
         inline: 0,
