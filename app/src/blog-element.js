@@ -1,6 +1,6 @@
-/* eslint-disable class-methods-use-this */
 import { LitElement, css, html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { setPageMetaData } from './helpers.js';
 
 class BlogElement extends LitElement {
   static properties = {
@@ -14,10 +14,6 @@ class BlogElement extends LitElement {
     articleBody: {
       type: String,
     },
-    __domRefs: {
-      type: Object,
-      attribute: false,
-    },
     __stripDown: {
       type: Boolean,
     },
@@ -26,7 +22,6 @@ class BlogElement extends LitElement {
   constructor() {
     super();
     this.resetView();
-    this.__domRefs = new Map();
     this.__stripDown = false;
   }
 
@@ -70,10 +65,9 @@ class BlogElement extends LitElement {
    */
   async __fetchPageData() {
     let getPath = window.location.pathname;
-    const checkEnding = new RegExp('index.php|index.html', 'g');
-    if (checkEnding.test(window.location.pathname)) {
-      getPath = window.location.pathname.replace(/index\.php|index\.html/g, '');
-    }
+
+    // Remove index.php or index.html from the end
+    getPath = getPath.replace(/(?:index\.php|index\.html)$/, '');
 
     // strange case someone found...odd
     if (!getPath.endsWith('/')) {
@@ -89,13 +83,9 @@ class BlogElement extends LitElement {
       }
       this.metadata = await response.json();
       this.__processPageData();
-    } catch (error) {
+    } catch {
       // not ideal, but generally works
-      if (navigator.onLine) {
-        window.location.href = '/missing';
-      } else {
-        window.location.href = '/offline';
-      }
+      window.location.href = navigator.onLine ? '/missing' : '/offline';
     }
   }
 
@@ -106,7 +96,7 @@ class BlogElement extends LitElement {
     const htmlData = this.__unescapeHtml(this.metadata.article);
     this.articleBody = html`${unsafeHTML(htmlData.toString())}`;
 
-    this.__setPageMetaData(this.metadata);
+    setPageMetaData(this.metadata);
 
     this.__lazyLoadInjector(htmlData);
 
@@ -129,79 +119,6 @@ class BlogElement extends LitElement {
     if (window.ga4track) {
       window.ga4track.trackEvent('page_view');
     }
-  }
-
-  /**
-   * Stop being lazy, clean up nodes and events better
-   * @param {Node} parent
-   */
-  __removeAllChildNodes(parent) {
-    try {
-      while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-      }
-    } catch {}
-  }
-
-  /**
-   * Grabs a DOM ref from the in place map if available. Temporary spot for
-   * this; I think we'll make this a better WM+sym
-   * @param {string} name
-   * @param {string} selector DOM selector ref
-   * @returns {HTMLElement}
-   * @private
-   */
-  __getDomRef(name, selector = '', documentPath = '') {
-    let ref;
-    if (documentPath) {
-      ref = document.querySelector(documentPath);
-      this.__domRefs.set(name, ref);
-    } else if (!this.__domRefs.has(name)) {
-      ref = this.shadowRoot.querySelector(selector || name);
-      this.__domRefs.set(name, ref);
-    } else {
-      ref = this.__domRefs.get(name);
-    }
-    return ref;
-  }
-
-  /**
-   * Set the pages metadata on data load. Note, Google Search will index this so
-   * it's not just for show
-   * @param {object} {{title, description, url, socialImage}}
-   */
-  __setPageMetaData({ title, description, url, socialimage, tags }) {
-    const fallbackImg = this.__getDomRef(
-      'fallbackImg',
-      '',
-      'link[rel=icon]',
-    ).href;
-    document.title = `${title} - Dr. Justin Ribeiro, Ph.D. `;
-
-    this.__setMetaDom('property', 'og:title', document.title);
-    this.__setMetaDom('name', 'description', description);
-    this.__setMetaDom('name', 'keywords', tags);
-    this.__setMetaDom('property', 'og:description', description);
-    this.__setMetaDom('property', 'og:image', socialimage || fallbackImg);
-    this.__setMetaDom('property', 'og:url', url || document.location.href);
-  }
-
-  /**
-   * Locate and find document meta tags to update
-   * @param {string} attrName
-   * @param {string} attrValue
-   * @param {string} content
-   */
-  __setMetaDom(attrName, attrValue, content) {
-    let element = document.head.querySelector(
-      `meta[${attrName}="${attrValue}"]`,
-    );
-    if (!element) {
-      element = document.createElement('meta');
-      element.setAttribute(attrName, attrValue);
-      document.head.appendChild(element);
-    }
-    element.setAttribute('content', content || '');
   }
 
   /**
