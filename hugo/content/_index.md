@@ -61,14 +61,6 @@ sitemap:
         <p>After a string of killings from birds of prey, we opted to go big and enclose the run for our ducks and chickens, all 6000 plus square feet.<p>
       </div>
     </a>
-    <a href="/chronicle/2024/10/28/paper-accepted-at-international-conference-on-information-systems-icis-2024/" class="card">
-    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-icis.avif" alt="My paper was accepted at International Conference on Information Systems (ICIS) 2024!">
-      <div>
-        <h4>PRESENT</h4>
-        <h3>Paper accepted at International Conference on Information Systems (ICIS) 2024</h3>
-        <p>After minor reviewer notes and revision, my qualitative study, Is Agile Software Development Innovative? A Software Developer Perspective makes its way to Thailand in December.</p>
-      </div>
-    </a>
   </div>
 </section>
 <hr>

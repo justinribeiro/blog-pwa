@@ -154,9 +154,8 @@ class BlogPage extends BlogElement {
       }
 
       hr {
-        width: 100%;
-        margin: 2rem auto;
-        border: 1px solid #ccc;
+        margin: 1rem;
+        border: var(--border);
       }
 
       /* pssft never the real one */
