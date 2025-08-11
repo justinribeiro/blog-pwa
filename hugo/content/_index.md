@@ -20,12 +20,12 @@ sitemap:
 ---
 
 <section id="showcaseFive">
-  <a href="/chronicle/2025/05/06/a-tiny-analysis-of-nginx-compression-directives-and-a-new-rollup-web-asset-build-size-plugin/">
-    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20250507-rollup-build.avif" alt="Running compression tests on the build of this very blog using my new rollup plugin.">
+  <a href="/chronicle/2025/08/08/the-build-journey-to-a-new-darkroom/">
+    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20250808-darkroom-build.avif" alt="Peeking in on the new darkroom build.">
     <div>
-      <h4>PERF ANALYSIS</h4>
-      <h3>A Tiny Analysis of Nginx Compression Directives and a new Rollup Web Asset Build Size Plugin</h3>
-      <p>It will come to no surprise to anyone that web performance is something I hold dear. As such, I’ve always taken a multi-pronged approach to try to give me the visibility I need to make choices on what kinds of performance I can control to the best of my ability. That said, I did not set out to run this analysis, or fork and write an opinionated rollup plugin, but here we are.</p>
+      <h4>PHOTOGRAPHY</h4>
+      <h3>A New Darkroom Rises</h3>
+      <p>After a slight delay given other pressing activities and newfound re-usable materials, I set out to build the most expensive darkroom I've ever put together.</p>
     </div>
   </a>
   <div class="secondary">

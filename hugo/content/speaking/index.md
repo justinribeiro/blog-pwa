@@ -14,8 +14,6 @@ sitemap:
   priority: 0.5
 ---
 
-_Upcoming Speaking Date - [“The Creative Trade-Off: Governance, Conflict, and Their Impact On Innovation In Open-Source Software”](/chronicle/2025/07/01/speaking-at-fossy-2025/) on Friday, Aug 1 in Portland @ [FOSSY 2025](https://2025.fossy.us/schedule/presentation/347/)_
-
 Due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my speaking schedule has become more limited over the years. My commitment encompasses valuable time spent with family and friends, as well as time reserved for creative pursuits. Should my availability not align with your event, rest assured that myself and <a href="mailto:team@justinribeiro.com&subject=Book%20Justin%20For%20Event%20-%20Your%20Event%20Here&body=Dear%20Mr.%20Justin Team,">my capable team</a> is on hand to suggest excellent alternatives.
 
 <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
