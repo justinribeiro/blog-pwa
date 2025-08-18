@@ -2,6 +2,7 @@
 title: "The Build Journey to a New Darkroom"
 description: "In a surprising twist, this build has actually gone quite smoothly."
 date: 2025-08-08T10:00:00-07:00
+socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20250808-darkroom-wet-side-800.jpg"
 tags:
  - photography
  - darkroom
