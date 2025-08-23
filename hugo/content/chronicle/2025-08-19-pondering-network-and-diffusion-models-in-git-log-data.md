@@ -1,0 +1,19 @@
+---
+title: "Pondering Network and Diffusion Models in Git Log Data"
+description: "Does a developer have a choice in their interactions?"
+date: 2025-08-19T10:00:00-07:00
+tags:
+ - phd-journey
+ - research
+ - thoughts
+---
+
+> An ongoing publishing of the papers, memo's, and explorations I wrote in various Doctoral and PhD Seminars between 2021 and 2024. This memo dates from August 2023.
+
+Software developers and engineers do not work within a vacuum when building software. While this is true in today’s organizations as software engineers group together to form teams focused on feature development, this is even more transparently noted in the world of open source software. There, developers freely exchange ideas and code in an in infinitum dance of conversations and code commits.
+
+My initial qualitative study focused on the lacking ability of agile practices to surface creativity and hence novel outcomes for developers. In my current research, I’m looking at a large set of archival data that consists of code commits—the artifact of action undertaken by a developer to send their latest changes of source code to a repository. Other developers are then able to see these commits and subsequently the associates change source code when they update their own repository. This allows collaboration and within my own research interest, a oft assumed feature of open source is it that leads to novel innovations within code. Alas, the very creativity that was found to be stamped out by top-down forces in corporations may not be a factor in open source software development.
+
+One way I’ve considered framing this research interest is through the lens of a network model specifically looking at the unit of analysis being the network itself. The idea that commit history is a network of course is not new; fundamentally such repositories are social networks that proxy the various communication structures of teams. Similarly, I would be remiss to not point out that the use of such a network model is an inference or rather a reconstruction through code authorship. But nonetheless, the use of a network model to determine the cross-pollination of novel code approaches and patterns across disparate code domains would allow to see how information flows through this network.  Do code repositories and the commits (e.g., nodes) interact in such a way that presents a flow of new information (e.g., code/feature novelty) to move between repositories? Is it the emergence of choice by an individual actor that diffuses the idea, does the network arbitrator (e.g. Github, in my dataset case) help determine or maintain a level of robustness, is there interdependence in the network (e.g. code dependencies) that present fragility in the notion of nodes (e.g. projects) when disconnected?
+
+Given the nature of the network, I do ponder the idea of how the diffusion model plays its part in the collaborative actions of code committers. This again is not a new concept; Kalle and Jan argued that the diffusion of innovation through discrete developed technology or software packages had several theoretical and practical problems, partially about the odd nature of attributes (e.g. why would you characterize them all the same) but also in large part because the networks where diffusion is complex and socially constructed. Fundamentally, when it comes to code commits, it’s not about choice, but rather as the book says the concept of random mixing. Given a larger network of commits fundamentally shared across a wide range of technological domains, our interaction as developers with those ideas and code is not by choice but through the random travel of a developers day (though my own experience informs my idea about this).

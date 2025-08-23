@@ -203,7 +203,6 @@ class BlogPage extends BlogElement {
 
       #posts {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         justify-content: center;
         grid-gap: var(--space-cs);
       }
@@ -226,11 +225,19 @@ class BlogPage extends BlogElement {
         border-bottom: 1px solid var(--accent-color-primary);
       }
 
+      #posts > a h4 {
+        color: var(--primary-text-color);
+        font-weight: 400;
+        font-family: var(--font-family-sans-serif);
+        font-size: 1rem;
+        margin: 0.5rem 0;
+      }
+
       #posts > a p {
         font-weight: 400;
         text-transform: uppercase;
         font-size: 0.85rem;
-        margin-bottom: var(--space-cs);
+        margin-bottom: 0;
         font-family: var(--font-family-sans-serif);
         color: var(--accent-color-secondary);
       }
@@ -241,7 +248,8 @@ class BlogPage extends BlogElement {
       }
 
       #posts > a:hover p,
-      #posts > a:hover h3 {
+      #posts > a:hover h3,
+      #posts > a:hover h4 {
         color: #fff;
       }
 
@@ -289,6 +297,7 @@ class BlogPage extends BlogElement {
                     post => html`
                       <a href="${post.permalink}">
                         <h3>${post.title}</h3>
+                        <h4>${post.description}</h4>
                         <p>
                           <time
                             .datetime="${post.dataModified}"
