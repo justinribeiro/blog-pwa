@@ -1,0 +1,9 @@
+{{- $totalPosts := .Site.RegularPages.Len }}
+{{- $totalWords := 0 }}
+{{- $totalReadTime := 0 }}
+{{- range .Site.RegularPages.ByPublishDate }}
+{{- $totalWords = (add $totalWords .WordCount) }}
+{{- $totalReadTime = (add $totalReadTime .ReadingTime) }}
+{{- end }}
+
+<p>Since 2002, I've weaved {{ $totalWords | lang.FormatNumber 0 }} words into the an often coherent, sometimes amusing set of {{ $totalPosts }} articles, requiring {{ math.Floor (math.Div $totalReadTime 60) }} hours and {{ math.Mod $totalReadTime 60 }} minutes of reading time. I write on a wide range of topics I find of interest, personally and professionally.</p>

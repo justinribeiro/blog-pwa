@@ -133,6 +133,7 @@ class MainHandler(webapp2.RequestHandler):
         # can just skip the progressive checks (ala lynx). I've done this to
         # just make the experience a little nicer
         bot_list_hunt = [
+            "archive.org_bot",
             "W3C_Validator",
             "baiduspider",
             "bingbot",
@@ -246,12 +247,7 @@ class MainHandler(webapp2.RequestHandler):
                 .replace("index.php", ""),
                 "index.json",
             )
-            # push = os.path.join(os.path.dirname(__file__), "dist/push_manifest.json")
-            # self.push_urls = pl.use_push_manifest(push)
-            # header = pl.generate_link_preload_headers(self)
-            # self.response.headers.add_header("Link", header)
 
-            data['noscript'] = self.request.path + '?static=true'
             data['cssnonce'] = stylenonce
             data['jsnonce'] = jsnonce
 

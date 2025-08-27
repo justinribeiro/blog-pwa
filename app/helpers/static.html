@@ -36,7 +36,6 @@
     {% endif %}
 
     <link rel="preconnect" href="https://storage.googleapis.com/" crossorigin>
-    <link rel="preconnect" href="https://us-west1-justinribeiro-web.cloudfunctions.net/" crossorigin>
 
     <link rel="webmention" href="https://webmention.io/justinribeiro.com/webmention" />
     <link rel="pingback" href="https://webmention.io/justinribeiro.com/xmlrpc" />
@@ -87,6 +86,7 @@
         --header-image: 75px;
         --footer-grid-min: 275px;
         --footer-grid-max: 400px;
+        --page-nav-text: 100%;
 
         --border-thickness: 1px;
         --border: var(--border-thickness) solid var(--structs-border);
@@ -131,7 +131,7 @@
       @media (max-width: 767px) {
         :root {
           --header-height: 85px;
-          --header-font-size: 26px;
+          --header-font-size: 30px;
           --header-image: 55px;
           --header-font-offset: -5px;
           --page-last: 88vw;
@@ -183,15 +183,12 @@
         font-family: var(--font-family-headers);
       }
 
-      #pageHeader, #pageFooter {
+      #pageHeader {
         display: grid;
+        border-bottom: var(--border);
         align-items: center;
         justify-content: space-between;
         padding: var(--space-cs) calc(var(--space-cs) * 3);
-      }
-
-      #pageHeader {
-        border-bottom: var(--border);
         grid-template-columns: auto auto auto;
         position: sticky;
         top: 0;
@@ -199,6 +196,7 @@
       }
 
       #pageFooter {
+        display: grid;
         min-height: 20vh;
         border-top: var(--border);
         grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
@@ -213,12 +211,12 @@
         line-height: initial;
       }
 
-      #pageFooter  h2 {
+      #pageFooter h2 {
         font-variant-caps: small-caps;
         font-family: var(--font-family-headers);
       }
 
-      #pageFooter  svg {
+      #pageFooter svg {
         width: 20px;
         vertical-align: text-bottom;
       }
@@ -244,9 +242,14 @@
         letter-spacing: .02rem;
       }
 
+      #pageNav {
+        margin: var(--space-cs);
+      }
+
       #extNav> a {
         border-bottom: none;
       }
+
       #extNav svg {
         width: 24px;
         height: 24px;
@@ -262,12 +265,15 @@
         }
         #pageHeader, #pagefooter {
            grid-template-columns: auto;
+           padding: var(--space-cs) 0 0 0;
         }
       }
 
-      @media (max-width: 412px) {
+      /** Because it just annoys me the link breaks */
+      @media (max-width: 475px) {
         #pageNav {
-          font-size: 85%;
+          margin: calc(var(--space-cs) / 2) auto;
+          width: 80%;
         }
       }
 
@@ -275,6 +281,12 @@
         body {
           zoom: 1.5;
         }
+      }
+
+      /** Hopefully you don't have to fly away **/
+      #canaryInCoalMine {
+        width: 48px !important;
+        filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 1));
       }
 
       @font-face {
@@ -292,6 +304,13 @@
 
     {% if pagetype == "page" or pagetype == "explore" %}
     <style nonce="css-{{ cssnonce }}">
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-family-headers);
+        margin: 0 0 var(--space-cs) var(--header-font-offset-left);
+        line-height: 1.15;
+        letter-spacing: var(--header-letter-spacing);
+      }
+
       blog-pwa article p,
       blog-pwa article li,
       blog-pwa article label {
@@ -367,8 +386,13 @@
         text-align: center;
       }
 
-      blog-pwa section,
       blog-pwa header {
+        padding: 0 calc(var(--space-cs) * 2);
+        margin: auto;
+      }
+
+      blog-pwa section {
+        max-width: var(--page-last);
         padding: 0 calc(var(--space-cs) * 2);
         margin: auto;
       }
@@ -399,7 +423,7 @@
       #showcaseFive {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-        grid-gap: 1rem;
+        grid-gap: calc(var(--space-cs) * 4);
         padding: initial;
       }
 
@@ -441,8 +465,8 @@
       .card {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        grid-gap: 1rem;
-        margin-bottom: 1rem;
+        grid-gap: calc(var(--space-cs) * 2);
+        margin-bottom: calc(var(--space-cs) * 4);
       }
 
       svg {
@@ -451,9 +475,8 @@
       }
 
       hr {
-        width: 100%;
-        margin: 2rem auto;
-        border: 1px solid #ccc;
+        margin: 1rem;
+        border: var(--border);
       }
 
       /* pssft never the real one */
@@ -501,7 +524,6 @@
 
       #posts {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         justify-content: center;
         grid-gap: var(--space-cs);
       }
@@ -524,6 +546,14 @@
         border-bottom: 1px solid var(--accent-color-primary);
       }
 
+      #posts > a h4 {
+        color: var(--primary-text-color);
+        font-weight: 400;
+        font-family: var(--font-family-sans-serif);
+        font-size: 1rem;
+        margin: .5rem 0;
+      }
+
       #posts > a p {
         font-weight: 400;
         text-transform: uppercase;
@@ -539,7 +569,8 @@
       }
 
       #posts > a:hover p,
-      #posts > a:hover h3 {
+      #posts > a:hover h3,
+      #posts > a:hover h4 {
         color: #fff;
       }
 
@@ -557,7 +588,7 @@
 
     {% if pagetype == "post" %}
     <style nonce="css-{{ cssnonce }}">
-      blog-pwa article {
+     blog-pwa article {
         display: block;
         max-width: var(--page-last);
         padding: 0 calc(var(--space-cs)* 2);
@@ -759,12 +790,6 @@
         margin-right: 10.5px;
       }
 
-      /** Hopefully you don't have to fly away **/
-      #canaryInCoalMine {
-        width: 48px !important;
-        filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 1));
-      }
-
       @media (max-width: 1024px) {
         #main iframe,
         #main img,
@@ -832,12 +857,13 @@
               <h2 class="subheadline">{{ subtitle | safe }}</h2>
             </div>
           </header>
-          <section itemprop="articleBody" class="explore">{{ article | safe }}</section>
+          <section itemprop="articleBody" class="{{ pagetype }}">{{ article | safe }}</section>
             {% if posts %}
             <section id="posts">
               {% for post in posts %}
                 <a href="{{ post.permalink }}">
                   <h3>{{ post.title }}</h3>
+                  <h4>{{ post.description }}</h4>
                   <p>
                     <time aria-label="Posted {{ post.date }}">🗒️ {{ post.date }}</time>
                     • {{ post.readingtime }} min read
