@@ -12,6 +12,8 @@ sitemap:
   priority: 0.8
 ---
 
+{{< stats >}}
+
 ## Tags and Categories
 
 Looking for a more specific archive of posts? You're in luck: <a href="/tags/">tags</a> gives you and overview of all five major categories for easy location or following of specific types of posts. Just want to dive in? See the tags below to navigate directly.
