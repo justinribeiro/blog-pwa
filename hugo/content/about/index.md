@@ -32,7 +32,7 @@ Often we define ourselves by professional lives, exclaiming our expertise in for
 
 Possibly you find it interesting, or maybe not. But I won't be reduced to titles and placards
 
-<div class="timeline">
+<div id="pictureTimeline">
   <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
     <picture>
       <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/1980-dad-and-i.jpg" alt="1980: My Dad and I hanging out. That man right there taught me you math and how to build pretty much anything.">
