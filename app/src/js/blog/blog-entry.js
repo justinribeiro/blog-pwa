@@ -1,6 +1,8 @@
 import { BlogElement, html, css } from './blog-element.js';
 import { defaultStrings } from './blog-strings.js';
-import { stringInterpolate } from './helpers.js';
+import { stringInterpolate } from '../lib/helpers.js';
+
+import cssSheet from '../../css/entry.css' with { type: 'css' };
 
 class BlogEntry extends BlogElement {
   static properties = {
@@ -135,7 +137,7 @@ class BlogEntry extends BlogElement {
    */
   __shareCreateLinks() {
     if (!navigator.share) {
-      import('./lod-share-to-mastodon.js');
+      import('../lod/lod-share-to-mastodon.js');
 
       // make it easier for the interpolate
       const data = {
@@ -294,191 +296,7 @@ class BlogEntry extends BlogElement {
     }
   }
 
-  static styles = [
-    super.styles,
-    css`
-      :host {
-        min-height: 100vh;
-        margin: auto auto;
-      }
-
-      .subheadline {
-        margin: calc(var(--space-cs) * 2) 0;
-        font-family: var(--font-family-san-serif);
-        line-height: var(--font-lhr);
-        font-weight: 300;
-        font-size: var(--font-base);
-      }
-
-      figure button {
-        position: fixed;
-        bottom: var(--figure-button-margin);
-        right: calc(var(--figure-button-margin) / 3);
-        position: absolute;
-        transform: rotate(135deg);
-        border-radius: 50%;
-        width: calc(var(--font-base) * 2.75);
-        font-size: var(--font-base);
-        opacity: 0.5;
-      }
-
-      figure:hover button,
-      figure button:hover,
-      figure button:focus {
-        opacity: 1;
-      }
-
-      figure[expand] button {
-        display: block;
-        bottom: initial;
-        right: var(--figure-button-margin);
-        top: var(--figure-button-margin);
-      }
-
-      figure[expand] {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        box-sizing: border-box;
-        padding: 4rem;
-        background-color: var(--bg);
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        margin: 0;
-        z-index: 1;
-        transform: translateX(calc((var(--page-last) - 100vw) / 2));
-      }
-
-      figure[expand] figcaption {
-        display: block;
-        width: 20%;
-        padding: calc(var(--space-cs) * 2);
-      }
-
-      figure[expand] img {
-        all: unset !important;
-        object-fit: contain;
-        max-width: 100% !important;
-        max-height: 90vh;
-        width: 100vw !important;
-        height: auto;
-        background: transparent;
-      }
-
-      #main iframe {
-        max-width: 100%;
-        width: 100%;
-      }
-
-      #main video {
-        max-width: 100%;
-      }
-
-      time {
-        text-transform: uppercase;
-      }
-
-      .dotDivider {
-        padding: 0 var(--space-cs);
-      }
-
-      .dotDivider:after {
-        content: '•';
-      }
-
-      .reads {
-        padding: 0.75rem 0;
-      }
-
-      #metaShare {
-        display: block;
-        background-color: var(--section-color);
-        padding: calc(var(--space-cs) * 2);
-        border-radius: var(--space-cs);
-        margin-bottom: calc(var(--space-cs) * 2);
-      }
-
-      #share > a {
-        margin-right: var(--space-cs);
-      }
-
-      .center {
-        text-align: center;
-      }
-
-      label {
-        display: block;
-      }
-
-      input,
-      button {
-        padding: calc(var(--space-cs) * 2);
-        font-size: var(--form-input-fs);
-        border: var(--border);
-        box-sizing: border-box;
-      }
-
-      button {
-        background: var(--form-button-color);
-      }
-
-      input {
-        width: 100%;
-      }
-
-      ol,
-      ul {
-        margin: 0;
-        padding: 0 0 0 24px;
-      }
-
-      share-to-mastodon {
-        --wc-stm-font-family: var(--font-family-serif);
-        --wc-stm-link-text-decoration: none;
-        --wc-stm-link-color-initial: var(--accent-color-primary);
-        --wc-stm-link-color-visited: var(--accent-color-secondary);
-        border-bottom: 1px solid var(--accent-color-primary);
-        letter-spacing: -0.063px;
-        line-height: 33.18px;
-        margin: 0;
-        margin-right: 10.5px;
-      }
-
-      @media (max-width: 1024px) {
-        #main iframe,
-        #main img,
-        #main lite-youtube,
-        #main video {
-          max-width: initial;
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw;
-          margin-right: -50vw;
-        }
-
-        #main img {
-          margin: none !important;
-        }
-
-        figure button {
-          display: none;
-        }
-      }
-
-      @media (prefers-reduced-data: reduce) {
-        img,
-        video,
-        lite-youtube,
-        stl-part-viewer {
-          display: none;
-        }
-      }
-    `,
-  ];
+  static styles = [super.styles, cssSheet];
 
   render() {
     return html`

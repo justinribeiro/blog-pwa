@@ -5,6 +5,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import { configs as wcConfig } from 'eslint-plugin-wc';
 import { configs as litConfig } from 'eslint-plugin-lit';
 import html from '@html-eslint/eslint-plugin';
+import css from '@eslint/css';
 
 export default [
   {
@@ -37,6 +38,19 @@ export default [
     },
     rules: {
       'html/require-img-alt': 'error',
+    },
+  },
+  {
+    files: ['**/*.css'],
+    language: 'css/css',
+    languageOptions: {
+      tolerant: true,
+    },
+    plugins: {
+      css,
+    },
+    rules: {
+      ...css.configs.recommended.rules,
     },
   },
   wcConfig['flat/recommended'],

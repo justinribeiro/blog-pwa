@@ -1,0 +1,157 @@
+body,
+h1,
+h2 {
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  color: var(--primary-text-color);
+  line-height: var(--font-lhr);
+  background-color: var(--bg);
+}
+
+blog-pwa {
+  display: block;
+  min-height: 100vh;
+}
+
+#pageHeader,
+#pageFooter,
+#pageNav,
+#extNav {
+  background-color: var(--structs-bg);
+}
+
+#pageHeader,
+#pageFooter {
+  display: grid;
+}
+
+#pageHeader {
+  border-bottom: var(--border);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-cs) calc(var(--space-cs) * 3);
+  grid-template-columns: auto auto auto;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#pageFooter {
+  min-height: 20vh;
+  border-top: var(--border);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-template-rows: 1fr auto;
+  gap: var(--space-cs);
+  justify-content: center;
+  align-items: start;
+  padding: calc(var(--space-cs) * 5) calc(var(--space-cs) * 3);
+
+  h2 {
+    font-variant-caps: small-caps;
+    font-family: var(--font-family-headers);
+  }
+
+  p {
+    line-height: initial;
+    font-size: initial;
+    font-family: var(--font-family-sans-serif);
+    margin: 1rem 0;
+  }
+
+  svg {
+    width: 20px;
+    vertical-align: text-bottom;
+  }
+}
+
+#mainHeader {
+  font-weight: 400;
+  font-family: var(--font-family-headers);
+  font-size: var(--header-font-size);
+
+  & > a {
+    color: var(--primary-text-color);
+    border-bottom: initial;
+  }
+
+  & > a > span {
+    font-size: 60%;
+  }
+}
+
+#pageNav {
+  margin: var(--space-cs);
+}
+
+#pageNav > a,
+#extNav > a {
+  text-transform: uppercase;
+  margin: var(--space-nav);
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+}
+
+#extNav {
+  & > a {
+    border-bottom: none;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    padding: 0.25rem;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  #pageHeader {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #pageHeader,
+  #pagefooter {
+    grid-template-columns: auto;
+    padding: var(--space-cs) 0 0 0;
+  }
+}
+
+/** Because it just annoys me the link breaks */
+@media (max-width: 475px) {
+  #pageNav {
+    margin: calc(var(--space-cs) / 2) auto;
+    width: 80%;
+  }
+}
+
+@media (min-width: 3000px) {
+  body {
+    zoom: 1.5;
+  }
+}
+
+/** Hopefully you don't have to fly away **/
+#canaryInCoalMine {
+  width: 48px !important;
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 1));
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Libre Franklin';
+  src: url('https://storage.googleapis.com/jdr-public-imgs/fonts/libre-franklin-v14-latin-regular.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Literata';
+  src: url('https://storage.googleapis.com/jdr-public-imgs/fonts/literata-v35-latin-regular.woff2')
+    format('woff2');
+}

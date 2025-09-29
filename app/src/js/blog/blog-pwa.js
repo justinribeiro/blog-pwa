@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { Workbox } from 'workbox-window';
-import { installRouter } from './router.js';
+import { installRouter } from '../lib/router.js';
 
 class BlogPwa extends LitElement {
   static properties = {
@@ -84,7 +84,7 @@ class BlogPwa extends LitElement {
       ):
         route = 'entry';
         break;
-      case /(about|talks|speaking|research|consulting|chronicle|tags|^\/index.html|^\/$)/.test(
+      case /(explore|about|talks|speaking|research|consulting|chronicle|tags|^\/index.html|^\/$)/.test(
         location.pathname,
       ):
         route = 'page';
@@ -150,7 +150,7 @@ class BlogPwa extends LitElement {
    */
   async __initializeNonCrpResources() {
     import('./blog-lazy-load.js').then(async () => {
-      const module = await import('./lod-analytics.js');
+      const module = await import('../lod/lod-analytics.js');
       module.initAnalytics();
     });
   }

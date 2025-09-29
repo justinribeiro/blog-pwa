@@ -2,9 +2,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import size from '@justinribeiro/rollup-plugin-asset-build-size-compare';
 import minifyHTML from 'rollup-plugin-minify-html-literals-v3';
+import css from 'rollup-plugin-import-css';
 
 export default {
-  input: ['src/blog-pwa.js'],
+  input: ['build/temp/src/js/blog/blog-pwa.js'],
   preserveEntrySignatures: false,
   treeshake: true,
   output: {
@@ -12,12 +13,14 @@ export default {
     entryFileNames: '[name]-[hash].js',
     format: 'es',
     sourcemap: true,
+    importAttributesKey: 'with',
     generatedCode: {
       preset: 'es2015',
     },
   },
   plugins: [
     resolve(),
+    css(),
     minifyHTML(),
     terser({
       compress: {
