@@ -96,7 +96,7 @@ tbody tr:nth-child(even) {
 
 img {
   filter: var(--image-filter, initial);
-  border-radius: 0.5rem;
+  border-radius: var(--space-cs);
   background: radial-gradient(rgb(101, 112, 100), rgb(166 175 170)) no-repeat;
 }
 

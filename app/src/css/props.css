@@ -6,26 +6,30 @@
   --accent-color-secondary: #943d0a;
   --section-color: #f6f4ef;
   --structs-bg: #f6f4ef;
-  --structs-hi: #940088;
   --structs-border: #cccccc;
-  --skeleton-bg: #cccccc;
   --notice-color-bg: #333333;
   --notice-color-text: #ffffff;
   --notice-color-link: #f1f900;
 
-  --form-input-fs: 1rem;
-  --form-button-color: #f5ee00;
-
-  --diff-del-color: #fbcdd4;
-  --diff-ins-color: #d2fbcd;
-
-  --space-cs: 0.5rem;
-  --space-nav: calc(var(--space-cs) / 2);
+  --pop-color-lb: lavenderblush;
+  --pop-color-hp: hotpink;
+  --pop-color-gn: #c1e7b1;
+  --pop-color-wh: #fff;
 
   --code-background: #faf8f5;
   --code-color: #dd4a68;
   --code-block-bg: #f5f2f0;
   --code-block-text: #222;
+  --diff-del-color: #fbcdd4;
+  --diff-ins-color: #d2fbcd;
+
+  --base-unit: 1rem;
+
+  --form-input-fs: var(--base-unit);
+  --form-button-color: #f5ee00;
+
+  --space-cs: calc(var(--base-unit) / 2);
+  --space-nav: calc(var(--space-cs) / 2);
 
   --page-last: 1000px;
   --header-height: 100px;
@@ -55,12 +59,12 @@
   --font-family-headers: 'Literata', var(--font-family-serif);
 
   --font-lhr: 1.418;
-  --font-h1: 2.5rem;
-  --font-base: 1.333rem;
+  --font-h1: calc(var(--base-unit) * 2.5);
+  --font-base: calc(var(--base-unit) * 1.333);
   --figcaption: calc(var(--font-base) * 0.7);
   --figcaption-author: calc(var(--font-base) * 0.65);
 
-  --figure-button-margin: 3rem;
+  --figure-button-margin: calc(var(--base-unit) * 3);
 
   --motion-duration: 0;
   --motion-type: none;

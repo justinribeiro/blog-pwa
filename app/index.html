@@ -7,25 +7,14 @@
     <title>Dr. Justin Ribeiro, Ph.D.</title>
     <link rel="preconnect" href="https://storage.googleapis.com/" crossorigin>
     <link rel="preconnect" href="https://us-west1-justinribeiro-web.cloudfunctions.net/" crossorigin>
-
     <style nonce="css-{{ cssnonce }}">
       @import './src/css/dev.css';
+      {% if pagetype == "page" or pagetype == "explore" %}@import './src/css/page.css';{% endif %}
+      {% if pagetype == "post" %}@import './src/css/entry.css';{% endif %}
     </style>
-
-    {% if pagetype == "page" or pagetype == "explore" %}
-    <style nonce="css-{{ cssnonce }}">
-      @import './src/css/page.css';
-    </style>
-    {% endif %}
-
-    {% if pagetype == "post" %}
-    <style nonce="css-{{ cssnonce }}">
-      @import './src/css/entry.css';
-    </style>
-    {% endif %}
-
     <meta name="description" content="I ❤️ the open web. Film photographer and mediocre darkroom printer. Maker of sometimes interesting things. Coder of open source curiosities. Always exploring.">
     <meta name="keywords" content="person,phd,speaker,programmer,photographer,maker,consultant,researcher">
+    <meta name="build:note" content="prerender">
     <link href="/data/chronicle/index.xml" rel="feed" type="application/rss+xml" title="RSS - All Posts and Articles" />
     <link href="/data/tags/web/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Web Dev, Web Perf, and Web Platform Articles" />
     <link href="/data/tags/iot/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Internet of Things (IoT) Articles" />

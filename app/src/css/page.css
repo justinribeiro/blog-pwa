@@ -113,6 +113,7 @@
     width: 100%;
     max-width: 100%;
     aspect-ratio: 1 / 1;
+    border-radius: var(--space-cs);
   }
 
   .threeColBox .card img {
@@ -133,7 +134,7 @@
     background-position:
       0 0,
       16px 16px;
-    background-color: lavenderblush;
+    background-color: var(--pop-color-lb);
   }
 
   .greenfield {
@@ -145,7 +146,7 @@
       transparent 50%
     );
     background-size: 32px 32px;
-    background-color: #c1e7b1;
+    background-color: var(--pop-color-gn);
   }
 
   svg {
@@ -159,7 +160,7 @@
     rotate: -10deg;
     display: block;
     margin: auto;
-    padding: 1rem;
+    padding: var(--base-unit);
 
     & > path {
       stroke: var(--primary-text-color);
@@ -170,8 +171,8 @@
   #pictureTimeline {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
+    grid-column-gap: var(--base-unit);
+    grid-row-gap: var(--base-unit);
 
     figure {
       margin: 0;
@@ -184,6 +185,7 @@
       margin-left: initial;
       margin-right: initial;
       max-width: 100%;
+      border-radius: var(--space-cs);
     }
 
     figcaption {
@@ -214,23 +216,22 @@
       color: var(--accent-color-primary);
       font-weight: 400;
       font-family: var(--font-family-serif);
-      font-size: 1.5rem;
+      font-size: calc(var(--base-unit) * 1.5);
       display: inline;
-      border-bottom: 1px solid var(--accent-color-primary);
+      border-bottom: var(--border-thickness) solid var(--accent-color-primary);
     }
 
     & > a h4 {
       color: var(--primary-text-color);
       font-weight: 400;
       font-family: var(--font-family-sans-serif);
-      font-size: 1rem;
+      font-size: var(--base-unit);
       margin: 0.5rem 0;
     }
 
     & > a p {
-      font-weight: 400;
       text-transform: uppercase;
-      font-size: 0.85rem;
+      font-size: calc(var(--base-unit) * 0.85);
       margin-bottom: 0;
       font-family: var(--font-family-sans-serif);
       color: var(--accent-color-secondary);
@@ -238,24 +239,25 @@
 
     & > a:hover {
       text-decoration: none;
-      background-color: hotpink;
+      background-color: var(--pop-color-hp);
     }
 
     & > a:hover p,
     & > a:hover h3,
     & > a:hover h4 {
-      color: #fff;
+      color: var(--pop-color-wh);
     }
 
     & > a:hover h3 {
-      border-bottom: 1px solid #fff;
+      border-bottom: var(--border-thickness) solid var(--pop-color-wh);
     }
   }
 
   @media (max-width: 460px) {
     .timeline,
     .card,
-    .twoColBox {
+    .twoColBox,
+    #pictureTimeline {
       grid-template-columns: repeat(1, 1fr);
     }
   }

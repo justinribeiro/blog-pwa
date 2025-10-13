@@ -20,7 +20,7 @@ class CodeBlock extends LitElement {
     await this.__loadLanguage();
     const nodes = this.shadowRoot.querySelector('#code').assignedNodes();
     let codeCombined = '';
-    // eslint-disable-next-line no-plusplus
+
     for (let index = 0, len = nodes.length; index < len; ++index) {
       codeCombined += nodes[index].nodeValue;
     }
@@ -30,7 +30,7 @@ class CodeBlock extends LitElement {
     const highlight = Prism.highlight(
       codeClean,
       Prism.languages[this.lang],
-      this.lang
+      this.lang,
     );
 
     // Set to our styled block
@@ -38,7 +38,9 @@ class CodeBlock extends LitElement {
   }
 
   async __loadLanguage() {
-    await import(`../node_modules/prismjs/components/prism-${this.lang}.min.js`);
+    await import(
+      `../../../node_modules/prismjs/components/prism-${this.lang}.min.js`
+    );
   }
 
   static get styles() {
@@ -55,7 +57,8 @@ class CodeBlock extends LitElement {
 
       code[class*='language-'],
       pre[class*='language-'] {
-        font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+        font-family:
+          Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
           'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
           'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
           'Courier New', Courier, monospace;

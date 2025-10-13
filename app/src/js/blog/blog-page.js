@@ -1,4 +1,4 @@
-import { BlogElement, html, css } from './blog-element.js';
+import { BlogElement, html } from './blog-element.js';
 import { defaultStrings } from './blog-strings.js';
 import cssSheet from '../../css/page.css' with { type: 'css' };
 

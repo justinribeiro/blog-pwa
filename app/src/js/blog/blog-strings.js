@@ -13,17 +13,6 @@ export const defaultStrings = {
   },
   sharing: {
     title: '{{ title }} by Dr. Justin Ribeiro, Ph.D.',
-    services: {
-      bluesky: 'https://bsky.app/intent/compose?text={{title}}%20{{permalink}}',
-      pocket: 'https://getpocket.com/save?url={{permalink}}&title={{text}}',
-      reddit: 'https://www.reddit.com/submit?url={{permalink}}&title={{text}}',
-      linkhut:
-        'https://ln.ht/_/add?url={{permalink}}&title={{title}}&tags={{tags}}',
-      linkedin:
-        'https://www.linkedin.com/shareArticle?mini=true&url={{ permalink }}&title={{ title }}&source=&summary={{ description }}',
-      email:
-        'mailto:?subject=Article: {{ title }}&body=Article from Dr. Justin Ribeiro, Ph.D.: {{ permalink }}',
-    },
   },
   figures: {
     expand: 'Enlarge Image',

@@ -1,6 +1,10 @@
 import { LitElement, html, css } from 'lit';
 import { Workbox } from 'workbox-window';
 import { installRouter } from '../lib/router.js';
+import { findRoute, loadRouteModule } from '../lib/routes.js';
+
+// future change placeholder
+const eleRoot = 'blog';
 
 class BlogPwa extends LitElement {
   static properties = {
@@ -62,85 +66,37 @@ class BlogPwa extends LitElement {
   __setupRouter() {
     this.__domRefRouter = this.shadowRoot.querySelector('#outlet');
     this.__domEle = {
-      page: document.createElement(`blog-page`),
+      page: document.createElement('blog-page'),
       entry: document.createElement('blog-entry'),
       missing: document.createElement('blog-missing'),
       offline: document.createElement('blog-offline'),
     };
-    installRouter(location => this.__routes(location));
-  }
 
-  /**
-   * Handles the changing of the navigation on page and loads the proper
-   * component(s)
-   *
-   * @param {object} location
-   */
-  __routes(location) {
-    let route;
-    switch (true) {
-      case /(chronicle\/[0-9]*\/[0-9]*\/[0-9]*\/[A-z-]*)/.test(
-        location.pathname,
-      ):
-        route = 'entry';
-        break;
-      case /(explore|about|talks|speaking|research|consulting|chronicle|tags|^\/index.html|^\/$)/.test(
-        location.pathname,
-      ):
-        route = 'page';
-        break;
-      case /(offline)/.test(location.pathname):
-        route = 'offline';
-        break;
-      default:
-        route = 'missing';
-        break;
-    }
-    this.__loadRoute(route);
+    installRouter(location => this.__loadRoute(location));
   }
 
   /**
    * Verify the state of the router outlet and then inject the or mount as
    * needed
    *
-   * @param {string} type The metadata page style to use
+   * @param {object} location The location from the router
    */
-  async __loadRoute(type) {
-    // future change placeholder
-    const eleRoot = 'blog';
+  async __loadRoute(location) {
+    const type = findRoute(location);
 
-    if (type === 'page') {
-      await import('./blog-page.js');
-    }
-    if (type === 'entry') {
-      await import('./blog-entry.js');
-    }
-    if (type === 'offline') {
-      await import('./page-offline.js');
-    }
-    if (type === 'missing') {
-      await import('./page-missing.js');
-    }
+    // the assumption is we _always_ hit a known module (which we should) and we
+    // don't worry about dup loads because browser will sort that for us
+    await loadRouteModule[type]();
 
-    try {
-      const checkElement = this.__domRefRouter.querySelector(
-        `${eleRoot}-${type}`,
-      );
-      if (checkElement) {
-        await checkElement.mount();
-      } else {
-        if (this.__domRefRouter.childNodes.length === 1) {
-          this.__domRefRouter.removeChild(this.__domRefRouter.firstChild);
-        }
-        const node = this.__domEle[type].cloneNode();
-        await node.mount();
-        this.__domRefRouter.appendChild(node);
-      }
-    } catch {
-      // sometimes doesn't inject quickly, and their lifecycle doesn't
-      // always fire on swap when the inner component doesn't change, so we put
-      // a little fallback trigger in to be safe
-      setTimeout(() => this.__loadRoute(type), 100);
+    if (this.__dom.lastLoaded && this.__dom.lastLoaded === type) {
+      await this.__dom.lastLoadedElement.mount();
+    } else {
+      this.__dom.lastLoaded = type;
+      this.__dom.lastLoadedElement = this.__domEle[type].cloneNode();
+      await this.__dom.lastLoadedElement.mount();
+
+      // I don't love this, I should swap this out to reduce the layout churn
+      this.__domRefRouter.replaceChildren(this.__dom.lastLoadedElement);
     }
   }
 
@@ -150,7 +106,7 @@ class BlogPwa extends LitElement {
    */
   async __initializeNonCrpResources() {
     import('./blog-lazy-load.js').then(async () => {
-      const module = await import('../lod/lod-analytics.js');
+      const module = await import('../lib/analytics.js');
       module.initAnalytics();
     });
   }

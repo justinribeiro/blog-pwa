@@ -5,6 +5,7 @@
     <title>{{ title }} - Dr. Justin Ribeiro, Ph.D.</title>
     <meta name="description" content="{{ description }}" />
     <meta name="keywords" content="{{ tags }}">
+    <meta name="build:note" content="static">
     <meta
       name="viewport"
       content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"
@@ -49,19 +50,9 @@
 
     <style nonce="css-{{ cssnonce }}">
       @import './src/css/dev.css';
+      {% if pagetype == "page" or pagetype == "explore" %}@import './src/css/page.css';{% endif %}
+      {% if pagetype == "post" %}@import './src/css/entry.css';{% endif %}
     </style>
-
-    {% if pagetype == "page" or pagetype == "explore" %}
-    <style nonce="css-{{ cssnonce }}">
-      @import './src/css/page.css';
-    </style>
-    {% endif %}
-
-    {% if pagetype == "post" %}
-    <style nonce="css-{{ cssnonce }}">
-      @import './src/css/entry.css';
-    </style>
-    {% endif %}
   </head>
   <body>
     <header id="pageHeader">

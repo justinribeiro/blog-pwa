@@ -24,9 +24,9 @@ export default {
     minifyHTML(),
     terser({
       compress: {
-        inline: 0,
         drop_console: true,
         ecma: 2022,
+        passes: 5,
       },
       output: {
         comments: false,

@@ -3,6 +3,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { setPageMetaData } from '../lib/helpers.js';
 
 import cssSheet from '../../css/element.css' with { type: 'css' };
+import { lodDependencies } from '../lod/lod-deps.js';
 
 class BlogElement extends LitElement {
   static properties = {
@@ -10,12 +11,13 @@ class BlogElement extends LitElement {
       type: Object,
       attribute: false,
     },
-    featureImage: {
-      type: Object,
-    },
     articleBody: {
       type: String,
     },
+    /**
+     * This is for the pre-render from the server clean-up; doesn't get used in
+     * the SW-Shell return or the Static bot generator
+     */
     __stripDown: {
       type: Boolean,
     },
@@ -23,7 +25,6 @@ class BlogElement extends LitElement {
 
   constructor() {
     super();
-    this.resetView();
     this.__stripDown = false;
   }
 
@@ -32,8 +33,6 @@ class BlogElement extends LitElement {
    * @async
    */
   async mount() {
-    window.scroll(0, 0);
-    this.resetView();
     await this.__fetchPageData();
   }
 
@@ -58,74 +57,91 @@ class BlogElement extends LitElement {
       relatedposts: [],
     };
     this.articleBody = '';
-    this.content = '';
-    this.share = [];
+
+    // meh
+    window.scroll(0, 0);
   }
 
   /**
    * Fetch the page data json from the remote based on path
+   * @return Promise
    */
   async __fetchPageData() {
-    let getPath = window.location.pathname;
-
-    // Remove index.php or index.html from the end
-    getPath = getPath.replace(/(?:index\.php|index\.html)$/, '');
-
-    // strange case someone found...odd
-    if (!getPath.endsWith('/')) {
-      getPath = `${getPath}/`;
-    }
-
-    const targetUrl = `/data${getPath}index.json`;
+    let path = window.location.pathname.replace(/(?:index\.(php|html))$/, '');
+    if (path.charCodeAt(path.length - 1) !== 47) path += '/';
+    const targetUrl = `/data${path}index.json`;
 
     try {
-      const response = await fetch(targetUrl);
-      if (!response.ok) {
-        throw new Error(response.statusText);
+      const res = await fetch(targetUrl, {
+        cache: 'force-cache',
+        keepalive: true,
+      });
+      if (!res.ok) throw new Error(res.statusText);
+
+      // Stream and parse JSON for large files; large files are very rare but
+      // hey why not some fun (technically used this back like 6 years ago)
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let jsonText = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        jsonText += decoder.decode(value, { stream: true });
       }
-      this.metadata = await response.json();
-      this.__processPageData();
+      jsonText += decoder.decode();
+
+      // mostly a failsafe
+      this.resetView();
+
+      this.metadata = JSON.parse(jsonText);
+
+      // Kick off processing without blocking
+      queueMicrotask(() => this.__processPageData());
     } catch {
-      // not ideal, but generally works
-      window.location.href = navigator.onLine ? '/missing' : '/offline';
+      window.location.replace(navigator.onLine ? '/missing' : '/offline');
     }
   }
 
   /**
    * Process the data return and pump it into the main article body
+   * @return Promise
    */
   async __processPageData() {
-    const htmlData = this.__unescapeHtml(this.metadata.article);
+    // Run metadata + HTML unescape in parallel (both async-safe)
+    const [noop, htmlData] = await Promise.all([
+      setPageMetaData(this.metadata), // batched + cached meta updates
+      Promise.resolve(this.__unescapeHtml(this.metadata.article)),
+    ]);
+
+    // Assign article content in one shot
     this.articleBody = html`${unsafeHTML(htmlData.toString())}`;
 
-    setPageMetaData(this.metadata);
+    // Inject lazy dependencies, don’t block
+    queueMicrotask(() => this.__lazyLoadInjector(htmlData));
 
-    this.__lazyLoadInjector(htmlData);
+    // Defer non-critical DOM work after render; SW shell will take over on next
+    // load, doesn't require this
+    requestAnimationFrame(() => {
+      if (!this.__stripDown) {
+        document.dispatchEvent(
+          new CustomEvent('blog-pwa-clean-prerender-slot', {
+            bubbles: true,
+            composed: true,
+          }),
+        );
+        this.__stripDown = true;
+      }
 
-    await this.updateComplete;
-
-    if (!this.__stripDown) {
-      document.dispatchEvent(
-        new CustomEvent('blog-pwa-clean-prerender-slot', {
-          bubbles: true,
-          composed: true,
-        }),
-      );
-      this.__stripDown = true;
-    }
-
-    // I kindaaaaa don't care about the analytics anymore; this should be the
-    // post-shell trigger, but if it accidental double counts it's not going to
-    // skew my stats enough that'll I'll care (I look at them like once a year
-    // LOL)
-    if (window.ga4track) {
-      window.ga4track.trackEvent('page_view');
-    }
+      // Analytics, I don't care about you
+      if (window.ga4track) {
+        queueMicrotask(() => window.ga4track.trackEvent('page_view'));
+      }
+    });
   }
 
   /**
    * Fixes stuff I spit into JSON from Hugo
-   * @param {String} data Anything HTML that needs unescaping..
+   * @param {String} data Anything HTML that needs unescaping...
    * @return {String} string
    */
   __unescapeHtml(data) {
@@ -147,36 +163,18 @@ class BlogElement extends LitElement {
     return strReplacer(data);
   }
 
-  __lazyLoadInjector(data) {
-    const ViewerRequired = new RegExp('(</stl-part-viewer>)', 'g');
-    if (ViewerRequired.test(data)) {
-      import('../lod/lod-3d-utils.js');
-    }
+  /**
+   * Find components and what not to load as needed in a post
+   * @param {string} data The article post data
+   * @returns Promise
+   */
+  async __lazyLoadInjector(data) {
+    const loadPromises = lodDependencies
+      .filter(({ regex }) => regex.test(data))
+      .map(({ load }) => load()); // async import
 
-    const CodeBlockRequired = new RegExp('(</code-block>)', 'g');
-    if (CodeBlockRequired.test(data)) {
-      import('../lod/lod-code-block.js');
-    }
-
-    const YouTubeRequired = new RegExp('(</lite-youtube>)', 'g');
-    if (YouTubeRequired.test(data)) {
-      import('../lod/lod-lite-youtube.js');
-    }
-
-    const TooltipRequired = new RegExp('(</toggle-citation>)', 'g');
-    if (TooltipRequired.test(data)) {
-      import('../lod/lod-toggle-citation.js');
-    }
-
-    const YouTubeListRequired = new RegExp('(</ribeiro-social-photos)', 'g');
-    if (YouTubeListRequired.test(data)) {
-      import('../lod/lod-youtube-list.js');
-    }
-
-    const PhotosRequired = new RegExp('(</youtube-video-list>)', 'g');
-    if (PhotosRequired.test(data)) {
-      import('../lod/lod-ribeiro-social-photos.js');
-    }
+    // Wait for all required modules to load
+    return Promise.all(loadPromises);
   }
 
   static styles = [cssSheet];

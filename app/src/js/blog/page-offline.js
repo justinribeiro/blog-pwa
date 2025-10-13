@@ -14,7 +14,6 @@ class BlogOffline extends BlogElement {
 
   mount() {
     this.__getDataCache();
-
   }
 
   __getDataCache() {
@@ -97,9 +96,10 @@ class BlogOffline extends BlogElement {
       </section>
       <div id="posts">
         ${this.availableUrls.map(
-          post => html` <a href="${post.permalink}">
-            <h3>${post.title}</h3>
-          </a>`
+          post =>
+            html` <a href="${post.permalink}">
+              <h3>${post.title}</h3>
+            </a>`,
         )}
       </div>
     `;

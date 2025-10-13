@@ -1,4 +1,4 @@
-import { BlogElement, html, css } from './blog-element.js';
+import { BlogElement, html } from './blog-element.js';
 import { defaultStrings } from './blog-strings.js';
 import { stringInterpolate } from '../lib/helpers.js';
 
@@ -80,6 +80,7 @@ class BlogEntry extends BlogElement {
    */
   async __processPageData() {
     await super.__processPageData();
+
     const featureImageRef = this.shadowRoot.querySelector('#featureImage');
     featureImageRef?.replaceChildren();
 
@@ -95,23 +96,27 @@ class BlogEntry extends BlogElement {
     // This is my personal preference showing; I can't stand full
     // screen images on mobile devices, the UX annoys me no matter how good
     // you think it is
+    // Figure interaction (desktop only) — defer to idle if heavy
     if (!window.matchMedia('(max-width: 767px)').matches) {
-      this.__figureInteractionSetup();
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => this.__figureInteractionSetup(), {
+          timeout: 2000,
+        });
+      } else {
+        queueMicrotask(this.__figureInteractionSetup());
+      }
     }
 
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(
-        async () => {
-          this.__shareCreateLinks();
-          this.__webmentionGetInteractionCounts();
-        },
-        {
-          timeout: 5000,
-        },
-      );
-    } else {
+    // Batch social/share/webmention into a single idle callback
+    const socialTasks = () => {
       this.__shareCreateLinks();
       this.__webmentionGetInteractionCounts();
+    };
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(socialTasks, { timeout: 5000 });
+    } else {
+      queueMicrotask(socialTasks);
     }
   }
 
@@ -135,44 +140,13 @@ class BlogEntry extends BlogElement {
   /**
    * Generate share links when Web Share API is not available
    */
-  __shareCreateLinks() {
+  async __shareCreateLinks() {
     if (!navigator.share) {
-      import('../lod/lod-share-to-mastodon.js');
+      // on mobile we don't need this
+      const { desktopShareLinks } = await import('../lib/share.js');
 
-      // make it easier for the interpolate
-      const data = {
-        permalink: this.metadata.permalink,
-        title: this.metadata.title,
-        description: this.metadata.description,
-        tags: this.metadata.tags,
-      };
-
-      this.share.push(
-        {
-          service: 'BlueSky',
-          link: stringInterpolate(this.strings.sharing.services.bluesky, data),
-        },
-        {
-          service: 'LinkedIn',
-          link: stringInterpolate(this.strings.sharing.services.linkedin, data),
-        },
-        {
-          service: 'Pocket',
-          link: stringInterpolate(this.strings.sharing.services.pocket, data),
-        },
-        {
-          service: 'Reddit',
-          link: stringInterpolate(this.strings.sharing.services.reddit, data),
-        },
-        {
-          service: 'Linkhut',
-          link: stringInterpolate(this.strings.sharing.services.linkhut, data),
-        },
-        {
-          service: 'E-Mail',
-          link: stringInterpolate(this.strings.sharing.services.email, data),
-        },
-      );
+      // Generate the share links
+      this.share = desktopShareLinks(this.metadata);
     }
   }
 

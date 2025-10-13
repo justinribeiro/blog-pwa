@@ -1,9 +1,10 @@
+import { setPageMetaData } from '../lib/helpers.js';
 import { BlogElement, html, css } from './blog-element.js';
 
 class BlogMissing extends BlogElement {
   async mount() {
     window.scroll(0, 0);
-    this.__setPageMetaData({
+    setPageMetaData({
       title: 'Page Not Found',
       description: 'No dice finding that.',
     });

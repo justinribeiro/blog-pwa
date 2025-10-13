@@ -58,7 +58,7 @@ blog-pwa {
     line-height: initial;
     font-size: initial;
     font-family: var(--font-family-sans-serif);
-    margin: 1rem 0;
+    margin: var(--base-unit) 0;
   }
 
   svg {
