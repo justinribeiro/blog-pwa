@@ -32,13 +32,17 @@ export default {
         comments: false,
       },
     }),
+    // @ts-ignore
     size({
       compression: 'brotli',
       filename: '.build-size-brotli.json',
+      hashPattern: '^(.*)(.{10})(\.[^.]+)$',
     }),
+    // @ts-ignore
     size({
       compression: 'gzip',
       filename: '.build-size-gzip.json',
+      hashPattern: '^(.*)(.{10})(\.[^.]+)$',
     }),
   ],
 };
