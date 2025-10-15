@@ -1,13 +1,19 @@
 import { BlogElement, html } from './blog-element.js';
 import { defaultStrings } from './blog-strings.js';
+
+// @ts-ignore
 import cssSheet from '../../css/page.css' with { type: 'css' };
 
 class BlogPage extends BlogElement {
-  static properties = {
-    strings: {
-      type: Object,
-    },
-  };
+  static get properties() {
+    const superProps = super.properties;
+    return {
+      ...superProps,
+      strings: {
+        type: Object,
+      },
+    };
+  }
 
   constructor() {
     super();
@@ -17,14 +23,6 @@ class BlogPage extends BlogElement {
     this.strings = {
       ...defaultStrings,
     };
-  }
-
-  firstUpdated() {
-    super.firstUpdated();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
   }
 
   static styles = [super.styles, cssSheet];

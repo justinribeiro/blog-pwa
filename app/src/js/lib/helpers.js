@@ -6,12 +6,7 @@ const metaCache = new Map();
 /**
  * Set the pages metadata on data load. Note, Google Search will index this so
  * it's not just for show
- * @param {object} base
- * @param {string} base.title
- * @param {string} base.description
- * @param {string} base.url
- * @param {string} base.socialImage
- * @param {string} base.tags
+ * @param {import("../blog/blog-element.js").BlogMetadata} base
  */
 async function setPageMetaData({ title, description, url, socialImage, tags }) {
   document.title = `${title} - Dr. Justin Ribeiro, Ph.D.`;

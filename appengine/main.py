@@ -54,7 +54,7 @@ class MainHandler(webapp2.RequestHandler):
             "form-action 'self' https://webmention.io; "
             "object-src 'none'; "
             "font-src 'self' https://storage.googleapis.com; "
-            "frame-src https://giphy.com https://www.youtube.com; "
+            "frame-src https://www.youtube.com; "
             "manifest-src 'self'; "
             "frame-ancestors 'none';"
         )

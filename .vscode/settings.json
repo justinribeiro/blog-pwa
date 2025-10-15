@@ -1,4 +1,16 @@
 {
   "python.analysis.typeCheckingMode": "basic",
-  "cSpell.words": ["dilerbration", "linkhut"]
+  "cSpell.words": [
+    "dilerbration",
+    "featureimage",
+    "itemprop",
+    "itemscope",
+    "itemtype",
+    "linkhut",
+    "pagetype",
+    "readingtime",
+    "relatedposts",
+    "socialimage",
+    "subheadline"
+  ]
 }

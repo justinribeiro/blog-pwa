@@ -1,21 +1,36 @@
-import { BlogElement, html, css } from './blog-element.js';
+import { BlogElement, html } from './blog-element.js';
+
+// @ts-ignore
+import cssSheet from '../../css/page.css' with { type: 'css' };
 
 class BlogOffline extends BlogElement {
-  static properties = {
-    availableUrls: {
-      type: Array,
-    },
-  };
+  static get properties() {
+    const superProps = super.properties;
+    return {
+      ...superProps,
+      availableUrls: {
+        type: Array,
+      },
+    };
+  }
 
   constructor() {
     super();
+    /** @type Array<import('./blog-element.js').BlogMetadata> */
     this.availableUrls = [];
   }
 
+  /**
+   * We don't all super() here because there is no process target from a URL
+   * standpoint; we only pull from the Service Worker cache
+   */
   mount() {
     this.__getDataCache();
   }
 
+  /**
+   * Pull whatever links we've visited that can be read in an offline state
+   */
   __getDataCache() {
     caches.open('data-cache').then(cache => {
       cache.keys().then(keys => {
@@ -33,75 +48,53 @@ class BlogOffline extends BlogElement {
     });
   }
 
-  static styles = [
-    super.styles,
-    css`
-      #posts {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        justify-content: center;
-        grid-gap: var(--space-cs);
-      }
-
-      #posts > a {
-        display: block;
-        padding: var(--space-cs);
-        border-bottom: none;
-        border-radius: var(--space-cs);
-        transition-duration: var(--motion-duration);
-        will-change: background-color;
-      }
-
-      #posts > a h3 {
-        color: var(--accent-color-primary);
-        font-weight: 400;
-        font-family: var(--font-family-serif);
-        font-size: 1.5rem;
-      }
-
-      #posts > a time {
-        font-weight: 400;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        margin-bottom: var(--space-cs);
-        font-family: var(--font-family-sans-serif);
-        color: var(--accent-color-secondary);
-      }
-
-      #posts > a:hover {
-        text-decoration: none;
-        background-color: hotpink;
-      }
-
-      #posts > a:hover time,
-      #posts > a:hover h3 {
-        color: #fff;
-      }
-    `,
-  ];
+  static styles = [super.styles, cssSheet];
 
   render() {
     return html`
-      <section>
-        <h1>Welcome to the Offline World</h1>
-        <p>
-          Is your WiFi lying to you? Are you in a tunnel? Did your cat eat your
-          ethernet cable?
-        </p>
-        <p>
-          We've all been there. While I can't load the article you want to read
-          at the moment, here are some articles and pages you've visited that
-          you can read offline.
-        </p>
-      </section>
-      <div id="posts">
-        ${this.availableUrls.map(
-          post =>
-            html` <a href="${post.permalink}">
-              <h3>${post.title}</h3>
-            </a>`,
-        )}
-      </div>
+      <article
+        itemprop="blogPost"
+        id="main"
+        itemscope
+        itemtype="http://schema.org/BlogPosting"
+      >
+        <header class="page">
+          <div id="subHeader">
+            <h1 itemprop="headline">Oh No, You're Offline!</h1>
+            <h2 itemprop="subheadline">The Intertubes Are Having Problems</h2>
+          </div>
+        </header>
+        <section itemprop="articleBody" class="page">
+          <p>
+            Is your WiFi lying to you? Are you in a tunnel? Did your cat eat
+            your ethernet cable?
+          </p>
+          <p>
+            We've all been there. While I can't load the article you want to
+            read at the moment, here are some articles and pages you've visited
+            that you can read offline in the mean time.
+          </p>
+          <div id="posts">
+            ${this.availableUrls.map(
+              post => html`
+                <a href="${post.permalink}">
+                  <h3>${post.title}</h3>
+                  <h4>${post.description}</h4>
+                  <p>
+                    <time
+                      .datetime="${post.dataModified}"
+                      aria-label="Posted ${post.date}"
+                    >
+                      🗒️ ${post.date}
+                    </time>
+                    • ${post.readingtime} min read
+                  </p>
+                </a>
+              `,
+            )}
+          </div>
+        </section>
+      </article>
     `;
   }
 }

@@ -1,13 +1,17 @@
 import { LitElement, html, css } from 'lit';
 
 class SnackBar extends LitElement {
-  static get properties() {
-    return {
-      active: Boolean,
-      action: Boolean,
-      trigger: Function,
-    };
-  }
+  static properties = {
+    active: {
+      type: Boolean,
+    },
+    action: {
+      type: Boolean,
+    },
+    trigger: {
+      type: Function,
+    },
+  };
 
   static get styles() {
     return css`
@@ -57,7 +61,7 @@ class SnackBar extends LitElement {
     super();
     this.active = false;
     this.action = false;
-    this.trigger = null;
+    this.trigger = () => {};
   }
 
   attributeChangedCallback() {
@@ -81,3 +85,5 @@ class SnackBar extends LitElement {
 }
 
 window.customElements.define('snack-bar', SnackBar);
+
+export { SnackBar };

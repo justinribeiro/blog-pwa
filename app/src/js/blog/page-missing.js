@@ -1,56 +1,52 @@
 import { setPageMetaData } from '../lib/helpers.js';
-import { BlogElement, html, css } from './blog-element.js';
+import { BlogElement, html } from './blog-element.js';
+
+// @ts-ignore
+import cssSheet from '../../css/page.css' with { type: 'css' };
 
 class BlogMissing extends BlogElement {
   async mount() {
     window.scroll(0, 0);
     setPageMetaData({
-      title: 'Page Not Found',
-      description: 'No dice finding that.',
+      title: '404: Page Not Found',
+      description: 'Sorry, I cannot find the page your seek.',
     });
   }
 
-  static styles = [
-    super.styles,
-    css`
-      #giphy {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-      }
-    `,
-  ];
+  static styles = [super.styles, cssSheet];
 
   render() {
     return html`
-      <section>
-        <h1>Sorry, I can't find that page.</h1>
-        <h2 class="subheadline">
-          404 NOT FOUND!?!?! Who's running this circus?
-        </h2>
-        <p>
-          I'm sorry for the inconvenience but be assured I have been alerted and
-          will look into finding the aforementioned missing page. In the mean
-          time, head back the <a href="/">home page</a> or to the
-          <a href="/chronicle/">archive</a> for other posts you may find
-          interesting.
-        </p>
-        <div id="giphy">
-          <iframe
-            src="https://giphy.com/embed/xTiTngQ7Gpakdpm4nu"
-            width="480"
-            height="363"
-            frameborder="0"
-            allowfullscreen
-            title="Mulder from the show The X-Files typing on a computer."
-          ></iframe>
+      <article
+        itemprop="blogPost"
+        id="main"
+        itemscope
+        itemtype="http://schema.org/BlogPosting"
+      >
+        <header class="page">
+          <div id="subHeader">
+            <h1 itemprop="headline">The Truth Is Out There, Somewhere</h1>
+            <h2 itemprop="subheadline">
+              Unfortunately Not Here: 404 PAGE NOT FOUND
+            </h2>
+          </div>
+        </header>
+        <section itemprop="articleBody" class="page">
           <p>
-            <a href="https://giphy.com/gifs/the-x-files-xTiTngQ7Gpakdpm4nu"
-              >via GIPHY</a
-            >
+            I'm sorry for the inconvenience but be assured I have been alerted
+            and will look into finding the aforementioned missing page. In the
+            mean time, head back the <a href="/">home page</a> or to the
+            <a href="/chronicle/">blog post archive</a> for other information
+            you may find interesting.
           </p>
-        </div>
-      </section>
+          <figure>
+            <img
+              src="https://storage.googleapis.com/jdr-public-imgs/pages/explore/xfiles-internet.webp"
+              alt="The X-Files: The Internet is not Good for You"
+            />
+          </figure>
+        </section>
+      </article>
     `;
   }
 }

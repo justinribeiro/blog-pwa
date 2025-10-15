@@ -2,19 +2,13 @@ import { LitElement, html, css } from 'lit';
 import { Workbox } from 'workbox-window';
 import { installRouter } from '../lib/router.js';
 import { findRoute, loadRouteModule } from '../lib/routes.js';
-
-// future change placeholder
-const eleRoot = 'blog';
+/**
+ * @typedef { import('./blog-element.js').BlogElement } BlogElement
+ * @typedef { import('../lod/lod-snack-bar.js').SnackBar } SnackBar
+ */
 
 class BlogPwa extends LitElement {
   static properties = {
-    /**
-     * shadow DOM reference holder
-     * @private
-     */
-    __dom: {
-      type: Object,
-    },
     prerender: {
       type: Boolean,
     },
@@ -22,14 +16,39 @@ class BlogPwa extends LitElement {
 
   constructor() {
     super();
+
+    /**
+     * shadow DOM reference holder
+     * @private
+     */
     this.__dom = {
+      /** @type SnackBar | null | undefined */
       snackBar: null,
+      /** string holder for last load route type */
+      lastLoaded: '',
+      /** @type BlogElement | null | undefined */
+      lastLoadedElement: null,
     };
+
+    /**
+     * holder for routed page elements
+     * @type {Object.<Element, string>} ElementMap
+     * @private
+     */
+    this.__routerElement = {
+      page: document.createElement('blog-page'),
+      entry: document.createElement('blog-entry'),
+      missing: document.createElement('blog-missing'),
+      offline: document.createElement('blog-offline'),
+    };
+
     this.prerender = false;
   }
 
   connectedCallback() {
     super.connectedCallback();
+
+    // @ts-ignore
     window.addEventListener(
       'blog-pwa-show-message',
       this.__listenForSbMessageEvent.bind(this),
@@ -44,7 +63,7 @@ class BlogPwa extends LitElement {
   }
 
   firstUpdated() {
-    this.__dom.snackBar = this.shadowRoot.querySelector('snack-bar');
+    this.__dom.snackBar = this.shadowRoot?.querySelector('snack-bar');
 
     this.__setupRouter();
     this.__loadServiceWorker();
@@ -56,7 +75,7 @@ class BlogPwa extends LitElement {
         { once: true },
       );
     } else {
-      this.shadowRoot.querySelector('#prerender').remove();
+      this.shadowRoot?.querySelector('#prerender')?.remove();
     }
   }
 
@@ -64,15 +83,11 @@ class BlogPwa extends LitElement {
    * Setup the base elements for the router and start-up the location helper
    */
   __setupRouter() {
-    this.__domRefRouter = this.shadowRoot.querySelector('#outlet');
-    this.__domEle = {
-      page: document.createElement('blog-page'),
-      entry: document.createElement('blog-entry'),
-      missing: document.createElement('blog-missing'),
-      offline: document.createElement('blog-offline'),
-    };
+    this.__domRefRouter = this.shadowRoot?.querySelector('#outlet');
 
-    installRouter(location => this.__loadRoute(location));
+    installRouter((/** @type {object} */ location) =>
+      this.__loadRoute(location),
+    );
   }
 
   /**
@@ -89,14 +104,15 @@ class BlogPwa extends LitElement {
     await loadRouteModule[type]();
 
     if (this.__dom.lastLoaded && this.__dom.lastLoaded === type) {
-      await this.__dom.lastLoadedElement.mount();
+      await this.__dom.lastLoadedElement?.mount();
     } else {
       this.__dom.lastLoaded = type;
-      this.__dom.lastLoadedElement = this.__domEle[type].cloneNode();
-      await this.__dom.lastLoadedElement.mount();
+      this.__dom.lastLoadedElement = this.__routerElement[type].cloneNode();
+      await this.__dom.lastLoadedElement?.mount();
 
       // I don't love this, I should swap this out to reduce the layout churn
-      this.__domRefRouter.replaceChildren(this.__dom.lastLoadedElement);
+      // @ts-ignore
+      this.__domRefRouter?.replaceChildren(this.__dom.lastLoadedElement);
     }
   }
 
@@ -118,7 +134,7 @@ class BlogPwa extends LitElement {
   async __loadServiceWorker() {
     if ('serviceWorker' in navigator) {
       let swUrl;
-      const srcSw = url => {
+      const srcSw = (/** @type {URL} */ url) => {
         const parsed = new URL(url, window.location.origin);
         if (url.origin !== window.location.origin) {
           return parsed.href;
@@ -127,10 +143,12 @@ class BlogPwa extends LitElement {
       };
       if (window.trustedTypes && window.trustedTypes.createPolicy) {
         const swPolicy = window.trustedTypes.createPolicy('swPolicy', {
+          // @ts-ignore
           createScriptURL: src => srcSw(src),
         });
         swUrl = swPolicy.createScriptURL('service-worker.js');
       } else {
+        // @ts-ignore
         swUrl = srcSw('service-worker.js');
       }
       this.wb = new Workbox(swUrl);
@@ -151,7 +169,7 @@ class BlogPwa extends LitElement {
       });
 
       this.wb.addEventListener('waiting', () => {
-        this.wb.addEventListener('controlling', () => {
+        this.wb?.addEventListener('controlling', () => {
           window.location.reload();
         });
 
@@ -159,8 +177,8 @@ class BlogPwa extends LitElement {
           text: 'New and updated content is available.',
           requireInteraction: true,
           callback: async () => {
-            this.wb.messageSkipWaiting();
-            this.__dom.snackBar.removeAttribute('active');
+            this.wb?.messageSkipWaiting();
+            this.__dom.snackBar?.removeAttribute('active');
           },
         });
       });
@@ -172,8 +190,9 @@ class BlogPwa extends LitElement {
 
   /**
    * Cache existing loaded urls within the service worker cache
-   * @private
+   *
    * @static
+   * @param {Workbox | undefined} wb
    */
   static __cacheExistingLoadedUrls(wb) {
     // Get the current page URL + all resources the page loaded.
@@ -182,7 +201,7 @@ class BlogPwa extends LitElement {
       ...performance.getEntriesByType('resource').map(r => r.name),
     ];
     // Send that list of URLs to your router in the service worker.
-    wb.messageSW({
+    wb?.messageSW({
       type: 'CACHE_URLS',
       payload: { urlsToCache },
     });
@@ -191,13 +210,13 @@ class BlogPwa extends LitElement {
   /**
    * Listen for Escape, dispatch custom event to page components for closing of
    * image full screens and other visual component interactions
-   * @param {Event} event
+   * @param {KeyboardEvent} event
    * @static
    * @event blog-pwa-escape-pressed
    */
   __listenForEscapeKeyEvent(event) {
     if (event.key === 'Escape') {
-      this.shadowRoot.querySelector('blog-entry').dispatchEvent(
+      this.shadowRoot?.querySelector('blog-entry')?.dispatchEvent(
         new CustomEvent('blog-pwa-escape-pressed', {
           bubbles: true,
           composed: true,
@@ -208,7 +227,7 @@ class BlogPwa extends LitElement {
 
   /**
    * listen and show snackbar as needed
-   * @param {Event} event
+   * @param {CustomEvent} event
    */
   __listenForSbMessageEvent(event) {
     this.showSnackbar(event.detail);
@@ -218,10 +237,10 @@ class BlogPwa extends LitElement {
    * Soooo hacky Justin, but the perf ain't bad
    */
   async __listenForSlotCleanEvent() {
-    const ele = this.shadowRoot.querySelector('#prerender');
-    ele.classList.add('slide-hide');
+    const ele = this.shadowRoot?.querySelector('#prerender');
+    ele?.classList.add('slide-hide');
     await this.updateComplete;
-    ele.remove();
+    ele?.remove();
   }
 
   /**
@@ -238,21 +257,25 @@ class BlogPwa extends LitElement {
     text = '',
     timeout = 5000,
     requireInteraction = false,
-    callback = null,
+    callback = () => {},
   }) {
     if (text !== '') {
-      this.__dom.snackBar.removeAttribute('hidden');
+      this.__dom.snackBar?.removeAttribute('hidden');
+
+      // @ts-ignore
       this.__dom.snackBar.textContent = text;
 
       if (callback) {
+        // @ts-ignore
         this.__dom.snackBar.trigger = callback;
+        // @ts-ignore
         this.__dom.snackBar.action = true;
       }
 
-      this.__dom.snackBar.setAttribute('active', '');
+      this.__dom.snackBar?.setAttribute('active', '');
       if (!requireInteraction) {
         setTimeout(() => {
-          this.__dom.snackBar.removeAttribute('active');
+          this.__dom.snackBar?.removeAttribute('active');
         }, timeout);
       }
     }

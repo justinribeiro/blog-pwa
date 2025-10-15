@@ -1,5 +1,8 @@
-// We do this so that we lazy load as needed on first load and still build down
-// to faster with rollup
+/**
+ * We do this so that we lazy load as needed on first load and still build down
+ * to faster with rollup
+ * @type {Object.<module, string>} ElementMap
+ */
 const loadRouteModule = {
   page: () => import('../blog/blog-page.js'),
   entry: () => import('../blog/blog-entry.js'),

@@ -13,9 +13,15 @@ const sharingServices = {
 };
 
 /**
+ * @typedef {Object} ShareService
+ * @property {string} service Social Media Name
+ * @property {string} link Social Media Share Link
+ */
+
+/**
  * Generate desktop share links for services we support
- * @param {object} metadata
- * @returns array
+ * @param {import('../blog/blog-element.js').BlogMetadata} metadata
+ * @returns ShareService
  */
 function desktopShareLinks(metadata) {
   // fire and forget, don't block on import
@@ -28,12 +34,10 @@ function desktopShareLinks(metadata) {
     tags: metadata.tags,
   };
 
-  const sharePaths = Object.entries(sharingServices).map(([key, template]) => ({
+  return Object.entries(sharingServices).map(([key, template]) => ({
     service: key, // capitalize
     link: stringInterpolate(template, data),
   }));
-
-  return sharePaths;
 }
 
 export { desktopShareLinks };

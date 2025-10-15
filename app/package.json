@@ -15,6 +15,7 @@
     "@justinribeiro/rollup-plugin-asset-build-size-compare": "^1.1.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.4",
+    "@types/trusted-types": "^2.0.7",
     "@web/dev-server": "^0.4.2",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.1.5",
