@@ -37,7 +37,7 @@ module.exports = {
       urlPattern: /\.(?:json)$/,
       handler: 'NetworkFirst',
       options: {
-        networkTimeoutSeconds: 3,
+        networkTimeoutSeconds: 2,
         cacheName: 'data-cache',
         expiration: {
           maxEntries: 200,
@@ -49,18 +49,17 @@ module.exports = {
       },
     },
     {
-      urlPattern:
-        /^https:\/\/us-west(?:1|2)-justinribeiro-web\.cloudfunctions\.net/,
+      urlPattern: /\/api\/.*/i,
       handler: 'NetworkFirst',
       options: {
-        networkTimeoutSeconds: 3,
+        networkTimeoutSeconds: 2,
         cacheName: 'api-cache',
         expiration: {
-          maxEntries: 200,
+          maxEntries: 20,
           purgeOnQuotaError: true,
-          matchOptions: {
-            ignoreVary: true,
-          },
+        },
+        cacheableResponse: {
+          statuses: [0, 200], // cache successful + opaque responses
         },
       },
     },
@@ -79,6 +78,24 @@ module.exports = {
           matchOptions: {
             ignoreVary: true,
           },
+        },
+      },
+    },
+    {
+      urlPattern: /^https:\/\/.*\.ytimg\.com\//,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'youtube-thumbnails',
+        cacheableResponse: {
+          statuses: [0, 200],
+        },
+        expiration: {
+          maxEntries: 200,
+          maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+          purgeOnQuotaError: true,
+        },
+        matchOptions: {
+          ignoreVary: true,
         },
       },
     },

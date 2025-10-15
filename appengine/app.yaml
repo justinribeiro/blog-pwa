@@ -1,5 +1,8 @@
 runtime: python310
 entrypoint: gunicorn -b :$PORT -w 2 main:app
+env_variables:
+  ribeiroSocialAccessToken:
+  youtubeAccessToken:
 
 automatic_scaling:
   min_instances: 1

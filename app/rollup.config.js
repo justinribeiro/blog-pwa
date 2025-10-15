@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import size from '@justinribeiro/rollup-plugin-asset-build-size-compare';
@@ -25,6 +26,7 @@ export default {
     terser({
       compress: {
         drop_console: true,
+        // @ts-ignore
         ecma: 2022,
         passes: 5,
       },

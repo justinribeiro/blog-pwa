@@ -1,7 +1,0 @@
-{
-  "name": "sample-http",
-  "version": "0.0.1",
-  "dependencies": {
-    "mastodon-api": "^1.3.0"
-  }
-}

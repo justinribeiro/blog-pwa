@@ -252,14 +252,26 @@ case $target in
     print "${BOLD_BLUE}STAGE 7: Copy GAE config to /ship${RESET}"
     cp -R appengine/* ship/;
 
+    print "${BOLD_BLUE}STAGE 8: Swap Tokens in GAE YAML ${RESET}"
+    while IFS= read -r line; do
+      # Skip blank or commented lines
+      [[ -z "$line" || "$line" =~ ^# ]] && continue
+
+      key=$(echo "$line" | cut -d':' -f1 | xargs)
+      value=$(echo "$line" | cut -d':' -f2- | xargs)
+
+      echo "Updated $key to PROD key"
+      sed -i "s|^[[:space:]]*$key:.*|  $key: $value|" ship/app.yaml
+    done < appengine/.credentials
+
     # Step 7: copy polymer build
-    print "${BOLD_BLUE}STAGE 8: Copy frontend build /ship${RESET}"
+    print "${BOLD_BLUE}STAGE 9: Copy frontend build /ship${RESET}"
     cp -R app/build/default ship/dist;
 
     # clean this up
     xmllint --format app/data/sitemap.xml > ship/dist/data/sitemap.xml
 
-    print "${BOLD_BLUE}STAGE 9: Generate preload manifest${RESET}"
+    print "${BOLD_BLUE}STAGE 10: Generate preload manifest${RESET}"
     generate_manifest $*
 
     # run app engine dev server to test

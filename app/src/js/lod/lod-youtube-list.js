@@ -54,16 +54,24 @@ class YouTubeVideoList extends LitElement {
   constructor() {
     super();
 
-    this.youtubeEndpoint =
-      'https://us-west1-justinribeiro-web.cloudfunctions.net/get-ytv';
+    this.youtubeEndpoint = '/api/getVideos';
     this.data = [];
   }
 
-  async firstUpdated() {
-    const response = await fetch(`${this.youtubeEndpoint}`, {
-      mode: 'cors',
-    });
-    this.data = await response.json();
+  connectedCallback() {
+    super.connectedCallback();
+    if (this.data.length === 0) {
+      this.#fetchData();
+    }
+  }
+
+  async #fetchData() {
+    try {
+      const response = await fetch(this.youtubeEndpoint);
+      this.data = await response.json();
+    } catch (err) {
+      console.error('Failed to fetch videos:', err);
+    }
   }
 
   render() {

@@ -52,17 +52,24 @@ class RibeiroSocialPhotos extends LitElement {
 
   constructor() {
     super();
-
-    this.mastodonEndpoint =
-      'https://us-west1-justinribeiro-web.cloudfunctions.net/get-ribeirosocial-photos';
+    this.mastodonEndpoint = '/api/getPhotos';
     this.data = [];
   }
 
-  async firstUpdated() {
-    const response = await fetch(`${this.mastodonEndpoint}`, {
-      mode: 'cors',
-    });
-    this.data = await response.json();
+  connectedCallback() {
+    super.connectedCallback();
+    if (this.data.length === 0) {
+      this.#fetchData();
+    }
+  }
+
+  async #fetchData() {
+    try {
+      const response = await fetch(this.mastodonEndpoint);
+      this.data = await response.json();
+    } catch (err) {
+      console.error('Failed to fetch photos:', err);
+    }
   }
 
   render() {

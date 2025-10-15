@@ -21,7 +21,7 @@ sitemap:
 
 <section class="twoColBox">
   <a href="/chronicle/2025/08/08/the-build-journey-to-a-new-darkroom/" class="card">
-    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20250808-darkroom-build.avif" alt="Peeking in on the new darkroom build.">
+    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20250808-darkroom-build.avif" alt="Peeking in on the new darkroom build." fetchpriority="high">
     <div>
       <h4>PHOTOGRAPHY</h4>
       <h3>A New Darkroom Rises</h3>

@@ -10,3 +10,5 @@ app/.yarn/*
 !app/.yarn/sdks
 !app/.yarn/versions
 app/.pnp.*
+appengine/.credentials
+.credentials
