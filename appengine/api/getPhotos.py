@@ -63,7 +63,7 @@ class GetPhotosHandler(BaseHandler):
             "only_media": "true",
             "exclude_reblogs": "true",
             "exclude_replies": "true",
-            "limit": 12,
+            "limit": 40,
         }
 
         try:
@@ -89,7 +89,7 @@ class GetPhotosHandler(BaseHandler):
                 {
                     "url": item.get("url"),
                     "content": re.sub(r"<[^>]*>", "", item.get("content", "")),
-                    "media": media[0].get("url") if media else None,
+                    "media": media[0].get("preview_url") if media else None,
                 }
             )
 
