@@ -9,15 +9,6 @@ import time
 import requests
 from lib.baseHandler import BaseHandler  # ✅ same as other handlers
 
-# Allowed origins
-ALLOWED_ORIGINS = [
-    "http://localhost:8081",
-    "http://localhost:8080",
-    "https://justinribeiro.com",
-    "https://www.justinribeiro.com",
-]
-REGEX_ORIGIN = re.compile(r"https://.*justinribeiro-web\.appspot\.com")
-
 # YouTube Data API config
 YOUTUBE_API_KEY = os.getenv("youtubeAccessToken")
 YOUTUBE_CHANNEL_ID = "UCrexR0isiEYwsK2ZWiJ_GIw"
@@ -31,22 +22,7 @@ _cache = {"data": None, "expires": 0}
 class GetVideosHandler(BaseHandler):
     """Handles /api/getVideos requests."""
 
-    def options(self):
-        """CORS preflight."""
-        origin = self.request.headers.get("Origin")
-        if origin and (origin in ALLOWED_ORIGINS or REGEX_ORIGIN.match(origin)):
-            self.response.headers["Access-Control-Allow-Origin"] = "*"
-
-        self.response.headers["Access-Control-Allow-Methods"] = "GET"
-        self.response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-        self.response.headers["Access-Control-Max-Age"] = "3600"
-        self.response.set_status(204)
-
     def get(self):
-        origin = self.request.headers.get("Origin")
-        if origin and (origin in ALLOWED_ORIGINS or REGEX_ORIGIN.match(origin)):
-            self.response.headers["Access-Control-Allow-Origin"] = "*"
-
         self.response.headers["Content-Type"] = "application/json"
         self.response.headers["Cache-Control"] = "public, max-age=7200"
 

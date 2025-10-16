@@ -9,14 +9,6 @@ import time
 import requests
 from lib.baseHandler import BaseHandler
 
-# Allowed CORS origins
-ALLOWED_ORIGINS = [
-    "http://localhost:8081",
-    "https://justinribeiro.com",
-    "https://www.justinribeiro.com",
-]
-REGEX_ORIGIN = re.compile(r"https://.*justinribeiro-web\.appspot\.com")
-
 # Mastodon API setup
 MASTODON_API_URL = "https://ribeiro.social/api/v1/accounts/2/statuses"
 ACCESS_TOKEN = os.getenv("ribeiroSocialAccessToken")  # from environment
@@ -29,22 +21,7 @@ _cache = {"data": None, "expires": 0}
 class GetPhotosHandler(BaseHandler):
     """Handles /api/getPhotos requests (CORS, caching, Mastodon fetch)."""
 
-    def options(self):
-        """Handle preflight OPTIONS requests."""
-        origin = self.request.headers.get("Origin")
-        if origin and (origin in ALLOWED_ORIGINS or REGEX_ORIGIN.match(origin)):
-            self.response.headers["Access-Control-Allow-Origin"] = origin
-
-        self.response.headers["Access-Control-Allow-Methods"] = "GET"
-        self.response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-        self.response.headers["Access-Control-Max-Age"] = "3600"
-        self.response.set_status(204)
-
     def get(self):
-        origin = self.request.headers.get("Origin")
-        if origin and (origin in ALLOWED_ORIGINS or REGEX_ORIGIN.match(origin)):
-            self.response.headers["Access-Control-Allow-Origin"] = origin
-
         self.response.headers["Content-Type"] = "application/json"
         self.response.headers["Cache-Control"] = "public, max-age=7200"
 

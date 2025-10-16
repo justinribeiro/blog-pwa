@@ -12,3 +12,5 @@ app/.yarn/*
 app/.pnp.*
 appengine/.credentials
 .credentials
+app/.build-size-brotli.json
+app/.build-size-gzip.json
