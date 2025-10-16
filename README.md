@@ -1,13 +1,13 @@
 # blog-pwa
-
-What started as an experiment in 2017 mixing Hugo, Polymer, and the PRPL pattern to build a progressive web app turned into a very robust and fast engine that powers my blog. As the web platform grows, so does this engine.
+> A Progressive Web App with Static Rendering and what not; supports Justin's opinionated view that we should build our own sites however the hell we want
 
 ## Features
 
 * It's a progressive web app with all the fixin's (service worker, PRPL pattern, H3, et cetera)
-* The base PWA component and it's bundle weigh just *15.1KB* gzip'ed on the wire.
-* Renders if there is no JavaScript via `<noscript>` injected fallback to static generation
+* The base PWA component and it's bundle weigh just *9.55KB* gzip'ed on the wire.
+* Pre-renders the first load from the server, so no delays; upgrades to PWA shell behind the scenes
 * Renders metadata to linkbots when sharing without the need for client JavaScript via server side detection and alternative render path
+* Attempts to prevent AI scrapers from over running things on the server side
 
 ## The basics
 
@@ -15,11 +15,10 @@ What started as an experiment in 2017 mixing Hugo, Polymer, and the PRPL pattern
 * [hugo](https://gohugo.io/) to write and manage posts and page metadata
 * [workbox](https://developers.google.com/web/tools/workbox/) for generating precache and runtime caching service worker
 * [rollup](https://rollupjs.org) for handling the bundles and splitting for our PRPL lazy loading goodness
-* [h2-push via http2push-gae](https://github.com/GoogleChrome/http2push-gae) for Google App Engine for serving
 
 ## The not-so-basics
 
-I wrote a couple `zsh` utility scripts to power most of the shuffle and build of the site. Why not an `npm` script or a `gulp` or `grunt` task you ask? Frankly, because I just felt like writing some shell scripts. Don't you want to sometimes just write some shell scripts? Is that just me?
+I wrote a few `zsh` utility scripts to power most of the shuffle and build of the site. Why not an `npm` script or a `gulp` or `grunt` task you ask? Frankly, because I just felt like writing some shell scripts. Don't you want to sometimes just write some shell scripts? Is that just me?
 
 The gist of the tools employed and their uses include.
 
@@ -29,7 +28,6 @@ The gist of the tools employed and their uses include.
 * `@web/dev-server` handles the dev serving
 * `workbox-cli` handles the service worker generation
 * `rollup-cli` handles the es modules and bundles splitting for prod builds
-* `http2-push-manifest` is super useful and works out of the box with http2push-gae
 * `make` has a basic set of commands that alias the zsh script for easy use
 * Okay, so there is `app/package.json` with prettier linting and some build commands in the yarn for rollup and what not. It's mix and match. :-)
 
@@ -49,6 +47,9 @@ The gist of the tools employed and their uses include.
 # run GAE deploy silently
 ➜ make deploy-no-promote
 ```
+
+## Historically
+I started this as an experiment in 2017 mixing Hugo, Polymer, and the PRPL pattern to build a progressive web app turned into a very robust and fast engine that powers my blog (among some other things). As the web platform grows, so does this engine and my opinions about how to build a smaller, faster web.
 
 ## By the web perf numbers
 
