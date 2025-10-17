@@ -1,0 +1,21 @@
+---
+title: "You Cannot Talk Open Source Software without Collective Action Models"
+description: "Ah the dilemma of public goods."
+date: 2025-10-16T08:00:00-07:00
+tags:
+ - phd-journey
+ - research
+ - thoughts
+---
+
+> An ongoing publishing of the papers, memo's, and explorations I wrote in various Doctoral and PhD Seminars between 2021 and 2024. This memo dates from December 2023.
+
+Late in 2022, I gave a talk at SeaGL Conference, a fairly specific conference on open source technology and policy issues, and discussed at length open source and the collective action problems. People we intrigued, particularly around the nature of motivations that lead to engagement within open source communities which is always a topic of great interest and argument. Which leads me to Page’s public good and congestion models, which intersects with my previous experience with the topic (of which I lay no claim to expertise, but it’s not my first rodeo either).
+
+Specifically, the Public Good Provision problem in open-source software (OSS) development mirrors the classic dilemma of contributing to a public good. In OSS, the software created is a public good, accessible and beneficial to all, without direct cost to the users. However, the development and maintenance of this software rely on voluntary contributions of time and expertise from developers. Just as with any public good, there's a risk that many might choose to benefit from the software without contributing to its development, leading to under-maintenance or slow progression of the project.
+
+In the context of OSS, the free-rider problem presents a unique challenge. While OSS projects benefit from being freely accessible, this accessibility means that many users can benefit without contributing back to the project, either in the form of code, documentation, or financial support. This dynamic can lead to a smaller pool of active contributors shouldering the bulk of the development work. Therefore, motivating more users to contribute, perhaps through recognition systems or community engagement, becomes crucial to sustaining innovation and creativity. There is really good recent work on this, “The Shifting Sands of Motivation: Revisiting What Drives Contributors in Open Source” from Gerosa et al. in 2021, that’s worth the read if it so intrigues you.
+
+The Congestion Model is also relevant to OSS, particularly in popular projects. As more developers contribute to a project, the coordination and management of these contributions can become increasingly complex. This "congestion" can lead to difficulties in integrating code, managing issues, and ensuring the overall quality of the project. Effective project management and clear contribution guidelines become essential to prevent this congestion from stifling innovation. In OSS projects, managing the 'congestion' of contributions requires innovative approaches. This might include using automated tools for code integration and testing, establishing robust governance structures to oversee project development, and creating clear, accessible pathways for new contributors to engage with the project. These measures help maintain the quality and coherence of the software, ensuring that increased participation translates to enhanced innovation rather than chaos and disorder. Similar to my cities paper, this is kinda where my other study ended up, around the concept of cognitive dissonance and its effect on participation on a lot of pull requests. Wasn’t looking for it, emerged nonetheless.
+
+Really, it comes down to how one balances the Public Good Provision and Congestion models in OSS and how that leads to building a unique ecosystem for creativity and innovation. By encouraging a diverse range of contributions while managing the challenges of high participation, OSS projects can harness collective intelligence. This ecosystem enables rapid iteration, extensive testing, and a wide variety of features and functionalities, all of which are hallmarks of creative and innovative software development. This culture not only “solves” the Public Good Provision and Congestion problems but also turns these challenges into strengths, fostering an environment where creativity and innovation can thrive.
