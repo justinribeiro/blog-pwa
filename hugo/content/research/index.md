@@ -46,9 +46,9 @@ I didn't say it was simple. But damn if it isn't fun and engaging.
 
 ## Curriculum Vitae (CV)
 
-Looking for a visting professor or a guest lecturer? I am open and available to such exciting opportunities.
+Looking for a adjunct or visiting professor or a possibly a guest lecturer? I am open and available to such exciting opportunities.
 
-<a href="https://storage.googleapis.com/jdr-docs/justinribeiro-cv-20250313.pdf" target="_blank">Justin Ribeiro - Curriculum Vitae (CV)</a>
+<a href="https://storage.googleapis.com/jdr-docs/justinribeiro-cv-20251104.pdf" target="_blank">Justin Ribeiro - Curriculum Vitae (CV)</a>
 
 <a href="https://rave.ohiolink.edu/etdc/view?acc_num=case1743683688353522" target="_blank">Justin Ribeiro - Dissertation</a>
 

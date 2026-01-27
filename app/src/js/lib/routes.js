@@ -25,7 +25,7 @@ const pagePaths = [
 ];
 
 const pagePattern = new RegExp(
-  `^\/(${pagePaths.join('|')})?\/?(index\\.html)?\/?$`,
+  `^/(?:(?:${pagePaths.join('|')})(?:/.*)?|index.html)?/?$`,
 );
 
 // How we match things with the page router
