@@ -18,7 +18,7 @@ My research advances strategies for harnessing cognitive diversity, fostering cr
 
 Topics central to my research include creativity, cognitive dissonance, cognitive conflict, digital innovation, and software development digital artifacts.
 
-I earned a Ph.D. in Management, Designing Sustainable Systems at Case Western Reserve University (chair: [Kalle Lyytinen](https://case.edu/weatherhead/about/faculty-and-staff-directory/kalle-lyytinen)) and am a <a href="/chronicle/2022/03/03/selected-as-a-doctor-of-management-design-and-innovation-fellow-at-case-western-reserve-university/">Doctor of Management Design & Innovation Fellow</a> and Engaged Pracitioner Scholar at Weatherhead School of Management at Case Western Reserve University.
+I earned a Ph.D. in Management, Designing Sustainable Systems at Case Western Reserve University (chair: [Kalle Lyytinen](https://case.edu/weatherhead/about/faculty-and-staff-directory/kalle-lyytinen)) and am a <a href="/chronicle/2022/03/03/selected-as-a-doctor-of-management-design-and-innovation-fellow-at-case-western-reserve-university/">Doctor of Management Design & Innovation Fellow</a> and Engaged Practitioner Scholar at Weatherhead School of Management at Case Western Reserve University. You can also find me teaching at Case Western Reserve University and Stevens Institute of Technology.
 
 ## Research Methodology
 

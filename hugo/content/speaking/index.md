@@ -14,7 +14,9 @@ sitemap:
   priority: 0.5
 ---
 
-Due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my speaking schedule has become more limited over the years. My commitment encompasses valuable time spent with family and friends, as well as time reserved for creative pursuits. Should my availability not align with your event, rest assured that myself and <a href="mailto:team@justinribeiro.com&subject=Book%20Justin%20For%20Event%20-%20Your%20Event%20Here&body=Dear%20Mr.%20Justin Team,">my capable team</a> is on hand to suggest excellent alternatives.
+Due to commitments to work, research, writing, and teaching, alongside my dedication to leading a fulfilling personal life, my speaking schedule has become more limited over the years. My commitment encompasses valuable time spent with family and friends, as well as time reserved for creative pursuits. Should my availability not align with your event, rest assured that myself and <a href="mailto:team@justinribeiro.com&subject=Book%20Justin%20For%20Event%20-%20Your%20Event%20Here&body=Dear%20Dr.%20Justin Team,">my capable team</a> is on hand to suggest excellent alternatives.
+
+The general exception to the above is in regards to teaching—learning is magic. You can find me teaching at Case Western Reserve University and Stevens Institute of Technology; if you would like me to guest speak or teach at your K-12 school, college, university or other learning institution, I will prioritize such requests.
 
 <figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">
   <picture>

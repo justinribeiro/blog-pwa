@@ -28,20 +28,12 @@ sitemap:
       <p>After a slight delay given other pressing activities and newfound re-usable materials, I set out to build the most expensive darkroom I've ever put together.</p>
     </div>
   </a>
-  <a href="/chronicle/2025/03/13/four-years-and-a-successful-phd-dissertation-defense/" class="card">
-    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/2025-kalle-and-justin.jpg" alt="Justin Ribeiro and his chair, Kalle Lyytinen, after successfully defending his PhD dissertation.">
-    <div>
-      <h4>WELCOME DR JUSTIN</h4>
-      <h3>Four Years and a Successful PhD Dissertation Defense</h3>
-      <p>You do not forget that moment after they walk back into the room and call you Doctor. It is both surreal and exuberant wrapped in one fleeting yet frozen moment.</p>
-    </div>
-  </a>
-  <a href="/chronicle/2025/04/29/week-in-review-all-the-updates-to-the-open-source/" class="card">
+  <a href="/chronicle/2026/01/29/google-scholar-citation-count-for-zotero-adds-support-for-zotero-8/" class="card">
     <img decoding="async" loading="lazy" src="https://storage.googleapis.com/jdr-public-imgs/pages/frontdoor/20241030-lite-youtube.avif" alt="lite-youtube featured on Google's Chrome for Developers site.">
     <div>
       <h4>OPEN SOURCE DEV</h4>
       <h3>Week in Review: All the Updates</h3>
-      <p>Updates to lite-youtube, code-block, and Google Scholar Citation Count for Zotero round out a week of catching up on maintainer activities.<p>
+      <p>Google Scholar Citation Count for Zotero gets updated to v5.0.0 with support for Zotero 8.<p>
     </div>
   </a>
   <a href="/chronicle/2021/02/23/building-a-custom-polaroid-sx-70-camera-rig/" class="card">
@@ -58,6 +50,14 @@ sitemap:
       <h4>TINY FARM</h4>
       <h3>Protecting our Chickens and Ducks with a Zoo Netting Enclosed Run</h3>
       <p>After a string of killings from birds of prey, we opted to go big and enclose the run for our ducks and chickens, all 6000 plus square feet.<p>
+    </div>
+  </a>
+  <a href="/chronicle/2025/03/13/four-years-and-a-successful-phd-dissertation-defense/" class="card">
+    <img decoding="async" src="https://storage.googleapis.com/jdr-public-imgs/pages/2025-kalle-and-justin.jpg" alt="Justin Ribeiro and his chair, Kalle Lyytinen, after successfully defending his PhD dissertation.">
+    <div>
+      <h4>WELCOME DR JUSTIN</h4>
+      <h3>Four Years and a Successful PhD Dissertation Defense</h3>
+      <p>You do not forget that moment after they walk back into the room and call you Doctor. It is both surreal and exuberant wrapped in one fleeting yet frozen moment.</p>
     </div>
   </a>
   <a href="/chronicle/2025/05/06/a-tiny-analysis-of-nginx-compression-directives-and-a-new-rollup-web-asset-build-size-plugin/" class="card">
