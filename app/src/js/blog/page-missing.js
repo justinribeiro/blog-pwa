@@ -7,6 +7,7 @@ import cssSheet from '../../css/page.css' with { type: 'css' };
 class BlogMissing extends BlogElement {
   async mount() {
     window.scroll(0, 0);
+    // @ts-ignore
     setPageMetaData({
       title: '404: Page Not Found',
       description: 'Sorry, I cannot find the page your seek.',

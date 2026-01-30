@@ -34,7 +34,7 @@ A vise is only as good as two things: its ability to hold the work and its abili
 
 Case in point: the Panavise Model 201 Vise, better known as "Junior". I do not recall where or when I picked up this vice, through I seemingly have had this vice forever; it's my favorite vice for working on electronics. It's small and nimble, and you can buy it new for around $50 USD these days which I find not terrible. My issue with it is that it's not heavy and really needs to be attached to a bench or base.
 
-Over the years, I've clamped it tables, bolted it to benches, but the mobility—I like to set a piece and spin the vise around without chaging the orientation of the work—suffers in those cases. I could spend the $60-ish dollars and use the official Panavice 308 Weighted Vise Base and solve my problem.
+Over the years, I've clamped it tables, bolted it to benches, but the mobility—I like to set a piece and spin the vise around without changing the orientation of the work—suffers in those cases. I could spend the $60-ish dollars and use the official Panavice 308 Weighted Vise Base and solve my problem.
 
 But that's no fun.
 
