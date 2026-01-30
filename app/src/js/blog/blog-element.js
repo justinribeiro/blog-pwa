@@ -118,7 +118,6 @@ class BlogElement extends LitElement {
 
     try {
       const res = await fetch(targetUrl, {
-        cache: 'force-cache',
         keepalive: true,
       });
       if (!res.ok) throw new Error(res.statusText);
