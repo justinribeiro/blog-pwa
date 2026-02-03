@@ -9,7 +9,7 @@ const sharingServices = {
   LinkedIn:
     'https://www.linkedin.com/shareArticle?mini=true&url={{ permalink }}&title={{ title }}&source=&summary={{ description }}',
   Email:
-    'mailto:?subject=Article: {{ title }}&body=Article from Dr. Justin Ribeiro, Ph.D.: {{ permalink }}',
+    'mailto:?subject=Article: {{ title }}&body=Article from Justin Ribeiro, Ph.D.: {{ permalink }}',
 };
 
 /**

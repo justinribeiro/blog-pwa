@@ -9,7 +9,7 @@ const metaCache = new Map();
  * @param {import("../blog/blog-element.js").BlogMetadata} base
  */
 async function setPageMetaData({ title, description, url, socialImage, tags }) {
-  document.title = `${title} - Dr. Justin Ribeiro, Ph.D.`;
+  document.title = `${title} - Justin Ribeiro, Ph.D.`;
 
   const metaData = [
     { attr: 'property', name: 'og:title', content: document.title },
