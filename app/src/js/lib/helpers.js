@@ -8,7 +8,7 @@ const metaCache = new Map();
  * it's not just for show
  * @param {import("../blog/blog-element.js").BlogMetadata} base
  */
-async function setPageMetaData({ title, description, url, socialImage, tags }) {
+async function setPageMetaData({ title, description, url, socialimage, tags }) {
   document.title = `${title} - Justin Ribeiro, Ph.D.`;
 
   const metaData = [
@@ -16,7 +16,7 @@ async function setPageMetaData({ title, description, url, socialImage, tags }) {
     { attr: 'name', name: 'description', content: description },
     { attr: 'name', name: 'keywords', content: tags },
     { attr: 'property', name: 'og:description', content: description },
-    { attr: 'property', name: 'og:image', content: socialImage || fallbackImg },
+    { attr: 'property', name: 'og:image', content: socialimage || fallbackImg },
     {
       attr: 'property',
       name: 'og:url',
