@@ -4,32 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <base href="/">
-    <title>Dr. Justin Ribeiro, Ph.D.</title>
+    <title>{{ title }} - Justin Ribeiro, Ph.D.</title>
     <link rel="preconnect" href="https://storage.googleapis.com/" crossorigin>
     <style nonce="css-{{ cssnonce }}">
       @import './src/css/dev.css';
       {% if pagetype == "page" or pagetype == "explore" %}@import './src/css/page.css';{% endif %}
       {% if pagetype == "post" %}@import './src/css/entry.css';{% endif %}
     </style>
-    <meta name="description" content="I ❤️ the open web. Film photographer and mediocre darkroom printer. Maker of sometimes interesting things. Coder of open source curiosities. Always exploring.">
-    <meta name="keywords" content="person,phd,speaker,programmer,photographer,maker,consultant,researcher">
-    <meta name="build:note" content="prerender">
+    <meta name="description" content="{{ description }}" />
+    <meta name="keywords" content="{{ tags }}">
+    <meta name="build:note" content="static">
+    <link rel="canonical" href="{{ permalink }}" />
+    <meta itemprop="name" content="{{ title }} - Justin Ribeiro, Ph.D." />
+    <meta itemprop="headline" content="{{ title }} - Justin Ribeiro, Ph.D." />
+    <meta itemprop="description" content="{{ description }}" />
+
+    <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2024.ico" sizes="any">
+    <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2024.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-apple-180.png">
+    <link rel="manifest" href="/app.webmanifest">
+    <base href="/">
+
+    <meta name="fediverse:creator" content="@justin@ribeiro.social">
+    <meta property="og:type" content="article" />
+    <meta itemprop="og:headline" content="{{ title }}" />
+    <meta property="og:title" content="{{ title }} - Justin Ribeiro, Ph.D." />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:site_name" content="Justin Ribeiro, Ph.D." />
+    <meta property="og:url" content="{{ permalink }}" />
+    {% if socialimage %}
+    <meta itemprop="og:image" content="{{ socialimage }}" />
+    {% endif %}
+    <meta property="article:published_time" content="{{ datePublished }}" />
+    <meta property="article:modified_time" content="{{ dateModified }}" />
+
+    <link rel="webmention" href="https://webmention.io/justinribeiro.com/webmention" />
+    <link rel="pingback" href="https://webmention.io/justinribeiro.com/xmlrpc" />
+
     <link href="/data/chronicle/index.xml" rel="feed" type="application/rss+xml" title="RSS - All Posts and Articles" />
     <link href="/data/tags/web/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Web Dev, Web Perf, and Web Platform Articles" />
     <link href="/data/tags/iot/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Internet of Things (IoT) Articles" />
     <link href="/data/tags/photography/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Photography Articles and Prints" />
     <link href="/data/tags/business/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Management and Business Articles" />
     <link href="/data/tags/personal/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Personal Articles" />
-    <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2024.ico" sizes="any">
-    <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2024.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-apple-180.png">
-    <link rel="manifest" href="/app.webmanifest">
-    <meta name="fediverse:creator" content="@justin@ribeiro.social">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="JustinRibeiro.com">
-    <meta property="og:image" content="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-192.png" />
-    <link rel="webmention" href="https://webmention.io/justinribeiro.com/webmention" />
-    <link rel="pingback" href="https://webmention.io/justinribeiro.com/xmlrpc" />
   </head>
   <body>
     <header id="pageHeader">
