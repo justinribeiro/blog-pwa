@@ -63,8 +63,22 @@ module.exports = {
         },
       },
     },
+    // bit of hack; you can't run workbox-range-requests plugin with the
+    // cacheAble response (it falls apart), but we can divide and conquer
+    // against media types where 206's occur
+    // ideal = no (terrible regex) but hey, it works
     {
-      urlPattern: /^https:\/\/storage\.googleapis\.com/,
+      urlPattern:
+        /^https:\/\/storage\.googleapis\.com\/.*\.(mp4|mp3|webm)(?:\?|$)/,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'media-cache',
+        rangeRequests: true,
+      },
+    },
+    {
+      urlPattern:
+        /^https:\/\/storage\.googleapis\.com(?!.*\.(mp4|mp3|webm)(?:\?|$))/,
       handler: 'CacheFirst',
       options: {
         cacheName: 'cdn-cache',
