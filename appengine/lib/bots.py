@@ -170,7 +170,7 @@ def socialBots():
             "ahrefsbot",
             "yandexbot",
             "msnbot",
-            "BlueskyPreviewBot/1.0"
+            "BlueskyPreviewBot",
             # why googlebot? Because the static representation is 1-to-1 and
             # easier for even new M70+ GoogleBot to parse
             "googlebot",

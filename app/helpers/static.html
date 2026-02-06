@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{{ title }} - Dr. Justin Ribeiro, Ph.D.</title>
+    <title>{{ title }} - Justin Ribeiro, Ph.D.</title>
     <meta name="description" content="{{ description }}" />
     <meta name="keywords" content="{{ tags }}">
     <meta name="build:note" content="static">
@@ -12,11 +12,9 @@
     />
     <link rel="canonical" href="{{ permalink }}" />
     <meta itemprop="name" content="{{ title }} - Justin Ribeiro, Ph.D." />
-    <meta itemprop="headline" content="{{ title }} - Justin Ribeiro, Ph.D." />
+    <meta itemprop="headline" content="{{ title }}" />
     <meta itemprop="description" content="{{ description }}" />
-    {% if socialimage %}
     <meta itemprop="image" content="{{ socialimage }}" />
-    {% endif %}
 
     <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2024.ico" sizes="any">
     <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2024.svg" type="image/svg+xml">
@@ -24,18 +22,17 @@
     <link rel="manifest" href="/app.webmanifest">
     <base href="/">
 
+    <meta name="author" content="Justin Ribeiro, Ph.D.">
     <meta name="fediverse:creator" content="@justin@ribeiro.social">
     <meta property="og:type" content="article" />
-    <meta itemprop="og:headline" content="{{ title }}" />
+    <meta property="og:headline" content="{{ title }}" />
     <meta property="og:title" content="{{ title }} - Justin Ribeiro, Ph.D." />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:site_name" content="Justin Ribeiro, Ph.D." />
     <meta property="og:url" content="{{ permalink }}" />
+    <meta property="og:image" name="image" content="{{ socialimage }}" />
     <meta property="article:published_time" content="{{ datePublished }}" />
     <meta property="article:modified_time" content="{{ dateModified }}" />
-    {% if socialimage %}
-    <meta property="og:image" content="{{ socialimage }}" />
-    {% endif %}
 
     <link rel="preconnect" href="https://storage.googleapis.com/" crossorigin>
 
@@ -73,9 +70,10 @@
         <a rel="me" href="https://orcid.org/0009-0002-8221-9120" title="ORCid"><svg viewBox="0 0 32 32"><path d="M16 3C8.832 3 3 8.832 3 16s5.832 13 13 13 13-5.832 13-13S23.168 3 16 3zm0 2c6.087 0 11 4.913 11 11s-4.913 11-11 11S5 22.087 5 16 9.913 5 16 5zm-5 3a1 1 0 0 0 0 2 1 1 0 0 0 0-2zm-1 3v11h2V11zm4 0v11h4.5c3.026 0 5.5-2.474 5.5-5.5S21.526 11 18.5 11zm2 2h2.5c1.944 0 3.5 1.556 3.5 3.5S20.444 20 18.5 20H16z"/></svg></a>
       </nav>
     </header>
-    <blog-pwa>
+    <blog-pwa prerender="true">
       <main>
         <article
+          id="main"
           itemprop="blogPost"
           itemscope
           itemtype="http://schema.org/BlogPosting"
@@ -88,7 +86,7 @@
               <h2 class="subheadline">{{ subtitle | safe }}</h2>
             </div>
           </header>
-          <section itemprop="articleBody" class="{{ pagetype }}">{{ article | safe }}</section>
+          <section itemprop="articleBody" class="{{ pagetype  }}">{{ article | safe }}</section>
             {% if posts %}
             <section id="posts">
               {% for post in posts %}
@@ -127,7 +125,7 @@
               >
                 <a class="p-author h-card" href="/" itemprop="url">
                   <img
-                  src="/images/manifest/me-2018-150.jpg"
+                  src="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-192.png"
                     class="u-photo"
                     alt="Justin Ribeiro"
                     hidden

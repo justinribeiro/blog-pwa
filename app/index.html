@@ -16,25 +16,24 @@
     <meta name="build:note" content="static">
     <link rel="canonical" href="{{ permalink }}" />
     <meta itemprop="name" content="{{ title }} - Justin Ribeiro, Ph.D." />
-    <meta itemprop="headline" content="{{ title }} - Justin Ribeiro, Ph.D." />
+    <meta itemprop="headline" content="{{ title }}" />
     <meta itemprop="description" content="{{ description }}" />
+    <meta itemprop="image" content="{{ socialimage }}" />
 
     <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2024.ico" sizes="any">
     <link rel="icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/favicon-2024.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-apple-180.png">
     <link rel="manifest" href="/app.webmanifest">
     <base href="/">
-
+    <meta name="author" content="Justin Ribeiro, Ph.D.">
     <meta name="fediverse:creator" content="@justin@ribeiro.social">
     <meta property="og:type" content="article" />
-    <meta itemprop="og:headline" content="{{ title }}" />
+    <meta property="og:headline" content="{{ title }}" />
     <meta property="og:title" content="{{ title }} - Justin Ribeiro, Ph.D." />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:site_name" content="Justin Ribeiro, Ph.D." />
     <meta property="og:url" content="{{ permalink }}" />
-    {% if socialimage %}
-    <meta itemprop="og:image" content="{{ socialimage }}" />
-    {% endif %}
+    <meta property="og:image" name="image" content="{{ socialimage }}" />
     <meta property="article:published_time" content="{{ datePublished }}" />
     <meta property="article:modified_time" content="{{ dateModified }}" />
 

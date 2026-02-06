@@ -81,9 +81,11 @@ echo ${BOLD_BLUE}STEP 2: Optimizing output...:${RESET}
 for width in ${widths[@]}; do
   if [[ "$fileType" == "png" ]]; then
     optipng -o5 $workDir/$basefilename-$width.$fileType -out $outputpath-$width.png
+
     cwebp -lossless $workDir/$basefilename-$width.$fileType -o $outputpath-$width.webp
   else
-    cjpeg -q 70 -progressive -optimize $workDir/$basefilename-$width.$fileType > $outputpath-$width.jpg
+    jpegtran -progressive -optimize -outfile $outputpath-$width.jpg $workDir/$basefilename-$width.$fileType
+    jpegoptim --max=70 $outputpath-$width.jpg
     cwebp -q 70 $workDir/$basefilename-$width.$fileType -o $outputpath-$width.webp
   fi
 done

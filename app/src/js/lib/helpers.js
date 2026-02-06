@@ -1,6 +1,3 @@
-const fallbackImg =
-  'https://storage.googleapis.com/jdr-public-imgs/manifest/me-2022-192.png';
-
 const metaCache = new Map();
 
 /**
@@ -8,20 +5,41 @@ const metaCache = new Map();
  * it's not just for show
  * @param {import("../blog/blog-element.js").BlogMetadata} base
  */
-async function setPageMetaData({ title, description, url, socialimage, tags }) {
+async function setPageMetaData({
+  title,
+  description,
+  permalink,
+  socialimage,
+  tags,
+  datePublished,
+  dateModified,
+}) {
   document.title = `${title} - Justin Ribeiro, Ph.D.`;
+  document.head.querySelector('link[rel="canonical"]').href =
+    permalink || document.location.href;
 
   const metaData = [
     { attr: 'property', name: 'og:title', content: document.title },
-    { attr: 'name', name: 'description', content: description },
-    { attr: 'name', name: 'keywords', content: tags },
+    { attr: 'property', name: 'og:headline', content: title },
     { attr: 'property', name: 'og:description', content: description },
-    { attr: 'property', name: 'og:image', content: socialimage || fallbackImg },
     {
       attr: 'property',
       name: 'og:url',
-      content: url || document.location.href,
+      content: permalink || document.location.href,
     },
+    { attr: 'property', name: 'og:image', content: socialimage },
+    {
+      attr: 'property',
+      name: 'article:published_time',
+      content: datePublished,
+    },
+    { attr: 'property', name: 'article:modified_time', content: dateModified },
+    { attr: 'name', name: 'description', content: description },
+    { attr: 'name', name: 'keywords', content: tags },
+    { attr: 'itemprop', name: 'description', content: description },
+    { attr: 'itemprop', name: 'headline', content: title },
+    { attr: 'itemprop', name: 'name', content: document.title },
+    { attr: 'itemprop', name: 'image', content: socialimage },
   ];
 
   // Create a fragment for batch appends

@@ -134,6 +134,12 @@ class MainHandler(BaseHandler):
         # need a nonce otherwise we'll break it
         data["cssnonce"] = self.stylenonce
 
+        # failsafe this because annoying
+        data["socialimage"] = (
+            data.get("socialimage")
+            or "https://storage.googleapis.com/jdr-public-imgs/pages/page-5-test.jpg"
+        )
+
         try:
             template = JINJA_ENVIRONMENT.get_template("dist/helpers/static.html")
             html = template.render(data)
@@ -157,6 +163,12 @@ class MainHandler(BaseHandler):
                 "cssnonce": self.stylenonce,
                 "jsnonce": self.jsnonce,
             }
+        )
+
+        # failsafe this because annoying
+        data["socialimage"] = (
+            data.get("socialimage")
+            or "https://storage.googleapis.com/jdr-public-imgs/pages/page-5-test.jpg"
         )
 
         # flip case for secondary loads

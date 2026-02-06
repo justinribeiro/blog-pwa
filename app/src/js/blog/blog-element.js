@@ -15,7 +15,8 @@ import cssSheet from '../../css/element.css' with { type: 'css' };
  * @property {string} article Article content
  * @property {string} title Title of the blog post
  * @property {string} subtitle Subtitle of the blog post
- * @property {string} dataModified Date modified timestamp
+ * @property {string} datePublished Date published timestamp
+ * @property {string} dateModified Date modified timestamp
  * @property {string} date Publication date
  * @property {string} readingtime Estimated reading time
  * @property {string} permalink Permanent link to the post
@@ -87,7 +88,7 @@ class BlogElement extends LitElement {
       article: '',
       title: '',
       subtitle: '',
-      dataModified: '',
+      dateModified: '',
       date: '',
       readingtime: '',
       permalink: '',
