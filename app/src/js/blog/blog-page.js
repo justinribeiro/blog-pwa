@@ -38,7 +38,9 @@ class BlogPage extends BlogElement {
         <header class=${this.metadata.pagetype}>
           <div id="subHeader">
             <h1 itemprop="headline">${this.metadata.title}</h1>
+            <hr />
             <h2 itemprop="subheadline">${this.metadata.subtitle}</h2>
+            <hr />
           </div>
         </header>
         <section itemprop="articleBody" class=${this.metadata.pagetype}>

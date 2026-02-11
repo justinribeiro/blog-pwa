@@ -92,7 +92,11 @@
   }
 
   .reads {
-    padding: 0.75rem 0;
+    padding: 0.5rem 0;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    margin: 1rem 0;
+    text-align: center;
   }
 
   #metaShare {
@@ -101,6 +105,7 @@
     padding: calc(var(--space-cs) * 2);
     border-radius: var(--space-cs);
     margin-bottom: calc(var(--space-cs) * 2);
+    border: var(--border);
   }
 
   #share > a {

@@ -1,0 +1,7 @@
+{{ range first 9 (where site.RegularPages "Section" "chronicle") }}
+ <a href="{{ .RelPermalink }}">
+    <p>{{ .Title }}</p>
+    <p>{{ .Date.Format "January 2" }}—{{ .Description }} Continue reading...</p>
+  </a>
+  <hr>
+{{ end }}
