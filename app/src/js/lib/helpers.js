@@ -15,8 +15,12 @@ async function setPageMetaData({
   dateModified,
 }) {
   document.title = `${title} - Justin Ribeiro, Ph.D.`;
-  document.head.querySelector('link[rel="canonical"]').href =
-    permalink || document.location.href;
+  try {
+    document.head.querySelector('link[rel="canonical"]').href =
+      permalink || document.location.href;
+  } catch (error) {
+    console.log(error);
+  }
 
   const metaData = [
     { attr: 'property', name: 'og:title', content: document.title },
