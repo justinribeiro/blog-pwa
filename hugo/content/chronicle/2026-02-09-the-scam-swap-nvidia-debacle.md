@@ -53,11 +53,11 @@ Opening the box, I found not the pristine GeForce RTX 3050 I had ordered but rat
                     https://storage.googleapis.com/jdr-public-imgs/blog/20260209-the-scam-3050-1280.jpg 1280w,
                     https://storage.googleapis.com/jdr-public-imgs/blog/20260209-the-scam-3050-1600.jpg 1600w"
             sizes="(min-width: 800px) 800px, 100vw" type="image/jpg">
-    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20260209-the-scam-3050-800.jpg" alt="">
+    <img decoding="async" loading="lazy" width="800" height="538" src="https://storage.googleapis.com/jdr-public-imgs/blog/20260209-the-scam-3050-800.jpg" alt="Not the card that is supposed to be in the box.">
   </picture>
   <figcaption itemprop="caption description">
-    <span aria-hidden="true"></span>
-    <span class="author" itemprop="copyrightHolder"></span>
+    <span aria-hidden="true">Not the card that is supposed to be in the box.</span>
+    <span class="author" itemprop="copyrightHolder">Justin Ribeiro</span>
   </figcaption>
 </figure>
 
