@@ -55,8 +55,3 @@ Yet, even as I explore and experiment—having a lot of fun along the way—and 
 
 Is my plan perfect? No, it's in progress. I just want to interact and engage with some degree of control over the things I want to run, the things I want the computer to do.
 
-
-
-
-
-
