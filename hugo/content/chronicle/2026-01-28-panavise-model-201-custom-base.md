@@ -28,6 +28,7 @@ tags:
  - tools
  - maker
  - vise
+ - restore
 ---
 
 A vise is only as good as two things: its ability to hold the work and its ability to do so without moving around while working on the work. The second part is typically a choice of the user; what you attach that vice to should be secure enough to not slide around bench. Vices are not particularly inexpensive items but over the years I've maintained a watchful eye for banged up and restorable vices of various types. The casual observer may ask why I have so many varied types of vices—I hold a lot of odd workpieces.
