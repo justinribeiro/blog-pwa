@@ -22,6 +22,8 @@ const pagePaths = [
   'consulting',
   'chronicle',
   'tags',
+  'now',
+  'work',
 ];
 
 const pagePattern = new RegExp(
