@@ -1,6 +1,6 @@
 {{ $content_to_string := printf "%s" .Content }}
 {{ $content := replace $content_to_string "\n" "\\n" }}
-{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ $related := .CurrentSection.RegularPages.Related . | first 6 }}
 {
   "title": "{{ .Title }}",
   "subtitle": "{{ $.Params.SubTitle }}",
@@ -17,7 +17,5 @@
   "filename": "{{ .File.Path }}",
   "socialimage": "{{ $.Params.socialimage }}",
   "featureimage": "{{ $.Params.featureimage }}",
-  "relatedposts": [ {{ range $i, $e := $related }}
-  {{if $i}}, {{end}}{{ .Render "li"}}
-{{end}} ]
+  "relatedposts": [{{ range $i, $e := $related }}{{ if $i }}, {{ end }}{{ .Render "li" }}{{ end }}]
 }
