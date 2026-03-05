@@ -45,7 +45,7 @@ export const installRouter = locationUpdatedCallback => {
       return;
     }
 
-    const { href } = anchor;
+    const { href, hash } = anchor;
     if (!href || href.startsWith('mailto:')) {
       return;
     }
@@ -57,6 +57,25 @@ export const installRouter = locationUpdatedCallback => {
     }
 
     e.preventDefault();
+
+    // same trick from my old event shim for shadowroot hunting; basically
+    // makes the anchor scroll work in the shadowdom and keep the back history
+    // working. This is imperfect but mostly working
+    if (hash) {
+      e.composedPath()
+        .find(i => {
+          if (i.nodeType === 1 && i.nodeName !== 'SLOT') {
+            return i;
+          }
+        })
+        ?.getRootNode()
+        .getElementById(hash.slice(1))
+        .scrollIntoView();
+
+      history.pushState({}, '', href);
+      return;
+    }
+
     if (href !== location.href) {
       history.pushState({}, '', href);
       locationUpdatedCallback(location, e);

@@ -14,7 +14,7 @@ const loadRouteModule = {
 // technically, I don't really have to do this, I could just default them, but
 // this gives me more options
 const pagePaths = [
-  'explore',
+  'projects',
   'about',
   'talks',
   'speaking',
@@ -33,7 +33,7 @@ const pagePattern = new RegExp(
 // How we match things with the page router
 const routes = [
   {
-    pattern: /^\/chronicle\/\d+\/\d+\/\d+\/[^\/]+\/?(?:\?.*)?(?:#.*)?$/,
+    pattern: /^\/chronicle\/\d+\/\d+\/\d+\//,
     type: 'entry',
   },
   { pattern: pagePattern, type: 'page' },
