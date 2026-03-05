@@ -1,6 +1,6 @@
 ---
 title: "Speaking at FOSSY 2025"
-description: "Who doesn't love a talk on creativity, open-source project governance and the impact on innovation?"
+description: "Who does not love a talk on creativity, open-source project governance and the impact on innovation?"
 date: 2025-07-01T10:00:00-07:00
 tags:
  - research
