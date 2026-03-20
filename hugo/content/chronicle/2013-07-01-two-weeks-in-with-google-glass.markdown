@@ -1,6 +1,6 @@
 ---
 tags:
-- Google Glass
+- Google-Glass
 date: 2013-07-01T00:00:00Z
 description: My first two weeks with Google Glass.
 title: Two weeks in with Google Glass

@@ -3,7 +3,7 @@ tags:
 - photography
 - antique
 - film
-- eastman kodak
+- eastman-kodak
 date: 2008-09-18T00:00:00Z
 description: "Not every day that you find 1890's Eastman Kodak dry plates unopened, let alone three unopened boxes that look like they just came off the line. Luckily, we did."
 title: Early 1890's Eastman Kodak dry plates, unopened

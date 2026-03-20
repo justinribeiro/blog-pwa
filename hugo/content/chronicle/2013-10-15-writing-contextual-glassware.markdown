@@ -1,6 +1,6 @@
 ---
 tags:
-- Google Glass
+- Google-Glass
 - Glassware
 date: 2013-10-15T00:00:00Z
 title: Writing Contextual Glassware

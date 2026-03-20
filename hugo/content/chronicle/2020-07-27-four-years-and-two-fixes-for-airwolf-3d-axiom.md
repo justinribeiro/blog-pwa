@@ -5,7 +5,7 @@ description: "1000's of hours and a lot of general abuse later, the AXIOM 3D pri
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200727-underside-runner-800.jpg"
 tags:
   - maker
-  - 3d printer
+  - 3d-printer
 ---
 
 3D prints and build plates might as well be oil and water; they don’t want to stick together. At the peak of my frustration many years ago a friend mentioned a company making this amazing adhesive called [WolfBite](https://airwolf3d.com/product-category/3d-printer-adhesive/) and how they'd recently started using a printer from the same company to great effect.

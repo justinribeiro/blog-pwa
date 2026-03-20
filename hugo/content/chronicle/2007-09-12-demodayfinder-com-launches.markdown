@@ -1,14 +1,10 @@
 ---
-
-tags:
-- demodayfinder
-- Web Apps
 date: 2007-09-12T20:58:01Z
 description: DemoDayFinder.com launches, offering a new way to find Golf demo days.
 published: true
 status: publish
 tags:
-- web apps
+- web-apps
 - demodayfinder
 title: DemoDayFinder.com launches
 url: /chronicle/2007/09/12/demodayfinder-com-launches/

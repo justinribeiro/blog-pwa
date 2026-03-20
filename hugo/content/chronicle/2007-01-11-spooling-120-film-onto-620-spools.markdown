@@ -1,6 +1,6 @@
 ---
 tags:
-- film cameras
+- cameras
 - film
 date: 2007-01-11T21:21:36Z
 description: 620 film cameras from the 1950's and 1960's need some love.

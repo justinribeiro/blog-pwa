@@ -1,19 +1,14 @@
 ---
-
-tags:
-- Uncategorized
 date: 2007-11-02T20:51:20Z
 description: The big move to Google Apps has occurred...and it rocks.
 published: true
 status: publish
 tags:
-- web apps
-- Google Apps
-- Stickman Ventures
+- web-apps
+- Google-Apps
+- Stickman-Ventures
 title: Stickman Ventures now using Google Apps Premier
 url: /chronicle/2007/11/02/stickman-ventures-now-using-google-apps-premier/
-wordpress_id: 291
-wordpress_url: http://justinribeiro.com/chronicle/?p=291
 ---
 
 Gareth, Jim, and I collaborate on a number of topics on any given day.  Sometimes these conversations are based on current projects (<a href="jttp://www.demodayfinder.com/">DemoDayFinder.com</a>, Quirley), sometimes it's creative stuff we plan on pursuing in the future, and other times it's consulting projects.

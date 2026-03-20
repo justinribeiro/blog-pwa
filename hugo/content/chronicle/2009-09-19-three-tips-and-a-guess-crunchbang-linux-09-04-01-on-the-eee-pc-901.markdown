@@ -2,7 +2,7 @@
 tags:
 - CrunchBang
 - Linux
-- Eee PC 901
+- Eee-PC-901
 - OS
 date: 2009-09-19T00:00:00Z
 description: "I was looking for more speed out of the Eee PC 901; #! CrunchBang Linux came to the rescue."

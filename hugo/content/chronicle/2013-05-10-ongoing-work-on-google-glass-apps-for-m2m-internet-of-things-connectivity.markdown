@@ -1,6 +1,6 @@
 ---
 tags:
-- Google Glass
+- Google-Glass
 date: 2013-05-10T12:27:25Z
 description: "It's hard to contain my excitement about Glass. Not wasting time, I started working on apps before I even have my pair."
 title: "Ongoing work on Google Glass apps for M2M / Internet of Things connectivity"

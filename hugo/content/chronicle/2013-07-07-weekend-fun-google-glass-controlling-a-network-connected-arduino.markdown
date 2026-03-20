@@ -3,7 +3,7 @@ tags:
 - arduino
 - mqtt
 - mosquitto
-- Google Glass
+- Google-Glass
 date: 2013-07-07T00:00:00Z
 description: "I had a spare hour, so why not get Google Glass controlling my network connected Arduino? Let's do it!"
 title: "Weekend fun: Google Glass controlling a network connected Arduino"

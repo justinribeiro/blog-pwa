@@ -2,7 +2,7 @@
 
 tags:
 - photography
-- film cameras
+- cameras
 - social
 date: 2008-07-22T00:00:00Z
 description: The often forgotten film camera at many a garage and estate sale can be a
