@@ -70,6 +70,7 @@
   --motion-type: none;
 
   --blog-page-spacer-x: 3;
+  --two-col-width: 12rem;
 }
 
 @media (min-width: 769px) {
@@ -98,5 +99,6 @@
 
     --font-h1: 1.75rem;
     --font-base: 1.125rem;
+    --two-col-width: 9rem;
   }
 }

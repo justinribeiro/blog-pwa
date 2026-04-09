@@ -47,25 +47,24 @@ class BlogPage extends BlogElement {
           ${this.articleBody}
           ${this.metadata.posts
             ? html`
-                <div id="posts">
+                <ul id="posts">
                   ${this.metadata.posts.map(
                     post => html`
-                      <a href="${post.permalink}">
-                        <h3>${post.title}</h3>
-                        <h4>${post.description}</h4>
-                        <p>
-                          <time
-                            .datetime="${post.dataModified}"
-                            aria-label="Posted ${post.date}"
-                          >
-                            🗒️ ${post.date}
-                          </time>
-                          • ${post.readingtime} min read
-                        </p>
-                      </a>
+                      <li itemscope itemtype="https://schema.org/Article">
+                        <time
+                          itemprop="datePublished"
+                          .datetime="${post.dataModified}"
+                          aria-label="Posted ${post.date}"
+                        >
+                          ${post.date}
+                        </time>
+                        <a href="${post.permalink}" itemprop="name"
+                          >${post.title}</a
+                        >
+                      </li>
                     `,
                   )}
-                </div>
+                </ul>
               `
             : html``}
         </section>

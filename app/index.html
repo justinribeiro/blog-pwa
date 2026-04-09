@@ -40,12 +40,11 @@
     <link rel="webmention" href="https://webmention.io/justinribeiro.com/webmention" />
     <link rel="pingback" href="https://webmention.io/justinribeiro.com/xmlrpc" />
 
-    <link href="/data/chronicle/index.xml" rel="feed" type="application/rss+xml" title="RSS - All Posts and Articles" />
-    <link href="/data/tags/web/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Web Dev, Web Perf, and Web Platform Articles" />
-    <link href="/data/tags/iot/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Internet of Things (IoT) Articles" />
-    <link href="/data/tags/photography/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Photography Articles and Prints" />
-    <link href="/data/tags/business/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Management and Business Articles" />
-    <link href="/data/tags/personal/index.xml" rel="alternate" type="application/rss+xml" title="RSS (Alternative) - Personal Articles" />
+    <link href="/data/chronicle/index.xml" rel="feed" type="application/rss+xml" title="RSS - All Posts" />
+    <link href="/data/tags/maker/index.xml" rel="feed" type="application/rss+xml" title="RSS - Maker Posts" />
+    <link href="/data/tags/research/index.xml" rel="feed" type="application/rss+xml" title="RSS - Research Posts" />
+    <link href="/data/tags/photography/index.xml" rel="feed" type="application/rss+xml" title="RSS - Photography and Cameras Posts" />
+    <link href="/data/tags/oss/index.xml" rel="feed" type="application/rss+xml" title="RSS - Software Development Posts" />
   </head>
   <body>
     <header id="pageHeader">
@@ -85,18 +84,14 @@
           </header>
           <section itemprop="articleBody" class="{{ pagetype  }}">{{ article | safe }}</section>
             {% if posts %}
-            <section id="posts">
+             <ul id="posts">
               {% for post in posts %}
-                <a href="{{ post.permalink }}">
-                  <h3>{{ post.title }}</h3>
-                  <h4>{{ post.description }}</h4>
-                  <p>
-                    <time aria-label="Posted {{ post.date }}">🗒️ {{ post.date }}</time>
-                    • {{ post.readingtime }} min read
-                  </p>
-                </a>
+               <li itemscope itemtype="https://schema.org/Article">
+                <time itemprop="datePublished" aria-label="Posted {{ post.date }}">{{ post.date }}</time>
+                <a href="{{ post.permalink }}" itemprop="name">{{ post.title }}</a>
+              </li>
               {% endfor %}
-            </section>
+              </ul>
             {% endif %}
           {% endif %}
 
