@@ -1,3 +1,5 @@
+# NOTE: Moved Repo to https://codeberg.org/justinribeiro/blog-pwa
+
 # blog-pwa
 > A Progressive Web App with Static Rendering and what not; supports Justin's opinionated view that we should build our own sites however the hell we want
 
