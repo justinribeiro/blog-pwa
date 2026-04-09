@@ -2,7 +2,6 @@
 tags:
 - Uncategorized
 date: 2004-03-15T06:20:47Z
-
 title: New News Format
 url: /chronicle/2004/03/15/new-news-format/
 wordpress_id: 386

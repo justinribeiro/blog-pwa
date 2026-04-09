@@ -1,11 +1,9 @@
 ---
 tags:
 - update
-date: 2007-10-31T00:00:00Z
-published: true
+date: 2007-10-31T00:00:00-07:00
+
 status: publish
-tags:
-- quick update
 title: Happy Halloween!
 url: /chronicle/2007/10/31/happy-halloween/
 ---

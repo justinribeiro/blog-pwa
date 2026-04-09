@@ -1,7 +1,7 @@
 ---
-date: 2007-11-02T20:51:20Z
+date: 2007-11-02T20:51:20-07:00
 description: The big move to Google Apps has occurred...and it rocks.
-published: true
+
 status: publish
 tags:
 - web

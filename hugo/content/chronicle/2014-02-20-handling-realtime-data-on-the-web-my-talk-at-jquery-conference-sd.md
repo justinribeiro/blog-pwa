@@ -5,7 +5,6 @@ tags:
 - jQuery
 - talk
 date: 2014-02-20T00:00:00Z
-tags: []
 title: 'Handling real-time data on the web: my talk at jQuery Conference'
 url: /chronicle/2014/02/20/handling-realtime-data-on-the-web-my-talk-at-jquery-conference-sd/
 ---

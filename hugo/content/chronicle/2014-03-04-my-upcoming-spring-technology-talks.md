@@ -5,7 +5,7 @@ tags:
 - web
  - ossgl
 date: 2014-03-04T00:00:00Z
-tags: []
+
 title: My upcoming spring technology talks
 url: /chronicle/2014/03/04/my-upcoming-spring-technology-talks/
 ---

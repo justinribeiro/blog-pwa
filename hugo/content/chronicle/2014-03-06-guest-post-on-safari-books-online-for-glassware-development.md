@@ -3,7 +3,7 @@ tags:
 - google-glass
 - writer
 date: 2014-03-06T00:00:00Z
-tags: []
+
 title: Guest post on Safari Books Online for Glassware development
 url: /chronicle/2014/03/06/guest-post-on-safari-books-online-for-glassware-development/
 ---

@@ -1,10 +1,7 @@
 ---
-
-tags:
-- Uncategorized
-date: 2007-09-13T20:55:30Z
+date: 2007-09-13T20:55:30-07:00
 description: My experience with Mini 4 Beta 2 on the Palm Treo.
-published: true
+
 status: publish
 tags:
 - Palm Treo

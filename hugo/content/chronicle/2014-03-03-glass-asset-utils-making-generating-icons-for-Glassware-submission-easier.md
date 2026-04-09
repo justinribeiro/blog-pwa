@@ -3,7 +3,7 @@ tags:
 - Glass
 - tool
 date: 2014-03-03T00:00:00Z
-tags: []
+
 title: 'glass-asset-utils: making generating icons for Glassware submission easier'
 url: /chronicle/2014/03/03/glass-asset-utils-making-generating-icons-for-Glassware-submission-easier/
 ---

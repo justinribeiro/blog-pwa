@@ -3,7 +3,7 @@ tags:
 - nfc
 - talk
 date: 2014-03-20T00:00:00Z
-tags: []
+
 title: My slides from NFC Forum Developer Spotlight talk
 url: /chronicle/2014/03/20/my-slides-from-nfc-forum-developer-spotlight-talk/
 ---

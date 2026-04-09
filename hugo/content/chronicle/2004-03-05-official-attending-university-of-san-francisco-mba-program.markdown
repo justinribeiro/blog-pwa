@@ -2,7 +2,6 @@
 tags:
 - Uncategorized
 date: 2004-03-05T08:16:22Z
-tags: []
 title: 'Official: Attending University of San Francisco MBA Program'
 url: /chronicle/2004/03/05/official-attending-university-of-san-francisco-mba-program/
 ---

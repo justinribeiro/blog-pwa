@@ -7,7 +7,6 @@ tags:
 date: 2009-10-15T00:00:00Z
 description: The SMC8014 doesn't have a bridge mode and you want to use m0n0wall...this
   is how.
-tags: []
 title: Setting up a static IP with bridge mode for SMC 8014 and m0n0wall
 url: /chronicle/2009/10/15/setting-up-a-static-ip-with-bridge-mode-for-smc-8014-and-m0n0wall/
 ---

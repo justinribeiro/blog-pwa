@@ -1,6 +1,5 @@
 ---
 title: "The Ridiculous Epoxy Resin Coating of McDonalds Chicken McNuggets"
-date: 2021-01-21T14:21:08-08:00
 description: "The pandemic has somehow made my kids long for McDonald's Chicken McNuggets. I did the only reasonable thing: I used epoxy resin to preserve a set just for them."
 date: 2021-01-21T17:00:00-07:00
 featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="associatedMedia" itemtype="http://schema.org/ImageObject">

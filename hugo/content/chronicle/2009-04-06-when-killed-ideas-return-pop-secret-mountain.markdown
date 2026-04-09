@@ -2,13 +2,9 @@
 tags:
 - business
 - creativity
-date: 2009-04-06T00:00:00Z
-published: true
+date: 2009-04-06T00:00:00-07:00
+
 status: publish
-tags:
-- pop secert mountain
-- advertising
-- your media coverage
 title: 'When killed ideas return: Pop Secret Mountain'
 url: /chronicle/2009/04/06/when-killed-ideas-return-pop-secret-mountain/
 ---

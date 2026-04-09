@@ -3,7 +3,7 @@ tags:
 - sql
 - wordpress
 date: 2014-03-04T00:00:00Z
-tags: []
+
 title: Creating 301 redirects for Wordpress via SQL
 url: /chronicle/2014/03/04/creating-301-redirects-for-wordpress-via-sql/
 ---

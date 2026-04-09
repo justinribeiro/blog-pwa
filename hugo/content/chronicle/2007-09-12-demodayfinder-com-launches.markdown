@@ -1,11 +1,11 @@
 ---
-date: 2007-09-12T20:58:01Z
+date: 2007-09-12T20:58:01-07:00
 description: DemoDayFinder.com launches, offering a new way to find Golf demo days.
-published: true
+
 status: publish
 tags:
 - web
- - oss-apps
+- oss-apps
 - demodayfinder
 title: DemoDayFinder.com launches
 url: /chronicle/2007/09/12/demodayfinder-com-launches/
