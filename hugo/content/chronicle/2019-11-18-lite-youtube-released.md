@@ -3,7 +3,8 @@ title: "Faster YouTube embeds with lite-youtube web component"
 description: "Riffing off of Paul's original concept that built on AMP's concept, I've released vanilla shadow dom web component version of lite-youtube to npm for easy use."
 date: 2019-11-18T14:47:41-08:00
 tags:
-- Web
+- web
+ - oss
 ---
 
 I was puttering around Github at the end of last week and I stumbled upon Paul Irish's [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed). I heart the things that Paul comes up with and in the run around with Chrome Dev Summit and what not last week, I had likely missed it (and as of this writing, it's come a long way since I saw it on Friday in a single html file).

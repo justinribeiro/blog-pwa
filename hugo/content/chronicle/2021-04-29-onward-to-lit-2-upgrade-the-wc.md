@@ -6,6 +6,7 @@ featureimage: ''
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/"
 tags:
  - web
+ - oss
 ---
 
 With the nearly complete [Lit](https://lit.dev/) 2.0 release on the horizon, I've gone forth and bumped to the latest release candidate for a number of components I maintain:

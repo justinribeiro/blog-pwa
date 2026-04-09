@@ -4,7 +4,8 @@ title: "Running lighthouse audits in VS Code via tasks"
 description: "Sometimes you want to write some code and perf test it without leaving your code editor."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20180626-vscode-lighthouse-twitter-1024x535.jpg"
 tags:
-- Web
+- web
+ - oss
 ---
 
 As fairly heavy user of

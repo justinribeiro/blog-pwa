@@ -25,9 +25,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
  </figure>'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20260128-panavise-model-201-vise-on-custom-base-800.jpg"
 tags:
- - tools
+ - tool
  - maker
- - vise
  - restore
 ---
 

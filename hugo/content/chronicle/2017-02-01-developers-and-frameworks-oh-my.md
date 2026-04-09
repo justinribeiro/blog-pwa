@@ -3,7 +3,8 @@ date: 2017-02-01T14:03:11-08:00
 title: "Your framework preaching offends my developer religion"
 description: "I get it. You want me to use your fancy framework. Stop screaming at me."
 tags:
-- Web
+- web
+ - oss
 - IoT
 ---
 

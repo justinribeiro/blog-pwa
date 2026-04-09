@@ -26,6 +26,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210208-smart-watch-kinda-close-800.jpg"
 tags:
  - web
+ - oss
  - business
  - iot
  - personal

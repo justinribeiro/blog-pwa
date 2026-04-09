@@ -4,7 +4,8 @@ description: Picture tag on the horizen and responsive images the Google Cloud S
 title: Serving Responsive Images via Google Cloud Storage and Images Python API
 url: /chronicle/2014/06/03/responsive-images-with-app-engine-image-api-gcs-gsutil/
 tags:
-- Web
+- web
+ - oss
 ---
 
 Ah responsive images. Love'em, but hate the flame war.

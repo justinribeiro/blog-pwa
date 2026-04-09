@@ -26,6 +26,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20211117-zotero-gscc-goodness-800.png"
 tags:
  - web
+ - oss
  - personal
  - doctorate
 ---

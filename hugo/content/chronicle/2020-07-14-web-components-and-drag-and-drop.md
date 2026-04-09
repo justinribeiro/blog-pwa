@@ -26,7 +26,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 '
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200714-web-comp-drag-800.png"
 tags:
-  - Web
+ - web
+ - oss
 ---
 
 The HTML5 Drag and Drop API is one of those APIs on the web platform that I find people either despise or begrudgingly tolerate. It's not that said API is particularly tricky to use or implement, but it's non-existence on mobile without polyfills or shims is painful to get correct without a lot of code, or if you've tried to use them with shadowRoots and web components, the situation can be doubling confusing.

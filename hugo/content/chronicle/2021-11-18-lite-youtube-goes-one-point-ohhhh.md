@@ -27,7 +27,9 @@ socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20211118-lite-
 
 tags:
  - web
- - webcomponent
+ - oss
+ - web
+ - osscomponent
  - release
 ---
 A couple of months ago, I received a couple of cryptic emails that I should check the usage of [lite-youtube](https://github.com/justinribeiro/lite-youtube), the tiny fast web component that powers YouTube video embeds on this site and—before the emails—I presumed a few other sites. I generally don't take random emails at their word but curiosity is a hell of a thing, so I resolved to look at a few more public areas to eyeball some numbers.

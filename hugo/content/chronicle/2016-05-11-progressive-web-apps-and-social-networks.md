@@ -4,7 +4,8 @@ description: Your PWAs share links do not look so hot on the socials. What if we
   those bots something better?
 title: 'Progressive Web Apps and Social Networks: helping linkbot scrapers'
 tags:
-- Web
+- web
+ - oss
 ---
 
 One of the benefits of a progressive web app is that we don’t break the paradigm of history or the expectation of our users. Links exist right in the top bar as they always have, easy to copy, paste, and place any where you may so please.

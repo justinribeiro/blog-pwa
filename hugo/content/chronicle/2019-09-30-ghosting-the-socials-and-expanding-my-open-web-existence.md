@@ -3,7 +3,8 @@ title: "Ghosting the Socials and Expanding My Open Web Existence"
 description: "When the social networks became a burden, I decided it was time to pull stakes and set off on a new content journey on the open web."
 date: 2019-09-30T08:16:40-07:00
 tags:
-- Web
+- web
+ - oss
 - Personal
 ---
 

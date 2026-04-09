@@ -4,7 +4,8 @@ title: "Added svg support to lit-html VS code extension"
 description: "Helping make Visual Studio code extensions better upstream."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20180608-pr-vscode-lithtml-twitter-1024x535.jpg"
 tags:
-- Web
+- web
+ - oss
 ---
 
 I found myself wanting to do some of the cooler

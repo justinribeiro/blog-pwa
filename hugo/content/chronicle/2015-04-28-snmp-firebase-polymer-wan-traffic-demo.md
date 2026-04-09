@@ -4,7 +4,8 @@ description: Everyone needs realtime uplink traffic stats right?
 title: Tracking uplink network throughput with SNMP to Firebase to Polymer
 url: /chronicle/2015/04/28/snmp-firebase-polymer-wan-traffic-demo/
 tags:
-- Web
+- web
+ - oss
 - IoT
 ---
 

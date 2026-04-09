@@ -3,7 +3,8 @@ date: 2017-01-21T19:01:32-08:00
 title: "Endangered desert tortoises and IoT Devfest Arizona"
 description: "Tracking all the tortosies to protect them from, well, you."
 tags:
-- Web
+- web
+ - oss
 - IoT
 ---
 

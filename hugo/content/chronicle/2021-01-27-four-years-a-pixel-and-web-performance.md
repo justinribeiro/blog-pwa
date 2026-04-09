@@ -26,8 +26,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 '
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200715-desk-phone-printed-finished-800.jpg"
 tags:
-  - Web
-  - web-perf
+ - web
+ - oss
 ---
 
 1560 days. That’s how long I’ve been using the original Google Pixel. Four years, three months, 8 days. Not as a sometimes test device, not as a joke to tell at parties. No, this phone is my everyday carry. And yes, I really did [make that phone stand](/chronicle/2020/07/15/designing-and-3d-printing-a-classic-we-model-500-inspired-phone-stand/).

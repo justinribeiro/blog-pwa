@@ -6,6 +6,7 @@ featureimage: ''
 socialimage: "{{ $.Site.Params.imageCDN }}"
 tags:
  - web
+ - oss
  - business
  - maker
  - photography

@@ -1,7 +1,8 @@
 ---
 tags:
 - jQuery
-- webdev
+- web
+ - ossdev
 date: 2009-09-16T00:00:00Z
 description: "You hate breaking out the photo editor for a nice rounded corner photo. Use the jQuery Corner plugin instead."
 title: Simple round image corners with the jQuery Corner plugin

@@ -4,7 +4,8 @@ description: "With module based web workers not available in all browsers, that 
 date: 2020-07-17T10:30:01-08:00
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200717-devtools-worker-blob-800.png"
 tags:
-  - Web
+ - web
+ - oss
 ---
 
 [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) are an amazing piece of the web platform that more and more folks are (finally) starting to come around on. For those unfamiliar with web workers, they're a great way to free up your main thread for users to keep interacting while you handle more intensive work on another thread.

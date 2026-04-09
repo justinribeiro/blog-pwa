@@ -1,6 +1,7 @@
 ---
 tags:
-- webgl
+- web
+ - ossgl
 - three.js
 - vtk
 - mesa3d

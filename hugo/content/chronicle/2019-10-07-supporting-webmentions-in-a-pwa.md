@@ -3,7 +3,8 @@ title: "Adding Webmention support to a Progressive Web App"
 description: "On my quest to do more things IndieWeb, I set forth to add webmention support to blog-pwa and get a feel for webmentions work in practice."
 date: 2019-10-07T14:18:51-07:00
 tags:
-- Web
+- web
+ - oss
 ---
 
 On my ongoing quest to independence from third party content silos, one of things that was inherently missing was engagement. Surely I would want some way to interact beyond [@justin@ribeiro.social](https://ribeiro.social/@justin); people should be able to write replies and what not on their own blogs, and I should be able to surface that on the site. Enter Webmention.

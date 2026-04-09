@@ -3,7 +3,8 @@ date: 2016-03-12T00:00:00Z
 description: Because you know you just want to know when I am talking all the time.
 title: "New Progressive Web App: Is Justin Talking?"
 tags:
-- Web
+- web
+ - oss
 ---
 I've been really bad lately about updating my talk list. It's one of thise things that boils down to a matter of time; I spend most of it actually coming up with the talks and less so advertising after the fact.
 

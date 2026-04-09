@@ -4,7 +4,8 @@ title: "stl-part-viewer web component released"
 description: "A Polymer 3/LitElement web component that uses Three.js to display an STL model file."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20180624-stl-part-viewer-twitter-1024x535.jpg"
 tags:
-- Web
+- web
+ - oss
 ---
 
 I find myself working with STL files on a fairly regular basis. It's a fairly

@@ -3,7 +3,8 @@ title: "Web Components Have Already Won Whether You Like It Or Not"
 description: "You can argue about it on Twitter all you want, but the reality is that Web Components have been winning outside the echo chamber for a long while."
 date: 2019-10-14T08:15:43-07:00
 tags:
-- Web
+- web
+ - oss
 ---
 
 With the announcement a last week that VMWare is taking their popular enterprise [Clarity design framework from Angular to web components](https://medium.com/claritydesignsystem/claritys-future-user-focused-framework-independent-accessible-enterprise-ready-and-open-61a3f62eac93), a few emails have trickled into my inbox asking for my opinion on certain anti-web components threads on Twitter (which I refuse to link to because it's all blah). My opinion is not a popular one, but here it goes.

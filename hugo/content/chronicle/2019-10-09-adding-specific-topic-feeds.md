@@ -3,7 +3,8 @@ title: "Improving RSS Reader Support and Adding New Topic Feeds"
 description: "October has arrived, which means RSS has risen from the grave and seeks feeeeeds. With new topic specific feeds and better code rendering support for RSS readers, you can now enjoy my articles in even more ways!"
 date: 2019-10-09T16:10:50-07:00
 tags:
-- Web
+- web
+ - oss
 ---
 
 With my recent foray into more widespread writing topics, I decided it was time to revisit the concept of topic specific RSS feeds and tag pages. Yeah, you're not going to get the nitty gritty of some of my more personal posts, but hey, at least maybe you'll keep on reading the content you find is relevant for you.

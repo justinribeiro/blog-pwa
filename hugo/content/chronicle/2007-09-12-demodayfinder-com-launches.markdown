@@ -4,7 +4,8 @@ description: DemoDayFinder.com launches, offering a new way to find Golf demo da
 published: true
 status: publish
 tags:
-- web-apps
+- web
+ - oss-apps
 - demodayfinder
 title: DemoDayFinder.com launches
 url: /chronicle/2007/09/12/demodayfinder-com-launches/

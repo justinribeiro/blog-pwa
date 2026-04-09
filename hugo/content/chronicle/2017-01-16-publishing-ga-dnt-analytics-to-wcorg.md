@@ -4,7 +4,8 @@ title: "Published ga-dnt-analytics to webcomponents.org"
 description: "Need a Google Analytics custom element with Do Not Track and debug support? This is the one for you."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20170116-gadntanalytics-twitter-1024x535.jpg"
 tags:
-- Web
+- web
+ - oss
 ---
 
 If you happen to have read my [last piece](/chronicle/2017/01/13/experimenting-with-a-progressive-web-app-blog/) on building the progressive nature of this blog, you'll note I made mention of `blog-analytics`. This was something I made specifically to handle a few cases around the routing of the site (listening to things from `app-route`).

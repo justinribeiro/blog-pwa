@@ -24,7 +24,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 </figure>'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191106-github-action-scores-800.png"
 tags:
-- Web
+- web
+ - oss
 ---
 
 While the budget.json support in my [Web Performance Audits with Lighthouse Github Action](https://github.com/marketplace/actions/web-performance-audits-with-lighthouse) was a good start point for many folks already using budgets, there was just something missing from it. How can I check and fail a pull request based on a specific audit or an overall category score?

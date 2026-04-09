@@ -72,7 +72,8 @@ pagespeed:
   - CombineCss
   - MinifyCss
   - PrioritizeCriticalCss
-  - WebpOptimization
+  - web
+ - osspOptimization
   - add_instrumentation
   - InsertDnsPrefetch
   - ProxyImages

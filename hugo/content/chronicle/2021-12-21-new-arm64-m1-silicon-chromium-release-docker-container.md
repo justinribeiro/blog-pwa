@@ -5,6 +5,7 @@ date: 2021-12-21T10:47:09-08:00
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20211221-chromium-tag-800.png"
 tags:
  - web
+ - oss
  - docker
  - chrome
  - chromium

@@ -3,8 +3,8 @@ title: "Replacing Firebase Web Performance Monitoring with Core Web Vitals and G
 description: "What's old is new again: pushing my web performance data into Google Analytics and reporting those numbers just got a lot more accessible with updated tools from the Google Chrome team."
 date: 2021-01-29T6:51:29-08:00
 tags:
-  - Web
-  - web-perf
+ - web
+ - oss
 ---
 
 I've not been happy with web performance in general lately, if the [post earlier this week](/chronicle/2021/01/27/the-pains-of-surfing-the-web-on-a-four-year-old-google-pixel/) was any indicator. I've also not been terribly happy with the offerings available in the past in terms of tracking said performance, particularly [Firebase's Performance Monitoring](/chronicle/2019/10/28/six-months-using-firebase-web-performance-monitoring/) (which has not improved at all since I wrote about it).

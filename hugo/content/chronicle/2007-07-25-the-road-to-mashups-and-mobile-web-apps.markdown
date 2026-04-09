@@ -1,7 +1,8 @@
 ---
 tags:
 - iPhone
-- Web-Apps
+- web
+ - oss-Apps
 - browsers
 date: 2007-07-25T00:00:00Z
 

@@ -4,7 +4,8 @@ description: "Trying to determine exactly how progressive you PWA needs to be ca
 date: 2019-10-08T09:46:13-07:00
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191008-progressive-web-for-the-win-lynx-edition.png"
 tags:
-- Web
+- web
+ - oss
 ---
 
 I mentioned [yesterday](https://justinribeiro.com/chronicle/2019/10/07/adding-webmention-support-to-a-progressive-web-app/) that [blog-pwa](https://github.com/justinribeiro/blog-pwa) uses a static rendering layer for cases when the browser or whatever is fetching the page doesn't support JavaScript. This was a slight simplification on my part. blog-pwa defines four primary cases:

@@ -4,8 +4,8 @@ description: "Having a share button on your website for Mastodon is hard given i
 date: 2020-07-23T12:37:48-07:00
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200723-fancy-button-800.png"
 tags:
-  - Web
-  - wc
+ - web
+ - oss
 ---
 
 Ever since I [ghosted the larger swarm of socials](/chronicle/2019/09/30/ghosting-the-socials-and-expanding-my-open-web-existence/), Mastodon has become my go to collect off the cuff thoughts and share things. [I setup my own instance](/chronicle/2019/09/27/setting-up-mastodon-on-google-cloud-platform/) which I found to be a rewarding experience, and I've just been rambling about to no particular end.

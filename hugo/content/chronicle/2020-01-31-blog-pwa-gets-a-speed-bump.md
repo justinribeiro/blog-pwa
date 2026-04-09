@@ -25,7 +25,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 </figure>'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20200131-webpagetest-800.png"
 tags:
-- Web
+- web
+ - oss
 ---
 
 A number of changes I made late last year in my [blog-pwa project](https://github.com/justinribeiro/blog-pwa) were meant to sort of smooth the rough edges. Better fonts. Cleaner and better labeled photography. While those updates look slick, as with pretty things, they come at a web performance cost when you're not exactly paying attention.

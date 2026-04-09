@@ -4,7 +4,8 @@ description: "Developing a connected Google Glass web tag has never been easier 
 title: glass-timer implementation in polymer
 url: /chronicle/2014/10/23/polymer-glass-timer-tag/
 tags:
-- Web
+- web
+ - oss
 - IoT
 ---
 

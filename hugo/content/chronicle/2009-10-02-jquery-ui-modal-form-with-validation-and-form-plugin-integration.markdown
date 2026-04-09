@@ -1,7 +1,8 @@
 ---
 tags:
 - learning
-- Web-Apps
+- web
+ - oss-Apps
 - jQuery
 date: 2009-10-02T00:00:00Z
 description: "An example of what can be accomplished with jQuery UI and the Validation and Form plugins."

@@ -27,7 +27,6 @@ socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20260223-resto
 tags:
  - maker
  - build
- - vise
  - restore
 ---
 

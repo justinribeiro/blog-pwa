@@ -4,7 +4,8 @@ date: 2019-04-16T21:47:30-07:00
 description: "Based on Prism.js and LitElement, code-block makes dropping code in simple."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190416-code-block-custom.jpg"
 tags:
-- Web
+- web
+ - oss
 ---
 
 Over the last couple of months I've gotten a few emails asking how exactly I make my code samples on this blog work. In the past that would have been a harder question to answer (my original web component for this was less than ideal) but with my recent spring updates, I thought it would be nice to break out that very feature.

@@ -24,7 +24,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 </figcaption>
 </figure>'
 tags:
-- Web
+- web
+ - oss
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191102-github-action-lh-800.png"
 ---
 

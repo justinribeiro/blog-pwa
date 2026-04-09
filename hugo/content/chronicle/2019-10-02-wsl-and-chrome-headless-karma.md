@@ -3,7 +3,8 @@ title: "Workaround for Karma and Chrome headless on Windows Subsystem for Linux,
 description: "A quick workaround for running tests when Chrome do not want to play nice inside WSL."
 date: 2019-10-02T15:26:00-07:00
 tags:
-- Web
+- web
+ - oss
 ---
 
 Windows Subsystem for Linux (WSL) is a vastly useful thing. When I do work on Windows for those certain projects, WSL has made my life significantly easier.

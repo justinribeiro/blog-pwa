@@ -4,7 +4,8 @@ description: "Web performance testing has become a must have for most developers
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190412-lighthouse-jest-testing-cli.jpg"
 date: 2019-04-12T11:22:35-07:00
 tags:
-- Web
+- web
+ - oss
 ---
 
 Over the last several months, I've had a number of opportunities to help improve web performance testing for some companies. A lot of that work has been to integrate [lighthouse](https://github.com/GoogleChrome/lighthouse) with [jest](https://jestjs.io/), which I find has grown in popularity as folks move to more modern tools in their respective teams.

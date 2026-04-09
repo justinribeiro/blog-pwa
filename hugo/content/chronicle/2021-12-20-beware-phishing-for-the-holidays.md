@@ -5,6 +5,7 @@ date: 2021-12-20T09:56:57-08:00
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20211220-fa-la-la-phishing-800.png"
 tags:
  - web
+ - oss
  - business
  - scams
  - phishing

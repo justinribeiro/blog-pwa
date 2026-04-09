@@ -4,7 +4,8 @@ description: A rundown of working with NFC on a few platforms for the NFC Forum
 title: Guest post on Tap into NFC developer blog
 url: /chronicle/2015/03/16/guest-post-tap-into-nfc/
 tags:
-- Web
+- web
+ - oss
 - Business
 - IoT
 ---

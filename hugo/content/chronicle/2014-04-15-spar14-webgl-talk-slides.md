@@ -1,6 +1,7 @@
 ---
 tags:
-- webgl
+- web
+ - ossgl
 - talk
 date: 2014-04-15T00:00:00Z
 title: My slides from SPAR International WebGL talk

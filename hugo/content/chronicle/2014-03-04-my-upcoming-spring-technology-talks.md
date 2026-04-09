@@ -2,7 +2,8 @@
 tags:
 - talk
 - nfc
-- webgl
+- web
+ - ossgl
 date: 2014-03-04T00:00:00Z
 tags: []
 title: My upcoming spring technology talks

@@ -24,7 +24,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 </figure>'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20191016-devtools-to-video-800.png"
 tags:
-- Web
+- web
+ - oss
 ---
 
 When it comes to diagnosing web performance problems, you do a lot of living in DevTools. Between the Performance Tab and the all powerful chrome://tracing, these are the sorts of things I work with on a daily basis.

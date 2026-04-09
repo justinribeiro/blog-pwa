@@ -4,7 +4,8 @@ description: "Sample code and write up for Google Glass glassware task queue and
 title: "New sample Glassware: Using a Task Queue to send future cards"
 url: /chronicle/2014/06/01/glassware-future-card--task-sample-app/
 tags:
-- Web
+- web
+ - oss
 - IoT
 ---
 

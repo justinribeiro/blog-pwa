@@ -4,7 +4,8 @@ description: A list of resources from my talks at GDG DevFest Fresno.
 title: Slides and materials for GDG DevFest Fresno
 url: /chronicle/2014/10/17/slides-materials-gdg-devfest-fresno-2014/
 tags:
-- Web
+- web
+ - oss
 - IoT
 ---
 

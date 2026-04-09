@@ -4,7 +4,8 @@ title: "Tiny PWAs and why I keep building them"
 description: "The search for useful tiny apps is hard, but progressive web apps and the growing api surface on the web platform are starting to fill the gap."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190131-car-dashboard-pwa.jpg"
 tags:
-- Web
+- web
+ - oss
 ---
 
 I did not set out to build tiny progressive web apps. Well, that’s not true; I set out to build PWAs that solve particular problems in my life, which ended up being tiny. Then it just became fun.

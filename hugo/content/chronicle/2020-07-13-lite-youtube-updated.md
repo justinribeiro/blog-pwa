@@ -3,7 +3,8 @@ title: "lite-youtube v0.9 released"
 description: "A new feature, a bug fix, and many thanks to all the contributors!"
 date: 2020-07-13T12:41:12-08:00
 tags:
-  - Web
+ - web
+ - oss
 ---
 
 My encapsulated and responsive [@justinribeiro/lite-youtube](https://www.npmjs.com/package/@justinribeiro/lite-youtube) web component has been recently updated to version 0.9.0. New Things:

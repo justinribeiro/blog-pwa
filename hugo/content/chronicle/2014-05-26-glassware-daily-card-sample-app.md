@@ -4,7 +4,8 @@ description: Sample code and write up on Google Glass glassware that sends daily
 title: 'New sample Glassware: Daily Glass Card with App Engine Cron'
 url: /chronicle/2014/05/26/glassware-daily-card-sample-app/
 tags:
-- Web
+- web
+ - oss
 - IoT
 ---
 

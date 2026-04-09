@@ -4,7 +4,9 @@ description: "The growing popularity of Mastodon and the rising amount of questi
 date: 2022-12-30T12:11:48-08:00
 tags:
  - web
- - web-component
+ - oss
+ - web
+ - oss-component
 ---
 
 If you would have told me that Mastodon would become popular, or at least more used, I would have probably shrugged. As a matter of fact I did shrug, many times over the years, and I just went about my business.

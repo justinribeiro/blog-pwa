@@ -3,7 +3,8 @@ date: 2016-02-02T00:00:00Z
 description: You know I am all over the place, how about more talks?
 title: More talking all over the place
 tags:
-- Web
+- web
+ - oss
 - Business
 - IoT
 ---

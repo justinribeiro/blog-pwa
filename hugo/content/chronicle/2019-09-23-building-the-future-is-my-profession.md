@@ -5,7 +5,8 @@ date: 2019-09-23T16:52:49-07:00
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20190923-homewardbound-800.jpg"
 tags:
 - Personal
-- Web
+- web
+ - oss
 - Business
 ---
 

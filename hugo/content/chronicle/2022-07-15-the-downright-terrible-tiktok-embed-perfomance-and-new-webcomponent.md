@@ -6,8 +6,11 @@ featureimage: ''
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20220715-tiktok-embed-img-devtools-1600.png"
 tags:
  - web
- - web-performance
- - web-component
+ - oss
+ - web
+ - oss-performance
+ - web
+ - oss-component
  - tiktok
 ---
 

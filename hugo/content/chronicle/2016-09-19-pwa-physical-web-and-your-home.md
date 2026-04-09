@@ -4,7 +4,8 @@ description: Imagine a world where I can plug things in, have them alert me they
 title: Controlling home devices with the Physical Web and Progressive Web Apps
 url: /chronicle/2016/09/19/pwa-physical-web-and-your-home/
 tags:
-- Web
+- web
+ - oss
 ---
 
 The Internet of Things is a mess. Yep, I said it. I know you've thought it but maybe not said it. Devices for all their usefulness can be utterly frustating when you have to go through the find-me-use-me dance:

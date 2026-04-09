@@ -6,6 +6,7 @@ tags:
  - phd-journey
  - research
  - thoughts
+ - oss
 ---
 
 > An ongoing publishing of the papers, memo's, and explorations I wrote in various Doctoral and PhD Seminars between 2021 and 2024. This memo dates from December 2023.

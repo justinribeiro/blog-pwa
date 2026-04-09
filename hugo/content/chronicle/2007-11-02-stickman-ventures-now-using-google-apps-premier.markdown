@@ -4,7 +4,8 @@ description: The big move to Google Apps has occurred...and it rocks.
 published: true
 status: publish
 tags:
-- web-apps
+- web
+ - oss-apps
 - Google-Apps
 - Stickman-Ventures
 title: Stickman Ventures now using Google Apps Premier

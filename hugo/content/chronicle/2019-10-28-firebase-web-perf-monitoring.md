@@ -25,7 +25,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 </figcaption>
 </figure>'
 tags:
-- Web
+- web
+ - oss
 ---
 
 When [Firebase announced earlier this year](https://firebase.googleblog.com/2019/05/whats-new-Google-IO-2019.html) that they were bringing real user monitoring of web performance into their stack of tools, I was ecstatic. Another tool to track what real users in the wild are experiencing with an easy setup? Yes, please.

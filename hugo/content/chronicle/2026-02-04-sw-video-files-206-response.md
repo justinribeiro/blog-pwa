@@ -3,9 +3,8 @@ title: "Service Worker, Video Files, and the 206 Partial Response"
 description: "I made a mistake, but workbox and it's range request plugin to the rescue."
 date: 2026-02-04T15:00:00-07:00
 tags:
- - oss
- - serverworker
  - web
+ - oss
 ---
 
 In my [last post](/chronicle/2026/02/03/how-i-insert-my-em-dash-and-other-special-characters-with-rofi-and-i3-hotkey/) I used an autostart silent looping video file to simulate a GIF—the file size saving and the overall processing power are diminished on the viewers device. I've used this effect in previous posts over the years and it's a nice replacement, though not very meme-ready in the classic GIF sense.

@@ -3,7 +3,8 @@ date: 2015-10-16T00:00:00Z
 description: Silence is not inactivity, as seen by upcoming talk schedule.
 title: A whirlwind of talks and events
 tags:
-- Web
+- web
+ - oss
 - Business
 - IoT
 ---

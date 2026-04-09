@@ -4,7 +4,8 @@ description: I spoke at Google I/O and lived to tell the tale.
 title: My talk at Google I/O on Polymer and Firebase
 url: /chronicle/2015/06/06/speaking-at-google-io/
 tags:
-- Web
+- web
+ - oss
 - Business
 - IoT
 ---

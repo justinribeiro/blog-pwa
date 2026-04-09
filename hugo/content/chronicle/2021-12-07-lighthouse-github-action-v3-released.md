@@ -27,9 +27,12 @@ socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20211207-lha-v
 
 tags:
  - web
+ - oss
  - perfmatters
- - web-performance
- - web-tools
+ - web
+ - oss-performance
+ - web
+ - oss-tools
 ---
 
 With the release of [lighthouse v9](https://github.com/GoogleChrome/lighthouse/releases/tag/v9.0.0) comes with a pretty wide array of changes to the reporting end as well as the addition of [user flows](https://web.dev/lighthouse-user-flows/) which I think everyone has been doing in some shape or form—I know I have. This makes life easier for more developers to get actionable information which is a nice touch.

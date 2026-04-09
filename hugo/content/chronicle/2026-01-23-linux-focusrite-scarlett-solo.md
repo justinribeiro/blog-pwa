@@ -7,6 +7,7 @@ tags:
  - linux
  - audio
  - hearts
+ - oss
 ---
 
 I do not swap out audio configurations lightly. This is in part because I do not feel the need to chase trends or fancy hardware; I enjoy my boring stability, my dull toolset, my dated equipment. There is a warm contentment that washes over me when I lay down just the right track, my baritone voice tapping the -12 dB line light as a feather on hardware that you wouldn't pull out of trash bin.

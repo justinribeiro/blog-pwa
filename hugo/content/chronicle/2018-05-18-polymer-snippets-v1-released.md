@@ -4,7 +4,8 @@ title: "Polymer v2/v3 Snippets 1.0 released"
 description: "My mildly-popular Polymer snippets extension for Visual Studio Code graduates to version 1.0 with support for lit-html and Polymer 3 snippets."
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20180518-polymer-vscode-ext-twitter-1024x535.jpg"
 tags:
-- Web
+- web
+ - oss
 ---
 
 Off the heals of the [Polymer 3 release](https://www.polymer-project.org/blog/2018-05-09-polymer-at-io-2018.html) a week or so ago at Google I/O, I've updated my [Polymer v2/v3 Snippets for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=justinribeiro.Polymer2Snippets) extension to version 1.0.

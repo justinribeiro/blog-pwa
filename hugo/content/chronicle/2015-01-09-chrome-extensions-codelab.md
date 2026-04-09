@@ -4,7 +4,8 @@ description: A beginning codelab for building Chrome extensions.
 title: A basic issue viewer Chrome extension codelab
 url: /chronicle/2015/01/09/chrome-extensions-codelab/
 tags:
-- Web
+- web
+ - oss
 ---
 
 Building Chrome Extensions is not as difficult as most people presume and can be quite useful when you need to extend Chrome to do just a little bit more than.

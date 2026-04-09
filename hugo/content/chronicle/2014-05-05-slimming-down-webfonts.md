@@ -1,6 +1,7 @@
 ---
 tags:
-- web-fonts
+- web
+ - oss-fonts
 - loaders
 date: 2014-05-05T00:00:00Z
 title: Slimming down web font deliverables

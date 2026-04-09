@@ -25,7 +25,7 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
  </figure>'
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20260127-carter-cobra-coil-on-jet-table-800.jpg"
 tags:
- - tools
+ - tool
  - maker
  - nodice
 ---

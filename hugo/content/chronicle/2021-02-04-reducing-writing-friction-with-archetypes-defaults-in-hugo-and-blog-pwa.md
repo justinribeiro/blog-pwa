@@ -4,6 +4,7 @@ description: "Everyone likes the polish of a finely produced post, but reducing 
 date: 2021-02-04T05:00:13-08:00
 tags:
  - web
+ - oss
  - personal
  - writing
 ---
@@ -39,6 +40,7 @@ featureimage: ''
 socialimage: "{{ $.Site.Params.imageCDN }}"
 tags:
  - web
+ - oss
  - business
  - maker
  - photography
@@ -58,6 +60,7 @@ featureimage: ''
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/"
 tags:
  - web
+ - oss
  - business
  - maker
  - photography

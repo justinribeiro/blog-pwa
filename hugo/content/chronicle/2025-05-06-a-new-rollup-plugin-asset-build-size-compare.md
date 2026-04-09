@@ -27,10 +27,12 @@ socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20250506-compa
 
 tags:
  - web
+ - oss
  - rollup
  - plugin
  - research
- - webperf
+ - web
+ - ossperf
 ---
 
 It will come to no surprise to anyone that web performance is something I hold dear. As such, I’ve always taken a multi-pronged approach to try to give me the visibility I need to make choices on what kinds of performance I can control to the best of my ability. One of those sort of low hanging fruit items in the web development space is asset file size, the very code that gets sent down the wire to the browser that ultimately is parsed and used to make a web page or application work.

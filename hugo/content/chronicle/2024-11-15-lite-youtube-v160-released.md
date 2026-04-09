@@ -4,7 +4,9 @@ description: "v1.6 brings auto-pausing, custom CSS properties, named slot thumbn
 date: 2024-11-15T8:45:38-07:00
 tags:
  - web
- - webcomponent
+ - oss
+ - web
+ - osscomponent
  - release
  - oss
 ---

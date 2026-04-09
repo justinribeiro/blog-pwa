@@ -27,6 +27,7 @@ date: 2021-02-02T06:35:20-08:00
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210202-justinribeiro-seo-be-damned-trend-800.png"
 tags:
  - web
+ - oss
  - search
 ---
 

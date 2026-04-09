@@ -27,7 +27,7 @@ socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20260303-no4-h
 tags:
  - maker
  - build
- - handplane
+ - tool
  - restore
 ---
 

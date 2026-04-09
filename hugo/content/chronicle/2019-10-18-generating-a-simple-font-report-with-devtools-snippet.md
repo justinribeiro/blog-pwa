@@ -23,7 +23,8 @@ featureimage: '<figure aria-label="media" role="group" itemscope="" itemprop="as
 </figure>'
 date: 2019-10-18T09:23:42-07:00
 tags:
-- Web
+- web
+ - oss
 ---
 
 As with most weekday mornings, links and articles are dropped into our random channel as either points of potential interest or swords drawn discussion. The topics have a lot of range, but the one that recently caught my eye was and article regarding finding [improper font definitions in a page](https://blog.lemi.travel/how-my-butt-helped-fix-font-problems-on-the-web/).

@@ -4,7 +4,8 @@ description: My thoughts after attending Google I/O; the good, the bad, the ugly
 title: Thoughts on Google I/O
 url: /chronicle/2014/07/06/thoughts-on-google-io/
 tags:
-- Web
+- web
+ - oss
 - IoT
 - Business
 ---

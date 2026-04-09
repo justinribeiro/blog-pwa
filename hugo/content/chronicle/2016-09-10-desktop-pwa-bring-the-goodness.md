@@ -3,7 +3,8 @@ date: 2016-09-10T00:00:00Z
 description: As the world of mobile progressive web apps grows, are we leaving those features behind on the desktop?
 title: Thoughts on progressive web apps on the desktop
 tags:
-- Web
+- web
+ - oss
 ---
 
 "Who here has built an offline web app?"

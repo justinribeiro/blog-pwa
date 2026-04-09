@@ -1,6 +1,7 @@
 ---
 tags:
-- webdev
+- web
+ - ossdev
 date: 2012-02-06T00:00:00Z
 description: "A simply update that will add CDN paths to your H5BP build."
 title: "Adding CDN path to the HTML5 Boilerplate build script"

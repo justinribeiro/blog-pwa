@@ -5,6 +5,7 @@ date: 2021-11-22T13:19:10-08:00
 socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20211122-bad-cls-run-800.png"
 tags:
  - web
+ - oss
  - perfmatters
  - casestudy
 ---

@@ -3,7 +3,8 @@ date: 2016-01-20T00:00:00Z
 description: In my ongoing saga of getting beacons in a solid working state, I find a solution in Accent Systems.
 title: Getting Blesh beacons to advertise Eddystone URL and UID
 tags:
-- Web
+- web
+ - oss
 - IoT
 ---
 

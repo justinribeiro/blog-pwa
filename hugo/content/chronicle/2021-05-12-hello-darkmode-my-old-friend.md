@@ -27,6 +27,7 @@ socialimage: "https://storage.googleapis.com/jdr-public-imgs/blog/20210513-darkm
 
 tags:
  - web
+ - oss
 ---
 
 I don't know why I dragged my feet on adding `prefers-color-scheme` to blog-pwa. The [working draft spec](https://drafts.csswg.org/css-color-adjust-1/) has been around a couple years, there's been various support in most browsers and operating systems in some shape or form since around that time as well. I'd seen various implementations the last year that showed the mode was a win for accessibility and power savings.
